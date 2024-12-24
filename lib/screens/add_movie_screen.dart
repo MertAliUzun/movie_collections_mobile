@@ -162,15 +162,25 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
-        plot: _plotController.text,
-        runtime: int.parse(_runtimeController.text),
-        imdbRating: double.parse(_imdbRatingController.text),
-        rtRating: double.parse(_rtRatingController.text),
-        writers: _writersController.text.split(',').map((e) => e.trim()).toList(),
-        actors: _actorsController.text.split(',').map((e) => e.trim()).toList(),
+        plot: _plotController.text.isNotEmpty ? _plotController.text : null,
+        runtime: _runtimeController.text.isNotEmpty 
+            ? int.tryParse(_runtimeController.text) 
+            : null,
+        imdbRating: _imdbRatingController.text.isNotEmpty 
+            ? double.tryParse(_imdbRatingController.text) 
+            : null,
+        rtRating: _rtRatingController.text.isNotEmpty 
+            ? double.tryParse(_rtRatingController.text) 
+            : null,
+        writers: _writersController.text.isNotEmpty 
+            ? _writersController.text.split(',').map((e) => e.trim()).toList() 
+            : null,
+        actors: _actorsController.text.isNotEmpty 
+            ? _actorsController.text.split(',').map((e) => e.trim()).toList() 
+            : null,
         watched: _isWatched,
         imageLink: _imageLinkController.text,
-        userName: 'test', // Sabit test kullanıcısı
+        userEmail: 'test@test.com', // Test için sabit email
       );
 
       try {
@@ -247,7 +257,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _movieNameController,
-                decoration: const InputDecoration(labelText: 'Film Adı'),
+                decoration: const InputDecoration(labelText: 'Film Adı *'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen film adını girin';
@@ -257,7 +267,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ),
               TextFormField(
                 controller: _directorNameController,
-                decoration: const InputDecoration(labelText: 'Yönetmen'),
+                decoration: const InputDecoration(labelText: 'Yönetmen *'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen yönetmen adını girin';
@@ -276,20 +286,17 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 controller: _plotController,
                 decoration: const InputDecoration(labelText: 'Konu'),
                 maxLines: 3,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen filmin konusunu girin';
-                  }
-                  return null;
-                },
               ),
               TextFormField(
                 controller: _runtimeController,
                 decoration: const InputDecoration(labelText: 'Süre (dakika)'),
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen filmin süresini girin';
+                  if (value != null && value.isNotEmpty) {
+                    final number = int.tryParse(value);
+                    if (number == null) {
+                      return 'Geçerli bir sayı girin';
+                    }
                   }
                   return null;
                 },
@@ -299,8 +306,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 decoration: const InputDecoration(labelText: 'IMDB Puanı'),
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen IMDB puanını girin';
+                  if (value != null && value.isNotEmpty) {
+                    final number = double.tryParse(value);
+                    if (number == null || number < 0 || number > 10) {
+                      return 'Geçerli bir puan girin (0-10)';
+                    }
                   }
                   return null;
                 },
@@ -310,8 +320,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı'),
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen RT puanını girin';
+                  if (value != null && value.isNotEmpty) {
+                    final number = double.tryParse(value);
+                    if (number == null || number < 0 || number > 100) {
+                      return 'Geçerli bir puan girin (0-100)';
+                    }
                   }
                   return null;
                 },
@@ -322,12 +335,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   labelText: 'Senaristler',
                   helperText: 'Virgülle ayırarak yazın',
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen senaristleri girin';
-                  }
-                  return null;
-                },
               ),
               TextFormField(
                 controller: _actorsController,
@@ -335,16 +342,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   labelText: 'Oyuncular',
                   helperText: 'Virgülle ayırarak yazın',
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen oyuncuları girin';
-                  }
-                  return null;
-                },
               ),
               TextFormField(
                 controller: _imageLinkController,
-                decoration: const InputDecoration(labelText: 'Film Afişi URL'),
+                decoration: const InputDecoration(labelText: 'Film Afişi URL *'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen afiş URL\'sini girin';

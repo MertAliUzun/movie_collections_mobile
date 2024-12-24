@@ -7,13 +7,13 @@ class SupabaseService {
 
   SupabaseService(this._supabaseClient);
 
-  String get currentUserName => 'test';
+  String get currentEmail => 'test@test.com';
 
   Future<List<Movie>> getMovies() async {
     final response = await _supabaseClient
         .from('movies')
         .select()
-        .eq('user_name', currentUserName)
+        .eq('user_email', currentEmail)
         .execute();
     return (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
   }
@@ -21,7 +21,7 @@ class SupabaseService {
   Future<void> addMovie(Movie movie) async {
     await _supabaseClient.from('movies').insert({
       ...movie.toJson(),
-      'user_name': currentUserName,
+      'user_email': movie.userEmail,
     }).execute();
   }
 
@@ -30,7 +30,7 @@ class SupabaseService {
         .from('movies')
         .update(movie.toJson())
         .eq('movie_name', movie.movieName)
-        .eq('user_name', currentUserName)
+        .eq('user_email', currentEmail)
         .execute();
   }
 
@@ -39,7 +39,7 @@ class SupabaseService {
         .from('movies')
         .delete()
         .eq('movie_name', movieName)
-        .eq('user_name', currentUserName)
+        .eq('user_email', currentEmail)
         .execute();
   }
 
@@ -47,7 +47,7 @@ class SupabaseService {
     final response = await _supabaseClient
         .from('movies')
         .select()
-        .eq('user_name', currentUserName)
+        .eq('user_email', currentEmail)
         .eq('watched', false)
         .execute();
     return (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
@@ -57,7 +57,7 @@ class SupabaseService {
     final response = await _supabaseClient
         .from('movies')
         .select()
-        .eq('user_name', currentUserName)
+        .eq('user_email', currentEmail)
         .eq('watched', true)
         .execute();
     return (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
