@@ -3,6 +3,7 @@ import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'screens/add_movie_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

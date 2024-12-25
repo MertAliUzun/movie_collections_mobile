@@ -7,9 +7,12 @@ import 'dart:async';
 import '../models/movie_model.dart';
 import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class AddMovieScreen extends StatefulWidget {
-  const AddMovieScreen({super.key});
+  final bool isFromWishlist;
+
+  const AddMovieScreen({super.key, required this.isFromWishlist});
 
   @override
   State<AddMovieScreen> createState() => _AddMovieScreenState();
@@ -25,12 +28,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final _rtRatingController = TextEditingController();
   final _writersController = TextEditingController();
   final _actorsController = TextEditingController();
-  final _imageLinkController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
-  bool _isWatched = false;
+  DateTime _watchedDate = DateTime.now();
+  double _userScore = 0.0;
   File? _selectedImage;
   bool _isUploading = false;
-  final cloudinary = CloudinaryPublic('dper5kp88', 'YOUR_UPLOAD_PRESET', cache: false); //movies upload preset
+  String? _imageLink;
+  final cloudinary = CloudinaryPublic('dper5kp88', 'YOUR_UPLOAD_PRESET', cache: false);
   final _searchController = TextEditingController();
   Timer? _debounce;
   List<Map<String, dynamic>> _searchResults = [];
@@ -47,6 +51,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     if (picked != null && picked != _selectedDate) {
       setState(() {
         _selectedDate = picked;
+      });
+    }
+  }
+    Future<void> _watchDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _watchedDate,
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+    if (picked != null && picked != _watchedDate) {
+      setState(() {
+        _watchedDate = picked;
       });
     }
   }
@@ -77,7 +94,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         ),
       );
 
-      return response.secureUrl;
+      _imageLink = response.secureUrl;
+      return _imageLink;
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -138,8 +156,27 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ?.replaceAll('%', '') ?? '0';
           _writersController.text = movieDetails['Writer'] ?? '';
           _actorsController.text = movieDetails['Actors'] ?? '';
-          _selectedDate = DateTime.tryParse(movieDetails['Released'] ?? '') ?? DateTime.now();
-          _imageLinkController.text = movieDetails['Poster'] ?? '';
+          
+          if (movieDetails['Released'] != null && movieDetails['Released'] != 'N/A') {
+            try {
+              final dateStr = movieDetails['Released'];
+              final dateParts = dateStr.split(' ');
+              final months = {
+                'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
+                'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12
+              };
+              
+              final day = int.parse(dateParts[0]);
+              final month = months[dateParts[1]] ?? 1;
+              final year = int.parse(dateParts[2]);
+              
+              _selectedDate = DateTime(year, month, day);
+            } catch (e) {
+              print('Tarih parse edilemedi: ${movieDetails['Released']}');
+            }
+          }
+          
+          _imageLink = movieDetails['Poster'] ?? '';
         });
         _searchController.clear();
         _searchResults = [];
@@ -178,9 +215,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         actors: _actorsController.text.isNotEmpty 
             ? _actorsController.text.split(',').map((e) => e.trim()).toList() 
             : null,
-        watched: _isWatched,
-        imageLink: _imageLinkController.text,
-        userEmail: 'test@test.com', // Test için sabit email
+        watchDate: widget.isFromWishlist ? null : _watchedDate,
+        userScore: widget.isFromWishlist ? null : _userScore,
+        watched: !widget.isFromWishlist,
+        imageLink: _imageLink ?? '',
+        userEmail: 'test@test.com',
       );
 
       try {
@@ -220,9 +259,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: _isSearching
                       ? const SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2),
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                            backgroundColor: Colors.black,
+                          ),
                         )
                       : null,
                 ),
@@ -276,12 +319,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 },
               ),
               ListTile(
-                title: Text(
-                  'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
+                  title: Text(
+                    'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
+                  ),
+                  trailing: const Icon(Icons.calendar_today),
+                  onTap: () => _watchDate(context),
                 ),
-                trailing: const Icon(Icons.calendar_today),
-                onTap: () => _selectDate(context),
-              ),
               TextFormField(
                 controller: _plotController,
                 decoration: const InputDecoration(labelText: 'Konu'),
@@ -342,17 +385,33 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   labelText: 'Oyuncular',
                   helperText: 'Virgülle ayırarak yazın',
                 ),
+                //User Section
               ),
-              TextFormField(
-                controller: _imageLinkController,
-                decoration: const InputDecoration(labelText: 'Film Afişi URL *'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen afiş URL\'sini girin';
-                  }
-                  return null;
-                },
-              ),
+              if (!widget.isFromWishlist) ...{
+                ListTile(
+                  title: Text(
+                    'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
+                  ),
+                  trailing: const Icon(Icons.calendar_today),
+                  onTap: () => _watchDate(context),
+                ),
+                RatingBar.builder(
+                  itemSize: 30,
+                  initialRating: _userScore,
+                  minRating: 0,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 10,
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                  itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
+                  onRatingUpdate: (rating) {
+                    setState(() {
+                      _userScore = rating;
+                    });
+                  },
+                ),
+              SizedBox(height: 10,),
+              },
               GestureDetector(
                 onTap: _isUploading ? null : _pickImage,
                 child: Container(
@@ -384,18 +443,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              SwitchListTile(
-                title: const Text('İzlendi mi?'),
-                value: _isWatched,
-                onChanged: (bool value) {
-                  setState(() {
-                    _isWatched = value;
-                  });
-                },
-              ),
-              const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _isUploading ? null : _saveMovie,
+                onPressed: _saveMovie,
                 child: const Text('Filmi Ekle'),
               ),
             ],
@@ -417,7 +466,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     _rtRatingController.dispose();
     _writersController.dispose();
     _actorsController.dispose();
-    _imageLinkController.dispose();
     super.dispose();
   }
 } 
