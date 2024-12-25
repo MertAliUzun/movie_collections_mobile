@@ -32,6 +32,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       body: ListView.builder(
         itemCount: _movies.length,
         itemBuilder: (context, index) {
@@ -39,6 +40,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
         },
       ),
             floatingActionButton: FloatingActionButton(
+              backgroundColor:  Colors.green,
+        foregroundColor: Colors.white,
         onPressed: () {
           Navigator.push(
             context,

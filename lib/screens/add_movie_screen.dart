@@ -243,8 +243,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: const Text('Yeni Film Ekle'),
+        title: const Text('Yeni Film Ekle', style: TextStyle(color: Colors.white),),
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -256,7 +258,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 controller: _searchController,
                 decoration: InputDecoration(
                   hintText: 'Film ara...',
-                  prefixIcon: const Icon(Icons.search),
+                  hintStyle: const TextStyle(color: Colors.white54),
+                  prefixIcon: const Icon(Icons.search, color: Colors.white54,),
                   suffixIcon: _isSearching
                       ? const SizedBox(
                           width: 16,
@@ -269,12 +272,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         )
                       : null,
                 ),
+                style: const TextStyle(color: Colors.white),
                 onChanged: _onSearchChanged,
               ),
               if (_searchResults.isNotEmpty)
                 Container(
                   constraints: const BoxConstraints(maxHeight: 200),
                   child: Card(
+                    color: Color.fromARGB(255, 44, 50, 60),
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: _searchResults.length,
@@ -286,11 +291,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   movie['Poster'],
                                   width: 50,
                                   errorBuilder: (context, error, stackTrace) =>
-                                      const Icon(Icons.movie),
+                                      const Icon(Icons.movie, color: Colors.white54,),
                                 )
-                              : const Icon(Icons.movie),
-                          title: Text(movie['Title']),
-                          subtitle: Text(movie['Year']),
+                              : const Icon(Icons.movie, color: Colors.white54,),
+                          title: Text(movie['Title'], style: const TextStyle(color: Colors.white70),),
+                          subtitle: Text(movie['Year'], style: const TextStyle(color: Colors.white54),),
                           onTap: () => _selectMovie(movie['imdbID']),
                         );
                       },
@@ -300,7 +305,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _movieNameController,
-                decoration: const InputDecoration(labelText: 'Film Adı *'),
+                decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54),),
+                style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen film adını girin';
@@ -310,7 +316,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ),
               TextFormField(
                 controller: _directorNameController,
-                decoration: const InputDecoration(labelText: 'Yönetmen *'),
+                  decoration: const InputDecoration(labelText: 'Yönetmen *', labelStyle: TextStyle(color: Colors.white54),),
+                style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Lütfen yönetmen adını girin';
@@ -321,18 +328,20 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ListTile(
                   title: Text(
                     'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
+                    style: const TextStyle(color: Colors.white54),
                   ),
-                  trailing: const Icon(Icons.calendar_today),
+                  trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
                   onTap: () => _watchDate(context),
                 ),
               TextFormField(
                 controller: _plotController,
-                decoration: const InputDecoration(labelText: 'Konu'),
+                decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54),),
                 maxLines: 3,
+                style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _runtimeController,
-                decoration: const InputDecoration(labelText: 'Süre (dakika)'),
+                decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54),),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
@@ -343,11 +352,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   }
                   return null;
                 },
+                style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _imdbRatingController,
-                decoration: const InputDecoration(labelText: 'IMDB Puanı'),
+                decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54),),
                 keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
                     final number = double.tryParse(value);
@@ -360,7 +371,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ),
               TextFormField(
                 controller: _rtRatingController,
-                decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı'),
+                decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı', labelStyle: TextStyle(color: Colors.white54),),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
@@ -371,28 +382,34 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   }
                   return null;
                 },
+                style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _writersController,
                 decoration: const InputDecoration(
                   labelText: 'Senaristler',
-                  helperText: 'Virgülle ayırarak yazın',
+                 //helperText: 'Virgülle ayırarak yazın',
+                  labelStyle: TextStyle(color: Colors.white54),
                 ),
+                style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _actorsController,
                 decoration: const InputDecoration(
                   labelText: 'Oyuncular',
-                  helperText: 'Virgülle ayırarak yazın',
+                  //helperText: 'Virgülle ayırarak yazın',
+                  labelStyle: TextStyle(color: Colors.white54),
                 ),
+                style: const TextStyle(color: Colors.white),
                 //User Section
               ),
               if (!widget.isFromWishlist) ...{
                 ListTile(
                   title: Text(
                     'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
+                    style: const TextStyle(color: Colors.white54),
                   ),
-                  trailing: const Icon(Icons.calendar_today),
+                  trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
                   onTap: () => _watchDate(context),
                 ),
                 RatingBar.builder(
@@ -410,8 +427,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     });
                   },
                 ),
-              SizedBox(height: 10,),
+              
               },
+              SizedBox(height: 30,),
               GestureDetector(
                 onTap: _isUploading ? null : _pickImage,
                 child: Container(
@@ -435,17 +453,22 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.cloud_upload, size: 50),
-                                  Text('Film afişi seçmek için tıklayın'),
+                                  Icon(Icons.cloud_upload, size: 75, color: Colors.white54,),
+                                  Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54),),
                                 ],
                               ),
                             ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 25),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  fixedSize: const Size(double.infinity, 50),
+                ),
                 onPressed: _saveMovie,
-                child: const Text('Filmi Ekle'),
+                child: const Text('Filmi Ekle', style: TextStyle(fontSize: 18),),
               ),
             ],
           ),

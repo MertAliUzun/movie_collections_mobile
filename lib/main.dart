@@ -61,23 +61,26 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Film Koleksiyonu'),
+        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        title: const Text('Film Koleksiyonu', style: TextStyle(color: Colors.white),),
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 44, 50, 60),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.movie),
+            icon: Icon(Icons.movie, color: Colors.amber,),
             label: 'Koleksiyon',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
+            icon: Icon(Icons.bookmark, color: Colors.amber,),
             label: 'İzleme Listesi',
           ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white54,
       ),
     );
   }
