@@ -10,6 +10,8 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+double screenHeight = MediaQuery.of(context).size.height;
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
       child: Container(
@@ -21,13 +23,12 @@ class MovieCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(0.0),
               child: Image.network(
                 movie.imageLink,
-                width: 60,
-                height: 100,
+                width: screenWidth * 0.15,
+                height: screenHeight * 0.15,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
               ),
             ),
-            const SizedBox(width: 0.0),
             // Film adı ve yönetmen adı
                Expanded(
                   child: Container(
@@ -38,7 +39,7 @@ class MovieCard extends StatelessWidget {
                       children: [
                         if (!isFromWishlist)
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
+                            padding: EdgeInsets.fromLTRB(screenWidth * 0.35, 0, 0, 0),
                             child: RatingBar.builder(
                               initialRating: movie.userScore ?? 0,
                               minRating: 1,
@@ -52,26 +53,38 @@ class MovieCard extends StatelessWidget {
                               },
                             ),
                           ),
+                        if (isFromWishlist)
+                        SizedBox(height: screenHeight * 0.01,),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
                             movie.movieName,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white70),
+                            style: TextStyle(fontSize: screenWidth * 0.043 , fontWeight: FontWeight.bold, color: Colors.white70),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(height: screenHeight * 0.01,),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
-                            'Yönetmen: ${movie.directorName}',
-                            style: const TextStyle(fontSize: 13, color: Colors.white54),
+                            '${movie.directorName}',
+                            style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.white60),
                           ),
                         ),
-                        SizedBox(height: 15,),
+                        if (!isFromWishlist)
+                        SizedBox(height: screenHeight * 0.02,),
+                        if (isFromWishlist)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Text(
+                            movie.releaseDate.day.toString() + '/' + movie.releaseDate.month.toString() + '/' + movie.releaseDate.year.toString(),
+                            style: TextStyle(fontSize: screenWidth * 0.028 , color: Colors.white54),
+                          ),
+                        ),
+                        SizedBox(height: screenHeight * 0.01,),
                         SizedBox(
                           height: 0,
                           child: Divider(
-                                              color: Colors.black,
+                                              color: Colors.white30,
                                               thickness: 1,
                                       ),
                         ),
