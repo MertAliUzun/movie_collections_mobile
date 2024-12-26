@@ -43,8 +43,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
 
   @override
   Widget build(BuildContext context) {
+        double screenWidth = MediaQuery.of(context).size.width;
+double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        title: Text('İzleme Listenizde ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04),),
+      ),
       body: ListView.builder(
         itemCount: _movies.length,
         itemBuilder: (context, index) {

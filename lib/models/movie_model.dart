@@ -13,6 +13,7 @@ class Movie {
   final String userEmail;
   final DateTime? watchDate;
   final double? userScore;
+  final double? hypeScore;
 
   Movie({
     required this.movieName,
@@ -29,6 +30,7 @@ class Movie {
     required this.userEmail,
     this.watchDate,
     this.userScore,
+    this.hypeScore,
   });
 
   Map<String, dynamic> toJson() {
@@ -47,6 +49,7 @@ class Movie {
       'user_email': userEmail,
       'watch_date': watchDate?.toIso8601String(),
       'user_score': userScore,
+      'hype_score': hypeScore,
     };
   }
 
@@ -66,6 +69,7 @@ class Movie {
       userEmail: json['user_email'],
       watchDate: json['watch_date'] != null ? DateTime.parse(json['watch_date']) : null,
       userScore: json['user_score']?.toDouble(),
+      hypeScore: json['hype_score']?.toDouble(),
     );
   }
 } 

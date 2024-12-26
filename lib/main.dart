@@ -60,10 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 44, 50, 60),
-        title: const Text('Film Koleksiyonu', style: TextStyle(color: Colors.white),),
-      ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
@@ -73,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Koleksiyon',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark, color: Colors.amber,),
+            icon: Icon(Icons.bookmark, color: Colors.red,),
             label: 'İzleme Listesi',
           ),
         ],

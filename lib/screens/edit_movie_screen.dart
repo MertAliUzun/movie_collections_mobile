@@ -32,6 +32,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   DateTime _selectedDate = DateTime.now();
   DateTime _watchedDate = DateTime.now();
   double _userScore = 0.0;
+  double _hypeScore = 0.0;
   File? _selectedImage;
   bool _isUploading = false;
   String? _imageLink;
@@ -134,6 +135,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             : null,
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
+        hypeScore: widget.isFromWishlist ? _hypeScore : null,
         watched: !widget.isFromWishlist,
         imageLink: _imageLink ?? '',
         userEmail: 'test@test.com',
@@ -191,6 +193,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
       _selectedDate = widget.movie!.releaseDate;
       _imageLink = widget.movie!.imageLink;
+      _userScore = widget.movie!.userScore ?? 0;
+      _hypeScore = widget.movie!.hypeScore ?? 0;
     }
   }
 
@@ -334,6 +338,22 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 ),
               
               },
+              if (widget.isFromWishlist)
+              RatingBar.builder(
+                  itemSize: 30,
+                  initialRating: _hypeScore,
+                  minRating: 0,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                  itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
+                  onRatingUpdate: (rating) {
+                    setState(() {
+                      _hypeScore = rating;
+                    });
+                  },
+                ),
               SizedBox(height: 30,),
               GestureDetector(
                 onTap: _isUploading ? null : _pickImage,

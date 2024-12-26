@@ -30,7 +30,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                 borderRadius: BorderRadius.circular(0.0),
                 child: Image.network(
                   movie.imageLink,
-                  width: screenWidth * 0.15,
+                  width: screenWidth * 0.20,
                   height: screenHeight * 0.15,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
@@ -46,8 +46,9 @@ double screenHeight = MediaQuery.of(context).size.height;
                         children: [
                           if (!isFromWishlist)
                             Padding(
-                              padding: EdgeInsets.fromLTRB(screenWidth * 0.28, 0, 0, 0),
+                              padding: EdgeInsets.fromLTRB(screenWidth * 0.26, 0, 0, 0),
                               child: RatingBar.builder(
+                                ignoreGestures: true,
                                 initialRating: movie.userScore ?? 0,
                                 minRating: 1,
                                 direction: Axis.horizontal,
@@ -62,9 +63,10 @@ double screenHeight = MediaQuery.of(context).size.height;
                             ),
                           if (isFromWishlist)
                             Padding(
-                              padding: EdgeInsets.fromLTRB(screenWidth * 0.55, 0, 0, 0),
+                              padding: EdgeInsets.fromLTRB(screenWidth * 0.5, 0, 0, 0),
                               child: RatingBar.builder(
-                                initialRating: 3.5, //add movie.hypeScore
+                                ignoreGestures: true,
+                                initialRating: movie.hypeScore ?? 0,
                                 minRating: 1,
                                 direction: Axis.horizontal,
                                 allowHalfRating: true,

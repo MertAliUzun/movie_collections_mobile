@@ -46,6 +46,10 @@ class _CollectionScreenState extends State<CollectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        title: Text('Koleksiyonunda ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white),),
+      ),
       body: ListView.builder(
         itemCount: _movies.length,
         itemBuilder: (context, index) {

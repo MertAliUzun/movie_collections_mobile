@@ -32,6 +32,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   DateTime _selectedDate = DateTime.now();
   DateTime _watchedDate = DateTime.now();
   double _userScore = 0.0;
+  double _hypeScore = 0.0;
   File? _selectedImage;
   bool _isUploading = false;
   String? _imageLink;
@@ -218,6 +219,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             : null,
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
+        hypeScore: widget.isFromWishlist ? _hypeScore : null,
         watched: !widget.isFromWishlist,
         imageLink: _imageLink ?? '',
         userEmail: 'test@test.com',
@@ -421,6 +423,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 style: const TextStyle(color: Colors.white),
                 //User Section
               ),
+              SizedBox(height: 10,),
               if (!widget.isFromWishlist) ...{
                 ListTile(
                   title: Text(
@@ -447,6 +450,22 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
               
               },
+              if (widget.isFromWishlist)
+              RatingBar.builder(
+                  itemSize: 30,
+                  initialRating: _hypeScore,
+                  minRating: 0,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                  itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
+                  onRatingUpdate: (rating) {
+                    setState(() {
+                      _hypeScore = rating;
+                    });
+                  },
+                ),
               SizedBox(height: 30,),
               GestureDetector(
                 onTap: _isUploading ? null : _pickImage,
