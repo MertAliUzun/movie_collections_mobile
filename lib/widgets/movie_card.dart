@@ -46,7 +46,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                         children: [
                           if (!isFromWishlist)
                             Padding(
-                              padding: EdgeInsets.fromLTRB(screenWidth * 0.26, 0, 0, 0),
+                              padding: EdgeInsets.fromLTRB(screenWidth * 0.24, 0, 0, 0),
                               child: RatingBar.builder(
                                 ignoreGestures: true,
                                 initialRating: movie.userScore ?? 0,
