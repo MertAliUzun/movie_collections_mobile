@@ -4,6 +4,7 @@ import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
+import 'edit_movie_screen.dart';
 
 
 class CollectionScreen extends StatefulWidget {
@@ -30,6 +31,17 @@ class _CollectionScreenState extends State<CollectionScreen> {
     });
   }
 
+  void _navigateToEditMovieScreen(Movie movie) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditMovieScreen(isFromWishlist: false, movie: movie),
+      ),
+    ).then((_) {
+      _fetchMovies();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,17 +49,21 @@ class _CollectionScreenState extends State<CollectionScreen> {
       body: ListView.builder(
         itemCount: _movies.length,
         itemBuilder: (context, index) {
-          return MovieCard(movie: _movies[index], isFromWishlist: false,);
+          return MovieCard(
+            movie: _movies[index],
+            isFromWishlist: false,
+            onTap: () => _navigateToEditMovieScreen(_movies[index]),
+          );
         },
       ),
-            floatingActionButton: FloatingActionButton(
-        backgroundColor:  Colors.green,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
         foregroundColor: Colors.white,
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const AddMovieScreen(isFromWishlist: false), // Wishlist'den geldi
+              builder: (context) => const AddMovieScreen(isFromWishlist: false),
             ),
           );
         },

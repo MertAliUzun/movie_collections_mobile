@@ -4,6 +4,7 @@ import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
+import 'edit_movie_screen.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -28,6 +29,17 @@ class _WishlistScreenState extends State<WishlistScreen> {
       _movies = movies;
     });
   }
+  
+  void _navigateToEditMovieScreen(Movie movie) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditMovieScreen(isFromWishlist: true, movie: movie),
+      ),
+    ).then((_) {
+      _fetchMovies();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +48,11 @@ class _WishlistScreenState extends State<WishlistScreen> {
       body: ListView.builder(
         itemCount: _movies.length,
         itemBuilder: (context, index) {
-          return MovieCard(movie: _movies[index], isFromWishlist: true,);
+          return MovieCard(
+            movie: _movies[index],
+            isFromWishlist: true,
+            onTap: () => _navigateToEditMovieScreen(_movies[index]),
+          );
         },
       ),
             floatingActionButton: FloatingActionButton(

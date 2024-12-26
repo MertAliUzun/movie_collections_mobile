@@ -9,17 +9,17 @@ import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class AddMovieScreen extends StatefulWidget {
+class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
 
-  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie});
+  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie});
 
   @override
-  State<AddMovieScreen> createState() => _AddMovieScreenState();
+  State<EditMovieScreen> createState() => _EditMovieScreenState();
 }
 
-class _AddMovieScreenState extends State<AddMovieScreen> {
+class _EditMovieScreenState extends State<EditMovieScreen> {
   final _formKey = GlobalKey<FormState>();
   final _movieNameController = TextEditingController();
   final _directorNameController = TextEditingController();
@@ -36,11 +36,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   bool _isUploading = false;
   String? _imageLink;
   final cloudinary = CloudinaryPublic('dper5kp88', 'YOUR_UPLOAD_PRESET', cache: false);
-  final _searchController = TextEditingController();
-  Timer? _debounce;
-  List<Map<String, dynamic>> _searchResults = [];
-  bool _isSearching = false;
-  final _omdbService = OmdbService();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -111,85 +106,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
-  void _onSearchChanged(String query) {
-    if (_debounce?.isActive ?? false) _debounce!.cancel();
-    _debounce = Timer(const Duration(milliseconds: 1000), () async {
-      if (query.length >= 2) {
-        setState(() {
-          _isSearching = true;
-        });
-        try {
-          final results = await _omdbService.searchMovies(query);
-          setState(() {
-            _searchResults = results;
-            _isSearching = false;
-          });
-        } catch (e) {
-          setState(() {
-            _isSearching = false;
-          });
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Film arama hatası: $e')),
-            );
-          }
-        }
-      } else {
-        setState(() {
-          _searchResults = [];
-        });
-      }
-    });
-  }
-
-  Future<void> _selectMovie(String imdbId) async {
-    try {
-      final movieDetails = await _omdbService.getMovieDetails(imdbId);
-      if (movieDetails != null) {
-        setState(() {
-          _movieNameController.text = movieDetails['Title'] ?? '';
-          _directorNameController.text = movieDetails['Director'] ?? '';
-          _plotController.text = movieDetails['Plot'] ?? '';
-          _runtimeController.text = movieDetails['Runtime']?.replaceAll(' min', '') ?? '';
-          _imdbRatingController.text = movieDetails['imdbRating'] ?? '';
-          _rtRatingController.text = movieDetails['Ratings']
-              ?.firstWhere((r) => r['Source'] == 'Rotten Tomatoes', orElse: () => {'Value': '0'})['Value']
-              ?.replaceAll('%', '') ?? '0';
-          _writersController.text = movieDetails['Writer'] ?? '';
-          _actorsController.text = movieDetails['Actors'] ?? '';
-          
-          if (movieDetails['Released'] != null && movieDetails['Released'] != 'N/A') {
-            try {
-              final dateStr = movieDetails['Released'];
-              final dateParts = dateStr.split(' ');
-              final months = {
-                'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
-                'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12
-              };
-              
-              final day = int.parse(dateParts[0]);
-              final month = months[dateParts[1]] ?? 1;
-              final year = int.parse(dateParts[2]);
-              
-              _selectedDate = DateTime(year, month, day);
-            } catch (e) {
-              print('Tarih parse edilemedi: ${movieDetails['Released']}');
-            }
-          }
-          
-          _imageLink = movieDetails['Poster'] ?? '';
-        });
-        _searchController.clear();
-        _searchResults = [];
-      }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Film detayları alınırken hata oluştu: $e')),
-        );
-      }
-    }
-  }
 
   void _saveMovie() async {
     if (_formKey.currentState!.validate()) {
@@ -224,10 +140,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       );
 
       try {
-        await service.addMovie(movie);
+        await service.updateMovie(movie);
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Film başarıyla eklendi')),
+            const SnackBar(content: Text('Film başarıyla güncellendi')),
           );
           Navigator.pop(context, true);
         }
@@ -237,6 +153,26 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             SnackBar(content: Text('Hata oluştu: $e')),
           );
         }
+      }
+    }
+  }
+
+  void _deleteMovie() async {
+          final supabase = Supabase.instance.client;
+      final service = SupabaseService(supabase);
+    try {
+      await service.deleteMovie(widget.movie!.movieName);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Film başarıyla silindi')),
+        );
+        Navigator.pop(context, true);
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Silme hatası: $e')),
+        );
       }
     }
   }
@@ -263,7 +199,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: const Text('Yeni Film Ekle', style: TextStyle(color: Colors.white),),
+        title: const Text('Filmi Düzenle', style: TextStyle(color: Colors.white)),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),
       body: SingleChildScrollView(
@@ -272,58 +208,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           key: _formKey,
           child: Column(
             children: [
-              TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  hintText: 'Film ara...',
-                  hintStyle: const TextStyle(color: Colors.white54),
-                  prefixIcon: const Icon(Icons.search, color: Colors.white54,),
-                  suffixIcon: _isSearching
-                      ? const SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: Colors.white,
-                            backgroundColor: Colors.black,
-                          ),
-                        )
-                      : null,
-                ),
-                style: const TextStyle(color: Colors.white),
-                onChanged: _onSearchChanged,
-              ),
-              if (_searchResults.isNotEmpty)
-                Container(
-                  constraints: const BoxConstraints(maxHeight: 200),
-                  child: Card(
-                    color: Color.fromARGB(255, 44, 50, 60),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: _searchResults.length,
-                      itemBuilder: (context, index) {
-                        final movie = _searchResults[index];
-                        return ListTile(
-                          leading: movie['Poster'] != 'N/A'
-                              ? Image.network(
-                                  movie['Poster'],
-                                  width: 50,
-                                  errorBuilder: (context, error, stackTrace) =>
-                                      const Icon(Icons.movie, color: Colors.white54,),
-                                )
-                              : const Icon(Icons.movie, color: Colors.white54,),
-                          title: Text(movie['Title'], style: const TextStyle(color: Colors.white70),),
-                          subtitle: Text(movie['Year'], style: const TextStyle(color: Colors.white54),),
-                          onTap: () => _selectMovie(movie['imdbID']),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              const SizedBox(height: 16),
               TextFormField(
                 controller: _movieNameController,
-                decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54)),
                 style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -479,14 +366,31 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
               ),
               const SizedBox(height: 25),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                  fixedSize: const Size(double.infinity, 50),
-                ),
-                onPressed: _saveMovie,
-                child: const Text('Filmi Ekle', style: TextStyle(fontSize: 18),),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      fixedSize: const Size(double.infinity, 50),
+                    ),
+                    onPressed: _saveMovie,
+                    icon: const Icon(Icons.save),
+                    label: const Text('Güncelle', style: TextStyle(fontSize: 18)),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white,
+                      fixedSize: const Size(double.infinity, 50),
+                    ),
+                    onPressed: _deleteMovie,
+                    icon: const Icon(Icons.delete),
+                    label: const Text('Sil', style: TextStyle(fontSize: 18)),
+                  ),
+                ],
               ),
             ],
           ),
@@ -497,8 +401,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
   @override
   void dispose() {
-    _debounce?.cancel();
-    _searchController.dispose();
     _movieNameController.dispose();
     _directorNameController.dispose();
     _plotController.dispose();
