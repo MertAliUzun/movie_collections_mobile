@@ -266,6 +266,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         title: const Text('Yeni Film Ekle', style: TextStyle(color: Colors.white),),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),
       body: SingleChildScrollView(

@@ -22,6 +22,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   bool _isAscending = true; // Default sorting order
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
+  String _viewType = 'List'; // Default view type
 
   @override
   void initState() {
@@ -114,6 +115,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
     });
   }
 
+  void _changeViewType(String newViewType) {
+    setState(() {
+      _viewType = newViewType;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
         double screenWidth = MediaQuery.of(context).size.width;
@@ -122,6 +129,20 @@ double screenHeight = MediaQuery.of(context).size.height;
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        leading: !_isSearching ?
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.view_list, color: Colors.white),
+            onSelected: _changeViewType,
+            color: Color.fromARGB(255, 44, 50, 60),
+            itemBuilder: (BuildContext context) {
+              return {'List', 'Card'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice, style: TextStyle(color: Colors.white),),
+                );
+              }).toList();
+            },
+          ) : null,
         title: !_isSearching 
         ? Text('Koleksiyonunda ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
@@ -160,16 +181,33 @@ double screenHeight = MediaQuery.of(context).size.height;
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              itemCount: _filteredMovies.length,
-              itemBuilder: (context, index) {
-                return MovieCard(
-                  movie: _filteredMovies[index],
-                  isFromWishlist: false,
-                  onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
-                );
-              },
-            ),
+            child: _viewType == 'List'
+                ? ListView.builder(
+                    itemCount: _filteredMovies.length,
+                    itemBuilder: (context, index) {
+                      return MovieCard(
+                        movie: _filteredMovies[index],
+                        isFromWishlist: false,
+                        viewType: "List",
+                        onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
+                      );
+                    },
+                  )
+                : GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, // 3 cards per row
+                      childAspectRatio: 0.65, // Adjust the aspect ratio as needed
+                    ),
+                    itemCount: _filteredMovies.length,
+                    itemBuilder: (context, index) {
+                      return MovieCard(
+                        movie: _filteredMovies[index],
+                        isFromWishlist: false,
+                        viewType: "Card",
+                        onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
+                      );
+                    },
+                  ),
           ),
         ],
       ),
