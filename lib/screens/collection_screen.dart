@@ -17,8 +17,11 @@ class CollectionScreen extends StatefulWidget {
 class _CollectionScreenState extends State<CollectionScreen> {
   final SupabaseService _service = SupabaseService(Supabase.instance.client);
   List<Movie> _movies = [];
+  List<Movie> _filteredMovies = [];
   String _sortBy = 'movieName'; // Default sorting criteria
   bool _isAscending = true; // Default sorting order
+  bool _isSearching = false; // Track if searching
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -30,12 +33,13 @@ class _CollectionScreenState extends State<CollectionScreen> {
     final movies = await _service.getCollectionMovies();
     setState(() {
       _movies = movies;
+      _filteredMovies = movies; // Initialize filtered list
       _sortMovies(); // Sort movies after fetching
     });
   }
 
   void _sortMovies() {
-    _movies.sort((a, b) {
+    _filteredMovies.sort((a, b) {
       int comparison;
       if (_sortBy == 'movieName') {
         comparison = a.movieName.compareTo(b.movieName);
@@ -85,6 +89,20 @@ class _CollectionScreenState extends State<CollectionScreen> {
     );
   }
 
+  void _searchMovies(String query) {
+    if (query.isEmpty) {
+      setState(() {
+        _filteredMovies = _movies; // Reset to original list
+      });
+    } else {
+      setState(() {
+        _filteredMovies = _movies.where((movie) {
+          return movie.movieName.toLowerCase().contains(query.toLowerCase());
+        }).toList();
+      });
+    }
+  }
+
   void _navigateToEditMovieScreen(Movie movie) {
     Navigator.push(
       context,
@@ -104,23 +122,56 @@ double screenHeight = MediaQuery.of(context).size.height;
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
-        title: Text('Koleksiyonunda ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),),
+        title: !_isSearching 
+        ? Text('Koleksiyonunda ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
+        : SizedBox(
+          width: screenWidth * 0.8,
+          height: screenHeight * 0.05,
+          child: TextField(
+            controller: _searchController,
+            textAlignVertical: TextAlignVertical.bottom,
+            decoration: const InputDecoration(
+              hintText: 'Film adı ile ara...',
+              border: OutlineInputBorder(),
+              filled: true,
+              fillColor: Colors.white,
+            ),
+            onChanged: _searchMovies,
+          ),
+        ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.sort, color: Colors.white,),
+            icon: const Icon(Icons.search, color: Colors.white),
+            onPressed: () {
+              setState(() {
+                _isSearching = !_isSearching; // Toggle search mode
+                _searchController.clear(); // Clear search field
+                _filteredMovies = _movies; // Reset filtered list
+              });
+            },
+          ),
+          if(!_isSearching)
+          IconButton(
+            icon: const Icon(Icons.sort, color: Colors.white),
             onPressed: _showSortOptions,
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: _movies.length,
-        itemBuilder: (context, index) {
-          return MovieCard(
-            movie: _movies[index],
-            isFromWishlist: false,
-            onTap: () => _navigateToEditMovieScreen(_movies[index]),
-          );
-        },
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: _filteredMovies.length,
+              itemBuilder: (context, index) {
+                return MovieCard(
+                  movie: _filteredMovies[index],
+                  isFromWishlist: false,
+                  onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
+                );
+              },
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
