@@ -48,6 +48,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                           Padding(
                             padding: EdgeInsets.fromLTRB(screenWidth * 0.24, 0, 0, 0),
                             child: RatingBar.builder(
+                              //unratedColor: Color.fromARGB(255, 70,70,75),
                               ignoreGestures: true,
                               initialRating: movie.userScore ?? 0,
                               minRating: 1,
@@ -82,7 +83,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
                             movie.movieName,
-                            style: TextStyle(fontSize: screenWidth * 0.043 , fontWeight: FontWeight.bold, color: Colors.white70),
+                            style: TextStyle(fontSize: screenWidth * 0.04 , fontWeight: FontWeight.bold, color: Colors.white70),
                           ),
                         ),
                         SizedBox(height: screenHeight * 0.01,),
@@ -90,12 +91,10 @@ double screenHeight = MediaQuery.of(context).size.height;
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
                             '${movie.directorName}',
-                            style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.white60),
+                            style: TextStyle(fontSize: screenWidth * 0.027, color: Colors.white60),
                           ),
                         ),
-                        if (!isFromWishlist)
-                        SizedBox(height: screenHeight * 0.02,),
-                        if (isFromWishlist)
+                        //if (isFromWishlist)
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(

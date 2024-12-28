@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../services/supabase_service.dart';
 import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
@@ -27,7 +28,15 @@ class _WishlistScreenState extends State<WishlistScreen> {
   @override
   void initState() {
     super.initState();
+    _loadViewType();
     _fetchMovies();
+  }
+
+  Future<void> _loadViewType() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _viewType = prefs.getString('viewType') ?? 'List';
+    });
   }
 
   Future<void> _fetchMovies() async {
@@ -117,12 +126,18 @@ class _WishlistScreenState extends State<WishlistScreen> {
     setState(() {
       _viewType = newViewType;
     });
+    _saveViewType(newViewType);
+  }
+
+  Future<void> _saveViewType(String viewType) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('viewType', viewType);
   }
 
   @override
   Widget build(BuildContext context) {
-            double screenWidth = MediaQuery.of(context).size.width;
-double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
@@ -194,7 +209,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                 : GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: 0.7, // Adjust the aspect ratio as needed
+                      childAspectRatio: 0.64, // Adjust the aspect ratio as needed
                     ),
                     itemCount: _filteredMovies.length,
                     itemBuilder: (context, index) {
@@ -218,7 +233,10 @@ double screenHeight = MediaQuery.of(context).size.height;
             MaterialPageRoute(
               builder: (context) => const AddMovieScreen(isFromWishlist: true),
             ),
-          );
+          
+          ).then((_) {
+            _fetchMovies(); // Refresh the movie list when returning
+          });
         },
         child: const Icon(Icons.add),
       ),
