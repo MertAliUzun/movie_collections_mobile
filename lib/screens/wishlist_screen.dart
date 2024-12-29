@@ -24,6 +24,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
   String _viewType = 'List'; // Default view type
+  bool _groupByDirector = false; //
 
   @override
   void initState() {
@@ -133,11 +134,25 @@ class _WishlistScreenState extends State<WishlistScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('viewType', viewType);
   }
+    void _toggleGroupByDirector(String value) {
+    setState(() {
+      _groupByDirector = value == 'Director';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+        Map<String, List<Movie>> groupedMovies = {};
+    if (_groupByDirector) {
+      for (var movie in _filteredMovies) {
+        if (!groupedMovies.containsKey(movie.directorName)) {
+          groupedMovies[movie.directorName] = [];
+        }
+        groupedMovies[movie.directorName]!.add(movie);
+      }
+    }
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
@@ -189,6 +204,18 @@ class _WishlistScreenState extends State<WishlistScreen> {
             icon: const Icon(Icons.sort, color: Colors.white),
             onPressed: _showSortOptions,
           ),
+            PopupMenuButton<String>(
+            icon: const Icon(Icons.group, color: Colors.white),
+            onSelected: _toggleGroupByDirector,
+            itemBuilder: (BuildContext context) {
+              return {'Director', 'None'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice, style: const TextStyle(color: Colors.white)),
+                );
+              }).toList();
+            },
+          ),
         ],
       ),
       body: Column(
@@ -196,17 +223,68 @@ class _WishlistScreenState extends State<WishlistScreen> {
           Expanded(
             child: _viewType == 'List'
                 ? ListView.builder(
-                    itemCount: _filteredMovies.length,
+                    itemCount: _groupByDirector ? groupedMovies.keys.length : _filteredMovies.length,
                     itemBuilder: (context, index) {
-                      return MovieCard(
-                        movie: _filteredMovies[index],
-                        isFromWishlist: true,
-                        viewType: "List",
-                        onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
-                      );
+                      if (_groupByDirector) {
+                        String directorName = groupedMovies.keys.elementAt(index);
+                        List<Movie> movies = groupedMovies[directorName]!;
+                        return ExpansionTile(
+                          title: Text(directorName, style: const TextStyle(color: Colors.white)),
+                          children: [
+                            ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: movies.length,
+                              itemBuilder: (context, movieIndex) {
+                                return MovieCard(
+                                  movie: movies[movieIndex],
+                                  isFromWishlist: true,
+                                  viewType: "List",
+                                  onTap: () => _navigateToEditMovieScreen(movies[movieIndex]),
+                                );
+                              },
+                            ),
+                          ],
+                        );
+                      } else {
+                        return MovieCard(
+                          movie: _filteredMovies[index],
+                          isFromWishlist: true,
+                          viewType: "List",
+                          onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
+                        );
+                      }
                     },
                   )
-                : GridView.builder(
+                :_groupByDirector ? ListView.builder(
+                    itemCount: _groupByDirector ? groupedMovies.keys.length : _filteredMovies.length,
+                    itemBuilder: (context, index) {
+                        String directorName = groupedMovies.keys.elementAt(index);
+                        List<Movie> movies = groupedMovies[directorName]!;
+                        return ExpansionTile(
+                          title: Text(directorName, style: const TextStyle(color: Colors.white)),
+                          children: [
+                            GridView.builder(
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, // 3 cards per row
+                      childAspectRatio: 0.64, // Adjust the aspect ratio as needed
+                    ),
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: movies.length,
+                              itemBuilder: (context, movieIndex) {
+                                return MovieCard(
+                                  movie: movies[movieIndex],
+                                  isFromWishlist: true,
+                                  viewType: "Card",
+                                  onTap: () => _navigateToEditMovieScreen(movies[movieIndex]),
+                                );
+                              },
+                            ),
+                          ],
+                        );
+                    },
+                  ) : GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, // 3 cards per row
                       childAspectRatio: 0.64, // Adjust the aspect ratio as needed

@@ -124,7 +124,7 @@ double screenHeight = MediaQuery.of(context).size.height;
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(height: screenHeight * 0.01,),
+            SizedBox(height: screenHeight * 0.005,),
             if (!isFromWishlist)
                         Padding(
                           padding: EdgeInsets.fromLTRB(screenWidth * 0, 0, 0, 0),
@@ -152,7 +152,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                             direction: Axis.horizontal,
                             allowHalfRating: true,
                             itemCount: 5,
-                            itemSize: 10,
+                            itemSize: 15,
                             itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
                             onRatingUpdate: (rating) {
                               print(rating);
