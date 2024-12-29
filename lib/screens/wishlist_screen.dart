@@ -24,7 +24,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
   String _viewType = 'List'; // Default view type
-  bool _groupByDirector = false; //
+  bool _groupByDirector = false; // Track if grouping by director
 
   @override
   void initState() {
@@ -56,13 +56,13 @@ class _WishlistScreenState extends State<WishlistScreen> {
         comparison = a.movieName.compareTo(b.movieName);
       } else if (_sortBy == 'releaseDate') {
         comparison = a.releaseDate.compareTo(b.releaseDate);
-      } else if(_sortBy == 'directorName'){
+      } else if (_sortBy == 'directorName') {
         comparison = a.directorName.compareTo(b.directorName);
-      }  else if(_sortBy == 'imdbRating'){
+      } else if (_sortBy == 'imdbRating') {
         comparison = a.imdbRating!.compareTo(b.imdbRating!);
-      } else if(_sortBy == 'rtRating'){
+      } else if (_sortBy == 'rtRating') {
         comparison = a.rtRating!.compareTo(b.rtRating!);
-      } else if(_sortBy == 'runtime'){
+      } else if (_sortBy == 'runtime') {
         comparison = a.runtime!.compareTo(b.runtime!);
       } else if (_sortBy == 'hypeScore') {
         comparison = a.hypeScore!.compareTo(b.hypeScore!);
@@ -134,7 +134,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('viewType', viewType);
   }
-    void _toggleGroupByDirector(String value) {
+
+  void _toggleGroupByDirector(String value) {
     setState(() {
       _groupByDirector = value == 'Director';
     });
@@ -144,20 +145,27 @@ class _WishlistScreenState extends State<WishlistScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-        Map<String, List<Movie>> groupedMovies = {};
+
+    // Group movies by director if _groupByDirector is true
+    Map<String, List<Movie>> groupedMovies = {};
     if (_groupByDirector) {
       for (var movie in _filteredMovies) {
-        if (!groupedMovies.containsKey(movie.directorName)) {
-          groupedMovies[movie.directorName] = [];
+        // Split director names by comma and trim whitespace
+        List<String> directors = movie.directorName.split(',').map((name) => name.trim()).toList();
+        for (var director in directors) {
+          if (!groupedMovies.containsKey(director)) {
+            groupedMovies[director] = [];
+          }
+          groupedMovies[director]!.add(movie);
         }
-        groupedMovies[movie.directorName]!.add(movie);
       }
     }
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-         leading: !_isSearching ?
+        leading: !_isSearching ?
           PopupMenuButton<String>(
             icon: const Icon(Icons.view_list, color: Colors.white),
             onSelected: _changeViewType,
@@ -204,11 +212,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
             icon: const Icon(Icons.sort, color: Colors.white),
             onPressed: _showSortOptions,
           ),
-            PopupMenuButton<String>(
-            icon: const Icon(Icons.group, color: Colors.white),
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.filter_alt, color: Colors.white),
             onSelected: _toggleGroupByDirector,
+            color: Color.fromARGB(255, 44, 50, 60),
             itemBuilder: (BuildContext context) {
-              return {'Director', 'None'}.map((String choice) {
+              return {'None', 'Director'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice, style: const TextStyle(color: Colors.white)),
@@ -230,21 +239,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         List<Movie> movies = groupedMovies[directorName]!;
                         return ExpansionTile(
                           title: Text(directorName, style: const TextStyle(color: Colors.white)),
-                          children: [
-                            ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: movies.length,
-                              itemBuilder: (context, movieIndex) {
-                                return MovieCard(
-                                  movie: movies[movieIndex],
-                                  isFromWishlist: true,
-                                  viewType: "List",
-                                  onTap: () => _navigateToEditMovieScreen(movies[movieIndex]),
-                                );
-                              },
-                            ),
-                          ],
+                          children: movies.map((movie) {
+                            return MovieCard(
+                              movie: movie,
+                              isFromWishlist: true,
+                              viewType: "List",
+                              onTap: () => _navigateToEditMovieScreen(movie),
+                            );
+                          }).toList(),
                         );
                       } else {
                         return MovieCard(
@@ -311,7 +313,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
             MaterialPageRoute(
               builder: (context) => const AddMovieScreen(isFromWishlist: true),
             ),
-          
           ).then((_) {
             _fetchMovies(); // Refresh the movie list when returning
           });

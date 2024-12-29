@@ -154,10 +154,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
     Map<String, List<Movie>> groupedMovies = {};
     if (_groupByDirector) {
       for (var movie in _filteredMovies) {
-        if (!groupedMovies.containsKey(movie.directorName)) {
-          groupedMovies[movie.directorName] = [];
+        // Split director names by comma and trim whitespace
+        List<String> directors = movie.directorName.split(',').map((name) => name.trim()).toList();
+        for (var director in directors) {
+          if (!groupedMovies.containsKey(director)) {
+            groupedMovies[director] = [];
+          }
+          groupedMovies[director]!.add(movie);
         }
-        groupedMovies[movie.directorName]!.add(movie);
       }
     }
 
@@ -212,11 +216,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
             icon: const Icon(Icons.sort, color: Colors.white),
             onPressed: _showSortOptions,
           ),
-                   PopupMenuButton<String>(
-            icon: const Icon(Icons.group, color: Colors.white),
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.filter_alt, color: Colors.white),
             onSelected: _toggleGroupByDirector,
+            color: Color.fromARGB(255, 44, 50, 60),
             itemBuilder: (BuildContext context) {
-              return {'Director', 'None'}.map((String choice) {
+              return { 'None', 'Director'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice, style: const TextStyle(color: Colors.white)),
@@ -238,21 +243,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
                         List<Movie> movies = groupedMovies[directorName]!;
                         return ExpansionTile(
                           title: Text(directorName, style: const TextStyle(color: Colors.white)),
-                          children: [
-                            ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: movies.length,
-                              itemBuilder: (context, movieIndex) {
-                                return MovieCard(
-                                  movie: movies[movieIndex],
-                                  isFromWishlist: false,
-                                  viewType: "List",
-                                  onTap: () => _navigateToEditMovieScreen(movies[movieIndex]),
-                                );
-                              },
-                            ),
-                          ],
+                          children: movies.map((movie) {
+                            return MovieCard(
+                              movie: movie,
+                              isFromWishlist: false,
+                              viewType: "List",
+                              onTap: () => _navigateToEditMovieScreen(movie),
+                            );
+                          }).toList(),
                         );
                       } else {
                         return MovieCard(
