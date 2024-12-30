@@ -142,6 +142,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   void _toggleGroupByDirector(String value) {
     setState(() {
       _groupByDirector = value == 'Director';
+      //_filteredMovies.sort((a, b) => a.directorName.compareTo(b.directorName));
     });
   }
 
@@ -175,7 +176,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
             onSelected: _changeViewType,
             color: Color.fromARGB(255, 44, 50, 60),
             itemBuilder: (BuildContext context) {
-              return {'List', 'Card'}.map((String choice) {
+              return {'List', 'List(Small)', 'Card', 'Poster'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice, style: TextStyle(color: Colors.white),),
@@ -216,6 +217,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
             icon: const Icon(Icons.sort, color: Colors.white),
             onPressed: _showSortOptions,
           ),
+          if(!_isSearching)
           PopupMenuButton<String>(
             icon: const Icon(Icons.filter_alt, color: Colors.white),
             onSelected: _toggleGroupByDirector,
@@ -234,20 +236,24 @@ class _CollectionScreenState extends State<CollectionScreen> {
       body: Column(
         children: [
           Expanded(
-            child: _viewType == 'List'
+            child: _viewType.contains('List')
                 ? ListView.builder(
                     itemCount: _groupByDirector ? groupedMovies.keys.length : _filteredMovies.length,
                     itemBuilder: (context, index) {
                       if (_groupByDirector) {
-                        String directorName = groupedMovies.keys.elementAt(index);
+                        //to sort directorCards by directorName
+                        List<String> sortedDirectors = groupedMovies.keys.toList()..sort();
+                        String directorName = sortedDirectors[index];
                         List<Movie> movies = groupedMovies[directorName]!;
+                        movies.sort((a, b) => a.directorName.compareTo(b.directorName),);
+                        //
                         return ExpansionTile(
                           title: Text(directorName, style: const TextStyle(color: Colors.white)),
                           children: movies.map((movie) {
                             return MovieCard(
                               movie: movie,
                               isFromWishlist: false,
-                              viewType: "List",
+                              viewType: _viewType,
                               onTap: () => _navigateToEditMovieScreen(movie),
                             );
                           }).toList(),
@@ -256,17 +262,20 @@ class _CollectionScreenState extends State<CollectionScreen> {
                         return MovieCard(
                           movie: _filteredMovies[index],
                           isFromWishlist: false,
-                          viewType: "List",
+                          viewType: _viewType,
                           onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
                         );
                       }
                     },
-                  )
-                :_groupByDirector ? ListView.builder(
+                  ) :_groupByDirector ? ListView.builder(
                     itemCount: _groupByDirector ? groupedMovies.keys.length : _filteredMovies.length,
                     itemBuilder: (context, index) {
-                        String directorName = groupedMovies.keys.elementAt(index);
+                        //to sort directorCards by directorName
+                        List<String> sortedDirectors = groupedMovies.keys.toList()..sort();
+                        String directorName = sortedDirectors[index];
                         List<Movie> movies = groupedMovies[directorName]!;
+                        movies.sort((a, b) => a.directorName.compareTo(b.directorName),);
+                        //
                         return ExpansionTile(
                           title: Text(directorName, style: const TextStyle(color: Colors.white)),
                           children: [
@@ -282,7 +291,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                                 return MovieCard(
                                   movie: movies[movieIndex],
                                   isFromWishlist: false,
-                                  viewType: "Card",
+                                  viewType: _viewType,
                                   onTap: () => _navigateToEditMovieScreen(movies[movieIndex]),
                                 );
                               },
@@ -300,7 +309,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                       return MovieCard(
                         movie: _filteredMovies[index],
                         isFromWishlist: false,
-                        viewType: "Card",
+                        viewType: _viewType,
                         onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
                       );
                     },

@@ -208,10 +208,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         final updatedMovie = widget.movie!;
         updatedMovie.watched = widget.isFromWishlist ? true : false;
         if (widget.isFromWishlist) {
-          updatedMovie.hypeScore = null;
+          updatedMovie.hypeScore = 0.0;
         } else {
-          updatedMovie.userScore = null;
-          updatedMovie.watchDate = null;
+          updatedMovie.userScore = 0.0;
+          updatedMovie.watchDate = DateTime.now();
         }
         await service.updateMovie(updatedMovie);
         if (mounted) {
@@ -256,6 +256,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       appBar: AppBar(
         title: const Text('Film Detayları', style: TextStyle(color: Colors.white)),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
             icon: const Icon(Icons.input, color: Colors.white),
