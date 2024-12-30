@@ -51,7 +51,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       });
     }
   }
-    Future<void> _watchDate(BuildContext context) async {
+
+  Future<void> _watchDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: _watchedDate,
@@ -107,7 +108,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
-
   void _saveMovie() async {
     if (_formKey.currentState!.validate()) {
       final supabase = Supabase.instance.client;
@@ -160,8 +160,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   }
 
   void _deleteMovie() async {
-          final supabase = Supabase.instance.client;
-      final service = SupabaseService(supabase);
+    final supabase = Supabase.instance.client;
+    final service = SupabaseService(supabase);
     try {
       await service.deleteMovie(widget.movie!.movieName);
       if (mounted) {
@@ -175,6 +175,57 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Silme hatası: $e')),
         );
+      }
+    }
+  }
+
+  void _toggleWatchedStatus() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor:  Color.fromARGB(255, 44, 50, 60),
+          title: Spacer(),
+          content: Text(textAlign: TextAlign.center, style: TextStyle(fontSize: 18, color: Colors.white), widget.isFromWishlist ? 'Filmi koleksiyona taşımak istiyor musunuz?' : 'Filmi izlenme listesine taşımak istiyor musunuz?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true), // User confirmed
+              child: const Text('Evet', style: TextStyle(fontSize: 16,color: Colors.white,)),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false), // User declined
+              child: const Text('Hayır', style: TextStyle(fontSize: 16, color: Colors.white,)),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirm == true) {
+      final supabase = Supabase.instance.client;
+      final service = SupabaseService(supabase);
+      try {
+        final updatedMovie = widget.movie!;
+        updatedMovie.watched = widget.isFromWishlist ? true : false;
+        if (widget.isFromWishlist) {
+          updatedMovie.hypeScore = null;
+        } else {
+          updatedMovie.userScore = null;
+          updatedMovie.watchDate = null;
+        }
+        await service.updateMovie(updatedMovie);
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(widget.isFromWishlist ? 'Film koleksiyona taşındı.' : 'Film istek listesine taşındı.')),
+          );
+          Navigator.pop(context, true);
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Güncelleme hatası: $e')),
+          );
+        }
       }
     }
   }
@@ -203,8 +254,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: const Text('Filmi Düzenle', style: TextStyle(color: Colors.white)),
+        title: const Text('Film Detayları', style: TextStyle(color: Colors.white)),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.input, color: Colors.white),
+            onPressed: _toggleWatchedStatus,
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -225,7 +282,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               TextFormField(
                 controller: _directorNameController,
-                  decoration: const InputDecoration(labelText: 'Yönetmen *', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'Yönetmen *', labelStyle: TextStyle(color: Colors.white54)),
                 style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -244,13 +301,13 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 ),
               TextFormField(
                 controller: _plotController,
-                decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54)),
                 maxLines: 3,
                 style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _runtimeController,
-                decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54)),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
@@ -265,7 +322,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               TextFormField(
                 controller: _imdbRatingController,
-                decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54)),
                 keyboardType: TextInputType.number,
                 style: const TextStyle(color: Colors.white),
                 validator: (value) {
@@ -280,7 +337,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               TextFormField(
                 controller: _rtRatingController,
-                decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı', labelStyle: TextStyle(color: Colors.white54)),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
@@ -295,20 +352,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               TextFormField(
                 controller: _writersController,
-                decoration: const InputDecoration(
-                  labelText: 'Senaristler',
-                 //helperText: 'Virgülle ayırarak yazın',
-                  labelStyle: TextStyle(color: Colors.white54),
-                ),
+                decoration: const InputDecoration(labelText: 'Senaristler', labelStyle: TextStyle(color: Colors.white54)),
                 style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _actorsController,
-                decoration: const InputDecoration(
-                  labelText: 'Oyuncular',
-                  //helperText: 'Virgülle ayırarak yazın',
-                  labelStyle: TextStyle(color: Colors.white54),
-                ),
+                decoration: const InputDecoration(labelText: 'Oyuncular', labelStyle: TextStyle(color: Colors.white54)),
                 style: const TextStyle(color: Colors.white),
                 //User Section
               ),
@@ -318,7 +367,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
                     style: const TextStyle(color: Colors.white54),
                   ),
-                  trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
+                  trailing: const Icon(Icons.calendar_today, color: Colors.white54),
                   onTap: () => _watchDate(context),
                 ),
                 RatingBar.builder(
@@ -336,10 +385,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     });
                   },
                 ),
-              
               },
               if (widget.isFromWishlist)
-              RatingBar.builder(
+                RatingBar.builder(
                   itemSize: 30,
                   initialRating: _hypeScore,
                   minRating: 0,
@@ -354,7 +402,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     });
                   },
                 ),
-              SizedBox(height: 30,),
+              SizedBox(height: 30),
               GestureDetector(
                 onTap: _isUploading ? null : _pickImage,
                 child: Container(
@@ -378,8 +426,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.cloud_upload, size: 75, color: Colors.white54,),
-                                  Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54),),
+                                  Icon(Icons.cloud_upload, size: 75, color: Colors.white54),
+                                  Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54)),
                                 ],
                               ),
                             ),

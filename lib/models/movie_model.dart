@@ -8,12 +8,22 @@ class Movie {
   final double? rtRating;
   final List<String>? writers;
   final List<String>? actors;
-  final bool watched;
+  bool watched;
   final String imageLink;
   final String userEmail;
-  final DateTime? watchDate;
-  final double? userScore;
-  final double? hypeScore;
+  DateTime? watchDate;
+  double? userScore;
+  double? hypeScore;
+  //final List<String>? genres;
+  //final double? popularity;
+  //final String? productionCompany;
+  /*"cast": [
+        {"id": 123456, "name": "Tessa Thompson", "character": "Lady", "order": 1},
+        {"id": 654321, "name": "Justin Theroux", "character": "Tramp", "order": 2}
+      ],*/
+  //final int customSortOrder;
+  //final double? budget;
+  //final double? revenue;
 
   Movie({
     required this.movieName,
