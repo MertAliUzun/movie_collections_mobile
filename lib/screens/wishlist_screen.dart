@@ -279,7 +279,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                             GridView.builder(
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: 0.64, // Adjust the aspect ratio as needed
+                      childAspectRatio: _viewType == "Card" ? 0.64 : 0.55, // Adjust the aspect ratio as needed
                     ),
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
@@ -299,7 +299,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   ) : GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: 0.64, // Adjust the aspect ratio as needed
+                      childAspectRatio: _viewType == "Card" ? 0.64 : 0.55, // Adjust the aspect ratio as needed
                     ),
                     itemCount: _filteredMovies.length,
                     itemBuilder: (context, index) {

@@ -199,9 +199,10 @@ double screenHeight = MediaQuery.of(context).size.height;
                 errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
               ),
             ),
+            SizedBox(height: screenHeight*0.03,),
           ],
         ),
-
+      
       ),
     );
   }
