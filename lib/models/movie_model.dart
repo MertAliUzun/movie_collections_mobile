@@ -22,6 +22,7 @@ class Movie {
         {"id": 654321, "name": "Justin Theroux", "character": "Tramp", "order": 2}
       ],*/
   //final int customSortOrder;
+  //final String? customSortTitle
   //final double? budget;
   //final double? revenue;
 

@@ -187,7 +187,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       builder: (context) {
         return AlertDialog(
           backgroundColor:  Color.fromARGB(255, 44, 50, 60),
-          title: Spacer(),
           content: Text(textAlign: TextAlign.center, style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.white), widget.isFromWishlist ? 'Filmi koleksiyona taşımak istiyor musunuz?' : 'Filmi izlenme listesine taşımak istiyor musunuz?'),
           actions: [
             TextButton(
