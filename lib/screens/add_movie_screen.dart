@@ -7,6 +7,7 @@ import 'dart:async';
 import '../models/movie_model.dart';
 import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
+import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class AddMovieScreen extends StatefulWidget {
@@ -42,6 +43,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   List<Map<String, dynamic>> _searchResults = [];
   bool _isSearching = false;
   final _omdbService = OmdbService();
+  final _tmdbService = TmdbService();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -120,7 +122,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           _isSearching = true;
         });
         try {
-          final results = await _omdbService.searchMovies(query);
+          //final results = await _omdbService.searchMovies(query);
+          final results = await _tmdbService.searchMovies(query);
           setState(() {
             _searchResults = results;
             _isSearching = false;
@@ -143,11 +146,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     });
   }
 
-  Future<void> _selectMovie(String imdbId) async {
+  //Future<void> _selectMovie(String imdbId) async {
+  Future<void> _selectMovie(int movieId) async {
     try {
-      final movieDetails = await _omdbService.getMovieDetails(imdbId);
+      //final movieDetails = await _omdbService.getMovieDetails(imdbId);
+      final movieDetails = await _tmdbService.getMovieDetails(movieId);
       if (movieDetails != null) {
         setState(() {
+          /*
           _movieNameController.text = movieDetails['Title'] ?? '';
           _directorNameController.text = movieDetails['Director'] ?? '';
           _plotController.text = movieDetails['Plot'] ?? '';
@@ -176,9 +182,30 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             } catch (e) {
               print('Tarih parse edilemedi: ${movieDetails['Released']}');
             }
+            */
+          _movieNameController.text = movieDetails['title'] ?? '';
+          _directorNameController.text = movieDetails['credits']['crew']
+              .firstWhere((member) => member['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
+          _plotController.text = movieDetails['overview'] ?? '';
+          _runtimeController.text = movieDetails['runtime']?.toString() ?? '';
+          _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
+            movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
+            movieDetails['vote_average']?.toString() ?? '';
+          _rtRatingController.text = '0';
+          _writersController.text = movieDetails['credits']['crew']
+              .where((member) => member['job'] == 'Writer')
+              .map((writer) => writer['name'])
+              .join(', ') ?? '';
+          _actorsController.text = movieDetails['credits']['cast']
+              .take(5)
+              .map((actor) => actor['name'])
+              .join(', ') ?? '';
+
+          if (movieDetails['release_date'] != null) {
+            _selectedDate = DateTime.parse(movieDetails['release_date']);
           }
-          
-          _imageLink = movieDetails['Poster'] ?? '';
+          //_imageLink = movieDetails['Poster'] ?? '';
+          _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
         });
         _searchController.clear();
         _searchResults = [];
@@ -307,17 +334,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       itemBuilder: (context, index) {
                         final movie = _searchResults[index];
                         return ListTile(
-                          leading: movie['Poster'] != 'N/A'
+                          leading: movie['poster_path'] != null
                               ? Image.network(
-                                  movie['Poster'],
+                                  'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
                                   width: 50,
                                   errorBuilder: (context, error, stackTrace) =>
-                                      const Icon(Icons.movie, color: Colors.white54,),
+                                      const Icon(Icons.movie, color: Colors.white54),
                                 )
-                              : const Icon(Icons.movie, color: Colors.white54,),
-                          title: Text(movie['Title'], style: const TextStyle(color: Colors.white70),),
-                          subtitle: Text(movie['Year'], style: const TextStyle(color: Colors.white54),),
-                          onTap: () => _selectMovie(movie['imdbID']),
+                              : const Icon(Icons.movie, color: Colors.white54),
+                          title: Text(movie['title'], style: const TextStyle(color: Colors.white70)),
+                          subtitle: Text(movie['release_date'] != null
+                              ? movie['release_date'].split('-')[0]
+                              : 'Unknown', style: const TextStyle(color: Colors.white54)),
+                          onTap: () => _selectMovie(movie['id']),
                         );
                       },
                     ),

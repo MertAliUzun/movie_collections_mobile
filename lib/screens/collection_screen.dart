@@ -185,7 +185,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
             },
           ) : null,
         title: !_isSearching 
-        ? Text('Koleksiyonunda ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
+        ? Text('${_movies.length} Film', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
           width: screenWidth * 0.8,
           height: screenHeight * 0.05,

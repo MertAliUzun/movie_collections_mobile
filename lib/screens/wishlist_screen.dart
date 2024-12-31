@@ -181,7 +181,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             },
           ) : null,
         title: !_isSearching 
-        ? Text('İzlenme Listenizde ${_movies.length} film bulunuyor', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
+        ? Text('${_movies.length} Film', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
           width: screenWidth * 0.8,
           height: screenHeight * 0.05,
