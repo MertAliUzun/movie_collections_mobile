@@ -27,9 +27,15 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final _plotController = TextEditingController();
   final _runtimeController = TextEditingController();
   final _imdbRatingController = TextEditingController();
-  final _rtRatingController = TextEditingController();
   final _writersController = TextEditingController();
   final _actorsController = TextEditingController();
+  final _sortTitleController = TextEditingController();
+  final _genresController = TextEditingController();
+  final _productionCompanyController = TextEditingController();
+  final _countryController = TextEditingController();
+  final _popularityController = TextEditingController();
+  final _budgetController = TextEditingController();
+  final _revenueController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   DateTime _watchedDate = DateTime.now();
   double _userScore = 0.0;
@@ -191,9 +197,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
             movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
             movieDetails['vote_average']?.toString() ?? '';
-          _rtRatingController.text = '0';
           _writersController.text = movieDetails['credits']['crew']
-              .where((member) => member['job'] == 'Writer')
+              .where((member) => member['department'] == 'Writing')
               .map((writer) => writer['name'])
               .join(', ') ?? '';
           _actorsController.text = movieDetails['credits']['cast']
@@ -206,6 +211,18 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           }
           //_imageLink = movieDetails['Poster'] ?? '';
           _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
+          _genresController.text = movieDetails['genres'] != null 
+              ? movieDetails['genres'].map((genre) => genre['name']).join(', ') 
+              : '';
+          _productionCompanyController.text = movieDetails['production_companies'] != null 
+              ? movieDetails['production_companies'].map((company) => company['name']).join(', ') 
+              : '';
+          _countryController.text = movieDetails['production_countries'] != null 
+              ? movieDetails['production_countries'].map((country) => country['name']).join(', ') 
+              : '';
+          _popularityController.text = movieDetails['popularity']?.toString() ?? '';
+          _budgetController.text = movieDetails['budget']?.toString() ?? '';
+          _revenueController.text = movieDetails['revenue']?.toString() ?? '';
         });
         _searchController.clear();
         _searchResults = [];
@@ -235,21 +252,33 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         imdbRating: _imdbRatingController.text.isNotEmpty 
             ? double.tryParse(_imdbRatingController.text) 
             : null,
-        rtRating: _rtRatingController.text.isNotEmpty 
-            ? double.tryParse(_rtRatingController.text) 
-            : null,
         writers: _writersController.text.isNotEmpty 
             ? _writersController.text.split(',').map((e) => e.trim()).toList() 
             : null,
         actors: _actorsController.text.isNotEmpty 
             ? _actorsController.text.split(',').map((e) => e.trim()).toList() 
             : null,
+        watched: !widget.isFromWishlist,
+        imageLink: _imageLink ?? '',
+        userEmail: 'test@test.com', // Replace with actual user email if needed
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
         hypeScore: widget.isFromWishlist ? _hypeScore : null,
-        watched: !widget.isFromWishlist,
-        imageLink: _imageLink ?? '',
-        userEmail: 'test@test.com',
+        genres: _genresController.text.isNotEmpty 
+            ? _genresController.text.split(',').map((e) => e.trim()).toList() 
+            : null,
+        productionCompany: _productionCompanyController.text.isNotEmpty ? _productionCompanyController.text : null,
+        customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
+        country: _countryController.text.isNotEmpty ? _countryController.text : null,
+        popularity: _popularityController.text.isNotEmpty 
+            ? double.tryParse(_popularityController.text) 
+            : null,
+        budget: _budgetController.text.isNotEmpty 
+            ? double.tryParse(_budgetController.text) 
+            : null,
+        revenue: _revenueController.text.isNotEmpty 
+            ? double.tryParse(_revenueController.text) 
+            : null,
       );
 
       try {
@@ -279,11 +308,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _plotController.text = widget.movie!.plot ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
-      _rtRatingController.text = widget.movie!.rtRating?.toString() ?? '';
       _writersController.text = widget.movie!.writers?.join(', ') ?? '';
       _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
       _selectedDate = widget.movie!.releaseDate;
       _imageLink = widget.movie!.imageLink;
+      _sortTitleController.text = widget.movie!.customSortTitle ?? '';
     }
   }
 
@@ -355,7 +384,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _movieNameController,
-                decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54),),
+                decoration: const InputDecoration(labelText: 'Movie Title *', labelStyle: TextStyle(color: Colors.white54),),
                 style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -363,6 +392,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   }
                   return null;
                 },
+              ),
+              TextFormField(
+                controller: _sortTitleController,
+                decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
+                style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _directorNameController,
@@ -420,21 +454,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 },
               ),
               TextFormField(
-                controller: _rtRatingController,
-                decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı', labelStyle: TextStyle(color: Colors.white54),),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value != null && value.isNotEmpty) {
-                    final number = double.tryParse(value);
-                    if (number == null || number < 0 || number > 100) {
-                      return 'Geçerli bir puan girin (0-100)';
-                    }
-                  }
-                  return null;
-                },
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
                 controller: _writersController,
                 decoration: const InputDecoration(
                   labelText: 'Senaristler',
@@ -452,6 +471,39 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
                 style: const TextStyle(color: Colors.white),
                 //User Section
+              ),
+                            TextFormField(
+                controller: _genresController,
+                decoration: const InputDecoration(labelText: 'Genres', labelStyle: TextStyle(color: Colors.white54)),
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _productionCompanyController,
+                decoration: const InputDecoration(labelText: 'Production Company', labelStyle: TextStyle(color: Colors.white54)),
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _countryController,
+                decoration: const InputDecoration(labelText: 'Country', labelStyle: TextStyle(color: Colors.white54)),
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _popularityController,
+                decoration: const InputDecoration(labelText: 'Popularity', labelStyle: TextStyle(color: Colors.white54)),
+                keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _budgetController,
+                decoration: const InputDecoration(labelText: 'Budget', labelStyle: TextStyle(color: Colors.white54)),
+                keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _revenueController,
+                decoration: const InputDecoration(labelText: 'Revenue', labelStyle: TextStyle(color: Colors.white54)),
+                keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.white),
               ),
               SizedBox(height: 10,),
               if (!widget.isFromWishlist) ...{
@@ -549,13 +601,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     _debounce?.cancel();
     _searchController.dispose();
     _movieNameController.dispose();
+    _sortTitleController.dispose();
     _directorNameController.dispose();
     _plotController.dispose();
     _runtimeController.dispose();
     _imdbRatingController.dispose();
-    _rtRatingController.dispose();
     _writersController.dispose();
     _actorsController.dispose();
+    _genresController.dispose();
+    _productionCompanyController.dispose();
+    _countryController.dispose();
+    _popularityController.dispose();
+    _budgetController.dispose();
+    _revenueController.dispose();
     super.dispose();
   }
 } 

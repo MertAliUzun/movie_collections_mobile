@@ -26,7 +26,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final _plotController = TextEditingController();
   final _runtimeController = TextEditingController();
   final _imdbRatingController = TextEditingController();
-  final _rtRatingController = TextEditingController();
   final _writersController = TextEditingController();
   final _actorsController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
@@ -123,9 +122,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             : null,
         imdbRating: _imdbRatingController.text.isNotEmpty 
             ? double.tryParse(_imdbRatingController.text) 
-            : null,
-        rtRating: _rtRatingController.text.isNotEmpty 
-            ? double.tryParse(_rtRatingController.text) 
             : null,
         writers: _writersController.text.isNotEmpty 
             ? _writersController.text.split(',').map((e) => e.trim()).toList() 
@@ -240,7 +236,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _plotController.text = widget.movie!.plot ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
-      _rtRatingController.text = widget.movie!.rtRating?.toString() ?? '';
       _writersController.text = widget.movie!.writers?.join(', ') ?? '';
       _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
       _selectedDate = widget.movie!.releaseDate;
@@ -336,21 +331,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   }
                   return null;
                 },
-              ),
-              TextFormField(
-                controller: _rtRatingController,
-                decoration: const InputDecoration(labelText: 'Rotten Tomatoes Puanı', labelStyle: TextStyle(color: Colors.white54)),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value != null && value.isNotEmpty) {
-                    final number = double.tryParse(value);
-                    if (number == null || number < 0 || number > 100) {
-                      return 'Geçerli bir puan girin (0-100)';
-                    }
-                  }
-                  return null;
-                },
-                style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _writersController,
@@ -476,7 +456,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     _plotController.dispose();
     _runtimeController.dispose();
     _imdbRatingController.dispose();
-    _rtRatingController.dispose();
     _writersController.dispose();
     _actorsController.dispose();
     super.dispose();

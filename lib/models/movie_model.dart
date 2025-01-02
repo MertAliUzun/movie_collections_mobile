@@ -5,7 +5,6 @@ class Movie {
   final String? plot;
   final int? runtime;
   final double? imdbRating;
-  final double? rtRating;
   final List<String>? writers;
   final List<String>? actors;
   bool watched;
@@ -14,13 +13,15 @@ class Movie {
   DateTime? watchDate;
   double? userScore;
   double? hypeScore;
-  //final List<String>? genres;
-  //final double? popularity;
-  //final String? productionCompany;
-  //final String? customSortTitle
-  //final double? budget;
-  //final double? revenue;
+  final List<String>? genres;
+  final String? productionCompany;
+  final String? customSortTitle;
+  final String? country;
+  final double? popularity;
+  final double? budget;
+  final double? revenue;
   //final int customSortOrder;
+ 
   //delete writers
     /*"cast": [
         {"id": 123456, "name": "Tessa Thompson", "character": "Lady", "order": 1},
@@ -34,7 +35,6 @@ class Movie {
     this.plot,
     this.runtime,
     this.imdbRating,
-    this.rtRating,
     this.writers,
     this.actors,
     required this.watched,
@@ -43,6 +43,13 @@ class Movie {
     this.watchDate,
     this.userScore,
     this.hypeScore,
+    this.genres,
+    this.productionCompany,
+    this.customSortTitle,
+    this.country,
+    this.popularity,   
+    this.budget,
+    this.revenue,
   });
 
   Map<String, dynamic> toJson() {
@@ -53,7 +60,6 @@ class Movie {
       'plot': plot,
       'runtime': runtime,
       'imdb_rating': imdbRating,
-      'rt_rating': rtRating,
       'writers': writers,
       'actors': actors,
       'watched': watched,
@@ -62,6 +68,13 @@ class Movie {
       'watch_date': watchDate?.toIso8601String(),
       'user_score': userScore,
       'hype_score': hypeScore,
+      'genres': genres,
+      'production_company': productionCompany,
+      'custom_sort_title' : customSortTitle,
+      'country' : country,
+      'popularity': popularity,
+      'budget' : budget,
+      'revenue' : revenue,
     };
   }
 
@@ -73,7 +86,6 @@ class Movie {
       plot: json['plot'],
       runtime: json['runtime'],
       imdbRating: json['imdb_rating']?.toDouble(),
-      rtRating: json['rt_rating']?.toDouble(),
       writers: json['writers'] != null ? List<String>.from(json['writers']) : null,
       actors: json['actors'] != null ? List<String>.from(json['actors']) : null,
       watched: json['watched'],
@@ -82,6 +94,13 @@ class Movie {
       watchDate: json['watch_date'] != null ? DateTime.parse(json['watch_date']) : null,
       userScore: json['user_score']?.toDouble(),
       hypeScore: json['hype_score']?.toDouble(),
+      genres: json['genres'] != null ? List<String>.from(json['genres']) : null,
+      productionCompany: json['production_company'],
+      customSortTitle: json['custom_sort_title'],
+      country: json['country'],
+      popularity: json['popularity']?.toDouble(),
+      budget: json['budget']?.toDouble(),
+      revenue: json['revenue']?.toDouble(),
     );
   }
 } 
