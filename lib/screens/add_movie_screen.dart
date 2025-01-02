@@ -9,6 +9,8 @@ import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
 import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:intl/intl.dart';
+import 'package:country_flags/country_flags.dart';
 
 class AddMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -50,6 +52,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   bool _isSearching = false;
   final _omdbService = OmdbService();
   final _tmdbService = TmdbService();
+  List<String> _selectedGenres = [];
+  List<String> _selectedActors = [];
+  List<String> _selectedWriters = [];
+  List<String> _selectedProductionCompanies = [];
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -211,18 +217,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           }
           //_imageLink = movieDetails['Poster'] ?? '';
           _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
-          _genresController.text = movieDetails['genres'] != null 
-              ? movieDetails['genres'].map((genre) => genre['name']).join(', ') 
-              : '';
-          _productionCompanyController.text = movieDetails['production_companies'] != null 
-              ? movieDetails['production_companies'].map((company) => company['name']).join(', ') 
-              : '';
+
+          // Populate genres safely
+          _selectedGenres = movieDetails['genres'] != null 
+              ? List<String>.from(movieDetails['genres'].take(4).map((genre) => genre['name'])) 
+              : [];
+          _selectedActors = movieDetails['credits']['cast'] != null 
+              ? List<String>.from(movieDetails['credits']['cast'].take(6).map((actor) => actor['name'])) 
+              : [];
+          _selectedWriters = movieDetails['credits']['crew'] != null 
+              ? List<String>.from(movieDetails['credits']['crew'].where((member) => member['department'] == 'Writing').take(6).map((writer) => writer['name'])) 
+              : [];
+          _selectedProductionCompanies = movieDetails['production_companies'] != null 
+              ? List<String>.from(movieDetails['production_companies'].take(2).map((company) => company['name']))
+              : [];
           _countryController.text = movieDetails['production_countries'] != null 
-              ? movieDetails['production_countries'].map((country) => country['name']).join(', ') 
+              ? movieDetails['production_countries'].take(1).map((country) => country['iso_3166_1']).join(', ') 
               : '';
           _popularityController.text = movieDetails['popularity']?.toString() ?? '';
           _budgetController.text = movieDetails['budget']?.toString() ?? '';
+          //_budgetController.text = _formatCurrency(double.tryParse(_budgetController.text));
           _revenueController.text = movieDetails['revenue']?.toString() ?? '';
+          //_revenueController.text = _formatCurrency(double.tryParse(_revenueController.text));
         });
         _searchController.clear();
         _searchResults = [];
@@ -267,7 +283,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         genres: _genresController.text.isNotEmpty 
             ? _genresController.text.split(',').map((e) => e.trim()).toList() 
             : null,
-        productionCompany: _productionCompanyController.text.isNotEmpty ? _productionCompanyController.text : null,
+        productionCompany: _productionCompanyController.text.isNotEmpty 
+            ? _productionCompanyController.text.split(',').map((e) => e.trim()).toList() 
+            : null,
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
         country: _countryController.text.isNotEmpty ? _countryController.text : null,
         popularity: _popularityController.text.isNotEmpty 
@@ -299,6 +317,249 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
+  Future<void> _addGenre() async {
+    String? genre = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String input = '';
+        return AlertDialog(
+          title: const Text('Add Genre'),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter genre'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(input);
+              },
+              child: const Text('Add'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (genre != null && genre.isNotEmpty) {
+      setState(() {
+        _selectedGenres.add(genre);
+      });
+    }
+  }
+
+  void _editDirector() {
+    showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String input = _directorNameController.text; // Pre-fill with current director name
+        return AlertDialog(
+          title: const Text('Edit Director'),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter director name'),
+            controller: TextEditingController(text: input), // Set initial text
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _directorNameController.text = input; // Update the director name
+                });
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _deleteDirector() {
+    // Logic to delete the director
+    setState(() {
+      _directorNameController.clear(); // Clear the director name
+    });
+  }
+
+  Future<void> _addActor() async {
+    String? actor = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String input = '';
+        return AlertDialog(
+          title: const Text('Add Actor'),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter actor name'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(input);
+              },
+              child: const Text('Add'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (actor != null && actor.isNotEmpty) {
+      setState(() {
+        _selectedActors.add(actor);
+      });
+    }
+  }
+
+  Future<void> _addWriter() async {
+    String? writer = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String input = '';
+        return AlertDialog(
+          title: const Text('Add Writer'),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter writer name'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(input);
+              },
+              child: const Text('Add'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (writer != null && writer.isNotEmpty) {
+      setState(() {
+        _selectedWriters.add(writer);
+      });
+    }
+  }
+
+  Future<void> _addProductionCompany() async {
+    String? company = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String input = '';
+        return AlertDialog(
+          title: const Text('Add Production Company'),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter production company name'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(input);
+              },
+              child: const Text('Add'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (company != null && company.isNotEmpty) {
+      setState(() {
+        _selectedProductionCompanies.add(company);
+      });
+    }
+  }
+
+  String _formatCurrency(double? value) {
+    if (value == null) return '\$0.00';
+    final formatter = NumberFormat.simpleCurrency(locale: 'en_US');
+    return formatter.format(value);
+  }
+
+  void _showAddOptionsMenu(BuildContext context) {
+    showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
+      items: [
+        PopupMenuItem<String>(
+          value: 'add_genre',
+          child: const Text('Add Genre'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_actor',
+          child: const Text('Add Actor'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_writer',
+          child: const Text('Add Writer'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_producer',
+          child: const Text('Add Production Company'),
+        ),
+      ],
+    ).then((value) {
+      if (value != null) {
+        switch (value) {
+          case 'add_genre':
+            _addGenre();
+            break;
+          case 'add_actor':
+            _addActor();
+            break;
+          case 'add_writer':
+            _addWriter();
+            break;
+          case 'add_producer':
+            _addProductionCompany();
+            break;
+        }
+      }
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -318,12 +579,20 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         title: const Text('Yeni Film Ekle', style: TextStyle(color: Colors.white),),
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () => _showAddOptionsMenu(context),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -398,17 +667,169 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
                 style: const TextStyle(color: Colors.white),
               ),
-              TextFormField(
-                controller: _directorNameController,
-                  decoration: const InputDecoration(labelText: 'Yönetmen *', labelStyle: TextStyle(color: Colors.white54),),
-                style: const TextStyle(color: Colors.white),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen yönetmen adını girin';
-                  }
-                  return null;
-                },
+              SizedBox(height: screenWidth * 0.1),
+              Text('Genres', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              _selectedGenres.isNotEmpty
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
+                        childAspectRatio: 1.5,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedGenres.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                _selectedGenres[index],
+                                style: TextStyle(color: Colors.white, 
+                                fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.07 : 
+                                _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No Genres Selected', style: TextStyle(color: Colors.white54)),
+              SizedBox(height: screenHeight * 0.02,),
+              Text('Director', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              Card(
+                color: const Color.fromARGB(255, 44, 50, 60),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
+                        child: Text(
+                          _directorNameController.text.isNotEmpty 
+                              ? _directorNameController.text 
+                              : 'No Directors',
+                          style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.05, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.edit, color: Colors.white),
+                            onPressed: _editDirector,
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: _deleteDirector,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
+              SizedBox(height: screenWidth * 0.05),
+              Text('Actors', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              const SizedBox(height: 10),
+              _selectedActors.isNotEmpty
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
+                        childAspectRatio: 2,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedActors.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                _selectedActors[index],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize: 
+                                _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No actors selected', style: TextStyle(color: Colors.white54)),
+              SizedBox(height: screenWidth * 0.05),
+              Text('Writers', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              const SizedBox(height: 10),
+              _selectedWriters.isNotEmpty
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
+                        childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedWriters.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                _selectedWriters[index],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize:
+                                _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No writers selected', style: TextStyle(color: Colors.white54)),
+              SizedBox(height: screenWidth * 0.05),
+              Text('Production Companies', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              const SizedBox(height: 10),
+              _selectedProductionCompanies.isNotEmpty
+                  ? GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1,
+                        childAspectRatio: 8,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedProductionCompanies.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                _selectedProductionCompanies[index],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No companies selected', style: TextStyle(color: Colors.white54)),
               ListTile(
                   title: Text(
                     'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
@@ -417,6 +838,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
                   onTap: () => _watchDate(context),
                 ),
+              if(_budgetController.text.isNotEmpty)
+              Row(
+                children: [
+                  Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                  SizedBox(width: screenWidth * 0.15,),
+                  Text('Revenue: ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                ],
+              ),
+              if(_countryController.text.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.fromLTRB(screenWidth * 0.03, screenWidth * 0.05, screenWidth * 0.1, 0),
+                child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
+              ),
               TextFormField(
                 controller: _plotController,
                 decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54),),
@@ -453,58 +887,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   return null;
                 },
               ),
-              TextFormField(
-                controller: _writersController,
-                decoration: const InputDecoration(
-                  labelText: 'Senaristler',
-                 //helperText: 'Virgülle ayırarak yazın',
-                  labelStyle: TextStyle(color: Colors.white54),
-                ),
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _actorsController,
-                decoration: const InputDecoration(
-                  labelText: 'Oyuncular',
-                  //helperText: 'Virgülle ayırarak yazın',
-                  labelStyle: TextStyle(color: Colors.white54),
-                ),
-                style: const TextStyle(color: Colors.white),
-                //User Section
-              ),
-                            TextFormField(
-                controller: _genresController,
-                decoration: const InputDecoration(labelText: 'Genres', labelStyle: TextStyle(color: Colors.white54)),
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _productionCompanyController,
-                decoration: const InputDecoration(labelText: 'Production Company', labelStyle: TextStyle(color: Colors.white54)),
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _countryController,
-                decoration: const InputDecoration(labelText: 'Country', labelStyle: TextStyle(color: Colors.white54)),
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
+              /*TextFormField(
                 controller: _popularityController,
                 decoration: const InputDecoration(labelText: 'Popularity', labelStyle: TextStyle(color: Colors.white54)),
                 keyboardType: TextInputType.number,
                 style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _budgetController,
-                decoration: const InputDecoration(labelText: 'Budget', labelStyle: TextStyle(color: Colors.white54)),
-                keyboardType: TextInputType.number,
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _revenueController,
-                decoration: const InputDecoration(labelText: 'Revenue', labelStyle: TextStyle(color: Colors.white54)),
-                keyboardType: TextInputType.number,
-                style: const TextStyle(color: Colors.white),
-              ),
+              ),*/
               SizedBox(height: 10,),
               if (!widget.isFromWishlist) ...{
                 ListTile(

@@ -14,7 +14,7 @@ class Movie {
   double? userScore;
   double? hypeScore;
   final List<String>? genres;
-  final String? productionCompany;
+  final List<String>? productionCompany;
   final String? customSortTitle;
   final String? country;
   final double? popularity;
@@ -95,7 +95,7 @@ class Movie {
       userScore: json['user_score']?.toDouble(),
       hypeScore: json['hype_score']?.toDouble(),
       genres: json['genres'] != null ? List<String>.from(json['genres']) : null,
-      productionCompany: json['production_company'],
+      productionCompany: json['production_companys'] != null ? List<String>.from(json['production_company']) : null,
       customSortTitle: json['custom_sort_title'],
       country: json['country'],
       popularity: json['popularity']?.toDouble(),
