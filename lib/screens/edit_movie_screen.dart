@@ -8,6 +8,8 @@ import '../models/movie_model.dart';
 import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:intl/intl.dart';
+import 'package:country_flags/country_flags.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -28,6 +30,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final _imdbRatingController = TextEditingController();
   final _writersController = TextEditingController();
   final _actorsController = TextEditingController();
+  final _productionCompanyController = TextEditingController();
+  final _countryController = TextEditingController();
+  final _popularityController = TextEditingController();
+  final _budgetController = TextEditingController();
+  final _revenueController = TextEditingController();
+  final _sortTitleController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   DateTime _watchedDate = DateTime.now();
   double _userScore = 0.0;
@@ -36,6 +44,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   bool _isUploading = false;
   String? _imageLink;
   final cloudinary = CloudinaryPublic('dper5kp88', 'YOUR_UPLOAD_PRESET', cache: false);
+  List<String> _selectedGenres = [];
+  List<String> _selectedActors = [];
+  List<String> _selectedWriters = [];
+  List<String> _selectedProductionCompanies = [];
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -51,7 +63,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
-  Future<void> _watchDate(BuildContext context) async {
+    Future<void> _watchDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: _watchedDate,
@@ -123,11 +135,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         imdbRating: _imdbRatingController.text.isNotEmpty 
             ? double.tryParse(_imdbRatingController.text) 
             : null,
-        writers: _writersController.text.isNotEmpty 
-            ? _writersController.text.split(',').map((e) => e.trim()).toList() 
+        writers: _selectedWriters.isNotEmpty 
+            ? _selectedWriters
             : null,
-        actors: _actorsController.text.isNotEmpty 
-            ? _actorsController.text.split(',').map((e) => e.trim()).toList() 
+        actors: _selectedActors.isNotEmpty 
+            ? _selectedActors 
             : null,
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
@@ -135,6 +147,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         watched: !widget.isFromWishlist,
         imageLink: _imageLink ?? '',
         userEmail: 'test@test.com',
+        genres: _selectedGenres,
+        productionCompany: _selectedProductionCompanies,
+        customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
       );
 
       try {
@@ -227,6 +242,149 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
+  void _showAddOptionsMenu(BuildContext context) {
+    showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
+      items: [
+        PopupMenuItem<String>(
+          value: 'add_genre',
+          child: const Text('Add Genre'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_actor',
+          child: const Text('Add Actor'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_writer',
+          child: const Text('Add Writer'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_producer',
+          child: const Text('Add Production Company'),
+        ),
+      ],
+    ).then((value) {
+      if (value != null) {
+        switch (value) {
+          case 'add_genre':
+            _addDetails('Add Genre', (genre) {
+              setState(() {
+                _selectedGenres.add(genre);
+              });
+            });
+            break;
+          case 'add_actor':
+            _addDetails('Add Actor', (actor) {
+              setState(() {
+                _selectedActors.add(actor);
+              });
+            });
+            break;
+          case 'add_writer':
+            _addDetails('Add Writer', (writer) {
+              setState(() {
+                _selectedWriters.add(writer);
+              });
+            });
+            break;
+          case 'add_producer':
+            _addDetails('Add Production Company', (company) {
+              setState(() {
+                _selectedProductionCompanies.add(company);
+              });
+            });
+            break;
+        }
+      }
+    });
+  }
+
+  Future<void> _addDetails(String title, Function(String) onAdd) async {
+    String input = '';
+    await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter name'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(input);
+              },
+              child: const Text('Add'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        );
+      },
+    ).then((value) {
+      if (value != null && value.isNotEmpty) {
+        onAdd(value);
+      }
+    });
+  }
+
+  void _editDirector() {
+    showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String input = _directorNameController.text; // Pre-fill with current director name
+        return AlertDialog(
+          title: const Text('Edit Director'),
+          content: TextField(
+            onChanged: (value) {
+              input = value;
+            },
+            decoration: const InputDecoration(hintText: 'Enter director name'),
+            controller: TextEditingController(text: input), // Set initial text
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _directorNameController.text = input; // Update the director name
+                });
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _deleteDirector() {
+    // Logic to delete the director
+    setState(() {
+      _directorNameController.clear(); // Clear the director name
+    });
+  }
+  
+  String _formatCurrency(double? value) {
+    if (value == null) return '\$0.00';
+    final formatter = NumberFormat.simpleCurrency(locale: 'en_US');
+    return formatter.format(value);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -238,15 +396,27 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
       _writersController.text = widget.movie!.writers?.join(', ') ?? '';
       _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
+      _productionCompanyController.text = widget.movie!.productionCompany?.join(', ') ?? '';
+      _countryController.text = widget.movie!.country ?? '';
+      _popularityController.text = widget.movie!.popularity?.toString() ?? '';
+      _budgetController.text = widget.movie!.budget?.toString() ?? '';
+      _revenueController.text = widget.movie!.revenue?.toString() ?? '';
       _selectedDate = widget.movie!.releaseDate;
       _imageLink = widget.movie!.imageLink;
       _userScore = widget.movie!.userScore ?? 0;
       _hypeScore = widget.movie!.hypeScore ?? 0;
+      _selectedGenres = widget.movie!.genres ?? [];
+      _selectedActors = widget.movie!.actors ?? [];
+      _selectedWriters = widget.movie!.writers ?? [];
+      _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
+      _sortTitleController.text = widget.movie!.customSortTitle ?? '';
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
@@ -257,6 +427,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           IconButton(
             icon: const Icon(Icons.input, color: Colors.white),
             onPressed: _toggleWatchedStatus,
+          ),
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () => _showAddOptionsMenu(context),
           ),
         ],
       ),
@@ -278,16 +452,173 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 },
               ),
               TextFormField(
-                controller: _directorNameController,
-                decoration: const InputDecoration(labelText: 'Yönetmen *', labelStyle: TextStyle(color: Colors.white54)),
+                controller: _sortTitleController,
+                decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
                 style: const TextStyle(color: Colors.white),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Lütfen yönetmen adını girin';
-                  }
-                  return null;
-                },
               ),
+              SizedBox(height: screenWidth * 0.1),
+              Text('Genres', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              _selectedGenres.isNotEmpty
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
+                        childAspectRatio: 1.5,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedGenres.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                _selectedGenres[index],
+                                style: TextStyle(color: Colors.white, 
+                                fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.07 : 
+                                _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No Genres Selected', style: TextStyle(color: Colors.white54)),
+              SizedBox(height: screenHeight * 0.02,),
+              Text('Director', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              Card(
+                color: const Color.fromARGB(255, 44, 50, 60),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
+                        child: Text(
+                          _directorNameController.text.isNotEmpty 
+                              ? _directorNameController.text 
+                              : 'No Directors',
+                          style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.05, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.edit, color: Colors.white),
+                            onPressed: _editDirector,
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: _deleteDirector,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: screenWidth * 0.05),
+              Text('Actors', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              const SizedBox(height: 10),
+              _selectedActors.isNotEmpty
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
+                        childAspectRatio: 2,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedActors.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                _selectedActors[index],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize: 
+                                _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No actors selected', style: TextStyle(color: Colors.white54)),
+              SizedBox(height: screenWidth * 0.05),
+              Text('Writers', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              const SizedBox(height: 10),
+              _selectedWriters.isNotEmpty
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
+                        childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedWriters.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                _selectedWriters[index],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize:
+                                _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No writers selected', style: TextStyle(color: Colors.white54)),
+              SizedBox(height: screenWidth * 0.05),
+              Text('Production Companies', style: TextStyle(color: Colors.white, fontSize: 16),),
+              Divider(height: 10, color: Colors.white60,),
+              SizedBox(height: screenWidth * 0.03),
+              const SizedBox(height: 10),
+              _selectedProductionCompanies.isNotEmpty
+                  ? GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1,
+                        childAspectRatio: 8,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _selectedProductionCompanies.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text(
+                                _selectedProductionCompanies[index],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : const Text('No companies selected', style: TextStyle(color: Colors.white54)),
               ListTile(
                   title: Text(
                     'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
@@ -296,6 +627,19 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
                   onTap: () => _watchDate(context),
                 ),
+              if(_budgetController.text.isNotEmpty)
+              Row(
+                children: [
+                  Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                  SizedBox(width: screenWidth * 0.15,),
+                  Text('Revenue: ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                ],
+              ),
+              if(_countryController.text.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.fromLTRB(screenWidth * 0.03, screenWidth * 0.05, screenWidth * 0.1, 0),
+                child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
+              ),
               TextFormField(
                 controller: _plotController,
                 decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54)),
@@ -331,17 +675,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   }
                   return null;
                 },
-              ),
-              TextFormField(
-                controller: _writersController,
-                decoration: const InputDecoration(labelText: 'Senaristler', labelStyle: TextStyle(color: Colors.white54)),
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _actorsController,
-                decoration: const InputDecoration(labelText: 'Oyuncular', labelStyle: TextStyle(color: Colors.white54)),
-                style: const TextStyle(color: Colors.white),
-                //User Section
               ),
               if (!widget.isFromWishlist) ...{
                 ListTile(
@@ -420,12 +753,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      foregroundColor: Colors.white,
-                      fixedSize: const Size(double.infinity, 50),
-                    ),
-                    onPressed: _saveMovie,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  fixedSize: const Size(double.infinity, 50),
+                ),
+                onPressed: _saveMovie,
                     icon: const Icon(Icons.save),
                     label: const Text('Güncelle', style: TextStyle(fontSize: 18)),
                   ),
@@ -458,6 +791,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     _imdbRatingController.dispose();
     _writersController.dispose();
     _actorsController.dispose();
+    _productionCompanyController.dispose();
+    _countryController.dispose();
+    _popularityController.dispose();
+    _budgetController.dispose();
+    _revenueController.dispose();
     super.dispose();
   }
 } 

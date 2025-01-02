@@ -12,6 +12,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
 
+
 class AddMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
@@ -29,10 +30,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final _plotController = TextEditingController();
   final _runtimeController = TextEditingController();
   final _imdbRatingController = TextEditingController();
-  final _writersController = TextEditingController();
-  final _actorsController = TextEditingController();
   final _sortTitleController = TextEditingController();
-  final _genresController = TextEditingController();
   final _productionCompanyController = TextEditingController();
   final _countryController = TextEditingController();
   final _popularityController = TextEditingController();
@@ -203,14 +201,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
             movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
             movieDetails['vote_average']?.toString() ?? '';
-          _writersController.text = movieDetails['credits']['crew']
-              .where((member) => member['department'] == 'Writing')
-              .map((writer) => writer['name'])
-              .join(', ') ?? '';
-          _actorsController.text = movieDetails['credits']['cast']
-              .take(5)
-              .map((actor) => actor['name'])
-              .join(', ') ?? '';
 
           if (movieDetails['release_date'] != null) {
             _selectedDate = DateTime.parse(movieDetails['release_date']);
@@ -226,7 +216,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ? List<String>.from(movieDetails['credits']['cast'].take(6).map((actor) => actor['name'])) 
               : [];
           _selectedWriters = movieDetails['credits']['crew'] != null 
-              ? List<String>.from(movieDetails['credits']['crew'].where((member) => member['department'] == 'Writing').take(6).map((writer) => writer['name'])) 
+              ? List<String>.from(movieDetails['credits']['crew'].where((member) => member['department'] == 'Writing').take(3).map((writer) => writer['name'])) 
               : [];
           _selectedProductionCompanies = movieDetails['production_companies'] != null 
               ? List<String>.from(movieDetails['production_companies'].take(2).map((company) => company['name']))
@@ -268,11 +258,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         imdbRating: _imdbRatingController.text.isNotEmpty 
             ? double.tryParse(_imdbRatingController.text) 
             : null,
-        writers: _writersController.text.isNotEmpty 
-            ? _writersController.text.split(',').map((e) => e.trim()).toList() 
+        writers: _selectedWriters.isNotEmpty 
+            ? _selectedWriters 
             : null,
-        actors: _actorsController.text.isNotEmpty 
-            ? _actorsController.text.split(',').map((e) => e.trim()).toList() 
+        actors: _selectedActors.isNotEmpty 
+            ? _selectedActors 
             : null,
         watched: !widget.isFromWishlist,
         imageLink: _imageLink ?? '',
@@ -280,11 +270,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
         hypeScore: widget.isFromWishlist ? _hypeScore : null,
-        genres: _genresController.text.isNotEmpty 
-            ? _genresController.text.split(',').map((e) => e.trim()).toList() 
+        genres: _selectedGenres.isNotEmpty 
+            ? _selectedGenres
             : null,
-        productionCompany: _productionCompanyController.text.isNotEmpty 
-            ? _productionCompanyController.text.split(',').map((e) => e.trim()).toList() 
+        productionCompany: _selectedProductionCompanies.isNotEmpty 
+            ? _selectedProductionCompanies 
             : null,
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
         country: _countryController.text.isNotEmpty ? _countryController.text : null,
@@ -317,18 +307,76 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
-  Future<void> _addGenre() async {
-    String? genre = await showDialog<String>(
+  void _showAddOptionsMenu(BuildContext context) {
+    showMenu(
+      context: context,
+      position: RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
+      items: [
+        PopupMenuItem<String>(
+          value: 'add_genre',
+          child: const Text('Add Genre'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_actor',
+          child: const Text('Add Actor'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_writer',
+          child: const Text('Add Writer'),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_producer',
+          child: const Text('Add Production Company'),
+        ),
+      ],
+    ).then((value) {
+      if (value != null) {
+        switch (value) {
+          case 'add_genre':
+            _addDetails('Add Genre', (genre) {
+              setState(() {
+                _selectedGenres.add(genre);
+              });
+            });
+            break;
+          case 'add_actor':
+            _addDetails('Add Actor', (actor) {
+              setState(() {
+                _selectedActors.add(actor);
+              });
+            });
+            break;
+          case 'add_writer':
+            _addDetails('Add Writer', (writer) {
+              setState(() {
+                _selectedWriters.add(writer);
+              });
+            });
+            break;
+          case 'add_producer':
+            _addDetails('Add Production Company', (company) {
+              setState(() {
+                _selectedProductionCompanies.add(company);
+              });
+            });
+            break;
+        }
+      }
+    });
+  }
+
+  Future<void> _addDetails(String title, Function(String) onAdd) async {
+    String input = '';
+    await showDialog<String>(
       context: context,
       builder: (BuildContext context) {
-        String input = '';
         return AlertDialog(
-          title: const Text('Add Genre'),
+          title: Text(title),
           content: TextField(
             onChanged: (value) {
               input = value;
             },
-            decoration: const InputDecoration(hintText: 'Enter genre'),
+            decoration: const InputDecoration(hintText: 'Enter name'),
           ),
           actions: <Widget>[
             TextButton(
@@ -346,13 +394,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           ],
         );
       },
-    );
-
-    if (genre != null && genre.isNotEmpty) {
-      setState(() {
-        _selectedGenres.add(genre);
-      });
-    }
+    ).then((value) {
+      if (value != null && value.isNotEmpty) {
+        onAdd(value);
+      }
+    });
   }
 
   void _editDirector() {
@@ -397,167 +443,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _directorNameController.clear(); // Clear the director name
     });
   }
-
-  Future<void> _addActor() async {
-    String? actor = await showDialog<String>(
-      context: context,
-      builder: (BuildContext context) {
-        String input = '';
-        return AlertDialog(
-          title: const Text('Add Actor'),
-          content: TextField(
-            onChanged: (value) {
-              input = value;
-            },
-            decoration: const InputDecoration(hintText: 'Enter actor name'),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(input);
-              },
-              child: const Text('Add'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Cancel'),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (actor != null && actor.isNotEmpty) {
-      setState(() {
-        _selectedActors.add(actor);
-      });
-    }
-  }
-
-  Future<void> _addWriter() async {
-    String? writer = await showDialog<String>(
-      context: context,
-      builder: (BuildContext context) {
-        String input = '';
-        return AlertDialog(
-          title: const Text('Add Writer'),
-          content: TextField(
-            onChanged: (value) {
-              input = value;
-            },
-            decoration: const InputDecoration(hintText: 'Enter writer name'),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(input);
-              },
-              child: const Text('Add'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Cancel'),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (writer != null && writer.isNotEmpty) {
-      setState(() {
-        _selectedWriters.add(writer);
-      });
-    }
-  }
-
-  Future<void> _addProductionCompany() async {
-    String? company = await showDialog<String>(
-      context: context,
-      builder: (BuildContext context) {
-        String input = '';
-        return AlertDialog(
-          title: const Text('Add Production Company'),
-          content: TextField(
-            onChanged: (value) {
-              input = value;
-            },
-            decoration: const InputDecoration(hintText: 'Enter production company name'),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(input);
-              },
-              child: const Text('Add'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('Cancel'),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (company != null && company.isNotEmpty) {
-      setState(() {
-        _selectedProductionCompanies.add(company);
-      });
-    }
-  }
-
   String _formatCurrency(double? value) {
     if (value == null) return '\$0.00';
     final formatter = NumberFormat.simpleCurrency(locale: 'en_US');
     return formatter.format(value);
-  }
-
-  void _showAddOptionsMenu(BuildContext context) {
-    showMenu(
-      context: context,
-      position: RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
-      items: [
-        PopupMenuItem<String>(
-          value: 'add_genre',
-          child: const Text('Add Genre'),
-        ),
-        PopupMenuItem<String>(
-          value: 'add_actor',
-          child: const Text('Add Actor'),
-        ),
-        PopupMenuItem<String>(
-          value: 'add_writer',
-          child: const Text('Add Writer'),
-        ),
-        PopupMenuItem<String>(
-          value: 'add_producer',
-          child: const Text('Add Production Company'),
-        ),
-      ],
-    ).then((value) {
-      if (value != null) {
-        switch (value) {
-          case 'add_genre':
-            _addGenre();
-            break;
-          case 'add_actor':
-            _addActor();
-            break;
-          case 'add_writer':
-            _addWriter();
-            break;
-          case 'add_producer':
-            _addProductionCompany();
-            break;
-        }
-      }
-    });
   }
 
   @override
@@ -569,8 +458,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _plotController.text = widget.movie!.plot ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
-      _writersController.text = widget.movie!.writers?.join(', ') ?? '';
-      _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
       _selectedDate = widget.movie!.releaseDate;
       _imageLink = widget.movie!.imageLink;
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
@@ -994,9 +881,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     _plotController.dispose();
     _runtimeController.dispose();
     _imdbRatingController.dispose();
-    _writersController.dispose();
-    _actorsController.dispose();
-    _genresController.dispose();
     _productionCompanyController.dispose();
     _countryController.dispose();
     _popularityController.dispose();
