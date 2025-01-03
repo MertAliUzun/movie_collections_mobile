@@ -607,7 +607,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   ? GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
-                        childAspectRatio: 8,
+                        childAspectRatio: 7,
                       ),
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -621,7 +621,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               child: Text(
                                 _selectedProductionCompanies[index],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.5, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
@@ -639,15 +639,16 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 ),
               if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                  SizedBox(width: screenWidth * 0.15,),
+                  SizedBox(width: screenWidth * 0.1,),
                   Text('Revenue: ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
                 ],
               ),
               if(_countryController.text.isNotEmpty)
               Padding(
-                padding: EdgeInsets.fromLTRB(screenWidth * 0.03, screenWidth * 0.05, screenWidth * 0.1, 0),
+                padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
                 child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
                 ),
               TextFormField(

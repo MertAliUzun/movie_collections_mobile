@@ -227,6 +227,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                               ),
                                             ),
                                           ),
+                                          SizedBox(height: screenHeight * 0.004,),
                                           Center(
                                             child: ElevatedButton(
                                              onPressed: () {
@@ -236,7 +237,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                              style: ElevatedButton.styleFrom(
                                                backgroundColor: Colors.transparent
                                             ),
-                                                                                    ),
+                                           ),
                                           ),
                                       ],
                                     ),

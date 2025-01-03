@@ -34,27 +34,29 @@ class PersonMoviesWidget extends StatelessWidget {
                     )
                   : const Icon(Icons.movie, size: 100, color: Colors.white54),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Text(
                   movie['title'] ?? 'No Title',
-                  style: const TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.028, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ),
-              if (movie['genre_ids'] != null && movie['release_date'] != null)
+              
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Column(
                     children: [
+                      if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
                       Text(
                         '${movie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
-                        style: const TextStyle(color: Colors.white54, fontSize: 10),
+                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: screenHeight * 0.01,),
+                      SizedBox(height: screenHeight * 0.001,),
+                      if (movie['release_date'] != null)
                       Text(
                         '${movie['release_date'].split('-')[0]}',
-                        style: const TextStyle(color: Colors.white54, fontSize: 10),
+                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
                         textAlign: TextAlign.center,
                       ),
                     ],
