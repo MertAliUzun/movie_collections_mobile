@@ -11,6 +11,7 @@ import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
+import 'director_screen.dart';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -590,35 +591,42 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               Text('Director', style: TextStyle(color: Colors.white, fontSize: 16),),
               Divider(height: 10, color: Colors.white60,),
               SizedBox(height: screenWidth * 0.03),
-              Card(
-                color: const Color.fromARGB(255, 44, 50, 60),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
-                        child: Text(
+              GestureDetector(
+                onTap: () {
+                  if(_directorNameController.text.isEmpty){
+                    _editDirector();
+                  }else{
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DirectorScreen(directorName: _directorNameController.text),
+                    ),
+                  );
+                  }
+                },
+                child: Card(
+                  color: const Color.fromARGB(255, 44, 50, 60),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
                           _directorNameController.text.isNotEmpty 
                               ? _directorNameController.text 
-                              : 'No Directors',
-                          style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.05, fontWeight: FontWeight.bold),
+                              : 'No Director Selected',
+                          style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                      ),
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: const Icon(Icons.edit, color: Colors.white),
-                            onPressed: _editDirector,
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.delete, color: Colors.red),
-                            onPressed: _deleteDirector,
-                          ),
-                        ],
-                      ),
-                    ],
+                        Row(
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.edit, color: Colors.white),
+                              onPressed: _editDirector,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -725,7 +733,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
                   onTap: () => _watchDate(context),
                 ),
-              if(_budgetController.text.isNotEmpty)
+              if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
               Row(
                 children: [
                   Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
