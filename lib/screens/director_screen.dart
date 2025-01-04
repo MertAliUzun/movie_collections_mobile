@@ -127,7 +127,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                       ? Card(
                           color: const Color.fromARGB(255, 44, 50, 60),
                           child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, screenHeight * 0.1, 0, 0),
+                            padding: EdgeInsets.fromLTRB(0, screenHeight * 0.08, 0, 0),
                             child: Row(
                               children: [
                                 Column(
@@ -151,15 +151,16 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                       'Director',
                                       style: TextStyle(fontSize: 16, color: Colors.white54),
                                     ),
-                                    SizedBox(height: 10),
+                                    
                                   ],
                                 ),
                                 if (_directorPersonalDetails != null)
                                   Flexible(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        if (_directorPersonalDetails!['also_known_as'] != null)
+                                        if (_directorPersonalDetails!['also_known_as'].length > 0)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 44, 50, 60),

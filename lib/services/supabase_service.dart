@@ -26,11 +26,23 @@ class SupabaseService {
   }
 
   Future<void> updateMovie(Movie movie) async {
-    await _supabaseClient
+    final response = await _supabaseClient
         .from('movies')
-        .update(movie.toJson())
-        .eq('movie_name', movie.movieName)
-        .eq('user_email', currentEmail)
+        .update({
+          'movie_name': movie.movieName,
+          'director_name': movie.directorName,
+          'release_date': movie.releaseDate.toIso8601String(),
+          'plot': movie.plot,
+          'runtime': movie.runtime,
+          'imdb_rating': movie.imdbRating,
+          'writers': movie.writers,
+          'actors': movie.actors,
+          'image_link': movie.imageLink,
+          'genres': movie.genres,
+          'production_company': movie.productionCompany,
+          'custom_sort_title': movie.customSortTitle,
+        })
+        .eq('id', movie.id)
         .execute();
   }
 

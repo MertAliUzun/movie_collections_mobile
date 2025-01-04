@@ -1,4 +1,5 @@
 class Movie {
+  final int? id;
   final String movieName;
   final String directorName;
   final DateTime releaseDate;
@@ -29,6 +30,7 @@ class Movie {
       ],*/
 
   Movie({
+    this.id,
     required this.movieName,
     required this.directorName,
     required this.releaseDate,
@@ -54,6 +56,7 @@ class Movie {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'movie_name': movieName,
       'director_name': directorName,
       'release_date': releaseDate.toIso8601String(),
@@ -80,6 +83,7 @@ class Movie {
 
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
+      id: json['id'],
       movieName: json['movie_name'],
       directorName: json['director_name'],
       releaseDate: DateTime.parse(json['release_date']),

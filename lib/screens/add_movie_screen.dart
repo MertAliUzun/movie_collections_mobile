@@ -212,6 +212,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       final service = SupabaseService(supabase);
 
       final movie = Movie(
+        id: null,
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,

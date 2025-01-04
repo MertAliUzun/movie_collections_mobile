@@ -127,6 +127,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       final service = SupabaseService(supabase);
 
       final movie = Movie(
+        id: widget.movie!.id,
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
