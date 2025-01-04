@@ -157,43 +157,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     });
   }
 
-  //Future<void> _selectMovie(String imdbId) async {
   Future<void> _selectMovie(int movieId) async {
     try {
       //final movieDetails = await _omdbService.getMovieDetails(imdbId);
       final movieDetails = await _tmdbService.getMovieDetails(movieId);
       if (movieDetails != null) {
         setState(() {
-          /*
-          _movieNameController.text = movieDetails['Title'] ?? '';
-          _directorNameController.text = movieDetails['Director'] ?? '';
-          _plotController.text = movieDetails['Plot'] ?? '';
-          _runtimeController.text = movieDetails['Runtime']?.replaceAll(' min', '') ?? '';
-          _imdbRatingController.text = movieDetails['imdbRating'] ?? '';
-          _rtRatingController.text = movieDetails['Ratings']
-              ?.firstWhere((r) => r['Source'] == 'Rotten Tomatoes', orElse: () => {'Value': '0'})['Value']
-              ?.replaceAll('%', '') ?? '0';
-          _writersController.text = movieDetails['Writer'] ?? '';
-          _actorsController.text = movieDetails['Actors'] ?? '';
-          
-          if (movieDetails['Released'] != null && movieDetails['Released'] != 'N/A') {
-            try {
-              final dateStr = movieDetails['Released'];
-              final dateParts = dateStr.split(' ');
-              final months = {
-                'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
-                'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12
-              };
-              
-              final day = int.parse(dateParts[0]);
-              final month = months[dateParts[1]] ?? 1;
-              final year = int.parse(dateParts[2]);
-              
-              _selectedDate = DateTime(year, month, day);
-            } catch (e) {
-              print('Tarih parse edilemedi: ${movieDetails['Released']}');
-            }
-            */
           _movieNameController.text = movieDetails['title'] ?? '';
           _directorNameController.text = movieDetails['credits']['crew']
               .firstWhere((member) => member['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
@@ -202,14 +171,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
             movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
             movieDetails['vote_average']?.toString() ?? '';
-
           if (movieDetails['release_date'] != null) {
             _selectedDate = DateTime.parse(movieDetails['release_date']);
           }
-          //_imageLink = movieDetails['Poster'] ?? '';
           _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
-
-          // Populate genres safely
           _selectedGenres = movieDetails['genres'] != null 
               ? List<String>.from(movieDetails['genres'].take(4).map((genre) => genre['name'])) 
               : [];
@@ -227,9 +192,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               : '';
           _popularityController.text = movieDetails['popularity']?.toString() ?? '';
           _budgetController.text = movieDetails['budget']?.toString() ?? '';
-          //_budgetController.text = _formatCurrency(double.tryParse(_budgetController.text));
           _revenueController.text = movieDetails['revenue']?.toString() ?? '';
-          //_revenueController.text = _formatCurrency(double.tryParse(_revenueController.text));
         });
         _searchController.clear();
         _searchResults = [];
@@ -592,16 +555,22 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               Divider(height: 10, color: Colors.white60,),
               SizedBox(height: screenWidth * 0.03),
               GestureDetector(
-                onTap: () {
+                onTap: () async {
                   if(_directorNameController.text.isEmpty){
                     _editDirector();
                   }else{
-                  Navigator.push(
+                  final movieId = await Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => DirectorScreen(directorName: _directorNameController.text),
                     ),
                   );
+
+                  if (movieId != null) {
+                    //final movieDetails = await _tmdbService.getMovieDetails(movieId);
+                    _selectMovie(movieId);
+                    // Handle the movie details as needed
+                  }
                   }
                 },
                 child: Card(
@@ -717,7 +686,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               child: Text(
                                 _selectedProductionCompanies[index],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.05, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.045, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),

@@ -20,49 +20,55 @@ class PersonMoviesWidget extends StatelessWidget {
       itemCount: movies.length,
       itemBuilder: (context, index) {
         final movie = movies[index];
-        return Card(
-          color: const Color.fromARGB(255, 44, 50, 60),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: screenHeight* 0.01,),
-              movie['poster_path'] != null
-                  ? Image.network(
-                      'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
-                      fit: BoxFit.cover,
-                      height: 150,
-                    )
-                  : const Icon(Icons.movie, size: 100, color: Colors.white54),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Text(
-                  movie['title'] ?? 'No Title',
-                  style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.028, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              
+        return GestureDetector(
+          onTap: () {
+            // Navigate back with movie details
+            Navigator.pop(context, movie['id']); // Pass the movie ID or details
+          },
+          child: Card(
+            color: const Color.fromARGB(255, 44, 50, 60),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: screenHeight* 0.01,),
+                movie['poster_path'] != null
+                    ? Image.network(
+                        'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                        fit: BoxFit.cover,
+                        height: 150,
+                      )
+                    : const Icon(Icons.movie, size: 100, color: Colors.white54),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Column(
-                    children: [
-                      if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
-                      Text(
-                        '${movie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
-                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(height: screenHeight * 0.001,),
-                      if (movie['release_date'] != null)
-                      Text(
-                        '${movie['release_date'].split('-')[0]}',
-                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text(
+                    movie['title'] ?? 'No Title',
+                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.028, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-            ],
+                
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      children: [
+                        if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
+                        Text(
+                          '${movie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
+                          style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: screenHeight * 0.001,),
+                        if (movie['release_date'] != null)
+                        Text(
+                          '${movie['release_date'].split('-')[0]}',
+                          style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
           ),
         );
       },
