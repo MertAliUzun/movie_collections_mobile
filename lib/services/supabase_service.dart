@@ -20,8 +20,27 @@ class SupabaseService {
 
   Future<void> addMovie(Movie movie) async {
     await _supabaseClient.from('movies').insert({
-      ...movie.toJson(),
+      'movie_name': movie.movieName,
+      'director_name': movie.directorName,
+      'release_date': movie.releaseDate.toIso8601String(),
+      'plot': movie.plot,
+      'runtime': movie.runtime,
+      'imdb_rating': movie.imdbRating,
+      'writers': movie.writers,
+      'actors': movie.actors,
+      'watched': movie.watched,
+      'image_link': movie.imageLink,
       'user_email': movie.userEmail,
+      'watch_date': movie.watchDate?.toIso8601String(),
+      'user_score': movie.userScore,
+      'hype_score': movie.hypeScore,
+      'genres': movie.genres,
+      'production_company': movie.productionCompany,
+      'custom_sort_title': movie.customSortTitle,
+      'country': movie.country,
+      'popularity': movie.popularity,
+      'budget': movie.budget,
+      'revenue': movie.revenue,
     }).execute();
   }
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../aux/genreMap.dart';
 
 class TmdbService {
   static const String _apiKey = '61898fc6229d9ec067b5e35b00e8cda5';
@@ -72,5 +73,41 @@ class TmdbService {
       return data;
     }
     return null;
+  }
+
+  Future<List<Map<String, dynamic>>> getMoviesByGenre(String genre, String popularity) async {
+    final genreId = genreMap.entries.firstWhere(
+      (entry) => entry.value.toLowerCase() == genre.toLowerCase(),
+      orElse: () => MapEntry(-1, ''),
+    ).key;
+
+    if (genreId == -1) {
+      throw Exception('Genre not found');
+    }
+
+    List<Map<String, dynamic>> allMovies = [];
+
+    // Fetch 60 movies by making 3 requests (20 movies each)
+    for (int page = 1; page <= 3; page++) {
+      String url;
+      if (popularity == 'Daily') {
+        url = '$_baseUrl/trending/movie/day?api_key=$_apiKey&with_genres=$genreId&page=$page';
+      } else if (popularity == 'Weekly') {
+        url = '$_baseUrl/trending/movie/week?api_key=$_apiKey&with_genres=$genreId&page=$page';
+      } else {
+        url = '$_baseUrl/discover/movie?api_key=$_apiKey&with_genres=$genreId&page=$page';
+      }
+
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        if (data['results'] != null) {
+          allMovies.addAll(List<Map<String, dynamic>>.from(data['results']));
+        }
+      }
+    }
+
+    return allMovies;
   }
 } 

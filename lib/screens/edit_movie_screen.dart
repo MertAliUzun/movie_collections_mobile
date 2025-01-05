@@ -12,6 +12,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
 import 'director_screen.dart';
+import 'genre_movies_screen.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -511,17 +512,30 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _selectedGenres.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                textAlign: TextAlign.center,
-                                _selectedGenres[index],
-                                style: TextStyle(color: Colors.white, 
-                                fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.07 : 
-                                _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                        return GestureDetector(
+                          onTap: () async {
+                            final movieId = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index]),
+                              ),
+                            );
+                            if (movieId != null) {
+                              _fetchMovieDetails(movieId);
+                            }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  textAlign: TextAlign.center,
+                                  _selectedGenres[index],
+                                  style: TextStyle(color: Colors.white, 
+                                  fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.07 : 
+                                  _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),

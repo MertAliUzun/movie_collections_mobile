@@ -83,10 +83,10 @@ double screenHeight = MediaQuery.of(context).size.height;
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
                             movie.movieName,
-                            style: TextStyle(fontSize: screenWidth * 0.04 , fontWeight: FontWeight.bold, color: Colors.white.withOpacity(0.9)),
+                            style: TextStyle(fontSize: screenWidth * 0.035 , fontWeight: FontWeight.bold, color: Colors.white.withOpacity(0.9)),
                           ),
                         ),
-                        SizedBox(height: screenHeight * 0.01,),
+                        SizedBox(height: screenHeight * 0.001,),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
@@ -102,7 +102,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                             style: TextStyle(fontSize: screenWidth * 0.028 , color: Colors.white54),
                           ),
                         ),
-                        SizedBox(height: screenHeight * 0.01,),
+                        SizedBox(height: screenHeight * 0.001,),
                         SizedBox(
                           height: 0,
                           child: Divider(
