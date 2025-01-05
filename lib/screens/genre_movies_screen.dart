@@ -49,12 +49,14 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: IconThemeData(color: Colors.white),
-        title: Center(child: Text('$_selectedPopularity Popular For ${widget.genre}', style: const TextStyle(color: Colors.white))),
+        title: Center(child: Text('$_selectedPopularity Popular For ${widget.genre}', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04))),
         actions: [
           PopupMenuButton<String>(
             icon: const Icon(Icons.view_list, color: Colors.white),

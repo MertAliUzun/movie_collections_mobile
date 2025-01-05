@@ -13,7 +13,7 @@ class PersonMoviesWidget extends StatelessWidget {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3, // Adjust the number of columns as needed
-        childAspectRatio: 0.5, // Adjust the aspect ratio as needed
+        childAspectRatio: 0.48, // Adjust the aspect ratio as needed
       ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

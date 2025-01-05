@@ -275,24 +275,25 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
   void _showAddOptionsMenu(BuildContext context) {
     showMenu(
+      color: const Color.fromARGB(255, 44, 50, 60),
       context: context,
       position: RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
       items: [
         PopupMenuItem<String>(
           value: 'add_genre',
-          child: const Text('Add Genre'),
+          child: const Text('Add Genre', style: TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_actor',
-          child: const Text('Add Actor'),
+          child: const Text('Add Actor', style: TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_writer',
-          child: const Text('Add Writer'),
+          child: const Text('Add Writer', style: TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_producer',
-          child: const Text('Add Production Company'),
+          child: const Text('Add Production Company', style: TextStyle(color: Colors.white)),
         ),
       ],
     ).then((value) {
@@ -337,25 +338,27 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(title),
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          title: Text(title, style: TextStyle(color: Colors.white)),
           content: TextField(
+            style: TextStyle(color: Colors.white),
             onChanged: (value) {
               input = value;
             },
-            decoration: const InputDecoration(hintText: 'Enter name'),
+            decoration: const InputDecoration(hintText: 'Please Enter', hintStyle: TextStyle(color: Colors.white)),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(input);
+                Navigator.of(context).pop();
               },
-              child: const Text('Add'),
+              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(input);
               },
-              child: const Text('Cancel'),
+              child: const Text('Add', style: TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -373,20 +376,21 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       builder: (BuildContext context) {
         String input = _directorNameController.text; // Pre-fill with current director name
         return AlertDialog(
-          title: const Text('Edit Director'),
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          title: const Text('Edit Director', style: TextStyle(color: Colors.white),),
           content: TextField(
             onChanged: (value) {
               input = value;
             },
-            decoration: const InputDecoration(hintText: 'Enter director name'),
-            controller: TextEditingController(text: input), // Set initial text
+            decoration: const InputDecoration(hintText: 'Enter director name', hintStyle: TextStyle(color: Colors.white)),
+            controller: TextEditingController(text: input,), style: TextStyle(color: Colors.white), // Set initial text
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: const Text('Cancel'),
+              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
             ),
             TextButton(
               onPressed: () {
@@ -395,7 +399,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 });
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: const Text('OK'),
+              child: const Text('OK', style: TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -403,11 +407,35 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     );
   }
 
-  void _deleteDirector() {
-    // Logic to delete the director
-    setState(() {
-      _directorNameController.clear(); // Clear the director name
-    });
+  void _deleteDirector() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          content: const Text(
+            'Yönetmeni silmek istiyor musunuz?',
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false), // User declined
+              child: const Text('Hayır', style: TextStyle(color: Colors.white)),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true), // User confirmed
+              child: const Text('Evet', style: TextStyle(color: Colors.white)),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirm == true) {
+      setState(() {
+        _directorNameController.clear(); // Clear the director name
+      });
+    }
   }
   String _formatCurrency(double? value) {
     if (value == null) return '\$0.00';
@@ -427,6 +455,36 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _selectedDate = widget.movie!.releaseDate;
       _imageLink = widget.movie!.imageLink;
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
+    }
+  }
+  void _deleteGenre(int index) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          content: const Text(
+            'Bu türü silmek istiyor musunuz?',
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false), // User declined
+              child: const Text('Hayır', style: TextStyle(color: Colors.white)),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true), // User confirmed
+              child: const Text('Evet', style: TextStyle(color: Colors.white)),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirm == true) {
+      setState(() {
+        _selectedGenres.removeAt(index); // Remove the genre from the list
+      });
     }
   }
 
@@ -535,6 +593,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       itemCount: _selectedGenres.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
+                          onLongPress: () {
+                            _deleteGenre(index);
+                          },
                           onTap: () async {
                             final movieId = await Navigator.push(
                               context,
@@ -570,6 +631,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               Divider(height: 10, color: Colors.white60,),
               SizedBox(height: screenWidth * 0.03),
               GestureDetector(
+                onLongPress: () {
+                  _deleteDirector();
+                },
                 onTap: () async {
                   if(_directorNameController.text.isEmpty){
                     _editDirector();
@@ -595,6 +659,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SizedBox(width: screenWidth * 0.1),
                         Text(
                           _directorNameController.text.isNotEmpty 
                               ? _directorNameController.text 
