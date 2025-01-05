@@ -197,20 +197,25 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   void _toggleWatchedStatus() async {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor:  Color.fromARGB(255, 44, 50, 60),
-          content: Text(textAlign: TextAlign.center, style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.white), widget.isFromWishlist ? 'Filmi koleksiyona taşımak istiyor musunuz?' : 'Filmi izlenme listesine taşımak istiyor musunuz?'),
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          content: Text(
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.white),
+            widget.isFromWishlist ? 'Filmi koleksiyona taşımak istiyor musunuz?' : 'Filmi izlenme listesine taşımak istiyor musunuz?',
+          ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(true), // User confirmed
-              child: Text('Evet', style: TextStyle(fontSize: screenWidth * 0.038,color: Colors.white,)),
+              onPressed: () => Navigator.of(context).pop(false), // User declined
+              child: Text('Hayır', style: TextStyle(fontSize: screenWidth * 0.038, color: Colors.white)),
             ),
             TextButton(
-              onPressed: () => Navigator.of(context).pop(false), // User declined
-              child: Text('Hayır', style: TextStyle(fontSize: screenWidth * 0.038, color: Colors.white,)),
+              onPressed: () => Navigator.of(context).pop(true), // User confirmed
+              child: Text('Evet', style: TextStyle(fontSize: screenWidth * 0.038, color: Colors.white)),
             ),
           ],
         );

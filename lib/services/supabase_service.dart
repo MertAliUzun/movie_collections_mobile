@@ -60,6 +60,10 @@ class SupabaseService {
           'genres': movie.genres,
           'production_company': movie.productionCompany,
           'custom_sort_title': movie.customSortTitle,
+          'watched': movie.watched,
+          'watch_date': movie.watchDate,
+          'user_score': movie.userScore,
+          'hype_score': movie.hypeScore
         })
         .eq('id', movie.id)
         .execute();
