@@ -38,7 +38,7 @@ class TmdbService {
     return [];
   }
 
-  Future<List<Map<String, dynamic>>> getMoviesByPerson(int personId) async {
+  Future<List<Map<String, dynamic>>> getMoviesByPerson(int personId, String personType) async {
     final response = await http.get(
       Uri.parse('$_baseUrl/person/$personId/movie_credits?api_key=$_apiKey'),
     );
@@ -46,7 +46,10 @@ class TmdbService {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       if (data['crew'] != null) {
-        return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));
+        if(personType == 'Director') { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));  }
+        else if ( personType == 'Actor') { return List<Map<String, dynamic>>.from(data['cast'].where((movie) => movie['character'] != null)); }
+        else { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));}
+        
       }
     }
     return [];

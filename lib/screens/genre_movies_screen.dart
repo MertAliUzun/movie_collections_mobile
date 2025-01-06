@@ -76,7 +76,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
-              ? SingleChildScrollView(child: PersonMoviesWidget(movies: _movies))
+              ? SingleChildScrollView(child: PersonMoviesWidget(movies: _movies, personType: 'Genre',))
               : const Center(child: Text('No movies found for this genre.', style: TextStyle(color: Colors.white54))),
     );
   }

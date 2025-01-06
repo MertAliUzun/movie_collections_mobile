@@ -13,6 +13,7 @@ import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
+import '../aux/businessLogic.dart';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -371,72 +372,27 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   }
 
   void _editDirector() {
-    showDialog<String>(
-      context: context,
-      builder: (BuildContext context) {
-        String input = _directorNameController.text; // Pre-fill with current director name
-        return AlertDialog(
-          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-          title: const Text('Edit Director', style: TextStyle(color: Colors.white),),
-          content: TextField(
-            onChanged: (value) {
-              input = value;
-            },
-            decoration: const InputDecoration(hintText: 'Enter director name', hintStyle: TextStyle(color: Colors.white)),
-            controller: TextEditingController(text: input,), style: TextStyle(color: Colors.white), // Set initial text
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
-              },
-              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
-            ),
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  _directorNameController.text = input; // Update the director name
-                });
-                Navigator.of(context).pop(); // Close the dialog
-              },
-              child: const Text('OK', style: TextStyle(color: Colors.white)),
-            ),
-          ],
-        );
-      },
-    );
+    editDirector(context, _directorNameController);
   }
 
+  //DELETE BUSINESS
   void _deleteDirector() async {
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-          content: const Text(
-            'Yönetmeni silmek istiyor musunuz?',
-            style: TextStyle(color: Colors.white),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false), // User declined
-              child: const Text('Hayır', style: TextStyle(color: Colors.white)),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true), // User confirmed
-              child: const Text('Evet', style: TextStyle(color: Colors.white)),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (confirm == true) {
+    final confirm = await deleteDetailsConfirm(context, 'yönetmen');
+    
+    if (confirm) {
       setState(() {
         _directorNameController.clear(); // Clear the director name
       });
     }
   }
+  void _deleteGenre(int index) {
+    deleteDetails(context, 'genre', index: index, selected: _selectedGenres, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+
   String _formatCurrency(double? value) {
     if (value == null) return '\$0.00';
     final formatter = NumberFormat.simpleCurrency(locale: 'en_US');
@@ -455,36 +411,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _selectedDate = widget.movie!.releaseDate;
       _imageLink = widget.movie!.imageLink;
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
-    }
-  }
-  void _deleteGenre(int index) async {
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-          content: const Text(
-            'Bu türü silmek istiyor musunuz?',
-            style: TextStyle(color: Colors.white),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false), // User declined
-              child: const Text('Hayır', style: TextStyle(color: Colors.white)),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true), // User confirmed
-              child: const Text('Evet', style: TextStyle(color: Colors.white)),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (confirm == true) {
-      setState(() {
-        _selectedGenres.removeAt(index); // Remove the genre from the list
-      });
     }
   }
 
@@ -641,7 +567,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   final movieId = await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DirectorScreen(directorName: _directorNameController.text),
+                      builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director',),
                     ),
                   );
 
@@ -694,16 +620,33 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _selectedActors.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                _selectedActors[index],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize: 
-                                _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                        return GestureDetector(
+                          onLongPress: () {
+                          _deleteDirector();
+                          },
+                          onTap: () async {
+                            final actorName = _selectedActors[index];
+                            final movieId = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor'),
+                              ),
+                            );
+                            if (movieId != null) {
+                              _selectMovie(movieId);
+                            }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  _selectedActors[index],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white, fontSize: 
+                                  _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),

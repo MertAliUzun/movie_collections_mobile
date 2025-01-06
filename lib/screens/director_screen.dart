@@ -4,9 +4,10 @@ import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
 
 class DirectorScreen extends StatefulWidget {
-  final String directorName;
+  final String personName;
+  final String personType;
 
-  const DirectorScreen({Key? key, required this.directorName}) : super(key: key);
+  const DirectorScreen({Key? key, required this.personName, required this.personType}) : super(key: key);
 
   @override
   _DirectorScreenState createState() => _DirectorScreenState();
@@ -14,30 +15,38 @@ class DirectorScreen extends StatefulWidget {
 
 class _DirectorScreenState extends State<DirectorScreen> {
   final TmdbService _tmdbService = TmdbService();
-  List<Map<String, dynamic>> _directorDetails = [];
-  List<Map<String, dynamic>> _directorMovies = [];
-  Map<String, dynamic>? _directorPersonalDetails;
+  List<Map<String, dynamic>> _personDetails = [];
+  List<Map<String, dynamic>> _personMovies = [];
+  Map<String, dynamic>? _personPersonalDetails;
   bool _isLoading = true;
   late ScrollController _scrollController;
   bool _isCollapsed = false;
 
   @override
   void initState() {
-    super.initState();
+    super.initState();  
     _fetchDirectorDetails();
+    //print('Person Name: ${widget.personName}, Person Type: ${widget.personType}');
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
   }
 
   Future<void> _fetchDirectorDetails() async {
     try {
-      final results = await _tmdbService.searchPeople(widget.directorName);
-      _directorDetails = results.where((director) => director['known_for_department'] == 'Directing').take(1).toList();
-      if (_directorDetails.isNotEmpty) {
-        final directorId = _directorDetails[0]['id'];
-        _directorMovies = await _tmdbService.getMoviesByPerson(directorId);
-        _directorMovies = _directorMovies.where((movie) => movie['poster_path'] != null).toList();
-        _directorPersonalDetails = await _tmdbService.getPersonalDetails(directorId);
+      final results = await _tmdbService.searchPeople(widget.personName);
+      if(widget.personType == 'Director'){
+        _personDetails = results.where((director) => director['known_for_department'] == 'Directing').take(1).toList();
+      } else if(widget.personType == 'Actor'){
+        _personDetails = results.where((actor) => actor['known_for_department'] == 'Acting').take(1).toList();
+      }
+      
+      if (_personDetails.isNotEmpty) {
+        final personId = _personDetails[0]['id'];
+        _personMovies = await _tmdbService.getMoviesByPerson(personId, widget.personType);
+        _personMovies = _personMovies.where((movie) => movie['poster_path'] != null).toList();
+        print(_personMovies);
+        _personPersonalDetails = await _tmdbService.getPersonalDetails(personId);
+        
       }
       setState(() {
         _isLoading = false;
@@ -51,8 +60,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
   }
 
   void _launchIMDb() async {
-    if (_directorPersonalDetails != null && _directorPersonalDetails!['imdb_id'] != null) {
-      final String url = 'https://www.imdb.com/name/${_directorPersonalDetails!['imdb_id']}';
+    if (_personPersonalDetails != null && _personPersonalDetails!['imdb_id'] != null) {
+      final String url = 'https://www.imdb.com/name/${_personPersonalDetails!['imdb_id']}';
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -82,6 +91,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    if(_personMovies.isNotEmpty) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       body: CustomScrollView(
@@ -99,7 +109,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                        Image.network(
-                                          'https://image.tmdb.org/t/p/w500${_directorDetails[0]['profile_path']}',
+                                          'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
                                           width: 50,
                                           fit: BoxFit.cover,
                                         ),
@@ -107,11 +117,11 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                   Column(
                                     children: [
                                       Text(
-                                        _directorDetails[0]['name'],
+                                        _personDetails[0]['name'],
                                         style: const TextStyle(fontSize: 16, color: Colors.white),
                                       ),
                                       Text(
-                                        "Director",
+                                        widget.personType,
                                         style: const TextStyle(fontSize: 12 , color: Colors.white60),
                                       ),
                                     ],
@@ -123,7 +133,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
               collapseMode: CollapseMode.parallax,
               background: _isLoading
                   ? const Center(child: CircularProgressIndicator())
-                  : _directorDetails.isNotEmpty
+                  : _personDetails.isNotEmpty
                       ? Card(
                           color: const Color.fromARGB(255, 44, 50, 60),
                           child: Padding(
@@ -133,86 +143,86 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    _directorDetails[0]['profile_path'] != null
+                                    _personDetails[0]['profile_path'] != null
                                         ? Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                                             child: Image.network(
-                                              'https://image.tmdb.org/t/p/w500${_directorDetails[0]['profile_path']}',
+                                              'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
                                               width: 150,
                                               fit: BoxFit.cover,
                                             ),
                                           )
                                         : const Icon(Icons.person, color: Colors.white54),
                                     Text(
-                                      _directorDetails[0]['name'],
+                                      _personDetails[0]['name'],
                                       style: const TextStyle(fontSize: 20, color: Colors.white),
                                     ),
-                                    const Text(
-                                      'Director',
+                                   Text(
+                                      widget.personType,
                                       style: TextStyle(fontSize: 16, color: Colors.white54),
                                     ),
                                     
                                   ],
                                 ),
-                                if (_directorPersonalDetails != null)
+                                if (_personPersonalDetails != null)
                                   Flexible(
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        if (_directorPersonalDetails!['also_known_as'].length > 0)
+                                        if (_personPersonalDetails!['also_known_as'].length > 0)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 44, 50, 60),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Alias: ${_directorPersonalDetails!['also_known_as'][0]}',
+                                                'Alias: ${_personPersonalDetails!['also_known_as'][0]}',
                                                 style: const TextStyle(fontSize: 12, color: Colors.white),
                                                 overflow: TextOverflow.ellipsis,
                                                 maxLines: 2,
                                               ),
                                             ),
                                           ),
-                                        if (_directorPersonalDetails!['birthday'] != null)
+                                        if (_personPersonalDetails!['birthday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 44, 50, 60),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Birth Date: ${_directorPersonalDetails!['birthday']}',
+                                                'Birth Date: ${_personPersonalDetails!['birthday']}',
                                                 style: const TextStyle(fontSize: 12, color: Colors.white),
                                               ),
                                             ),
                                           ),
-                                        if (_directorPersonalDetails!['deathday'] != null)
+                                        if (_personPersonalDetails!['deathday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 44, 50, 60),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Death Date: ${_directorPersonalDetails!['deathday']}',
+                                                'Death Date: ${_personPersonalDetails!['deathday']}',
                                                 style: const TextStyle(fontSize: 12, color: Colors.white),
                                               ),
                                             ),
                                           ),
-                                        if (_directorPersonalDetails!['place_of_birth'] != null)
+                                        if (_personPersonalDetails!['place_of_birth'] != null)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 44, 50, 60),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Birth Place: ${_directorPersonalDetails!['place_of_birth']}',
+                                                'Birth Place: ${_personPersonalDetails!['place_of_birth']}',
                                                 style: const TextStyle(fontSize: 12, color: Colors.white),
                                                 overflow: TextOverflow.ellipsis,
                                                 maxLines: 2,
                                               ),
                                             ),
                                           ),
-                                        if (_directorPersonalDetails!['biography'] != null)
+                                        if (_personPersonalDetails!['biography'] != null)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 44, 50, 60),
@@ -220,7 +230,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                               padding: const EdgeInsets.all(8.0),
                                               child: SingleChildScrollView(
                                                 child: Text(
-                                                  'Biography: ${_directorPersonalDetails!['biography']}',
+                                                  'Biography: ${_personPersonalDetails!['biography']}',
                                                   style: const TextStyle(fontSize: 12, color: Colors.white),
                                                   overflow: TextOverflow.ellipsis,
                                                   maxLines: 6,
@@ -252,12 +262,20 @@ class _DirectorScreenState extends State<DirectorScreen> {
             pinned: true,
           ),
           SliverToBoxAdapter(
-            child: _directorMovies.isNotEmpty
-                ? PersonMoviesWidget(movies: _directorMovies)
+            child: _personMovies.isNotEmpty
+                ? PersonMoviesWidget(movies: _personMovies, personType: widget.personType,)
                 : const Center(child: Text('No movies found for this director.', style: TextStyle(color: Colors.white54))),
           ),
         ],
       ),
     );
+    } else{
+      return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+      body: const Center(child: CircularProgressIndicator()));
+    }
   }
 }
