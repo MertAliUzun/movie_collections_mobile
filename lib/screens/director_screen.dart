@@ -38,13 +38,15 @@ class _DirectorScreenState extends State<DirectorScreen> {
         _personDetails = results.where((director) => director['known_for_department'] == 'Directing').take(1).toList();
       } else if(widget.personType == 'Actor'){
         _personDetails = results.where((actor) => actor['known_for_department'] == 'Acting').take(1).toList();
+      } else if(widget.personType == 'Writer'){
+        _personDetails = results.where((actor) => actor['known_for_department'] == 'Writing').take(1).toList();
       }
       
       if (_personDetails.isNotEmpty) {
         final personId = _personDetails[0]['id'];
         _personMovies = await _tmdbService.getMoviesByPerson(personId, widget.personType);
         _personMovies = _personMovies.where((movie) => movie['poster_path'] != null).toList();
-        print(_personMovies);
+        
         _personPersonalDetails = await _tmdbService.getPersonalDetails(personId);
         
       }

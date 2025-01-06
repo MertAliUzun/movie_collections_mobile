@@ -61,7 +61,7 @@ class SupabaseService {
           'production_company': movie.productionCompany,
           'custom_sort_title': movie.customSortTitle,
           'watched': movie.watched,
-          'watch_date': movie.watchDate,
+          'watch_date': movie.watchDate?.toIso8601String(),
           'user_score': movie.userScore,
           'hype_score': movie.hypeScore
         })

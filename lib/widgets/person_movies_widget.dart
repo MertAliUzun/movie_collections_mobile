@@ -50,6 +50,7 @@ class PersonMoviesWidget extends StatelessWidget {
                     maxLines: 3,
                   ),
                 ),
+                if(personType == 'Actor')
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4.0,),
                   child: Text('(${movie['character']})', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.025), textAlign: TextAlign.center,),
