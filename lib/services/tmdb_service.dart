@@ -37,6 +37,21 @@ class TmdbService {
     }
     return [];
   }
+  Future<List<Map<String, dynamic>>> searchCompany(String query) async {
+    if (query.length < 2) return [];
+
+    final response = await http.get(
+      Uri.parse('$_baseUrl/search/company?api_key=$_apiKey&query=$query'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['results'] != null) {
+        return List<Map<String, dynamic>>.from(data['results']);
+      }
+    }
+    return [];
+  }
 
   Future<List<Map<String, dynamic>>> getMoviesByPerson(int personId, String personType) async {
     final response = await http.get(
@@ -48,6 +63,7 @@ class TmdbService {
       if (data['crew'] != null) {
         if(personType == 'Director') { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));  }
         else if ( personType == 'Actor') { return List<Map<String, dynamic>>.from(data['cast'].where((movie) => movie['character'] != null)); }
+        else if ( personType == 'Writer') { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['department'] == 'Writing')); }
         else { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));}
         
       }
@@ -112,5 +128,24 @@ class TmdbService {
     }
 
     return allMovies;
+  }
+
+  Future<List<Map<String, dynamic>>> getMoviesByCompany(int companyId) async {
+    List<Map<String, dynamic>> allMovies = [];
+    
+    for (int page = 1; page <= 9; page++) { // Fetch 5 pages to get up to 100 movies
+      final response = await http.get(
+        Uri.parse('$_baseUrl/company/$companyId/movies?api_key=$_apiKey&page=$page'),
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        if (data['results'] != null) {
+          allMovies.addAll(List<Map<String, dynamic>>.from(data['results']));
+        }
+      }
+    }
+
+    return allMovies; // Return the accumulated list of movies
   }
 } 

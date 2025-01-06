@@ -11,6 +11,7 @@ import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
+import 'company_screen.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
 import '../aux/businessLogic.dart';
@@ -187,7 +188,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ? List<String>.from(movieDetails['credits']['crew'].where((member) => member['department'] == 'Writing').take(3).map((writer) => writer['name'])) 
               : [];
           _selectedProductionCompanies = movieDetails['production_companies'] != null 
-              ? List<String>.from(movieDetails['production_companies'].take(2).map((company) => company['name']))
+              ? List<String>.from(movieDetails['production_companies'].take(4).map((company) => company['name']))
               : [];
           _countryController.text = movieDetails['production_countries'] != null 
               ? movieDetails['production_countries'].take(1).map((country) => country['iso_3166_1']).join(', ') 
@@ -392,6 +393,27 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       });
     });
   }
+  void _deleteActor(int index) {
+    deleteDetails(context, 'actor', index: index, selected: _selectedActors, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteWriter(int index) {
+    deleteDetails(context, 'writer', index: index, selected: _selectedWriters, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteCompany(int index) {
+    deleteDetails(context, 'company', index: index, selected: _selectedProductionCompanies, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
 
   String _formatCurrency(double? value) {
     if (value == null) return '\$0.00';
@@ -542,7 +564,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   textAlign: TextAlign.center,
                                   _selectedGenres[index],
                                   style: TextStyle(color: Colors.white, 
-                                  fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.07 : 
+                                  fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
                                   _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -622,7 +644,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onLongPress: () {
-                          _deleteDirector();
+                          _deleteActor(index);
                           },
                           onTap: () async {
                             final actorName = _selectedActors[index];
@@ -669,16 +691,33 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _selectedWriters.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                _selectedWriters[index],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize:
-                                _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                        return GestureDetector(
+                          onLongPress: () {
+                           _deleteWriter(index);
+                          },
+                          onTap: () async {
+                            final writerName = _selectedWriters[index];
+                            final movieId = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer'),
+                              ),
+                            );
+                            if (movieId != null) {
+                              _selectMovie(movieId);
+                            }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  _selectedWriters[index],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white, fontSize:
+                                  _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
@@ -701,15 +740,32 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _selectedProductionCompanies.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                _selectedProductionCompanies[index],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.045, fontWeight: FontWeight.bold),
+                        return GestureDetector(
+                          onLongPress: () {
+                           _deleteCompany(index);
+                          },
+                          onTap: () async {
+                            final companyName = _selectedProductionCompanies[index];
+                            final movieId = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CompanyScreen(companyName: companyName,),
+                              ),
+                            );
+                            if (movieId != null) {
+                              _selectMovie(movieId);
+                            }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  _selectedProductionCompanies[index],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.045, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
@@ -789,7 +845,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     style: const TextStyle(color: Colors.white54),
                   ),
                   trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
-                  onTap: () => _watchDate(context),
+                  onTap: () => _selectDate(context),
                 ),
                 RatingBar.builder(
                   itemSize: 30,

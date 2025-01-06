@@ -14,6 +14,7 @@ import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
+import 'company_screen.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -370,6 +371,27 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       });
     });
   }
+  void _deleteActor(int index) {
+    deleteDetails(context, 'actor', index: index, selected: _selectedActors, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteWriter(int index) {
+    deleteDetails(context, 'writer', index: index, selected: _selectedWriters, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteCompany(int index) {
+    deleteDetails(context, 'company', index: index, selected: _selectedProductionCompanies, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
   
   String _formatCurrency(double? value) {
     if (value == null) return '\$0.00';
@@ -524,7 +546,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                   textAlign: TextAlign.center,
                                   _selectedGenres[index],
                                   style: TextStyle(color: Colors.white, 
-                                  fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.07 : 
+                                  fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
                                   _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -603,6 +625,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       itemCount: _selectedActors.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
+                          onLongPress: () {
+                           _deleteActor(index);
+                          },
                           onTap: () async {
                             final actorName = _selectedActors[index];
                             final movieId = await Navigator.push(
@@ -648,16 +673,33 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _selectedWriters.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                _selectedWriters[index],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize:
-                                _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                        return GestureDetector(
+                          onLongPress: () {
+                           _deleteWriter(index);
+                          },
+                          onTap: () async {
+                            final writerName = _selectedWriters[index];
+                            final movieId = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer'),
+                              ),
+                            );
+                            if (movieId != null) {
+                              _fetchMovieDetails(movieId);
+                            }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  _selectedWriters[index],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white, fontSize:
+                                  _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
@@ -674,21 +716,38 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   ? GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
-                        childAspectRatio: 7,
+                        childAspectRatio: 6,
                       ),
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: _selectedProductionCompanies.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                              child: Text(
-                                _selectedProductionCompanies[index],
-                                textAlign: TextAlign.center,
-                                style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045, fontWeight: FontWeight.bold),
+                        return GestureDetector(
+                          onLongPress: () {
+                           _deleteCompany(index);
+                          },
+                          onTap: () async {
+                            final companyName = _selectedProductionCompanies[index];
+                            final movieId = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CompanyScreen(companyName: companyName,),
+                              ),
+                            );
+                            if (movieId != null) {
+                              _fetchMovieDetails(movieId);
+                            }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Center(
+                                child: Text(
+                                  _selectedProductionCompanies[index],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ),
@@ -702,7 +761,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     style: const TextStyle(color: Colors.white54),
                   ),
                   trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
-                  onTap: () => _watchDate(context),
+                  onTap: () => _selectDate(context),
                 ),
               if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
               Row(

@@ -94,6 +94,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     if(_personMovies.isNotEmpty) {
+      if(_personDetails[0]['profile_path'] != null){
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       body: CustomScrollView(
@@ -146,15 +147,31 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     _personDetails[0]['profile_path'] != null
-                                        ? Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                                            child: Image.network(
-                                              'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
-                                              width: 150,
-                                              fit: BoxFit.cover,
+                                        ? Container(
+                                          decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(20),  // Adjust the radius for rounded corners
+                                          boxShadow: [
+                                           const BoxShadow(
+                                              color: Colors.black26,
+                                              offset: Offset(0, 0),
+                                              blurRadius: 20,
                                             ),
-                                          )
+                                          ],
+                                        ),
+                                          child: Padding(
+                                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                                              child: ClipRRect(
+                                                borderRadius: BorderRadius.circular(20),
+                                                child: Image.network(
+                                                  'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
+                                                  width: 150,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                        )
                                         : const Icon(Icons.person, color: Colors.white54),
+                                    SizedBox(height: screenHeight * 0.015),
                                     Text(
                                       _personDetails[0]['name'],
                                       style: const TextStyle(fontSize: 20, color: Colors.white),
@@ -266,11 +283,40 @@ class _DirectorScreenState extends State<DirectorScreen> {
           SliverToBoxAdapter(
             child: _personMovies.isNotEmpty
                 ? PersonMoviesWidget(movies: _personMovies, personType: widget.personType,)
-                : const Center(child: Text('No movies found for this director.', style: TextStyle(color: Colors.white54))),
+                : const Center(child: Text('No movies were found', style: TextStyle(color: Colors.white54))),
           ),
         ],
       ),
     );
+    } else {
+      return Scaffold(
+        backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
+            backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          title: Center(
+            child: Column(
+                 children: [
+                   Text(
+                     _personDetails[0]['name'],
+                     style: TextStyle(fontSize: screenWidth * 0.045, color: Colors.white),
+                     textAlign: TextAlign.center,
+                   ),
+                   Text(
+                     widget.personType,
+                     style: TextStyle(fontSize: screenWidth * 0.035 , color: Colors.white60),
+                     textAlign: TextAlign.center,
+                   ),
+                 ],
+               ),
+          ),
+        ),
+        body: _personMovies.isNotEmpty
+                ? SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType,))
+                : const Center(child: Text('No movies were found.', style: TextStyle(color: Colors.white54))),
+
+      );
+    }
     } else{
       return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
