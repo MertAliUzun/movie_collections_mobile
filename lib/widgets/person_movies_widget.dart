@@ -30,8 +30,7 @@ class PersonMoviesWidget extends StatelessWidget {
             color: const Color.fromARGB(255, 44, 50, 60),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                
+              children: [               
                 SizedBox(height: screenHeight* 0.01,),
                 movie['poster_path'] != null
                     ? Image.network(

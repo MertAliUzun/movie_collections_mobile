@@ -138,7 +138,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                   ? const Center(child: CircularProgressIndicator())
                   : _personDetails.isNotEmpty
                       ? Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
+                          color: const Color.fromARGB(255, 34, 40, 50),
                           child: Padding(
                             padding: EdgeInsets.fromLTRB(0, screenHeight * 0.08, 0, 0),
                             child: Row(
@@ -149,19 +149,19 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                     _personDetails[0]['profile_path'] != null
                                         ? Container(
                                           decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20),  // Adjust the radius for rounded corners
+                                          borderRadius: BorderRadius.circular(60),  // Adjust the radius for rounded corners
                                           boxShadow: [
                                            const BoxShadow(
                                               color: Colors.black26,
                                               offset: Offset(0, 0),
-                                              blurRadius: 20,
+                                              blurRadius: 10,
                                             ),
                                           ],
                                         ),
                                           child: Padding(
                                               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                                               child: ClipRRect(
-                                                borderRadius: BorderRadius.circular(20),
+                                                borderRadius: BorderRadius.circular(10),
                                                 child: Image.network(
                                                   'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
                                                   width: 150,
@@ -192,7 +192,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['also_known_as'].length > 0)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 44, 50, 60),
+                                            color: const Color.fromARGB(255, 14, 20, 30),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
@@ -206,7 +206,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['birthday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 44, 50, 60),
+                                            color: const Color.fromARGB(255, 14, 20, 30),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
@@ -218,7 +218,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['deathday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 44, 50, 60),
+                                            color: const Color.fromARGB(255, 14, 20, 30),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
@@ -230,7 +230,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['place_of_birth'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 44, 50, 60),
+                                            color: const Color.fromARGB(255, 14, 20, 30),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
@@ -244,7 +244,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['biography'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 44, 50, 60),
+                                            color: const Color.fromARGB(255, 14, 20, 30),
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: SingleChildScrollView(
