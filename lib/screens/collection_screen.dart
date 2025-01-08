@@ -9,6 +9,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
+import '../aux/groupBy.dart';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({super.key});
@@ -27,6 +28,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
   final TextEditingController _searchController = TextEditingController();
   String _viewType = 'List'; // Default view type
   bool _groupByDirector = false; // Track if grouping by director
+  bool _groupByGenre = false; // Track if grouping by genre
+  bool _groupBy = false;
 
   @override
   void initState() {
@@ -137,10 +140,21 @@ class _CollectionScreenState extends State<CollectionScreen> {
     await prefs.setString('viewType', viewType);
   }
 
-  void _toggleGroupByDirector(String value) {
+  void _toggleGroupBy(String value) {
     setState(() {
-      _groupByDirector = value == 'Director';
-      //_filteredMovies.sort((a, b) => a.directorName.compareTo(b.directorName));
+      if (value == 'Director') {
+        _groupByDirector = true;
+        _groupByGenre = false; // Reset genre grouping
+        _groupBy = true;
+      } else if (value == 'Genre') {
+        _groupByGenre = true;
+        _groupByDirector = false; // Reset director grouping
+        _groupBy = true;
+      } else {
+        _groupByDirector = false;
+        _groupByGenre = false; // Reset both
+        _groupBy = false;
+      }
     });
   }
 
@@ -149,20 +163,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    // Group movies by director if _groupByDirector is true
-    Map<String, List<Movie>> groupedMovies = {};
-    if (_groupByDirector) {
-      for (var movie in _filteredMovies) {
-        // Split director names by comma and trim whitespace
-        List<String> directors = movie.directorName.split(',').map((name) => name.trim()).toList();
-        for (var director in directors) {
-          if (!groupedMovies.containsKey(director)) {
-            groupedMovies[director] = [];
-          }
-          groupedMovies[director]!.add(movie);
-        }
-      }
-    }
+    // Group movies by director or genre based on the selected option
+    Map<String, List<Movie>> groupedMovies = _groupByDirector
+        ? groupByDirector(_filteredMovies)
+        : _groupByGenre
+            ? groupByGenre(_filteredMovies)
+            : {};
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
@@ -218,10 +224,10 @@ class _CollectionScreenState extends State<CollectionScreen> {
           if(!_isSearching)
           PopupMenuButton<String>(
             icon: const Icon(Icons.filter_alt, color: Colors.white),
-            onSelected: _toggleGroupByDirector,
+            onSelected: _toggleGroupBy,
             color: Color.fromARGB(255, 44, 50, 60),
             itemBuilder: (BuildContext context) {
-              return { 'None', 'Director'}.map((String choice) {
+              return {'None', 'Director', 'Genre'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(choice, style: const TextStyle(color: Colors.white)),
@@ -236,17 +242,18 @@ class _CollectionScreenState extends State<CollectionScreen> {
           Expanded(
             child: _viewType.contains('List')
                 ? ListView.builder(
-                    itemCount: _groupByDirector ? groupedMovies.keys.length : _filteredMovies.length,
+                    itemCount: _groupBy ? groupedMovies.keys.length : _filteredMovies.length,
                     itemBuilder: (context, index) {
-                      if (_groupByDirector) {
+                      if (_groupBy) {
                         //to sort directorCards by directorName
-                        List<String> sortedDirectors = groupedMovies.keys.toList()..sort();
-                        String directorName = sortedDirectors[index];
-                        List<Movie> movies = groupedMovies[directorName]!;
-                        movies.sort((a, b) => a.directorName.compareTo(b.directorName),);
+                        List<String> sortedMovies = groupedMovies.keys.toList()..sort();
+                        String sortName = sortedMovies[index];
+                        List<Movie> movies = groupedMovies[sortName]!;
+                        if(_groupByDirector){ movies.sort((a, b) => a.directorName.compareTo(b.directorName),); }
+                        //else { movies.sort((a, b) => (a.genres ?? '').compareTo(b.genres ?? ''));}
                         //
                         return ExpansionTile(
-                          title: Text(directorName, style: const TextStyle(color: Colors.white)),
+                          title: Text(sortName, style: const TextStyle(color: Colors.white)),
                           children: movies.map((movie) {
                             return MovieCard(
                               movie: movie,
@@ -265,8 +272,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
                         );
                       }
                     },
-                  ) :_groupByDirector ? ListView.builder(
-                    itemCount: _groupByDirector ? groupedMovies.keys.length : _filteredMovies.length,
+                  ) :_groupBy ? ListView.builder(
+                    itemCount: _groupBy ? groupedMovies.keys.length : _filteredMovies.length,
                     itemBuilder: (context, index) {
                         //to sort directorCards by directorName
                         List<String> sortedDirectors = groupedMovies.keys.toList()..sort();
