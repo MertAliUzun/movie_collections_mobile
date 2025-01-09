@@ -25,6 +25,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
   String _viewType = 'List'; // Default view type
+  String _groupByText = 'None';
   bool _groupByDirector = false; // Track if grouping by director
   bool _groupByGenre = false; // Track if grouping by genre
   bool _groupBy = false;
@@ -138,6 +139,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
 
   void _toggleGroupBy(String value) {
     setState(() {
+      _groupByText = value;
       if (value == 'Director') {
         _groupByDirector = true;
         _groupByGenre = false; // Reset genre grouping
@@ -170,20 +172,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        leading: !_isSearching ?
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.view_list, color: Colors.white),
-            onSelected: _changeViewType,
-            color: Color.fromARGB(255, 44, 50, 60),
-            itemBuilder: (BuildContext context) {
-              return {'List', 'List(Small)', 'Card', 'Poster'}.map((String choice) {
-                return PopupMenuItem<String>(
-                  value: choice,
-                  child: Text(choice, style: TextStyle(color: Colors.white),),
-                );
-              }).toList();
-            },
-          ) : null,
+        iconTheme: IconThemeData(color: Colors.white),
         title: !_isSearching 
         ? Text('${_movies.length} Film', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
@@ -231,7 +220,116 @@ class _WishlistScreenState extends State<WishlistScreen> {
               }).toList();
             },
           ),
+          if(!_isSearching)
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.view_list, color: Colors.white),
+            onSelected: _changeViewType,
+            color: Color.fromARGB(255, 44, 50, 60),
+            itemBuilder: (BuildContext context) {
+              return {'List', 'List(Small)', 'Card', 'Poster'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice, style: TextStyle(color: Colors.white),),
+                );
+              }).toList();
+            },
+          ),
         ],
+      ),
+      drawer: Container(
+        padding: EdgeInsets.only(top: screenHeight *0.1),
+        width: screenWidth * 0.7,
+        child: Drawer(
+          backgroundColor: Color.fromARGB(255, 44, 50, 60),
+          child: ListView(
+            children: [
+              DrawerHeader(child: Icon(Icons.home, size: 50)),
+              ListTile(
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('View As', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.033, fontWeight: FontWeight.bold),),
+                    Container(
+                      width: screenWidth * 0.55,
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
+                        child: DropdownButton<String>(
+                         value: _viewType, // Seçili değeri göster
+                         icon: Padding(
+                           padding: EdgeInsets.fromLTRB(screenWidth * 0.15, 0, 0, 0),
+                           child: const Icon(Icons.arrow_drop_down, color: Colors.white),
+                         ),
+                         dropdownColor: const Color.fromARGB(255, 44, 50, 60), // Menü arka plan rengi
+                         underline: SizedBox(), // Alt çizgiyi kaldır
+                         onChanged: (Object? newValue) {
+                                     if(newValue is String) {
+                                       _changeViewType(newValue);
+                                     }}, // Seçim yapıldığında çalışacak fonksiyon
+                         items: ['List', 'List(Small)', 'Card', 'Poster'].map((String choice) {
+                           return DropdownMenuItem<String>(
+                             value: choice,
+                             child: Text(
+                               choice,
+                               style: TextStyle(fontSize: screenWidth * 0.055, color: Colors.white60), // Yazı rengi
+                             ),
+                           );
+                         }).toList(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+               title: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   Text(
+                     'Group By',
+                     style: TextStyle(
+                       color: Colors.white,
+                       fontSize: screenWidth * 0.033,
+                       fontWeight: FontWeight.bold,
+                     ),
+                   ),
+                   Container(
+                     width: screenWidth * 0.55,
+                     child: Padding(
+                       padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
+                       child: DropdownButton<String>(
+                         value: _groupByText, // Seçili değeri göster
+                         icon: Padding(
+                           padding: EdgeInsets.fromLTRB(screenWidth * 0.225, 0, 0, 0),
+                           child: const Icon(Icons.arrow_drop_down, color: Colors.white),
+                         ),
+                         dropdownColor: const Color.fromARGB(255, 44, 50, 60), // Menü arka plan rengi
+                         underline: SizedBox(), // Alt çizgiyi kaldır
+                         onChanged: (String? newValue) {
+                           if (newValue != null) {
+                             _toggleGroupBy(newValue);
+                           }
+                         }, // Seçim yapıldığında çalışacak fonksiyon
+                         items: ['None', 'Director', 'Genre'].map((String choice) {
+                           return DropdownMenuItem<String>(
+                             value: choice,
+                             child: Text(
+                               choice,
+                               style: TextStyle(
+                                 fontSize: screenWidth * 0.055,
+                                 color: Colors.white60,
+                               ), // Yazı rengi
+                             ),
+                           );
+                         }).toList(),
+                       ),
+                     ),
+                   ),
+                 ],
+               ),
+             ),
+            ],
+          )
+        ),
       ),
       body: Column(
         children: [
