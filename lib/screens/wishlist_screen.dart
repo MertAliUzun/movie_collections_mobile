@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../aux/groupBy.dart';
 import '../services/supabase_service.dart';
+import '../widgets/drawer_widget.dart';
 import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -74,6 +75,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
       return _isAscending ? comparison : -comparison;
     });
   }
+  void _onSortByChanged(String newSortBy) {
+  setState(() {
+    _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
+    _sortMovies(); // Filmleri sırala
+  });
+}
 
   void _showSortOptions() {
     showDialog(
@@ -236,101 +243,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
         ],
       ),
-      drawer: Container(
-        padding: EdgeInsets.only(top: screenHeight *0.1),
-        width: screenWidth * 0.7,
-        child: Drawer(
-          backgroundColor: Color.fromARGB(255, 44, 50, 60),
-          child: ListView(
-            children: [
-              DrawerHeader(child: Icon(Icons.home, size: 50)),
-              ListTile(
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('View As', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.033, fontWeight: FontWeight.bold),),
-                    Container(
-                      width: screenWidth * 0.55,
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
-                        child: DropdownButton<String>(
-                         value: _viewType, // Seçili değeri göster
-                         icon: Padding(
-                           padding: EdgeInsets.fromLTRB(screenWidth * 0.15, 0, 0, 0),
-                           child: const Icon(Icons.arrow_drop_down, color: Colors.white),
-                         ),
-                         dropdownColor: const Color.fromARGB(255, 44, 50, 60), // Menü arka plan rengi
-                         underline: SizedBox(), // Alt çizgiyi kaldır
-                         onChanged: (Object? newValue) {
-                                     if(newValue is String) {
-                                       _changeViewType(newValue);
-                                     }}, // Seçim yapıldığında çalışacak fonksiyon
-                         items: ['List', 'List(Small)', 'Card', 'Poster'].map((String choice) {
-                           return DropdownMenuItem<String>(
-                             value: choice,
-                             child: Text(
-                               choice,
-                               style: TextStyle(fontSize: screenWidth * 0.055, color: Colors.white60), // Yazı rengi
-                             ),
-                           );
-                         }).toList(),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              ListTile(
-               title: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   Text(
-                     'Group By',
-                     style: TextStyle(
-                       color: Colors.white,
-                       fontSize: screenWidth * 0.033,
-                       fontWeight: FontWeight.bold,
-                     ),
-                   ),
-                   Container(
-                     width: screenWidth * 0.55,
-                     child: Padding(
-                       padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
-                       child: DropdownButton<String>(
-                         value: _groupByText, // Seçili değeri göster
-                         icon: Padding(
-                           padding: EdgeInsets.fromLTRB(screenWidth * 0.225, 0, 0, 0),
-                           child: const Icon(Icons.arrow_drop_down, color: Colors.white),
-                         ),
-                         dropdownColor: const Color.fromARGB(255, 44, 50, 60), // Menü arka plan rengi
-                         underline: SizedBox(), // Alt çizgiyi kaldır
-                         onChanged: (String? newValue) {
-                           if (newValue != null) {
-                             _toggleGroupBy(newValue);
-                           }
-                         }, // Seçim yapıldığında çalışacak fonksiyon
-                         items: ['None', 'Director', 'Genre'].map((String choice) {
-                           return DropdownMenuItem<String>(
-                             value: choice,
-                             child: Text(
-                               choice,
-                               style: TextStyle(
-                                 fontSize: screenWidth * 0.055,
-                                 color: Colors.white60,
-                               ), // Yazı rengi
-                             ),
-                           );
-                         }).toList(),
-                       ),
-                     ),
-                   ),
-                 ],
-               ),
-             ),
-            ],
-          )
-        ),
-      ),
+      drawer: DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged,),
       body: Column(
         children: [
           Expanded(
