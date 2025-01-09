@@ -51,7 +51,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                               //unratedColor: Colors.blueGrey.withOpacity(0.6),
                               ignoreGestures: true,
                               initialRating: movie.userScore ?? 0,
-                              minRating: 1,
+                              minRating: 0,
                               direction: Axis.horizontal,
                               allowHalfRating: true,
                               itemCount: 10,
@@ -68,7 +68,7 @@ double screenHeight = MediaQuery.of(context).size.height;
                             child: RatingBar.builder(
                               ignoreGestures: true,
                               initialRating: movie.hypeScore ?? 0,
-                              minRating: 1,
+                              minRating: 0,
                               direction: Axis.horizontal,
                               allowHalfRating: true,
                               itemCount: 5,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../services/supabase_service.dart';
+import '../widgets/drawer_widget.dart';
 import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -23,10 +24,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
   List<Movie> _movies = [];
   List<Movie> _filteredMovies = [];
   String _sortBy = 'movieName'; // Default sorting criteria
+  String _sortDir = 'Ascending'; // Default sorting criteria
   bool _isAscending = true; // Default sorting order
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
   String _viewType = 'List'; // Default view type
+  String _groupByText = 'None';
   bool _groupByDirector = false; // Track if grouping by director
   bool _groupByGenre = false; // Track if grouping by genre
   bool _groupBy = false;
@@ -75,6 +78,19 @@ class _CollectionScreenState extends State<CollectionScreen> {
         comparison = 0; // Default case
       }
       return _isAscending ? comparison : -comparison;
+    });
+  }
+  void _onSortByChanged(String newSortBy) {
+  setState(() {
+    _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
+    _sortMovies(); // Filmleri sırala
+  });
+  }
+  void _onSortDirChanged(String newSortDir) {
+    setState(() {
+      _sortDir = newSortDir; // Yeni sıralama kriterini güncelle
+      if(newSortDir == 'Ascending') { _isAscending = true;} else { _isAscending = false;}
+      _sortMovies(); // Filmleri sırala
     });
   }
 
@@ -142,6 +158,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
 
   void _toggleGroupBy(String value) {
     setState(() {
+      _groupByText = value;
       if (value == 'Director') {
         _groupByDirector = true;
         _groupByGenre = false; // Reset genre grouping
@@ -174,20 +191,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
-        leading: !_isSearching ?
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.view_list, color: Colors.white),
-            onSelected: _changeViewType,
-            color: Color.fromARGB(255, 44, 50, 60),
-            itemBuilder: (BuildContext context) {
-              return {'List', 'List(Small)', 'Card', 'Poster'}.map((String choice) {
-                return PopupMenuItem<String>(
-                  value: choice,
-                  child: Text(choice, style: TextStyle(color: Colors.white),),
-                );
-              }).toList();
-            },
-          ) : null,
+        iconTheme: IconThemeData(color: Colors.white),
         title: !_isSearching 
         ? Text('${_movies.length} Film', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
@@ -216,27 +220,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
               });
             },
           ),
-          if(!_isSearching)
-          IconButton(
-            icon: const Icon(Icons.sort, color: Colors.white),
-            onPressed: _showSortOptions,
-          ),
-          if(!_isSearching)
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.filter_alt, color: Colors.white),
-            onSelected: _toggleGroupBy,
-            color: Color.fromARGB(255, 44, 50, 60),
-            itemBuilder: (BuildContext context) {
-              return {'None', 'Director', 'Genre'}.map((String choice) {
-                return PopupMenuItem<String>(
-                  value: choice,
-                  child: Text(choice, style: const TextStyle(color: Colors.white)),
-                );
-              }).toList();
-            },
-          ),
         ],
       ),
+      drawer: DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: false,),
       body: Column(
         children: [
           Expanded(

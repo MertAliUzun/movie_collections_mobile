@@ -22,6 +22,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   List<Movie> _movies = [];
   List<Movie> _filteredMovies = [];
   String _sortBy = 'movieName'; // Default sorting criteria
+  String _sortDir = 'Ascending'; // Default sorting criteria
   bool _isAscending = true; // Default sorting order
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
@@ -80,7 +81,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
     _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
     _sortMovies(); // Filmleri sırala
   });
-}
+  }
+  void _onSortDirChanged(String newSortDir) {
+    setState(() {
+      _sortDir = newSortDir; // Yeni sıralama kriterini güncelle
+      if(newSortDir == 'Ascending') { _isAscending = true;} else { _isAscending = false;}
+      _sortMovies(); // Filmleri sırala
+    });
+  }
 
   void _showSortOptions() {
     showDialog(
@@ -208,42 +216,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
               });
             },
           ),
-          if(!_isSearching)
-          IconButton(
-            icon: const Icon(Icons.sort, color: Colors.white),
-            onPressed: _showSortOptions,
-          ),
-          if(!_isSearching)
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.filter_alt, color: Colors.white),
-            onSelected: _toggleGroupBy,
-            color: Color.fromARGB(255, 44, 50, 60),
-            itemBuilder: (BuildContext context) {
-              return {'None', 'Director', 'Genre'}.map((String choice) {
-                return PopupMenuItem<String>(
-                  value: choice,
-                  child: Text(choice, style: const TextStyle(color: Colors.white)),
-                );
-              }).toList();
-            },
-          ),
-          if(!_isSearching)
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.view_list, color: Colors.white),
-            onSelected: _changeViewType,
-            color: Color.fromARGB(255, 44, 50, 60),
-            itemBuilder: (BuildContext context) {
-              return {'List', 'List(Small)', 'Card', 'Poster'}.map((String choice) {
-                return PopupMenuItem<String>(
-                  value: choice,
-                  child: Text(choice, style: TextStyle(color: Colors.white),),
-                );
-              }).toList();
-            },
-          ),
         ],
       ),
-      drawer: DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged,),
+      drawer: DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: true,),
       body: Column(
         children: [
           Expanded(
