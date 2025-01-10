@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:movie_collections_mobile/widgets/person_movies_widget.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'dart:io';
 import 'dart:async';
 import '../aux/businessLogic.dart';
+import '../aux/genreMap.dart';
 import '../models/movie_model.dart';
 import '../services/supabase_service.dart';
 import '../services/tmdb_service.dart';
@@ -53,6 +55,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<String> _selectedActors = [];
   List<String> _selectedWriters = [];
   List<String> _selectedProductionCompanies = [];
+  List<Map<String, dynamic>> _similarMovies = [];
+  final ScrollController _scrollController = ScrollController();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -425,12 +429,37 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedWriters = widget.movie!.writers ?? [];
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
+      _fetchSimilarMovies(widget.movie!.id ?? 0);
     }
+  }
+  Future<void> _fetchSimilarMovies(int movieId) async {
+    final tmdbService = TmdbService();
+    final similarMovies = await tmdbService.getSimilarMovies(movieId);
+    if(similarMovies != null) {
+      setState(() {
+        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en') // İngilizce dilinde olanları filtrele
+          .take(6) // İlk 6 filmi al
+          .map((movie) => Map<String, dynamic>.from(movie)) // Filmleri Map formatında döndür
+          .toList();;
+      });
+
+    }
+
   }
 
   Future<void> _fetchMovieDetails(int movieId) async {
     final tmdbService = TmdbService();
     final movieDetails = await tmdbService.getMovieDetails(movieId);
+    final similarMovies = await tmdbService.getSimilarMovies(movieId);
+    if(similarMovies != null) {
+      setState(() {
+        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en') // İngilizce dilinde olanları filtrele
+          .take(6) // İlk 6 filmi al
+          .map((movie) => Map<String, dynamic>.from(movie)) // Filmleri Map formatında döndür
+          .toList();;
+      });
+
+    }
     if (movieDetails != null) {
       setState(() {
         _movieNameController.text = movieDetails['title'] ?? '';
@@ -464,6 +493,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         // Populate other fields as necessary
       });
     }
+  }
+
+  void _scrollToTop() {
+    _scrollController.animateTo(
+      0.0, // 0.0'a kaydırmak sayfanın başı demektir
+      duration: Duration(seconds: 1), // Kaydırma süresi
+      curve: Curves.easeInOut, // Animasyon tipi
+    );
   }
 
   @override
@@ -503,6 +540,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             ),
           ),  
           SingleChildScrollView(
+          controller: _scrollController,
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
@@ -838,7 +876,15 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     trailing: const Icon(Icons.calendar_today, color: Colors.white54),
                     onTap: () => _watchDate(context),
                   ),
-                  RatingBar.builder(
+                  Stack(
+                    children: [
+                      Positioned.fill(
+                          child: Container(
+                            color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                          ),
+                        ), 
+                    RatingBar.builder(
+                    unratedColor: Colors.blueGrey.withOpacity(0.6),
                     itemSize: 30,
                     initialRating: _userScore,
                     minRating: 0,
@@ -853,24 +899,132 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       });
                     },
                   ),
+                    ],
+                  ),
+                  
                 },
                 if (widget.isFromWishlist)
-                  RatingBar.builder(
-                    itemSize: 30,
-                    initialRating: _hypeScore,
-                    minRating: 0,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                    itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
-                    onRatingUpdate: (rating) {
-                      setState(() {
-                        _hypeScore = rating;
-                      });
-                    },
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                    child: Stack(
+                      children: [
+                          Positioned.fill(
+                          child: Container(
+                            color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                          ),
+                        ),                 
+                        RatingBar.builder(
+                        unratedColor: Colors.blueGrey.withOpacity(0.6),
+                        itemSize: 30,
+                        initialRating: _hypeScore,
+                        minRating: 0,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                        itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
+                        onRatingUpdate: (rating) {
+                          setState(() {
+                            _hypeScore = rating;
+                          });
+                        },
+                      ),
+                      ],
+                    ),
                   ),
                 SizedBox(height: 30),
+                if(_similarMovies.length > 3)
+                Card(color: const Color.fromARGB(255, 34, 40, 50), 
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text('Similar Movies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.07, fontWeight: FontWeight.bold),),
+                    ),
+                    GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, // Adjust the number of columns as needed
+                      childAspectRatio: 0.42, // Adjust the aspect ratio as needed
+                    ),
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: _similarMovies.length,
+                    itemBuilder: (context, index) {
+                      final similarMovie = _similarMovies[index];
+                      return GestureDetector(
+                        onTap: () {
+                          if (similarMovie['id'] != null) {
+                                _fetchMovieDetails(similarMovie['id']);
+                                _scrollToTop();
+                              }
+                        },
+                        child: Card(
+                          color: const Color.fromARGB(255, 44, 50, 60),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(36.0), // Sol üst köşe
+                              topRight: Radius.circular(36.0), // Sağ üst köşe
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [               
+                              similarMovie['poster_path'] != null
+                                  ? ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(36.0), // Sol üst köşe
+                                        topRight: Radius.circular(36.0), // Sağ üst köşe
+                                      ),
+                                    child: Image.network(
+                                        'https://image.tmdb.org/t/p/w500${similarMovie['poster_path']}',
+                                        fit: BoxFit.cover,
+                                        height: screenHeight * 0.22,
+                                        width: screenWidth * 0.35,
+                                      ),
+                                  )
+                                  : const Icon(Icons.movie, size: 100, color: Colors.white54),
+                              SizedBox(height: screenHeight *0.01,),
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text(
+                                  similarMovie['title'] ?? 'No Title',
+                                  style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                ),
+                              ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: Column(
+                                    children: [
+                                      if(similarMovie['genre_ids'] != null && similarMovie['genre_ids'].any((id) => genreMap[id] != null))
+                                      Text(
+                                        '${similarMovie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
+                                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                                        textAlign: TextAlign.center,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                      SizedBox(height: screenHeight * 0.001,),
+                                      if (similarMovie['release_date'] != null)
+                                      Text(
+                                        '${similarMovie['release_date'].split('-')[0]}',
+                                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  ],
+                )),
+                SizedBox(height: 30,),
                 GestureDetector(
                   onTap: _isUploading ? null : _pickImage,
                   child: Container(
@@ -951,6 +1105,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     _popularityController.dispose();
     _budgetController.dispose();
     _revenueController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 } 

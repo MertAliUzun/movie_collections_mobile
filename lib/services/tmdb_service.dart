@@ -129,6 +129,22 @@ class TmdbService {
 
     return allMovies;
   }
+  Future<List<Map<String, dynamic>>> getSimilarMovies(int movieId) async {
+    List<Map<String, dynamic>> similarMovies = [];
+  final response = await http.get(
+    Uri.parse('$_baseUrl/movie/$movieId/similar?api_key=$_apiKey'),
+  );
+
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+
+    if (data['results'] != null) {
+      similarMovies.addAll(List<Map<String, dynamic>>.from(data['results']));
+    }
+  }
+
+  return similarMovies.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
+}
 
   Future<List<Map<String, dynamic>>> getMoviesByCompany(int companyId) async {
     List<Map<String, dynamic>> allMovies = [];
