@@ -125,7 +125,7 @@ class DrawerWidget extends StatelessWidget {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: ['None', 'Director', 'Genre', 'Release Year'].map((String choice) {
+                        items: ['None', 'Director', 'Genre', 'Release Year', if (!_isFromWishlist) 'Watch Year',].map((String choice) {
                           return DropdownMenuItem<String>(
                             value: choice,
                             child: Text(

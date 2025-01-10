@@ -190,7 +190,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
         ? groupByDirector(_filteredMovies)
         : _groupByGenre
             ? groupByGenre(_filteredMovies)
-            : _groupByReleaseYear ? groupByReleaseYear(_filteredMovies) : {};
+            : _groupByReleaseYear ? groupByYear(_filteredMovies, 'Release Date') 
+            : {};
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
