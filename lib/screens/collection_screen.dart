@@ -32,6 +32,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   String _groupByText = 'None';
   bool _groupByDirector = false; // Track if grouping by director
   bool _groupByGenre = false; // Track if grouping by genre
+  bool _groupByReleaseYear= false;
   bool _groupBy = false;
 
   @override
@@ -162,15 +163,23 @@ class _CollectionScreenState extends State<CollectionScreen> {
       if (value == 'Director') {
         _groupByDirector = true;
         _groupByGenre = false; // Reset genre grouping
+        _groupByReleaseYear = false;
         _groupBy = true;
       } else if (value == 'Genre') {
         _groupByGenre = true;
+        _groupByDirector = false; // Reset director grouping
+        _groupByReleaseYear = false;
+        _groupBy = true;
+      } else if (value == 'Release Year') {
+        _groupByReleaseYear = true;
+        _groupByGenre = false;
         _groupByDirector = false; // Reset director grouping
         _groupBy = true;
       } else {
         _groupByDirector = false;
         _groupByGenre = false; // Reset both
         _groupBy = false;
+        _groupByReleaseYear = false;
       }
     });
   }
@@ -185,7 +194,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
         ? groupByDirector(_filteredMovies)
         : _groupByGenre
             ? groupByGenre(_filteredMovies)
-            : {};
+            : _groupByReleaseYear ? groupByReleaseYear(_filteredMovies) : {};
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),

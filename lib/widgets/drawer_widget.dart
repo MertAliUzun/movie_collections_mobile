@@ -73,7 +73,7 @@ class DrawerWidget extends StatelessWidget {
                       child: DropdownButton<String>(
                         value: _viewType,
                         icon: Padding(
-                          padding: EdgeInsets.fromLTRB(screenWidth * 0.15, 0, 0, 0),
+                          padding: EdgeInsets.fromLTRB(screenWidth * 0.16, 0, 0, 0),
                           child: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         ),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
@@ -114,7 +114,7 @@ class DrawerWidget extends StatelessWidget {
                       child: DropdownButton<String>(
                         value: _groupByText,
                         icon: Padding(
-                          padding: EdgeInsets.fromLTRB(screenWidth * 0.225, 0, 0, 0),
+                          padding: EdgeInsets.fromLTRB(screenWidth * 0.11, 0, 0, 0),
                           child: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         ),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
@@ -125,7 +125,7 @@ class DrawerWidget extends StatelessWidget {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: ['None', 'Director', 'Genre'].map((String choice) {
+                        items: ['None', 'Director', 'Genre', 'Release Year'].map((String choice) {
                           return DropdownMenuItem<String>(
                             value: choice,
                             child: Text(
