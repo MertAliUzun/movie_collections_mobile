@@ -28,14 +28,20 @@ class PersonMoviesWidget extends StatelessWidget {
           },
           child: Card(
             color: const Color.fromARGB(255, 44, 50, 60),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(36.0), // Sol üst köşe
+                topRight: Radius.circular(36.0), // Sağ üst köşe
+              ),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [               
                 movie['poster_path'] != null
                     ? ClipRRect(
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12.0), // Sol üst köşe
-                          topRight: Radius.circular(12.0), // Sağ üst köşe
+                          topLeft: Radius.circular(36.0), // Sol üst köşe
+                          topRight: Radius.circular(36.0), // Sağ üst köşe
                         ),
                       child: Image.network(
                           'https://image.tmdb.org/t/p/w500${movie['poster_path']}',

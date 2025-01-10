@@ -159,41 +159,42 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   void _toggleGroupBy(String value) {
-    setState(() {
-      _groupByText = value;
-      if (value == 'Director') {
+  setState(() {
+    // Tüm gruplamaları sıfırla
+    _groupByDirector = false;
+    _groupByGenre = false;
+    _groupByReleaseYear = false;
+    _groupByWatchYear = false;
+    _groupBy = false;
+
+    // Seçime göre gruplamayı etkinleştir
+    switch (value) {
+      case 'Director':
         _groupByDirector = true;
-        _groupByGenre = false; // Reset genre grouping
-        _groupByReleaseYear = false;
-        _groupByWatchYear = false;
         _groupBy = true;
-      } else if (value == 'Genre') {
+        break;
+      case 'Genre':
         _groupByGenre = true;
-        _groupByDirector = false; // Reset director grouping
-        _groupByReleaseYear = false;
-        _groupByWatchYear = false;
         _groupBy = true;
-      } else if (value == 'Release Year') {
+        break;
+      case 'Release Year':
         _groupByReleaseYear = true;
-        _groupByGenre = false;
-        _groupByDirector = false; // Reset director grouping
-        _groupByWatchYear = false;
         _groupBy = true;
-      } else if (value == 'Watch Year') {
+        break;
+      case 'Watch Year':
         _groupByWatchYear = true;
-        _groupByGenre = false;
-        _groupByDirector = false; // Reset director grouping
-        _groupByReleaseYear = false;
         _groupBy = true;
-      } else {
-        _groupByDirector = false;
-        _groupByGenre = false; // Reset both
-        _groupBy = false;
-        _groupByWatchYear = false;
-        _groupByReleaseYear = false;
-      }
-    });
-  }
+        break;
+      default:
+        // 'None' veya diğer durumlarda zaten tüm gruplamalar sıfırlanmış durumda
+        break;
+    }
+
+    // Seçilen grup adını güncelle
+    _groupByText = value;
+  });
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -295,7 +296,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                             GridView.builder(
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: _viewType == "Card" ? 0.64 : 0.55, // Adjust the aspect ratio as needed
+                      childAspectRatio: _viewType == "Card" ? 0.5 : 0.55, // Adjust the aspect ratio as needed
                     ),
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
@@ -315,7 +316,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   ) : GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: _viewType == "Card" ? 0.64 : 0.55, // Adjust the aspect ratio as needed
+                      childAspectRatio: _viewType == "Card" ? 0.5 : 0.55, // Adjust the aspect ratio as needed
                     ),
                     itemCount: _filteredMovies.length,
                     itemBuilder: (context, index) {
