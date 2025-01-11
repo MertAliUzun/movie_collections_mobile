@@ -35,7 +35,8 @@ class PersonMoviesWidget extends StatelessWidget {
               ),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+               crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [               
                 movie['poster_path'] != null
                     ? ClipRRect(
@@ -53,24 +54,32 @@ class PersonMoviesWidget extends StatelessWidget {
                     : const Icon(Icons.movie, size: 100, color: Colors.white54),
                 SizedBox(height: screenHeight *0.01,),
                 Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Text(
-                    movie['title'] ?? 'No Title',
-                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
+                  padding: const EdgeInsets.fromLTRB(2, 0, 2, 15),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text(
+                          movie['title'] ?? 'No Title',
+                          style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                      if(personType == 'Actor')
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0,),
+                        child: Text('(${movie['character']})', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.025), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1,),
+                      ),
+                    ],
                   ),
                 ),
-                if(personType == 'Actor')
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0,),
-                  child: Text('(${movie['character']})', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.025), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1,),
-                ),
+                
                 SizedBox(height: screenHeight*0.005,),
                 
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
                     child: Column(
                       children: [
                         if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))

@@ -80,7 +80,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
               ),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 movie['poster_path'] != null
                     ? ClipRRect(
@@ -96,22 +97,21 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         ),
                     )
                     : const Icon(Icons.movie, size: 100, color: Colors.white54),
+                SizedBox(height: screenHeight * 0.01,),
                 Column(
                   children: [
-                    //SizedBox(height: 0, child: Divider(color: Colors.white54, thickness: 1,)),
-                    SizedBox(height: screenHeight *0.01,),
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: const EdgeInsets.fromLTRB(2, 0, 2, 15),
                       child: Text(
                         movie['title'] ?? 'No Title',
-                        style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                       ),
                     ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
                         child: Column(
                           children: [
                             if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))

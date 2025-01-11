@@ -967,7 +967,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             ),
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [               
                               similarMovie['poster_path'] != null
                                   ? ClipRRect(
@@ -985,7 +986,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                   : const Icon(Icons.movie, size: 100, color: Colors.white54),
                               SizedBox(height: screenHeight *0.01,),
                               Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),
                                 child: Text(
                                   similarMovie['title'] ?? 'No Title',
                                   style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
@@ -995,7 +996,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 ),
                               ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
                                   child: Column(
                                     children: [
                                       if(similarMovie['genre_ids'] != null && similarMovie['genre_ids'].any((id) => genreMap[id] != null))
