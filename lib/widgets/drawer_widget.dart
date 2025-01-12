@@ -1,4 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+import '../models/movie_model.dart';
+import '../screens/edit_movie_screen.dart';
 
 class DrawerWidget extends StatelessWidget {
   final String _viewType;
@@ -6,6 +11,7 @@ class DrawerWidget extends StatelessWidget {
   final String _sortBy;
   final String _sortDir;
   final bool _isFromWishlist;
+  final List<Movie> _movies;
   final ValueChanged<String> _changeViewType;
   final ValueChanged<String> _toggleGroupBy;
   final ValueChanged<String> _onSortByChanged;
@@ -17,6 +23,7 @@ class DrawerWidget extends StatelessWidget {
     required String sortBy,
     required String sortDir,
     required bool isFromWishlist,
+    required List<Movie> movies,
     required ValueChanged<String> changeViewType,
     required ValueChanged<String> toggleGroupBy,
     required ValueChanged<String> onSortByChanged,
@@ -29,8 +36,14 @@ class DrawerWidget extends StatelessWidget {
         _onSortByChanged = onSortByChanged,
         _onSortDirChanged = onSortDirChanged,
         _sortDir = sortDir,
-        _isFromWishlist = isFromWishlist;
+        _isFromWishlist = isFromWishlist,
+        _movies = movies;
 
+  Movie _getRandomMovie() {
+    final random = Random();
+    return _movies[random.nextInt(_movies.length)];
+  }
+  
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
@@ -220,6 +233,34 @@ class DrawerWidget extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            ListTile(
+              title: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(0, screenHeight * 0.12, 0, screenHeight * 0.05),
+                    child: TextButton(onPressed:() {
+                      final movie = _getRandomMovie();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie),
+                        ),
+                      );
+                    },style: TextButton.styleFrom(backgroundColor: const Color.fromARGB(255, 34, 40, 50),),  child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2),
+                      child: Row(
+                        children: [
+                          Text('Choose a Random Movie', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
+                          SizedBox(width: screenWidth * 0.03,),
+                          Icon(Icons.movie, size: screenWidth * 0.055, color: Colors.white54,),
+                        ],
+                      ), 
+                    )),
+                  ),
+                ],
+              ),
+
             ),
           ],
         ),

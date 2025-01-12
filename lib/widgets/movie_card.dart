@@ -22,7 +22,7 @@ double screenHeight = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: onTap,
       child: viewType.contains("List") ? Container(
-        height: viewType == "List" ? screenHeight * 0.11 : screenHeight *0.07,
+        height: viewType == "List" ? screenHeight * 0.12 : screenHeight *0.07,
         child: Row(
           children: [
             // Film afişi

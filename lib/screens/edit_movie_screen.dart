@@ -435,14 +435,15 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   Future<void> _fetchSimilarMovies(int movieId) async {
     final tmdbService = TmdbService();
     final similarMovies = await tmdbService.getSimilarMovies(movieId);
+    
     if(similarMovies != null) {
       setState(() {
-        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en') // İngilizce dilinde olanları filtrele
+        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en')
+          .where((movie) => movie['poster_path'] != null)
           .take(6) // İlk 6 filmi al
           .map((movie) => Map<String, dynamic>.from(movie)) // Filmleri Map formatında döndür
           .toList();;
       });
-
     }
 
   }
@@ -453,10 +454,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     final similarMovies = await tmdbService.getSimilarMovies(movieId);
     if(similarMovies != null) {
       setState(() {
-        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en') // İngilizce dilinde olanları filtrele
+        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en')
+          .where((movie) => movie['poster_path'] != null)
           .take(6) // İlk 6 filmi al
-          .map((movie) => Map<String, dynamic>.from(movie)) // Filmleri Map formatında döndür
-          .toList();;
+          .map((movie) => Map<String, dynamic>.from(movie))
+          .toList();
+          
       });
 
     }
@@ -541,549 +544,552 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           ),  
           SingleChildScrollView(
           controller: _scrollController,
-          padding: const EdgeInsets.all(16.0),
+          //padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
-            child: Column(
-              children: [
-                TextFormField(
-                  controller: _movieNameController,
-                  decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54)),
-                  style: const TextStyle(color: Colors.white),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Lütfen film adını girin';
-                    }
-                    return null;
-                  },
-                ),
-                TextFormField(
-                  controller: _sortTitleController,
-                  decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
-                  style: const TextStyle(color: Colors.white),
-                ),
-                SizedBox(height: screenWidth * 0.1),
-                Text('Genres', style: TextStyle(color: Colors.white, fontSize: 16),),
-                Divider(height: 10, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.03),
-                _selectedGenres.isNotEmpty
-                    ? GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
-                          childAspectRatio: 1.5,
-                        ),
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _selectedGenres.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onLongPress: () {
-                              _deleteGenre(index);
-                            },
-                            onTap: () async {
-                              final movieId = await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index]),
-                                ),
-                              );
-                              if (movieId != null) {
-                                _fetchMovieDetails(movieId);
-                              }
-                            },
-                            child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                  child: Text(
-                                    textAlign: TextAlign.center,
-                                    _selectedGenres[index],
-                                    style: TextStyle(color: Colors.white, 
-                                    fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
-                                    _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: _movieNameController,
+                    decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54)),
+                    style: const TextStyle(color: Colors.white),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Lütfen film adını girin';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextFormField(
+                    controller: _sortTitleController,
+                    decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(height: screenWidth * 0.1),
+                  Text('Genres', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Divider(height: 10, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.03),
+                  _selectedGenres.isNotEmpty
+                      ? GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
+                            childAspectRatio: 1.5,
+                          ),
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: _selectedGenres.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onLongPress: () {
+                                _deleteGenre(index);
+                              },
+                              onTap: () async {
+                                final movieId = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index]),
+                                  ),
+                                );
+                                if (movieId != null) {
+                                  _fetchMovieDetails(movieId);
+                                }
+                              },
+                              child: Card(
+                                color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                    child: Text(
+                                      textAlign: TextAlign.center,
+                                      _selectedGenres[index],
+                                      style: TextStyle(color: Colors.white, 
+                                      fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
+                                      _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                 ),
                               ),
+                            );
+                          },
+                        )
+                      : const Text('No Genres Selected', style: TextStyle(color: Colors.white54)),
+                  SizedBox(height: screenHeight * 0.02,),
+                  Text('Director', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Divider(height: 10, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.03),
+                  GestureDetector(
+                    onLongPress: () {
+                      _deleteDirector();
+                    },
+                    onTap: () async {
+                      if(_directorNameController.text.isEmpty){
+                        _editDirector();
+                      }else{
+                      final movieId = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director',),
+                        ),
+                      );
+                      
+                      if (movieId != null) {
+                        //final movieDetails = await _tmdbService.getMovieDetails(movieId);
+                        _fetchMovieDetails(movieId);
+                        // Handle the movie details as needed
+                      }
+                      }
+                    },
+                    child: Card(
+                      color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(width: screenWidth * 0.1),
+                            Text(
+                              _directorNameController.text.isNotEmpty 
+                                  ? _directorNameController.text 
+                                  : 'No Director Selected',
+                              style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-                          );
-                        },
-                      )
-                    : const Text('No Genres Selected', style: TextStyle(color: Colors.white54)),
-                SizedBox(height: screenHeight * 0.02,),
-                Text('Director', style: TextStyle(color: Colors.white, fontSize: 16),),
-                Divider(height: 10, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.03),
-                GestureDetector(
-                  onLongPress: () {
-                    _deleteDirector();
-                  },
-                  onTap: () async {
-                    if(_directorNameController.text.isEmpty){
-                      _editDirector();
-                    }else{
-                    final movieId = await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director',),
+                            Row(
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.edit, color: Colors.white),
+                                  onPressed: _editDirector,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    );
-        
-                    if (movieId != null) {
-                      //final movieDetails = await _tmdbService.getMovieDetails(movieId);
-                      _fetchMovieDetails(movieId);
-                      // Handle the movie details as needed
-                    }
-                    }
-                  },
-                  child: Card(
-                    color: const Color.fromARGB(255, 44, 50, 60),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(width: screenWidth * 0.1),
-                          Text(
-                            _directorNameController.text.isNotEmpty 
-                                ? _directorNameController.text 
-                                : 'No Director Selected',
-                            style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(height: screenWidth * 0.05),
+                  Text('Actors', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Divider(height: 10, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.03),
+                  const SizedBox(height: 10),
+                  _selectedActors.isNotEmpty
+                      ? GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
+                            childAspectRatio: 2,
                           ),
-                          Row(
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.edit, color: Colors.white),
-                                onPressed: _editDirector,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: _selectedActors.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onLongPress: () {
+                               _deleteActor(index);
+                              },
+                              onTap: () async {
+                                final actorName = _selectedActors[index];
+                                final movieId = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor'),
+                                  ),
+                                );
+                                if (movieId != null) {
+                                  _fetchMovieDetails(movieId);
+                                }
+                              },
+                              child: Card(
+                                color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                    child: Text(
+                                      _selectedActors[index],
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.white, fontSize: 
+                                      _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ],
+                            );
+                          },
+                        )
+                      : const Text('No actors selected', style: TextStyle(color: Colors.white54)),
+                  SizedBox(height: screenWidth * 0.05),
+                  Text('Writers', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Divider(height: 10, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.03),
+                  const SizedBox(height: 10),
+                  _selectedWriters.isNotEmpty
+                      ? GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
+                            childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
                           ),
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: _selectedWriters.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onLongPress: () {
+                               _deleteWriter(index);
+                              },
+                              onTap: () async {
+                                final writerName = _selectedWriters[index];
+                                final movieId = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer'),
+                                  ),
+                                );
+                                if (movieId != null) {
+                                  _fetchMovieDetails(movieId);
+                                }
+                              },
+                              child: Card(
+                                color:  const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                    child: Text(
+                                      _selectedWriters[index],
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.white, fontSize:
+                                      _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        )
+                      : const Text('No writers selected', style: TextStyle(color: Colors.white54)),
+                  SizedBox(height: screenWidth * 0.05),
+                  Text('Production Companies', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Divider(height: 10, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.03),
+                  const SizedBox(height: 10),
+                  _selectedProductionCompanies.isNotEmpty
+                      ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 1,
+                            childAspectRatio: 6,
+                          ),
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: _selectedProductionCompanies.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onLongPress: () {
+                               _deleteCompany(index);
+                              },
+                              onTap: () async {
+                                final companyName = _selectedProductionCompanies[index];
+                                final movieId = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => CompanyScreen(companyName: companyName,),
+                                  ),
+                                );
+                                if (movieId != null) {
+                                  _fetchMovieDetails(movieId);
+                                }
+                              },
+                              child: Card(
+                                color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                    child: Text(
+                                      _selectedProductionCompanies[index],
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        )
+                      : const Text('No companies selected', style: TextStyle(color: Colors.white54)),
+                  ListTile(
+                      title: Text(
+                        'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
+                        style: const TextStyle(color: Colors.white54),
+                      ),
+                      trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
+                      onTap: () => _selectDate(context),
+                    ),
+                  if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                      SizedBox(width: screenWidth * 0.1,),
+                      Text('Revenue: ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                    ],
+                  ),
+                  if(_countryController.text.isNotEmpty)
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
+                    child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
+                    ),
+                  TextFormField(
+                    controller: _plotController,
+                    decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54)),
+                    maxLines: 3,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  TextFormField(
+                    controller: _runtimeController,
+                    decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54)),
+                    keyboardType: TextInputType.number,
+                    validator: (value) {
+                      if (value != null && value.isNotEmpty) {
+                        final number = int.tryParse(value);
+                        if (number == null) {
+                          return 'Geçerli bir sayı girin';
+                        }
+                      }
+                      return null;
+                    },
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  TextFormField(
+                    controller: _imdbRatingController,
+                    decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54)),
+                    keyboardType: TextInputType.number,
+                    style: const TextStyle(color: Colors.white),
+                    validator: (value) {
+                      if (value != null && value.isNotEmpty) {
+                        final number = double.tryParse(value);
+                        if (number == null || number < 0 || number > 10) {
+                          return 'Geçerli bir puan girin (0-10)';
+                        }
+                      }
+                      return null;
+                    },
+                  ),
+                  if (!widget.isFromWishlist) ...{
+                    ListTile(
+                      title: Text(
+                        'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
+                        style: const TextStyle(color: Colors.white54),
+                      ),
+                      trailing: const Icon(Icons.calendar_today, color: Colors.white54),
+                      onTap: () => _watchDate(context),
+                    ),
+                    Stack(
+                      children: [
+                        Positioned.fill(
+                            child: Container(
+                              color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                            ),
+                          ), 
+                      RatingBar.builder(
+                      unratedColor: Colors.blueGrey.withOpacity(0.6),
+                      itemSize: 30,
+                      initialRating: _userScore,
+                      minRating: 0,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 10,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                      itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
+                      onRatingUpdate: (rating) {
+                        setState(() {
+                          _userScore = rating;
+                        });
+                      },
+                    ),
+                      ],
+                    ),
+                    
+                  },
+                  if (widget.isFromWishlist)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                      child: Stack(
+                        children: [
+                            Positioned.fill(
+                            child: Container(
+                              color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                            ),
+                          ),                 
+                          RatingBar.builder(
+                          unratedColor: Colors.blueGrey.withOpacity(0.6),
+                          itemSize: 30,
+                          initialRating: _hypeScore,
+                          minRating: 0,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                          itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
+                          onRatingUpdate: (rating) {
+                            setState(() {
+                              _hypeScore = rating;
+                            });
+                          },
+                        ),
                         ],
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(height: screenWidth * 0.05),
-                Text('Actors', style: TextStyle(color: Colors.white, fontSize: 16),),
-                Divider(height: 10, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.03),
-                const SizedBox(height: 10),
-                _selectedActors.isNotEmpty
-                    ? GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
-                          childAspectRatio: 2,
-                        ),
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _selectedActors.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onLongPress: () {
-                             _deleteActor(index);
-                            },
-                            onTap: () async {
-                              final actorName = _selectedActors[index];
-                              final movieId = await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor'),
-                                ),
-                              );
-                              if (movieId != null) {
-                                _fetchMovieDetails(movieId);
-                              }
-                            },
-                            child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                  child: Text(
-                                    _selectedActors[index],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white, fontSize: 
-                                    _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      )
-                    : const Text('No actors selected', style: TextStyle(color: Colors.white54)),
-                SizedBox(height: screenWidth * 0.05),
-                Text('Writers', style: TextStyle(color: Colors.white, fontSize: 16),),
-                Divider(height: 10, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.03),
-                const SizedBox(height: 10),
-                _selectedWriters.isNotEmpty
-                    ? GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
-                          childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
-                        ),
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _selectedWriters.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onLongPress: () {
-                             _deleteWriter(index);
-                            },
-                            onTap: () async {
-                              final writerName = _selectedWriters[index];
-                              final movieId = await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer'),
-                                ),
-                              );
-                              if (movieId != null) {
-                                _fetchMovieDetails(movieId);
-                              }
-                            },
-                            child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                  child: Text(
-                                    _selectedWriters[index],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white, fontSize:
-                                    _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      )
-                    : const Text('No writers selected', style: TextStyle(color: Colors.white54)),
-                SizedBox(height: screenWidth * 0.05),
-                Text('Production Companies', style: TextStyle(color: Colors.white, fontSize: 16),),
-                Divider(height: 10, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.03),
-                const SizedBox(height: 10),
-                _selectedProductionCompanies.isNotEmpty
-                    ? GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-                          childAspectRatio: 6,
-                        ),
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _selectedProductionCompanies.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onLongPress: () {
-                             _deleteCompany(index);
-                            },
-                            onTap: () async {
-                              final companyName = _selectedProductionCompanies[index];
-                              final movieId = await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CompanyScreen(companyName: companyName,),
-                                ),
-                              );
-                              if (movieId != null) {
-                                _fetchMovieDetails(movieId);
-                              }
-                            },
-                            child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                  child: Text(
-                                    _selectedProductionCompanies[index],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045, fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      )
-                    : const Text('No companies selected', style: TextStyle(color: Colors.white54)),
-                ListTile(
-                    title: Text(
-                      'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
-                      style: const TextStyle(color: Colors.white54),
-                    ),
-                    trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
-                    onTap: () => _selectDate(context),
-                  ),
-                if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                    SizedBox(width: screenWidth * 0.1,),
-                    Text('Revenue: ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                  ],
-                ),
-                if(_countryController.text.isNotEmpty)
-                Padding(
-                  padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
-                  child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
-                  ),
-                TextFormField(
-                  controller: _plotController,
-                  decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54)),
-                  maxLines: 3,
-                  style: const TextStyle(color: Colors.white),
-                ),
-                TextFormField(
-                  controller: _runtimeController,
-                  decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54)),
-                  keyboardType: TextInputType.number,
-                  validator: (value) {
-                    if (value != null && value.isNotEmpty) {
-                      final number = int.tryParse(value);
-                      if (number == null) {
-                        return 'Geçerli bir sayı girin';
-                      }
-                    }
-                    return null;
-                  },
-                  style: const TextStyle(color: Colors.white),
-                ),
-                TextFormField(
-                  controller: _imdbRatingController,
-                  decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54)),
-                  keyboardType: TextInputType.number,
-                  style: const TextStyle(color: Colors.white),
-                  validator: (value) {
-                    if (value != null && value.isNotEmpty) {
-                      final number = double.tryParse(value);
-                      if (number == null || number < 0 || number > 10) {
-                        return 'Geçerli bir puan girin (0-10)';
-                      }
-                    }
-                    return null;
-                  },
-                ),
-                if (!widget.isFromWishlist) ...{
-                  ListTile(
-                    title: Text(
-                      'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
-                      style: const TextStyle(color: Colors.white54),
-                    ),
-                    trailing: const Icon(Icons.calendar_today, color: Colors.white54),
-                    onTap: () => _watchDate(context),
-                  ),
-                  Stack(
+                  SizedBox(height: 30),
+                  if(_similarMovies.length > 3)
+                  Card(color: Colors.transparent,
+                  child: Column(
                     children: [
-                      Positioned.fill(
-                          child: Container(
-                            color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
-                          ),
-                        ), 
-                    RatingBar.builder(
-                    unratedColor: Colors.blueGrey.withOpacity(0.6),
-                    itemSize: 30,
-                    initialRating: _userScore,
-                    minRating: 0,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 10,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                    itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
-                    onRatingUpdate: (rating) {
-                      setState(() {
-                        _userScore = rating;
-                      });
-                    },
-                  ),
-                    ],
-                  ),
-                  
-                },
-                if (widget.isFromWishlist)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
-                    child: Stack(
-                      children: [
-                          Positioned.fill(
-                          child: Container(
-                            color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
-                          ),
-                        ),                 
-                        RatingBar.builder(
-                        unratedColor: Colors.blueGrey.withOpacity(0.6),
-                        itemSize: 30,
-                        initialRating: _hypeScore,
-                        minRating: 0,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                        itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
-                        onRatingUpdate: (rating) {
-                          setState(() {
-                            _hypeScore = rating;
-                          });
-                        },
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text('Similar Movies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.07, fontWeight: FontWeight.bold),),
                       ),
-                      ],
-                    ),
-                  ),
-                SizedBox(height: 30),
-                if(_similarMovies.length > 3)
-                Card(color: const Color.fromARGB(255, 34, 40, 50), 
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text('Similar Movies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.07, fontWeight: FontWeight.bold),),
-                    ),
-                    GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, // Adjust the number of columns as needed
-                      childAspectRatio: 0.42, // Adjust the aspect ratio as needed
-                    ),
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: _similarMovies.length,
-                    itemBuilder: (context, index) {
-                      final similarMovie = _similarMovies[index];
-                      return GestureDetector(
-                        onTap: () {
-                          if (similarMovie['id'] != null) {
-                                _fetchMovieDetails(similarMovie['id']);
-                                _scrollToTop();
-                              }
-                        },
-                        child: Card(
-                          color: const Color.fromARGB(255, 44, 50, 60),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(36.0), // Sol üst köşe
-                              topRight: Radius.circular(36.0), // Sağ üst köşe
+                      GridView.builder(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3, // Adjust the number of columns as needed
+                        childAspectRatio: 0.42, // Adjust the aspect ratio as needed
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: _similarMovies.length,
+                      itemBuilder: (context, index) {
+                        final similarMovie = _similarMovies[index];
+                        return GestureDetector(
+                          onTap: () {
+                            if (similarMovie['id'] != null) {
+                                  _fetchMovieDetails(similarMovie['id']);
+                                  _scrollToTop();
+                                }
+                          },
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60),
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(36.0), // Sol üst köşe
+                                topRight: Radius.circular(36.0), // Sağ üst köşe
+                              ),
+                            ),
+                            child: Column(
+                               crossAxisAlignment: CrossAxisAlignment.center,
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [               
+                                similarMovie['poster_path'] != null
+                                    ? ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(36.0), // Sol üst köşe
+                                          topRight: Radius.circular(36.0), // Sağ üst köşe
+                                        ),
+                                      child: Image.network(
+                                          'https://image.tmdb.org/t/p/w500${similarMovie['poster_path']}',
+                                          fit: BoxFit.cover,
+                                          height: screenHeight * 0.22,
+                                          width: screenWidth * 0.35,
+                                        ),
+                                    )
+                                    : const Icon(Icons.movie, size: 100, color: Colors.white54),
+                                SizedBox(height: screenHeight *0.01,),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),
+                                  child: Text(
+                                    similarMovie['title'] ?? 'No Title',
+                                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  ),
+                                ),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+                                    child: Column(
+                                      children: [
+                                        if(similarMovie['genre_ids'] != null && similarMovie['genre_ids'].any((id) => genreMap[id] != null))
+                                        Text(
+                                          '${similarMovie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
+                                          style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                                          textAlign: TextAlign.center,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                        SizedBox(height: screenHeight * 0.001,),
+                                        if (similarMovie['release_date'] != null)
+                                        Text(
+                                          '${similarMovie['release_date'].split('-')[0]}',
+                                          style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                              ],
                             ),
                           ),
-                          child: Column(
-                             crossAxisAlignment: CrossAxisAlignment.center,
-                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [               
-                              similarMovie['poster_path'] != null
-                                  ? ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(36.0), // Sol üst köşe
-                                        topRight: Radius.circular(36.0), // Sağ üst köşe
-                                      ),
-                                    child: Image.network(
-                                        'https://image.tmdb.org/t/p/w500${similarMovie['poster_path']}',
-                                        fit: BoxFit.cover,
-                                        height: screenHeight * 0.22,
-                                        width: screenWidth * 0.35,
-                                      ),
-                                  )
-                                  : const Icon(Icons.movie, size: 100, color: Colors.white54),
-                              SizedBox(height: screenHeight *0.01,),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),
-                                child: Text(
-                                  similarMovie['title'] ?? 'No Title',
-                                  style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 2,
-                                ),
-                              ),
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+                        );
+                      },
+                    ),
+                    ],
+                  )),
+                  SizedBox(height: 30,),
+                  GestureDetector(
+                    onTap: _isUploading ? null : _pickImage,
+                    child: Container(
+                      width: double.infinity,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: _isUploading
+                          ? const Center(child: CircularProgressIndicator())
+                          : _selectedImage != null
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.file(
+                                    _selectedImage!,
+                                    fit: BoxFit.cover,
+                                  ),
+                                )
+                              : const Center(
                                   child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      if(similarMovie['genre_ids'] != null && similarMovie['genre_ids'].any((id) => genreMap[id] != null))
-                                      Text(
-                                        '${similarMovie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
-                                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
-                                        textAlign: TextAlign.center,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                      ),
-                                      SizedBox(height: screenHeight * 0.001,),
-                                      if (similarMovie['release_date'] != null)
-                                      Text(
-                                        '${similarMovie['release_date'].split('-')[0]}',
-                                        style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
-                                        textAlign: TextAlign.center,
-                                      ),
+                                      Icon(Icons.cloud_upload, size: 75, color: Colors.white54),
+                                      Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54)),
                                     ],
                                   ),
                                 ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  ],
-                )),
-                SizedBox(height: 30,),
-                GestureDetector(
-                  onTap: _isUploading ? null : _pickImage,
-                  child: Container(
-                    width: double.infinity,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(8),
                     ),
-                    child: _isUploading
-                        ? const Center(child: CircularProgressIndicator())
-                        : _selectedImage != null
-                            ? ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.file(
-                                  _selectedImage!,
-                                  fit: BoxFit.cover,
-                                ),
-                              )
-                            : const Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(Icons.cloud_upload, size: 75, color: Colors.white54),
-                                    Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54)),
-                                  ],
-                                ),
-                              ),
                   ),
-                ),
-                const SizedBox(height: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    foregroundColor: Colors.white,
-                    fixedSize: const Size(double.infinity, 50),
-                  ),
-                  onPressed: _saveMovie,
-                      icon: const Icon(Icons.save),
-                      label: const Text('Güncelle', style: TextStyle(fontSize: 18)),
+                  const SizedBox(height: 25),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      fixedSize: const Size(double.infinity, 50),
                     ),
-                    const SizedBox(width: 10),
-                    ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
-                        foregroundColor: Colors.white,
-                        fixedSize: const Size(double.infinity, 50),
+                    onPressed: _saveMovie,
+                        icon: const Icon(Icons.save),
+                        label: const Text('Güncelle', style: TextStyle(fontSize: 18)),
                       ),
-                      onPressed: _deleteMovie,
-                      icon: const Icon(Icons.delete),
-                      label: const Text('Sil', style: TextStyle(fontSize: 18)),
-                    ),
-                  ],
-                ),
-              ],
+                      const SizedBox(width: 10),
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          foregroundColor: Colors.white,
+                          fixedSize: const Size(double.infinity, 50),
+                        ),
+                        onPressed: _deleteMovie,
+                        icon: const Icon(Icons.delete),
+                        label: const Text('Sil', style: TextStyle(fontSize: 18)),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
