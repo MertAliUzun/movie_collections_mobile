@@ -124,8 +124,8 @@ double screenHeight = MediaQuery.of(context).size.height;
           color: const Color.fromARGB(255, 44, 50, 60),
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(36.0), // Sol üst köşe
-                topRight: Radius.circular(36.0), // Sağ üst köşe
+                topLeft: Radius.circular(16.0), // Sol üst köşe
+                topRight: Radius.circular(16.0), // Sağ üst köşe
               ),
             ),
           child: Column(
@@ -134,8 +134,8 @@ double screenHeight = MediaQuery.of(context).size.height;
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(36.0), // Sol üst köşe
-                            topRight: Radius.circular(36.0), // Sağ üst köşe
+                            topLeft: Radius.circular(16.0), // Sol üst köşe
+                            topRight: Radius.circular(16.0), // Sağ üst köşe
                           ),
                 child: Image.network(
                   movie.imageLink,
