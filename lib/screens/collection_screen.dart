@@ -65,7 +65,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
     _filteredMovies.sort((a, b) {
       int comparison;
       if (_sortBy == 'movieName') {
-        comparison = a.movieName.compareTo(b.movieName);
+        //if there is customSortTitle, sort according to that if not sort for movieName
+        String aMovie = a.movieName;
+        String bMovie = b.movieName;
+        if(a.customSortTitle !=null) { aMovie = a.customSortTitle!; }
+        if(b.customSortTitle !=null) { bMovie = b.customSortTitle!; }
+        comparison = aMovie.compareTo(bMovie);
       } else if (_sortBy == 'releaseDate') {
         comparison = a.releaseDate.compareTo(b.releaseDate);
       } else if (_sortBy == 'directorName') {
