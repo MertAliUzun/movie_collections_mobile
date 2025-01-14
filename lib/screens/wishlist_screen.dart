@@ -362,6 +362,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                               isFromWishlist: true,
                               viewType: _viewType,
                               isSelected: _selectedMovies.contains(movie.id.toString()),
+                              selectionMode: _isSelectionMode,
                               onTap: () => _handleMovieTap(movie),
                               onLongPress: () => _handleMovieSelection(movie),
                             );
@@ -373,6 +374,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           isFromWishlist: true,
                           viewType: _viewType,
                           isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                          selectionMode: _isSelectionMode,
                           onTap: () => _handleMovieTap(_filteredMovies[index]),
                           onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
                         );
@@ -405,6 +407,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                   isFromWishlist: true,
                                   viewType: _viewType,
                                   isSelected: _selectedMovies.contains(movies[movieIndex].id.toString()),
+                                  selectionMode: _isSelectionMode,
                                   onTap: () => _handleMovieTap(movies[movieIndex]),
                                   onLongPress: () => _handleMovieSelection(movies[movieIndex]),
                                 );
@@ -425,6 +428,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         isFromWishlist: true,
                         viewType: _viewType,
                         isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                        selectionMode: _isSelectionMode,
                         onTap: () => _handleMovieTap(_filteredMovies[index]),
                         onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
                       );

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../models/movie_model.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -9,6 +11,7 @@ class MovieCard extends StatelessWidget {
   final VoidCallback onLongPress;
   final String viewType;
   final bool isSelected;
+  final bool selectionMode;
 
   const MovieCard({
     super.key,
@@ -18,6 +21,7 @@ class MovieCard extends StatelessWidget {
     required this.onLongPress,
     required this.viewType,
     this.isSelected = false,
+    this.selectionMode = false,
   });
 
   @override
@@ -97,12 +101,32 @@ class MovieCard extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: screenHeight * 0.001,),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text(
-                          '${movie.directorName}',
-                          style: TextStyle(fontSize: screenWidth * 0.027, color: Colors.white70),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              '${movie.directorName}',
+                              style: TextStyle(fontSize: screenWidth * 0.027, color: Colors.white70),
+                            ),
+                          ),
+                          if(viewType == "List(Small)" && selectionMode)
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: isSelected ? Colors.blue : null,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  isSelected ? Icons.check : Icons.radio_button_unchecked,
+                                  color: Colors.white,
+                                  size: 20,
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
                       if (viewType != "List(Small)")
                         Row(
@@ -115,16 +139,16 @@ class MovieCard extends StatelessWidget {
                                 style: TextStyle(fontSize: screenWidth * 0.028 , color: Colors.white54),
                               ),
                             ),
-                            if (isSelected)
+                            if (selectionMode)
                             Padding(
                               padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: Colors.blue,
+                                  color: isSelected ? Colors.blue : null,
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(
-                                  Icons.check,
+                                  isSelected ? Icons.check : Icons.radio_button_unchecked,
                                   color: Colors.white,
                                   size: 20,
                                 ),
@@ -162,18 +186,41 @@ class MovieCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16.0), // Sol üst köşe
-                    topRight: Radius.circular(16.0), // Sağ üst köşe
+                Stack(
+                  children: [
+                    ClipRRect(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16.0), // Sol üst köşe
+                      topRight: Radius.circular(16.0), // Sağ üst köşe
+                    ),
+                    child: Image.network(
+                      movie.imageLink,
+                      width: screenWidth * 0.35, // Adjust width for grid layout
+                      height: screenHeight * 0.22, // Adjust height for grid layout
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
+                    ),
                   ),
-                  child: Image.network(
-                    movie.imageLink,
-                    width: screenWidth * 0.35, // Adjust width for grid layout
-                    height: screenHeight * 0.22, // Adjust height for grid layout
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
+                if(selectionMode)
+                Positioned(
+                    bottom: screenHeight * 0.01,
+                    right: screenWidth * 0.001,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: isSelected ? Colors.blue : null,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          isSelected ? Icons.check : Icons.radio_button_unchecked,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
                   ),
+                  ]
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(7, screenHeight * 0.01, 7, 0),
@@ -192,7 +239,7 @@ class MovieCard extends StatelessWidget {
                     child: RatingBar.builder(
                       ignoreGestures: true,
                       initialRating: movie.userScore ?? 0,
-                      minRating: 1,
+                      minRating: 0,
                       direction: Axis.horizontal,
                       allowHalfRating: true,
                       itemCount: 10,
@@ -209,7 +256,7 @@ class MovieCard extends StatelessWidget {
                     child: RatingBar.builder(
                       ignoreGestures: true,
                       initialRating: movie.hypeScore ?? 0,
-                      minRating: 1,
+                      minRating: 0,
                       direction: Axis.horizontal,
                       allowHalfRating: true,
                       itemCount: 5,
@@ -232,15 +279,39 @@ class MovieCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(height: screenHeight * 0.01,),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: Image.network(
-                  movie.imageLink,
-                  width: screenWidth * 0.28, // Adjust width for grid layout
-                  height: screenHeight * 0.23, // Adjust height for grid layout
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
+              Stack(
+                children: [
+                  
+                  ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Image.network(
+                    movie.imageLink,
+                    width: screenWidth * 0.28, // Adjust width for grid layout
+                    height: screenHeight * 0.23, // Adjust height for grid layout
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => const Icon(Icons.movie),
+                  ),
                 ),
+                if(selectionMode)
+                Positioned(
+                    bottom: screenHeight * 0.01,
+                    right: screenWidth * 0.001,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: isSelected ? Colors.blue : null,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          isSelected ? Icons.check : Icons.radio_button_unchecked,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                ] 
               ),
               SizedBox(height: screenHeight*0.03,),
             ],

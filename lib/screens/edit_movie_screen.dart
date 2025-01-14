@@ -236,10 +236,13 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         updatedMovie.watched = widget.isFromWishlist ? true : false;
         if (widget.isFromWishlist) {
           
-          updatedMovie.userScore = 1.0;
+          updatedMovie.userScore = 0.0;
           updatedMovie.watchDate = DateTime.now();
+          updatedMovie.hypeScore = null;
         } else {
-          updatedMovie.hypeScore = 1.0;
+          updatedMovie.hypeScore = 0.0;
+          updatedMovie.userScore = null;
+          updatedMovie.watchDate = null;
         }
         await service.updateMovie(updatedMovie);
         if (mounted) {
