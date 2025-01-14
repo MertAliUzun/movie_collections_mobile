@@ -32,6 +32,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _groupByGenre = false; // Track if grouping by genre
   bool _groupByReleaseYear= false;
   bool _groupBy = false;
+  Set<String> _selectedMovies = {};
+  bool get _isSelectionMode => _selectedMovies.isNotEmpty;
 
   @override
   void initState() {
@@ -185,6 +187,42 @@ class _WishlistScreenState extends State<WishlistScreen> {
   });
 }
 
+  void _handleMovieSelection(Movie movie) {
+    setState(() {
+      if (_selectedMovies.contains(movie.id.toString())) {
+        _selectedMovies.remove(movie.id.toString());
+      } else {
+        _selectedMovies.add(movie.id!.toString());
+      }
+    });
+  }
+
+  void _handleMovieTap(Movie movie) {
+    if (_isSelectionMode) {
+      _handleMovieSelection(movie);
+    } else {
+      _navigateToEditMovieScreen(movie);
+    }
+  }
+
+  Future<void> _deleteSelectedMovies() async {
+    try {
+      for (String movieId in _selectedMovies) {
+        await _service.deleteMovie(movieId);
+        if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Film başarıyla silindi')),
+        );
+      }
+      }
+      setState(() {
+        _selectedMovies.clear();
+      });
+      _fetchMovies();
+    } catch (e) {
+      // Handle error
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +239,63 @@ class _WishlistScreenState extends State<WishlistScreen> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-      appBar: AppBar(
+      appBar: _isSelectionMode ? AppBar(
+        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            setState(() {
+              _selectedMovies.clear();
+            });
+          },
+        ),
+        title: Text('${_selectedMovies.length} film seçildi', 
+          style: TextStyle(color: Colors.white)),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.select_all, color: Colors.white),
+            onPressed: () {
+              setState(() {
+                _selectedMovies.clear();
+                for (var movie in _filteredMovies) {
+                  if (!movie.watched) {
+                    _selectedMovies.add(movie.id!.toString());
+                  }
+                }
+              });
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.delete, color: Colors.white),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+                  title: Text('Seçili filmleri sil', 
+                    style: TextStyle(color: Colors.white)),
+                  content: Text('${_selectedMovies.length} filmi silmek istediğinize emin misiniz?',
+                    style: TextStyle(color: Colors.white)),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text('İptal', style: TextStyle(color: Colors.white)),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        _deleteSelectedMovies();
+                      },
+                      child: Text('Sil', style: TextStyle(color: Colors.red)),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      )
+      : AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: IconThemeData(color: Colors.white),
         title: !_isSearching 
@@ -222,19 +316,24 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
         ),
         actions: [
+          if (_isSelectionMode)
+            IconButton(
+              icon: const Icon(Icons.delete, color: Colors.white),
+              onPressed: _deleteSelectedMovies,
+            ),
           IconButton(
             icon: const Icon(Icons.search, color: Colors.white),
             onPressed: () {
               setState(() {
-                _isSearching = !_isSearching; // Toggle search mode
-                _searchController.clear(); // Clear search field
-                _filteredMovies = _movies; // Reset filtered list
+                _isSearching = !_isSearching;
+                _searchController.clear();
+                _filteredMovies = _movies;
               });
             },
           ),
         ],
       ),
-      drawer: DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: true, movies: _movies,),
+      drawer: _isSelectionMode ? null : DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: true, movies: _movies,),
       body: Column(
         children: [
           Expanded(
@@ -257,7 +356,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
                               movie: movie,
                               isFromWishlist: true,
                               viewType: _viewType,
-                              onTap: () => _navigateToEditMovieScreen(movie),
+                              isSelected: _selectedMovies.contains(movie.id.toString()),
+                              onTap: () => _handleMovieTap(movie),
+                              onLongPress: () => _handleMovieSelection(movie),
                             );
                           }).toList(),
                         );
@@ -266,7 +367,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           movie: _filteredMovies[index],
                           isFromWishlist: true,
                           viewType: _viewType,
-                          onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
+                          isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                          onTap: () => _handleMovieTap(_filteredMovies[index]),
+                          onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
                         );
                       }
                     },
@@ -296,7 +399,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                   movie: movies[movieIndex],
                                   isFromWishlist: true,
                                   viewType: _viewType,
-                                  onTap: () => _navigateToEditMovieScreen(movies[movieIndex]),
+                                  isSelected: _selectedMovies.contains(movies[movieIndex].id.toString()),
+                                  onTap: () => _handleMovieTap(movies[movieIndex]),
+                                  onLongPress: () => _handleMovieSelection(movies[movieIndex]),
                                 );
                               },
                             ),
@@ -314,7 +419,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         movie: _filteredMovies[index],
                         isFromWishlist: true,
                         viewType: _viewType,
-                        onTap: () => _navigateToEditMovieScreen(_filteredMovies[index]),
+                        isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                        onTap: () => _handleMovieTap(_filteredMovies[index]),
+                        onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
                       );
                     },
                   ),

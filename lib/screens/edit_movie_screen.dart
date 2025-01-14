@@ -184,7 +184,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     final supabase = Supabase.instance.client;
     final service = SupabaseService(supabase);
     try {
-      await service.deleteMovie(widget.movie!.movieName);
+      await service.deleteMovie(widget.movie!.id.toString());
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Film başarıyla silindi')),
@@ -545,27 +545,27 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           SingleChildScrollView(
           controller: _scrollController,
           //padding: const EdgeInsets.all(16.0),
-          child: Form(
-            key: _formKey,
+        child: Form(
+          key: _formKey,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _movieNameController,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: _movieNameController,
                     decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54)),
-                    style: const TextStyle(color: Colors.white),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Lütfen film adını girin';
-                      }
-                      return null;
-                    },
-                  ),
-                  TextFormField(
+                style: const TextStyle(color: Colors.white),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Lütfen film adını girin';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
                     controller: _sortTitleController,
                     decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
-                    style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                   ),
                   SizedBox(height: screenWidth * 0.1),
                   Text('Genres', style: TextStyle(color: Colors.white, fontSize: 16),),
@@ -814,12 +814,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           },
                         )
                       : const Text('No companies selected', style: TextStyle(color: Colors.white54)),
-                  ListTile(
-                      title: Text(
-                        'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
-                        style: const TextStyle(color: Colors.white54),
-                      ),
-                      trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
+              ListTile(
+                  title: Text(
+                    'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
+                    style: const TextStyle(color: Colors.white54),
+                  ),
+                  trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
                       onTap: () => _selectDate(context),
                     ),
                   if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
@@ -835,51 +835,51 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
                     child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
-                    ),
-                  TextFormField(
-                    controller: _plotController,
+                ),
+              TextFormField(
+                controller: _plotController,
                     decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54)),
-                    maxLines: 3,
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  TextFormField(
-                    controller: _runtimeController,
+                maxLines: 3,
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _runtimeController,
                     decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54)),
-                    keyboardType: TextInputType.number,
-                    validator: (value) {
-                      if (value != null && value.isNotEmpty) {
-                        final number = int.tryParse(value);
-                        if (number == null) {
-                          return 'Geçerli bir sayı girin';
-                        }
-                      }
-                      return null;
-                    },
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  TextFormField(
-                    controller: _imdbRatingController,
+                keyboardType: TextInputType.number,
+                validator: (value) {
+                  if (value != null && value.isNotEmpty) {
+                    final number = int.tryParse(value);
+                    if (number == null) {
+                      return 'Geçerli bir sayı girin';
+                    }
+                  }
+                  return null;
+                },
+                style: const TextStyle(color: Colors.white),
+              ),
+              TextFormField(
+                controller: _imdbRatingController,
                     decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54)),
-                    keyboardType: TextInputType.number,
-                    style: const TextStyle(color: Colors.white),
-                    validator: (value) {
-                      if (value != null && value.isNotEmpty) {
-                        final number = double.tryParse(value);
-                        if (number == null || number < 0 || number > 10) {
-                          return 'Geçerli bir puan girin (0-10)';
-                        }
-                      }
-                      return null;
-                    },
+                keyboardType: TextInputType.number,
+                style: const TextStyle(color: Colors.white),
+                validator: (value) {
+                  if (value != null && value.isNotEmpty) {
+                    final number = double.tryParse(value);
+                    if (number == null || number < 0 || number > 10) {
+                      return 'Geçerli bir puan girin (0-10)';
+                    }
+                  }
+                  return null;
+                },
+              ),
+              if (!widget.isFromWishlist) ...{
+                ListTile(
+                  title: Text(
+                    'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
+                    style: const TextStyle(color: Colors.white54),
                   ),
-                  if (!widget.isFromWishlist) ...{
-                    ListTile(
-                      title: Text(
-                        'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
-                        style: const TextStyle(color: Colors.white54),
-                      ),
                       trailing: const Icon(Icons.calendar_today, color: Colors.white54),
-                      onTap: () => _watchDate(context),
+                  onTap: () => _watchDate(context),
                     ),
                     Stack(
                       children: [
@@ -887,23 +887,23 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             child: Container(
                               color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
                             ),
-                          ), 
-                      RatingBar.builder(
+                ),
+                RatingBar.builder(
                       unratedColor: Colors.blueGrey.withOpacity(0.6),
-                      itemSize: 30,
-                      initialRating: _userScore,
-                      minRating: 0,
-                      direction: Axis.horizontal,
-                      allowHalfRating: true,
-                      itemCount: 10,
-                      itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                      itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
-                      onRatingUpdate: (rating) {
-                        setState(() {
-                          _userScore = rating;
-                        });
-                      },
-                    ),
+                  itemSize: 30,
+                  initialRating: _userScore,
+                  minRating: 0,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 10,
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                  itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
+                  onRatingUpdate: (rating) {
+                    setState(() {
+                      _userScore = rating;
+                    });
+                  },
+                ),
                       ],
                     ),
                     
@@ -1030,48 +1030,48 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     ),
                     ],
                   )),
-                  SizedBox(height: 30,),
-                  GestureDetector(
-                    onTap: _isUploading ? null : _pickImage,
-                    child: Container(
-                      width: double.infinity,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: _isUploading
-                          ? const Center(child: CircularProgressIndicator())
-                          : _selectedImage != null
-                              ? ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.file(
-                                    _selectedImage!,
-                                    fit: BoxFit.cover,
-                                  ),
-                                )
-                              : const Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
+              SizedBox(height: 30,),
+              GestureDetector(
+                onTap: _isUploading ? null : _pickImage,
+                child: Container(
+                  width: double.infinity,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: _isUploading
+                      ? const Center(child: CircularProgressIndicator())
+                      : _selectedImage != null
+                          ? ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.file(
+                                _selectedImage!,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          : const Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
                                       Icon(Icons.cloud_upload, size: 75, color: Colors.white54),
                                       Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54)),
-                                    ],
-                                  ),
-                                ),
-                    ),
-                  ),
-                  const SizedBox(height: 25),
+                                ],
+                              ),
+                            ),
+                ),
+              ),
+              const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      foregroundColor: Colors.white,
-                      fixedSize: const Size(double.infinity, 50),
-                    ),
-                    onPressed: _saveMovie,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  fixedSize: const Size(double.infinity, 50),
+                ),
+                onPressed: _saveMovie,
                         icon: const Icon(Icons.save),
                         label: const Text('Güncelle', style: TextStyle(fontSize: 18)),
                       ),

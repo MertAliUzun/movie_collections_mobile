@@ -69,13 +69,17 @@ class SupabaseService {
         .execute();
   }
 
-  Future<void> deleteMovie(String movieName) async {
-    await _supabaseClient
-        .from('movies')
-        .delete()
-        .eq('movie_name', movieName)
-        .eq('user_email', currentEmail)
-        .execute();
+  Future<void> deleteMovie(String movieId) async {
+    try {
+      await _supabaseClient
+          .from('movies')
+          .delete()
+          .eq('id', movieId)
+          .eq('user_email', currentEmail)
+          .execute();
+    } catch (e) {
+      throw Exception('Failed to delete movie: $e');
+    }
   }
 
   Future<List<Movie>> getWishlistMovies() async {
