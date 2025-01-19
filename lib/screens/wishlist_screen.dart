@@ -9,6 +9,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
+import 'dart:convert';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -50,12 +51,26 @@ class _WishlistScreenState extends State<WishlistScreen> {
   }
 
   Future<void> _fetchMovies() async {
-    final movies = await _service.getWishlistMovies();
-    setState(() {
-      _movies = movies;
-      _filteredMovies = movies; // Initialize filtered list
-      _sortMovies(); // Sort movies after fetching
-    });
+    try {
+      final movies = await _service.getWishlistMovies();
+      setState(() {
+        _movies = movies;
+        _filteredMovies = movies; // Initialize filtered list
+        _sortMovies(); // Sort movies after fetching
+      });
+    } catch (e) {
+      // If there's an error (like no internet), load from local storage
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? moviesString = prefs.getString('wishlistMovies');
+      if (moviesString != null) {
+        List<dynamic> jsonList = jsonDecode(moviesString);
+        setState(() {
+          _movies = jsonList.map((movie) => Movie.fromJson(movie)).toList();
+          _filteredMovies = _movies; // Initialize filtered list
+          _sortMovies(); // Sort movies after loading from local storage
+        });
+      }
+    }
   }
 
   void _sortMovies() {

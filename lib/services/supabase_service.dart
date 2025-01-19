@@ -1,6 +1,8 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/movie_model.dart';
 import '../models/user_model.dart';
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SupabaseService {
   final SupabaseClient _supabaseClient;
@@ -42,6 +44,27 @@ class SupabaseService {
       'budget': movie.budget,
       'revenue': movie.revenue,
     }).execute();
+
+    // After adding the movie, update local storage
+    await _updateLocalStorageWithMovie(movie);
+  }
+
+  Future<void> _updateLocalStorageWithMovie(Movie movie) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String movieStorage = movie.watched ? "collectionMovies" : "wishlistMovies";
+    String? moviesString = prefs.getString(movieStorage);
+    List<Movie> movies = [];
+
+    if (moviesString != null) {
+      List<dynamic> jsonList = jsonDecode(moviesString);
+      movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+    }
+
+    // Check for duplicates
+    if (!movies.any((m) => m.id == movie.id)) {
+      movies.add(movie);
+      await prefs.setString(movieStorage, jsonEncode(movies));
+    }
   }
 
   Future<void> updateMovie(Movie movie) async {
@@ -89,7 +112,14 @@ class SupabaseService {
         .eq('user_email', currentEmail)
         .eq('watched', false)
         .execute();
-    return (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
+
+    List<Movie> movies = (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
+    
+    // Save to local storage
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('wishlistMovies', jsonEncode(movies));
+
+    return movies;
   }
 
   Future<List<Movie>> getCollectionMovies() async {
@@ -99,6 +129,13 @@ class SupabaseService {
         .eq('user_email', currentEmail)
         .eq('watched', true)
         .execute();
-    return (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
+
+    List<Movie> movies = (response.data as List).map((movie) => Movie.fromJson(movie)).toList();
+    
+    // Save to local storage
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('collectionMovies', jsonEncode(movies));
+
+    return movies;
   }
 } 

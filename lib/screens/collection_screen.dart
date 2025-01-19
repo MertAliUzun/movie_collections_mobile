@@ -11,6 +11,7 @@ import 'add_movie_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
 import '../aux/groupBy.dart';
+import 'dart:convert';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({super.key});
@@ -53,12 +54,26 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   Future<void> _fetchMovies() async {
-    final movies = await _service.getCollectionMovies();
-    setState(() {
-      _movies = movies;
-      _filteredMovies = movies; // Initialize filtered list
-      _sortMovies(); // Sort movies after fetching
-    });
+    try {
+      final movies = await _service.getCollectionMovies();
+      setState(() {
+        _movies = movies;
+        _filteredMovies = movies; // Initialize filtered list
+        _sortMovies(); // Sort movies after fetching
+      });
+    } catch (e) {
+      // If there's an error (like no internet), load from local storage
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? moviesString = prefs.getString('collectionMovies');
+      if (moviesString != null) {
+        List<dynamic> jsonList = jsonDecode(moviesString);
+        setState(() {
+          _movies = jsonList.map((movie) => Movie.fromJson(movie)).toList();
+          _filteredMovies = _movies; // Initialize filtered list
+          _sortMovies(); // Sort movies after loading from local storage
+        });
+      }
+    }
   }
 
   void _sortMovies() {
