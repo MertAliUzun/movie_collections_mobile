@@ -48,7 +48,12 @@ class MovieCard extends StatelessWidget {
                   height: viewType == "List" ? screenHeight * 0.15 : screenHeight * 0.10,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) => //const Icon(Icons.movie),
-                  Image.asset('assets/images/placeholder_poster.png'), // Placeholder image
+                  Image.asset(
+                    'assets/images/placeholder_poster.png',
+                    width: viewType == "List" ? screenWidth * 0.20 : screenWidth * 0.13,
+                    height: viewType == "List" ? screenHeight * 0.15 : screenHeight * 0.10,
+                    fit: BoxFit.cover,
+                    ), // Placeholder image
                 ),
               ),
               // Film adı ve yönetmen adı
@@ -200,7 +205,12 @@ class MovieCard extends StatelessWidget {
                       height: screenHeight * 0.22, // Adjust height for grid layout
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) => //const Icon(Icons.movie),
-                      Image.asset('assets/images/placeholder_poster.png'),
+                      Image.asset(
+                        'assets/images/placeholder_poster.png',
+                        width: screenWidth * 0.35, // Adjust width for grid layout
+                        height: screenHeight * 0.22, // Adjust height for grid layout
+                        fit: BoxFit.cover,
+                        ),
                     ),
                   ),
                 if(selectionMode)
@@ -292,7 +302,12 @@ class MovieCard extends StatelessWidget {
                     height: screenHeight * 0.23, // Adjust height for grid layout
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => //const Icon(Icons.movie),
-                    Image.asset('assets/images/placeholder_poster.png'),
+                    Image.asset(
+                      'assets/images/placeholder_poster.png',
+                      width: screenWidth * 0.28, // Adjust width for grid layout
+                      height: screenHeight * 0.23, // Adjust height for grid layout
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 if(selectionMode)

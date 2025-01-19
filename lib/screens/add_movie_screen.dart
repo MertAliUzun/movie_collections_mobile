@@ -15,6 +15,9 @@ import 'company_screen.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
 import '../aux/businessLogic.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -209,7 +212,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
-  void _saveMovie() async {
+  Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {
       final supabase = Supabase.instance.client;
       final service = SupabaseService(supabase);
@@ -257,21 +260,51 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             : null,
       );
 
-      try {
-        await service.addMovie(movie);
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Film başarıyla eklendi')),
-          );
-          Navigator.pop(context, true);
-        }
-      } catch (e) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Hata oluştu: $e')),
-          );
+      // Check for internet connectivity
+      var connectivityResult = await (Connectivity().checkConnectivity());
+      if (connectivityResult[0] == ConnectivityResult.none) {
+        // Save to local storage if no internet
+        await _saveMovieToLocalStorage(movie);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Film kaydedildi, internet bağlantısı sağlandığında senkronize edilecek.')),
+        );
+        Navigator.pop(context, true);
+      } else {
+        // Save to database if internet is available
+        try {
+          await service.addMovie(movie);
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Film başarıyla eklendi')),
+            );
+            Navigator.pop(context, true);
+          }
+        } catch (e) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Hata oluştu: $e')),
+            );
+          }
         }
       }
+    }
+  }
+
+  Future<void> _saveMovieToLocalStorage(Movie movie) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String movieStorage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies' ;
+    String? moviesString = prefs.getString(movieStorage);
+    List<Movie> movies = [];
+
+    if (moviesString != null) {
+      List<dynamic> jsonList = jsonDecode(moviesString);
+      movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+    }
+
+    // Check for duplicates
+    if (!movies.any((m) => m.movieName == movie.movieName)) {
+      movies.add(movie);
+      await prefs.setString(movieStorage, jsonEncode(movies));
     }
   }
 

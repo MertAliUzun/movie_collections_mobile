@@ -238,7 +238,7 @@ class DrawerWidget extends StatelessWidget {
               title: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.fromLTRB(0, screenHeight * 0.12, 0, screenHeight * 0.05),
+                    padding: EdgeInsets.fromLTRB(0, screenHeight * 0.05, 0, screenHeight * 0.05),
                     child: TextButton(onPressed:() {
                       final movie = _getRandomMovie();
                       Navigator.push(

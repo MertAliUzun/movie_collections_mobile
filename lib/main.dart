@@ -4,6 +4,8 @@ import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'screens/add_movie_screen.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'services/supabase_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +18,14 @@ void main() async {
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
+  
+  // Check internet connection and sync local movies if connected
+  var connectivityResult = await (Connectivity().checkConnectivity());
+  if (connectivityResult[0] != ConnectivityResult.none) {
+    final supabase = Supabase.instance.client;
+    final service = SupabaseService(supabase);
+    await service.syncLocalMovies();
+  }
   
   runApp(const MyApp());
 }

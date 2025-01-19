@@ -3,6 +3,7 @@ import '../models/movie_model.dart';
 import '../models/user_model.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 class SupabaseService {
   final SupabaseClient _supabaseClient;
@@ -137,5 +138,55 @@ class SupabaseService {
     await prefs.setString('collectionMovies', jsonEncode(movies));
 
     return movies;
+  }
+
+  Future<void> syncLocalMovies() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    
+    // Sync collection movies
+    String? collectionMoviesString = prefs.getString('collectionMovies');
+    if (collectionMoviesString != null) {
+      List<dynamic> jsonList = jsonDecode(collectionMoviesString);
+      List<Movie> localCollectionMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+
+      for (Movie movie in localCollectionMovies) {
+        // Check if the movie already exists in the database
+        final response = await _supabaseClient
+            .from('movies')
+            .select()
+            .eq('movie_name', movie.movieName)
+            .eq('user_email', movie.userEmail)
+            .eq('watched', true)
+            .execute();
+
+        if (response.data.isEmpty) {
+          // If it doesn't exist, add it to the database
+          await addMovie(movie);
+        }
+      }
+    }
+
+    // Sync wishlist movies
+    String? wishlistMoviesString = prefs.getString('wishlistMovies');
+    if (wishlistMoviesString != null) {
+      List<dynamic> jsonList = jsonDecode(wishlistMoviesString);
+      List<Movie> localWishlistMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+
+      for (Movie movie in localWishlistMovies) {
+        // Check if the movie already exists in the database
+        final response = await _supabaseClient
+            .from('movies')
+            .select()
+            .eq('movie_name', movie.movieName)
+            .eq('user_email', movie.userEmail)
+            .eq('watched', false)
+            .execute();
+
+        if (response.data.isEmpty) {
+          // If it doesn't exist, add it to the database
+          await addMovie(movie);
+        }
+      }
+    }
   }
 } 

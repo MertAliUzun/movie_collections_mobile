@@ -17,6 +17,9 @@ import 'package:country_flags/country_flags.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
 import 'company_screen.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -162,6 +165,16 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
       );
 
+      // Check for internet connectivity
+      var connectivityResult = await (Connectivity().checkConnectivity());
+      if (connectivityResult[0] == ConnectivityResult.none) {
+        // Save to local storage if no internet
+        await _saveMovieToLocalStorage(movie);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Film güncellendi, internet bağlantısı sağlandığında senkronize edilecek.')),
+        );
+      } else {
+        // Save to database if internet is available
       try {
         await service.updateMovie(movie);
         if (mounted) {
@@ -178,57 +191,123 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         }
       }
     }
+    }
+  }
+
+  Future<void> _saveMovieToLocalStorage(Movie movie) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String movieStorage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies' ;
+    String? moviesString = prefs.getString(movieStorage);
+    List<Movie> movies = [];
+
+    if (moviesString != null) {
+      List<dynamic> jsonList = jsonDecode(moviesString);
+      movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+    }
+
+    // Check for duplicates
+    if (!movies.any((m) => m.movieName == movie.movieName)) {
+      movies.add(movie);
+      await prefs.setString(movieStorage, jsonEncode(movies));
+    }
   }
 
   void _deleteMovie() async {
-    final supabase = Supabase.instance.client;
-    final service = SupabaseService(supabase);
-    try {
-      await service.deleteMovie(widget.movie!.id.toString());
-      if (mounted) {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Delete from local storage
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String storage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies';
+      String? moviesString = prefs.getString(storage);
+      
+      if (moviesString != null) {
+        List<dynamic> jsonList = jsonDecode(moviesString);
+        List<Movie> movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+        movies.removeWhere((m) => m.id == widget.movie!.id);
+        await prefs.setString(storage, jsonEncode(movies));
+        
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Film başarıyla silindi')),
+          const SnackBar(content: Text('Film silindi, internet bağlantısı sağlandığında senkronize edilecek.')),
         );
         Navigator.pop(context, true);
       }
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Silme hatası: $e')),
-        );
+    } else {
+      // Existing online functionality
+      final supabase = Supabase.instance.client;
+      final service = SupabaseService(supabase);
+      try {
+        await service.deleteMovie(widget.movie!.id.toString());
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Film başarıyla silindi')),
+          );
+          Navigator.pop(context, true);
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Silme hatası: $e')),
+          );
+        }
       }
     }
   }
 
   void _toggleWatchedStatus() async {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Update in local storage
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String oldStorage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies';
+      String newStorage = widget.isFromWishlist ? 'collectionMovies' : 'wishlistMovies';
+      
+      // Remove from old storage
+      String? oldMoviesString = prefs.getString(oldStorage);
+      if (oldMoviesString != null) {
+        List<dynamic> jsonList = jsonDecode(oldMoviesString);
+        List<Movie> movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+        movies.removeWhere((m) => m.id == widget.movie!.id);
+        await prefs.setString(oldStorage, jsonEncode(movies));
+      }
 
-    final confirm = await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-          content: Text(
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: screenWidth * 0.04, color: Colors.white),
-            widget.isFromWishlist ? 'Filmi koleksiyona taşımak istiyor musunuz?' : 'Filmi izlenme listesine taşımak istiyor musunuz?',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false), // User declined
-              child: Text('Hayır', style: TextStyle(fontSize: screenWidth * 0.038, color: Colors.white)),
-            ),
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(true), // User confirmed
-              child: Text('Evet', style: TextStyle(fontSize: screenWidth * 0.038, color: Colors.white)),
-            ),
-          ],
-        );
-      },
-    );
+      // Add to new storage with updated watched status
+      String? newMoviesString = prefs.getString(newStorage);
+      List<Movie> newMovies = [];
+      if (newMoviesString != null) {
+        List<dynamic> jsonList = jsonDecode(newMoviesString);
+        newMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+      }
+      
+      final updatedMovie = Movie(
+        id: widget.movie!.id,
+        movieName: widget.movie!.movieName,
+        directorName: widget.movie!.directorName,
+        releaseDate: widget.movie!.releaseDate,
+        plot: widget.movie!.plot,
+        runtime: widget.movie!.runtime,
+        imdbRating: widget.movie!.imdbRating,
+        writers: widget.movie!.writers,
+        actors: widget.movie!.actors,
+        watched: !widget.movie!.watched,
+        imageLink: widget.movie!.imageLink,
+        userEmail: widget.movie!.userEmail,
+        watchDate: !widget.isFromWishlist ? DateTime.now() : null,
+        userScore: widget.isFromWishlist ? null : 0,
+        hypeScore: !widget.isFromWishlist ? null : widget.movie!.hypeScore,
+        genres: widget.movie!.genres,
+        productionCompany: widget.movie!.productionCompany,
+        customSortTitle: widget.movie!.customSortTitle,
+      );
+      
+      newMovies.add(updatedMovie);
+      await prefs.setString(newStorage, jsonEncode(newMovies));
 
-    if (confirm == true) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Film durumu güncellendi, internet bağlantısı sağlandığında senkronize edilecek.')),
+      );
+      Navigator.pop(context, true);
+    } else {
+      // Existing online functionality
       final supabase = Supabase.instance.client;
       final service = SupabaseService(supabase);
       try {
@@ -432,14 +511,24 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedWriters = widget.movie!.writers ?? [];
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
-      _fetchSimilarMovies(widget.movie!.id ?? 0);
+      _fetchSimilarMovies();
     }
   }
-  Future<void> _fetchSimilarMovies(int movieId) async {
-    final tmdbService = TmdbService();
-    final similarMovies = await tmdbService.getSimilarMovies(movieId);
-    
-    if(similarMovies != null) {
+
+  Future<void> _fetchSimilarMovies() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Skip fetching similar movies if there's no internet
+      return;
+    }
+
+    try {
+      final tmdbService = TmdbService();
+      final movieDetails = await tmdbService.searchMovies(widget.movie!.movieName);
+      if (movieDetails.isNotEmpty) {
+        final movieId = movieDetails[0]['id'];
+        final similarMovies = await tmdbService.getSimilarMovies(movieId);
+        if(similarMovies != null) {
       setState(() {
         _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en')
           .where((movie) => movie['poster_path'] != null)
@@ -448,7 +537,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           .toList();;
       });
     }
-
+      }
+    } catch (e) {
+      print('Error fetching similar movies: $e');
+    }
   }
 
   Future<void> _fetchMovieDetails(int movieId) async {
@@ -532,13 +624,18 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       ),
       body: Stack(
         children: [
-          if(_imageLink != null)
+          if(_imageLink != null && _imageLink!.isNotEmpty)
             Positioned.fill(
              child: Image.network(
                _imageLink!, // Resim URL'si
                fit: BoxFit.cover, // Tüm alanı kaplar
              ),
            ),
+           if(_imageLink == null)
+           Positioned.fill(
+              child: Image.asset(
+                'assets/images/placeholder_poster.png', 
+                fit: BoxFit.cover,)),
            if(_imageLink != null)
            Positioned.fill(
             child: Container(
