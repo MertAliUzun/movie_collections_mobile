@@ -141,52 +141,109 @@ class SupabaseService {
   }
 
   Future<void> syncLocalMovies() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    
-    // Sync collection movies
-    String? collectionMoviesString = prefs.getString('collectionMovies');
-    if (collectionMoviesString != null) {
-      List<dynamic> jsonList = jsonDecode(collectionMoviesString);
-      List<Movie> localCollectionMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  
+  // Sync collection movies
+  String? collectionMoviesString = prefs.getString('collectionMovies');
+  if (collectionMoviesString != null) {
+    List<dynamic> jsonList = jsonDecode(collectionMoviesString);
+    List<Movie> localCollectionMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
 
-      for (Movie movie in localCollectionMovies) {
-        // Check if the movie already exists in the database
-        final response = await _supabaseClient
-            .from('movies')
-            .select()
-            .eq('movie_name', movie.movieName)
-            .eq('user_email', movie.userEmail)
-            .eq('watched', true)
-            .execute();
+    // Veritabanındaki tüm collection filmleri alıyoruz
+    final response = await _supabaseClient
+        .from('movies')
+        .select()
+        .eq('watched', true)
+        .execute();
 
-        if (response.data.isEmpty) {
-          // If it doesn't exist, add it to the database
-          await addMovie(movie);
+    List<Movie> databaseCollectionMovies = [];
+    if (response.data != null) {
+      databaseCollectionMovies = List<Movie>.from(response.data.map((m) => Movie.fromJson(m)));
+    }
+
+    // LocalStorage'daki ve Veritabanındaki filmleri karşılaştırıyoruz
+    for (Movie movie in localCollectionMovies) {
+      // Veritabanındaki film var mı?
+      final movieInDb = databaseCollectionMovies.firstWhere(
+        (dbMovie) => dbMovie.movieName == movie.movieName && dbMovie.userEmail == movie.userEmail,
+        orElse: () => movie,
+      );
+
+      if (movieInDb == null) {
+        // Veritabanında yoksa, ekliyoruz
+        await addMovie(movie);
+      } else {
+        // Eğer veritabanındaki filmde farklılık varsa güncelliyoruz
+        if (movie != movieInDb) {
+          await updateMovie(movie);
         }
       }
     }
 
-    // Sync wishlist movies
-    String? wishlistMoviesString = prefs.getString('wishlistMovies');
-    if (wishlistMoviesString != null) {
-      List<dynamic> jsonList = jsonDecode(wishlistMoviesString);
-      List<Movie> localWishlistMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+    // Veritabanında olup, LocalStorage'da olmayan filmleri siliyoruz
+    for (Movie movie in databaseCollectionMovies) {
+      final movieInLocalStorage = localCollectionMovies.firstWhere(
+        (localMovie) => localMovie.movieName == movie.movieName && localMovie.userEmail == movie.userEmail,
+        orElse: () => movie,
+      );
 
-      for (Movie movie in localWishlistMovies) {
-        // Check if the movie already exists in the database
-        final response = await _supabaseClient
-            .from('movies')
-            .select()
-            .eq('movie_name', movie.movieName)
-            .eq('user_email', movie.userEmail)
-            .eq('watched', false)
-            .execute();
-
-        if (response.data.isEmpty) {
-          // If it doesn't exist, add it to the database
-          await addMovie(movie);
-        }
+      if (movieInLocalStorage == null) {
+        // Eğer localStorage'da yoksa, veritabanından siliyoruz
+        await deleteMovie(movie.id.toString());
       }
     }
   }
+
+  // Sync wishlist movies
+  String? wishlistMoviesString = prefs.getString('wishlistMovies');
+  if (wishlistMoviesString != null) {
+    List<dynamic> jsonList = jsonDecode(wishlistMoviesString);
+    List<Movie> localWishlistMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+
+    // Veritabanındaki tüm wishlist filmleri alıyoruz
+    final response = await _supabaseClient
+        .from('movies')
+        .select()
+        .eq('watched', false)
+        .execute();
+
+    List<Movie> databaseWishlistMovies = [];
+    if (response.data != null) {
+      databaseWishlistMovies = List<Movie>.from(response.data.map((m) => Movie.fromJson(m)));
+    }
+
+    // LocalStorage'daki ve Veritabanındaki filmleri karşılaştırıyoruz
+    for (Movie movie in localWishlistMovies) {
+      // Veritabanındaki film var mı?
+      final movieInDb = databaseWishlistMovies.firstWhere(
+        (dbMovie) => dbMovie.movieName == movie.movieName && dbMovie.userEmail == movie.userEmail,
+        orElse: () => movie,
+      );
+
+      if (movieInDb == null) {
+        // Veritabanında yoksa, ekliyoruz
+        await addMovie(movie);
+      } else {
+        // Eğer veritabanındaki filmde farklılık varsa güncelliyoruz
+        if (movie != movieInDb) {
+          await updateMovie(movie);
+        }
+      }
+    }
+
+    // Veritabanında olup, LocalStorage'da olmayan filmleri siliyoruz
+    for (Movie movie in databaseWishlistMovies) {
+      final movieInLocalStorage = localWishlistMovies.firstWhere(
+        (localMovie) => localMovie.movieName == movie.movieName && localMovie.userEmail == movie.userEmail,
+        orElse: () => movie,
+      );
+
+      if (movieInLocalStorage == null) {
+        // Eğer localStorage'da yoksa, veritabanından siliyoruz
+        await deleteMovie(movie.id.toString());
+      }
+    }
+  }
+}
+
 } 
