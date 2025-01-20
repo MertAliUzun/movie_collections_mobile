@@ -41,6 +41,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
     super.initState();
     _loadViewType();
     _fetchMovies();
+    
+    // Sync local movies when the screen is opened
+    _syncLocalMovies();
   }
 
   Future<void> _loadViewType() async {
@@ -71,6 +74,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
         });
       }
     }
+  }
+
+  Future<void> _syncLocalMovies() async {
+    final supabase = Supabase.instance.client;
+    final service = SupabaseService(supabase);
+    await service.syncLocalMovies();
   }
 
   void _sortMovies() {

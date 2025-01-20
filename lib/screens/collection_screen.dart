@@ -44,6 +44,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
     super.initState();
     _loadViewType();
     _fetchMovies();
+    
+    // Sync local movies when the screen is opened
+    _syncLocalMovies();
   }
 
   Future<void> _loadViewType() async {
@@ -74,6 +77,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
         });
       }
     }
+  }
+
+  Future<void> _syncLocalMovies() async {
+    final supabase = Supabase.instance.client;
+    final service = SupabaseService(supabase);
+    await service.syncLocalMovies();
   }
 
   void _sortMovies() {
