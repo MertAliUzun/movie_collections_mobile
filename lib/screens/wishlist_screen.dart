@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../aux/businessLogic.dart';
 import '../aux/groupBy.dart';
 import '../services/supabase_service.dart';
 import '../widgets/drawer_widget.dart';
@@ -292,6 +293,19 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   }
                 }
               });
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.input, color: Colors.white),
+            onPressed: () async {
+              for (String movieId in _selectedMovies) {
+                final movie = _movies.firstWhere((m) => m.id.toString() == movieId);
+                await toggleWatchedStatus(context, movie, true, false); // true for collection,  false for canPop
+              }
+              setState(() {
+                _selectedMovies.clear();
+              });
+              await _fetchMovies(); // Sayfayı yenile
             },
           ),
           IconButton(
