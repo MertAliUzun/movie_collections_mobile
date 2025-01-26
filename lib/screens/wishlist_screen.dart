@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../aux/businessLogic.dart';
@@ -78,9 +79,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
   }
 
   Future<void> _syncLocalMovies() async {
-    final supabase = Supabase.instance.client;
-    final service = SupabaseService(supabase);
-    await service.syncLocalMovies();
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] != ConnectivityResult.none) {
+      final supabase = Supabase.instance.client;
+      final service = SupabaseService(supabase);
+      await service.syncLocalMovies();
+    }
   }
 
   void _sortMovies() {

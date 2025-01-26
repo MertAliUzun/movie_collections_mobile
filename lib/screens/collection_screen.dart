@@ -13,6 +13,7 @@ import '../widgets/sort_widget.dart';
 import '../aux/groupBy.dart';
 import 'dart:convert';
 import '../aux/businessLogic.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({super.key});
@@ -81,9 +82,12 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   Future<void> _syncLocalMovies() async {
-    final supabase = Supabase.instance.client;
-    final service = SupabaseService(supabase);
-    await service.syncLocalMovies();
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] != ConnectivityResult.none) {
+      final supabase = Supabase.instance.client;
+      final service = SupabaseService(supabase);
+      await service.syncLocalMovies();
+    }
   }
 
   void _sortMovies() {

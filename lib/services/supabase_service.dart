@@ -22,35 +22,39 @@ class SupabaseService {
   }
 
   Future<void> addMovie(Movie movie) async {
-    await _supabaseClient.from('movies').insert({
-      'movie_name': movie.movieName,
-      'director_name': movie.directorName,
-      'release_date': movie.releaseDate.toIso8601String(),
-      'plot': movie.plot,
-      'runtime': movie.runtime,
-      'imdb_rating': movie.imdbRating,
-      'writers': movie.writers,
-      'actors': movie.actors,
-      'watched': movie.watched,
-      'image_link': movie.imageLink,
-      'user_email': movie.userEmail,
-      'watch_date': movie.watchDate?.toIso8601String(),
-      'user_score': movie.userScore,
-      'hype_score': movie.hypeScore,
-      'genres': movie.genres,
-      'production_company': movie.productionCompany,
-      'custom_sort_title': movie.customSortTitle,
-      'country': movie.country,
-      'popularity': movie.popularity,
-      'budget': movie.budget,
-      'revenue': movie.revenue,
-    }).execute();
-
-    // After adding the movie, update local storage
-    await _updateLocalStorageWithMovie(movie);
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Save to local storage if no internet
+      await _saveMovieToLocalStorage(movie);
+    } else {
+      // Save to database if internet is available
+      await _supabaseClient.from('movies').insert({
+        'movie_name': movie.movieName,
+        'director_name': movie.directorName,
+        'release_date': movie.releaseDate.toIso8601String(),
+        'plot': movie.plot,
+        'runtime': movie.runtime,
+        'imdb_rating': movie.imdbRating,
+        'writers': movie.writers,
+        'actors': movie.actors,
+        'watched': movie.watched,
+        'image_link': movie.imageLink,
+        'user_email': movie.userEmail,
+        'watch_date': movie.watchDate?.toIso8601String(),
+        'user_score': movie.userScore,
+        'hype_score': movie.hypeScore,
+        'genres': movie.genres,
+        'production_company': movie.productionCompany,
+        'custom_sort_title': movie.customSortTitle,
+        'country': movie.country,
+        'popularity': movie.popularity,
+        'budget': movie.budget,
+        'revenue': movie.revenue,
+      }).execute();
+    }
   }
 
-  Future<void> _updateLocalStorageWithMovie(Movie movie) async {
+  Future<void> _saveMovieToLocalStorage(Movie movie) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String movieStorage = movie.watched ? "collectionMovies" : "wishlistMovies";
     String? moviesString = prefs.getString(movieStorage);
@@ -61,48 +65,89 @@ class SupabaseService {
       movies = jsonList.map((m) => Movie.fromJson(m)).toList();
     }
 
-    // Check for duplicates
-    if (!movies.any((m) => m.id == movie.id)) {
-      movies.add(movie);
-      await prefs.setString(movieStorage, jsonEncode(movies));
+    // Update the movie in the local storage
+    int index = movies.indexWhere((m) => m.id == movie.id);
+    if (index != -1) {
+      movies[index] = movie; // Update existing movie
+    } else {
+      movies.add(movie); // Add new movie if not found
     }
+
+    await prefs.setString(movieStorage, jsonEncode(movies));
   }
 
   Future<void> updateMovie(Movie movie) async {
-    final response = await _supabaseClient
-        .from('movies')
-        .update({
-          'movie_name': movie.movieName,
-          'director_name': movie.directorName,
-          'release_date': movie.releaseDate.toIso8601String(),
-          'plot': movie.plot,
-          'runtime': movie.runtime,
-          'imdb_rating': movie.imdbRating,
-          'writers': movie.writers,
-          'actors': movie.actors,
-          'image_link': movie.imageLink,
-          'genres': movie.genres,
-          'production_company': movie.productionCompany,
-          'custom_sort_title': movie.customSortTitle,
-          'watched': movie.watched,
-          'watch_date': movie.watchDate?.toIso8601String(),
-          'user_score': movie.userScore,
-          'hype_score': movie.hypeScore
-        })
-        .eq('id', movie.id)
-        .execute();
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Update in local storage if no internet
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String movieStorage = movie.watched ? "collectionMovies" : "wishlistMovies";
+      String? moviesString = prefs.getString(movieStorage);
+      List<Movie> movies = [];
+
+      if (moviesString != null) {
+        List<dynamic> jsonList = jsonDecode(moviesString);
+        movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+      }
+
+      // Update the movie in the local storage
+      int index = movies.indexWhere((m) => m.id == movie.id);
+      if (index != -1) {
+        movies[index] = movie;
+      } else {
+        movies.add(movie); // If not found, add it
+      }
+
+      await prefs.setString(movieStorage, jsonEncode(movies));
+    } else {
+      // Update in database if internet is available
+      await _supabaseClient
+          .from('movies')
+          .update({
+            'movie_name': movie.movieName,
+            'director_name': movie.directorName,
+            'release_date': movie.releaseDate.toIso8601String(),
+            'plot': movie.plot,
+            'runtime': movie.runtime,
+            'imdb_rating': movie.imdbRating,
+            'writers': movie.writers,
+            'actors': movie.actors,
+            'image_link': movie.imageLink,
+            'genres': movie.genres,
+            'production_company': movie.productionCompany,
+            'custom_sort_title': movie.customSortTitle,
+            'watched': movie.watched,
+            'watch_date': movie.watchDate?.toIso8601String(),
+            'user_score': movie.userScore,
+            'hype_score': movie.hypeScore
+          })
+          .eq('id', movie.id)
+          .execute();
+    }
   }
 
   Future<void> deleteMovie(String movieId) async {
-    try {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Delete from local storage if no internet
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String storage = 'collectionMovies'; // or 'wishlistMovies' based on context
+      String? moviesString = prefs.getString(storage);
+      
+      if (moviesString != null) {
+        List<dynamic> jsonList = jsonDecode(moviesString);
+        List<Movie> movies = jsonList.map((m) => Movie.fromJson(m)).toList();
+        movies.removeWhere((m) => m.id.toString() == movieId);
+        await prefs.setString(storage, jsonEncode(movies));
+      }
+    } else {
+      // Delete from database if internet is available
       await _supabaseClient
           .from('movies')
           .delete()
           .eq('id', movieId)
           .eq('user_email', currentEmail)
           .execute();
-    } catch (e) {
-      throw Exception('Failed to delete movie: $e');
     }
   }
 
@@ -141,109 +186,58 @@ class SupabaseService {
   }
 
   Future<void> syncLocalMovies() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  
-  // Sync collection movies
-  String? collectionMoviesString = prefs.getString('collectionMovies');
-  if (collectionMoviesString != null) {
-    List<dynamic> jsonList = jsonDecode(collectionMoviesString);
-    List<Movie> localCollectionMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    
+    // Sync collection movies
+    String? collectionMoviesString = prefs.getString('collectionMovies');
+    if (collectionMoviesString != null) {
+      List<dynamic> jsonList = jsonDecode(collectionMoviesString);
+      List<Movie> localCollectionMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
 
-    // Veritabanındaki tüm collection filmleri alıyoruz
-    final response = await _supabaseClient
-        .from('movies')
-        .select()
-        .eq('watched', true)
-        .execute();
+      for (Movie movie in localCollectionMovies) {
+        // Check if the movie already exists in the database
+        final response = await _supabaseClient
+            .from('movies')
+            .select()
+            .eq('movie_name', movie.movieName)
+            .eq('user_email', movie.userEmail)
+            .eq('watched', true)
+            .execute();
 
-    List<Movie> databaseCollectionMovies = [];
-    if (response.data != null) {
-      databaseCollectionMovies = List<Movie>.from(response.data.map((m) => Movie.fromJson(m)));
-    }
-
-    // LocalStorage'daki ve Veritabanındaki filmleri karşılaştırıyoruz
-    for (Movie movie in localCollectionMovies) {
-      // Veritabanındaki film var mı?
-      final movieInDb = databaseCollectionMovies.firstWhere(
-        (dbMovie) => dbMovie.movieName == movie.movieName && dbMovie.userEmail == movie.userEmail,
-        orElse: () => movie,
-      );
-
-      if (movieInDb == null) {
-        // Veritabanında yoksa, ekliyoruz
-        await addMovie(movie);
-      } else {
-        // Eğer veritabanındaki filmde farklılık varsa güncelliyoruz
-        if (movie != movieInDb) {
+        if (response.data.isEmpty) {
+          // If it doesn't exist, add it to the database
+          await addMovie(movie);
+        } else {
+          // If it exists, update it
           await updateMovie(movie);
         }
       }
     }
 
-    // Veritabanında olup, LocalStorage'da olmayan filmleri siliyoruz
-    for (Movie movie in databaseCollectionMovies) {
-      final movieInLocalStorage = localCollectionMovies.firstWhere(
-        (localMovie) => localMovie.movieName == movie.movieName && localMovie.userEmail == movie.userEmail,
-        orElse: () => movie,
-      );
+    // Sync wishlist movies
+    String? wishlistMoviesString = prefs.getString('wishlistMovies');
+    if (wishlistMoviesString != null) {
+      List<dynamic> jsonList = jsonDecode(wishlistMoviesString);
+      List<Movie> localWishlistMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
 
-      if (movieInLocalStorage == null) {
-        // Eğer localStorage'da yoksa, veritabanından siliyoruz
-        await deleteMovie(movie.id.toString());
-      }
-    }
-  }
+      for (Movie movie in localWishlistMovies) {
+        // Check if the movie already exists in the database
+        final response = await _supabaseClient
+            .from('movies')
+            .select()
+            .eq('movie_name', movie.movieName)
+            .eq('user_email', movie.userEmail)
+            .eq('watched', false)
+            .execute();
 
-  // Sync wishlist movies
-  String? wishlistMoviesString = prefs.getString('wishlistMovies');
-  if (wishlistMoviesString != null) {
-    List<dynamic> jsonList = jsonDecode(wishlistMoviesString);
-    List<Movie> localWishlistMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
-
-    // Veritabanındaki tüm wishlist filmleri alıyoruz
-    final response = await _supabaseClient
-        .from('movies')
-        .select()
-        .eq('watched', false)
-        .execute();
-
-    List<Movie> databaseWishlistMovies = [];
-    if (response.data != null) {
-      databaseWishlistMovies = List<Movie>.from(response.data.map((m) => Movie.fromJson(m)));
-    }
-
-    // LocalStorage'daki ve Veritabanındaki filmleri karşılaştırıyoruz
-    for (Movie movie in localWishlistMovies) {
-      // Veritabanındaki film var mı?
-      final movieInDb = databaseWishlistMovies.firstWhere(
-        (dbMovie) => dbMovie.movieName == movie.movieName && dbMovie.userEmail == movie.userEmail,
-        orElse: () => movie,
-      );
-
-      if (movieInDb == null) {
-        // Veritabanında yoksa, ekliyoruz
-        await addMovie(movie);
-      } else {
-        // Eğer veritabanındaki filmde farklılık varsa güncelliyoruz
-        if (movie != movieInDb) {
+        if (response.data.isEmpty) {
+          // If it doesn't exist, add it to the database
+          await addMovie(movie);
+        } else {
+          // If it exists, update it
           await updateMovie(movie);
         }
       }
     }
-
-    // Veritabanında olup, LocalStorage'da olmayan filmleri siliyoruz
-    for (Movie movie in databaseWishlistMovies) {
-      final movieInLocalStorage = localWishlistMovies.firstWhere(
-        (localMovie) => localMovie.movieName == movie.movieName && localMovie.userEmail == movie.userEmail,
-        orElse: () => movie,
-      );
-
-      if (movieInLocalStorage == null) {
-        // Eğer localStorage'da yoksa, veritabanından siliyoruz
-        await deleteMovie(movie.id.toString());
-      }
-    }
   }
-}
-
 } 

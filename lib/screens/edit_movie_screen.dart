@@ -60,6 +60,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<String> _selectedProductionCompanies = [];
   List<Map<String, dynamic>> _similarMovies = [];
   final ScrollController _scrollController = ScrollController();
+  bool _isConnected = false;
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -429,6 +430,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _fetchSimilarMovies();
+      _checkConnectivity();
     }
   }
 
@@ -517,6 +519,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       curve: Curves.easeInOut, // Animasyon tipi
     );
   }
+  Future<void> _checkConnectivity() async {
+    bool isConnected = await checkConnectivity();  // Asenkron fonksiyon sonucu al
+    setState(() {
+      _isConnected = isConnected;  // Bağlantı durumunu güncelle
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -541,7 +549,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       ),
       body: Stack(
         children: [
-          if(_imageLink != null && _imageLink!.isNotEmpty)
+          if(_imageLink != null && _imageLink!.isNotEmpty && _isConnected)
             Positioned.fill(
              child: Image.network(
                _imageLink!, // Resim URL'si
