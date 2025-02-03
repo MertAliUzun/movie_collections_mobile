@@ -18,6 +18,7 @@ import '../aux/businessLogic.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
+import 'package:hive/hive.dart';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -214,11 +215,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
   Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {
-      final supabase = Supabase.instance.client;
-      final service = SupabaseService(supabase);
-
       final movie = Movie(
-        id: null,
+        id: 1,
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
@@ -260,51 +258,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             : null,
       );
 
-      // Check for internet connectivity
-      var connectivityResult = await (Connectivity().checkConnectivity());
-      if (connectivityResult[0] == ConnectivityResult.none) {
-        // Save to local storage if no internet
-        await _saveMovieToLocalStorage(movie);
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Film kaydedildi, internet bağlantısı sağlandığında senkronize edilecek.')),
-        );
-        Navigator.pop(context, true);
-      } else {
-        // Save to database if internet is available
-        try {
-          await service.addMovie(movie);
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Film başarıyla eklendi')),
-            );
-            Navigator.pop(context, true);
-          }
-        } catch (e) {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Hata oluştu: $e')),
-            );
-          }
-        }
-      }
-    }
-  }
-
-  Future<void> _saveMovieToLocalStorage(Movie movie) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String movieStorage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies' ;
-    String? moviesString = prefs.getString(movieStorage);
-    List<Movie> movies = [];
-
-    if (moviesString != null) {
-      List<dynamic> jsonList = jsonDecode(moviesString);
-      movies = jsonList.map((m) => Movie.fromJson(m)).toList();
-    }
-
-    // Check for duplicates
-    if (!movies.any((m) => m.movieName == movie.movieName)) {
-      movies.add(movie);
-      await prefs.setString(movieStorage, jsonEncode(movies));
+      // Save to Hive
+      final box = Hive.box<Movie>('movies');
+      await box.add(movie);
     }
   }
 

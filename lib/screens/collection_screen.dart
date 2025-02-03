@@ -12,6 +12,7 @@ import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
 import '../aux/groupBy.dart';
 import 'dart:convert';
+import 'package:hive/hive.dart';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({super.key});
@@ -62,17 +63,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
         _sortMovies(); // Sort movies after fetching
       });
     } catch (e) {
-      // If there's an error (like no internet), load from local storage
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      String? moviesString = prefs.getString('collectionMovies');
-      if (moviesString != null) {
-        List<dynamic> jsonList = jsonDecode(moviesString);
-        setState(() {
-          _movies = jsonList.map((movie) => Movie.fromJson(movie)).toList();
-          _filteredMovies = _movies; // Initialize filtered list
-          _sortMovies(); // Sort movies after loading from local storage
-        });
-      }
+      // If there's an error (like no internet), load from Hive
+      final box = Hive.box<Movie>('movies');
+      List<Movie> movies = box.values.where((movie) => movie.watched).toList();
+      setState(() {
+        _movies = movies;
+        _filteredMovies = _movies; // Initialize filtered list
+        _sortMovies(); // Sort movies after loading from Hive
+      });
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -6,6 +7,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'screens/add_movie_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'services/supabase_service.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'models/movie_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,13 +22,28 @@ void main() async {
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
   
-  // Check internet connection and sync local movies if connected
+  
+  /* // Check internet connection and sync local movies if connected
   var connectivityResult = await (Connectivity().checkConnectivity());
   if (connectivityResult[0] != ConnectivityResult.none) {
     final supabase = Supabase.instance.client;
     final service = SupabaseService(supabase);
     await service.syncLocalMovies();
   }
+  */
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(MovieAdapter()); // Register the Movie adapter
+  await Hive.openBox<Movie>('movies'); // Open the box for movies
+
+  /*
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+    ),
+  );
+  */
   
   runApp(const MyApp());
 }

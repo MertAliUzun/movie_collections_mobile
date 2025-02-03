@@ -1,28 +1,76 @@
+import 'package:hive/hive.dart';
+
+part 'movie_model.g.dart';
+
+@HiveType(typeId: 0)
 class Movie {
-  final int? id;
+  @HiveField(0)
+  final int id;
+  
+  @HiveField(1)
   final String movieName;
+  
+  @HiveField(2)
   final String directorName;
+  
+  @HiveField(3)
   final DateTime releaseDate;
+  
+  @HiveField(4)
   final String? plot;
+  
+  @HiveField(5)
   final int? runtime;
+  
+  @HiveField(6)
   final double? imdbRating;
+  
+  @HiveField(7)
   final List<String>? writers;
+  
+  @HiveField(8)
   final List<String>? actors;
+  
+  @HiveField(9)
   bool watched;
+  
+  @HiveField(10)
   final String imageLink;
+  
+  @HiveField(11)
   final String userEmail;
+  
+  @HiveField(12)
   DateTime? watchDate;
+  
+  @HiveField(13)
   double? userScore;
+  
+  @HiveField(14)
   double? hypeScore;
+  
+  @HiveField(15)
   final List<String>? genres;
+  
+  @HiveField(16)
   final List<String>? productionCompany;
+  
+  @HiveField(17)
   final String? customSortTitle;
+
+  @HiveField(18)
   final String? country;
+
+  @HiveField(19)
   final double? popularity;
+
+  @HiveField(20)
   final double? budget;
+
+  @HiveField(21)
   final double? revenue;
-  //final int customSortOrder;
- 
+
+
   //delete writers
     /*"cast": [
         {"id": 123456, "name": "Tessa Thompson", "character": "Lady", "order": 1},
@@ -30,7 +78,7 @@ class Movie {
       ],*/
 
   Movie({
-    this.id,
+    required this.id,
     required this.movieName,
     required this.directorName,
     required this.releaseDate,
@@ -48,10 +96,10 @@ class Movie {
     this.genres,
     this.productionCompany,
     this.customSortTitle,
-    this.country,
-    this.popularity,   
     this.budget,
-    this.revenue,
+    this.country,
+    this.popularity,
+    this.revenue
   });
 
   Map<String, dynamic> toJson() {
