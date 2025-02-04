@@ -39,7 +39,7 @@ void main() async {
   runApp(const MyApp());
   
   // Uygulama kapatıldığında Hive kutularını kapat
-  await Hive.close();
+  //await Hive.close();
 }
 
 class MyApp extends StatelessWidget {

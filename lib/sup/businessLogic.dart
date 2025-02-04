@@ -108,7 +108,7 @@ Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromW
 
   // Kullanıcıya bildirim göster
   ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text('Film durumu güncellendi.')),
+    SnackBar(content: Text(isFromWishlist ? 'Movies has been moved to Collection!' : 'Movies has been moved to Wishlist!')),
   );
   if (canPop) {
         Navigator.pop(context, true);

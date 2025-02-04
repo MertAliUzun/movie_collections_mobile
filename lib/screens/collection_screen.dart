@@ -13,6 +13,7 @@ import '../widgets/sort_widget.dart';
 import '../sup/groupBy.dart';
 import 'dart:convert';
 import 'package:hive/hive.dart';
+import '../sup/businessLogic.dart';
 
 class CollectionScreen extends StatefulWidget {
   const CollectionScreen({super.key});
@@ -296,6 +297,19 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   }
                 }
               });
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.input, color: Colors.white),
+            onPressed: () async {
+              for (String movieId in _selectedMovies) {
+                final movie = _movies.firstWhere((m) => m.id.toString() == movieId);
+                await toggleWatchedStatus(context, movie, false, false); // 1. false for collection 2. false for canPop
+              }
+              setState(() {
+                _selectedMovies.clear();
+              });
+              await _fetchMovies(); // Sayfayı yenile
             },
           ),
           IconButton(
