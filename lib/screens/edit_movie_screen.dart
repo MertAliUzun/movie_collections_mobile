@@ -505,6 +505,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       final movieDetails = await tmdbService.searchMovies(widget.movie!.movieName);
       if (movieDetails.isNotEmpty) {
         final movieId = movieDetails[0]['id'];
+        if(movieId < 0) { return; }
         final similarMovies = await tmdbService.getSimilarMovies(movieId);
         if(similarMovies != null) {
       setState(() {
