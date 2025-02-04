@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/models/movie_model.dart';
-import '../aux/genreMap.dart';
+import '../sup/genreMap.dart';
 import '../services/tmdb_service.dart';
 
 class CompanyScreen extends StatefulWidget {

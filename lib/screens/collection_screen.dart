@@ -10,7 +10,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
-import '../aux/groupBy.dart';
+import '../sup/groupBy.dart';
 import 'dart:convert';
 import 'package:hive/hive.dart';
 

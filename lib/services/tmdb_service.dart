@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../aux/genreMap.dart';
+import '../sup/genreMap.dart';
 
 class TmdbService {
   static const String _apiKey = '61898fc6229d9ec067b5e35b00e8cda5';

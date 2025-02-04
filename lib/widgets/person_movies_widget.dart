@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../aux/genreMap.dart';
+import '../sup/genreMap.dart';
 
 class PersonMoviesWidget extends StatelessWidget {
   final List<Map<String, dynamic>> movies;

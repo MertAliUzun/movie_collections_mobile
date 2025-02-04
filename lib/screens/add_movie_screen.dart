@@ -14,7 +14,7 @@ import 'package:country_flags/country_flags.dart';
 import 'company_screen.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
-import '../aux/businessLogic.dart';
+import '../sup/businessLogic.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';

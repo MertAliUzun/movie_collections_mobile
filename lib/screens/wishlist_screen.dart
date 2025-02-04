@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../aux/groupBy.dart';
+import '../sup/groupBy.dart';
 import '../services/supabase_service.dart';
 import '../widgets/drawer_widget.dart';
 import '../widgets/movie_card.dart';

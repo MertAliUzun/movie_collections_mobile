@@ -6,8 +6,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'dart:io';
 import 'dart:async';
-import '../aux/businessLogic.dart';
-import '../aux/genreMap.dart';
+import '../sup/businessLogic.dart';
+import '../sup/genreMap.dart';
 import '../models/movie_model.dart';
 import '../services/supabase_service.dart';
 import '../services/tmdb_service.dart';
@@ -232,90 +232,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   }
 
   void _toggleWatchedStatus() async {
-    var connectivityResult = await (Connectivity().checkConnectivity());
-    if (connectivityResult[0] == ConnectivityResult.none) {
-      // Update in local storage
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      String oldStorage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies';
-      String newStorage = widget.isFromWishlist ? 'collectionMovies' : 'wishlistMovies';
-      
-      // Remove from old storage
-      String? oldMoviesString = prefs.getString(oldStorage);
-      if (oldMoviesString != null) {
-        List<dynamic> jsonList = jsonDecode(oldMoviesString);
-        List<Movie> movies = jsonList.map((m) => Movie.fromJson(m)).toList();
-        movies.removeWhere((m) => m.id == widget.movie!.id);
-        await prefs.setString(oldStorage, jsonEncode(movies));
-      }
-
-      // Add to new storage with updated watched status
-      String? newMoviesString = prefs.getString(newStorage);
-      List<Movie> newMovies = [];
-      if (newMoviesString != null) {
-        List<dynamic> jsonList = jsonDecode(newMoviesString);
-        newMovies = jsonList.map((m) => Movie.fromJson(m)).toList();
-      }
-      
-      final updatedMovie = Movie(
-        id: widget.movie!.id,
-        movieName: widget.movie!.movieName,
-        directorName: widget.movie!.directorName,
-        releaseDate: widget.movie!.releaseDate,
-        plot: widget.movie!.plot,
-        runtime: widget.movie!.runtime,
-        imdbRating: widget.movie!.imdbRating,
-        writers: widget.movie!.writers,
-        actors: widget.movie!.actors,
-        watched: !widget.movie!.watched,
-        imageLink: widget.movie!.imageLink,
-        userEmail: widget.movie!.userEmail,
-        watchDate: !widget.isFromWishlist ? DateTime.now() : null,
-        userScore: widget.isFromWishlist ? null : 0,
-        hypeScore: !widget.isFromWishlist ? null : widget.movie!.hypeScore,
-        genres: widget.movie!.genres,
-        productionCompany: widget.movie!.productionCompany,
-        customSortTitle: widget.movie!.customSortTitle,
-      );
-      
-      newMovies.add(updatedMovie);
-      await prefs.setString(newStorage, jsonEncode(newMovies));
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Film durumu güncellendi, internet bağlantısı sağlandığında senkronize edilecek.')),
-      );
-      Navigator.pop(context, true);
-    } else {
-      // Existing online functionality
-      final supabase = Supabase.instance.client;
-      final service = SupabaseService(supabase);
-      try {
-        final updatedMovie = widget.movie!;
-        updatedMovie.watched = widget.isFromWishlist ? true : false;
-        if (widget.isFromWishlist) {
-          
-          updatedMovie.userScore = 0.0;
-          updatedMovie.watchDate = DateTime.now();
-          updatedMovie.hypeScore = null;
-        } else {
-          updatedMovie.hypeScore = 0.0;
-          updatedMovie.userScore = null;
-          updatedMovie.watchDate = null;
-        }
-        await service.updateMovie(updatedMovie);
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(widget.isFromWishlist ? 'Film koleksiyona taşındı.' : 'Film istek listesine taşındı.')),
-          );
-          Navigator.pop(context, true);
-        }
-      } catch (e) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Güncelleme hatası: $e')),
-          );
-        }
-      }
-    }
+    await toggleWatchedStatus(context, widget.movie!, widget.isFromWishlist, true);
   }
 
   void _showAddOptionsMenu(BuildContext context) {
