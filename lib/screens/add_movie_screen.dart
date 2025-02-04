@@ -620,7 +620,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         Text(
                           _directorNameController.text.isNotEmpty 
                               ? _directorNameController.text 
-                              : 'No Director Selected',
+                              : 'Director Null',
                           style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         Row(

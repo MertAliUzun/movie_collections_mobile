@@ -132,13 +132,13 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
-  void _saveMovie() async {
+  Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {
-      final supabase = Supabase.instance.client;
-      final service = SupabaseService(supabase);
+      final box = Hive.box<Movie>('movies');
 
+      // Film nesnesini oluştur
       final movie = Movie(
-        id: widget.movie!.id,
+        id: widget.movie!.id, // Mevcut ID'yi kullan
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
@@ -150,7 +150,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             ? double.tryParse(_imdbRatingController.text) 
             : null,
         writers: _selectedWriters.isNotEmpty 
-            ? _selectedWriters
+            ? _selectedWriters 
             : null,
         actors: _selectedActors.isNotEmpty 
             ? _selectedActors 
@@ -166,50 +166,16 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
       );
 
-      // Check for internet connectivity
-      var connectivityResult = await (Connectivity().checkConnectivity());
-      if (connectivityResult[0] == ConnectivityResult.none) {
-        // Save to local storage if no internet
-        await _saveMovieToLocalStorage(movie);
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Film güncellendi, internet bağlantısı sağlandığında senkronize edilecek.')),
-        );
-      } else {
-        // Save to database if internet is available
-      try {
-        await service.updateMovie(movie);
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Film başarıyla güncellendi')),
-          );
-          Navigator.pop(context, true);
-        }
-      } catch (e) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Hata oluştu: $e')),
-          );
-        }
-      }
-    }
-    }
-  }
+      // Hive'da güncelle
+      box.put(movie.id, movie);
 
-  Future<void> _saveMovieToLocalStorage(Movie movie) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String movieStorage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies' ;
-    String? moviesString = prefs.getString(movieStorage);
-    List<Movie> movies = [];
+      // Kullanıcıya bildirim göster
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Film başarıyla güncellendi.')),
+      );
 
-    if (moviesString != null) {
-      List<dynamic> jsonList = jsonDecode(moviesString);
-      movies = jsonList.map((m) => Movie.fromJson(m)).toList();
-    }
-
-    // Check for duplicates
-    if (!movies.any((m) => m.movieName == movie.movieName)) {
-      movies.add(movie);
-      await prefs.setString(movieStorage, jsonEncode(movies));
+      // Geri dön
+      Navigator.pop(context);
     }
   }
 
@@ -648,7 +614,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             Text(
                               _directorNameController.text.isNotEmpty 
                                   ? _directorNameController.text 
-                                  : 'No Director Selected',
+                                  : 'Director Null',
                               style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             Row(
