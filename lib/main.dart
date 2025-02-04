@@ -37,6 +37,9 @@ void main() async {
   await Hive.openBox<Movie>('movies'); // Open the box for movies
   
   runApp(const MyApp());
+  
+  // Uygulama kapatıldığında Hive kutularını kapat
+  await Hive.close();
 }
 
 class MyApp extends StatelessWidget {

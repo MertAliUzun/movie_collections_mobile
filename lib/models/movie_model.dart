@@ -5,7 +5,7 @@ part 'movie_model.g.dart';
 @HiveType(typeId: 0)
 class Movie {
   @HiveField(0)
-  final int id;
+  final String id;
   
   @HiveField(1)
   final String movieName;

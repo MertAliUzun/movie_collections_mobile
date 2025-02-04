@@ -223,23 +223,27 @@ class _WishlistScreenState extends State<WishlistScreen> {
     }
   }
 
-  Future<void> _deleteSelectedMovies() async {
-    try {
-      for (String movieId in _selectedMovies) {
-        await _service.deleteMovie(movieId);
-        if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Film başarıyla silindi')),
-        );
+  void _deleteSelectedMovies() {
+    final box = Hive.box<Movie>('movies');
+
+    for (String movieId in _selectedMovies) {
+      // Hive'dan silinecek filmleri bul
+      print(movieId);
+      for (var movie in box.values) {
+        if (movie.id == movieId) {
+      // Eğer film ID'si eşleşiyorsa, sil
+      box.delete(movie.id);
+      print('Film ID $movieId silindi.');
       }
-      }
-      setState(() {
-        _selectedMovies.clear();
-      });
-      _fetchMovies();
-    } catch (e) {
-      // Handle error
+     }
     }
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('${_selectedMovies.length} film silindi.')),
+    );
+    setState(() {
+      _selectedMovies.clear();
+      _fetchMovies(); // Filmleri güncelle
+    });  
   }
 
   @override

@@ -220,20 +220,23 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       final box = Hive.box<Movie>('movies');
       // Eğer _selectMovie fonksiyonu kullanılmadıysa yeni bir ID oluştur
       if (newId == -1) {
-        List<int> allIds = box.values.map((movie) => movie.id).toList();
+      List<int> allIds = box.values.map((movie) => int.parse(movie.id.toString())).toList();
       if (allIds.isNotEmpty) {
          // En küçük ID'yi buluyoruz
          int minId = allIds.reduce((a, b) => a < b ? a : b);
-       
+     
          // Yeni id'yi en küçük id'den bir eksik yapıyoruz
          newId = minId - 1;
-       }
-      } else {
+         if(newId > -1) { newId = -1;}
+          }
+        } 
+       else {
         // Eğer _selectMovie kullanıldıysa, mevcut ID'yi al
       }
+      print(newId);
 
       final movie = Movie(
-        id: newId,
+        id: newId.toString(),
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
@@ -276,7 +279,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       );
 
       // Save to Hive
-      await box.add(movie);
+      await box.put(movie.id, movie);
       Navigator.pop(context, true);
     }
   }

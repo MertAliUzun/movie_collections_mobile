@@ -20,6 +20,7 @@ import 'company_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
+import 'package:hive/hive.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -212,45 +213,22 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
-  void _deleteMovie() async {
-    var connectivityResult = await (Connectivity().checkConnectivity());
-    if (connectivityResult[0] == ConnectivityResult.none) {
-      // Delete from local storage
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      String storage = widget.isFromWishlist ? 'wishlistMovies' : 'collectionMovies';
-      String? moviesString = prefs.getString(storage);
-      
-      if (moviesString != null) {
-        List<dynamic> jsonList = jsonDecode(moviesString);
-        List<Movie> movies = jsonList.map((m) => Movie.fromJson(m)).toList();
-        movies.removeWhere((m) => m.id == widget.movie!.id);
-        await prefs.setString(storage, jsonEncode(movies));
-        
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Film silindi, internet bağlantısı sağlandığında senkronize edilecek.')),
-        );
-        Navigator.pop(context, true);
-      }
-    } else {
-      // Existing online functionality
-      final supabase = Supabase.instance.client;
-      final service = SupabaseService(supabase);
-      try {
-        await service.deleteMovie(widget.movie!.id.toString());
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Film başarıyla silindi')),
-          );
-          Navigator.pop(context, true);
-        }
-      } catch (e) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Silme hatası: $e')),
-          );
-        }
-      }
-    }
+  void _deleteMovie() {
+    final box = Hive.box<Movie>('movies');
+    
+    // Film ID'sini al
+    String movieId = widget.movie!.id!;
+
+    // Hive'dan sil
+    box.delete(movieId);
+
+    // Kullanıcıya bildirim göster
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Film silindi.')),
+    );
+
+    // Geri dön
+    Navigator.pop(context);
   }
 
   void _toggleWatchedStatus() async {
