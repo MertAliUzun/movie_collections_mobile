@@ -35,15 +35,6 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(MovieAdapter()); // Register the Movie adapter
   await Hive.openBox<Movie>('movies'); // Open the box for movies
-
-  /*
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarColor: Colors.transparent,
-    ),
-  );
-  */
   
   runApp(const MyApp());
 }

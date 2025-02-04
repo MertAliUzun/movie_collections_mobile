@@ -48,6 +48,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   DateTime _watchedDate = DateTime.now();
   double _userScore = 0.0;
   double _hypeScore = 0.0;
+  int newId = -1;
   File? _selectedImage;
   bool _isUploading = false;
   String? _imageLink;
@@ -170,6 +171,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       final movieDetails = await _tmdbService.getMovieDetails(movieId);
       if (movieDetails != null) {
         setState(() {
+          newId = movieDetails['id'] ?? -1;
           _movieNameController.text = movieDetails['title'] ?? '';
           _directorNameController.text = movieDetails['credits']['crew']
               .firstWhere((member) => member['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
@@ -215,8 +217,23 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
   Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {
+      final box = Hive.box<Movie>('movies');
+      // Eğer _selectMovie fonksiyonu kullanılmadıysa yeni bir ID oluştur
+      if (newId == -1) {
+        List<int> allIds = box.values.map((movie) => movie.id).toList();
+      if (allIds.isNotEmpty) {
+         // En küçük ID'yi buluyoruz
+         int minId = allIds.reduce((a, b) => a < b ? a : b);
+       
+         // Yeni id'yi en küçük id'den bir eksik yapıyoruz
+         newId = minId - 1;
+       }
+      } else {
+        // Eğer _selectMovie kullanıldıysa, mevcut ID'yi al
+      }
+
       final movie = Movie(
-        id: 1,
+        id: newId,
         movieName: _movieNameController.text,
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
@@ -259,8 +276,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       );
 
       // Save to Hive
-      final box = Hive.box<Movie>('movies');
       await box.add(movie);
+      Navigator.pop(context, true);
     }
   }
 
