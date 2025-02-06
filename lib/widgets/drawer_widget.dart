@@ -39,11 +39,29 @@ class DrawerWidget extends StatelessWidget {
         _isFromWishlist = isFromWishlist,
         _movies = movies;
 
-  Movie _getRandomMovie() {
+  Movie? _getRandomMovie(BuildContext context) {
     final random = Random();
-    return _movies[random.nextInt(_movies.length)];
-  }
+    
+    // Koşula göre filtreleme yap
+    List<Movie> filteredMovies = _isFromWishlist
+        ? _movies.where((movie) => !movie.watched).toList() // watched == false
+        : _movies.where((movie) => movie.watched).toList(); // watched == true
   
+    if (filteredMovies.isEmpty) {
+      // Eğer filtrelenmiş listede film yoksa, Snackbar göster
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Unablo to Detect Movies!'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      return null; // Hiçbir film bulunamadıysa null döndür
+    }
+  
+    // Rastgele bir film seç
+    return filteredMovies[random.nextInt(filteredMovies.length)];
+  }
+
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
@@ -237,26 +255,39 @@ class DrawerWidget extends StatelessWidget {
             ListTile(
               title: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, screenHeight * 0.05, 0, screenHeight * 0.05),
-                    child: TextButton(onPressed:() {
-                      final movie = _getRandomMovie();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie),
+                  Container(
+                    width: screenWidth * 0.45,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
+                      child: TextButton(onPressed:() {
+                        final movie = _getRandomMovie(context);
+                        if (movie != null)
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie),
+                          ),
+                        );
+                      },style: TextButton.styleFrom(
+                        side: BorderSide(
+                          color: Colors.white,
+                          width: .3,
                         ),
-                      );
-                    },style: TextButton.styleFrom(backgroundColor: const Color.fromARGB(255, 34, 40, 50),),  child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 2),
-                      child: Row(
-                        children: [
-                          Text('Choose a Random Movie', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
-                          SizedBox(width: screenWidth * 0.03,),
-                          Icon(Icons.movie, size: screenWidth * 0.055, color: Colors.white54,),
-                        ],
-                      ), 
-                    )),
+                        backgroundColor: const Color.fromARGB(255, 34, 40, 50),),  
+                        child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Random Movie', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
+                            SizedBox(width: screenWidth * 0.03,),
+                            Icon(size: screenWidth * 0.055,
+                            _isFromWishlist ? Icons.bookmark : Icons.movie,  
+                             color: _isFromWishlist ? Colors.red : Colors.amber,),
+                          ],
+                        ), 
+                      )),
+                    ),
                   ),
                 ],
               ),

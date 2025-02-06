@@ -373,10 +373,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _fetchSimilarMovies();
+      print(widget.movie!.id);
     }
   }
 
   Future<void> _fetchSimilarMovies() async {
+    if(int.parse(widget.movie!.id) < 0) {return;}
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult[0] == ConnectivityResult.none) {
       // Skip fetching similar movies if there's no internet
@@ -388,7 +390,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       final movieDetails = await tmdbService.searchMovies(widget.movie!.movieName);
       if (movieDetails.isNotEmpty) {
         final movieId = movieDetails[0]['id'];
-        if(movieId < 0) { return; }
         final similarMovies = await tmdbService.getSimilarMovies(movieId);
         if(similarMovies != null) {
       setState(() {

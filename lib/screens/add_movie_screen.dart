@@ -383,6 +383,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
   void _editDirector() {
     editDirector(context, _directorNameController);
+    setState(() {
+      // Bu noktada `_directorNameController.text` güncellenmiş olur ve UI yeniden render edilir.
+      //_directorNameController.text = input;
+    });
   }
 
   //DELETE BUSINESS
