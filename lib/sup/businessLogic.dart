@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -42,10 +43,23 @@ void deleteDetails(BuildContext context, String detailType, {int? index, List<St
       // Perform deletion logic
       if (selected != null && index != null) {
         selected.removeAt(index); // Remove the item from the list
-        // Optionally, you can show a snackbar or any other feedback
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('$detailType başarıyla silindi.')),
-        );
+
+        final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Success!', 
+          message: '$detailType succesfully deleted.', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+
         if (onDelete != null) {
           onDelete(); // Call the callback to update the UI
         }
@@ -107,9 +121,21 @@ Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromW
   box.put(movieId, movie);
 
   // Kullanıcıya bildirim göster
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text(isFromWishlist ? 'Movies has been moved to Collection!' : 'Movies has been moved to Wishlist!')),
-  );
+  final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Success!', 
+          message: isFromWishlist ? 'Movies has been moved to Collection!' : 'Movies has been moved to Wishlist!', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
   if (canPop) {
         Navigator.pop(context, true);
       }

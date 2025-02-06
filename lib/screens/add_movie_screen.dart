@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
@@ -121,9 +122,21 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       return _imageLink;
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Resim yükleme hatası: $e')),
-        );
+        final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'Unable to Upload Images!', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
       }
       return null;
     } finally {
@@ -152,9 +165,21 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             _isSearching = false;
           });
           if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Film arama hatası: $e')),
-            );
+            final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'Unable to Find Movies!. Please Check Your Internet Connection.', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
           }
         }
       } else {
@@ -208,9 +233,21 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Film detayları alınırken hata oluştu: $e')),
-        );
+        final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'Unable to Get Movie Details! Please Check Your Internet Connection.', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
       }
     }
   }
@@ -280,6 +317,21 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
       // Save to Hive
       await box.put(movie.id, movie);
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Success!', 
+          message: 'Movie is Succesfully Added!', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
       Navigator.pop(context, true);
     }
   }

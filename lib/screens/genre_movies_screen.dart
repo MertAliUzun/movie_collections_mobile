@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
@@ -29,9 +30,21 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       _movies = await _tmdbService.getMoviesByGenre(widget.genre, _selectedPopularity);
     } catch (e) {
       // Handle error (e.g., show a snackbar)
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error fetching movies: $e')),
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'Error Fetching Movies!', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
       );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
     } finally {
       setState(() {
         _isLoading = false;

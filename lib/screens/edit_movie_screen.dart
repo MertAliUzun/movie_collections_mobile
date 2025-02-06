@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:movie_collections_mobile/widgets/person_movies_widget.dart';
@@ -120,9 +121,21 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       return _imageLink;
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Resim yükleme hatası: $e')),
-        );
+        final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'Unable to Upload Images!', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
       }
       return null;
     } finally {
@@ -170,9 +183,21 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       box.put(movie.id, movie);
 
       // Kullanıcıya bildirim göster
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Film başarıyla güncellendi.')),
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Success!', 
+          message: 'Movie is Succesfully Updated!', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
       );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
 
       // Geri dön
       Navigator.pop(context);
@@ -189,9 +214,21 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     box.delete(movieId);
 
     // Kullanıcıya bildirim göster
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Film silindi.')),
-    );
+    final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Success!', 
+          message: 'Movie is Succesfully Deleted!', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
 
     // Geri dön
     Navigator.pop(context);

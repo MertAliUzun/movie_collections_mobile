@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 
 import '../models/movie_model.dart';
@@ -49,12 +50,22 @@ class DrawerWidget extends StatelessWidget {
   
     if (filteredMovies.isEmpty) {
       // Eğer filtrelenmiş listede film yoksa, Snackbar göster
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Unablo to Detect Movies!'),
-          duration: Duration(seconds: 2),
-        ),
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'Unable to Detect Movies!', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
       );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+
       return null; // Hiçbir film bulunamadıysa null döndür
     }
   
@@ -261,6 +272,8 @@ class DrawerWidget extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
                       child: TextButton(onPressed:() {
                         final movie = _getRandomMovie(context);
+                        if (movie == null)
+                        Navigator.of(context).pop();
                         if (movie != null)
                         Navigator.push(
                           context,

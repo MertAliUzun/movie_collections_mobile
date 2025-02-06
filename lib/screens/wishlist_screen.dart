@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../sup/businessLogic.dart';
@@ -238,9 +239,21 @@ class _WishlistScreenState extends State<WishlistScreen> {
       }
      }
     }
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('${_selectedMovies.length} film silindi.')),
-    );
+    final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Success!', 
+          message: '${_selectedMovies.length} movies deleted.', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
     setState(() {
       _selectedMovies.clear();
       _fetchMovies(); // Filmleri güncelle

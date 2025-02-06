@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../services/tmdb_service.dart';
@@ -71,9 +72,21 @@ class _DirectorScreenState extends State<DirectorScreen> {
       }
     } else {
       // Handle the case where the IMDb ID is not available
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('IMDb ID not available')),
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Failure!', 
+          message: 'IMDB Id is not available.', 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
       );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
     }
   }
 
