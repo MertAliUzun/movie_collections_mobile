@@ -347,20 +347,32 @@ class _WishlistScreenState extends State<WishlistScreen> {
       : AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: IconThemeData(color: Colors.white),
+        leading: _isSearching ? IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            setState(() {
+              _isSearching = false;
+            });
+          },
+        ) : null,
         title: !_isSearching 
         ? Text('${_movies.length} Film', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
           width: screenWidth * 0.8,
           height: screenHeight * 0.05,
           child: TextField(
+            focusNode: FocusNode(),
             controller: _searchController,
             textAlignVertical: TextAlignVertical.bottom,
             decoration: const InputDecoration(
               hintText: 'Film adı ile ara...',
-              border: OutlineInputBorder(),
-              filled: true,
-              fillColor: Colors.white,
+              hintStyle: const TextStyle(color: Colors.white54),
+              //prefixIcon: const Icon(Icons.search, color: Colors.white54,),
+              //border: OutlineInputBorder(),
+              //filled: true,
+              fillColor: Colors.transparent,
             ),
+            style: TextStyle(color: Colors.white),
             onChanged: _searchMovies,
           ),
         ),
@@ -370,6 +382,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               icon: const Icon(Icons.delete, color: Colors.white),
               onPressed: _deleteSelectedMovies,
             ),
+          if(!_isSearching)
           IconButton(
             icon: const Icon(Icons.search, color: Colors.white),
             onPressed: () {
@@ -382,7 +395,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
         ],
       ),
-      drawer: _isSelectionMode ? null : DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: true, movies: _movies,),
+      drawer: _isSelectionMode || _isSearching ? null : DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: true, movies: _movies,),
       body: Column(
         children: [
           Expanded(
