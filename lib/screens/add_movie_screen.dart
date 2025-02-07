@@ -25,8 +25,9 @@ import 'package:hive/hive.dart';
 class AddMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
+  final String? userEmail;
 
-  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie});
+  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie, this.userEmail});
 
   @override
   State<AddMovieScreen> createState() => _AddMovieScreenState();
@@ -292,7 +293,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             : null,
         watched: !widget.isFromWishlist,
         imageLink: _imageLink ?? '',
-        userEmail: 'test@test.com', // Replace with actual user email if needed
+        userEmail: widget.userEmail ?? 'test@test.com', // Replace with actual user email if needed
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
         hypeScore: widget.isFromWishlist ? _hypeScore : null,

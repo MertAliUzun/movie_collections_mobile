@@ -44,6 +44,7 @@ dependencies:
   connectivity_plus: ^6.1.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  google_sign_in: ^6.2.2
   awesome_snackbar_content:
     git:
       url: https://github.com/MertAliUzun/awesome_snackbar_content_swipe.git

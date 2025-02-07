@@ -15,7 +15,12 @@ import 'dart:convert';
 import 'package:hive/hive.dart';
 
 class WishlistScreen extends StatefulWidget {
-  const WishlistScreen({super.key});
+  final String? userId; // Kullanıcı ID'si
+  final String? userEmail; // Kullanıcı E-postası
+  final String? userPicture; // Kullanıcı Resmi
+  final String? userName;
+
+  const WishlistScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName});
 
   @override
   State<WishlistScreen> createState() => _WishlistScreenState();
@@ -156,7 +161,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => EditMovieScreen(isFromWishlist: true, movie: movie),
+        builder: (context) => EditMovieScreen(isFromWishlist: true, movie: movie, userEmail: widget.userEmail,),
       ),
     ).then((_) {
       _fetchMovies();
@@ -395,7 +400,22 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
         ],
       ),
-      drawer: _isSelectionMode || _isSearching ? null : DrawerWidget(viewType: _viewType, groupByText: _groupByText, sortBy: _sortBy, changeViewType: _changeViewType, toggleGroupBy: _toggleGroupBy, onSortByChanged: _onSortByChanged, sortDir: _sortDir, onSortDirChanged: _onSortDirChanged, isFromWishlist: true, movies: _movies,),
+      drawer: _isSelectionMode || _isSearching ? null : DrawerWidget(
+        viewType: _viewType,
+        groupByText: _groupByText, 
+        sortBy: _sortBy, 
+        changeViewType: _changeViewType, 
+        toggleGroupBy: _toggleGroupBy, 
+        onSortByChanged: _onSortByChanged, 
+        sortDir: _sortDir, 
+        onSortDirChanged: _onSortDirChanged, 
+        isFromWishlist: true, 
+        movies: _movies, 
+        userPicture: widget.userPicture,
+        userEmail: widget.userEmail,
+        userName: widget.userName,
+        userId: widget.userId,
+        ),
       body: Column(
         children: [
           Expanded(
@@ -501,7 +521,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const AddMovieScreen(isFromWishlist: true),
+              builder: (context) => AddMovieScreen(isFromWishlist: true, userEmail: widget.userEmail,),
             ),
           ).then((_) {
             _fetchMovies(); // Refresh the movie list when returning

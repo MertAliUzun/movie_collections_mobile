@@ -26,8 +26,9 @@ import 'package:hive/hive.dart';
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
+  final String? userEmail;
 
-  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie});
+  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie, required this.userEmail});
 
   @override
   State<EditMovieScreen> createState() => _EditMovieScreenState();

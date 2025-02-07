@@ -17,6 +17,10 @@ class DrawerWidget extends StatelessWidget {
   final ValueChanged<String> _toggleGroupBy;
   final ValueChanged<String> _onSortByChanged;
   final ValueChanged<String> _onSortDirChanged;
+  final String? userPicture; // Kullanıcı profil resmi
+  final String? userId; 
+  final String? userEmail; 
+  final String? userName;
 
   DrawerWidget({
     required String viewType,
@@ -28,7 +32,11 @@ class DrawerWidget extends StatelessWidget {
     required ValueChanged<String> changeViewType,
     required ValueChanged<String> toggleGroupBy,
     required ValueChanged<String> onSortByChanged,
-    required ValueChanged<String> onSortDirChanged
+    required ValueChanged<String> onSortDirChanged,
+    this.userPicture, // Kullanıcı profil resmini al
+    this.userEmail,
+    this.userId,
+    this.userName
   })  : _viewType = viewType,
         _groupByText = groupByText,
         _changeViewType = changeViewType,
@@ -99,7 +107,46 @@ class DrawerWidget extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
         child: ListView(
           children: [
-            DrawerHeader(child: Icon(Icons.home, size: 50)),
+            DrawerHeader(
+              child: userPicture != null
+                  ? Column(
+                    children: [
+                      ClipOval(
+                         child: Image.network(
+                           userPicture!,
+                           fit: BoxFit.scaleDown, // Resmi çerçeveye göre ölçeklendirir
+                           width: 90, // Çap kadar genişlik
+                           height: 90, // Çap kadar yükseklik
+                         ),
+                       ),
+                       Padding(
+                         padding: EdgeInsets.symmetric(vertical: screenHeight * 0.015),
+                         child: RichText(
+                          text: TextSpan(
+                            style: TextStyle(color: Colors.white),
+                            children: [
+                              TextSpan(
+                                text: 'Welcome, ',
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              ),
+                              TextSpan(
+                                text: userName!,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        )
+                       ),
+                    ],
+                  )
+                  : IconButton(
+                icon: Icon(Icons.login, size: 50),
+                onPressed: () {
+                  // Giriş yapma fonksiyonunuzu burada çağırın
+                  //loginFunction();
+                },
+              ),
+            ),
             ListTile(
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -278,7 +325,7 @@ class DrawerWidget extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie),
+                            builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie, userEmail: userEmail,),
                           ),
                         );
                       },style: TextButton.styleFrom(
