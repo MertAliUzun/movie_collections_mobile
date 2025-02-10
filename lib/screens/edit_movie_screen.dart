@@ -530,6 +530,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
              child: Image.network(
                _imageLink!, // Resim URL'si
                fit: BoxFit.cover, // Tüm alanı kaplar
+               errorBuilder: (context, error, stackTrace) =>
+               Image.asset(
+                'assets/images/placeholder_poster.png',
+                fit: BoxFit.cover,
+               ),
              ),
            ),
            if(_imageLink == null)

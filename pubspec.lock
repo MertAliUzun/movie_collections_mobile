@@ -46,7 +46,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "84ab54ebd2c62e3bd1c5dc481d9ccd748e1cb8eb"
+      resolved-ref: a2f4b22dec7a53a8852c8746ef216faa9711fea5
       url: "https://github.com/MertAliUzun/awesome_snackbar_content_swipe.git"
     source: git
     version: "0.1.1"

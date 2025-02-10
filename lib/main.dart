@@ -60,7 +60,12 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  final String? userId; // Kullanıcı ID'si
+  final String? userEmail; // Kullanıcı E-postası
+  final String? userPicture; // Kullanıcı Resmi
+  final String? userName; // Kullanıcı Adı
+
+  const MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -123,6 +128,10 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (e) {
       // Hata durumunda kullanıcıya mesaj göster
       _showErrorDialog(e.toString());
+      // Kullanıcı giriş yapmadıysa _userId'yi 0 olarak ayarla
+      setState(() {
+        _userId = '0'; // Kullanıcı giriş yapmadı
+      });
       return AuthResponse();
     }
   }
@@ -132,12 +141,13 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Hata'),
-          content: Text(message),
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          title: const Text('Hata', style: TextStyle(color: Colors.white),),
+          content: const Text('Check internet your connection.', style: TextStyle(color: Colors.white),),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Tamam'),
+              child: const Text('Tamam', style: TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -147,17 +157,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // _pages listesini burada oluştur
     final List<Widget> _pages = [
-      _userId != null
+      _userId != null && _userId != '0'
           ? CollectionScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName,)
           : const CollectionScreen(),
-      _userId != null
+      _userId != null && _userId != '0'
           ? WishlistScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName,)
           : const WishlistScreen(),
     ];
 
     return Scaffold(
-      body: _pages[_selectedIndex],
+      backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      body: _userId != null ? _pages[_selectedIndex] : const Center(child: CircularProgressIndicator()), 
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
         items: const <BottomNavigationBarItem>[

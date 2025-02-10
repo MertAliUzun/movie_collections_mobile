@@ -132,7 +132,7 @@ class TmdbService {
   Future<List<Map<String, dynamic>>> getSimilarMovies(int movieId) async {
     List<Map<String, dynamic>> similarMovies = [];
   final response = await http.get(
-    Uri.parse('$_baseUrl/movie/$movieId/similar?api_key=$_apiKey'),
+    Uri.parse('$_baseUrl/movie/$movieId/recommendations?api_key=$_apiKey'),
   );
 
   if (response.statusCode == 200) {

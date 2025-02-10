@@ -2,11 +2,14 @@ import 'dart:math';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../models/movie_model.dart';
 import '../screens/edit_movie_screen.dart';
+import '../main.dart';
 
-class DrawerWidget extends StatelessWidget {
+class DrawerWidget extends StatefulWidget {
   final String _viewType;
   final String _groupByText;
   final String _sortBy;
@@ -22,7 +25,8 @@ class DrawerWidget extends StatelessWidget {
   final String? userEmail; 
   final String? userName;
 
-  DrawerWidget({
+  const DrawerWidget({
+    Key? key,
     required String viewType,
     required String groupByText,
     required String sortBy,
@@ -36,7 +40,7 @@ class DrawerWidget extends StatelessWidget {
     this.userPicture, // Kullanıcı profil resmini al
     this.userEmail,
     this.userId,
-    this.userName
+    this.userName,
   })  : _viewType = viewType,
         _groupByText = groupByText,
         _changeViewType = changeViewType,
@@ -46,7 +50,47 @@ class DrawerWidget extends StatelessWidget {
         _onSortDirChanged = onSortDirChanged,
         _sortDir = sortDir,
         _isFromWishlist = isFromWishlist,
-        _movies = movies;
+        _movies = movies,
+        super(key: key);
+
+  @override
+  _DrawerWidgetState createState() => _DrawerWidgetState();
+}
+
+class _DrawerWidgetState extends State<DrawerWidget> {
+  late String _viewType;
+  late String _groupByText;
+  late String _sortBy;
+  late String _sortDir;
+  late bool _isFromWishlist;
+  late List<Movie> _movies;
+  late ValueChanged<String> _changeViewType;
+  late ValueChanged<String> _toggleGroupBy;
+  late ValueChanged<String> _onSortByChanged;
+  late ValueChanged<String> _onSortDirChanged;
+  late String? userPicture; // Kullanıcı profil resmi
+  late String? userId; 
+  late String? userEmail; 
+  late String? userName;
+
+  @override
+  void initState() {
+    super.initState();
+    _viewType = widget._viewType;
+    _groupByText = widget._groupByText;
+    _sortBy = widget._sortBy;
+    _sortDir = widget._sortDir;
+    _isFromWishlist = widget._isFromWishlist;
+    _movies = widget._movies;
+    _changeViewType = widget._changeViewType;
+    _toggleGroupBy = widget._toggleGroupBy;
+    _onSortByChanged = widget._onSortByChanged;
+    _onSortDirChanged = widget._onSortDirChanged;
+    userPicture = widget.userPicture;
+    userId = widget.userId;
+    userEmail = widget.userEmail;
+    userName = widget.userName;
+  }
 
   Movie? _getRandomMovie(BuildContext context) {
     final random = Random();
@@ -81,6 +125,120 @@ class DrawerWidget extends StatelessWidget {
     return filteredMovies[random.nextInt(filteredMovies.length)];
   }
 
+  Future<void> _signOut(BuildContext context) async {
+    final shouldSignOut = await showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          title: const Text('Çıkış Yap', style: TextStyle(color: Colors.white)),
+          content: const Text('Çıkış yapmak istediğinize emin misiniz?', style: TextStyle(color: Colors.white)),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Hayır', style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            TextButton(
+              child: const Text('Evet', style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+            ),
+          ],
+        );
+      },
+    );
+
+    if (shouldSignOut == true) {
+      final GoogleSignIn googleSignIn = GoogleSignIn();
+      await googleSignIn.signOut();
+
+      // Çıkış işlemi başarılı olduğunda Snackbar göster
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Çıkış Başarılı!', 
+          message: 'Hesabınızdan çıkış yapıldı.', 
+          contentType: ContentType.success, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+
+      // Uygulamayı kapat
+      SystemNavigator.pop(); // Uygulamayı kapat
+    }
+  }
+
+  Future<void> _googleSignIn(BuildContext context) async {
+    const webClientId = '994622404083-l5lm49gg40agjbrh0vvtnbo6b3sddl3u.apps.googleusercontent.com';
+    const iosClientId = '994622404083-pmh33nqujdu7pvekl5djj4nge8hi0v2n.apps.googleusercontent.com';
+
+    final GoogleSignIn googleSignIn = GoogleSignIn(
+      clientId: iosClientId,
+      serverClientId: webClientId,
+    );
+
+    try {
+      final googleUser = await googleSignIn.signIn();
+      if (googleUser == null) {
+        throw 'Google Sign-In was canceled.';
+      }
+      final googleAuth = await googleUser.authentication;
+      final accessToken = googleAuth.accessToken;
+      final idToken = googleAuth.idToken;
+
+      if (accessToken == null) {
+        throw 'No Access Token found.';
+      }
+      if (idToken == null) {
+        throw 'No ID Token found.';
+      }
+
+      /*
+      // Kullanıcı bilgilerini al
+      final String userId = googleUser.id;
+      final String userEmail = googleUser.email;
+      final String userPicture = googleUser.photoUrl ?? '';
+      final String userName = googleUser.displayName ?? '';
+      */
+
+      // Ana sayfaya yönlendirme yap ve kullanıcı bilgilerini geç
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MyHomePage(
+            
+          ),
+        ),
+      );
+    } catch (e) {
+      // Hata durumunda kullanıcıya mesaj göster
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Hata!', 
+          message: e.toString(), 
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
@@ -111,17 +269,20 @@ class DrawerWidget extends StatelessWidget {
               child: userPicture != null
                   ? Column(
                     children: [
-                      ClipOval(
-                         child: Image.network(
-                           userPicture!,
-                           fit: BoxFit.scaleDown, // Resmi çerçeveye göre ölçeklendirir
-                           width: 90, // Çap kadar genişlik
-                           height: 90, // Çap kadar yükseklik
-                         ),
-                       ),
-                       Padding(
-                         padding: EdgeInsets.symmetric(vertical: screenHeight * 0.015),
-                         child: RichText(
+                      GestureDetector(
+                        onTap: () => _signOut(context),
+                        child: ClipOval(
+                          child: Image.network(
+                            userPicture!,
+                            fit: BoxFit.scaleDown, // Resmi çerçeveye göre ölçeklendirir
+                            width: 90, // Çap kadar genişlik
+                            height: 90, // Çap kadar yükseklik
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: screenHeight * 0.015),
+                        child: RichText(
                           text: TextSpan(
                             style: TextStyle(color: Colors.white),
                             children: [
@@ -136,14 +297,15 @@ class DrawerWidget extends StatelessWidget {
                             ],
                           ),
                         )
-                       ),
+                      ),
                     ],
                   )
                   : IconButton(
                 icon: Icon(Icons.login, size: 50),
-                onPressed: () {
-                  // Giriş yapma fonksiyonunuzu burada çağırın
-                  //loginFunction();
+                onPressed: () async {
+                  // Google hesabına giriş yap
+                  await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
+                  print('object');
                 },
               ),
             ),
