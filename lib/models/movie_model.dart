@@ -38,7 +38,7 @@ class Movie {
   final String imageLink;
   
   @HiveField(11)
-  final String userEmail;
+  String userEmail;
   
   @HiveField(12)
   DateTime? watchDate;
@@ -70,6 +70,8 @@ class Movie {
   @HiveField(21)
   final double? revenue;
 
+  @HiveField(22)
+  final bool toSync;
 
   //delete writers
     /*"cast": [
@@ -99,7 +101,8 @@ class Movie {
     this.budget,
     this.country,
     this.popularity,
-    this.revenue
+    this.revenue,
+    this.toSync = false,
   });
 
   Map<String, dynamic> toJson() {
@@ -126,6 +129,7 @@ class Movie {
       'popularity': popularity,
       'budget' : budget,
       'revenue' : revenue,
+      'toSync': toSync,
     };
   }
 
@@ -153,6 +157,7 @@ class Movie {
       popularity: json['popularity']?.toDouble(),
       budget: json['budget']?.toDouble(),
       revenue: json['revenue']?.toDouble(),
+      toSync: json['toSync'] ?? false,
     );
   }
 } 

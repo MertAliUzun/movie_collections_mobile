@@ -115,6 +115,15 @@ class _MyHomePageState extends State<MyHomePage> {
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
 
+      // movies kutusundaki userEmail'i güncelle
+      final moviesBox = Hive.box<Movie>('movies');
+      for (var movie in moviesBox.values) {
+        if (movie.userEmail == 'test@test.com') {
+          movie.userEmail = _userEmail ?? 'test@test.com'; // Güncelle
+          moviesBox.put(movie.id, movie); // Güncellenmiş filmi kutuya kaydet
+        }
+      }
+
       // İlk açılışta CollectionScreen'e geçiş yap
       setState(() {
         _selectedIndex = 0; // CollectionScreen'i seç
