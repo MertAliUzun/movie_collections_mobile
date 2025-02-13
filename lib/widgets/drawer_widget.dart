@@ -1,4 +1,9 @@
 import 'dart:math';
+import 'dart:convert';
+import 'dart:io';
+import 'package:csv/csv.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +21,7 @@ class DrawerWidget extends StatefulWidget {
   final String _sortDir;
   final bool _isFromWishlist;
   final List<Movie> _movies;
+  final List<Movie> _allMovies;
   final ValueChanged<String> _changeViewType;
   final ValueChanged<String> _toggleGroupBy;
   final ValueChanged<String> _onSortByChanged;
@@ -33,6 +39,7 @@ class DrawerWidget extends StatefulWidget {
     required String sortDir,
     required bool isFromWishlist,
     required List<Movie> movies,
+    required List<Movie> allMovies,
     required ValueChanged<String> changeViewType,
     required ValueChanged<String> toggleGroupBy,
     required ValueChanged<String> onSortByChanged,
@@ -51,6 +58,7 @@ class DrawerWidget extends StatefulWidget {
         _sortDir = sortDir,
         _isFromWishlist = isFromWishlist,
         _movies = movies,
+        _allMovies = allMovies,
         super(key: key);
 
   @override
@@ -232,6 +240,137 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           inMaterialBanner: true,
         ), 
         dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+    }
+  }
+
+  Future<void> exportMoviesToCSV() async {
+    // İzinleri kontrol et ve talep et
+    var status = await Permission.manageExternalStorage.status;
+    if (!status.isGranted) {
+        status = await Permission.manageExternalStorage.request();
+        if (!status.isGranted) {
+            // İzin verilmezse kullanıcıya mesaj göster
+            final snackBar = SnackBar(
+                elevation: 0,
+                backgroundColor: Colors.transparent,
+                behavior: SnackBarBehavior.floating,
+                content: AwesomeSnackbarContent(
+                    title: 'Hata!',
+                    message: 'Depolama izni verilmedi.',
+                    contentType: ContentType.failure,
+                    inMaterialBanner: true,
+                ),
+            );
+            ScaffoldMessenger.of(context)
+                ..hideCurrentMaterialBanner()
+                ..showSnackBar(snackBar);
+            return; // İzin verilmezse işlemi durdur
+        }
+    }
+
+    if (status.isDenied) {
+        // Kullanıcı izni reddettiyse ayarlar sayfasına yönlendirin
+        openAppSettings();
+    }
+
+    // CSV formatında başlıkları tanımlayın
+    List<List<String>> csvData = [
+      [
+        'ID', 
+        'Movie Name', 
+        'Director Name', 
+        'Release Date', 
+        'Plot', 
+        'Runtime', 
+        'IMDB Rating', 
+        'Writers', 
+        'Actors', 
+        'Watched', 
+        'Image Link', 
+        'User Email', 
+        'Watch Date', 
+        'User Score', 
+        'Hype Score', 
+        'Genres', 
+        'Production Company', 
+        'Custom Sort Title', 
+        'Country', 
+        'Popularity', 
+        'Budget', 
+        'Revenue', 
+        'To Sync'
+      ],
+    ];
+
+    // allMovies listesini CSV formatına dönüştürün
+    for (var movie in widget._allMovies) {
+      csvData.add([
+        movie.id,
+        movie.movieName,
+        movie.directorName,
+        movie.releaseDate.toIso8601String(),
+        movie.plot ?? '',
+        movie.runtime?.toString() ?? '',
+        movie.imdbRating?.toString() ?? '',
+        movie.writers?.join(', ') ?? '',
+        movie.actors?.join(', ') ?? '',
+        movie.watched.toString(),
+        movie.imageLink,
+        movie.userEmail,
+        movie.watchDate?.toIso8601String() ?? '',
+        movie.userScore?.toString() ?? '',
+        movie.hypeScore?.toString() ?? '',
+        movie.genres?.join(', ') ?? '',
+        movie.productionCompany?.join(', ') ?? '',
+        movie.customSortTitle ?? '',
+        movie.country ?? '',
+        movie.popularity?.toString() ?? '',
+        movie.budget?.toString() ?? '',
+        movie.revenue?.toString() ?? '',
+        movie.toSync.toString(),
+      ]);
+    }
+
+    // CSV verisini bir String'e dönüştürün
+    String csvString = const ListToCsvConverter().convert(csvData);
+
+    try {
+      final directory = await getExternalStorageDirectory();
+      final path = '${directory!.path}/movies.csv';
+      final file = File(path);
+      await file.writeAsString(csvString);
+
+      // Kullanıcıya başarı mesajı göster
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Başarılı!',
+          message: 'CSV dosyası başarıyla oluşturuldu: $path',
+          contentType: ContentType.success,
+          inMaterialBanner: true,
+        ),
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+    } catch (e) {
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: 'Başarısız!',
+          message: 'Hata: $e',
+          contentType: ContentType.failure,
+          inMaterialBanner: true,
+        ),
       );
       ScaffoldMessenger.of(context)
         ..hideCurrentMaterialBanner()
@@ -475,6 +614,71 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ListTile(
               title: Column(
                 children: [
+                  Container(
+                    width: screenWidth * 0.45,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
+                      child: TextButton(
+                        onPressed: () {
+                          exportMoviesToCSV(); // CSV dışa aktarma fonksiyonunu çağır
+                        },
+                        style: TextButton.styleFrom(
+                          side: BorderSide(
+                            color: Colors.white,
+                            width: .3,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 2),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Export to CSV', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
+                              SizedBox(width: screenWidth * 0.03),
+                              Icon(size: screenWidth * 0.055, Icons.import_export, color: Colors.white),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: screenWidth * 0.45,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
+                      child: TextButton(onPressed:() {
+                        final movie = _getRandomMovie(context);
+                        if (movie == null)
+                        Navigator.of(context).pop();
+                        if (movie != null)
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie, userEmail: userEmail,),
+                          ),
+                        );
+                      },style: TextButton.styleFrom(
+                        side: BorderSide(
+                          color: Colors.white,
+                          width: .3,
+                        ),
+                        backgroundColor: const Color.fromARGB(255, 34, 40, 50),),  
+                        child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Import from CSV', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
+                            SizedBox(width: screenWidth * 0.03,),
+                            Icon(size: screenWidth * 0.055,
+                            _isFromWishlist ? Icons.bookmark : Icons.movie,  
+                             color: _isFromWishlist ? Colors.red : Colors.amber,),
+                          ],
+                        ), 
+                      )),
+                    ),
+                  ),
                   Container(
                     width: screenWidth * 0.45,
                     child: Padding(

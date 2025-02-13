@@ -45,6 +45,8 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   google_sign_in: ^6.2.2
+  csv: ^6.0.0
+  permission_handler: ^10.2.0
   awesome_snackbar_content:
     git:
       url: https://github.com/MertAliUzun/awesome_snackbar_content_swipe.git
@@ -52,6 +54,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  path_provider: ^2.1.4
 
 dev_dependencies:
   flutter_test:

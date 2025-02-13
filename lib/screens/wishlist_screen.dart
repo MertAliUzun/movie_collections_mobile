@@ -30,6 +30,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   final SupabaseService _service = SupabaseService(Supabase.instance.client);
   List<Movie> _movies = [];
   List<Movie> _filteredMovies = [];
+  List<Movie> _allMovies = [];
   String _sortBy = 'movieName'; // Default sorting criteria
   String _sortDir = 'Ascending'; // Default sorting criteria
   bool _isAscending = true; // Default sorting order
@@ -69,10 +70,12 @@ class _WishlistScreenState extends State<WishlistScreen> {
     } catch (e) {
       // If there's an error (like no internet), load from Hive
       final box = Hive.box<Movie>('movies');
+      List<Movie> allMovies = box.values.toList();
       List<Movie> movies = box.values.where((movie) => !movie.watched).toList();
       setState(() {
         _movies = movies;
         _filteredMovies = _movies; // Initialize filtered list
+        _allMovies = allMovies;
         _sortMovies(); // Sort movies after loading from Hive
       });
     }
@@ -411,6 +414,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
         onSortDirChanged: _onSortDirChanged, 
         isFromWishlist: true, 
         movies: _movies, 
+        allMovies: _allMovies,
         userPicture: widget.userPicture,
         userEmail: widget.userEmail,
         userName: widget.userName,
