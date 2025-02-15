@@ -51,6 +51,14 @@
     <string>We need access to the camera</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>We need access to the microphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need access to your microphone</string>
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to your camera</string>
+    <key>NSDocumentsUsageDescription</key>
+    <string>We need access to your documents</string>
 </array>
 </dict>
 </plist>

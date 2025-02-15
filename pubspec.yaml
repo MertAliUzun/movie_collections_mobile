@@ -47,6 +47,7 @@ dependencies:
   google_sign_in: ^6.2.2
   csv: ^6.0.0
   permission_handler: ^10.2.0
+  file_picker: ^5.2.1
   awesome_snackbar_content:
     git:
       url: https://github.com/MertAliUzun/awesome_snackbar_content_swipe.git
