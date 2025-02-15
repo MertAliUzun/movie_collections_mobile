@@ -614,12 +614,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
                       child: DropdownButton<String>(
                         value: _viewType,
-                        icon: Padding(
-                          padding: EdgeInsets.fromLTRB(screenWidth * 0.16, 0, 0, 0),
-                          child: const Icon(Icons.arrow_drop_down, color: Colors.white),
-                        ),
+                        icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
+                        style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
                         underline: SizedBox(),
+                        isExpanded: true, 
                         onChanged: (Object? newValue) {
                           if (newValue is String) {
                             _changeViewType(newValue);
@@ -647,12 +646,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
                       child: DropdownButton<String>(
                         value: _groupByText,
-                        icon: Padding(
-                          padding: EdgeInsets.fromLTRB(screenWidth * 0.11, 0, 0, 0),
-                          child: const Icon(Icons.arrow_drop_down, color: Colors.white),
-                        ),
+                        icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
+                        style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
                         underline: SizedBox(),
+                        isExpanded: true, 
                         onChanged: (String? newValue) {
                           if (newValue != null) {
                             _toggleGroupBy(newValue);
@@ -677,16 +675,14 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Container(
                     width: screenWidth * 0.55,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(screenWidth * 0.02, 0, 0, 0),
+                      padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
                       child: DropdownButton<String>(
                         value: _sortBy,
-                        icon: Padding(
-                          padding: EdgeInsets.fromLTRB(screenWidth * 0.14, 0, 0, 0),
-                          child: const Icon(Icons.arrow_drop_down, color: Colors.white),
-                        ),
+                        icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
                         style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
                         underline: SizedBox(),
+                        isExpanded: true, 
                         onChanged: (Object? newValue) {
                           if (newValue is String) {
                             _onSortByChanged(newValue);
@@ -719,13 +715,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(screenWidth * 0.05, 0, 0, 0),
                       child: DropdownButton<String>(
                         value: _sortDir,
-                        icon: Padding(
-                          padding: EdgeInsets.fromLTRB(screenWidth * 0.14, 0, 0, 0),
-                          child: const Icon(Icons.arrow_drop_down, color: Colors.white),
-                        ),
+                        icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
                         style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
                         underline: SizedBox(),
+                        isExpanded: true,
                         onChanged: (Object? newValue) {
                           if (newValue is String) {
                             _onSortDirChanged(newValue);
