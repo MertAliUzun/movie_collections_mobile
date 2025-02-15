@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:convert';
 import 'dart:io';
 import 'package:csv/csv.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:file_picker/file_picker.dart';
@@ -117,8 +118,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Failure!', 
-          message: 'Unable to Detect Movies!', 
+          title: S.of(context).noAccessToken, 
+          message: S.of(context).unableToDetectMovies, 
           contentType: ContentType.failure, 
           inMaterialBanner: true,
         ), 
@@ -141,17 +142,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-          title: const Text('Çıkış Yap', style: TextStyle(color: Colors.white)),
-          content: const Text('Çıkış yapmak istediğinize emin misiniz?', style: TextStyle(color: Colors.white)),
+          title: Text(S.of(context).signOut,  style: TextStyle(color: Colors.white)),
+          content: Text(S.of(context).signOutConfirm,  style: TextStyle(color: Colors.white)),
           actions: <Widget>[
             TextButton(
-              child: const Text('Hayır', style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).no,  style: TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.of(context).pop(false);
               },
             ),
             TextButton(
-              child: const Text('Evet', style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).yes, style: TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
@@ -171,8 +172,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Çıkış Başarılı!', 
-          message: 'Hesabınızdan çıkış yapıldı.', 
+          title: S.of(context).signOutSucceful, 
+          message: S.of(context).signedOutAccount, 
           contentType: ContentType.success, 
           inMaterialBanner: true,
         ), 
@@ -199,17 +200,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     try {
       final googleUser = await googleSignIn.signIn();
       if (googleUser == null) {
-        throw 'Google Sign-In was canceled.';
+        throw S.of(context).signInCancel;
       }
       final googleAuth = await googleUser.authentication;
       final accessToken = googleAuth.accessToken;
       final idToken = googleAuth.idToken;
 
       if (accessToken == null) {
-        throw 'No Access Token found.';
+        throw S.of(context).noAccessToken;
       }
       if (idToken == null) {
-        throw 'No ID Token found.';
+        throw S.of(context).noIdToken;
       }
 
       /*
@@ -236,7 +237,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Hata!', 
+          title: S.of(context).error, 
           message: e.toString(), 
           contentType: ContentType.failure, 
           inMaterialBanner: true,
@@ -324,8 +325,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Başarılı!',
-          message: 'CSV dosyası başarıyla oluşturuldu: $path',
+          title: S.of(context).succesful,
+          message: '${S.of(context).csvFileCreated} $path',
           contentType: ContentType.success,
           inMaterialBanner: true,
         ),
@@ -341,8 +342,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Hata!',
-          message: 'Dosya yazma hatası: $e',
+          title: S.of(context).error,
+          message: '${S.of(context).errorWritingFile} $e',
           contentType: ContentType.failure,
           inMaterialBanner: true,
         ),
@@ -404,7 +405,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
 
             moviesBox.put(movie.id, movie);
           } catch (e) {
-            print('Satır dönüştürme hatası: $e');
+            print('${S.of(context).errorConvertingLine} $e');
             continue; // Hatalı satırı atla ve devam et
           }
         }
@@ -414,8 +415,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           backgroundColor: Colors.transparent,
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
-            title: 'Başarılı!',
-            message: 'CSV dosyası başarıyla içe aktarıldı.',
+            title: S.of(context).succesful,
+            message: S.of(context).csvFileImported,
             contentType: ContentType.success,
             inMaterialBanner: true,
           ),
@@ -440,8 +441,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           backgroundColor: Colors.transparent,
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
-            title: 'Hata!',
-            message: 'Dosya okuma hatası: $e',
+            title: S.of(context).error,
+            message: '${S.of(context).errorReadingFile} $e',
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),
@@ -458,9 +459,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'İptal Edildi!',
-          message: 'Dosya seçimi iptal edildi.',
-          contentType: ContentType.warning,
+          title: S.of(context).cancelled,
+          message: S.of(context).cancelChooseFile,
+          contentType: ContentType.failure,
           inMaterialBanner: true,
         ),
         dismissDirection: DismissDirection.horizontal,
@@ -489,8 +490,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           backgroundColor: Colors.transparent,
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
-            title: 'Hata!',
-            message: 'Depolama izni verilmedi.',
+            title: S.of(context).error,
+            message: S.of(context).noStoragePermission,
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),
@@ -513,18 +514,38 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
-      const DropdownMenuItem(value: 'movieName', child: Text('Title')),
-      const DropdownMenuItem(value: 'releaseDate', child: Text('Release Date')),
-      const DropdownMenuItem(value: 'directorName', child: Text('Director')),
-      const DropdownMenuItem(value: 'imdbRating', child: Text('IMDB Rating')),
-      const DropdownMenuItem(value: 'runtime', child: Text('Runtime')),
+       DropdownMenuItem(value: 'movieName', child: Text(S.of(context).title)),
+       DropdownMenuItem(value: 'releaseDate', child: Text(S.of(context).releaseDate)),
+       DropdownMenuItem(value: 'directorName', child: Text(S.of(context).director)),
+       DropdownMenuItem(value: 'imdbRating', child: Text(S.of(context).imdbRating)),
+       DropdownMenuItem(value: 'runtime', child: Text(S.of(context).runtime)),
     ];
     if (_isFromWishlist) {
-      sortingOptions.add(const DropdownMenuItem(value: 'hypeScore', child: Text('Hype Score')));
+      sortingOptions.add(DropdownMenuItem(value: 'hypeScore', child: Text(S.of(context).hypeScore)));
     } else {
-      sortingOptions.add(const DropdownMenuItem(value: 'userScore', child: Text('User Score')));
-      sortingOptions.add(const DropdownMenuItem(value: 'watchDate', child: Text('Watch Date')));
+      sortingOptions.add(DropdownMenuItem(value: 'userScore', child: Text(S.of(context).userScore)));
+      sortingOptions.add(DropdownMenuItem(value: 'watchDate', child: Text(S.of(context).watchDate)));
     }
+
+    List<DropdownMenuItem<String>> groupingOptions = [
+       DropdownMenuItem(value: 'None', child: Text(S.of(context).none)),
+       DropdownMenuItem(value: 'Director', child: Text(S.of(context).director)),
+       DropdownMenuItem(value: 'Genre', child: Text(S.of(context).genre)),
+       DropdownMenuItem(value: 'Release Year', child: Text(S.of(context).releaseYear)),
+    ];
+    if (!_isFromWishlist) {
+      groupingOptions.add(DropdownMenuItem(value: 'Watch Year', child: Text(S.of(context).watchYear)));
+    } 
+    List<DropdownMenuItem<String>> sortingDirOptions = [
+       DropdownMenuItem(value: 'Ascending', child: Text(S.of(context).ascending)),
+       DropdownMenuItem(value: 'Descending', child: Text(S.of(context).descending)),
+    ];
+    List<DropdownMenuItem<String>> viewingOptions = [
+       DropdownMenuItem(value: 'List', child: Text(S.of(context).list)),
+       DropdownMenuItem(value: 'List(Small)', child: Text(S.of(context).listSmall)),
+       DropdownMenuItem(value: 'Card', child: Text(S.of(context).card)),
+       DropdownMenuItem(value: 'Poster', child: Text(S.of(context).poster)),
+    ];
 
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
@@ -558,7 +579,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             style: TextStyle(color: Colors.white),
                             children: [
                               TextSpan(
-                                text: 'Welcome, ',
+                                text: S.of(context).welcome,
                                 style: TextStyle(fontWeight: FontWeight.normal),
                               ),
                               TextSpan(
@@ -576,7 +597,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 onPressed: () async {
                   // Google hesabına giriş yap
                   await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
-                  print('object');
                 },
               ),
             ),
@@ -585,7 +605,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'View As',
+                    S.of(context).viewAs,
                     style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.033, fontWeight: FontWeight.bold),
                   ),
                   Container(
@@ -606,15 +626,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: ['List', 'List(Small)', 'Card', 'Poster'].map((String choice) {
-                          return DropdownMenuItem<String>(
-                            value: choice,
-                            child: Text(
-                              choice,
-                              style: TextStyle(fontSize: screenWidth * 0.055, color: Colors.white70),
-                            ),
-                          );
-                        }).toList(),
+                        items: viewingOptions,
                       ),
                     ),
                   ),
@@ -626,7 +638,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Group By',
+                    S.of(context).groupBy,
                     style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.033, fontWeight: FontWeight.bold),
                   ),
                   Container(
@@ -647,15 +659,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: ['None', 'Director', 'Genre', 'Release Year', if (!_isFromWishlist) 'Watch Year',].map((String choice) {
-                          return DropdownMenuItem<String>(
-                            value: choice,
-                            child: Text(
-                              choice,
-                              style: TextStyle(fontSize: screenWidth * 0.055, color: Colors.white70),
-                            ),
-                          );
-                        }).toList(),
+                        items: groupingOptions,
                       ),
                     ),
                   ),
@@ -667,7 +671,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Sort By',
+                    S.of(context).sortBy,
                     style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.033, fontWeight: FontWeight.bold),
                   ),
                   Container(
@@ -703,7 +707,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Row(
                     children: [
                       Text(
-                        'Sort ',
+                        S.of(context).sort,
                         style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.033, fontWeight: FontWeight.bold),
                       ),
                       Icon(_sortDir == 'Ascending' ? Icons.north : Icons.south , color: Colors.white, size: 18,),
@@ -728,15 +732,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: ['Ascending', 'Descending'].map((String choice) {
-                          return DropdownMenuItem<String>(
-                            value: choice,
-                            child: Text(
-                              choice,
-                              style: TextStyle(fontSize: screenWidth * 0.055, color: Colors.white70),
-                            ),
-                          );
-                        }).toList(),
+                        items: sortingDirOptions,
                       ),
                     ),
                   ),
@@ -766,7 +762,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Export to CSV', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
+                              Text(S.of(context).exportCSV, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
                               SizedBox(width: screenWidth * 0.03),
                               Icon(size: screenWidth * 0.055, Icons.import_export, color: Colors.white),
                             ],
@@ -795,7 +791,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Import from CSV', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
+                              Text(S.of(context).importCSV, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
                               SizedBox(width: screenWidth * 0.03),
                               Icon(size: screenWidth * 0.055, Icons.file_upload, color: Colors.white),
                             ],
@@ -830,7 +826,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Random Movie', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
+                            Text(S.of(context).randomMovie, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
                             SizedBox(width: screenWidth * 0.03,),
                             Icon(size: screenWidth * 0.055,
                             _isFromWishlist ? Icons.bookmark : Icons.movie,  

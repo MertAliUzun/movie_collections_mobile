@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -49,6 +51,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        S.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      locale: Locale('en'),
       title: 'Film Koleksiyonu',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -96,17 +106,17 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       final googleUser = await googleSignIn.signIn();
       if (googleUser == null) {
-        throw 'Google Sign-In was canceled.';
+        throw S.of(context).signInCancel;
       }
       final googleAuth = await googleUser.authentication;
       final accessToken = googleAuth.accessToken;
       final idToken = googleAuth.idToken;
 
       if (accessToken == null) {
-        throw 'No Access Token found.';
+        throw S.of(context).noAccessToken;
       }
       if (idToken == null) {
-        throw 'No ID Token found.';
+        throw S.of(context).noIdToken;
       }
 
       // Kullanıcı bilgilerini al
@@ -151,12 +161,12 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-          title: const Text('Hata', style: TextStyle(color: Colors.white),),
-          content: const Text('Check internet your connection.', style: TextStyle(color: Colors.white),),
+          title: Text(S.of(context).error, style: TextStyle(color: Colors.white),),
+          content: Text(S.of(context).check_internet, style: TextStyle(color: Colors.white),),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Tamam', style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).ok, style: TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -181,14 +191,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _userId != null ? _pages[_selectedIndex] : const Center(child: CircularProgressIndicator()), 
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.movie, color: Colors.amber,),
-            label: 'Koleksiyon',
+            label: S.of(context).collection,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bookmark, color: Colors.red,),
-            label: 'İzleme Listesi',
+            label: S.of(context).wishlist,
           ),
         ],
         currentIndex: _selectedIndex,
