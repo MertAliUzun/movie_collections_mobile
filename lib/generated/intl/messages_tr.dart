@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "action": MessageLookupByLibrary.simpleMessage("Aksiyon"),
+        "adventure": MessageLookupByLibrary.simpleMessage("Macera"),
+        "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
         "ascending": MessageLookupByLibrary.simpleMessage("Artan"),
+        "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Dosya seçimi iptal edildi."),
         "cancelled": MessageLookupByLibrary.simpleMessage("İptal Edildi!"),
@@ -30,12 +34,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_internet": MessageLookupByLibrary.simpleMessage(
             "İnternet bağlantınızı kontrol edin!"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksiyon"),
+        "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
+        "crime": MessageLookupByLibrary.simpleMessage("Suç"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV dosyası başarıyla oluşturuldu: "),
         "csvFileImported": MessageLookupByLibrary.simpleMessage(
             "CSV dosyası başarıyla içe aktarıldı."),
+        "delete": MessageLookupByLibrary.simpleMessage("Sil"),
+        "deleteChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Seçilen Filmleri Sil"),
         "descending": MessageLookupByLibrary.simpleMessage("Azalan"),
         "director": MessageLookupByLibrary.simpleMessage("Yönetmen"),
+        "documentary": MessageLookupByLibrary.simpleMessage("Belgesel"),
+        "drama": MessageLookupByLibrary.simpleMessage("Drama"),
+        "editDirector":
+            MessageLookupByLibrary.simpleMessage("Yönetmeni Düzenle"),
+        "enterDirectorName":
+            MessageLookupByLibrary.simpleMessage("Yönetmen adını girin"),
         "error": MessageLookupByLibrary.simpleMessage("Hata!"),
         "errorConvertingLine":
             MessageLookupByLibrary.simpleMessage("Satır dönüştürme hatası: "),
@@ -44,8 +59,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorWritingFile":
             MessageLookupByLibrary.simpleMessage("Dosya yazma hatası: "),
         "exportCSV": MessageLookupByLibrary.simpleMessage("CSV\'ye Dönüştür"),
+        "family": MessageLookupByLibrary.simpleMessage("Aile"),
+        "fantasy": MessageLookupByLibrary.simpleMessage("Fantastik"),
         "genre": MessageLookupByLibrary.simpleMessage("Tür"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupla"),
+        "history": MessageLookupByLibrary.simpleMessage("Tarih"),
+        "horror": MessageLookupByLibrary.simpleMessage("Korku"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Puanı"),
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB Puanı"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV\'den Aktar"),
@@ -53,6 +72,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste(Küçük)"),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("Film Koleksiyonu"),
+        "movies": MessageLookupByLibrary.simpleMessage("Film"),
+        "moviesChosen": MessageLookupByLibrary.simpleMessage(" film seçildi"),
+        "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film silindi."),
+        "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
+            "Filmler Koleksiyona Taşındı!"),
+        "music": MessageLookupByLibrary.simpleMessage("Müzik"),
+        "mystery": MessageLookupByLibrary.simpleMessage("Gizem"),
         "no": MessageLookupByLibrary.simpleMessage("Hayır"),
         "noAccessToken":
             MessageLookupByLibrary.simpleMessage("Access Tokeni bulunamadı."),
@@ -66,7 +92,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "randomMovie": MessageLookupByLibrary.simpleMessage("Rastgele Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Çıkış Tarihi"),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Çıkış Yılı"),
+        "romance": MessageLookupByLibrary.simpleMessage("Romantik"),
         "runtime": MessageLookupByLibrary.simpleMessage("Süre"),
+        "scienceFiction": MessageLookupByLibrary.simpleMessage("Bilim Kurgu"),
+        "searchMovies": MessageLookupByLibrary.simpleMessage("Film Ara"),
+        "selected": MessageLookupByLibrary.simpleMessage("Seçili"),
+        "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
+            "seçilen filmler silinecek. Onaylıyor musunuz?"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google oturum açma iptal edildi."),
         "signOut": MessageLookupByLibrary.simpleMessage("Çıkış Yap"),
@@ -79,14 +111,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "sort": MessageLookupByLibrary.simpleMessage("Sırala"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sıralama"),
         "succesful": MessageLookupByLibrary.simpleMessage("Başarılı!"),
+        "succesfullyDeleted":
+            MessageLookupByLibrary.simpleMessage(" başarıyla silindi"),
+        "thriller": MessageLookupByLibrary.simpleMessage("Gerilim"),
         "title": MessageLookupByLibrary.simpleMessage("Film Adı"),
+        "tvMovie": MessageLookupByLibrary.simpleMessage("TV Filmi"),
         "unableToDetectMovies":
             MessageLookupByLibrary.simpleMessage("Filmler Tespit Edilemedi!"),
         "userScore": MessageLookupByLibrary.simpleMessage("Kullanıcı Puanı"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Görüntüle"),
+        "war": MessageLookupByLibrary.simpleMessage("Savaş"),
         "watchDate": MessageLookupByLibrary.simpleMessage("İzleme Tarihi"),
         "watchYear": MessageLookupByLibrary.simpleMessage("İzleme Yılı"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoş geldiniz, "),
+        "western": MessageLookupByLibrary.simpleMessage("Vahşi Batı"),
+        "willBeDeleted": MessageLookupByLibrary.simpleMessage("silinsin mi?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("İzleme Listesi"),
         "yes": MessageLookupByLibrary.simpleMessage("Evet")
       };

@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      locale: Locale('en'),
+      locale: Locale('tr'),
       title: 'Film Koleksiyonu',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

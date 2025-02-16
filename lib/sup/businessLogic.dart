@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/movie_model.dart';
@@ -16,17 +17,17 @@ Future<bool> deleteDetailsConfirm(BuildContext context, String detailType) async
       return AlertDialog(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         content: Text(
-          'Bu $detailType silinsin mi?',
+          '${S.of(context).selected} $detailType ${S.of(context).willBeDeleted}',
           style: const TextStyle(color: Colors.white),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false), // User declined
-            child: const Text('Hayır', style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).no, style: TextStyle(color: Colors.white)),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(true), // User confirmed
-            child: const Text('Evet', style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).yes, style: TextStyle(color: Colors.white)),
           ),
         ],
       );
@@ -49,8 +50,8 @@ void deleteDetails(BuildContext context, String detailType, {int? index, List<St
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Success!', 
-          message: '$detailType succesfully deleted.', 
+          title: S.of(context).succesful,
+          message: '$detailType ${S.of(context).succesfullyDeleted}', 
           contentType: ContentType.success, 
           inMaterialBanner: true,
         ), 
@@ -75,12 +76,12 @@ Future<void> editDirector(BuildContext context, TextEditingController directorNa
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        title: const Text('Edit Director', style: TextStyle(color: Colors.white)),
+        title: Text(S.of(context).editDirector, style: TextStyle(color: Colors.white)),
         content: TextField(
           onChanged: (value) {
             input = value;
           },
-          decoration: const InputDecoration(hintText: 'Enter director name', hintStyle: TextStyle(color: Colors.white)),
+          decoration: InputDecoration(hintText: S.of(context).enterDirectorName, hintStyle: TextStyle(color: Colors.white)),
           controller: TextEditingController(text: input), // Set initial text
           style: const TextStyle(color: Colors.white),
         ),
@@ -89,14 +90,14 @@ Future<void> editDirector(BuildContext context, TextEditingController directorNa
             onPressed: () {
               Navigator.of(context).pop(); // Close the dialog
             },
-            child: const Text('Cancel', style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).cancel, style: TextStyle(color: Colors.white)),
           ),
           TextButton(
             onPressed: () {
               directorNameController.text = input; // Update the director name
               Navigator.of(context).pop(); // Close the dialog
             },
-            child: const Text('OK', style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).ok, style: TextStyle(color: Colors.white)),
           ),
         ],
       );
@@ -126,8 +127,8 @@ Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromW
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Success!', 
-          message: isFromWishlist ? 'Movies has been moved to Collection!' : 'Movies has been moved to Wishlist!', 
+          title: S.of(context).succesful, 
+          message: isFromWishlist ? S.of(context).moviesMovedToCollection : S.of(context).moviesMovedToWatchlist, 
           contentType: ContentType.success, 
           inMaterialBanner: true,
         ), 

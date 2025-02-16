@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../sup/businessLogic.dart';
 import '../sup/groupBy.dart';
@@ -238,12 +239,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
 
     for (String movieId in _selectedMovies) {
       // Hive'dan silinecek filmleri bul
-      print(movieId);
       for (var movie in box.values) {
         if (movie.id == movieId) {
       // Eğer film ID'si eşleşiyorsa, sil
       box.delete(movie.id);
-      print('Film ID $movieId silindi.');
       }
      }
     }
@@ -252,8 +251,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Success!', 
-          message: '${_selectedMovies.length} movies deleted.', 
+          title: S.of(context).succesful, 
+          message: '${_selectedMovies.length} ${S.of(context).moviesDeleted}', 
           contentType: ContentType.success, 
           inMaterialBanner: true,
         ), 
@@ -293,7 +292,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             });
           },
         ),
-        title: Text('${_selectedMovies.length} film seçildi', 
+        title: Text('${_selectedMovies.length} ${S.of(context).moviesChosen}', 
           style: TextStyle(color: Colors.white)),
         actions: [
           IconButton(
@@ -329,21 +328,21 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 context: context,
                 builder: (context) => AlertDialog(
                   backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-                  title: Text('Seçili filmleri sil', 
+                  title: Text(S.of(context).deleteChosenMovies, 
                     style: TextStyle(color: Colors.white)),
-                  content: Text('${_selectedMovies.length} filmi silmek istediğinize emin misiniz?',
+                  content: Text('${_selectedMovies.length}  ${S.of(context).selectedMoviesDeleteConfirm}',
                     style: TextStyle(color: Colors.white)),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text('İptal', style: TextStyle(color: Colors.white)),
+                      child: Text(S.of(context).cancel, style: TextStyle(color: Colors.white)),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                         _deleteSelectedMovies();
                       },
-                      child: Text('Sil', style: TextStyle(color: Colors.red)),
+                      child: Text(S.of(context).delete, style: TextStyle(color: Colors.red)),
                     ),
                   ],
                 ),
@@ -364,7 +363,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           },
         ) : null,
         title: !_isSearching 
-        ? Text('${_movies.length} Film', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
+        ? Text('${_movies.length} ${S.of(context).movies}', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
         : SizedBox(
           width: screenWidth * 0.8,
           height: screenHeight * 0.05,
@@ -372,8 +371,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
             focusNode: FocusNode(),
             controller: _searchController,
             textAlignVertical: TextAlignVertical.bottom,
-            decoration: const InputDecoration(
-              hintText: 'Film adı ile ara...',
+            decoration: InputDecoration(
+              hintText: S.of(context).searchMovies,
               hintStyle: const TextStyle(color: Colors.white54),
               //prefixIcon: const Icon(Icons.search, color: Colors.white54,),
               //border: OutlineInputBorder(),
@@ -436,7 +435,28 @@ class _WishlistScreenState extends State<WishlistScreen> {
                         //else { movies.sort((a, b) => (a.genres ?? '').compareTo(b.genres ?? ''));}
                         //
                         return ExpansionTile(
-                          title: Text(sortName, style: const TextStyle(color: Colors.white)),
+                          title: Text(
+                            sortName == 'Action' ? S.of(context).action :
+                            sortName == 'Adventure' ? S.of(context).adventure :
+                            sortName == 'Animation' ? S.of(context).animation :
+                            sortName == 'Comedy' ? S.of(context).comedy :
+                            sortName == 'Crime' ? S.of(context).crime :
+                            sortName == 'Documentary' ? S.of(context).documentary :
+                            sortName == 'Drama' ? S.of(context).drama :
+                            sortName == 'Family' ? S.of(context).family :
+                            sortName == 'Fantasy' ? S.of(context).fantasy :
+                            sortName == 'History' ? S.of(context).history :
+                            sortName == 'Horror' ? S.of(context).horror :
+                            sortName == 'Music' ? S.of(context).music :
+                            sortName == 'Mystery' ? S.of(context).mystery :
+                            sortName == 'Romance' ? S.of(context).romance :
+                            sortName == 'Science Fiction' ? S.of(context).scienceFiction :
+                            sortName == 'TV Movie' ? S.of(context).tvMovie :
+                            sortName == 'Thriller' ? S.of(context).thriller :
+                            sortName == 'War' ? S.of(context).war :
+                            sortName == 'Western' ? S.of(context).western : sortName,
+                            style: const TextStyle(color: Colors.white),
+                          ),
                           children: movies.map((movie) {
                             return MovieCard(
                               movie: movie,
