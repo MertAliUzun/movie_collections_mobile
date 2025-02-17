@@ -34,8 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Yapım Şirketi Ekle"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Yazar Ekle"),
         "adventure": MessageLookupByLibrary.simpleMessage("Macera"),
+        "aliasColon": MessageLookupByLibrary.simpleMessage("Takma Ad: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
         "ascending": MessageLookupByLibrary.simpleMessage("Artan"),
+        "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografi: "),
+        "birthDateColon":
+            MessageLookupByLibrary.simpleMessage("Doğum Tarihi: "),
+        "birthPlaceColon": MessageLookupByLibrary.simpleMessage("Doğum Yeri: "),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bütçe: "),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
@@ -54,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV dosyası başarıyla içe aktarıldı."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Özel Sıralama Adı"),
+        "daily": MessageLookupByLibrary.simpleMessage("Günlük"),
+        "deathDateColon": MessageLookupByLibrary.simpleMessage("Ölüm Tarihi: "),
         "delete": MessageLookupByLibrary.simpleMessage("Sil"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Seçilen Filmleri Sil"),
@@ -73,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("Hata!"),
         "errorConvertingLine":
             MessageLookupByLibrary.simpleMessage("Satır dönüştürme hatası: "),
+        "errorFetchingMovies": MessageLookupByLibrary.simpleMessage(
+            "Filmleri Alırken Hata Oluştu!"),
         "errorFetchingSimilar": MessageLookupByLibrary.simpleMessage(
             "Benzer filmler alınırken hata oluştu: "),
         "errorReadingFile":
@@ -92,8 +101,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB Puanı"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Puanı"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV\'den Aktar"),
+        "invalidIMDB":
+            MessageLookupByLibrary.simpleMessage("Geçersiz IMDB ID!"),
         "list": MessageLookupByLibrary.simpleMessage("Liste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste(Küçük)"),
+        "monthly": MessageLookupByLibrary.simpleMessage("Aylık"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film Başarıyla Eklendi!"),
         "movieCollection":
@@ -122,6 +134,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hiçbir Tür Seçilmedi"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID Tokeni bulunamadı."),
+        "noMoviesFound":
+            MessageLookupByLibrary.simpleMessage("Hiçbir film bulunamadı"),
+        "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
+            "Bu şirket için hiçbir film bulunamadı"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Depolama izinleri verilmedi."),
         "noTitle": MessageLookupByLibrary.simpleMessage("Film Adı Yok"),
@@ -133,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Lütfen film adını giriniz"),
         "plot": MessageLookupByLibrary.simpleMessage("Konu"),
+        "popularFor": MessageLookupByLibrary.simpleMessage("Popüler"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Film afişini seçmek için tıklayın"),
@@ -187,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "watchDateColon":
             MessageLookupByLibrary.simpleMessage("İzleme Tarihi: "),
         "watchYear": MessageLookupByLibrary.simpleMessage("İzleme Yılı"),
+        "weekly": MessageLookupByLibrary.simpleMessage("Haftalık"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoş geldiniz, "),
         "western": MessageLookupByLibrary.simpleMessage("Vahşi Batı"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("silinsin mi?"),

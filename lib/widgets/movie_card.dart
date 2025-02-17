@@ -78,7 +78,7 @@ class MovieCard extends StatelessWidget {
                             itemSize: 17,
                             itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
                             onRatingUpdate: (rating) {
-                              print(rating);
+                              
                             },
                           ),
                         ),
@@ -95,7 +95,7 @@ class MovieCard extends StatelessWidget {
                             itemSize: 20,
                             itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
                             onRatingUpdate: (rating) {
-                              print(rating);
+                              
                             },
                           ),
                         ),
@@ -275,7 +275,7 @@ class MovieCard extends StatelessWidget {
                       itemSize: 15,
                       itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
                       onRatingUpdate: (rating) {
-                        print(rating);
+                        
                       },
                     ),
                   ),

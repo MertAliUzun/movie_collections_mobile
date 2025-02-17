@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
+import '../sup/businessLogic.dart';
 import '../sup/genreMap.dart';
 
 class PersonMoviesWidget extends StatelessWidget {
@@ -35,7 +37,7 @@ class PersonMoviesWidget extends StatelessWidget {
               ),
             ),
             child: Column(
-               crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [               
                 movie['poster_path'] != null
@@ -60,7 +62,7 @@ class PersonMoviesWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: Text(
-                          movie['title'] ?? 'No Title',
+                          movie['title'] ?? S.of(context).noTitle,
                           style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -84,7 +86,9 @@ class PersonMoviesWidget extends StatelessWidget {
                       children: [
                         if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
                         Text(
-                          '${movie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
+                          '${movie['genre_ids'].map((id) => 
+                          getGenreLocalizedString(genreMap[id] ?? 'Action', context)
+                          ).take(3).join(', ')}',
                           style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,

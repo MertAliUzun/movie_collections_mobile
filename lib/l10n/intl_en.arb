@@ -128,5 +128,18 @@
     "movieDetails": "Movie Details",
     "similarMovies": "Similar Movies",
     "noTitle": "No Title",
-    "update": "Update"
+    "update": "Update",
+    "invalidIMDB": "Invalid IMDB ID!",
+    "aliasColon": "Alias: ",
+    "birthDateColon": "Birth Date: ",
+    "deathDateColon": "Death Date: ",
+    "birthPlaceColon": "Birth Place: ",
+    "biographyColon": "Biography: ",
+    "noMoviesFound": "No movies were found",
+    "noMoviesFoundForCompany": "No movies were found for this company",
+    "popularFor": "Popular For",
+    "errorFetchingMovies": "Error Fetching Movies!",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly"
 }

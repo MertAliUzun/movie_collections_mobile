@@ -70,9 +70,9 @@ class TmdbService {
     }
     return [];
   }
-    Future<Map<String, dynamic>?> getPersonalDetails(int personId) async {
+    Future<Map<String, dynamic>?> getPersonalDetails(int personId, String languageCode) async {
     final response = await http.get(
-      Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey'),
+      Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey&language=$languageCode'),
     );
 
     if (response.statusCode == 200) {

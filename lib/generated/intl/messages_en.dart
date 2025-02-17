@@ -34,8 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add Production Company"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Add Writer"),
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
+        "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascending"),
+        "biographyColon": MessageLookupByLibrary.simpleMessage("Biography: "),
+        "birthDateColon": MessageLookupByLibrary.simpleMessage("Birth Date: "),
+        "birthPlaceColon":
+            MessageLookupByLibrary.simpleMessage("Birth Place: "),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelChooseFile":
@@ -54,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV file succesfully imported."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Custom Sort Title"),
+        "daily": MessageLookupByLibrary.simpleMessage("Daily"),
+        "deathDateColon": MessageLookupByLibrary.simpleMessage("Death Date: "),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Delete Chosen Movies"),
@@ -72,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "error": MessageLookupByLibrary.simpleMessage("Error!"),
         "errorConvertingLine":
             MessageLookupByLibrary.simpleMessage("Error converting line: "),
+        "errorFetchingMovies":
+            MessageLookupByLibrary.simpleMessage("Error Fetching Movies!"),
         "errorFetchingSimilar": MessageLookupByLibrary.simpleMessage(
             "Error fetching similar movies: "),
         "errorReadingFile":
@@ -91,8 +100,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB Rating"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Score"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Import from CSV"),
+        "invalidIMDB": MessageLookupByLibrary.simpleMessage("Invalid IMDB ID!"),
         "list": MessageLookupByLibrary.simpleMessage("List"),
         "listSmall": MessageLookupByLibrary.simpleMessage("List(Small)"),
+        "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Movie has been Succesfully Added!"),
         "movieCollection":
@@ -123,6 +134,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("No Genres Selected"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("No ID Token found."),
+        "noMoviesFound":
+            MessageLookupByLibrary.simpleMessage("No movies were found"),
+        "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
+            "No movies were found for this company"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Storage permissions were not given."),
         "noTitle": MessageLookupByLibrary.simpleMessage("No Title"),
@@ -134,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Please enter movie title"),
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
+        "popularFor": MessageLookupByLibrary.simpleMessage("Popular For"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Press to choose movie poster"),
@@ -188,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "watchDate": MessageLookupByLibrary.simpleMessage("Watch Date"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Watch Date: "),
         "watchYear": MessageLookupByLibrary.simpleMessage("Watch Year"),
+        "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
         "willBeDeleted":

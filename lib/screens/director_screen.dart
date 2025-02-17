@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
@@ -22,6 +23,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
   bool _isLoading = true;
   late ScrollController _scrollController;
   bool _isCollapsed = false;
+  String systemLanguage = 'en';
 
   @override
   void initState() {
@@ -48,7 +50,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
         _personMovies = await _tmdbService.getMoviesByPerson(personId, widget.personType);
         _personMovies = _personMovies.where((movie) => movie['poster_path'] != null).toList();
         
-        _personPersonalDetails = await _tmdbService.getPersonalDetails(personId);
+        _personPersonalDetails = await _tmdbService.getPersonalDetails(personId, systemLanguage);
         
       }
       setState(() {
@@ -77,8 +79,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Failure!', 
-          message: 'IMDB Id is not available.', 
+          title: S.of(context).failure,
+          message: S.of(context).invalidIMDB,
           contentType: ContentType.failure, 
           inMaterialBanner: true,
         ), 
@@ -137,7 +139,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         style: const TextStyle(fontSize: 16, color: Colors.white),
                                       ),
                                       Text(
-                                        widget.personType,
+                                        widget.personType == 'Director' ? S.of(context).director :
+                                        widget.personType == 'Actor' ? S.of(context).actor :
+                                        widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
                                         style: const TextStyle(fontSize: 12 , color: Colors.white60),
                                       ),
                                     ],
@@ -195,7 +199,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                           style: const TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
                                         ),
                                        Text(
-                                          widget.personType,
+                                          widget.personType == 'Director' ? S.of(context).director :
+                                          widget.personType == 'Actor' ? S.of(context).actor :
+                                          widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
                                           style: TextStyle(fontSize: 16, color: Colors.white54, fontWeight: FontWeight.bold),
                                         ),
                                         
@@ -216,10 +222,10 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Alias: ${_personPersonalDetails!['also_known_as'][0]}',
-                                                style: const TextStyle(fontSize: 12, color: Colors.white),
+                                                '${S.of(context).aliasColon} ${_personPersonalDetails!['also_known_as'][0]}',
+                                                style: const TextStyle(fontSize: 11, color: Colors.white),
                                                 overflow: TextOverflow.ellipsis,
-                                                maxLines: 2,
+                                                maxLines: 1,
                                               ),
                                             ),
                                           ),
@@ -230,8 +236,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Birth Date: ${_personPersonalDetails!['birthday']}',
-                                                style: const TextStyle(fontSize: 12, color: Colors.white),
+                                                '${S.of(context).birthDateColon} ${_personPersonalDetails!['birthday']}',
+                                                style: const TextStyle(fontSize: 11, color: Colors.white),
                                               ),
                                             ),
                                           ),
@@ -242,8 +248,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Death Date: ${_personPersonalDetails!['deathday']}',
-                                                style: const TextStyle(fontSize: 12, color: Colors.white),
+                                                '${S.of(context).deathDateColon} ${_personPersonalDetails!['deathday']}',
+                                                style: const TextStyle(fontSize: 11, color: Colors.white),
                                               ),
                                             ),
                                           ),
@@ -254,8 +260,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'Birth Place: ${_personPersonalDetails!['place_of_birth']}',
-                                                style: const TextStyle(fontSize: 12, color: Colors.white),
+                                                '${S.of(context).birthPlaceColon} ${_personPersonalDetails!['place_of_birth']}',
+                                                style: const TextStyle(fontSize: 11, color: Colors.white),
                                                 overflow: TextOverflow.ellipsis,
                                                 maxLines: 2,
                                               ),
@@ -269,8 +275,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                               padding: const EdgeInsets.all(8.0),
                                               child: SingleChildScrollView(
                                                 child: Text(
-                                                  'Biography: ${_personPersonalDetails!['biography']}',
-                                                  style: const TextStyle(fontSize: 12, color: Colors.white),
+                                                  '${S.of(context).biographyColon} ${_personPersonalDetails!['biography']}',
+                                                  style: const TextStyle(fontSize: 11, color: Colors.white),
                                                   overflow: TextOverflow.ellipsis,
                                                   maxLines: 6,
                                                 ),
@@ -303,7 +309,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
           SliverToBoxAdapter(
             child: _personMovies.isNotEmpty
                 ? PersonMoviesWidget(movies: _personMovies, personType: widget.personType,)
-                : const Center(child: Text('No movies were found', style: TextStyle(color: Colors.white54))),
+                : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
           ),
         ],
       ),
@@ -323,7 +329,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
                      textAlign: TextAlign.center,
                    ),
                    Text(
-                     widget.personType,
+                     widget.personType == 'Director' ? S.of(context).director :
+                     widget.personType == 'Actor' ? S.of(context).actor :
+                     widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
                      style: TextStyle(fontSize: screenWidth * 0.035 , color: Colors.white60),
                      textAlign: TextAlign.center,
                    ),
@@ -333,7 +341,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
         ),
         body: _personMovies.isNotEmpty
                 ? SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType,))
-                : const Center(child: Text('No movies were found.', style: TextStyle(color: Colors.white54))),
+                : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
 
       );
     }

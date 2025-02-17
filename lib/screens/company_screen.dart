@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/models/movie_model.dart';
+import '../sup/businessLogic.dart';
 import '../sup/genreMap.dart';
 import '../services/tmdb_service.dart';
 
@@ -103,7 +105,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(2, 0, 2, 15),
                       child: Text(
-                        movie['title'] ?? 'No Title',
+                        movie['title'] ?? S.of(context).noTitle,
                         style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.ellipsis,
@@ -116,7 +118,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
                           children: [
                             if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
                             Text(
-                              '${movie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
+                              '${movie['genre_ids'].map((id) => 
+                              getGenreLocalizedString(genreMap[id] ?? 'Action', context)
+                              ).take(3).join(', ')}',
                               style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
@@ -140,7 +144,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
         );
                   },
                 )
-              : const Center(child: Text('No movies found for this company.', style: TextStyle(color: Colors.white54))),
+              : Center(child: Text(S.of(context).noMoviesFoundForCompany, style: TextStyle(color: Colors.white54))),
     );
   }
 } 

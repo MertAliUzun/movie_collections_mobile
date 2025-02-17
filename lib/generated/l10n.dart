@@ -1349,6 +1349,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Invalid IMDB ID!`
+  String get invalidIMDB {
+    return Intl.message(
+      'Invalid IMDB ID!',
+      name: 'invalidIMDB',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alias: `
+  String get aliasColon {
+    return Intl.message(
+      'Alias: ',
+      name: 'aliasColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birth Date: `
+  String get birthDateColon {
+    return Intl.message(
+      'Birth Date: ',
+      name: 'birthDateColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Death Date: `
+  String get deathDateColon {
+    return Intl.message(
+      'Death Date: ',
+      name: 'deathDateColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Birth Place: `
+  String get birthPlaceColon {
+    return Intl.message(
+      'Birth Place: ',
+      name: 'birthPlaceColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Biography: `
+  String get biographyColon {
+    return Intl.message(
+      'Biography: ',
+      name: 'biographyColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No movies were found`
+  String get noMoviesFound {
+    return Intl.message(
+      'No movies were found',
+      name: 'noMoviesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No movies were found for this company`
+  String get noMoviesFoundForCompany {
+    return Intl.message(
+      'No movies were found for this company',
+      name: 'noMoviesFoundForCompany',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular For`
+  String get popularFor {
+    return Intl.message(
+      'Popular For',
+      name: 'popularFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error Fetching Movies!`
+  String get errorFetchingMovies {
+    return Intl.message(
+      'Error Fetching Movies!',
+      name: 'errorFetchingMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily`
+  String get daily {
+    return Intl.message(
+      'Daily',
+      name: 'daily',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weekly`
+  String get weekly {
+    return Intl.message(
+      'Weekly',
+      name: 'weekly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly`
+  String get monthly {
+    return Intl.message(
+      'Monthly',
+      name: 'monthly',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

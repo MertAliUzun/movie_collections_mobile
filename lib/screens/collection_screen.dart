@@ -22,8 +22,9 @@ class CollectionScreen extends StatefulWidget {
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName;
+  final String? systemLanguage;
 
-  const CollectionScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName});
+  const CollectionScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage});
 
   @override
   State<CollectionScreen> createState() => _CollectionScreenState();

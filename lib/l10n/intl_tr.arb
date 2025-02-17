@@ -128,5 +128,18 @@
     "movieDetails": "Film Detayları",
     "similarMovies": "Benzer Filmler",
     "noTitle": "Film Adı Yok",
-    "update": "Güncelle"
+    "update": "Güncelle",
+    "invalidIMDB": "Geçersiz IMDB ID!",
+    "aliasColon": "Takma Ad: ",
+    "birthDateColon": "Doğum Tarihi: ",
+    "deathDateColon": "Ölüm Tarihi: ",
+    "birthPlaceColon": "Doğum Yeri: ",
+    "biographyColon": "Biyografi: ",
+    "noMoviesFound": "Hiçbir film bulunamadı",
+    "noMoviesFoundForCompany": "Bu şirket için hiçbir film bulunamadı",
+    "popularFor": "Popüler",
+    "errorFetchingMovies": "Filmleri Alırken Hata Oluştu!",
+    "daily": "Günlük",
+    "weekly": "Haftalık",
+    "monthly": "Aylık"
 }
