@@ -23,55 +23,87 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "action": MessageLookupByLibrary.simpleMessage("Aksiyon"),
+        "actor": MessageLookupByLibrary.simpleMessage("Oyuncu"),
+        "actors": MessageLookupByLibrary.simpleMessage("Oyuncular"),
+        "add": MessageLookupByLibrary.simpleMessage("Ekle"),
+        "addActor": MessageLookupByLibrary.simpleMessage("Oyuncu Ekle"),
+        "addGenre": MessageLookupByLibrary.simpleMessage("Tür Ekle"),
+        "addMovie": MessageLookupByLibrary.simpleMessage("Film Ekle"),
+        "addNewMovie": MessageLookupByLibrary.simpleMessage("Yeni Film Ekle"),
+        "addProductionCompany":
+            MessageLookupByLibrary.simpleMessage("Yapım Şirketi Ekle"),
+        "addWriter": MessageLookupByLibrary.simpleMessage("Yazar Ekle"),
         "adventure": MessageLookupByLibrary.simpleMessage("Macera"),
         "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
         "ascending": MessageLookupByLibrary.simpleMessage("Artan"),
+        "budgetColon": MessageLookupByLibrary.simpleMessage("Bütçe: "),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Dosya seçimi iptal edildi."),
         "cancelled": MessageLookupByLibrary.simpleMessage("İptal Edildi!"),
         "card": MessageLookupByLibrary.simpleMessage("Kart"),
-        "check_internet": MessageLookupByLibrary.simpleMessage(
-            "İnternet bağlantınızı kontrol edin!"),
+        "checkInternet": MessageLookupByLibrary.simpleMessage(
+            "Lütfen internet bağlantınızı kontrol edin!"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksiyon"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
+        "company": MessageLookupByLibrary.simpleMessage("Şirket"),
         "crime": MessageLookupByLibrary.simpleMessage("Suç"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV dosyası başarıyla oluşturuldu: "),
         "csvFileImported": MessageLookupByLibrary.simpleMessage(
             "CSV dosyası başarıyla içe aktarıldı."),
+        "customSortTitle":
+            MessageLookupByLibrary.simpleMessage("Özel Sıralama Adı"),
         "delete": MessageLookupByLibrary.simpleMessage("Sil"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Seçilen Filmleri Sil"),
         "descending": MessageLookupByLibrary.simpleMessage("Azalan"),
         "director": MessageLookupByLibrary.simpleMessage("Yönetmen"),
+        "directorNull": MessageLookupByLibrary.simpleMessage("Yönetmen Yok"),
         "documentary": MessageLookupByLibrary.simpleMessage("Belgesel"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Yönetmeni Düzenle"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("Yönetmen adını girin"),
+        "enterValidNumber": MessageLookupByLibrary.simpleMessage(
+            "Lütfen geçerli bir sayı giriniz"),
+        "enterValidScore": MessageLookupByLibrary.simpleMessage(
+            "Lütfen geçerli bir puan giriniz (0-10 arası)"),
         "error": MessageLookupByLibrary.simpleMessage("Hata!"),
         "errorConvertingLine":
             MessageLookupByLibrary.simpleMessage("Satır dönüştürme hatası: "),
+        "errorFetchingSimilar": MessageLookupByLibrary.simpleMessage(
+            "Benzer filmler alınırken hata oluştu: "),
         "errorReadingFile":
             MessageLookupByLibrary.simpleMessage("Dosya okuma hatası: "),
         "errorWritingFile":
             MessageLookupByLibrary.simpleMessage("Dosya yazma hatası: "),
         "exportCSV": MessageLookupByLibrary.simpleMessage("CSV\'ye Dönüştür"),
+        "failure": MessageLookupByLibrary.simpleMessage("Başarısız!"),
         "family": MessageLookupByLibrary.simpleMessage("Aile"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantastik"),
         "genre": MessageLookupByLibrary.simpleMessage("Tür"),
+        "genres": MessageLookupByLibrary.simpleMessage("Türler"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupla"),
         "history": MessageLookupByLibrary.simpleMessage("Tarih"),
         "horror": MessageLookupByLibrary.simpleMessage("Korku"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Puanı"),
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB Puanı"),
+        "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Puanı"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV\'den Aktar"),
         "list": MessageLookupByLibrary.simpleMessage("Liste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste(Küçük)"),
+        "movieAdded":
+            MessageLookupByLibrary.simpleMessage("Film Başarıyla Eklendi!"),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("Film Koleksiyonu"),
+        "movieDeleted":
+            MessageLookupByLibrary.simpleMessage("Film Başarıyla Silindi!"),
+        "movieDetails": MessageLookupByLibrary.simpleMessage("Film Detayları"),
+        "movieTitle": MessageLookupByLibrary.simpleMessage("Film Adı"),
+        "movieUpdated":
+            MessageLookupByLibrary.simpleMessage("Film Başarıyla Güncellendi!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
         "moviesChosen": MessageLookupByLibrary.simpleMessage(" film seçildi"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film silindi."),
@@ -82,18 +114,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "no": MessageLookupByLibrary.simpleMessage("Hayır"),
         "noAccessToken":
             MessageLookupByLibrary.simpleMessage("Access Tokeni bulunamadı."),
+        "noActorsSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir Oyuncu Seçilmedi"),
+        "noCompaniesSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir Şirket Seçilmedi"),
+        "noGenresSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir Tür Seçilmedi"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID Tokeni bulunamadı."),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Depolama izinleri verilmedi."),
+        "noTitle": MessageLookupByLibrary.simpleMessage("Film Adı Yok"),
+        "noWritersSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir Yazar Seçilmedi"),
         "none": MessageLookupByLibrary.simpleMessage("Yok"),
         "ok": MessageLookupByLibrary.simpleMessage("Tamam"),
+        "pleaseEnter": MessageLookupByLibrary.simpleMessage("Lütfen Giriniz"),
+        "pleaseEnterMovieTitle":
+            MessageLookupByLibrary.simpleMessage("Lütfen film adını giriniz"),
+        "plot": MessageLookupByLibrary.simpleMessage("Konu"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
+            "Film afişini seçmek için tıklayın"),
+        "productionCompanies":
+            MessageLookupByLibrary.simpleMessage("Yapım Şirketleri"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Rastgele Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Çıkış Tarihi"),
+        "releaseDateColon":
+            MessageLookupByLibrary.simpleMessage("Vizyon Tarihi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Çıkış Yılı"),
+        "revenueColon": MessageLookupByLibrary.simpleMessage("Gelir: "),
         "romance": MessageLookupByLibrary.simpleMessage("Romantik"),
         "runtime": MessageLookupByLibrary.simpleMessage("Süre"),
+        "runtimeMinutes":
+            MessageLookupByLibrary.simpleMessage("Süresi (Dakika)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Bilim Kurgu"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Film Ara"),
         "selected": MessageLookupByLibrary.simpleMessage("Seçili"),
@@ -108,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Çıkış Başarılı!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("Hesabınızdan çıkış yapıldı."),
+        "similarMovies": MessageLookupByLibrary.simpleMessage("Benzer Filmler"),
         "sort": MessageLookupByLibrary.simpleMessage("Sırala"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sıralama"),
         "succesful": MessageLookupByLibrary.simpleMessage("Başarılı!"),
@@ -116,17 +171,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "thriller": MessageLookupByLibrary.simpleMessage("Gerilim"),
         "title": MessageLookupByLibrary.simpleMessage("Film Adı"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Filmi"),
+        "unableFindMovie":
+            MessageLookupByLibrary.simpleMessage("Filmler Bulunamıyor!"),
+        "unableGetMovieDetails":
+            MessageLookupByLibrary.simpleMessage("Film Detayları Alınamıyor!"),
         "unableToDetectMovies":
             MessageLookupByLibrary.simpleMessage("Filmler Tespit Edilemedi!"),
+        "unableUploadImages":
+            MessageLookupByLibrary.simpleMessage("Görseller Yüklenemiyor!"),
+        "update": MessageLookupByLibrary.simpleMessage("Güncelle"),
         "userScore": MessageLookupByLibrary.simpleMessage("Kullanıcı Puanı"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Görüntüle"),
         "war": MessageLookupByLibrary.simpleMessage("Savaş"),
         "watchDate": MessageLookupByLibrary.simpleMessage("İzleme Tarihi"),
+        "watchDateColon":
+            MessageLookupByLibrary.simpleMessage("İzleme Tarihi: "),
         "watchYear": MessageLookupByLibrary.simpleMessage("İzleme Yılı"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoş geldiniz, "),
         "western": MessageLookupByLibrary.simpleMessage("Vahşi Batı"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("silinsin mi?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("İzleme Listesi"),
+        "writer": MessageLookupByLibrary.simpleMessage("Yazar"),
+        "writers": MessageLookupByLibrary.simpleMessage("Yazarlar"),
         "yes": MessageLookupByLibrary.simpleMessage("Evet")
       };
 }

@@ -80,11 +80,11 @@ class S {
     );
   }
 
-  /// `Check your internet connection!`
-  String get check_internet {
+  /// `Please check your internet connection!`
+  String get checkInternet {
     return Intl.message(
-      'Check your internet connection!',
-      name: 'check_internet',
+      'Please check your internet connection!',
+      name: 'checkInternet',
       desc: '',
       args: [],
     );
@@ -895,6 +895,456 @@ class S {
     return Intl.message(
       'Movies has been moved to Watch List!',
       name: 'moviesMovedToWatchlist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to Upload Images!`
+  String get unableUploadImages {
+    return Intl.message(
+      'Unable to Upload Images!',
+      name: 'unableUploadImages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failure!`
+  String get failure {
+    return Intl.message(
+      'Failure!',
+      name: 'failure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to Find Movies!`
+  String get unableFindMovie {
+    return Intl.message(
+      'Unable to Find Movies!',
+      name: 'unableFindMovie',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to Get Movie Details!`
+  String get unableGetMovieDetails {
+    return Intl.message(
+      'Unable to Get Movie Details!',
+      name: 'unableGetMovieDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie has been Succesfully Added!`
+  String get movieAdded {
+    return Intl.message(
+      'Movie has been Succesfully Added!',
+      name: 'movieAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Genre`
+  String get addGenre {
+    return Intl.message(
+      'Add Genre',
+      name: 'addGenre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Actor`
+  String get addActor {
+    return Intl.message(
+      'Add Actor',
+      name: 'addActor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Writer`
+  String get addWriter {
+    return Intl.message(
+      'Add Writer',
+      name: 'addWriter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Production Company`
+  String get addProductionCompany {
+    return Intl.message(
+      'Add Production Company',
+      name: 'addProductionCompany',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Enter`
+  String get pleaseEnter {
+    return Intl.message(
+      'Please Enter',
+      name: 'pleaseEnter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add`
+  String get add {
+    return Intl.message(
+      'Add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Actor`
+  String get actor {
+    return Intl.message(
+      'Actor',
+      name: 'actor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Writer`
+  String get writer {
+    return Intl.message(
+      'Writer',
+      name: 'writer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company`
+  String get company {
+    return Intl.message(
+      'Company',
+      name: 'company',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Movie`
+  String get addNewMovie {
+    return Intl.message(
+      'Add New Movie',
+      name: 'addNewMovie',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie Title`
+  String get movieTitle {
+    return Intl.message(
+      'Movie Title',
+      name: 'movieTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter movie title`
+  String get pleaseEnterMovieTitle {
+    return Intl.message(
+      'Please enter movie title',
+      name: 'pleaseEnterMovieTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Custom Sort Title`
+  String get customSortTitle {
+    return Intl.message(
+      'Custom Sort Title',
+      name: 'customSortTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Genres`
+  String get genres {
+    return Intl.message(
+      'Genres',
+      name: 'genres',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Genres Selected`
+  String get noGenresSelected {
+    return Intl.message(
+      'No Genres Selected',
+      name: 'noGenresSelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Director Null`
+  String get directorNull {
+    return Intl.message(
+      'Director Null',
+      name: 'directorNull',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Actors`
+  String get actors {
+    return Intl.message(
+      'Actors',
+      name: 'actors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Actors Selected`
+  String get noActorsSelected {
+    return Intl.message(
+      'No Actors Selected',
+      name: 'noActorsSelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Writers`
+  String get writers {
+    return Intl.message(
+      'Writers',
+      name: 'writers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Writers Selected`
+  String get noWritersSelected {
+    return Intl.message(
+      'No Writers Selected',
+      name: 'noWritersSelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Production Companies`
+  String get productionCompanies {
+    return Intl.message(
+      'Production Companies',
+      name: 'productionCompanies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Companies Selected`
+  String get noCompaniesSelected {
+    return Intl.message(
+      'No Companies Selected',
+      name: 'noCompaniesSelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Release Date: `
+  String get releaseDateColon {
+    return Intl.message(
+      'Release Date: ',
+      name: 'releaseDateColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Watch Date: `
+  String get watchDateColon {
+    return Intl.message(
+      'Watch Date: ',
+      name: 'watchDateColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budget: `
+  String get budgetColon {
+    return Intl.message(
+      'Budget: ',
+      name: 'budgetColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Revenue: `
+  String get revenueColon {
+    return Intl.message(
+      'Revenue: ',
+      name: 'revenueColon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plot`
+  String get plot {
+    return Intl.message(
+      'Plot',
+      name: 'plot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Runtime (Minutes)`
+  String get runtimeMinutes {
+    return Intl.message(
+      'Runtime (Minutes)',
+      name: 'runtimeMinutes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid number`
+  String get enterValidNumber {
+    return Intl.message(
+      'Please enter valid number',
+      name: 'enterValidNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IMDB Score`
+  String get imdbScore {
+    return Intl.message(
+      'IMDB Score',
+      name: 'imdbScore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid score (0-10)`
+  String get enterValidScore {
+    return Intl.message(
+      'Please enter valid score (0-10)',
+      name: 'enterValidScore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Movie`
+  String get addMovie {
+    return Intl.message(
+      'Add Movie',
+      name: 'addMovie',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Press to choose movie poster`
+  String get pressChoosePoster {
+    return Intl.message(
+      'Press to choose movie poster',
+      name: 'pressChoosePoster',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie has been Succesfully Updated!`
+  String get movieUpdated {
+    return Intl.message(
+      'Movie has been Succesfully Updated!',
+      name: 'movieUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie has been Succesfully Deleted!`
+  String get movieDeleted {
+    return Intl.message(
+      'Movie has been Succesfully Deleted!',
+      name: 'movieDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error fetching similar movies: `
+  String get errorFetchingSimilar {
+    return Intl.message(
+      'Error fetching similar movies: ',
+      name: 'errorFetchingSimilar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie Details`
+  String get movieDetails {
+    return Intl.message(
+      'Movie Details',
+      name: 'movieDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Similar Movies`
+  String get similarMovies {
+    return Intl.message(
+      'Similar Movies',
+      name: 'similarMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Title`
+  String get noTitle {
+    return Intl.message(
+      'No Title',
+      name: 'noTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
       desc: '',
       args: [],
     );

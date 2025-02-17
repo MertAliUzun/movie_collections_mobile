@@ -1,6 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/widgets/person_movies_widget.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
@@ -127,8 +128,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Failure!', 
-          message: 'Unable to Upload Images!', 
+          title: S.of(context).failure,
+          message: S.of(context).unableUploadImages,
           contentType: ContentType.failure, 
           inMaterialBanner: true,
         ), 
@@ -189,8 +190,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Success!', 
-          message: 'Movie is Succesfully Updated!', 
+          title: S.of(context).succesful,
+          message: S.of(context).movieUpdated,
           contentType: ContentType.success, 
           inMaterialBanner: true,
         ), 
@@ -220,8 +221,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: 'Success!', 
-          message: 'Movie is Succesfully Deleted!', 
+          title:  S.of(context).succesful,
+          message:  S.of(context).movieDeleted,
           contentType: ContentType.success, 
           inMaterialBanner: true,
         ), 
@@ -239,6 +240,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     await toggleWatchedStatus(context, widget.movie!, widget.isFromWishlist, true);
   }
 
+  String _getGenreLocalizedString(String genre) {
+    return getGenreLocalizedString(genre, context);
+  }
+
   void _showAddOptionsMenu(BuildContext context) {
     showMenu(
       color: const Color.fromARGB(255, 44, 50, 60),
@@ -247,19 +252,19 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       items: [
         PopupMenuItem<String>(
           value: 'add_genre',
-          child: const Text('Add Genre', style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addGenre, style: TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_actor',
-          child: const Text('Add Actor', style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addActor, style: TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_writer',
-          child: const Text('Add Writer', style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addWriter, style: TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_producer',
-          child: const Text('Add Production Company', style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addProductionCompany, style: TextStyle(color: Colors.white)),
         ),
       ],
     ).then((value) {
@@ -311,20 +316,20 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             onChanged: (value) {
               input = value;
             },
-            decoration: const InputDecoration(hintText: 'Please Enter', hintStyle: TextStyle(color: Colors.white)),
+            decoration: InputDecoration(hintText: S.of(context).pleaseEnter, hintStyle: TextStyle(color: Colors.white)),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Cancel', style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).cancel, style: TextStyle(color: Colors.white)),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(input);
               },
-              child: const Text('Add', style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).add, style: TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -342,7 +347,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
 
   //DELETE BUSINESS
   void _deleteDirector() async {
-    final confirm = await deleteDetailsConfirm(context, 'yönetmen');
+    final confirm = await deleteDetailsConfirm(context, S.of(context).director,);
     
     if (confirm) {
       setState(() {
@@ -351,28 +356,28 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
   void _deleteGenre(int index) {
-    deleteDetails(context, 'genre', index: index, selected: _selectedGenres, onDelete: () {
+    deleteDetails(context, S.of(context).genre, index: index, selected: _selectedGenres, onDelete: () {
       setState(() {
         // This will trigger a rebuild of the widget tree
       });
     });
   }
   void _deleteActor(int index) {
-    deleteDetails(context, 'actor', index: index, selected: _selectedActors, onDelete: () {
+    deleteDetails(context, S.of(context).actor, index: index, selected: _selectedActors, onDelete: () {
       setState(() {
         // This will trigger a rebuild of the widget tree
       });
     });
   }
   void _deleteWriter(int index) {
-    deleteDetails(context, 'writer', index: index, selected: _selectedWriters, onDelete: () {
+    deleteDetails(context, S.of(context).writer, index: index, selected: _selectedWriters, onDelete: () {
       setState(() {
         // This will trigger a rebuild of the widget tree
       });
     });
   }
   void _deleteCompany(int index) {
-    deleteDetails(context, 'company', index: index, selected: _selectedProductionCompanies, onDelete: () {
+    deleteDetails(context, S.of(context).company, index: index, selected: _selectedProductionCompanies, onDelete: () {
       setState(() {
         // This will trigger a rebuild of the widget tree
       });
@@ -440,6 +445,22 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
       }
     } catch (e) {
+      // Kullanıcıya bildirim göster
+    final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title:  S.of(context).failure,
+          message: '${S.of(context).errorFetchingSimilar} $e',
+          contentType: ContentType.failure, 
+          inMaterialBanner: true,
+        ), 
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
       print('Error fetching similar movies: $e');
     }
   }
@@ -509,7 +530,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: const Text('Film Detayları', style: TextStyle(color: Colors.white)),
+        title: Text(S.of(context).movieDetails, style: TextStyle(color: Colors.white)),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
@@ -559,22 +580,22 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             children: [
               TextFormField(
                 controller: _movieNameController,
-                    decoration: const InputDecoration(labelText: 'Film Adı *', labelStyle: TextStyle(color: Colors.white54)),
+                    decoration: InputDecoration(labelText: '${S.of(context).movieTitle} *', labelStyle: TextStyle(color: Colors.white54)),
                 style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Lütfen film adını girin';
+                    return S.of(context).pleaseEnterMovieTitle;
                   }
                   return null;
                 },
               ),
               TextFormField(
                     controller: _sortTitleController,
-                    decoration: const InputDecoration(labelText: 'Custom Sort Title', labelStyle: TextStyle(color: Colors.white54),),
+                    decoration: InputDecoration(labelText: S.of(context).customSortTitle, labelStyle: TextStyle(color: Colors.white54),),
                 style: const TextStyle(color: Colors.white),
                   ),
                   SizedBox(height: screenWidth * 0.1),
-                  Text('Genres', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: 16),),
                   Divider(height: 10, color: Colors.white60,),
                   SizedBox(height: screenWidth * 0.03),
                   _selectedGenres.isNotEmpty
@@ -609,7 +630,25 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                   child: Center(
                                     child: Text(
                                       textAlign: TextAlign.center,
-                                      _selectedGenres[index],
+                                      _selectedGenres[index] == 'Action' ? S.of(context).action : 
+                                      _selectedGenres[index] == 'Adventure' ? S.of(context).adventure :
+                                      _selectedGenres[index] == 'Animation' ? S.of(context).animation :
+                                      _selectedGenres[index] == 'Comedy' ? S.of(context).comedy :
+                                      _selectedGenres[index] == 'Crime' ? S.of(context).crime :
+                                      _selectedGenres[index] == 'Documentary' ? S.of(context).documentary :
+                                      _selectedGenres[index] == 'Drama' ? S.of(context).drama :
+                                      _selectedGenres[index] == 'Family' ? S.of(context).family :
+                                      _selectedGenres[index] == 'Fantasy' ? S.of(context).fantasy :
+                                      _selectedGenres[index] == 'History' ? S.of(context).history :
+                                      _selectedGenres[index] == 'Horror' ? S.of(context).horror :
+                                      _selectedGenres[index] == 'Music' ? S.of(context).music :
+                                      _selectedGenres[index] == 'Mystery' ? S.of(context).mystery :
+                                      _selectedGenres[index] == 'Romance' ? S.of(context).romance :
+                                      _selectedGenres[index] == 'Science Fiction' ? S.of(context).scienceFiction :
+                                      _selectedGenres[index] == 'TV Movie' ? S.of(context).tvMovie :
+                                      _selectedGenres[index] == 'Thriller' ? S.of(context).thriller :
+                                      _selectedGenres[index] == 'War' ? S.of(context).war :
+                                      _selectedGenres[index] == 'Western' ? S.of(context).western : _selectedGenres[index],
                                       style: TextStyle(color: Colors.white, 
                                       fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
                                       _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
@@ -620,9 +659,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : const Text('No Genres Selected', style: TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noGenresSelected, style: TextStyle(color: Colors.white54)),
                   SizedBox(height: screenHeight * 0.02,),
-                  Text('Director', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: 16),),
                   Divider(height: 10, color: Colors.white60,),
                   SizedBox(height: screenWidth * 0.03),
                   GestureDetector(
@@ -658,7 +697,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             Text(
                               _directorNameController.text.isNotEmpty 
                                   ? _directorNameController.text 
-                                  : 'Director Null',
+                                  : S.of(context).directorNull,
                               style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             Row(
@@ -675,7 +714,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     ),
                   ),
                   SizedBox(height: screenWidth * 0.05),
-                  Text('Actors', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: 16),),
                   Divider(height: 10, color: Colors.white60,),
                   SizedBox(height: screenWidth * 0.03),
                   const SizedBox(height: 10),
@@ -722,9 +761,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : const Text('No actors selected', style: TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noActorsSelected, style: TextStyle(color: Colors.white54)),
                   SizedBox(height: screenWidth * 0.05),
-                  Text('Writers', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: 16),),
                   Divider(height: 10, color: Colors.white60,),
                   SizedBox(height: screenWidth * 0.03),
                   const SizedBox(height: 10),
@@ -771,9 +810,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : const Text('No writers selected', style: TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noWritersSelected, style: TextStyle(color: Colors.white54)),
                   SizedBox(height: screenWidth * 0.05),
-                  Text('Production Companies', style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: 16),),
                   Divider(height: 10, color: Colors.white60,),
                   SizedBox(height: screenWidth * 0.03),
                   const SizedBox(height: 10),
@@ -819,23 +858,55 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : const Text('No companies selected', style: TextStyle(color: Colors.white54)),
-              ListTile(
-                  title: Text(
-                    'Çıkış Tarihi: ${_selectedDate.toLocal().toString().split(' ')[0]}',
-                    style: const TextStyle(color: Colors.white54),
+                      : Text(S.of(context).noCompaniesSelected, style: TextStyle(color: Colors.white54)),
+                ListTile(
+                  contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
+                  tileColor: Colors.transparent, // Optional: make the background transparent
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
+                    children: [
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${S.of(context).releaseDateColon} ', 
+                              style: TextStyle(
+                                color: Colors.white70, 
+                                fontWeight: FontWeight.normal, 
+                                fontSize: screenHeight * 0.015,
+                              ),
+                            ),
+                            TextSpan(
+                              text: DateFormat('dd MMMM yyyy').format(_selectedDate.toLocal()),
+                              style: TextStyle(
+                                color: Colors.white, 
+                                fontWeight: FontWeight.bold, 
+                                fontSize: screenHeight * 0.025,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
+                        child: const Icon(
+                          Icons.edit_calendar,
+                          color: Colors.white70,
+                          size: 24,
+                        ),
+                      ),
+                    ],
                   ),
-                  trailing: const Icon(Icons.calendar_today, color: Colors.white54,),
-                      onTap: () => _selectDate(context),
-                    ),
+                  onTap: () => _selectDate(context),
+                ),
                   if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Budget: ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                      SizedBox(width: screenWidth * 0.1,),
-                      Text('Revenue: ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                    ],
+                  Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                  SizedBox(width: screenWidth * 0.1,),
+                  Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                ],
                   ),
                   if(_countryController.text.isNotEmpty)
                   Padding(
@@ -844,19 +915,19 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 ),
               TextFormField(
                 controller: _plotController,
-                    decoration: const InputDecoration(labelText: 'Konu', labelStyle: TextStyle(color: Colors.white54)),
+                decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: TextStyle(color: Colors.white54),),
                 maxLines: 3,
                 style: const TextStyle(color: Colors.white),
               ),
               TextFormField(
                 controller: _runtimeController,
-                    decoration: const InputDecoration(labelText: 'Süre (dakika)', labelStyle: TextStyle(color: Colors.white54)),
+                decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54),),
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
                     final number = int.tryParse(value);
                     if (number == null) {
-                      return 'Geçerli bir sayı girin';
+                      return S.of(context).enterValidNumber;
                     }
                   }
                   return null;
@@ -865,14 +936,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               TextFormField(
                 controller: _imdbRatingController,
-                    decoration: const InputDecoration(labelText: 'IMDB Puanı', labelStyle: TextStyle(color: Colors.white54)),
+                    decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54)),
                 keyboardType: TextInputType.number,
                 style: const TextStyle(color: Colors.white),
                 validator: (value) {
                   if (value != null && value.isNotEmpty) {
                     final number = double.tryParse(value);
                     if (number == null || number < 0 || number > 10) {
-                      return 'Geçerli bir puan girin (0-10)';
+                      return S.of(context).enterValidScore;
                     }
                   }
                   return null;
@@ -880,13 +951,45 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               if (!widget.isFromWishlist) ...{
                 ListTile(
-                  title: Text(
-                    'İzleme Tarihi: ${_watchedDate.toLocal().toString().split(' ')[0]}',
-                    style: const TextStyle(color: Colors.white54),
+                  contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
+                  tileColor: Colors.transparent, // Optional: make the background transparent
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
+                    children: [
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '${S.of(context).watchDateColon} ', 
+                              style: TextStyle(
+                                color: Colors.white70, 
+                                fontWeight: FontWeight.normal, 
+                                fontSize: screenHeight * 0.015,
+                              ),
+                            ),
+                            TextSpan(
+                              text: DateFormat('dd MMMM yyyy').format(_watchedDate.toLocal()),
+                              style: TextStyle(
+                                color: Colors.white, 
+                                fontWeight: FontWeight.bold, 
+                                fontSize: screenHeight * 0.025,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
+                        child: const Icon(
+                          Icons.edit_calendar,
+                          color: Colors.white70,
+                          size: 24,
+                        ),
+                      ),
+                    ],
                   ),
-                      trailing: const Icon(Icons.calendar_today, color: Colors.white54),
                   onTap: () => _watchDate(context),
-                    ),
+                ),
                     Stack(
                       children: [
                         Positioned.fill(
@@ -895,7 +998,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             ),
                 ),
                 RatingBar.builder(
-                      unratedColor: Colors.blueGrey.withOpacity(0.6),
+                  unratedColor: Colors.blueGrey.withOpacity(0.6),
                   itemSize: 30,
                   initialRating: _userScore,
                   minRating: 0,
@@ -950,10 +1053,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: Text('Similar Movies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.07, fontWeight: FontWeight.bold),),
+                        child: Text(S.of(context).similarMovies, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.07, fontWeight: FontWeight.bold),),
                       ),
                       GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3, // Adjust the number of columns as needed
                         childAspectRatio: 0.42, // Adjust the aspect ratio as needed
                       ),
@@ -999,7 +1102,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),
                                   child: Text(
-                                    similarMovie['title'] ?? 'No Title',
+                                    similarMovie['title'] ?? S.of(context).noTitle,
                                     style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.027, fontWeight: FontWeight.bold),
                                     textAlign: TextAlign.center,
                                     overflow: TextOverflow.ellipsis,
@@ -1012,7 +1115,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                       children: [
                                         if(similarMovie['genre_ids'] != null && similarMovie['genre_ids'].any((id) => genreMap[id] != null))
                                         Text(
-                                          '${similarMovie['genre_ids'].map((id) => genreMap[id]).take(3).join(', ')}',
+                                          '${similarMovie['genre_ids'].map((id) => 
+                                          _getGenreLocalizedString(genreMap[id] ?? 'Action')
+                                          ).take(3).join(', ')}',
                                           style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
                                           textAlign: TextAlign.center,
                                           overflow: TextOverflow.ellipsis,
@@ -1056,12 +1161,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 fit: BoxFit.cover,
                               ),
                             )
-                          : const Center(
+                          : Center(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                       Icon(Icons.cloud_upload, size: 75, color: Colors.white54),
-                                      Text('Film afişi seçmek için tıklayın', style: TextStyle(color: Colors.white54)),
+                                      Text(S.of(context).pressChoosePoster, style: TextStyle(color: Colors.white54)),
                                 ],
                               ),
                             ),
@@ -1079,7 +1184,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 ),
                 onPressed: _saveMovie,
                         icon: const Icon(Icons.save),
-                        label: const Text('Güncelle', style: TextStyle(fontSize: 18)),
+                        label: Text(S.of(context).update, style: TextStyle(fontSize: 18)),
                       ),
                       const SizedBox(width: 10),
                       ElevatedButton.icon(
@@ -1090,7 +1195,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         ),
                         onPressed: _deleteMovie,
                         icon: const Icon(Icons.delete),
-                        label: const Text('Sil', style: TextStyle(fontSize: 18)),
+                        label: Text(S.of(context).delete, style: TextStyle(fontSize: 18)),
                       ),
                     ],
                   ),

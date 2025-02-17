@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
           title: Text(S.of(context).error, style: TextStyle(color: Colors.white),),
-          content: Text(S.of(context).check_internet, style: TextStyle(color: Colors.white),),
+          content: Text(S.of(context).checkInternet, style: TextStyle(color: Colors.white),),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
