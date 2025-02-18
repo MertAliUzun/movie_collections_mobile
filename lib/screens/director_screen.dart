@@ -287,15 +287,27 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                           ),
                                           SizedBox(height: screenHeight * 0.004,),
                                           Center(
-                                            child: ElevatedButton(
-                                             onPressed: () {
-                                              _launchIMDb();
-                                              },
-                                             child: Icon(Icons.movie, size: 24, color: Colors.amber),
-                                             style: ElevatedButton.styleFrom(
-                                               backgroundColor: Colors.transparent
+                                            child: Padding(
+                                              padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
+                                              child: ElevatedButton(
+                                               onPressed: () {
+                                                _launchIMDb();
+                                                },
+                                               child: ClipRRect(
+                                                borderRadius: BorderRadius.circular(16),
+                                                 child: Image.asset(
+                                                   'assets/images/imdb.png', // Buraya kullanmak istediğiniz resmin yolunu yazın
+                                                   width: screenWidth * 0.3,
+                                                   height: screenHeight *0.08,
+                                                   fit: BoxFit.cover,
+                                                 ),
+                                               ),
+                                               style: ElevatedButton.styleFrom(
+                                                 padding: EdgeInsets.zero,
+                                                 backgroundColor: Colors.transparent
+                                              ),
+                                                                                         ),
                                             ),
-                                           ),
                                           ),
                                       ],
                                     ),
