@@ -26,6 +26,7 @@ class SortWidget extends StatelessWidget {
       const DropdownMenuItem(value: 'imdbRating', child: Text('IMDB Puanı')),
       const DropdownMenuItem(value: 'rtRating', child: Text('Rotten Tomatoes Puanı')),
       const DropdownMenuItem(value: 'runtime', child: Text('Süre')),
+      const DropdownMenuItem(value: 'watchCount', child: Text('İzleme Sayısı')),
 
 
     ];

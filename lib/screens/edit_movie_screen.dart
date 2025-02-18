@@ -43,6 +43,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final _directorNameController = TextEditingController();
   final _plotController = TextEditingController();
   final _runtimeController = TextEditingController();
+  final _watchCountController = TextEditingController();
   final _imdbRatingController = TextEditingController();
   final _writersController = TextEditingController();
   final _actorsController = TextEditingController();
@@ -162,6 +163,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         plot: _plotController.text.isNotEmpty ? _plotController.text : null,
         runtime: _runtimeController.text.isNotEmpty 
             ? int.tryParse(_runtimeController.text) 
+            : null,
+        watchCount: _watchCountController.text.isNotEmpty 
+            ? int.tryParse(_watchCountController.text) 
             : null,
         imdbRating: _imdbRatingController.text.isNotEmpty 
             ? double.tryParse(_imdbRatingController.text) 
@@ -401,6 +405,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _plotController.text = widget.movie!.plot ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
+      _watchCountController.text = widget.movie!.watchCount?.toString() ?? '';
       _writersController.text = widget.movie!.writers?.join(', ') ?? '';
       _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
       _productionCompanyController.text = widget.movie!.productionCompany?.join(', ') ?? '';
@@ -1034,6 +1039,22 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   return null;
                 },
               ),
+              if(!widget.isFromWishlist)
+              TextFormField(
+                controller: _watchCountController,
+                decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: TextStyle(color: Colors.white54),),
+                keyboardType: TextInputType.number,
+                validator: (value) {
+                  if (value != null && value.isNotEmpty) {
+                    final number = int.tryParse(value);
+                    if (number == null) {
+                      return S.of(context).enterValidNumber;
+                    }
+                  }
+                  return null;
+                },
+                style: const TextStyle(color: Colors.white),
+              ),
               if (!widget.isFromWishlist) ...{
                 ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
@@ -1082,6 +1103,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
                             ),
                 ),
+                if(!widget.isFromWishlist)
                 RatingBar.builder(
                   unratedColor: Colors.blueGrey.withOpacity(0.6),
                   itemSize: 30,
@@ -1358,6 +1380,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     _plotController.dispose();
     _runtimeController.dispose();
     _imdbRatingController.dispose();
+    _watchCountController.dispose();
     _writersController.dispose();
     _actorsController.dispose();
     _productionCompanyController.dispose();

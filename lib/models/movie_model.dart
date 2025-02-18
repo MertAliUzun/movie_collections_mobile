@@ -71,7 +71,10 @@ class Movie {
   final double? revenue;
 
   @HiveField(22)
-  final bool toSync;
+  final bool? toSync;
+
+  @HiveField(23)
+  final int? watchCount;
 
   //delete writers
     /*"cast": [
@@ -103,6 +106,7 @@ class Movie {
     this.popularity,
     this.revenue,
     this.toSync = false,
+    this.watchCount,
   });
 
   Map<String, dynamic> toJson() {
@@ -130,6 +134,7 @@ class Movie {
       'budget' : budget,
       'revenue' : revenue,
       'toSync': toSync,
+      'watchCount': watchCount,
     };
   }
 
@@ -158,6 +163,7 @@ class Movie {
       budget: json['budget']?.toDouble(),
       revenue: json['revenue']?.toDouble(),
       toSync: json['toSync'] ?? false,
+      watchCount: json['watchCount']
     );
   }
 } 

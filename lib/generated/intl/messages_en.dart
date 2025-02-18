@@ -202,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userScore": MessageLookupByLibrary.simpleMessage("User Score"),
         "viewAs": MessageLookupByLibrary.simpleMessage("View As"),
         "war": MessageLookupByLibrary.simpleMessage("War"),
+        "watchCount": MessageLookupByLibrary.simpleMessage("Watch Count"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Watch Date"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Watch Date: "),
         "watchYear": MessageLookupByLibrary.simpleMessage("Watch Year"),

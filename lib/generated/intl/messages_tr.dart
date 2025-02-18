@@ -200,6 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userScore": MessageLookupByLibrary.simpleMessage("Kullanıcı Puanı"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Görüntüle"),
         "war": MessageLookupByLibrary.simpleMessage("Savaş"),
+        "watchCount": MessageLookupByLibrary.simpleMessage("İzleme Sayısı"),
         "watchDate": MessageLookupByLibrary.simpleMessage("İzleme Tarihi"),
         "watchDateColon":
             MessageLookupByLibrary.simpleMessage("İzleme Tarihi: "),

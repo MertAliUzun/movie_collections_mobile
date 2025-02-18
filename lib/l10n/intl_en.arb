@@ -141,5 +141,6 @@
     "errorFetchingMovies": "Error Fetching Movies!",
     "daily": "Daily",
     "weekly": "Weekly",
-    "monthly": "Monthly"
+    "monthly": "Monthly",
+    "watchCount": "Watch Count"
 }

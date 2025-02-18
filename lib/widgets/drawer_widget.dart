@@ -278,7 +278,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         'Popularity', 
         'Budget', 
         'Revenue', 
-        'To Sync'
+        'To Sync',
+        'Watch Count'
       ],
     ];
 
@@ -306,7 +307,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         movie.popularity?.toString() ?? '',                  // double? -> String
         movie.budget?.toString() ?? '',                      // double? -> String
         movie.revenue?.toString() ?? '',                     // double? -> String
-        movie.toSync.toString()                             // bool -> String
+        movie.toSync.toString(),                             // bool -> String
+        movie.watchCount?.toString() ?? '',  
       ]);
     }
 
@@ -400,7 +402,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               popularity: row[19].toString().isEmpty ? null : double.parse(row[19].toString()),  // String -> double?
               budget: row[20].toString().isEmpty ? null : double.parse(row[20].toString()),      // String -> double?
               revenue: row[21].toString().isEmpty ? null : double.parse(row[21].toString()),     // String -> double?
-              toSync: row[22].toString().toLowerCase() == 'true'       // String -> bool
+              toSync: row[22].toString().toLowerCase() == 'true',       // String -> bool
+              watchCount: row[23].toString().isEmpty ? null : int.parse(row[23].toString()),
             );
 
             moviesBox.put(movie.id, movie);
@@ -525,6 +528,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     } else {
       sortingOptions.add(DropdownMenuItem(value: 'userScore', child: Text(S.of(context).userScore)));
       sortingOptions.add(DropdownMenuItem(value: 'watchDate', child: Text(S.of(context).watchDate)));
+      sortingOptions.add(DropdownMenuItem(value: 'watchCount', child: Text(S.of(context).watchCount)));
     }
 
     List<DropdownMenuItem<String>> groupingOptions = [

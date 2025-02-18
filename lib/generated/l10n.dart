@@ -1479,6 +1479,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Watch Count`
+  String get watchCount {
+    return Intl.message(
+      'Watch Count',
+      name: 'watchCount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

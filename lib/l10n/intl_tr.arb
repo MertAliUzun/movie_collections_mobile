@@ -141,5 +141,6 @@
     "errorFetchingMovies": "Filmleri Alırken Hata Oluştu!",
     "daily": "Günlük",
     "weekly": "Haftalık",
-    "monthly": "Aylık"
+    "monthly": "Aylık",
+    "watchCount": "İzleme Sayısı"
 }

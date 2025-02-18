@@ -104,6 +104,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
         comparison = a.imdbRating!.compareTo(b.imdbRating!);
       } else if (_sortBy == 'runtime') {
         comparison = a.runtime!.compareTo(b.runtime!);
+      } else if (_sortBy == 'watchCount') {
+        comparison = a.watchCount!.compareTo(b.watchCount!);
       } else if (_sortBy == 'userScore') {
         comparison = a.userScore!.compareTo(b.userScore!);
       } else if (_sortBy == 'watchDate') {

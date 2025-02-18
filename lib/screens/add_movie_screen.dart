@@ -44,6 +44,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final _directorNameController = TextEditingController();
   final _plotController = TextEditingController();
   final _runtimeController = TextEditingController();
+  final _watchCountController = TextEditingController();
   final _imdbRatingController = TextEditingController();
   final _sortTitleController = TextEditingController();
   final _productionCompanyController = TextEditingController();
@@ -290,6 +291,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         imdbRating: _imdbRatingController.text.isNotEmpty 
             ? double.tryParse(_imdbRatingController.text) 
             : null,
+        watchCount: _watchCountController.text.isNotEmpty 
+            ? int.tryParse(_watchCountController.text) 
+            : null,
         writers: _selectedWriters.isNotEmpty 
             ? _selectedWriters 
             : null,
@@ -524,7 +528,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
-      
+      _watchCountController.text = widget.movie!.watchCount?.toString() ?? '';
       // Tarihler
       _selectedDate = widget.movie!.releaseDate;
       _watchedDate = widget.movie!.watchDate ?? DateTime.now();
@@ -676,7 +680,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         onPressed: () async {
                           await _addDetails('Add Genre', (genre) {
                             setState(() {
-                              _selectedWriters.add(genre);
+                              _selectedGenres.add(genre);
                             });
                           });
                         },
@@ -1104,6 +1108,22 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     return null;
                   },
                 ),
+                if(!widget.isFromWishlist)
+                TextFormField(
+                  controller: _watchCountController,
+                  decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: TextStyle(color: Colors.white54),),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value != null && value.isNotEmpty) {
+                      final number = int.tryParse(value);
+                      if (number == null) {
+                        return S.of(context).enterValidNumber;
+                      }
+                    }
+                    return null;
+                  },
+                  style: const TextStyle(color: Colors.white),
+                ),
                 /*TextFormField(
                   controller: _popularityController,
                   decoration: const InputDecoration(labelText: 'Popularity', labelStyle: TextStyle(color: Colors.white54)),
@@ -1152,39 +1172,63 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     ),
                     onTap: () => _watchDate(context),
                   ),
-                  RatingBar.builder(
-                    itemSize: 30,
-                    initialRating: _userScore,
-                    minRating: 0,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 10,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                    itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
-                    onRatingUpdate: (rating) {
-                      setState(() {
-                        _userScore = rating;
-                      });
-                    },
-                  ),
-                
-                },
-                if (widget.isFromWishlist)
+                  Stack(
+                      children: [
+                        Positioned.fill(
+                            child: Container(
+                              color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                            ),
+                ),
+                if(!widget.isFromWishlist)
                 RatingBar.builder(
-                    itemSize: 30,
-                    initialRating: _hypeScore,
-                    minRating: 0,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                    itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
-                    onRatingUpdate: (rating) {
-                      setState(() {
-                        _hypeScore = rating;
-                      });
-                    },
-                  ),
+                  unratedColor: Colors.blueGrey.withOpacity(0.6),
+                  itemSize: 30,
+                  initialRating: _userScore,
+                  minRating: 0,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 10,
+                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                  itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
+                  onRatingUpdate: (rating) {
+                    setState(() {
+                      _userScore = rating;
+                    });
+                  },
+                ),
+                      ],
+                    ),
+                    
+                  },
+                  if (widget.isFromWishlist)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+                      child: Stack(
+                        children: [
+                            Positioned.fill(
+                            child: Container(
+                              color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                            ),
+                          ),                 
+                          RatingBar.builder(
+                          unratedColor: Colors.blueGrey.withOpacity(0.6),
+                          itemSize: 30,
+                          initialRating: _hypeScore,
+                          minRating: 0,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                          itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
+                          onRatingUpdate: (rating) {
+                            setState(() {
+                              _hypeScore = rating;
+                            });
+                          },
+                        ),
+                        ],
+                      ),
+                    ),
                 SizedBox(height: 30,),
                 //Upload Image
                 /*
@@ -1248,6 +1292,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     _plotController.dispose();
     _runtimeController.dispose();
     _imdbRatingController.dispose();
+    _watchCountController.dispose();
     _productionCompanyController.dispose();
     _countryController.dispose();
     _popularityController.dispose();
