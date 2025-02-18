@@ -115,13 +115,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Movie has been Succesfully Updated!"),
         "movies": MessageLookupByLibrary.simpleMessage("Movies"),
-        "moviesChosen": MessageLookupByLibrary.simpleMessage(" movies chosen"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" movies deleted."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Movies has been moved to Collection!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Movies has been moved to Watch List!"),
+        "moviesSelected":
+            MessageLookupByLibrary.simpleMessage(" movies selected"),
         "music": MessageLookupByLibrary.simpleMessage("Music"),
         "mystery": MessageLookupByLibrary.simpleMessage("Mystery"),
         "no": MessageLookupByLibrary.simpleMessage("No"),

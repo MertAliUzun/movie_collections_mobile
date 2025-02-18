@@ -51,7 +51,7 @@
     "card": "Card",
     "poster": "Poster",
     "moviesDeleted": " movies deleted.",
-    "moviesChosen": " movies chosen",
+    "moviesSelected": " movies selected",
     "deleteChosenMovies": "Delete Chosen Movies",
     "selectedMoviesDeleteConfirm": "selected movies will be deleted. Do you confirm?",
     "cancel": "Cancel",

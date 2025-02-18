@@ -117,10 +117,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film Başarıyla Güncellendi!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
-        "moviesChosen": MessageLookupByLibrary.simpleMessage(" film seçildi"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film silindi."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmler Koleksiyona Taşındı!"),
+        "moviesSelected": MessageLookupByLibrary.simpleMessage(" film seçildi"),
         "music": MessageLookupByLibrary.simpleMessage("Müzik"),
         "mystery": MessageLookupByLibrary.simpleMessage("Gizem"),
         "no": MessageLookupByLibrary.simpleMessage("Hayır"),

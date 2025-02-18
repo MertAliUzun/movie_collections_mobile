@@ -570,11 +570,11 @@ class S {
     );
   }
 
-  /// ` movies chosen`
-  String get moviesChosen {
+  /// ` movies selected`
+  String get moviesSelected {
     return Intl.message(
-      ' movies chosen',
-      name: 'moviesChosen',
+      ' movies selected',
+      name: 'moviesSelected',
       desc: '',
       args: [],
     );

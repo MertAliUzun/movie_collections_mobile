@@ -100,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<AuthResponse> _googleSignIn() async {
+    if(_userEmail != null) {return AuthResponse();}
     const webClientId = '994622404083-l5lm49gg40agjbrh0vvtnbo6b3sddl3u.apps.googleusercontent.com';
     const iosClientId = '994622404083-pmh33nqujdu7pvekl5djj4nge8hi0v2n.apps.googleusercontent.com';
 

@@ -6,8 +6,10 @@ import '../widgets/person_movies_widget.dart';
 
 class GenreMoviesScreen extends StatefulWidget {
   final String genre;
+  final bool? isFromWishlist;
+  final String? userEmail;
 
-  const GenreMoviesScreen({Key? key, required this.genre}) : super(key: key);
+  const GenreMoviesScreen({Key? key, required this.genre, this.isFromWishlist, this.userEmail}) : super(key: key);
 
   @override
   _GenreMoviesScreenState createState() => _GenreMoviesScreenState();
@@ -124,7 +126,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
-              ? SingleChildScrollView(child: PersonMoviesWidget(movies: _movies, personType: 'Genre',))
+              ? SingleChildScrollView(child: PersonMoviesWidget(movies: _movies, personType: 'Genre', isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,))
               : const Center(child: Text('No movies found for this genre.', style: TextStyle(color: Colors.white54))),
     );
   }

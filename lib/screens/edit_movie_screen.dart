@@ -618,7 +618,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index]),
+                                    builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -677,7 +677,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       final movieId = await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage,),
+                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                         ),
                       );
                       
@@ -739,7 +739,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage,),
+                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -788,7 +788,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage,),
+                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -837,7 +837,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CompanyScreen(companyName: companyName,),
+                                    builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -1068,20 +1068,65 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       itemBuilder: (context, index) {
                         final similarMovie = _similarMovies[index];
                         return GestureDetector(
-                          onTap: () {
+                          onTap: () async {
                             if (similarMovie['id'] != null) {
+                              final movieDetails = await TmdbService().getMovieDetails(similarMovie['id']);
+                              
+                              if (movieDetails != null) {
+                                // Movie nesnesini oluştur
+                                final chosenMovie = Movie(
+                                  id: movieDetails['id'].toString(),
+                                  movieName: movieDetails['title'] ?? '',
+                                  directorName: movieDetails['credits']['crew']
+                                      ?.firstWhere((crew) => crew['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '',
+                                  releaseDate: movieDetails['release_date'] != null 
+                                      ? DateTime.parse(movieDetails['release_date']) 
+                                      : DateTime.now(),
+                                  plot: movieDetails['overview'],
+                                  runtime: movieDetails['runtime'],
+                                  imdbRating: movieDetails['vote_average']?.toDouble(),
+                                  writers: movieDetails['credits']['crew']
+                                      ?.where((member) => member['department'] == 'Writing')
+                                      .take(3)
+                                      .map<String>((writer) => writer['name'] as String)
+                                      .toList(),
+                                  actors: movieDetails['credits']['cast']
+                                      ?.take(6)
+                                      .map<String>((actor) => actor['name'] as String)
+                                      .toList(),
+                                  imageLink: movieDetails['poster_path'] != null 
+                                      ? 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}'
+                                      : '',
+                                  genres: movieDetails['genres']
+                                      ?.take(4)
+                                      .map<String>((genre) => genre['name'] as String)
+                                      .toList(),
+                                  productionCompany: movieDetails['production_companies']
+                                      ?.take(2)
+                                      .map<String>((company) => company['name'] as String)
+                                      .toList(),
+                                  country: movieDetails['production_countries']?.isNotEmpty 
+                                      ? movieDetails['production_countries'][0]['iso_3166_1']
+                                      : null,
+                                  popularity: movieDetails['popularity']?.toDouble(),
+                                  budget: movieDetails['budget']?.toDouble(),
+                                  revenue: movieDetails['revenue']?.toDouble(),
+                                  watched: !widget.isFromWishlist,
+                                  userEmail: widget.userEmail ?? 'test@test.com'
+                                );
                                   Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: widget.isFromWishlist,
-                                        movie: similarMovie,
+                                        movie: chosenMovie,
                                       ),
                                     ),
                                   );
-                                  _fetchMovieDetails(similarMovie['id']);
-                                  _scrollToTop();
+                                  /*_fetchMovieDetails(similarMovie['id']);
+                                  _scrollToTop();*/
                                 }
+                            }
                           },
                           child: Card(
                             color: const Color.fromARGB(255, 44, 50, 60),

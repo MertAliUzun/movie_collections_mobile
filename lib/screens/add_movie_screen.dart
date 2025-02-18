@@ -1,11 +1,13 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:movie_collections_mobile/screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'dart:io';
 import 'dart:async';
+import '../main.dart';
 import '../models/movie_model.dart';
 import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
@@ -13,6 +15,7 @@ import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
+import 'collection_screen.dart';
 import 'company_screen.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
@@ -335,7 +338,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       ScaffoldMessenger.of(context)
         ..hideCurrentMaterialBanner()
         ..showSnackBar(snackBar);
-      Navigator.pop(context, true);
+      if(widget.isFromWishlist) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(
+              userEmail: widget.userEmail,
+              systemLanguage: widget.systemLanguage,
+            ),
+          ),
+        );
+      }
+      else{
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(
+              userEmail: widget.userEmail,
+              systemLanguage: widget.systemLanguage,
+            ),
+          ),
+        );
+      }
     }
   }
 
@@ -493,14 +517,36 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   void initState() {
     super.initState();
     if (widget.movie != null) {
+      // Film adı ve temel bilgiler
       _movieNameController.text = widget.movie!.movieName;
       _directorNameController.text = widget.movie!.directorName;
       _plotController.text = widget.movie!.plot ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
-      _selectedDate = widget.movie!.releaseDate;
-      _imageLink = widget.movie!.imageLink;
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
+      
+      // Tarihler
+      _selectedDate = widget.movie!.releaseDate;
+      _watchedDate = widget.movie!.watchDate ?? DateTime.now();
+      
+      // Puanlar
+      _userScore = widget.movie!.userScore ?? 0.0;
+      _hypeScore = widget.movie!.hypeScore ?? 0.0;
+      
+      // Resim
+      _imageLink = widget.movie!.imageLink;
+      
+      // Listeler
+      _selectedGenres = widget.movie!.genres ?? [];
+      _selectedActors = widget.movie!.actors ?? [];
+      _selectedWriters = widget.movie!.writers ?? [];
+      _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
+      
+      // Detay bilgileri
+      _countryController.text = widget.movie!.country ?? '';
+      _popularityController.text = widget.movie!.popularity?.toString() ?? '';
+      _budgetController.text = widget.movie!.budget?.toString() ?? '';
+      _revenueController.text = widget.movie!.revenue?.toString() ?? '';
     }
   }
 
@@ -616,7 +662,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             final movieId = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index]),
+                                builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                               ),
                             );
                             if (movieId != null) {
@@ -675,7 +721,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   final movieId = await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage,),
+                      builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                     ),
                   );
 
@@ -737,7 +783,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             final movieId = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage,),
+                                builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                               ),
                             );
                             if (movieId != null) {
@@ -786,7 +832,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             final movieId = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage,),
+                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                               ),
                             );
                             if (movieId != null) {
@@ -835,7 +881,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             final movieId = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => CompanyScreen(companyName: companyName,),
+                                builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                               ),
                             );
                             if (movieId != null) {

@@ -9,8 +9,10 @@ class DirectorScreen extends StatefulWidget {
   final String personName;
   final String personType;
   final String? systemLanguage;
+  final bool? isFromWishlist;
+  final String? userEmail;
 
-  const DirectorScreen({Key? key, required this.personName, required this.personType, this.systemLanguage}) : super(key: key);
+  const DirectorScreen({Key? key, required this.personName, required this.personType, this.systemLanguage, this.isFromWishlist, this.userEmail}) : super(key: key);
 
   @override
   _DirectorScreenState createState() => _DirectorScreenState();
@@ -340,7 +342,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
           ),
         ),
         body: _personMovies.isNotEmpty
-                ? SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType,))
+                ? SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,))
                 : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
 
       );

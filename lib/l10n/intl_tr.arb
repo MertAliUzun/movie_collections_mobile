@@ -51,7 +51,7 @@
     "card": "Kart",
     "poster": "Poster",
     "moviesDeleted": " film silindi.",
-    "moviesChosen": " film seçildi",
+    "moviesSelected": " film seçildi",
     "deleteChosenMovies": "Seçilen Filmleri Sil",
     "selectedMoviesDeleteConfirm": "seçilen filmler silinecek. Onaylıyor musunuz?",
     "cancel": "İptal",

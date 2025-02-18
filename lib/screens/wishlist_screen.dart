@@ -293,7 +293,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             });
           },
         ),
-        title: Text('${_selectedMovies.length} ${S.of(context).moviesChosen}', 
+        title: Text('${_selectedMovies.length} ${S.of(context).moviesSelected}', 
           style: TextStyle(color: Colors.white)),
         actions: [
           IconButton(
