@@ -561,565 +561,679 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         actions: [
+          /*
           IconButton(
             icon: const Icon(Icons.more_vert),
             onPressed: () => _showAddOptionsMenu(context),
           ),
+          */
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  hintText: S.of(context).searchMovies,
-                  hintStyle: const TextStyle(color: Colors.white54),
-                  prefixIcon: const Icon(Icons.search, color: Colors.white54,),
-                  suffixIcon: _isSearching
-                      ? const SizedBox(
-                          width: 16,
-                          height: 16,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: Colors.white,
-                            backgroundColor: Colors.black,
-                          ),
-                        )
-                      : null,
+      body: Stack(
+        children: [
+          if(_imageLink != null && _imageLink!.isNotEmpty)
+            Positioned.fill(
+             child: Image.network(
+               _imageLink!, // Resim URL'si
+               fit: BoxFit.cover, // Tüm alanı kaplar
+               errorBuilder: (context, error, stackTrace) =>
+               Image.asset(
+                'assets/images/placeholder_poster.png',
+                fit: BoxFit.cover,
+               ),
+             ),
+           ),
+           if(_imageLink == null)
+           Positioned.fill(
+              child: Image.asset(
+                'assets/images/placeholder_poster.png', 
+                fit: BoxFit.cover,)),
+           if(_imageLink != null)
+           Positioned.fill(
+            child: Container(
+              color: Colors.black.withOpacity(0.5), // Siyah yarı saydam filtre
+            ),
+          ),
+        SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                TextField(
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    hintText: S.of(context).searchMovies,
+                    hintStyle: const TextStyle(color: Colors.white54),
+                    prefixIcon: const Icon(Icons.search, color: Colors.white54,),
+                    suffixIcon: _isSearching
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                              backgroundColor: Colors.black,
+                            ),
+                          )
+                        : null,
+                  ),
+                  style: const TextStyle(color: Colors.white),
+                  onChanged: _onSearchChanged,
                 ),
-                style: const TextStyle(color: Colors.white),
-                onChanged: _onSearchChanged,
-              ),
-              if (_searchResults.isNotEmpty)
-                Container(
-                  constraints: const BoxConstraints(maxHeight: 200),
-                  child: Card(
-                    color: Color.fromARGB(255, 44, 50, 60),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: _searchResults.length,
-                      itemBuilder: (context, index) {
-                        final movie = _searchResults[index];
-                        return ListTile(
-                          leading: movie['poster_path'] != null
-                              ? Image.network(
-                                  'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
-                                  width: 50,
-                                  errorBuilder: (context, error, stackTrace) =>
-                                      const Icon(Icons.movie, color: Colors.white54),
-                                )
-                              : const Icon(Icons.movie, color: Colors.white54),
-                          title: Text(movie['title'], style: const TextStyle(color: Colors.white70)),
-                          subtitle: Text(movie['release_date'] != null
-                              ? movie['release_date'].split('-')[0]
-                              : 'Unknown', style: const TextStyle(color: Colors.white54)),
-                          onTap: () => _selectMovie(movie['id']),
-                        );
-                      },
+                if (_searchResults.isNotEmpty)
+                  Container(
+                    constraints: const BoxConstraints(maxHeight: 200),
+                    child: Card(
+                      color: Color.fromARGB(255, 44, 50, 60),
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: _searchResults.length,
+                        itemBuilder: (context, index) {
+                          final movie = _searchResults[index];
+                          return ListTile(
+                            leading: movie['poster_path'] != null
+                                ? Image.network(
+                                    'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                                    width: 50,
+                                    errorBuilder: (context, error, stackTrace) =>
+                                        const Icon(Icons.movie, color: Colors.white54),
+                                  )
+                                : const Icon(Icons.movie, color: Colors.white54),
+                            title: Text(movie['title'], style: const TextStyle(color: Colors.white70)),
+                            subtitle: Text(movie['release_date'] != null
+                                ? movie['release_date'].split('-')[0]
+                                : 'Unknown', style: const TextStyle(color: Colors.white54)),
+                            onTap: () => _selectMovie(movie['id']),
+                          );
+                        },
+                      ),
                     ),
                   ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _movieNameController,
+                  decoration:  InputDecoration(labelText: '${S.of(context).movieTitle} *', labelStyle: TextStyle(color: Colors.white54),),
+                  style: const TextStyle(color: Colors.white),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return S.of(context).pleaseEnterMovieTitle;
+                    }
+                    return null;
+                  },
                 ),
-              const SizedBox(height: 16),
-              TextFormField(
-                controller: _movieNameController,
-                decoration:  InputDecoration(labelText: '${S.of(context).movieTitle} *', labelStyle: TextStyle(color: Colors.white54),),
-                style: const TextStyle(color: Colors.white),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return S.of(context).pleaseEnterMovieTitle;
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _sortTitleController,
-                decoration: InputDecoration(labelText: S.of(context).customSortTitle, labelStyle: TextStyle(color: Colors.white54),),
-                style: const TextStyle(color: Colors.white),
-              ),
-              SizedBox(height: screenWidth * 0.1),
-              Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: 16),),
-              Divider(height: 10, color: Colors.white60,),
-              SizedBox(height: screenWidth * 0.03),
-              _selectedGenres.isNotEmpty
-                  ? GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
-                        childAspectRatio: 1.5,
-                      ),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: _selectedGenres.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onLongPress: () {
-                            _deleteGenre(index);
-                          },
-                          onTap: () async {
-                            final movieId = await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
-                              ),
-                            );
-                            if (movieId != null) {
-                              _selectMovie(movieId);
-                            }
-                          },
-                          child: Card(
-                            color: const Color.fromARGB(255, 44, 50, 60),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Center(
-                                child: Text(
-                                  textAlign: TextAlign.center,
-                                  _selectedGenres[index] == 'Action' ? S.of(context).action : 
-                                  _selectedGenres[index] == 'Adventure' ? S.of(context).adventure :
-                                  _selectedGenres[index] == 'Animation' ? S.of(context).animation :
-                                  _selectedGenres[index] == 'Comedy' ? S.of(context).comedy :
-                                  _selectedGenres[index] == 'Crime' ? S.of(context).crime :
-                                  _selectedGenres[index] == 'Documentary' ? S.of(context).documentary :
-                                  _selectedGenres[index] == 'Drama' ? S.of(context).drama :
-                                  _selectedGenres[index] == 'Family' ? S.of(context).family :
-                                  _selectedGenres[index] == 'Fantasy' ? S.of(context).fantasy :
-                                  _selectedGenres[index] == 'History' ? S.of(context).history :
-                                  _selectedGenres[index] == 'Horror' ? S.of(context).horror :
-                                  _selectedGenres[index] == 'Music' ? S.of(context).music :
-                                  _selectedGenres[index] == 'Mystery' ? S.of(context).mystery :
-                                  _selectedGenres[index] == 'Romance' ? S.of(context).romance :
-                                  _selectedGenres[index] == 'Science Fiction' ? S.of(context).scienceFiction :
-                                  _selectedGenres[index] == 'TV Movie' ? S.of(context).tvMovie :
-                                  _selectedGenres[index] == 'Thriller' ? S.of(context).thriller :
-                                  _selectedGenres[index] == 'War' ? S.of(context).war :
-                                  _selectedGenres[index] == 'Western' ? S.of(context).western : _selectedGenres[index],
-                                  style: TextStyle(color: Colors.white, 
-                                  fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
-                                  _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                TextFormField(
+                  controller: _sortTitleController,
+                  decoration: InputDecoration(labelText: S.of(context).customSortTitle, labelStyle: TextStyle(color: Colors.white54),),
+                  style: const TextStyle(color: Colors.white),
+                ),
+                SizedBox(height: screenWidth * 0.1),
+                Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                        IconButton(
+                        onPressed: () async {
+                          await _addDetails('Add Genre', (genre) {
+                            setState(() {
+                              _selectedWriters.add(genre);
+                            });
+                          });
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                          )),
+                      )
+                      ],
+                    ),
+                    Divider(height: 0, color: Colors.white60,),
+                    SizedBox(height: screenWidth * 0.05),
+                _selectedGenres.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
+                          childAspectRatio: 1.5,
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedGenres.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                              _deleteGenre(index);
+                            },
+                            onTap: () async {
+                              final movieId = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                ),
+                              );
+                              if (movieId != null) {
+                                _selectMovie(movieId);
+                              }
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    textAlign: TextAlign.center,
+                                    _selectedGenres[index] == 'Action' ? S.of(context).action : 
+                                    _selectedGenres[index] == 'Adventure' ? S.of(context).adventure :
+                                    _selectedGenres[index] == 'Animation' ? S.of(context).animation :
+                                    _selectedGenres[index] == 'Comedy' ? S.of(context).comedy :
+                                    _selectedGenres[index] == 'Crime' ? S.of(context).crime :
+                                    _selectedGenres[index] == 'Documentary' ? S.of(context).documentary :
+                                    _selectedGenres[index] == 'Drama' ? S.of(context).drama :
+                                    _selectedGenres[index] == 'Family' ? S.of(context).family :
+                                    _selectedGenres[index] == 'Fantasy' ? S.of(context).fantasy :
+                                    _selectedGenres[index] == 'History' ? S.of(context).history :
+                                    _selectedGenres[index] == 'Horror' ? S.of(context).horror :
+                                    _selectedGenres[index] == 'Music' ? S.of(context).music :
+                                    _selectedGenres[index] == 'Mystery' ? S.of(context).mystery :
+                                    _selectedGenres[index] == 'Romance' ? S.of(context).romance :
+                                    _selectedGenres[index] == 'Science Fiction' ? S.of(context).scienceFiction :
+                                    _selectedGenres[index] == 'TV Movie' ? S.of(context).tvMovie :
+                                    _selectedGenres[index] == 'Thriller' ? S.of(context).thriller :
+                                    _selectedGenres[index] == 'War' ? S.of(context).war :
+                                    _selectedGenres[index] == 'Western' ? S.of(context).western : _selectedGenres[index],
+                                    style: TextStyle(color: Colors.white, 
+                                    fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
+                                    _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ),
                             ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noGenresSelected, style: TextStyle(color: Colors.white54)),
+                SizedBox(height: screenHeight * 0.02,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                  ],
+                ),
+                Divider(height: 0, color: Colors.white60,),
+                SizedBox(height: screenWidth * 0.05),
+                GestureDetector(
+                  onLongPress: () {
+                    _deleteDirector();
+                  },
+                  onTap: () async {
+                    if(_directorNameController.text.isEmpty){
+                      _editDirector();
+                    }else{
+                    final movieId = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                      ),
+                    );
+        
+                    if (movieId != null) {
+                      //final movieDetails = await _tmdbService.getMovieDetails(movieId);
+                      _selectMovie(movieId);
+                      // Handle the movie details as needed
+                    }
+                    }
+                  },
+                  child: Card(
+                    color: const Color.fromARGB(255, 44, 50, 60),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(width: screenWidth * 0.1),
+                          Text(
+                            _directorNameController.text.isNotEmpty 
+                                ? _directorNameController.text 
+                                : S.of(context).directorNull,
+                            style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                        );
-                      },
-                    )
-                  : Text(S.of(context).noGenresSelected, style: TextStyle(color: Colors.white54)),
-              SizedBox(height: screenHeight * 0.02,),
-              Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: 16),),
-              Divider(height: 10, color: Colors.white60,),
-              SizedBox(height: screenWidth * 0.03),
-              GestureDetector(
-                onLongPress: () {
-                  _deleteDirector();
-                },
-                onTap: () async {
-                  if(_directorNameController.text.isEmpty){
-                    _editDirector();
-                  }else{
-                  final movieId = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                          Row(
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.edit, color: Colors.white),
+                                onPressed: _editDirector,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  );
-
-                  if (movieId != null) {
-                    //final movieDetails = await _tmdbService.getMovieDetails(movieId);
-                    _selectMovie(movieId);
-                    // Handle the movie details as needed
-                  }
-                  }
-                },
-                child: Card(
-                  color: const Color.fromARGB(255, 44, 50, 60),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                ),
+                SizedBox(height: screenWidth * 0.05),
+                Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(width: screenWidth * 0.1),
-                        Text(
-                          _directorNameController.text.isNotEmpty 
-                              ? _directorNameController.text 
-                              : S.of(context).directorNull,
-                          style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                        Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                        IconButton(
+                        onPressed: () async {
+                          await _addDetails('Add Actor', (actor) {
+                            setState(() {
+                              _selectedActors.add(actor);
+                            });
+                          });
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                          )),
+                      )
+                      ],
+                    ),
+                    Divider(height: 0, color: Colors.white60,),
+                    SizedBox(height: screenWidth * 0.05),
+                _selectedActors.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
+                          childAspectRatio: 2,
                         ),
-                        Row(
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.edit, color: Colors.white),
-                              onPressed: _editDirector,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedActors.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                            _deleteActor(index);
+                            },
+                            onTap: () async {
+                              final actorName = _selectedActors[index];
+                              final movieId = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                ),
+                              );
+                              if (movieId != null) {
+                                _selectMovie(movieId);
+                              }
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedActors[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize: 
+                                    _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
                             ),
-                          ],
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noActorsSelected, style: TextStyle(color: Colors.white54)),
+                SizedBox(height: screenWidth * 0.05),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                    IconButton(
+                    onPressed: () async {
+                      await _addDetails('Add Writer', (writer) {
+                        setState(() {
+                          _selectedWriters.add(writer);
+                        });
+                      });
+                    },
+                    icon: Card( 
+                      color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                      )),
+                  )
+                  ],
+                ),
+                Divider(height: 0, color: Colors.white60,),
+                SizedBox(height: screenWidth * 0.05),
+                _selectedWriters.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
+                          childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedWriters.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                             _deleteWriter(index);
+                            },
+                            onTap: () async {
+                              final writerName = _selectedWriters[index];
+                              final movieId = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                ),
+                              );
+                              if (movieId != null) {
+                                _selectMovie(movieId);
+                              }
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedWriters[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize:
+                                    _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noWritersSelected, style: TextStyle(color: Colors.white54)),
+                SizedBox(height: screenWidth * 0.05),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                    IconButton(
+                    onPressed: () async {
+                      await _addDetails('Add Production Company', (company) {
+                        setState(() {
+                          _selectedProductionCompanies.add(company);
+                        });
+                      });
+                    },
+                    icon: Card( 
+                      color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                      )),
+                  )
+                  ],
+                ),
+                Divider(height: 0, color: Colors.white60,),
+                SizedBox(height: screenWidth * 0.05),
+                _selectedProductionCompanies.isNotEmpty
+                    ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1,
+                          childAspectRatio: 7,
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedProductionCompanies.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                             _deleteCompany(index);
+                            },
+                            onTap: () async {
+                              final companyName = _selectedProductionCompanies[index];
+                              final movieId = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                ),
+                              );
+                              if (movieId != null) {
+                                _selectMovie(movieId);
+                              }
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedProductionCompanies[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.045, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noCompaniesSelected, style: TextStyle(color: Colors.white54)),
+                  ListTile(
+                    contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
+                    tileColor: Colors.transparent, // Optional: make the background transparent
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
+                      children: [
+                        Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: '${S.of(context).releaseDateColon} ', 
+                                style: TextStyle(
+                                  color: Colors.white70, 
+                                  fontWeight: FontWeight.normal, 
+                                  fontSize: screenHeight * 0.015,
+                                ),
+                              ),
+                              TextSpan(
+                                text: DateFormat('dd MMMM yyyy').format(_selectedDate.toLocal()),
+                                style: TextStyle(
+                                  color: Colors.white, 
+                                  fontWeight: FontWeight.bold, 
+                                  fontSize: screenHeight * 0.025,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
+                          child: const Icon(
+                            Icons.edit_calendar,
+                            color: Colors.white70,
+                            size: 24,
+                          ),
                         ),
                       ],
                     ),
+                    onTap: () => _selectDate(context),
                   ),
+                if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                    SizedBox(width: screenWidth * 0.1,),
+                    Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                  ],
                 ),
-              ),
-              SizedBox(height: screenWidth * 0.05),
-              Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: 16),),
-              Divider(height: 10, color: Colors.white60,),
-              SizedBox(height: screenWidth * 0.03),
-              const SizedBox(height: 10),
-              _selectedActors.isNotEmpty
-                  ? GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
-                        childAspectRatio: 2,
-                      ),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: _selectedActors.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onLongPress: () {
-                          _deleteActor(index);
-                          },
-                          onTap: () async {
-                            final actorName = _selectedActors[index];
-                            final movieId = await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
-                              ),
-                            );
-                            if (movieId != null) {
-                              _selectMovie(movieId);
-                            }
-                          },
-                          child: Card(
-                            color: const Color.fromARGB(255, 44, 50, 60),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Center(
-                                child: Text(
-                                  _selectedActors[index],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.white, fontSize: 
-                                  _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    )
-                  : Text(S.of(context).noActorsSelected, style: TextStyle(color: Colors.white54)),
-              SizedBox(height: screenWidth * 0.05),
-              Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: 16),),
-              Divider(height: 10, color: Colors.white60,),
-              SizedBox(height: screenWidth * 0.03),
-              const SizedBox(height: 10),
-              _selectedWriters.isNotEmpty
-                  ? GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
-                        childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
-                      ),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: _selectedWriters.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onLongPress: () {
-                           _deleteWriter(index);
-                          },
-                          onTap: () async {
-                            final writerName = _selectedWriters[index];
-                            final movieId = await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
-                              ),
-                            );
-                            if (movieId != null) {
-                              _selectMovie(movieId);
-                            }
-                          },
-                          child: Card(
-                            color: const Color.fromARGB(255, 44, 50, 60),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Center(
-                                child: Text(
-                                  _selectedWriters[index],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.white, fontSize:
-                                  _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    )
-                  : Text(S.of(context).noWritersSelected, style: TextStyle(color: Colors.white54)),
-              SizedBox(height: screenWidth * 0.05),
-              Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: 16),),
-              Divider(height: 10, color: Colors.white60,),
-              SizedBox(height: screenWidth * 0.03),
-              const SizedBox(height: 10),
-              _selectedProductionCompanies.isNotEmpty
-                  ? GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 7,
-                      ),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: _selectedProductionCompanies.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onLongPress: () {
-                           _deleteCompany(index);
-                          },
-                          onTap: () async {
-                            final companyName = _selectedProductionCompanies[index];
-                            final movieId = await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
-                              ),
-                            );
-                            if (movieId != null) {
-                              _selectMovie(movieId);
-                            }
-                          },
-                          child: Card(
-                            color: const Color.fromARGB(255, 44, 50, 60),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Center(
-                                child: Text(
-                                  _selectedProductionCompanies[index],
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.045, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    )
-                  : Text(S.of(context).noCompaniesSelected, style: TextStyle(color: Colors.white54)),
-                ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
-                  tileColor: Colors.transparent, // Optional: make the background transparent
-                  title: Row(
-                    mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
-                    children: [
-                      Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text: '${S.of(context).releaseDateColon} ', 
-                              style: TextStyle(
-                                color: Colors.white70, 
-                                fontWeight: FontWeight.normal, 
-                                fontSize: screenHeight * 0.015,
-                              ),
-                            ),
-                            TextSpan(
-                              text: DateFormat('dd MMMM yyyy').format(_selectedDate.toLocal()),
-                              style: TextStyle(
-                                color: Colors.white, 
-                                fontWeight: FontWeight.bold, 
-                                fontSize: screenHeight * 0.025,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
-                        child: const Icon(
-                          Icons.edit_calendar,
-                          color: Colors.white70,
-                          size: 24,
-                        ),
-                      ),
-                    ],
-                  ),
-                  onTap: () => _selectDate(context),
+                if(_countryController.text.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
+                  child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
                 ),
-              if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                  SizedBox(width: screenWidth * 0.1,),
-                  Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                ],
-              ),
-              if(_countryController.text.isNotEmpty)
-              Padding(
-                padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
-                child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
-              ),
-              TextFormField(
-                controller: _plotController,
-                decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: TextStyle(color: Colors.white54),),
-                maxLines: 3,
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _runtimeController,
-                decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54),),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value != null && value.isNotEmpty) {
-                    final number = int.tryParse(value);
-                    if (number == null) {
-                      return S.of(context).enterValidNumber;
+                TextFormField(
+                  controller: _plotController,
+                  decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: TextStyle(color: Colors.white54),),
+                  maxLines: 3,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                TextFormField(
+                  controller: _runtimeController,
+                  decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54),),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value != null && value.isNotEmpty) {
+                      final number = int.tryParse(value);
+                      if (number == null) {
+                        return S.of(context).enterValidNumber;
+                      }
                     }
-                  }
-                  return null;
-                },
-                style: const TextStyle(color: Colors.white),
-              ),
-              TextFormField(
-                controller: _imdbRatingController,
-                decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54),),
-                keyboardType: TextInputType.number,
-                style: const TextStyle(color: Colors.white),
-                validator: (value) {
-                  if (value != null && value.isNotEmpty) {
-                    final number = double.tryParse(value);
-                    if (number == null || number < 0 || number > 10) {
-                      return S.of(context).enterValidScore;
-                    }
-                  }
-                  return null;
-                },
-              ),
-              /*TextFormField(
-                controller: _popularityController,
-                decoration: const InputDecoration(labelText: 'Popularity', labelStyle: TextStyle(color: Colors.white54)),
-                keyboardType: TextInputType.number,
-                style: const TextStyle(color: Colors.white),
-              ),*/
-              SizedBox(height: 10,),
-              if (!widget.isFromWishlist) ...{
-                ListTile(
-                  contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
-                  tileColor: Colors.transparent, // Optional: make the background transparent
-                  title: Row(
-                    mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
-                    children: [
-                      Text.rich(
-                        TextSpan(
-                          children: [
-                            TextSpan(
-                              text: '${S.of(context).watchDateColon} ', 
-                              style: TextStyle(
-                                color: Colors.white70, 
-                                fontWeight: FontWeight.normal, 
-                                fontSize: screenHeight * 0.015,
-                              ),
-                            ),
-                            TextSpan(
-                              text: DateFormat('dd MMMM yyyy').format(_watchedDate.toLocal()),
-                              style: TextStyle(
-                                color: Colors.white, 
-                                fontWeight: FontWeight.bold, 
-                                fontSize: screenHeight * 0.025,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
-                        child: const Icon(
-                          Icons.edit_calendar,
-                          color: Colors.white70,
-                          size: 24,
-                        ),
-                      ),
-                    ],
-                  ),
-                  onTap: () => _watchDate(context),
+                    return null;
+                  },
+                  style: const TextStyle(color: Colors.white),
                 ),
+                TextFormField(
+                  controller: _imdbRatingController,
+                  decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54),),
+                  keyboardType: TextInputType.number,
+                  style: const TextStyle(color: Colors.white),
+                  validator: (value) {
+                    if (value != null && value.isNotEmpty) {
+                      final number = double.tryParse(value);
+                      if (number == null || number < 0 || number > 10) {
+                        return S.of(context).enterValidScore;
+                      }
+                    }
+                    return null;
+                  },
+                ),
+                /*TextFormField(
+                  controller: _popularityController,
+                  decoration: const InputDecoration(labelText: 'Popularity', labelStyle: TextStyle(color: Colors.white54)),
+                  keyboardType: TextInputType.number,
+                  style: const TextStyle(color: Colors.white),
+                ),*/
+                SizedBox(height: 10,),
+                if (!widget.isFromWishlist) ...{
+                  ListTile(
+                    contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
+                    tileColor: Colors.transparent, // Optional: make the background transparent
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
+                      children: [
+                        Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: '${S.of(context).watchDateColon} ', 
+                                style: TextStyle(
+                                  color: Colors.white70, 
+                                  fontWeight: FontWeight.normal, 
+                                  fontSize: screenHeight * 0.015,
+                                ),
+                              ),
+                              TextSpan(
+                                text: DateFormat('dd MMMM yyyy').format(_watchedDate.toLocal()),
+                                style: TextStyle(
+                                  color: Colors.white, 
+                                  fontWeight: FontWeight.bold, 
+                                  fontSize: screenHeight * 0.025,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
+                          child: const Icon(
+                            Icons.edit_calendar,
+                            color: Colors.white70,
+                            size: 24,
+                          ),
+                        ),
+                      ],
+                    ),
+                    onTap: () => _watchDate(context),
+                  ),
+                  RatingBar.builder(
+                    itemSize: 30,
+                    initialRating: _userScore,
+                    minRating: 0,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 10,
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                    itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
+                    onRatingUpdate: (rating) {
+                      setState(() {
+                        _userScore = rating;
+                      });
+                    },
+                  ),
+                
+                },
+                if (widget.isFromWishlist)
                 RatingBar.builder(
-                  itemSize: 30,
-                  initialRating: _userScore,
-                  minRating: 0,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 10,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                  itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
-                  onRatingUpdate: (rating) {
-                    setState(() {
-                      _userScore = rating;
-                    });
-                  },
-                ),
-              
-              },
-              if (widget.isFromWishlist)
-              RatingBar.builder(
-                  itemSize: 30,
-                  initialRating: _hypeScore,
-                  minRating: 0,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
-                  itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
-                  onRatingUpdate: (rating) {
-                    setState(() {
-                      _hypeScore = rating;
-                    });
-                  },
-                ),
-              SizedBox(height: 30,),
-              GestureDetector(
-                onTap: _isUploading ? null : _pickImage,
-                child: Container(
-                  width: double.infinity,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(8),
+                    itemSize: 30,
+                    initialRating: _hypeScore,
+                    minRating: 0,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 0.5),
+                    itemBuilder: (context, _) => const Icon(Icons.local_fire_department, color: Colors.red),
+                    onRatingUpdate: (rating) {
+                      setState(() {
+                        _hypeScore = rating;
+                      });
+                    },
                   ),
-                  child: _isUploading
-                      ? const Center(child: CircularProgressIndicator())
-                      : _selectedImage != null
-                          ? ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.file(
-                                _selectedImage!,
-                                fit: BoxFit.cover,
+                SizedBox(height: 30,),
+                //Upload Image
+                /*
+                GestureDetector(
+                  onTap: _isUploading ? null : _pickImage,
+                  child: Container(
+                    width: double.infinity,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: _isUploading
+                        ? const Center(child: CircularProgressIndicator())
+                        : _selectedImage != null
+                            ? ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.file(
+                                  _selectedImage!,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            : Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.cloud_upload, size: 75, color: Colors.white54,),
+                                    Text(S.of(context).pressChoosePoster, style: TextStyle(color: Colors.white54),),
+                                  ],
+                                ),
                               ),
-                            )
-                          : Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(Icons.cloud_upload, size: 75, color: Colors.white54,),
-                                  Text(S.of(context).pressChoosePoster, style: TextStyle(color: Colors.white54),),
-                                ],
-                              ),
-                            ),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 25),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                  fixedSize: const Size(double.infinity, 50),
+                */
+                const SizedBox(height: 25),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    fixedSize: const Size(double.infinity, 50),
+                  ),
+                  onPressed: _saveMovie,
+                  child: Text(S.of(context).addMovie, style: TextStyle(fontSize: 18),),
                 ),
-                onPressed: _saveMovie,
-                child: Text(S.of(context).addMovie, style: TextStyle(fontSize: 18),),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
+        ],
       ),
     );
   }

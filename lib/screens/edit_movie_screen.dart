@@ -540,10 +540,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             icon: const Icon(Icons.input, color: Colors.white),
             onPressed: _toggleWatchedStatus,
           ),
+          /*
           IconButton(
             icon: const Icon(Icons.more_vert),
             onPressed: () => _showAddOptionsMenu(context),
-          ),
+          ),*/
         ],
       ),
       body: Stack(
@@ -597,9 +598,29 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 style: const TextStyle(color: Colors.white),
                   ),
                   SizedBox(height: screenWidth * 0.1),
-                  Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: 16),),
-                  Divider(height: 10, color: Colors.white60,),
-                  SizedBox(height: screenWidth * 0.03),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                      IconButton(
+                      onPressed: () async {
+                        await _addDetails('Add Genre', (genre) {
+                          setState(() {
+                            _selectedGenres.add(genre);
+                          });
+                        });
+                      },
+                      icon: Card( 
+                        color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                        )),
+                    )
+                    ],
+                  ),
+                  Divider(height: 0, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.05),
                   _selectedGenres.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -663,9 +684,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         )
                       : Text(S.of(context).noGenresSelected, style: TextStyle(color: Colors.white54)),
                   SizedBox(height: screenHeight * 0.02,),
-                  Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: 16),),
-                  Divider(height: 10, color: Colors.white60,),
-                  SizedBox(height: screenWidth * 0.03),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                    ],
+                  ),
+                  Divider(height: 0, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.05),
                   GestureDetector(
                     onLongPress: () {
                       _deleteDirector();
@@ -716,10 +742,29 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     ),
                   ),
                   SizedBox(height: screenWidth * 0.05),
-                  Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: 16),),
-                  Divider(height: 10, color: Colors.white60,),
-                  SizedBox(height: screenWidth * 0.03),
-                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                      IconButton(
+                      onPressed: () async {
+                        await _addDetails('Add Actor', (actor) {
+                          setState(() {
+                            _selectedActors.add(actor);
+                          });
+                        });
+                      },
+                      icon: Card( 
+                        color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                        )),
+                    )
+                    ],
+                  ),
+                  Divider(height: 0, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.05),
                   _selectedActors.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -765,10 +810,29 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         )
                       : Text(S.of(context).noActorsSelected, style: TextStyle(color: Colors.white54)),
                   SizedBox(height: screenWidth * 0.05),
-                  Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: 16),),
-                  Divider(height: 10, color: Colors.white60,),
-                  SizedBox(height: screenWidth * 0.03),
-                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                      IconButton(
+                      onPressed: () async {
+                        await _addDetails('Add Writer', (writer) {
+                          setState(() {
+                            _selectedWriters.add(writer);
+                          });
+                        });
+                      },
+                      icon: Card( 
+                        color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                        )),
+                    )
+                    ],
+                  ),
+                  Divider(height: 0, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.05),
                   _selectedWriters.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -814,10 +878,29 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         )
                       : Text(S.of(context).noWritersSelected, style: TextStyle(color: Colors.white54)),
                   SizedBox(height: screenWidth * 0.05),
-                  Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: 16),),
-                  Divider(height: 10, color: Colors.white60,),
-                  SizedBox(height: screenWidth * 0.03),
-                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                      IconButton(
+                      onPressed: () async {
+                        await _addDetails('Add Production Company', (company) {
+                          setState(() {
+                            _selectedProductionCompanies.add(company);
+                          });
+                        });
+                      },
+                      icon: Card( 
+                        color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                        )),
+                    )
+                    ],
+                  ),
+                  Divider(height: 0, color: Colors.white60,),
+                  SizedBox(height: screenWidth * 0.05),
                   _selectedProductionCompanies.isNotEmpty
                       ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -1198,6 +1281,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     ],
                   )),
               SizedBox(height: 30,),
+              //Upload Image
+              /*
               GestureDetector(
                 onTap: _isUploading ? null : _pickImage,
                 child: Container(
@@ -1228,6 +1313,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             ),
                 ),
               ),
+              */
               const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
