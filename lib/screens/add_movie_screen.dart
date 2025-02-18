@@ -27,8 +27,9 @@ class AddMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
   final String? userEmail;
+  final String? systemLanguage;
 
-  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie, this.userEmail});
+  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie, this.userEmail, this.systemLanguage});
 
   @override
   State<AddMovieScreen> createState() => _AddMovieScreenState();
@@ -674,7 +675,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   final movieId = await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director',),
+                      builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage,),
                     ),
                   );
 
@@ -736,7 +737,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             final movieId = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor'),
+                                builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage,),
                               ),
                             );
                             if (movieId != null) {
@@ -785,7 +786,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             final movieId = await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer'),
+                                builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage,),
                               ),
                             );
                             if (movieId != null) {

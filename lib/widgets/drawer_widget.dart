@@ -172,7 +172,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).signOutSucceful, 
+          title: S.of(context).succesful,
           message: S.of(context).signedOutAccount, 
           contentType: ContentType.success, 
           inMaterialBanner: true,
@@ -237,7 +237,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).error, 
+          title: S.of(context).failure, 
           message: e.toString(), 
           contentType: ContentType.failure, 
           inMaterialBanner: true,
@@ -342,7 +342,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).error,
+          title: S.of(context).failure,
           message: '${S.of(context).errorWritingFile} $e',
           contentType: ContentType.failure,
           inMaterialBanner: true,
@@ -441,7 +441,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           backgroundColor: Colors.transparent,
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
-            title: S.of(context).error,
+            title: S.of(context).failure,
             message: '${S.of(context).errorReadingFile} $e',
             contentType: ContentType.failure,
             inMaterialBanner: true,

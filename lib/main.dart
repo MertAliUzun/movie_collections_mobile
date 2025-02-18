@@ -12,6 +12,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'services/supabase_service.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'models/movie_model.dart';
+import 'dart:ui' as ui;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,14 +40,17 @@ void main() async {
   Hive.registerAdapter(MovieAdapter()); // Register the Movie adapter
   await Hive.openBox<Movie>('movies'); // Open the box for movies
   
-  runApp(const MyApp());
+  var systemLanguage = ui.window.locale.languageCode;
+
+  runApp(MyApp(systemLanguage: systemLanguage));
   
 }
 
 final supabase = Supabase.instance.client;
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final String systemLanguage;
+  const MyApp({super.key, required this.systemLanguage});
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +62,13 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      locale: Locale('tr'),
+      locale: Locale(systemLanguage),
       title: 'Film Koleksiyonu',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(systemLanguage: systemLanguage,),
     );
   }
 }
@@ -74,8 +78,9 @@ class MyHomePage extends StatefulWidget {
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName; // Kullanıcı Adı
+  final String? systemLanguage;
 
-  const MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName});
+  const MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -179,11 +184,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // _pages listesini burada oluştur
     final List<Widget> _pages = [
       _userId != null && _userId != '0'
-          ? CollectionScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName,)
-          : const CollectionScreen(),
+          ? CollectionScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName, systemLanguage: widget.systemLanguage,)
+          : CollectionScreen(systemLanguage: widget.systemLanguage,),
       _userId != null && _userId != '0'
-          ? WishlistScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName,)
-          : const WishlistScreen(),
+          ? WishlistScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName, systemLanguage: widget.systemLanguage)
+          : WishlistScreen(systemLanguage: widget.systemLanguage),
     ];
 
     return Scaffold(

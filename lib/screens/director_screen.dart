@@ -8,8 +8,9 @@ import '../widgets/person_movies_widget.dart';
 class DirectorScreen extends StatefulWidget {
   final String personName;
   final String personType;
+  final String? systemLanguage;
 
-  const DirectorScreen({Key? key, required this.personName, required this.personType}) : super(key: key);
+  const DirectorScreen({Key? key, required this.personName, required this.personType, this.systemLanguage}) : super(key: key);
 
   @override
   _DirectorScreenState createState() => _DirectorScreenState();
@@ -23,7 +24,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
   bool _isLoading = true;
   late ScrollController _scrollController;
   bool _isCollapsed = false;
-  String systemLanguage = 'en';
 
   @override
   void initState() {
@@ -50,7 +50,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
         _personMovies = await _tmdbService.getMoviesByPerson(personId, widget.personType);
         _personMovies = _personMovies.where((movie) => movie['poster_path'] != null).toList();
         
-        _personPersonalDetails = await _tmdbService.getPersonalDetails(personId, systemLanguage);
+        _personPersonalDetails = await _tmdbService.getPersonalDetails(personId, widget.systemLanguage ?? 'en');
         
       }
       setState(() {
@@ -66,9 +66,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
 
   void _launchIMDb() async {
     if (_personPersonalDetails != null && _personPersonalDetails!['imdb_id'] != null) {
-      final String url = 'https://www.imdb.com/name/${_personPersonalDetails!['imdb_id']}';
-      if (await canLaunch(url)) {
-        await launch(url);
+      final Uri url = Uri.parse('https://www.imdb.com/name/${_personPersonalDetails!['imdb_id']}');
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url);
       } else {
         throw 'Could not launch $url';
       }
@@ -267,7 +267,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                               ),
                                             ),
                                           ),
-                                        if (_personPersonalDetails!['biography'] != null)
+                                        if (_personPersonalDetails?['biography']?.isNotEmpty ?? false)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 24, 30, 40),

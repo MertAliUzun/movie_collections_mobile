@@ -112,7 +112,9 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
               return {'Daily', 'Weekly', 'Monthly'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
-                  child: Text(choice, style: const TextStyle(color: Colors.white)),
+                  child: Text(choice== 'Daily' ? S.of(context).daily :
+                              choice== 'Weekly' ? S.of(context).weekly :
+                              choice== 'Monthly' ? S.of(context).monthly : choice, style: const TextStyle(color: Colors.white)),
                 );
               }).toList();
             },

@@ -20,8 +20,9 @@ class WishlistScreen extends StatefulWidget {
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName;
+  final String? systemLanguage;
 
-  const WishlistScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName});
+  const WishlistScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage});
 
   @override
   State<WishlistScreen> createState() => _WishlistScreenState();
@@ -165,7 +166,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => EditMovieScreen(isFromWishlist: true, movie: movie, userEmail: widget.userEmail,),
+        builder: (context) => EditMovieScreen(isFromWishlist: true, movie: movie, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
       ),
     ).then((_) {
       _fetchMovies();
@@ -545,7 +546,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddMovieScreen(isFromWishlist: true, userEmail: widget.userEmail,),
+              builder: (context) => AddMovieScreen(isFromWishlist: true, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
             ),
           ).then((_) {
             _fetchMovies(); // Refresh the movie list when returning

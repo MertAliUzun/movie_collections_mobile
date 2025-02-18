@@ -171,7 +171,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => EditMovieScreen(isFromWishlist: false, movie: movie, userEmail: widget.userEmail,),
+        builder: (context) => EditMovieScreen(isFromWishlist: false, movie: movie, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
       ),
     ).then((_) {
       _fetchMovies();
@@ -552,7 +552,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddMovieScreen(isFromWishlist: false, userEmail:  widget.userEmail,),
+              builder: (context) => AddMovieScreen(isFromWishlist: false, userEmail:  widget.userEmail, systemLanguage: widget.systemLanguage,),
             ),
           ).then((_) {
             _fetchMovies(); // Refresh the movie list when returning

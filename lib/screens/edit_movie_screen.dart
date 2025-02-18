@@ -16,6 +16,7 @@ import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
+import 'add_movie_screen.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
 import 'company_screen.dart';
@@ -28,8 +29,9 @@ class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
   final String? userEmail;
+  final String? systemLanguage;
 
-  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie, required this.userEmail});
+  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie, required this.userEmail, this.systemLanguage});
 
   @override
   State<EditMovieScreen> createState() => _EditMovieScreenState();
@@ -440,7 +442,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           .where((movie) => movie['poster_path'] != null)
           .take(6) // İlk 6 filmi al
           .map((movie) => Map<String, dynamic>.from(movie)) // Filmleri Map formatında döndür
-          .toList();;
+          .toList();
       });
     }
       }
@@ -675,7 +677,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       final movieId = await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director',),
+                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage,),
                         ),
                       );
                       
@@ -737,7 +739,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor'),
+                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -786,7 +788,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer'),
+                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -1068,6 +1070,15 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         return GestureDetector(
                           onTap: () {
                             if (similarMovie['id'] != null) {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AddMovieScreen(
+                                        isFromWishlist: widget.isFromWishlist,
+                                        movie: similarMovie,
+                                      ),
+                                    ),
+                                  );
                                   _fetchMovieDetails(similarMovie['id']);
                                   _scrollToTop();
                                 }
