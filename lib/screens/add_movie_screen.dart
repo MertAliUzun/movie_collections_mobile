@@ -82,10 +82,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         return Theme(
           data: Theme.of(context).copyWith(
             colorScheme: const ColorScheme.dark(
-              primary: Color.fromARGB(255, 20, 30, 40), // Seçili tarih ve butonların rengi
-              onPrimary: Colors.white, // Seçili tarihin metin rengi
-              surface: Color.fromARGB(255, 44, 50, 60), // Dialog arkaplan rengi
-              onSurface: Colors.white, // Tarihlerin metin rengi
+              primary: Color.fromARGB(255, 20, 30, 40),
+              onPrimary: Colors.white,
+              surface: Color.fromARGB(255, 44, 50, 60),
+              onSurface: Colors.white, 
             ),
             dialogBackgroundColor: const Color.fromARGB(255, 34, 40, 50),
             textButtonTheme: TextButtonThemeData(
@@ -115,10 +115,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         return Theme(
           data: Theme.of(context).copyWith(
             colorScheme: const ColorScheme.dark(
-              primary: Colors.amber,
+              primary: Color.fromARGB(255, 20, 30, 40),
               onPrimary: Colors.white,
               surface: Color.fromARGB(255, 44, 50, 60),
-              onSurface: Colors.white,
+              onSurface: Colors.white, 
             ),
             dialogBackgroundColor: const Color.fromARGB(255, 34, 40, 50),
             textButtonTheme: TextButtonThemeData(
