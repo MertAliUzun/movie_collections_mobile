@@ -1078,27 +1078,39 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   maxLines: 3,
                   style: const TextStyle(color: Colors.white),
                 ),
-                TextFormField(
-                  controller: _runtimeController,
-                  decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54),),
-                  keyboardType: TextInputType.number,
-                  validator: (value) {
-                    if (value != null && value.isNotEmpty) {
-                      final number = int.tryParse(value);
-                      if (number == null) {
-                        return S.of(context).enterValidNumber;
-                      }
-                    }
-                    return null;
-                  },
-                  style: const TextStyle(color: Colors.white),
-                ),
-                TextFormField(
-                  controller: _imdbRatingController,
-                  decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54),),
-                  keyboardType: TextInputType.number,
-                  style: const TextStyle(color: Colors.white),
-                  validator: (value) {
+                Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _runtimeController,
+                      decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54),),
+                      keyboardType: TextInputType.number,
+                      validator: (value) {
+                        if (value != null && value.isNotEmpty) {
+                          final number = int.tryParse(value);
+                          if (number == null) {
+                            return S.of(context).enterValidNumber;
+                          }
+                        }
+                        return null;
+                      },
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
+                    child: VerticalDivider(
+                      color: Colors.white54,  // Dikey çizgi rengi
+                      thickness: 1,  // Çizginin kalınlığı
+                    ),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      controller: _imdbRatingController,
+                      decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54)),
+                      keyboardType: TextInputType.number,
+                      style: const TextStyle(color: Colors.white),
+                      validator: (value) {
                     if (value != null && value.isNotEmpty) {
                       final number = double.tryParse(value);
                       if (number == null || number < 0 || number > 10) {
@@ -1106,10 +1118,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       }
                     }
                     return null;
-                  },
-                ),
-                if(!widget.isFromWishlist)
-                TextFormField(
+                      },
+                    ),
+                  ),
+              if(!widget.isFromWishlist)...{
+              Container(
+                    height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
+                    child: VerticalDivider(
+                      color: Colors.white54,  // Dikey çizgi rengi
+                      thickness: 1,  // Çizginin kalınlığı
+                    ),
+                  ),
+              Expanded(
+                child: TextFormField(
                   controller: _watchCountController,
                   decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: TextStyle(color: Colors.white54),),
                   keyboardType: TextInputType.number,
@@ -1124,6 +1145,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   },
                   style: const TextStyle(color: Colors.white),
                 ),
+              ),
+              }
+                ],
+              ),
                 /*TextFormField(
                   controller: _popularityController,
                   decoration: const InputDecoration(labelText: 'Popularity', labelStyle: TextStyle(color: Colors.white54)),
