@@ -142,5 +142,10 @@
     "daily": "Günlük",
     "weekly": "Haftalık",
     "monthly": "Aylık",
-    "watchCount": "İzleme Sayısı"
+    "watchCount": "İzleme Sayısı",
+    "dataNotRetrivedDirector": "Bu Yönetmen hakkında veri bulunamadı!",
+    "dataNotRetrivedActor": "Bu Oyuncu hakkında veri bulunamadı!",
+    "dataNotRetrivedWriter": "Bu Yazar hakkında veri bulunamadı!",
+    "returnPreviousScreen": "Lütfen önceki ekrana dönün",
+    "noMoviesForGenre": "Bu tür ile ilgili film bulunamadı!"
 }

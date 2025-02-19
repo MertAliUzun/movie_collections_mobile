@@ -60,6 +60,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Özel Sıralama Adı"),
         "daily": MessageLookupByLibrary.simpleMessage("Günlük"),
+        "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
+            "Bu Oyuncu hakkında veri bulunamadı!"),
+        "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
+            "Bu Yönetmen hakkında veri bulunamadı!"),
+        "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
+            "Bu Yazar hakkında veri bulunamadı!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Ölüm Tarihi: "),
         "delete": MessageLookupByLibrary.simpleMessage("Sil"),
         "deleteChosenMovies":
@@ -134,6 +140,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hiçbir Tür Seçilmedi"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID Tokeni bulunamadı."),
+        "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
+            "Bu tür ile ilgili film bulunamadı!"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Hiçbir film bulunamadı"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
@@ -160,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Vizyon Tarihi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Çıkış Yılı"),
+        "returnPreviousScreen":
+            MessageLookupByLibrary.simpleMessage("Lütfen önceki ekrana dönün"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Gelir: "),
         "romance": MessageLookupByLibrary.simpleMessage("Romantik"),
         "runtime": MessageLookupByLibrary.simpleMessage("Süre"),

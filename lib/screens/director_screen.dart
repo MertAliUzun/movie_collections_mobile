@@ -360,12 +360,38 @@ class _DirectorScreenState extends State<DirectorScreen> {
       );
     }
     } else{
+      if(_isLoading) {
       return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: IconThemeData(color: Colors.white),
       ),
       body: const Center(child: CircularProgressIndicator()));
+      }
+      else {
+        return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              widget.personType == 'Director' ? S.of(context).dataNotRetrivedDirector :
+              widget.personType == 'Actor' ? S.of(context).dataNotRetrivedActor :
+              widget.personType == 'Writer' ? S.of(context).dataNotRetrivedWriter : widget.personType, 
+              style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+              ),
+              Text(S.of(context).returnPreviousScreen,
+              style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+              ),
+          ],
+        ),
+      )
+        );
+      }
     }
   }
 }

@@ -142,5 +142,10 @@
     "daily": "Daily",
     "weekly": "Weekly",
     "monthly": "Monthly",
-    "watchCount": "Watch Count"
+    "watchCount": "Watch Count",
+    "dataNotRetrivedDirector": "Data for this Director could not be found!",
+    "dataNotRetrivedActor": "Data for this Actor could not be found!",
+    "dataNotRetrivedWriter": "Data for this Writer could not be found!",
+    "returnPreviousScreen": "Please return to the previous screen",
+    "noMoviesForGenre": "No movies found for this genre!"
 }

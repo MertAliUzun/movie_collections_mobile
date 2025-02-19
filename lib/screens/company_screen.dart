@@ -199,7 +199,18 @@ class _CompanyScreenState extends State<CompanyScreen> {
         );
                   },
                 )
-              : Center(child: Text(S.of(context).noMoviesFoundForCompany, style: TextStyle(color: Colors.white54))),
+              : Center(child: 
+                Column(
+                  children: [
+                    Text(S.of(context).noMoviesFoundForCompany, 
+                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045)
+                    ),
+                    Text(S.of(context).returnPreviousScreen,
+                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+                    ),
+                  ],
+                )
+                ),
     );
   }
 } 

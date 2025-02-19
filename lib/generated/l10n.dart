@@ -1489,6 +1489,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Data for this Director could not be found!`
+  String get dataNotRetrivedDirector {
+    return Intl.message(
+      'Data for this Director could not be found!',
+      name: 'dataNotRetrivedDirector',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data for this Actor could not be found!`
+  String get dataNotRetrivedActor {
+    return Intl.message(
+      'Data for this Actor could not be found!',
+      name: 'dataNotRetrivedActor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data for this Writer could not be found!`
+  String get dataNotRetrivedWriter {
+    return Intl.message(
+      'Data for this Writer could not be found!',
+      name: 'dataNotRetrivedWriter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please return to the previous screen`
+  String get returnPreviousScreen {
+    return Intl.message(
+      'Please return to the previous screen',
+      name: 'returnPreviousScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No movies found for this genre!`
+  String get noMoviesForGenre {
+    return Intl.message(
+      'No movies found for this genre!',
+      name: 'noMoviesForGenre',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -127,7 +127,17 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
               ? SingleChildScrollView(child: PersonMoviesWidget(movies: _movies, personType: 'Genre', isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,))
-              : const Center(child: Text('No movies found for this genre.', style: TextStyle(color: Colors.white54))),
+              : Center(
+                child: Column(
+                  children: [
+                    Text(S.of(context).noMoviesForGenre,
+                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045)
+                    ),
+                    Text(S.of(context).returnPreviousScreen,
+                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+                    ),
+                  ],
+                )),
     );
   }
 } 

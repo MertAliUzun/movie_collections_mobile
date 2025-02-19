@@ -60,6 +60,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Custom Sort Title"),
         "daily": MessageLookupByLibrary.simpleMessage("Daily"),
+        "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
+            "Data for this Actor could not be found!"),
+        "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
+            "Data for this Director could not be found!"),
+        "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
+            "Data for this Writer could not be found!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Death Date: "),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteChosenMovies":
@@ -135,6 +141,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("No Genres Selected"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("No ID Token found."),
+        "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
+            "No movies found for this genre!"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("No movies were found"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
@@ -161,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Release Date: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Release Year"),
+        "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
+            "Please return to the previous screen"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Revenue: "),
         "romance": MessageLookupByLibrary.simpleMessage("Romance"),
         "runtime": MessageLookupByLibrary.simpleMessage("Runtime"),
