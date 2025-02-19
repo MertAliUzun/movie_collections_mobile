@@ -78,6 +78,25 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       initialDate: _selectedDate,
       firstDate: DateTime(1900),
       lastDate: DateTime.now(),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: const ColorScheme.dark(
+              primary: Color.fromARGB(255, 20, 30, 40), // Seçili tarih ve butonların rengi
+              onPrimary: Colors.white, // Seçili tarihin metin rengi
+              surface: Color.fromARGB(255, 44, 50, 60), // Dialog arkaplan rengi
+              onSurface: Colors.white, // Tarihlerin metin rengi
+            ),
+            dialogBackgroundColor: const Color.fromARGB(255, 34, 40, 50),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white, // Button text color
+              ),
+            ),
+          ),
+          child: child!,
+        );
+      },
     );
     if (picked != null && picked != _selectedDate) {
       setState(() {
@@ -85,12 +104,32 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       });
     }
   }
-    Future<void> _watchDate(BuildContext context) async {
+
+  Future<void> _watchDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: _watchedDate,
       firstDate: DateTime(1900),
       lastDate: DateTime.now(),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: const ColorScheme.dark(
+              primary: Colors.amber,
+              onPrimary: Colors.white,
+              surface: Color.fromARGB(255, 44, 50, 60),
+              onSurface: Colors.white,
+            ),
+            dialogBackgroundColor: const Color.fromARGB(255, 34, 40, 50),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+            ),
+          ),
+          child: child!,
+        );
+      },
     );
     if (picked != null && picked != _watchedDate) {
       setState(() {

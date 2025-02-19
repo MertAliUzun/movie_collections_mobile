@@ -743,7 +743,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Container(
                     width: screenWidth * 0.45,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.001, 0, 0),
                       child: TextButton(
                         onPressed: () {
                           exportMoviesToCSV(); // CSV dışa aktarma fonksiyonunu çağır
@@ -772,7 +772,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Container(
                     width: screenWidth * 0.45,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(
                         onPressed: () {
                           importMoviesFromCSV(); // CSV içe aktarma fonksiyonunu çağır
@@ -801,7 +801,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Container(
                     width: screenWidth * 0.45,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.03, 0, screenHeight * 0.01),
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(onPressed:() {
                         final movie = _getRandomMovie(context);
                         if (movie == null)
