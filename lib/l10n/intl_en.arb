@@ -147,5 +147,15 @@
     "dataNotRetrivedActor": "Data for this Actor could not be found!",
     "dataNotRetrivedWriter": "Data for this Writer could not be found!",
     "returnPreviousScreen": "Please return to the previous screen",
-    "noMoviesForGenre": "No movies found for this genre!"
+    "noMoviesForGenre": "No movies found for this genre!",
+    "myNotes": "My Notes",
+    "collectionType": "Collection Type",
+    "vhs": "VHS",
+    "dvd": "DVD",
+    "bluRay": "Blu-Ray",
+    "steelbook": "Steelbook",
+    "digital": "Digital",
+    "streaming": "Streaming",
+    "rent": "Rent",
+    "buy": "Buy"
 }

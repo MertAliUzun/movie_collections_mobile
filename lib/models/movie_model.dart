@@ -76,6 +76,12 @@ class Movie {
   @HiveField(23)
   final int? watchCount;
 
+  @HiveField(24)
+  final String? myNotes;
+
+  @HiveField(25)
+  final String? collectionType;
+
   //delete writers
     /*"cast": [
         {"id": 123456, "name": "Tessa Thompson", "character": "Lady", "order": 1},
@@ -107,6 +113,8 @@ class Movie {
     this.revenue,
     this.toSync = false,
     this.watchCount,
+    this.myNotes,
+    this.collectionType
   });
 
   Map<String, dynamic> toJson() {
@@ -135,6 +143,8 @@ class Movie {
       'revenue' : revenue,
       'toSync': toSync,
       'watchCount': watchCount,
+      'myNotes': myNotes,
+      'collectionType': collectionType
     };
   }
 
@@ -163,7 +173,9 @@ class Movie {
       budget: json['budget']?.toDouble(),
       revenue: json['revenue']?.toDouble(),
       toSync: json['toSync'] ?? false,
-      watchCount: json['watchCount']
+      watchCount: json['watchCount'],
+      myNotes: json['myNotes'],
+      collectionType: json['collectionType']
     );
   }
 } 

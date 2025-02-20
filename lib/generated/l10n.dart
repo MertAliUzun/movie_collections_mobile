@@ -1539,6 +1539,76 @@ class S {
       args: [],
     );
   }
+
+  /// `My Notes`
+  String get myNotes {
+    return Intl.message(
+      'My Notes',
+      name: 'myNotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collection Type`
+  String get collectionType {
+    return Intl.message(
+      'Collection Type',
+      name: 'collectionType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `VHS`
+  String get vhs {
+    return Intl.message(
+      'VHS',
+      name: 'vhs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DVD`
+  String get dvd {
+    return Intl.message(
+      'DVD',
+      name: 'dvd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blu-Ray`
+  String get bluRay {
+    return Intl.message(
+      'Blu-Ray',
+      name: 'bluRay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Steelbook`
+  String get steelbook {
+    return Intl.message(
+      'Steelbook',
+      name: 'steelbook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Digital`
+  String get digital {
+    return Intl.message(
+      'Digital',
+      name: 'digital',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

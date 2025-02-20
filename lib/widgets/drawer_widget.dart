@@ -279,7 +279,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         'Budget', 
         'Revenue', 
         'To Sync',
-        'Watch Count'
+        'Watch Count',
+        'My Notes',
+        'Collection Type'
       ],
     ];
 
@@ -309,6 +311,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         movie.revenue?.toString() ?? '',                     // double? -> String
         movie.toSync.toString(),                             // bool -> String
         movie.watchCount?.toString() ?? '',  
+        movie.myNotes?.toString() ?? '',  
+        movie.collectionType?.toString() ?? '',  
       ]);
     }
 
@@ -404,6 +408,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               revenue: row[21].toString().isEmpty ? null : double.parse(row[21].toString()),     // String -> double?
               toSync: row[22].toString().toLowerCase() == 'true',       // String -> bool
               watchCount: row[23].toString().isEmpty ? null : int.parse(row[23].toString()),
+              myNotes: row[24].toString().isEmpty ? null : row[24].toString(), 
+              collectionType: row[25].toString().isEmpty ? null : row[25].toString(), 
             );
 
             moviesBox.put(movie.id, movie);

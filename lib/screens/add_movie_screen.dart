@@ -43,6 +43,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final _movieNameController = TextEditingController();
   final _directorNameController = TextEditingController();
   final _plotController = TextEditingController();
+  final _notesController = TextEditingController();
   final _runtimeController = TextEditingController();
   final _watchCountController = TextEditingController();
   final _imdbRatingController = TextEditingController();
@@ -71,6 +72,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   List<String> _selectedActors = [];
   List<String> _selectedWriters = [];
   List<String> _selectedProductionCompanies = [];
+  String _selectedCollectionType = ''; // Varsayılan değer
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -324,6 +326,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         directorName: _directorNameController.text,
         releaseDate: _selectedDate,
         plot: _plotController.text.isNotEmpty ? _plotController.text : null,
+        myNotes: _notesController.text.isNotEmpty ? _notesController.text : null,
         runtime: _runtimeController.text.isNotEmpty 
             ? int.tryParse(_runtimeController.text) 
             : null,
@@ -362,6 +365,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         revenue: _revenueController.text.isNotEmpty 
             ? double.tryParse(_revenueController.text) 
             : null,
+        collectionType: _selectedCollectionType,
       );
 
       // Save to Hive
@@ -564,6 +568,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _movieNameController.text = widget.movie!.movieName;
       _directorNameController.text = widget.movie!.directorName;
       _plotController.text = widget.movie!.plot ?? '';
+      _notesController.text = widget.movie!.myNotes ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
@@ -590,6 +595,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _popularityController.text = widget.movie!.popularity?.toString() ?? '';
       _budgetController.text = widget.movie!.budget?.toString() ?? '';
       _revenueController.text = widget.movie!.revenue?.toString() ?? '';
+      _selectedCollectionType = widget.movie!.collectionType ?? '';
     }
   }
 
@@ -626,11 +632,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                ),
              ),
            ),
+           /*
            if(_imageLink == null)
            Positioned.fill(
               child: Image.asset(
                 'assets/images/placeholder_poster.png', 
                 fit: BoxFit.cover,)),
+                */
            if(_imageLink != null)
            Positioned.fill(
             child: Container(
@@ -1160,7 +1168,43 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       },
                     ),
                   ),
-              if(!widget.isFromWishlist)...{
+                ],
+              ),
+              TextFormField(
+                controller: _notesController,
+                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: TextStyle(color: Colors.white54),),
+                maxLines: 3,
+                style: const TextStyle(color: Colors.white),
+              ),
+              if(!widget.isFromWishlist)
+              Row(
+                children: [
+                  Expanded(
+                    child: DropdownButtonFormField<String>(
+                    value: _selectedCollectionType,
+                    dropdownColor: const Color.fromARGB(255, 44, 50, 60),
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      labelText: S.of(context).collectionType,
+                      labelStyle: TextStyle(color: Colors.white54),
+                    ),
+                    items: [
+                      DropdownMenuItem(value: '', child: Text(S.of(context).none, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                      DropdownMenuItem(value: 'VHS', child: Text(S.of(context).vhs, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                      DropdownMenuItem(value: 'DVD', child: Text(S.of(context).dvd, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                      DropdownMenuItem(value: 'BLU-RAY', child: Text(S.of(context).bluRay, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                      DropdownMenuItem(value: 'Steelbook', child: Text(S.of(context).steelbook, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                      DropdownMenuItem(value: 'Digital', child: Text(S.of(context).digital, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                    ],
+                    onChanged: (String? newValue) {
+                      if (newValue != null) {
+                        setState(() {
+                          _selectedCollectionType = newValue;
+                        });
+                      }
+                    },
+                                    ),
+                  ),
               Container(
                     height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
                     child: VerticalDivider(
@@ -1185,7 +1229,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   style: const TextStyle(color: Colors.white),
                 ),
               ),
-              }
                 ],
               ),
                 /*TextFormField(
@@ -1354,6 +1397,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     _sortTitleController.dispose();
     _directorNameController.dispose();
     _plotController.dispose();
+    _notesController.dispose();
     _runtimeController.dispose();
     _imdbRatingController.dispose();
     _watchCountController.dispose();

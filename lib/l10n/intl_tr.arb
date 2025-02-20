@@ -147,5 +147,15 @@
     "dataNotRetrivedActor": "Bu Oyuncu hakkında veri bulunamadı!",
     "dataNotRetrivedWriter": "Bu Yazar hakkında veri bulunamadı!",
     "returnPreviousScreen": "Lütfen önceki ekrana dönün",
-    "noMoviesForGenre": "Bu tür ile ilgili film bulunamadı!"
+    "noMoviesForGenre": "Bu tür ile ilgili film bulunamadı!",
+    "myNotes": "Notlarım",
+    "collectionType": "Koleksiyon Türü",
+    "vhs": "VHS",
+    "dvd": "DVD",
+    "bluRay": "Blu-Ray",
+    "steelbook": "Steelbook",
+    "digital": "Dijital",
+    "streaming": "Yayın Hizmeti",
+    "rent": "Kirala",
+    "buy": "Satın Al"
 }

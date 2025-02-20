@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Birth Date: "),
         "birthPlaceColon":
             MessageLookupByLibrary.simpleMessage("Birth Place: "),
+        "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelChooseFile":
@@ -50,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Please check your internet connection!"),
         "collection": MessageLookupByLibrary.simpleMessage("Collection"),
+        "collectionType":
+            MessageLookupByLibrary.simpleMessage("Collection Type"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comedy"),
         "company": MessageLookupByLibrary.simpleMessage("Company"),
         "crime": MessageLookupByLibrary.simpleMessage("Crime"),
@@ -71,10 +74,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Delete Chosen Movies"),
         "descending": MessageLookupByLibrary.simpleMessage("Descending"),
+        "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Director"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Director Null"),
         "documentary": MessageLookupByLibrary.simpleMessage("Documentary"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
+        "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
         "editDirector": MessageLookupByLibrary.simpleMessage("Edit Director"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("Enter director name"),
@@ -130,6 +135,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" movies selected"),
         "music": MessageLookupByLibrary.simpleMessage("Music"),
+        "myNotes": MessageLookupByLibrary.simpleMessage("My Notes"),
         "mystery": MessageLookupByLibrary.simpleMessage("Mystery"),
         "no": MessageLookupByLibrary.simpleMessage("No"),
         "noAccessToken":
@@ -194,6 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "similarMovies": MessageLookupByLibrary.simpleMessage("Similar Movies"),
         "sort": MessageLookupByLibrary.simpleMessage("Sort "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort By"),
+        "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "succesful": MessageLookupByLibrary.simpleMessage("Succesful!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" succesfully deleted"),
@@ -210,6 +217,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unable to Upload Images!"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "userScore": MessageLookupByLibrary.simpleMessage("User Score"),
+        "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("View As"),
         "war": MessageLookupByLibrary.simpleMessage("War"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Watch Count"),

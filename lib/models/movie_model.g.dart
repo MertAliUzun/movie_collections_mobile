@@ -41,13 +41,15 @@ class MovieAdapter extends TypeAdapter<Movie> {
       revenue: fields[21] as double?,
       toSync: fields[22] as bool?,
       watchCount: fields[23] as int?,
+      myNotes: fields[24] as String?,
+      collectionType: fields[25] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Movie obj) {
     writer
-      ..writeByte(24)
+      ..writeByte(26)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -95,7 +97,11 @@ class MovieAdapter extends TypeAdapter<Movie> {
       ..writeByte(22)
       ..write(obj.toSync)
       ..writeByte(23)
-      ..write(obj.watchCount);
+      ..write(obj.watchCount)
+      ..writeByte(24)
+      ..write(obj.myNotes)
+      ..writeByte(25)
+      ..write(obj.collectionType);
   }
 
   @override

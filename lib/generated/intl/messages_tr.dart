@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Doğum Tarihi: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("Doğum Yeri: "),
+        "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bütçe: "),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
@@ -50,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Lütfen internet bağlantınızı kontrol edin!"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksiyon"),
+        "collectionType":
+            MessageLookupByLibrary.simpleMessage("Koleksiyon Türü"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Şirket"),
         "crime": MessageLookupByLibrary.simpleMessage("Suç"),
@@ -71,10 +74,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Seçilen Filmleri Sil"),
         "descending": MessageLookupByLibrary.simpleMessage("Azalan"),
+        "digital": MessageLookupByLibrary.simpleMessage("Dijital"),
         "director": MessageLookupByLibrary.simpleMessage("Yönetmen"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Yönetmen Yok"),
         "documentary": MessageLookupByLibrary.simpleMessage("Belgesel"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
+        "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Yönetmeni Düzenle"),
         "enterDirectorName":
@@ -128,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filmler Koleksiyona Taşındı!"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" film seçildi"),
         "music": MessageLookupByLibrary.simpleMessage("Müzik"),
+        "myNotes": MessageLookupByLibrary.simpleMessage("Notlarım"),
         "mystery": MessageLookupByLibrary.simpleMessage("Gizem"),
         "no": MessageLookupByLibrary.simpleMessage("Hayır"),
         "noAccessToken":
@@ -192,6 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "similarMovies": MessageLookupByLibrary.simpleMessage("Benzer Filmler"),
         "sort": MessageLookupByLibrary.simpleMessage("Sırala"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sıralama"),
+        "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "succesful": MessageLookupByLibrary.simpleMessage("Başarılı!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" başarıyla silindi"),
@@ -208,6 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Görseller Yüklenemiyor!"),
         "update": MessageLookupByLibrary.simpleMessage("Güncelle"),
         "userScore": MessageLookupByLibrary.simpleMessage("Kullanıcı Puanı"),
+        "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Görüntüle"),
         "war": MessageLookupByLibrary.simpleMessage("Savaş"),
         "watchCount": MessageLookupByLibrary.simpleMessage("İzleme Sayısı"),
