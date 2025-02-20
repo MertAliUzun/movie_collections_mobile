@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/widgets/person_movies_widget.dart';
+import 'package:movie_collections_mobile/widgets/provider_card_widget.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
@@ -69,6 +70,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<Map<String, dynamic>> _similarMovies = [];
   final ScrollController _scrollController = ScrollController();
   String _selectedCollectionType = ''; // Varsayılan değer
+  Map<String, List<dynamic>> _providers = {
+    'flatrate': [],
+    'rent': [],
+    'buy': [],
+  };
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -467,8 +473,29 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _fetchSimilarMovies();
+      _fetchProviders();
       print(widget.movie!.id);     
     }
+  }
+  Future<void> _fetchProviders() async{
+    if(int.parse(widget.movie!.id) < 0) {return;}
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Skip fetching similar movies if there's no internet
+      return;
+    }
+    final tmdbService = TmdbService();
+    final providers = await tmdbService.getProviders(int.parse(widget.movie!.id));
+      print(providers!['flatrate']);
+      if (providers != null) {
+        setState(() {
+          _providers = {
+            'flatrate': List<dynamic>.from(providers['flatrate'] ?? []),
+            'rent': List<dynamic>.from(providers['rent'] ?? []),
+            'buy': List<dynamic>.from(providers['buy'] ?? []),
+          };
+        });
+      }
   }
 
   Future<void> _fetchSimilarMovies() async {
@@ -478,10 +505,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       // Skip fetching similar movies if there's no internet
       return;
     }
+    
 
     try {
       final tmdbService = TmdbService();
       final movieDetails = await tmdbService.searchMovies(widget.movie!.movieName);
+      
       if (movieDetails.isNotEmpty) {
         final movieId = movieDetails[0]['id'];
         final similarMovies = await tmdbService.getSimilarMovies(movieId);
@@ -517,54 +546,50 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   }
 
   Future<void> _fetchMovieDetails(int movieId) async {
-    final tmdbService = TmdbService();
-    final movieDetails = await tmdbService.getMovieDetails(movieId);
-    final similarMovies = await tmdbService.getSimilarMovies(movieId);
-    if(similarMovies != null) {
-      setState(() {
-        _similarMovies = similarMovies.where((movie) => movie['original_language'] == 'en')
-          .where((movie) => movie['poster_path'] != null)
-          .take(6) // İlk 6 filmi al
-          .map((movie) => Map<String, dynamic>.from(movie))
-          .toList();
-          
-      });
-
-    }
-    if (movieDetails != null) {
-      setState(() {
-        _movieNameController.text = movieDetails['title'] ?? '';
-        _directorNameController.text = movieDetails['credits']['crew']
-            .firstWhere((crew) => crew['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
-        _plotController.text = movieDetails['overview'] ?? '';
-        _runtimeController.text = movieDetails['runtime']?.toString() ?? '';
-        _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
-            movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
-            movieDetails['vote_average']?.toString() ?? '';
-        _selectedDate = DateTime.parse(movieDetails['release_date'] ?? DateTime.now().toString());
-        _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
-        _selectedGenres = movieDetails['genres'] != null 
-              ? List<String>.from(movieDetails['genres'].take(4).map((genre) => genre['name'])) 
-              : [];
-        _selectedActors = movieDetails['credits']['cast'] != null 
-              ? List<String>.from(movieDetails['credits']['cast'].take(6).map((actor) => actor['name'])) 
-              : [];
-        _selectedWriters = movieDetails['credits']['crew'] != null 
-              ? List<String>.from(movieDetails['credits']['crew'].where((member) => member['department'] == 'Writing').take(3).map((writer) => writer['name'])) 
-              : [];
-        _selectedProductionCompanies = movieDetails['production_companies'] != null 
-              ? List<String>.from(movieDetails['production_companies'].take(2).map((company) => company['name']))
-              : [];
-        _countryController.text = movieDetails['production_countries'] != null 
-              ? movieDetails['production_countries'].take(1).map((country) => country['iso_3166_1']).join(', ') 
-              : '';
-        _popularityController.text = movieDetails['popularity']?.toString() ?? '';
-        _budgetController.text = movieDetails['budget']?.toString() ?? '';
-        _revenueController.text = movieDetails['revenue']?.toString() ?? '';
-        // Populate other fields as necessary
-      });
+    try {
+      final tmdbService = TmdbService();
+      final movieDetails = await tmdbService.getMovieDetails(movieId);
+      
+      if (movieDetails != null) {
+        setState(() {
+          _movieNameController.text = movieDetails['title'] ?? '';
+          _directorNameController.text = movieDetails['credits']['crew']
+              .firstWhere((crew) => crew['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
+          _plotController.text = movieDetails['overview'] ?? '';
+          _runtimeController.text = movieDetails['runtime']?.toString() ?? '';
+          _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
+              movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
+              movieDetails['vote_average']?.toString() ?? '';
+          _selectedDate = DateTime.parse(movieDetails['release_date'] ?? DateTime.now().toString());
+          _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
+          _selectedGenres = movieDetails['genres'] != null 
+                ? List<String>.from(movieDetails['genres'].take(4).map((genre) => genre['name'])) 
+                : [];
+          _selectedActors = movieDetails['credits']['cast'] != null 
+                ? List<String>.from(movieDetails['credits']['cast'].take(6).map((actor) => actor['name'])) 
+                : [];
+          _selectedWriters = movieDetails['credits']['crew'] != null 
+                ? List<String>.from(movieDetails['credits']['crew'].where((member) => member['department'] == 'Writing').take(3).map((writer) => writer['name'])) 
+                : [];
+          _selectedProductionCompanies = movieDetails['production_companies'] != null 
+                ? List<String>.from(movieDetails['production_companies'].take(2).map((company) => company['name']))
+                : [];
+          _countryController.text = movieDetails['production_countries'] != null 
+                ? movieDetails['production_countries'].take(1).map((country) => country['iso_3166_1']).join(', ') 
+                : '';
+          _popularityController.text = movieDetails['popularity']?.toString() ?? '';
+          _budgetController.text = movieDetails['budget']?.toString() ?? '';
+          _revenueController.text = movieDetails['revenue']?.toString() ?? '';
+          // Populate other fields as necessary
+        });
+      }
+    } catch (e) {
+      print('Error fetching movie details: $e');
     }
   }
+
+
+
 
   void _scrollToTop() {
     _scrollController.animateTo(
@@ -647,6 +672,76 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 style: const TextStyle(color: Colors.white),
                   ),
                   SizedBox(height: screenWidth * 0.1),
+                  if (_providers['flatrate']!.isNotEmpty || 
+                      _providers['rent']!.isNotEmpty || 
+                      _providers['buy']!.isNotEmpty)
+                    Card(
+                      color: Colors.transparent,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              S.of(context).whereToWatch,
+                              style: TextStyle(
+                                color: Colors.white, 
+                                fontSize: screenHeight * 0.03,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                          Divider(height: 0, color: Colors.white60,),
+                          SizedBox(height: screenHeight *0.02,),
+                          ProviderCard(
+                            providers: (() {
+                              final Map<String, Map<String, dynamic>> uniqueProviders = {};
+                              
+                              for (var provider in _providers['flatrate']! as List) {
+                                final providerId = provider['provider_id'].toString();
+                                if (!uniqueProviders.containsKey(providerId)) {
+                                  uniqueProviders[providerId] = {
+                                    'logo_path': provider['logo_path'],
+                                    'provider_name': provider['provider_name'],
+                                    'categories': <String>['Subscription']
+                                  };
+                                } else {
+                                  uniqueProviders[providerId]!['categories'].add('Subscription');
+                                }
+                              }
+                              
+                              for (var provider in _providers['rent']! as List) {
+                                final providerId = provider['provider_id'].toString();
+                                if (!uniqueProviders.containsKey(providerId)) {
+                                  uniqueProviders[providerId] = {
+                                    'logo_path': provider['logo_path'],
+                                    'provider_name': provider['provider_name'],
+                                    'categories': <String>['Rent']
+                                  };
+                                } else {
+                                  uniqueProviders[providerId]!['categories'].add('Rent');
+                                }
+                              }
+                              
+                              for (var provider in _providers['buy']! as List) {
+                                final providerId = provider['provider_id'].toString();
+                                if (!uniqueProviders.containsKey(providerId)) {
+                                  uniqueProviders[providerId] = {
+                                    'logo_path': provider['logo_path'],
+                                    'provider_name': provider['provider_name'],
+                                    'categories': <String>['Buy']
+                                  };
+                                } else {
+                                  uniqueProviders[providerId]!['categories'].add('Buy');
+                                }
+                              }
+                              
+                              return uniqueProviders.values.toList();
+                            })(),
+                          ),
+                          SizedBox(height: 16),
+                        ],
+                      ),
+                    ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

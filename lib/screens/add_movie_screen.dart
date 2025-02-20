@@ -15,6 +15,7 @@ import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
+import '../widgets/provider_card_widget.dart';
 import 'collection_screen.dart';
 import 'company_screen.dart';
 import 'director_screen.dart';
@@ -73,6 +74,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   List<String> _selectedWriters = [];
   List<String> _selectedProductionCompanies = [];
   String _selectedCollectionType = ''; // Varsayılan değer
+  bool canShowProviders = false;
+  Map<String, List<dynamic>> _providers = {
+    'flatrate': [],
+    'rent': [],
+    'buy': [],
+  };
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -278,6 +285,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         });
         _searchController.clear();
         _searchResults = [];
+        canShowProviders = false;
       }
     } catch (e) {
       if (mounted) {
@@ -560,11 +568,32 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     return formatter.format(value);
   }
 
+  Future<void> _fetchProviders() async{
+    if(int.parse(widget.movie!.id) < 0) {return;}
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Skip fetching similar movies if there's no internet
+      return;
+    }
+    final tmdbService = TmdbService();
+    final providers = await tmdbService.getProviders(int.parse(widget.movie!.id));
+      print(providers!['flatrate']);
+      if (providers != null) {
+        canShowProviders = true;
+        setState(() {
+          _providers = {
+            'flatrate': List<dynamic>.from(providers['flatrate'] ?? []),
+            'rent': List<dynamic>.from(providers['rent'] ?? []),
+            'buy': List<dynamic>.from(providers['buy'] ?? []),
+          };
+        });
+      }
+  }
+
   @override
   void initState() {
     super.initState();
     if (widget.movie != null) {
-      // Film adı ve temel bilgiler
       _movieNameController.text = widget.movie!.movieName;
       _directorNameController.text = widget.movie!.directorName;
       _plotController.text = widget.movie!.plot ?? '';
@@ -573,29 +602,22 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _watchCountController.text = widget.movie!.watchCount?.toString() ?? '';
-      // Tarihler
       _selectedDate = widget.movie!.releaseDate;
       _watchedDate = widget.movie!.watchDate ?? DateTime.now();
-      
-      // Puanlar
       _userScore = widget.movie!.userScore ?? 0.0;
       _hypeScore = widget.movie!.hypeScore ?? 0.0;
-      
-      // Resim
       _imageLink = widget.movie!.imageLink;
-      
-      // Listeler
       _selectedGenres = widget.movie!.genres ?? [];
       _selectedActors = widget.movie!.actors ?? [];
       _selectedWriters = widget.movie!.writers ?? [];
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
-      
-      // Detay bilgileri
       _countryController.text = widget.movie!.country ?? '';
       _popularityController.text = widget.movie!.popularity?.toString() ?? '';
       _budgetController.text = widget.movie!.budget?.toString() ?? '';
       _revenueController.text = widget.movie!.revenue?.toString() ?? '';
       _selectedCollectionType = widget.movie!.collectionType ?? '';
+
+      Future.microtask(() => _fetchProviders());
     }
   }
 
@@ -719,6 +741,76 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   style: const TextStyle(color: Colors.white),
                 ),
                 SizedBox(height: screenWidth * 0.1),
+                if ((_providers['flatrate']!.isNotEmpty || 
+                      _providers['rent']!.isNotEmpty || 
+                      _providers['buy']!.isNotEmpty) && canShowProviders)
+                    Card(
+                      color: Colors.transparent,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              S.of(context).whereToWatch,
+                              style: TextStyle(
+                                color: Colors.white, 
+                                fontSize: screenHeight * 0.03, 
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                          Divider(height: 0, color: Colors.white60,),
+                          SizedBox(height: screenHeight *0.02,),
+                          ProviderCard(
+                            providers: (() {
+                              final Map<String, Map<String, dynamic>> uniqueProviders = {};
+                              
+                              for (var provider in _providers['flatrate']! as List) {
+                                final providerId = provider['provider_id'].toString();
+                                if (!uniqueProviders.containsKey(providerId)) {
+                                  uniqueProviders[providerId] = {
+                                    'logo_path': provider['logo_path'],
+                                    'provider_name': provider['provider_name'],
+                                    'categories': <String>['Subscription']
+                                  };
+                                } else {
+                                  uniqueProviders[providerId]!['categories'].add('Subscription');
+                                }
+                              }
+                              
+                              for (var provider in _providers['rent']! as List) {
+                                final providerId = provider['provider_id'].toString();
+                                if (!uniqueProviders.containsKey(providerId)) {
+                                  uniqueProviders[providerId] = {
+                                    'logo_path': provider['logo_path'],
+                                    'provider_name': provider['provider_name'],
+                                    'categories': <String>['Rent']
+                                  };
+                                } else {
+                                  uniqueProviders[providerId]!['categories'].add('Rent');
+                                }
+                              }
+                              
+                              for (var provider in _providers['buy']! as List) {
+                                final providerId = provider['provider_id'].toString();
+                                if (!uniqueProviders.containsKey(providerId)) {
+                                  uniqueProviders[providerId] = {
+                                    'logo_path': provider['logo_path'],
+                                    'provider_name': provider['provider_name'],
+                                    'categories': <String>['Buy']
+                                  };
+                                } else {
+                                  uniqueProviders[providerId]!['categories'].add('Buy');
+                                }
+                              }
+                              
+                              return uniqueProviders.values.toList();
+                            })(),
+                          ),
+                          SizedBox(height: 16),
+                        ],
+                      ),
+                    ),
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

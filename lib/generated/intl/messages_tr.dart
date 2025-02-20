@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("Doğum Yeri: "),
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bütçe: "),
+        "buy": MessageLookupByLibrary.simpleMessage("(Satın Al)"),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Dosya seçimi iptal edildi."),
@@ -174,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Vizyon Tarihi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Çıkış Yılı"),
+        "rent": MessageLookupByLibrary.simpleMessage("(Kirala)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Lütfen önceki ekrana dönün"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Gelir: "),
@@ -199,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sort": MessageLookupByLibrary.simpleMessage("Sırala"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sıralama"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
+        "streaming": MessageLookupByLibrary.simpleMessage("Yayın Hizmeti"),
+        "subscription": MessageLookupByLibrary.simpleMessage("(Abonelik)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Başarılı!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" başarıyla silindi"),
@@ -226,6 +230,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Haftalık"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoş geldiniz, "),
         "western": MessageLookupByLibrary.simpleMessage("Vahşi Batı"),
+        "whereToWatch":
+            MessageLookupByLibrary.simpleMessage("Nereden İzlenebilir?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("silinsin mi?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("İzleme Listesi"),
         "writer": MessageLookupByLibrary.simpleMessage("Yazar"),

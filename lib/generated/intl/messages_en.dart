@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Birth Place: "),
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
+        "buy": MessageLookupByLibrary.simpleMessage("(Buy)"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Cancelled choosing file."),
@@ -175,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Release Date: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Release Year"),
+        "rent": MessageLookupByLibrary.simpleMessage("(Rent)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Please return to the previous screen"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Revenue: "),
@@ -201,6 +203,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sort": MessageLookupByLibrary.simpleMessage("Sort "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort By"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
+        "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
+        "subscription": MessageLookupByLibrary.simpleMessage("(Subscription)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Succesful!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" succesfully deleted"),
@@ -227,6 +231,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whereToWatch": MessageLookupByLibrary.simpleMessage("Where to Watch?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("will be deleted?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Watch List"),

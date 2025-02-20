@@ -1609,6 +1609,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Streaming`
+  String get streaming {
+    return Intl.message(
+      'Streaming',
+      name: 'streaming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Rent)`
+  String get rent {
+    return Intl.message(
+      '(Rent)',
+      name: 'rent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Buy)`
+  String get buy {
+    return Intl.message(
+      '(Buy)',
+      name: 'buy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `(Subscription)`
+  String get subscription {
+    return Intl.message(
+      '(Subscription)',
+      name: 'subscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Where to Watch?`
+  String get whereToWatch {
+    return Intl.message(
+      'Where to Watch?',
+      name: 'whereToWatch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

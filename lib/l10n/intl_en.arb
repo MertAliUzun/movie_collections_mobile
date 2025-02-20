@@ -156,6 +156,8 @@
     "steelbook": "Steelbook",
     "digital": "Digital",
     "streaming": "Streaming",
-    "rent": "Rent",
-    "buy": "Buy"
+    "rent": "(Rent)",
+    "buy": "(Buy)",
+    "subscription": "(Subscription)",
+    "whereToWatch": "Where to Watch?"
 }

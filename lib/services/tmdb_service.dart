@@ -190,4 +190,33 @@ class TmdbService {
   }
   return allMovies.toSet().toList();
 } */
+
+Future<Map<String, dynamic>?> getProviders(int movieId) async {
+  try {
+    final response = await http.get(
+      Uri.parse('$_baseUrl/movie/$movieId/watch/providers?api_key=$_apiKey'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      // TR bölgesi için sağlayıcıları al, yoksa US bölgesine bak
+      final results = data['results'];
+      if (results == null) return null;
+      
+      final providers = results['US'];
+      
+      if (providers != null) {
+        return {
+          'flatrate': List<Map<String, dynamic>>.from(providers['flatrate'] ?? []),
+          'rent': List<Map<String, dynamic>>.from(providers['rent'] ?? []),
+          'buy': List<Map<String, dynamic>>.from(providers['buy'] ?? []),
+        };
+      }
+    }
+    return null;
+  } catch (e) {
+    print('Error fetching providers: $e');
+    return null;
+  }
+}
 } 

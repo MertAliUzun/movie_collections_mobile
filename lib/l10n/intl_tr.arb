@@ -156,6 +156,8 @@
     "steelbook": "Steelbook",
     "digital": "Dijital",
     "streaming": "Yayın Hizmeti",
-    "rent": "Kirala",
-    "buy": "Satın Al"
+    "rent": "(Kirala)",
+    "buy": "(Satın Al)",
+    "subscription": "(Abonelik)",
+    "whereToWatch": "Nereden İzlenebilir?"
 }
