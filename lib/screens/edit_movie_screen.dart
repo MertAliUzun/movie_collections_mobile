@@ -25,6 +25,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:hive/hive.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '../sup/adHelper.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -75,6 +77,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     'rent': [],
     'buy': [],
   };
+  BannerAd? _bannerAd;
+  InterstitialAd? _interstitialAd;
+  RewardedAd? _rewardedAd;
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -268,6 +273,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
 
     // Hive'dan sil
     box.delete(movieId);
+
+    // Tam sayfa reklam göster
+    _interstitialAd?.show();
 
     // Kullanıcıya bildirim göster
     final snackBar = SnackBar(
@@ -476,7 +484,64 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _fetchProviders();
       print(widget.movie!.id);     
     }
+    
+    // Banner reklam yükleme
+    _loadBannerAd();
+    // Tam sayfa reklam yükleme
+    _loadInterstitialAd();
+    // Ödüllü reklam yükleme
+    _loadRewardedAd();
+    
   }
+
+  void _loadBannerAd() {
+    BannerAd(
+      adUnitId: AdHelper.bannerAdUnitId,
+      size: AdSize.banner,
+      request: const AdRequest(),
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+        },
+        onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+        },
+      ),
+    ).load();
+  }
+
+  void _loadInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: AdHelper.interstitialAdUnitId,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          _interstitialAd = ad;
+        },
+        onAdFailedToLoad: (error) {
+          print('Interstitial ad failed to load: $error');
+        },
+      ),
+    );
+  }
+
+  void _loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: AdHelper.rewardedAdUnitId,
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          _rewardedAd = ad;
+        },
+        onAdFailedToLoad: (error) {
+          print('Rewarded ad failed to load: $error');
+        },
+      ),
+    );
+  }
+
   Future<void> _fetchProviders() async{
     if(int.parse(widget.movie!.id) < 0) {return;}
     var connectivityResult = await (Connectivity().checkConnectivity());
@@ -1589,6 +1654,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     _budgetController.dispose();
     _revenueController.dispose();
     _scrollController.dispose();
+    _bannerAd?.dispose();
+    _interstitialAd?.dispose();
+    _rewardedAd?.dispose();
     super.dispose();
   }
 } 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:movie_collections_mobile/sup/adHelper.dart';
 import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -25,6 +27,9 @@ void main() async {
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
+
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   
   
   /* // Check internet connection and sync local movies if connected
@@ -92,11 +97,27 @@ class _MyHomePageState extends State<MyHomePage> {
   String? _userEmail;
   String? _userPicture;
   String? _userName;
+  BannerAd? _bannerAd;
 
   @override
   void initState() {
     super.initState();
     _googleSignIn();
+    BannerAd(size: AdSize.banner,
+     adUnitId: AdHelper.bannerAdUnitId,
+     listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+        },
+        onAdFailedToLoad: (ad, err) {
+          print('failed to load banner ad: ${err.message}');
+          ad.dispose();
+        }
+     ), 
+     request: AdRequest()
+    ).load();
   }
 
   Future<AuthResponse> _googleSignIn() async {
@@ -194,7 +215,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-      body: _userId != null ? _pages[_selectedIndex] : const Center(child: CircularProgressIndicator()), 
+      body: _userId != null ? Column(children:[ Expanded(child: _pages[_selectedIndex]), 
+      if(_bannerAd != null)
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          width: _bannerAd!.size.width.toDouble(),
+          height: _bannerAd!.size.height.toDouble(),
+          child: AdWidget(ad: _bannerAd!),
+        ),
+      )
+      ]) 
+      : const Center(child: CircularProgressIndicator()),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
         items: <BottomNavigationBarItem>[

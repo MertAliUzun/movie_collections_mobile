@@ -51,6 +51,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl_utils: ^2.8.8
+  google_mobile_ads: ^4.0.0
   awesome_snackbar_content:
     git:
       url: https://github.com/MertAliUzun/awesome_snackbar_content_swipe.git
