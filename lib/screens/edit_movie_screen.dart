@@ -27,6 +27,7 @@ import 'dart:convert';
 import 'package:hive/hive.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../sup/adHelper.dart';
+import '../services/ad_service.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -77,9 +78,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     'rent': [],
     'buy': [],
   };
-  BannerAd? _bannerAd;
-  InterstitialAd? _interstitialAd;
-  RewardedAd? _rewardedAd;
+  final AdService _adService = AdService();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -239,9 +238,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
         collectionType: _selectedCollectionType,
       );
+      
 
       // Hive'da güncelle
       box.put(movie.id, movie);
+
+      _adService.showRewardedAd();
 
       // Kullanıcıya bildirim göster
       final snackBar = SnackBar(
@@ -275,7 +277,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     box.delete(movieId);
 
     // Tam sayfa reklam göster
-    _interstitialAd?.show();
+    _adService.showRewardedAd();
 
     // Kullanıcıya bildirim göster
     final snackBar = SnackBar(
@@ -299,7 +301,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   }
 
   void _toggleWatchedStatus() async {
-    await toggleWatchedStatus(context, widget.movie!, widget.isFromWishlist, true);
+    // Önce rewarded reklamı göster
+      // Reklam başarıyla gösterildiyse (ve kullanıcı izlediyse) durumu değiştir
+      await toggleWatchedStatus(context, widget.movie!, widget.isFromWishlist, true);
+
+      _adService.showRewardedAd();
   }
 
   String _getGenreLocalizedString(String genre) {
@@ -481,64 +487,24 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _fetchSimilarMovies();
-      _fetchProviders();
+      //_fetchProviders();
+      Future.microtask(() => _fetchProviders());
       print(widget.movie!.id);     
     }
     
-    // Banner reklam yükleme
-    _loadBannerAd();
-    // Tam sayfa reklam yükleme
-    _loadInterstitialAd();
-    // Ödüllü reklam yükleme
-    _loadRewardedAd();
-    
-  }
-
-  void _loadBannerAd() {
-    BannerAd(
-      adUnitId: AdHelper.bannerAdUnitId,
-      size: AdSize.banner,
-      request: const AdRequest(),
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _bannerAd = ad as BannerAd;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {
-          ad.dispose();
-        },
-      ),
-    ).load();
-  }
-
-  void _loadInterstitialAd() {
-    InterstitialAd.load(
-      adUnitId: AdHelper.interstitialAdUnitId,
-      request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (ad) {
-          _interstitialAd = ad;
-        },
-        onAdFailedToLoad: (error) {
-          print('Interstitial ad failed to load: $error');
-        },
-      ),
+    // Reklamları yükle
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
     );
-  }
-
-  void _loadRewardedAd() {
-    RewardedAd.load(
-      adUnitId: AdHelper.rewardedAdUnitId,
-      request: const AdRequest(),
-      rewardedAdLoadCallback: RewardedAdLoadCallback(
-        onAdLoaded: (ad) {
-          _rewardedAd = ad;
-        },
-        onAdFailedToLoad: (error) {
-          print('Rewarded ad failed to load: $error');
-        },
-      ),
+    _adService.loadInterstitialAd();
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
     );
   }
 
@@ -1654,9 +1620,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     _budgetController.dispose();
     _revenueController.dispose();
     _scrollController.dispose();
-    _bannerAd?.dispose();
-    _interstitialAd?.dispose();
-    _rewardedAd?.dispose();
+    _adService.disposeAds();
     super.dispose();
   }
 } 

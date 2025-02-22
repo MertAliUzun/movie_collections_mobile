@@ -15,6 +15,7 @@ import 'services/supabase_service.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'models/movie_model.dart';
 import 'dart:ui' as ui;
+import 'services/ad_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -97,27 +98,24 @@ class _MyHomePageState extends State<MyHomePage> {
   String? _userEmail;
   String? _userPicture;
   String? _userName;
-  BannerAd? _bannerAd;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
     super.initState();
     _googleSignIn();
-    BannerAd(size: AdSize.banner,
-     adUnitId: AdHelper.bannerAdUnitId,
-     listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _bannerAd = ad as BannerAd;
-          });
-        },
-        onAdFailedToLoad: (ad, err) {
-          print('failed to load banner ad: ${err.message}');
-          ad.dispose();
-        }
-     ), 
-     request: AdRequest()
-    ).load();
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {});
+      },
+    );
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Future<AuthResponse> _googleSignIn() async {
@@ -215,17 +213,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-      body: _userId != null ? Column(children:[ Expanded(child: _pages[_selectedIndex]), 
-      if(_bannerAd != null)
-      Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          width: _bannerAd!.size.width.toDouble(),
-          height: _bannerAd!.size.height.toDouble(),
-          child: AdWidget(ad: _bannerAd!),
-        ),
-      )
-      ]) 
+      body: _userId != null ? Column(
+        children:[ 
+          Expanded(child: _pages[_selectedIndex]), 
+          if(_adService.bannerAd != null)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: _adService.bannerAd!.size.width.toDouble(),
+                height: _adService.bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _adService.bannerAd!),
+              ),
+            )
+        ]
+      ) 
       : const Center(child: CircularProgressIndicator()),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(255, 44, 50, 60),
@@ -249,5 +250,11 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedItemColor: Colors.white54,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
   }
 }

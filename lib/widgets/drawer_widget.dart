@@ -16,6 +16,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../models/movie_model.dart';
 import '../screens/edit_movie_screen.dart';
 import '../main.dart';
+import '../services/ad_service.dart';
 
 class DrawerWidget extends StatefulWidget {
   final String _viewType;
@@ -83,6 +84,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   late String? userId; 
   late String? userEmail; 
   late String? userName;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
@@ -101,6 +103,14 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     userId = widget.userId;
     userEmail = widget.userEmail;
     userName = widget.userName;
+
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Movie? _getRandomMovie(BuildContext context) {
@@ -324,7 +334,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       final path = '${directory!.path}/movies.csv';
       final file = File(path);
       await file.writeAsString(csvString);
-
+      
+      _adService.showRewardedAd();
+      
       // Kullanıcıya başarı mesajı göster
       final snackBar = SnackBar(
         elevation: 0,
@@ -413,6 +425,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             );
 
             moviesBox.put(movie.id, movie);
+
+            _adService.showRewardedAd();
           } catch (e) {
             print('${S.of(context).errorConvertingLine} $e');
             continue; // Hatalı satırı atla ve devam et

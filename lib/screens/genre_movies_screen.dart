@@ -1,6 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import '../services/ad_service.dart';
 import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
 
@@ -19,12 +20,21 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
   final TmdbService _tmdbService = TmdbService();
   List<Map<String, dynamic>> _movies = [];
   bool _isLoading = true;
-  String _selectedPopularity = 'Monthly'; // Default popularity type
+  String _selectedPopularity = 'Monthly';
+  final AdService _adService = AdService();
+
 
   @override
   void initState() {
     super.initState();
     _fetchGenreMovies();
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Future<void> _fetchGenreMovies() async {

@@ -3,15 +3,9 @@ import 'dart:io';
 class AdHelper {
   static String get bannerAdUnitId {
     if (Platform.isAndroid) {
-      // Android için test ad unit ID
-      return 'ca-app-pub-3940256099942544/6300978111';
-      // Gerçek uygulama için kendi ad unit ID'nizi kullanın:
-      // return 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY';
+      return 'ca-app-pub-1085565023845596/9658681403';
     } else if (Platform.isIOS) {
-      // iOS için test ad unit ID
-      return 'ca-app-pub-3940256099942544/2934735716';
-      // Gerçek uygulama için kendi ad unit ID'nizi kullanın:
-      // return 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY';
+      return 'ca-app-pub-1085565023845596/8793188261';
     } else {
       throw UnsupportedError('Desteklenmeyen platform');
     }
@@ -19,11 +13,9 @@ class AdHelper {
 
   static String get interstitialAdUnitId {
     if (Platform.isAndroid) {
-      // Android için test ad unit ID
-      return 'ca-app-pub-3940256099942544/1033173712';
+      return 'ca-app-pub-1085565023845596/5537541362';
     } else if (Platform.isIOS) {
-      // iOS için test ad unit ID
-      return 'ca-app-pub-3940256099942544/4411468910';
+      return 'ca-app-pub-1085565023845596/8127808009';
     } else {
       throw UnsupportedError('Desteklenmeyen platform');
     }
@@ -31,11 +23,9 @@ class AdHelper {
 
   static String get rewardedAdUnitId {
     if (Platform.isAndroid) {
-      // Android için test ad unit ID
-      return 'ca-app-pub-3940256099942544/5224354917';
+      return 'ca-app-pub-1085565023845596/6666520703';
     } else if (Platform.isIOS) {
-      // iOS için test ad unit ID
-      return 'ca-app-pub-3940256099942544/1712485313';
+      return 'ca-app-pub-1085565023845596/1562399656';
     } else {
       throw UnsupportedError('Desteklenmeyen platform');
     }

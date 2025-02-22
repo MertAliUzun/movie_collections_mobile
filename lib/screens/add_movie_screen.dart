@@ -25,6 +25,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:hive/hive.dart';
+import '../services/ad_service.dart';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -80,6 +81,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     'rent': [],
     'buy': [],
   };
+  final AdService _adService = AdService();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -378,6 +380,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
       // Save to Hive
       await box.put(movie.id, movie);
+
+      _adService.showRewardedAd();
+      
       final snackBar = SnackBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -618,6 +623,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _selectedCollectionType = widget.movie!.collectionType ?? '';
 
       Future.microtask(() => _fetchProviders());
+      _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
     }
   }
 

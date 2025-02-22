@@ -72,7 +72,7 @@ class ProviderCardItem extends StatelessWidget {
               Text(
                 name,
                 style: const TextStyle(
-                  fontSize: 12, 
+                  fontSize: 10, 
                   fontWeight: FontWeight.bold,
                   color: Colors.white
                 ),
@@ -90,7 +90,9 @@ class ProviderCardItem extends StatelessWidget {
                       category == 'Subscription' ? S.of(context).subscription :
                       category == 'Buy' ? S.of(context).buy :
                       category == 'Rent' ? S.of(context).rent : '($category)',
-                      style: const TextStyle(color: Colors.white70, fontSize: 9),
+                      style: const TextStyle(color: Colors.white70, fontSize: 8.5),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   
                 ).toList(),

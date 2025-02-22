@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../services/ad_service.dart';
 import '../sup/businessLogic.dart';
 import '../sup/groupBy.dart';
 import '../services/supabase_service.dart';
@@ -46,12 +47,20 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _groupBy = false;
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
     super.initState();
     _loadViewType();
     _fetchMovies();
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Future<void> _loadViewType() async {
@@ -247,6 +256,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
       }
      }
     }
+    _adService.showRewardedAd();
+    
     final snackBar = SnackBar(
         elevation: 0,
         backgroundColor: Colors.transparent,

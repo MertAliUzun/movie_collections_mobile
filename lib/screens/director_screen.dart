@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../services/ad_service.dart';
 import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
 
@@ -26,6 +27,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
   bool _isLoading = true;
   late ScrollController _scrollController;
   bool _isCollapsed = false;
+  final AdService _adService = AdService();
+
 
   @override
   void initState() {
@@ -34,6 +37,13 @@ class _DirectorScreenState extends State<DirectorScreen> {
     //print('Person Name: ${widget.personName}, Person Type: ${widget.personType}');
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Future<void> _fetchDirectorDetails() async {

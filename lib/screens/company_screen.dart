@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/models/movie_model.dart';
+import '../services/ad_service.dart';
 import '../sup/businessLogic.dart';
 import '../sup/genreMap.dart';
 import '../services/tmdb_service.dart';
@@ -21,11 +22,19 @@ class _CompanyScreenState extends State<CompanyScreen> {
   final TmdbService _tmdbService = TmdbService();
   List<Map<String, dynamic>> _movies = [];
   bool _isLoading = true;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
     super.initState();
     _fetchMoviesByCompany();
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Future<void> _fetchMoviesByCompany() async {

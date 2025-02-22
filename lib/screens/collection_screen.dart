@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../services/ad_service.dart';
 import '../services/supabase_service.dart';
 import '../widgets/drawer_widget.dart';
 import '../widgets/movie_card.dart';
@@ -49,12 +50,20 @@ class _CollectionScreenState extends State<CollectionScreen> {
   bool _groupBy = false;
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
     super.initState();
     _loadViewType();
     _fetchMovies();
+    _adService.loadRewardedAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showRewardedAd();
+        });
+      }
+    );
   }
 
   Future<void> _loadViewType() async {
@@ -259,6 +268,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
       }
      }
     }
+    _adService.showRewardedAd();
+
     final snackBar = SnackBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
