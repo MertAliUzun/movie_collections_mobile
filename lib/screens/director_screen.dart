@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../services/ad_service.dart';
@@ -332,7 +333,20 @@ class _DirectorScreenState extends State<DirectorScreen> {
           ),
           SliverToBoxAdapter(
             child: _personMovies.isNotEmpty
-                ? PersonMoviesWidget(movies: _personMovies, personType: widget.personType,)
+                ? Column(
+                  children: [
+                    PersonMoviesWidget(movies: _personMovies, personType: widget.personType,),
+                    if(_adService.bannerAd != null)
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        width: _adService.bannerAd!.size.width.toDouble(),
+                        height: _adService.bannerAd!.size.height.toDouble(),
+                        child: AdWidget(ad: _adService.bannerAd!),
+                      ),
+                      ),
+                  ],
+                )
                 : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
           ),
         ],
@@ -364,7 +378,21 @@ class _DirectorScreenState extends State<DirectorScreen> {
           ),
         ),
         body: _personMovies.isNotEmpty
-                ? SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,))
+                ? 
+                    Column(
+                      children: [
+                        SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,)),
+                        if(_adService.bannerAd != null)
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            width: _adService.bannerAd!.size.width.toDouble(),
+                            height: _adService.bannerAd!.size.height.toDouble(),
+                            child: AdWidget(ad: _adService.bannerAd!),
+                          ),
+                          ),
+                      ],
+                    )   
                 : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
 
       );
@@ -397,11 +425,25 @@ class _DirectorScreenState extends State<DirectorScreen> {
               Text(S.of(context).returnPreviousScreen,
               style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
               ),
+            if(_adService.bannerAd != null)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: _adService.bannerAd!.size.width.toDouble(),
+                height: _adService.bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _adService.bannerAd!),
+              ),
+              ),
           ],
         ),
       )
         );
       }
     }
+  }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
   }
 }

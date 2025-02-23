@@ -216,6 +216,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: _userId != null ? Column(
         children:[ 
           Expanded(child: _pages[_selectedIndex]), 
+          /*
           if(_adService.bannerAd != null)
             Align(
               alignment: Alignment.bottomCenter,
@@ -225,6 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: AdWidget(ad: _adService.bannerAd!),
               ),
             )
+            */
         ]
       ) 
       : const Center(child: CircularProgressIndicator()),

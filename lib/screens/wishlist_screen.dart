@@ -567,4 +567,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
       ),
     );
   }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
+  }
 } 

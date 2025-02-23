@@ -1566,6 +1566,15 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 ),
               ),
               */
+              if(_adService.bannerAd != null)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: _adService.bannerAd!.size.width.toDouble(),
+                height: _adService.bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _adService.bannerAd!),
+              ),
+            ),
               const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

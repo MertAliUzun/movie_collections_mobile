@@ -575,4 +575,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
       ),
     );
   }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
+  }
 } 

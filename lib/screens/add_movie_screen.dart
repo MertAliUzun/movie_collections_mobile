@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -623,14 +624,20 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _selectedCollectionType = widget.movie!.collectionType ?? '';
 
       Future.microtask(() => _fetchProviders());
-      _adService.loadRewardedAd(
+      
+    }
+    _adService.loadRewardedAd(
       onAdLoaded: (ad) {
         setState(() {
           _adService.showRewardedAd();
         });
       }
     );
-    }
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {});
+      },
+    );
   }
 
   @override
@@ -1474,6 +1481,15 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   ),
                 ),
                 */
+                if(_adService.bannerAd != null)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: _adService.bannerAd!.size.width.toDouble(),
+                height: _adService.bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _adService.bannerAd!),
+              ),
+            ),
                 const SizedBox(height: 25),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -1497,6 +1513,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   void dispose() {
     _debounce?.cancel();
     _searchController.dispose();
+    _adService.disposeAds();
     _movieNameController.dispose();
     _sortTitleController.dispose();
     _directorNameController.dispose();

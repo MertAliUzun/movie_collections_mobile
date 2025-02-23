@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import '../services/ad_service.dart';
 import '../services/tmdb_service.dart';
@@ -136,7 +137,20 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
-              ? SingleChildScrollView(child: PersonMoviesWidget(movies: _movies, personType: 'Genre', isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,))
+              ? SingleChildScrollView(child: Column(
+                children: [
+                  PersonMoviesWidget(movies: _movies, personType: 'Genre', isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                  if(_adService.bannerAd != null)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: _adService.bannerAd!.size.width.toDouble(),
+                height: _adService.bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _adService.bannerAd!),
+              ),
+              ),
+                ],
+              ))
               : Center(
                 child: Column(
                   children: [
@@ -149,5 +163,10 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
                   ],
                 )),
     );
+  }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
   }
 } 
