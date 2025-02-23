@@ -7,8 +7,11 @@ import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/movie_model.dart';
+import '../services/ad_service.dart';
 import '../services/supabase_service.dart';
 import 'package:hive/hive.dart';
+
+final AdService _adService = AdService();
 
 Future<bool> deleteDetailsConfirm(BuildContext context, String detailType) async {
   final confirm = await showDialog<bool>(
@@ -120,6 +123,8 @@ Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromW
 
   // Hive'da güncelle
   box.put(movieId, movie);
+
+  _adService.showRewardedAd();
 
   // Kullanıcıya bildirim göster
   final snackBar = SnackBar(

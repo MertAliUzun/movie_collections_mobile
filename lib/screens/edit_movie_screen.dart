@@ -305,7 +305,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       // Reklam başarıyla gösterildiyse (ve kullanıcı izlediyse) durumu değiştir
       await toggleWatchedStatus(context, widget.movie!, widget.isFromWishlist, true);
 
-      _adService.showRewardedAd();
+      //_adService.showRewardedAd();
   }
 
   String _getGenreLocalizedString(String genre) {
