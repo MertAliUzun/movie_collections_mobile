@@ -418,7 +418,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               popularity: row[19].toString().isEmpty ? null : double.parse(row[19].toString()),  // String -> double?
               budget: row[20].toString().isEmpty ? null : double.parse(row[20].toString()),      // String -> double?
               revenue: row[21].toString().isEmpty ? null : double.parse(row[21].toString()),     // String -> double?
-              toSync: row[22].toString().toLowerCase() == 'true',       // String -> bool
+              toSync: row[22].toString().toLowerCase() == 'false',       // String -> bool
               watchCount: row[23].toString().isEmpty ? null : int.parse(row[23].toString()),
               myNotes: row[24].toString().isEmpty ? null : row[24].toString(), 
               collectionType: row[25].toString().isEmpty ? null : row[25].toString(), 

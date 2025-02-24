@@ -19,7 +19,7 @@ class ProviderCard extends StatelessWidget {
         child: Row(
           children: providers.map((provider) => 
             Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: const EdgeInsets.only(right: 4.0),
               child: ProviderCardItem(
                 logoUrl: 'https://image.tmdb.org/t/p/original${provider['logo_path']}',
                 name: provider['provider_name'],
@@ -90,7 +90,7 @@ class ProviderCardItem extends StatelessWidget {
                       category == 'Subscription' ? S.of(context).subscription :
                       category == 'Buy' ? S.of(context).buy :
                       category == 'Rent' ? S.of(context).rent : '($category)',
-                      style: const TextStyle(color: Colors.white70, fontSize: 8.5),
+                      style: const TextStyle(color: Colors.white70, fontSize: 7.5),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
