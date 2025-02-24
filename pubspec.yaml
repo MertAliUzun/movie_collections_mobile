@@ -52,6 +52,7 @@ dependencies:
     sdk: flutter
   intl_utils: ^2.8.8
   google_mobile_ads: ^4.0.0
+  flutter_native_splash: ^2.4.0
   awesome_snackbar_content:
     git:
       url: https://github.com/MertAliUzun/awesome_snackbar_content_swipe.git
@@ -95,6 +96,14 @@ flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/images/logo.png"
+
+flutter_native_splash:
+  color: "#d1d6e0"
+  image: assets/images/splash.png 
+  android: true 
+  ios: true 
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
