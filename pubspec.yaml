@@ -97,11 +97,18 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/images/logo.png"
 
+
 flutter_native_splash:
-  color: "#d1d6e0"
+  color: "#1e232d"
+  branding: assets/images/brand.png 
   image: assets/images/splash.png 
   android: true 
   ios: true 
+  
+  android_12:
+    color: "#1e232d"
+    branding: assets/images/brand.png 
+    image: assets/images/splash.png 
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
