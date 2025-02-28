@@ -1,14 +1,10 @@
-import 'dart:convert';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/movie_model.dart';
 import '../services/ad_service.dart';
-import '../services/supabase_service.dart';
 import 'package:hive/hive.dart';
 
 final AdService _adService = AdService();
@@ -26,11 +22,11 @@ Future<bool> deleteDetailsConfirm(BuildContext context, String detailType) async
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false), // User declined
-            child: Text(S.of(context).no, style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).no, style: const TextStyle(color: Colors.white)),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(true), // User confirmed
-            child: Text(S.of(context).yes, style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).yes, style: const TextStyle(color: Colors.white)),
           ),
         ],
       );
@@ -79,12 +75,12 @@ Future<void> editDirector(BuildContext context, TextEditingController directorNa
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        title: Text(S.of(context).editDirector, style: TextStyle(color: Colors.white)),
+        title: Text(S.of(context).editDirector, style: const TextStyle(color: Colors.white)),
         content: TextField(
           onChanged: (value) {
             input = value;
           },
-          decoration: InputDecoration(hintText: S.of(context).enterDirectorName, hintStyle: TextStyle(color: Colors.white)),
+          decoration: InputDecoration(hintText: S.of(context).enterDirectorName, hintStyle: const TextStyle(color: Colors.white)),
           controller: TextEditingController(text: input), // Set initial text
           style: const TextStyle(color: Colors.white),
         ),
@@ -93,14 +89,14 @@ Future<void> editDirector(BuildContext context, TextEditingController directorNa
             onPressed: () {
               Navigator.of(context).pop(); // Close the dialog
             },
-            child: Text(S.of(context).cancel, style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).cancel, style: const TextStyle(color: Colors.white)),
           ),
           TextButton(
             onPressed: () {
               directorNameController.text = input; // Update the director name
               Navigator.of(context).pop(); // Close the dialog
             },
-            child: Text(S.of(context).ok, style: TextStyle(color: Colors.white)),
+            child: Text(S.of(context).ok, style: const TextStyle(color: Colors.white)),
           ),
         ],
       );
@@ -111,7 +107,7 @@ Future<void> editDirector(BuildContext context, TextEditingController directorNa
 Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromWishlist, bool canPop) async {
   final box = Hive.box<Movie>('movies');
   
-  String movieId = movie.id!;
+  String movieId = movie.id;
   // Hive'dan sil
   if (isFromWishlist) {
     // Eğer film izleme listesinde ise, durumu güncelle

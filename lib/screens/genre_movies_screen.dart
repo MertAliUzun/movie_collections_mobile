@@ -38,33 +38,38 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
     );
   }
 
-  Future<void> _fetchGenreMovies() async {
-    try {
-      // Fetch movies for the selected genre and popularity
-      _movies = await _tmdbService.getMoviesByGenre(widget.genre, _selectedPopularity);
-    } catch (e) {
-      // Handle error (e.g., show a snackbar)
-      final snackBar = SnackBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        behavior: SnackBarBehavior.floating,
-        content: AwesomeSnackbarContent(
-          title: S.of(context).failure,
-          message: S.of(context).errorFetchingMovies, 
-          contentType: ContentType.failure, 
-          inMaterialBanner: true,
-        ), 
-        dismissDirection: DismissDirection.horizontal,
-      );
-      ScaffoldMessenger.of(context)
-        ..hideCurrentMaterialBanner()
-        ..showSnackBar(snackBar);
-    } finally {
-      setState(() {
-        _isLoading = false;
-      });
-    }
-  }
+   Future<void> _fetchGenreMovies() async {
+   try {
+     // Fetch movies for the selected genre and popularity
+     _movies = await _tmdbService.getMoviesByGenre(widget.genre, _selectedPopularity);
+   } catch (e) {
+     // Handle error (e.g., show a snackbar)
+     if (mounted) {  // Ensure the widget is still in the tree before using context
+       final snackBar = SnackBar(
+         elevation: 0,
+         backgroundColor: Colors.transparent,
+         behavior: SnackBarBehavior.floating,
+         content: AwesomeSnackbarContent(
+           title: S.of(context).failure,
+           message: S.of(context).errorFetchingMovies, 
+           contentType: ContentType.failure, 
+           inMaterialBanner: true,
+         ), 
+         dismissDirection: DismissDirection.horizontal,
+       );
+       ScaffoldMessenger.of(context)
+         ..hideCurrentMaterialBanner()
+         ..showSnackBar(snackBar);
+     }
+   } finally {
+     if (mounted) { 
+       setState(() {
+         _isLoading = false;
+       });
+     }
+   }
+ }
+
 
   void _changePopularType(String popularType) {
     setState(() {
@@ -82,7 +87,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Center(child: RichText(
             text: TextSpan(
               style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04),
@@ -90,7 +95,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
                 TextSpan(text: _selectedPopularity == 'Daily' ? S.of(context).daily :
                                _selectedPopularity == 'Weekly' ? S.of(context).weekly :
                                _selectedPopularity == 'Monthly' ? S.of(context).monthly : _selectedPopularity, 
-                               style: TextStyle(fontWeight: FontWeight.bold)),
+                               style: const TextStyle(fontWeight: FontWeight.bold)),
                 TextSpan(text: ' ${S.of(context).popularFor} '),
                 TextSpan(text: widget.genre == 'Action' ? S.of(context).action : 
                                widget.genre == 'Adventure' ? S.of(context).adventure :
@@ -111,7 +116,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
                                widget.genre == 'Thriller' ? S.of(context).thriller :
                                widget.genre == 'War' ? S.of(context).war :
                                widget.genre == 'Western' ? S.of(context).western : widget.genre, 
-                               style: TextStyle(fontStyle: FontStyle.italic)),
+                               style: const TextStyle(fontStyle: FontStyle.italic)),
               ],
             ),
           ),

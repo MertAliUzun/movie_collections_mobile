@@ -99,7 +99,7 @@ class PersonMoviesWidget extends StatelessWidget {
               children: [               
                 movie['poster_path'] != null
                     ? ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(16.0), // Sol üst köşe
                           topRight: Radius.circular(16.0), // Sağ üst köşe
                         ),

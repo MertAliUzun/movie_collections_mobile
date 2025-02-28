@@ -1,9 +1,7 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/movie_model.dart';
-import '../models/user_model.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 class SupabaseService {
   final SupabaseClient _supabaseClient;

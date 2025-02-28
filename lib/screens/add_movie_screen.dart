@@ -2,7 +2,6 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
-import 'package:movie_collections_mobile/screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
@@ -10,21 +9,17 @@ import 'dart:io';
 import 'dart:async';
 import '../main.dart';
 import '../models/movie_model.dart';
-import '../services/supabase_service.dart';
 import '../services/omdb_service.dart';
 import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
 import '../widgets/provider_card_widget.dart';
-import 'collection_screen.dart';
 import 'company_screen.dart';
 import 'director_screen.dart';
 import 'genre_movies_screen.dart';
 import '../sup/businessLogic.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 import 'package:hive/hive.dart';
 import '../services/ad_service.dart';
 
@@ -311,25 +306,25 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
-  Future<void> _saveMovie() async {
+    Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {
       final box = Hive.box<Movie>('movies');
       // Eğer _selectMovie fonksiyonu kullanılmadıysa yeni bir ID oluştur
       if (newId == -1) {
-      List<int> allIds = box.values.map((movie) => int.parse(movie.id.toString())).toList();
-      if (allIds.isNotEmpty) {
-         // En küçük ID'yi buluyoruz
-         int minId = allIds.reduce((a, b) => a < b ? a : b);
-     
-         // Yeni id'yi en küçük id'den bir eksik yapıyoruz
-         newId = minId - 1;
-         if(newId > -1) { newId = -1;}
+        List<int> allIds = box.values.map((movie) => int.parse(movie.id.toString())).toList();
+        if (allIds.isNotEmpty) {
+          // En küçük ID'yi buluyoruz
+          int minId = allIds.reduce((a, b) => a < b ? a : b);
+
+          // Yeni id'yi en küçük id'den bir eksik yapıyoruz
+          newId = minId - 1;
+          if (newId > -1) {
+            newId = -1;
           }
-        } 
-       else {
+        }
+      } else {
         // Eğer _selectMovie kullanıldıysa, mevcut ID'yi al
       }
-      print(newId);
 
       final movie = Movie(
         id: newId.toString(),
@@ -338,43 +333,39 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         releaseDate: _selectedDate,
         plot: _plotController.text.isNotEmpty ? _plotController.text : null,
         myNotes: _notesController.text.isNotEmpty ? _notesController.text : null,
-        runtime: _runtimeController.text.isNotEmpty 
-            ? int.tryParse(_runtimeController.text) 
+        runtime: _runtimeController.text.isNotEmpty
+            ? int.tryParse(_runtimeController.text)
             : null,
-        imdbRating: _imdbRatingController.text.isNotEmpty 
-            ? double.tryParse(_imdbRatingController.text) 
+        imdbRating: _imdbRatingController.text.isNotEmpty
+            ? double.tryParse(_imdbRatingController.text)
             : null,
-        watchCount: _watchCountController.text.isNotEmpty 
-            ? int.tryParse(_watchCountController.text) 
+        watchCount: _watchCountController.text.isNotEmpty
+            ? int.tryParse(_watchCountController.text)
             : null,
-        writers: _selectedWriters.isNotEmpty 
-            ? _selectedWriters 
-            : null,
-        actors: _selectedActors.isNotEmpty 
-            ? _selectedActors 
-            : null,
+        writers: _selectedWriters.isNotEmpty ? _selectedWriters : null,
+        actors: _selectedActors.isNotEmpty ? _selectedActors : null,
         watched: !widget.isFromWishlist,
         imageLink: _imageLink ?? '',
         userEmail: widget.userEmail ?? 'test@test.com', // Replace with actual user email if needed
         watchDate: widget.isFromWishlist ? null : _watchedDate,
         userScore: widget.isFromWishlist ? null : _userScore,
         hypeScore: widget.isFromWishlist ? _hypeScore : null,
-        genres: _selectedGenres.isNotEmpty 
-            ? _selectedGenres
+        genres: _selectedGenres.isNotEmpty ? _selectedGenres : null,
+        productionCompany: _selectedProductionCompanies.isNotEmpty
+            ? _selectedProductionCompanies
             : null,
-        productionCompany: _selectedProductionCompanies.isNotEmpty 
-            ? _selectedProductionCompanies 
+        customSortTitle: _sortTitleController.text.isNotEmpty
+            ? _sortTitleController.text
             : null,
-        customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
         country: _countryController.text.isNotEmpty ? _countryController.text : null,
-        popularity: _popularityController.text.isNotEmpty 
-            ? double.tryParse(_popularityController.text) 
+        popularity: _popularityController.text.isNotEmpty
+            ? double.tryParse(_popularityController.text)
             : null,
-        budget: _budgetController.text.isNotEmpty 
-            ? double.tryParse(_budgetController.text) 
+        budget: _budgetController.text.isNotEmpty
+            ? double.tryParse(_budgetController.text)
             : null,
-        revenue: _revenueController.text.isNotEmpty 
-            ? double.tryParse(_revenueController.text) 
+        revenue: _revenueController.text.isNotEmpty
+            ? double.tryParse(_revenueController.text)
             : null,
         collectionType: _selectedCollectionType,
       );
@@ -383,34 +374,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       await box.put(movie.id, movie);
 
       _adService.showRewardedAd();
-      
-      final snackBar = SnackBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        behavior: SnackBarBehavior.floating,
-        content: AwesomeSnackbarContent(
-          title: S.of(context).succesful,
-          message: S.of(context).movieAdded,
-          contentType: ContentType.success, 
-          inMaterialBanner: true,
-        ), 
-        dismissDirection: DismissDirection.horizontal,
-      );
-      ScaffoldMessenger.of(context)
-        ..hideCurrentMaterialBanner()
-        ..showSnackBar(snackBar);
-      if(widget.isFromWishlist) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(
-              userEmail: widget.userEmail,
-              systemLanguage: widget.systemLanguage,
-            ),
+
+      // Show snackbar with mounted check
+      if (mounted) {
+        final snackBar = SnackBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          behavior: SnackBarBehavior.floating,
+          content: AwesomeSnackbarContent(
+            title: S.of(context).succesful,
+            message: S.of(context).movieAdded,
+            contentType: ContentType.success,
+            inMaterialBanner: true,
           ),
+          dismissDirection: DismissDirection.horizontal,
         );
+        ScaffoldMessenger.of(context)
+          ..hideCurrentMaterialBanner()
+          ..showSnackBar(snackBar);
       }
-      else{
+
+      // Navigate to the home page with mounted check
+      if (mounted) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -424,27 +409,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
+
   void _showAddOptionsMenu(BuildContext context) {
     showMenu(
       color: const Color.fromARGB(255, 44, 50, 60),
       context: context,
-      position: RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
+      position: const RelativeRect.fromLTRB(100, 100, 0, 0), // Adjust position as needed
       items: [
         PopupMenuItem<String>(
           value: 'add_genre',
-          child: Text(S.of(context).addGenre, style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addGenre, style: const TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_actor',
-          child: Text(S.of(context).addActor, style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addActor, style: const TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_writer',
-          child: Text(S.of(context).addWriter, style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addWriter, style: const TextStyle(color: Colors.white)),
         ),
         PopupMenuItem<String>(
           value: 'add_producer',
-          child: Text(S.of(context).addProductionCompany, style: TextStyle(color: Colors.white)),
+          child: Text(S.of(context).addProductionCompany, style: const TextStyle(color: Colors.white)),
         ),
       ],
     ).then((value) {
@@ -490,26 +476,26 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-          title: Text(title, style: TextStyle(color: Colors.white)),
+          title: Text(title, style: const TextStyle(color: Colors.white)),
           content: TextField(
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             onChanged: (value) {
               input = value;
             },
-            decoration: InputDecoration(hintText: S.of(context).pleaseEnter, hintStyle: TextStyle(color: Colors.white)),
+            decoration: InputDecoration(hintText: S.of(context).pleaseEnter, hintStyle: const TextStyle(color: Colors.white)),
           ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text(S.of(context).cancel, style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).cancel, style: const TextStyle(color: Colors.white)),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(input);
               },
-              child: Text(S.of(context).add, style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).add, style: const TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -583,7 +569,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
     final tmdbService = TmdbService();
     final providers = await tmdbService.getProviders(int.parse(widget.movie!.id));
-      print(providers!['flatrate']);
       if (providers != null) {
         canShowProviders = true;
         setState(() {
@@ -647,17 +632,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: Text(S.of(context).addNewMovie, style: TextStyle(color: Colors.white),),
+        title: Text(S.of(context).addNewMovie, style: const TextStyle(color: Colors.white),),
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        actions: [
-          /*
-          IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () => _showAddOptionsMenu(context),
-          ),
-          */
-        ],
       ),
       body: Stack(
         children: [
@@ -717,7 +694,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   Container(
                     constraints: const BoxConstraints(maxHeight: 200),
                     child: Card(
-                      color: Color.fromARGB(255, 44, 50, 60),
+                      color: const Color.fromARGB(255, 44, 50, 60),
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: _searchResults.length,
@@ -745,7 +722,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _movieNameController,
-                  decoration:  InputDecoration(labelText: '${S.of(context).movieTitle} *', labelStyle: TextStyle(color: Colors.white54),),
+                  decoration:  InputDecoration(labelText: '${S.of(context).movieTitle} *', labelStyle: const TextStyle(color: Colors.white54),),
                   style: const TextStyle(color: Colors.white),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -756,7 +733,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
                 TextFormField(
                   controller: _sortTitleController,
-                  decoration: InputDecoration(labelText: S.of(context).customSortTitle, labelStyle: TextStyle(color: Colors.white54),),
+                  decoration: InputDecoration(labelText: S.of(context).customSortTitle, labelStyle: const TextStyle(color: Colors.white54),),
                   style: const TextStyle(color: Colors.white),
                 ),
                 SizedBox(height: screenWidth * 0.1),
@@ -778,7 +755,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               ),
                             ),
                           ),
-                          Divider(height: 0, color: Colors.white60,),
+                          const Divider(height: 0, color: Colors.white60,),
                           SizedBox(height: screenHeight *0.02,),
                           ProviderCard(
                             providers: (() {
@@ -826,7 +803,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               return uniqueProviders.values.toList();
                             })(),
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                         ],
                       ),
                     ),
@@ -844,14 +821,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         },
                         icon: Card( 
                           color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
                             child: Icon(Icons.add_circle_outline, color: Colors.white,),
                           )),
                       )
                       ],
                     ),
-                    Divider(height: 0, color: Colors.white60,),
+                    const Divider(height: 0, color: Colors.white60,),
                     SizedBox(height: screenWidth * 0.05),
                 _selectedGenres.isNotEmpty
                     ? GridView.builder(
@@ -914,7 +891,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noGenresSelected, style: TextStyle(color: Colors.white54)),
+                    : Text(S.of(context).noGenresSelected, style: const TextStyle(color: Colors.white54)),
                 SizedBox(height: screenHeight * 0.02,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -922,7 +899,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
                   ],
                 ),
-                Divider(height: 0, color: Colors.white60,),
+                const Divider(height: 0, color: Colors.white60,),
                 SizedBox(height: screenWidth * 0.05),
                 GestureDetector(
                   onLongPress: () {
@@ -988,14 +965,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         },
                         icon: Card( 
                           color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
                             child: Icon(Icons.add_circle_outline, color: Colors.white,),
                           )),
                       )
                       ],
                     ),
-                    Divider(height: 0, color: Colors.white60,),
+                    const Divider(height: 0, color: Colors.white60,),
                     SizedBox(height: screenWidth * 0.05),
                 _selectedActors.isNotEmpty
                     ? GridView.builder(
@@ -1040,7 +1017,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noActorsSelected, style: TextStyle(color: Colors.white54)),
+                    : Text(S.of(context).noActorsSelected, style: const TextStyle(color: Colors.white54)),
                 SizedBox(height: screenWidth * 0.05),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -1056,14 +1033,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     },
                     icon: Card( 
                       color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(Icons.add_circle_outline, color: Colors.white,),
                       )),
                   )
                   ],
                 ),
-                Divider(height: 0, color: Colors.white60,),
+                const Divider(height: 0, color: Colors.white60,),
                 SizedBox(height: screenWidth * 0.05),
                 _selectedWriters.isNotEmpty
                     ? GridView.builder(
@@ -1108,7 +1085,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noWritersSelected, style: TextStyle(color: Colors.white54)),
+                    : Text(S.of(context).noWritersSelected, style: const TextStyle(color: Colors.white54)),
                 SizedBox(height: screenWidth * 0.05),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -1124,18 +1101,18 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     },
                     icon: Card( 
                       color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(Icons.add_circle_outline, color: Colors.white,),
                       )),
                   )
                   ],
                 ),
-                Divider(height: 0, color: Colors.white60,),
+                const Divider(height: 0, color: Colors.white60,),
                 SizedBox(height: screenWidth * 0.05),
                 _selectedProductionCompanies.isNotEmpty
                     ? GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 1,
                           childAspectRatio: 7,
                         ),
@@ -1175,7 +1152,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noCompaniesSelected, style: TextStyle(color: Colors.white54)),
+                    : Text(S.of(context).noCompaniesSelected, style: const TextStyle(color: Colors.white54)),
                   ListTile(
                     contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
                     tileColor: Colors.transparent, // Optional: make the background transparent
@@ -1232,7 +1209,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
                 TextFormField(
                   controller: _plotController,
-                  decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: TextStyle(color: Colors.white54),),
+                  decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: const TextStyle(color: Colors.white54),),
                   maxLines: 3,
                   style: const TextStyle(color: Colors.white),
                 ),
@@ -1241,7 +1218,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   Expanded(
                     child: TextFormField(
                       controller: _runtimeController,
-                      decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54),),
+                      decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: const TextStyle(color: Colors.white54),),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value != null && value.isNotEmpty) {
@@ -1257,7 +1234,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   ),
                   Container(
                     height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
-                    child: VerticalDivider(
+                    child: const VerticalDivider(
                       color: Colors.white54,  // Dikey çizgi rengi
                       thickness: 1,  // Çizginin kalınlığı
                     ),
@@ -1265,7 +1242,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   Expanded(
                     child: TextFormField(
                       controller: _imdbRatingController,
-                      decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54)),
+                      decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: const TextStyle(color: Colors.white54)),
                       keyboardType: TextInputType.number,
                       style: const TextStyle(color: Colors.white),
                       validator: (value) {
@@ -1283,7 +1260,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ),
               TextFormField(
                 controller: _notesController,
-                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: TextStyle(color: Colors.white54),),
+                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: const TextStyle(color: Colors.white54),),
                 maxLines: 3,
                 style: const TextStyle(color: Colors.white),
               ),
@@ -1297,15 +1274,15 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       labelText: S.of(context).collectionType,
-                      labelStyle: TextStyle(color: Colors.white54),
+                      labelStyle: const TextStyle(color: Colors.white54),
                     ),
                     items: [
-                      DropdownMenuItem(value: '', child: Text(S.of(context).none, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
-                      DropdownMenuItem(value: 'VHS', child: Text(S.of(context).vhs, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
-                      DropdownMenuItem(value: 'DVD', child: Text(S.of(context).dvd, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
-                      DropdownMenuItem(value: 'BLU-RAY', child: Text(S.of(context).bluRay, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
-                      DropdownMenuItem(value: 'Steelbook', child: Text(S.of(context).steelbook, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
-                      DropdownMenuItem(value: 'Digital', child: Text(S.of(context).digital, style: TextStyle(color: Colors.white)), alignment: Alignment.center,),
+                      DropdownMenuItem(value: '', alignment: Alignment.center, child: Text(S.of(context).none, style: const TextStyle(color: Colors.white)),),
+                      DropdownMenuItem(value: 'VHS', alignment: Alignment.center, child: Text(S.of(context).vhs, style: const TextStyle(color: Colors.white)),),
+                      DropdownMenuItem(value: 'DVD', alignment: Alignment.center, child: Text(S.of(context).dvd, style: const TextStyle(color: Colors.white)),),
+                      DropdownMenuItem(value: 'BLU-RAY', alignment: Alignment.center, child: Text(S.of(context).bluRay, style: const TextStyle(color: Colors.white)),),
+                      DropdownMenuItem(value: 'Steelbook', alignment: Alignment.center, child: Text(S.of(context).steelbook, style: const TextStyle(color: Colors.white)),),
+                      DropdownMenuItem(value: 'Digital', alignment: Alignment.center, child: Text(S.of(context).digital, style: const TextStyle(color: Colors.white)),),
                     ],
                     onChanged: (String? newValue) {
                       if (newValue != null) {
@@ -1318,7 +1295,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   ),
               Container(
                     height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
-                    child: VerticalDivider(
+                    child: const VerticalDivider(
                       color: Colors.white54,  // Dikey çizgi rengi
                       thickness: 1,  // Çizginin kalınlığı
                     ),
@@ -1326,7 +1303,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               Expanded(
                 child: TextFormField(
                   controller: _watchCountController,
-                  decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: TextStyle(color: Colors.white54),),
+                  decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: const TextStyle(color: Colors.white54),),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value != null && value.isNotEmpty) {
@@ -1348,7 +1325,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   keyboardType: TextInputType.number,
                   style: const TextStyle(color: Colors.white),
                 ),*/
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 if (!widget.isFromWishlist) ...{
                   ListTile(
                     contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
@@ -1447,7 +1424,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         ],
                       ),
                     ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 //Upload Image
                 /*
                 GestureDetector(
@@ -1498,7 +1475,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     fixedSize: const Size(double.infinity, 50),
                   ),
                   onPressed: _saveMovie,
-                  child: Text(S.of(context).addMovie, style: TextStyle(fontSize: 18),),
+                  child: Text(S.of(context).addMovie, style: const TextStyle(fontSize: 18),),
                 ),
               ],
             ),

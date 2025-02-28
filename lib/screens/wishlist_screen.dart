@@ -13,7 +13,6 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
-import 'dart:convert';
 import 'package:hive/hive.dart';
 
 class WishlistScreen extends StatefulWidget {
@@ -231,7 +230,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       if (_selectedMovies.contains(movie.id.toString())) {
         _selectedMovies.remove(movie.id.toString());
       } else {
-        _selectedMovies.add(movie.id!.toString());
+        _selectedMovies.add(movie.id.toString());
       }
     });
   }
@@ -295,9 +294,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: _isSelectionMode ? AppBar(
-        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             setState(() {
               _selectedMovies.clear();
@@ -305,7 +304,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           },
         ),
         title: Text('${_selectedMovies.length} ${S.of(context).moviesSelected}', 
-          style: TextStyle(color: Colors.white)),
+          style: const TextStyle(color: Colors.white)),
         actions: [
           IconButton(
             icon: const Icon(Icons.select_all, color: Colors.white),
@@ -341,20 +340,20 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 builder: (context) => AlertDialog(
                   backgroundColor: const Color.fromARGB(255, 44, 50, 60),
                   title: Text(S.of(context).deleteChosenMovies, 
-                    style: TextStyle(color: Colors.white)),
+                    style: const TextStyle(color: Colors.white)),
                   content: Text('${_selectedMovies.length}  ${S.of(context).selectedMoviesDeleteConfirm}',
-                    style: TextStyle(color: Colors.white)),
+                    style: const TextStyle(color: Colors.white)),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text(S.of(context).cancel, style: TextStyle(color: Colors.white)),
+                      child: Text(S.of(context).cancel, style: const TextStyle(color: Colors.white)),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                         _deleteSelectedMovies();
                       },
-                      child: Text(S.of(context).delete, style: TextStyle(color: Colors.red)),
+                      child: Text(S.of(context).delete, style: const TextStyle(color: Colors.red)),
                     ),
                   ],
                 ),
@@ -365,9 +364,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
       )
       : AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         leading: _isSearching ? IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             setState(() {
               _isSearching = false;
@@ -391,7 +390,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               //filled: true,
               fillColor: Colors.transparent,
             ),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             onChanged: _searchMovies,
           ),
         ),

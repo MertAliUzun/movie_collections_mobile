@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../models/movie_model.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -113,7 +111,7 @@ class MovieCard extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16.0),
                             child: Text(
-                              '${movie.directorName}',
+                              movie.directorName,
                               style: TextStyle(fontSize: screenWidth * 0.027, color: Colors.white70),
                             ),
                           ),
@@ -163,7 +161,7 @@ class MovieCard extends StatelessWidget {
                           ],
                         ),
                       SizedBox(height: screenHeight * 0.001,),
-                      SizedBox(
+                      const SizedBox(
                         height: 0,
                         child: Divider(
                           color: Colors.white30,
@@ -195,7 +193,7 @@ class MovieCard extends StatelessWidget {
                 Stack(
                   children: [
                     ClipRRect(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(16.0), // Sol üst köşe
                       topRight: Radius.circular(16.0), // Sağ üst köşe
                     ),

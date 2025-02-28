@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
-import 'package:movie_collections_mobile/sup/adHelper.dart';
 import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'screens/add_movie_screen.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'services/supabase_service.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'models/movie_model.dart';
 import 'dart:ui' as ui;
@@ -61,7 +56,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: [
+      localizationsDelegates: const [
         S.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -118,8 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Future<AuthResponse> _googleSignIn() async {
-    if(_userEmail != null) {return AuthResponse();}
+    Future<AuthResponse> _googleSignIn() async {
+    if (_userEmail != null) {
+      return AuthResponse();
+    }
+
     const webClientId = '994622404083-l5lm49gg40agjbrh0vvtnbo6b3sddl3u.apps.googleusercontent.com';
     const iosClientId = '994622404083-pmh33nqujdu7pvekl5djj4nge8hi0v2n.apps.googleusercontent.com';
 
@@ -131,38 +129,48 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       final googleUser = await googleSignIn.signIn();
       if (googleUser == null) {
-        throw S.of(context).signInCancel;
+        if (mounted) {
+          _showErrorDialog(S.of(context).signInCancel); // Only use context if mounted
+        }
+        throw Exception('Sign in canceled');
       }
+
       final googleAuth = await googleUser.authentication;
       final accessToken = googleAuth.accessToken;
       final idToken = googleAuth.idToken;
 
       if (accessToken == null) {
-        throw S.of(context).noAccessToken;
+        if (mounted) {
+          _showErrorDialog(S.of(context).noAccessToken); // Only use context if mounted
+        }
+        throw Exception('No access token');
       }
       if (idToken == null) {
-        throw S.of(context).noIdToken;
+        if (mounted) {
+          _showErrorDialog(S.of(context).noIdToken); // Only use context if mounted
+        }
+        throw Exception('No id token');
       }
 
-      // Kullanıcı bilgilerini al
+      // User data
       _userId = googleUser.id;
       _userEmail = googleUser.email;
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
 
-      // movies kutusundaki userEmail'i güncelle
+      // Update movies box
       final moviesBox = Hive.box<Movie>('movies');
       for (var movie in moviesBox.values) {
         if (movie.userEmail == 'test@test.com') {
-          movie.userEmail = _userEmail ?? 'test@test.com'; // Güncelle
-          moviesBox.put(movie.id, movie); // Güncellenmiş filmi kutuya kaydet
+          movie.userEmail = _userEmail ?? 'test@test.com'; // Update
+          moviesBox.put(movie.id, movie); // Save updated movie
         }
       }
-
-      // İlk açılışta CollectionScreen'e geçiş yap
-      setState(() {
-        _selectedIndex = 0; // CollectionScreen'i seç
-      });
+      if (mounted) {
+        setState(() {
+          _selectedIndex = 0;
+        });
+      }
 
       return supabase.auth.signInWithIdToken(
         provider: Provider.google,
@@ -170,15 +178,20 @@ class _MyHomePageState extends State<MyHomePage> {
         accessToken: accessToken,
       );
     } catch (e) {
-      // Hata durumunda kullanıcıya mesaj göster
-      _showErrorDialog(e.toString());
-      // Kullanıcı giriş yapmadıysa _userId'yi 0 olarak ayarla
-      setState(() {
-        _userId = '0'; // Kullanıcı giriş yapmadı
-      });
+      if (mounted) {
+        _showErrorDialog(e.toString());
+      }
+
+      if (mounted) {
+        setState(() {
+          _userId = '0'; // User did not log in
+        });
+      }
+
       return AuthResponse();
     }
   }
+
 
   void _showErrorDialog(String message) {
     showDialog(
@@ -186,12 +199,12 @@ class _MyHomePageState extends State<MyHomePage> {
       builder: (context) {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-          title: Text(S.of(context).error, style: TextStyle(color: Colors.white),),
-          content: Text(S.of(context).checkInternet, style: TextStyle(color: Colors.white),),
+          title: Text(S.of(context).error, style: const TextStyle(color: Colors.white),),
+          content: Text(S.of(context).checkInternet, style: const TextStyle(color: Colors.white),),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text(S.of(context).ok, style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).ok, style: const TextStyle(color: Colors.white)),
             ),
           ],
         );
@@ -231,14 +244,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ) 
       : const Center(child: CircularProgressIndicator()),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.movie, color: Colors.amber,),
+            icon: const Icon(Icons.movie, color: Colors.amber,),
             label: S.of(context).collection,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark, color: Colors.red,),
+            icon: const Icon(Icons.bookmark, color: Colors.red,),
             label: S.of(context).wishlist,
           ),
         ],

@@ -66,8 +66,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: Center(child: Text(widget.companyName, style: TextStyle(color: Colors.white),)),
-        iconTheme: IconThemeData(color: Colors.white),
+        title: Center(child: Text(widget.companyName, style: const TextStyle(color: Colors.white),)),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),
       body: _isLoading
@@ -155,7 +155,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                   children: [
                     movie['poster_path'] != null
                         ? ClipRRect(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(16.0), // Sol üst köşe
                               topRight: Radius.circular(16.0), // Sağ üst köşe
                             ),

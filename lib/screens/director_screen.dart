@@ -161,7 +161,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                   ),
                                 ],
                               ),
-                            ) : Text(''),
+                            ) : const Text(''),
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.parallax,
               background: _isLoading
@@ -182,13 +182,13 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                       children: [
                                         _personDetails[0]['profile_path'] != null
                                             ? Container(
-                                              decoration: BoxDecoration(
+                                              decoration: const BoxDecoration(
                                               borderRadius: BorderRadius.only(
                                                 topLeft: Radius.circular(12.0), // Sol üst köşe
                                                 topRight: Radius.circular(12.0), // Sağ üst köşe
                                               ),
                                               boxShadow: [
-                                               const BoxShadow(
+                                               BoxShadow(
                                                   color: Colors.black26,
                                                   offset: Offset(0, 0),
                                                   blurRadius: 10,
@@ -215,7 +215,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                           widget.personType == 'Director' ? S.of(context).director :
                                           widget.personType == 'Actor' ? S.of(context).actor :
                                           widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
-                                          style: TextStyle(fontSize: 16, color: Colors.white54, fontWeight: FontWeight.bold),
+                                          style: const TextStyle(fontSize: 16, color: Colors.white54, fontWeight: FontWeight.bold),
                                         ),
                                         
                                       ],
@@ -304,6 +304,10 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                onPressed: () {
                                                 _launchIMDb();
                                                 },
+                                               style: ElevatedButton.styleFrom(
+                                                 padding: EdgeInsets.zero,
+                                                 backgroundColor: Colors.transparent
+                                              ),
                                                child: ClipRRect(
                                                 borderRadius: BorderRadius.circular(16),
                                                  child: Image.asset(
@@ -313,10 +317,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                    fit: BoxFit.cover,
                                                  ),
                                                ),
-                                               style: ElevatedButton.styleFrom(
-                                                 padding: EdgeInsets.zero,
-                                                 backgroundColor: Colors.transparent
-                                              ),
                                                                                          ),
                                             ),
                                           ),
@@ -347,7 +347,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                       ),
                   ],
                 )
-                : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
+                : Center(child: Text(S.of(context).noMoviesFound, style: const TextStyle(color: Colors.white54))),
           ),
         ],
       ),
@@ -393,7 +393,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                           ),
                       ],
                     )   
-                : Center(child: Text(S.of(context).noMoviesFound, style: TextStyle(color: Colors.white54))),
+                : Center(child: Text(S.of(context).noMoviesFound, style: const TextStyle(color: Colors.white54))),
 
       );
     }
@@ -402,7 +402,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
       return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: const Center(child: CircularProgressIndicator()));
       }
@@ -410,7 +410,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
         return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Center(
         child: Column(

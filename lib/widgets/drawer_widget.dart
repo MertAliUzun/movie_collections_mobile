@@ -152,17 +152,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-          title: Text(S.of(context).signOut,  style: TextStyle(color: Colors.white)),
-          content: Text(S.of(context).signOutConfirm,  style: TextStyle(color: Colors.white)),
+          title: Text(S.of(context).signOut,  style: const TextStyle(color: Colors.white)),
+          content: Text(S.of(context).signOutConfirm,  style: const TextStyle(color: Colors.white)),
           actions: <Widget>[
             TextButton(
-              child: Text(S.of(context).no,  style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).no,  style: const TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.of(context).pop(false);
               },
             ),
             TextButton(
-              child: Text(S.of(context).yes, style: TextStyle(color: Colors.white)),
+              child: Text(S.of(context).yes, style: const TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
@@ -235,7 +235,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => MyHomePage(
+          builder: (context) => const MyHomePage(
             
           ),
         ),
@@ -452,7 +452,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => MyHomePage(
+          builder: (context) => const MyHomePage(
             
           ),
         ),
@@ -578,7 +578,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       padding: EdgeInsets.only(top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top),
       width: screenWidth * 0.7,
       child: Drawer(
-        backgroundColor: Color.fromARGB(255, 44, 50, 60),
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         child: ListView(
           children: [
             DrawerHeader(
@@ -600,15 +600,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         padding: EdgeInsets.symmetric(vertical: screenHeight * 0.015),
                         child: RichText(
                           text: TextSpan(
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                             children: [
                               TextSpan(
                                 text: S.of(context).welcome,
-                                style: TextStyle(fontWeight: FontWeight.normal),
+                                style: const TextStyle(fontWeight: FontWeight.normal),
                               ),
                               TextSpan(
                                 text: userName!,
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                style: const TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
@@ -617,7 +617,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ],
                   )
                   : IconButton(
-                icon: Icon(Icons.login, size: 50),
+                icon: const Icon(Icons.login, size: 50),
                 onPressed: () async {
                   // Google hesabına giriş yap
                   await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
@@ -641,7 +641,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
                         style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
-                        underline: SizedBox(),
+                        underline: const SizedBox(),
                         isExpanded: true, 
                         onChanged: (Object? newValue) {
                           if (newValue is String) {
@@ -673,7 +673,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
                         style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
-                        underline: SizedBox(),
+                        underline: const SizedBox(),
                         isExpanded: true, 
                         onChanged: (String? newValue) {
                           if (newValue != null) {
@@ -705,7 +705,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
                         style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
-                        underline: SizedBox(),
+                        underline: const SizedBox(),
                         isExpanded: true, 
                         onChanged: (Object? newValue) {
                           if (newValue is String) {
@@ -742,7 +742,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
                         dropdownColor: const Color.fromARGB(255, 44, 50, 60),
                         style: TextStyle(color: Colors.white70, fontSize: screenWidth * 0.055,),
-                        underline: SizedBox(),
+                        underline: const SizedBox(),
                         isExpanded: true,
                         onChanged: (Object? newValue) {
                           if (newValue is String) {
@@ -769,7 +769,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           exportMoviesToCSV(); // CSV dışa aktarma fonksiyonunu çağır
                         },
                         style: TextButton.styleFrom(
-                          side: BorderSide(
+                          side: const BorderSide(
                             color: Colors.white,
                             width: .3,
                           ),
@@ -798,7 +798,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           importMoviesFromCSV(); // CSV içe aktarma fonksiyonunu çağır
                         },
                         style: TextButton.styleFrom(
-                          side: BorderSide(
+                          side: const BorderSide(
                             color: Colors.white,
                             width: .3,
                           ),
@@ -824,17 +824,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(onPressed:() {
                         final movie = _getRandomMovie(context);
-                        if (movie == null)
-                        Navigator.of(context).pop();
-                        if (movie != null)
+                        if (movie == null) { Navigator.of(context).pop(); }
+                        if (movie != null) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie, userEmail: userEmail,),
                           ),
                         );
+                      }
                       },style: TextButton.styleFrom(
-                        side: BorderSide(
+                        side: const BorderSide(
                           color: Colors.white,
                           width: .3,
                         ),

@@ -14,7 +14,7 @@ class AdService {
   // Reklam gösterim zamanını takip etmek için
   DateTime? _lastAdTime;
   // Reklamlar arası minimum süre (dakika)
-  static const int _minimumMinutesBetweenAds = 2;
+  static const int _minimumMinutesBetweenAds = 7;
 
   void loadBannerAd({Function(BannerAd)? onAdLoaded}) {
     BannerAd(
@@ -27,7 +27,7 @@ class AdService {
           onAdLoaded?.call(bannerAd!);
         },
         onAdFailedToLoad: (ad, error) {
-          print('Banner reklam yüklenemedi: $error');
+          //print('Banner reklam yüklenemedi: $error');
           ad.dispose();
         },
       ),
@@ -44,7 +44,7 @@ class AdService {
           onAdLoaded?.call(interstitialAd!);
         },
         onAdFailedToLoad: (error) {
-          print('Interstitial reklam yüklenemedi: $error');
+          //print('Interstitial reklam yüklenemedi: $error');
         },
       ),
     );
@@ -60,7 +60,7 @@ class AdService {
           onAdLoaded?.call(rewardedAd!);
         },
         onAdFailedToLoad: (error) {
-          print('Rewarded reklam yüklenemedi: $error');
+          //print('Rewarded reklam yüklenemedi: $error');
         },
       ),
     );
@@ -82,12 +82,12 @@ class AdService {
   // Interstitial reklam gösterme fonksiyonu
   Future<bool> showInterstitialAd() async {
     if (!canShowAd()) {
-      print('Reklam göstermek için çok erken. Kalan süre: ${_getRemainingTime()} dakika');
+      //print('Reklam göstermek için çok erken. Kalan süre: ${_getRemainingTime()} dakika');
       return false;
     }
 
     if (interstitialAd == null) {
-      print('Interstitial reklam yüklü değil');
+      //print('Interstitial reklam yüklü değil');
       return false;
     }
 
@@ -96,7 +96,7 @@ class AdService {
       loadInterstitialAd();
       return true;
     } catch (e) {
-      print('Interstitial reklam gösterilirken hata: $e');
+      //print('Interstitial reklam gösterilirken hata: $e');
       return false;
     }
   }
@@ -104,9 +104,8 @@ class AdService {
   // Rewarded reklam gösterme fonksiyonu
   Future<bool> showRewardedAd() async {
     if(!canShowAd()) { return true;}
-    print(canShowAd());
     if (rewardedAd == null) {
-      print('Rewarded reklam yüklü değil');
+      //print('Rewarded reklam yüklü değil');
       return false;
     }
 
@@ -114,14 +113,14 @@ class AdService {
       await rewardedAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
           _updateLastAdTime();
-          print('Reklam izlendi! ${_minimumMinutesBetweenAds} dakika boyunca reklam gösterilmeyecek.');
+          //print('Reklam izlendi! ${_minimumMinutesBetweenAds} dakika boyunca reklam gösterilmeyecek.');
         }
       );
       _updateLastAdTime();
       loadRewardedAd();
       return true;
     } catch (e) {
-      print('Rewarded reklam gösterilirken hata: $e');
+      //print('Rewarded reklam gösterilirken hata: $e');
       return false;
     }
   }

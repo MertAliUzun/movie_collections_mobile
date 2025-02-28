@@ -97,7 +97,7 @@ class TmdbService {
   Future<List<Map<String, dynamic>>> getMoviesByGenre(String genre, String popularity) async {
     final genreId = genreMap.entries.firstWhere(
       (entry) => entry.value.toLowerCase() == genre.toLowerCase(),
-      orElse: () => MapEntry(-1, ''),
+      orElse: () => const MapEntry(-1, ''),
     ).key;
 
     if (genreId == -1) {
@@ -215,7 +215,7 @@ Future<Map<String, dynamic>?> getProviders(int movieId) async {
     }
     return null;
   } catch (e) {
-    print('Error fetching providers: $e');
+    //print('Error fetching providers: $e');
     return null;
   }
 }
