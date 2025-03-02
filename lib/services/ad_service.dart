@@ -68,10 +68,12 @@ class AdService {
 
   // Reklam gösterilip gösterilemeyeceğini kontrol et
   bool canShowAd() {
-    if (_lastAdTime == null) return true;
+    return false;
+    /*if (_lastAdTime == null) return true;
     
     final difference = DateTime.now().difference(_lastAdTime!);
     return difference.inMinutes >= _minimumMinutesBetweenAds;
+    */
   }
 
   // Reklam gösterim zamanını güncelle
