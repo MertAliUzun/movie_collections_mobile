@@ -7,6 +7,7 @@ import '../sup/businessLogic.dart';
 import '../sup/genreMap.dart';
 import '../services/tmdb_service.dart';
 import 'add_movie_screen.dart';
+import '../sup/screen_util.dart';
 
 class CompanyScreen extends StatefulWidget {
   final String companyName;
@@ -63,29 +64,45 @@ class _CompanyScreenState extends State<CompanyScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: Center(child: Text(widget.companyName, style: const TextStyle(color: Colors.white),)),
-        iconTheme: const IconThemeData(color: Colors.white),
+        title: Center(
+          child: Text(
+            widget.companyName, 
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),
+            ),
+          ),
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+        ),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
               ? Column(
-                children: [ 
-                  Expanded(
-                  child: GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        childAspectRatio: 0.45,
-                      ),
-                      itemCount: _movies.length,
-                      itemBuilder: (context, index) {
-                        final movie = _movies[index];
-                        return GestureDetector(
-                            onTap: () async{
+                  children: [ 
+                    Expanded(
+                      child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: isTablet ? 5 : 3, // Tablet için 5, telefon için 3 sütun
+                          childAspectRatio: isTablet ? 0.65 : 0.4, // Tablet için daha geniş aspect ratio
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                        ),
+                        padding: ScreenUtil.getAdaptivePadding(context),
+                        itemCount: _movies.length,
+                        itemBuilder: (context, index) {
+                          final movie = _movies[index];
+                          return GestureDetector(
+                            onTap: () async {
                               // Navigate back with movie details
                               final movieDetails = await TmdbService().getMovieDetails(movie['id']);                   
                               if (movieDetails != null) {
@@ -150,100 +167,123 @@ class _CompanyScreenState extends State<CompanyScreen> {
                   ),
                               ),
                               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    movie['poster_path'] != null
-                        ? ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(16.0), // Sol üst köşe
-                              topRight: Radius.circular(16.0), // Sağ üst köşe
-                            ),
-                          child: Image.network(
-                              'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
-                              fit: BoxFit.cover,
-                              height: screenHeight * 0.22,
-                              width: screenWidth * 0.35,
-                            ),
-                        )
-                        : const Icon(Icons.movie, size: 100, color: Colors.white54),
-                    SizedBox(height: screenHeight * 0.01,),
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(2, 0, 2, 15),
-                          child: Text(
-                            movie['title'] ?? S.of(context).noTitle,
-                            style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                          ),
-                        ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
-                            child: Column(
-                              children: [
-                                if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
-                                Text(
-                                  '${movie['genre_ids'].map((id) => 
-                                  getGenreLocalizedString(genreMap[id] ?? 'Action', context)
-                                  ).take(3).join(', ')}',
-                                  style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.ellipsis,
-                                  maxLines: 1,
-                                ),
-                                SizedBox(height: screenHeight * 0.001,),
-                                if (movie['release_date'] != null)
-                                Text(
-                                  '${movie['release_date'].split('-')[0]}',
-                                  style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                          ),
-                      ],
-                    ),
-                  ],
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  movie['poster_path'] != null
+                                    ? ClipRRect(
+                                        borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(16.0),
+                                          topRight: Radius.circular(16.0),
+                                        ),
+                                        child: Image.network(
+                                          'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                                          fit: BoxFit.cover,
+                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                          width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                        ),
+                                      )
+                                    : Icon(
+                                        Icons.movie,
+                                        size: ScreenUtil.getAdaptiveIconSize(context, 100),
+                                        color: Colors.white54,
+                                      ),
+                                  SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01)),
+                                  Column(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(2, 0, 2, ScreenUtil.getAdaptivePadding(context).bottom/2),//bottom 15
+                                        child: Text(
+                                          movie['title'] ?? S.of(context).noTitle,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03),
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 2,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(8, 0, 8, ScreenUtil.getAdaptivePadding(context).bottom),//bottom 10
+                                        child: Column(
+                                          children: [
+                                            if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
+                                              Text(
+                                                '${movie['genre_ids'].map((id) => 
+                                                getGenreLocalizedString(genreMap[id] ?? 'Action', context)
+                                                ).take(3).join(', ')}',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.025),
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 1,
+                                              ),
+                                            SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
+                                            if (movie['release_date'] != null)
+                                              Text(
+                                                '${movie['release_date'].split('-')[0]}',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.025),
+                                                ),
+                                                textAlign: TextAlign.center,
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                           );
-                      },
-                    ),
-                ),
-                  if(_adService.bannerAd != null)
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: _adService.bannerAd!.size.width.toDouble(),
-                height: _adService.bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _adService.bannerAd!),
-              ),
-              ),
-                ]
-              )
-              : Center(child: 
-                Column(
-                  children: [
-                    Text(S.of(context).noMoviesFoundForCompany, 
-                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045)
-                    ),
-                    Text(S.of(context).returnPreviousScreen,
-                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+                        },
+                      ),
                     ),
                     if(_adService.bannerAd != null)
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: _adService.bannerAd!.size.width.toDouble(),
-                height: _adService.bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _adService.bannerAd!),
-              ),
-              ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          width: _adService.bannerAd!.size.width.toDouble(),
+                          height: _adService.bannerAd!.size.height.toDouble(),
+                          child: AdWidget(ad: _adService.bannerAd!),
+                        ),
+                      ),
                   ],
                 )
+              : Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        S.of(context).noMoviesFoundForCompany,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+                        ),
+                      ),
+                      Text(
+                        S.of(context).returnPreviousScreen,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+                        ),
+                      ),
+                      if(_adService.bannerAd != null)
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            width: _adService.bannerAd!.size.width.toDouble(),
+                            height: _adService.bannerAd!.size.height.toDouble(),
+                            child: AdWidget(ad: _adService.bannerAd!),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
     );
   }

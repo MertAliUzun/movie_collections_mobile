@@ -5,6 +5,7 @@ import '../screens/add_movie_screen.dart';
 import '../services/tmdb_service.dart';
 import '../sup/businessLogic.dart';
 import '../sup/genreMap.dart';
+import '../sup/screen_util.dart';
 
 class PersonMoviesWidget extends StatelessWidget {
   final List<Map<String, dynamic>> movies;
@@ -18,6 +19,7 @@ class PersonMoviesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3, // Adjust the number of columns as needed
@@ -111,16 +113,16 @@ class PersonMoviesWidget extends StatelessWidget {
                         ),
                     )
                     : const Icon(Icons.movie, size: 100, color: Colors.white54),
-                SizedBox(height: screenHeight *0.01,),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(2, 0, 2, 15),
+                  padding: const EdgeInsets.fromLTRB(2, 0, 2, 1),
                   child: Column(
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: Text(
                           movie['title'] ?? S.of(context).noTitle,
-                          style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.03, fontWeight: FontWeight.bold),
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, isTablet ? screenWidth * 0.037 : screenWidth * 0.03), fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
@@ -129,13 +131,13 @@ class PersonMoviesWidget extends StatelessWidget {
                       if(personType == 'Actor')
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4.0,),
-                        child: Text('(${movie['character']})', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.025), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1,),
+                        child: Text('(${movie['character']})', style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, isTablet ? screenWidth * 0.033 : screenWidth * 0.025)), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1,),
                       ),
                     ],
                   ),
                 ),
                 
-                SizedBox(height: screenHeight*0.005,),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
                 
                   Padding(
                     padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
@@ -146,16 +148,16 @@ class PersonMoviesWidget extends StatelessWidget {
                           '${movie['genre_ids'].map((id) => 
                           getGenreLocalizedString(genreMap[id] ?? 'Action', context)
                           ).take(3).join(', ')}',
-                          style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                          style:  TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, isTablet ? screenWidth * 0.033 : screenWidth * 0.025)),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
-                        SizedBox(height: screenHeight * 0.001,),
+                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
                         if (movie['release_date'] != null)
                         Text(
                           '${movie['release_date'].split('-')[0]}',
-                          style:  TextStyle(color: Colors.white54, fontSize: screenWidth * 0.025),
+                          style:  TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, isTablet ? screenWidth * 0.033 : screenWidth * 0.025)),
                           textAlign: TextAlign.center,
                         ),
                       ],

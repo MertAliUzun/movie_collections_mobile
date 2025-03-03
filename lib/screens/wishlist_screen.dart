@@ -14,6 +14,7 @@ import 'add_movie_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
 import 'package:hive/hive.dart';
+import '../sup/screen_util.dart';
 
 class WishlistScreen extends StatefulWidget {
   final String? userId; // Kullanıcı ID'si
@@ -282,6 +283,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
 
     // Group movies by director or genre based on the selected option
     Map<String, List<Movie>> groupedMovies = _groupByDirector
@@ -296,18 +298,31 @@ class _WishlistScreenState extends State<WishlistScreen> {
       appBar: _isSelectionMode ? AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(
+            Icons.arrow_back, 
+            color: Colors.white,
+            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+          ),
           onPressed: () {
             setState(() {
               _selectedMovies.clear();
             });
           },
         ),
-        title: Text('${_selectedMovies.length} ${S.of(context).moviesSelected}', 
-          style: const TextStyle(color: Colors.white)),
+        title: Text(
+          '${_selectedMovies.length} ${S.of(context).moviesSelected}', 
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),
+          ),
+        ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.select_all, color: Colors.white),
+            icon: Icon(
+              Icons.select_all, 
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+            ),
             onPressed: () {
               setState(() {
                 _selectedMovies.clear();
@@ -320,7 +335,11 @@ class _WishlistScreenState extends State<WishlistScreen> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.input, color: Colors.white),
+            icon: Icon(
+              Icons.input, 
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+            ),
             onPressed: () async {
               for (String movieId in _selectedMovies) {
                 final movie = _movies.firstWhere((m) => m.id.toString() == movieId);
@@ -333,27 +352,53 @@ class _WishlistScreenState extends State<WishlistScreen> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.delete, color: Colors.white),
+            icon: Icon(
+              Icons.delete, 
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+            ),
             onPressed: () {
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
                   backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-                  title: Text(S.of(context).deleteChosenMovies, 
-                    style: const TextStyle(color: Colors.white)),
-                  content: Text('${_selectedMovies.length}  ${S.of(context).selectedMoviesDeleteConfirm}',
-                    style: const TextStyle(color: Colors.white)),
+                  title: Text(
+                    S.of(context).deleteChosenMovies, 
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                    ),
+                  ),
+                  content: Text(
+                    '${_selectedMovies.length} ${S.of(context).selectedMoviesDeleteConfirm}',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                    ),
+                  ),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text(S.of(context).cancel, style: const TextStyle(color: Colors.white)),
+                      child: Text(
+                        S.of(context).cancel, 
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                         _deleteSelectedMovies();
                       },
-                      child: Text(S.of(context).delete, style: const TextStyle(color: Colors.red)),
+                      child: Text(
+                        S.of(context).delete, 
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -364,9 +409,16 @@ class _WishlistScreenState extends State<WishlistScreen> {
       )
       : AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+        ),
         leading: _isSearching ? IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(
+            Icons.arrow_back, 
+            color: Colors.white,
+            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+          ),
           onPressed: () {
             setState(() {
               _isSearching = false;
@@ -374,32 +426,36 @@ class _WishlistScreenState extends State<WishlistScreen> {
           },
         ) : null,
         title: !_isSearching 
-        ? Text('${_movies.length} ${S.of(context).movies}', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04 ),)
-        : SizedBox(
-          width: screenWidth * 0.8,
-          height: screenHeight * 0.05,
-          child: TextField(
-            focusNode: FocusNode(),
-            controller: _searchController,
-            textAlignVertical: TextAlignVertical.bottom,
-            decoration: InputDecoration(
-              hintText: S.of(context).searchMovies,
-              hintStyle: const TextStyle(color: Colors.white54),
-              //prefixIcon: const Icon(Icons.search, color: Colors.white54,),
-              //border: OutlineInputBorder(),
-              //filled: true,
-              fillColor: Colors.transparent,
+          ? Text(
+              '${_movies.length} ${S.of(context).movies}', 
+              style: TextStyle(
+                color: Colors.white, 
+                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+              ),
+            )
+          : SizedBox(
+              width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.8),
+              height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
+              child: TextField(
+                focusNode: FocusNode(),
+                controller: _searchController,
+                textAlignVertical: TextAlignVertical.bottom,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                ),
+                decoration: InputDecoration(
+                  hintText: S.of(context).searchMovies,
+                  hintStyle: TextStyle(
+                    color: Colors.white54,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
+                  fillColor: Colors.transparent,
+                ),
+                onChanged: _searchMovies,
+              ),
             ),
-            style: const TextStyle(color: Colors.white),
-            onChanged: _searchMovies,
-          ),
-        ),
-        actions: [
-          if (_isSelectionMode)
-            IconButton(
-              icon: const Icon(Icons.delete, color: Colors.white),
-              onPressed: _deleteSelectedMovies,
-            ),
+            actions: [
           if(!_isSearching)
           IconButton(
             icon: const Icon(Icons.search, color: Colors.white),
@@ -434,66 +490,65 @@ class _WishlistScreenState extends State<WishlistScreen> {
         children: [
           Expanded(
             child: _viewType.contains('List')
-                ? ListView.builder(
-                    itemCount: _groupBy ? groupedMovies.keys.length : _filteredMovies.length,
-                    itemBuilder: (context, index) {
-                      if (_groupBy) {
-                        //to sort directorCards by directorName
-                        List<String> sortedMovies = groupedMovies.keys.toList()..sort();
-                        String sortName = sortedMovies[index];
-                        List<Movie> movies = groupedMovies[sortName]!;
-                        if(_groupByDirector){ movies.sort((a, b) => a.directorName.compareTo(b.directorName),); }
-                        //else { movies.sort((a, b) => (a.genres ?? '').compareTo(b.genres ?? ''));}
-                        //
-                        return ExpansionTile(
-                          title: Text(
-                            sortName == 'Action' ? S.of(context).action :
-                            sortName == 'Adventure' ? S.of(context).adventure :
-                            sortName == 'Animation' ? S.of(context).animation :
-                            sortName == 'Comedy' ? S.of(context).comedy :
-                            sortName == 'Crime' ? S.of(context).crime :
-                            sortName == 'Documentary' ? S.of(context).documentary :
-                            sortName == 'Drama' ? S.of(context).drama :
-                            sortName == 'Family' ? S.of(context).family :
-                            sortName == 'Fantasy' ? S.of(context).fantasy :
-                            sortName == 'History' ? S.of(context).history :
-                            sortName == 'Horror' ? S.of(context).horror :
-                            sortName == 'Music' ? S.of(context).music :
-                            sortName == 'Mystery' ? S.of(context).mystery :
-                            sortName == 'Romance' ? S.of(context).romance :
-                            sortName == 'Science Fiction' ? S.of(context).scienceFiction :
-                            sortName == 'TV Movie' ? S.of(context).tvMovie :
-                            sortName == 'Thriller' ? S.of(context).thriller :
-                            sortName == 'War' ? S.of(context).war :
-                            sortName == 'Western' ? S.of(context).western : sortName,
-                            style: const TextStyle(color: Colors.white),
+              ? ListView.builder(
+                  itemCount: _groupBy ? groupedMovies.keys.length : _filteredMovies.length,
+                  itemBuilder: (context, index) {
+                    if (_groupBy) {
+                      List<String> sortedMovies = groupedMovies.keys.toList()..sort();
+                      String sortName = sortedMovies[index];
+                      List<Movie> movies = groupedMovies[sortName]!;
+                      
+                      return ExpansionTile(
+                        title: Text(
+                          sortName == 'Action' ? S.of(context).action :
+                          sortName == 'Adventure' ? S.of(context).adventure :
+                          sortName == 'Animation' ? S.of(context).animation :
+                          sortName == 'Comedy' ? S.of(context).comedy :
+                          sortName == 'Crime' ? S.of(context).crime :
+                          sortName == 'Documentary' ? S.of(context).documentary :
+                          sortName == 'Drama' ? S.of(context).drama :
+                          sortName == 'Family' ? S.of(context).family :
+                          sortName == 'Fantasy' ? S.of(context).fantasy :
+                          sortName == 'History' ? S.of(context).history :
+                          sortName == 'Horror' ? S.of(context).horror :
+                          sortName == 'Music' ? S.of(context).music :
+                          sortName == 'Mystery' ? S.of(context).mystery :
+                          sortName == 'Romance' ? S.of(context).romance :
+                          sortName == 'Science Fiction' ? S.of(context).scienceFiction :
+                          sortName == 'TV Movie' ? S.of(context).tvMovie :
+                          sortName == 'Thriller' ? S.of(context).thriller :
+                          sortName == 'War' ? S.of(context).war :
+                          sortName == 'Western' ? S.of(context).western : sortName,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
                           ),
-                          children: movies.map((movie) {
-                            return MovieCard(
-                              movie: movie,
-                              isFromWishlist: true,
-                              viewType: _viewType,
-                              isSelected: _selectedMovies.contains(movie.id.toString()),
-                              selectionMode: _isSelectionMode,
-                              onTap: () => _handleMovieTap(movie),
-                              onLongPress: () => _handleMovieSelection(movie),
-                            );
-                          }).toList(),
-                        );
-                      } else {
-                        return MovieCard(
-                          movie: _filteredMovies[index],
-                          isFromWishlist: true,
-                          viewType: _viewType,
-                          isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
-                          selectionMode: _isSelectionMode,
-                          onTap: () => _handleMovieTap(_filteredMovies[index]),
-                          onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
-                        );
-                      }
-                    },
-                  )
-                :_groupBy ? ListView.builder(
+                        ),
+                        children: movies.map((movie) {
+                          return MovieCard(
+                            movie: movie,
+                            isFromWishlist: true,
+                            viewType: _viewType,
+                            isSelected: _selectedMovies.contains(movie.id.toString()),
+                            selectionMode: _isSelectionMode,
+                            onTap: () => _handleMovieTap(movie),
+                            onLongPress: () => _handleMovieSelection(movie),
+                          );
+                        }).toList(),
+                      );
+                    } else {
+                      return MovieCard(
+                        movie: _filteredMovies[index],
+                        isFromWishlist: true,
+                        viewType: _viewType,
+                        isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                        selectionMode: _isSelectionMode,
+                        onTap: () => _handleMovieTap(_filteredMovies[index]),
+                        onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
+                      );
+                    }
+                  },
+                ) :_groupBy ? ListView.builder(
                     itemCount: _groupBy ? groupedMovies.keys.length : _filteredMovies.length,
                     itemBuilder: (context, index) {
                         //to sort directorCards by directorName
@@ -507,11 +562,15 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           children: [
                             GridView.builder(
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: _viewType == "Card" ? 0.5 : 0.55, // Adjust the aspect ratio as needed
+                      crossAxisCount: isTablet ? 5 : 3, // Tablet için 5, telefon için 3 sütun
+                    childAspectRatio: isTablet 
+                      ? (_viewType == "Card" ? 0.7 : 0.75)  // Tablet için aspect ratio
+                      : (_viewType == "Card" ? 0.45 : 0.5), // Telefon için aspect ratio
+                    mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                     ),
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
+                              padding: ScreenUtil.getAdaptivePadding(context),
                               itemCount: movies.length,
                               itemBuilder: (context, movieIndex) {
                                 return MovieCard(
@@ -528,24 +587,30 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           ],
                         );
                     },
-                  ) : GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, // 3 cards per row
-                      childAspectRatio: _viewType == "Card" ? 0.5 : 0.55, // Adjust the aspect ratio as needed
-                    ),
-                    itemCount: _filteredMovies.length,
-                    itemBuilder: (context, index) {
-                      return MovieCard(
-                        movie: _filteredMovies[index],
-                        isFromWishlist: true,
-                        viewType: _viewType,
-                        isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
-                        selectionMode: _isSelectionMode,
-                        onTap: () => _handleMovieTap(_filteredMovies[index]),
-                        onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
-                      );
-                    },
+                  )
+              : GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: isTablet ? 5 : 3, // Tablet için 5, telefon için 3 sütun
+                    childAspectRatio: isTablet 
+                      ? (_viewType == "Card" ? 0.7 : 0.75)  // Tablet için aspect ratio
+                      : (_viewType == "Card" ? 0.45 : 0.5), // Telefon için aspect ratio
+                    mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                    crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                   ),
+                  padding: ScreenUtil.getAdaptivePadding(context),
+                  itemCount: _filteredMovies.length,
+                  itemBuilder: (context, index) {
+                    return MovieCard(
+                      movie: _filteredMovies[index],
+                      isFromWishlist: true,
+                      viewType: _viewType,
+                      isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                      selectionMode: _isSelectionMode,
+                      onTap: () => _handleMovieTap(_filteredMovies[index]),
+                      onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
+                    );
+                  },
+                ),
           ),
         ],
       ),
@@ -556,13 +621,20 @@ class _WishlistScreenState extends State<WishlistScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddMovieScreen(isFromWishlist: true, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
+              builder: (context) => AddMovieScreen(
+                isFromWishlist: true, 
+                userEmail: widget.userEmail, 
+                systemLanguage: widget.systemLanguage,
+              ),
             ),
           ).then((_) {
-            _fetchMovies(); // Refresh the movie list when returning
+            _fetchMovies();
           });
         },
-        child: const Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+        ),
       ),
     );
   }

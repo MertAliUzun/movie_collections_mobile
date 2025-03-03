@@ -804,7 +804,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   _selectedGenres.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 3),
+                            crossAxisCount: _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
                             childAspectRatio: isTablet ? 2.0 : 1.5,
                             mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                             crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
@@ -950,7 +950,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   _selectedActors.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 3),
+                            crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
                             childAspectRatio: isTablet ? 2.0 : 1.5,
                             mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                             crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
@@ -1019,7 +1019,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   _selectedWriters.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 3),
+                            crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
                             childAspectRatio: isTablet ? 2.0 : 1.5,
                             mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                             crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
@@ -1088,8 +1088,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   _selectedProductionCompanies.isNotEmpty
                       ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 1),
-                            childAspectRatio: 6,
+                            crossAxisCount: 1,
+                            childAspectRatio: 7,
                           ),
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -1150,7 +1150,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               style: TextStyle(
                                 color: Colors.white, 
                                 fontWeight: FontWeight.bold, 
-                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.025),
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.023),
                               ),
                             ),
                           ],
@@ -1317,7 +1317,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               style: TextStyle(
                                 color: Colors.white, 
                                 fontWeight: FontWeight.bold, 
-                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.025),
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.023),
                               ),
                             ),
                           ],
@@ -1404,7 +1404,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 3),
-                        childAspectRatio: isTablet ? 2.0 : 0.42,
+                        childAspectRatio: isTablet ? 2.0 : 0.4,
                         mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                         crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                       ),

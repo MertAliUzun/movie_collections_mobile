@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       locale: Locale(systemLanguage),
-      title: 'Film Koleksiyonu',
+      title: 'Zen: Movie Collection',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -93,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String? _userEmail;
   String? _userPicture;
   String? _userName;
+  bool? _isLoaded = false;
   final AdService _adService = AdService();
 
   @override
@@ -114,7 +115,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
     Future<AuthResponse> _googleSignIn() async {
-    if (_userEmail != null) {
+    if (_userEmail != null || _userEmail == null) {
+      _isLoaded = true;
       return AuthResponse();
     }
 
@@ -157,6 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _userEmail = googleUser.email;
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
+
+      _isLoaded = true;
 
       // Update movies box
       final moviesBox = Hive.box<Movie>('movies');
@@ -226,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-      body: _userId != null ? Column(
+      body: _isLoaded! ? Column(
         children:[ 
           Expanded(child: _pages[_selectedIndex]), 
           /*

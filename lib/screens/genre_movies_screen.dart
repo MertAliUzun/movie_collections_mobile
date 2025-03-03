@@ -5,6 +5,7 @@ import 'package:movie_collections_mobile/generated/l10n.dart';
 import '../services/ad_service.dart';
 import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
+import '../sup/screen_util.dart';
 
 class GenreMoviesScreen extends StatefulWidget {
   final String genre;
@@ -83,56 +84,90 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: Center(child: RichText(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+        ),
+        title: Center(
+          child: RichText(
             text: TextSpan(
-              style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04),
+              style: TextStyle(
+                color: Colors.white, 
+                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+              ),
               children: <TextSpan>[
-                TextSpan(text: _selectedPopularity == 'Daily' ? S.of(context).daily :
-                               _selectedPopularity == 'Weekly' ? S.of(context).weekly :
-                               _selectedPopularity == 'Monthly' ? S.of(context).monthly : _selectedPopularity, 
-                               style: const TextStyle(fontWeight: FontWeight.bold)),
-                TextSpan(text: ' ${S.of(context).popularFor} '),
-                TextSpan(text: widget.genre == 'Action' ? S.of(context).action : 
-                               widget.genre == 'Adventure' ? S.of(context).adventure :
-                               widget.genre == 'Animation' ? S.of(context).animation :
-                               widget.genre == 'Comedy' ? S.of(context).comedy :
-                               widget.genre == 'Crime' ? S.of(context).crime :
-                               widget.genre == 'Documentary' ? S.of(context).documentary :
-                               widget.genre == 'Drama' ? S.of(context).drama :
-                               widget.genre == 'Family' ? S.of(context).family :
-                               widget.genre == 'Fantasy' ? S.of(context).fantasy :
-                               widget.genre == 'History' ? S.of(context).history :
-                               widget.genre == 'Horror' ? S.of(context).horror :
-                               widget.genre == 'Music' ? S.of(context).music :
-                               widget.genre == 'Mystery' ? S.of(context).mystery :
-                               widget.genre == 'Romance' ? S.of(context).romance :
-                               widget.genre == 'Science Fiction' ? S.of(context).scienceFiction :
-                               widget.genre == 'TV Movie' ? S.of(context).tvMovie :
-                               widget.genre == 'Thriller' ? S.of(context).thriller :
-                               widget.genre == 'War' ? S.of(context).war :
-                               widget.genre == 'Western' ? S.of(context).western : widget.genre, 
-                               style: const TextStyle(fontStyle: FontStyle.italic)),
+                TextSpan(
+                  text: _selectedPopularity == 'Daily' ? S.of(context).daily :
+                        _selectedPopularity == 'Weekly' ? S.of(context).weekly :
+                        _selectedPopularity == 'Monthly' ? S.of(context).monthly : _selectedPopularity, 
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                  ),
+                ),
+                TextSpan(
+                  text: ' ${S.of(context).popularFor} ',
+                  style: TextStyle(
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                  ),
+                ),
+                TextSpan(
+                  text: widget.genre == 'Action' ? S.of(context).action : 
+                        widget.genre == 'Adventure' ? S.of(context).adventure :
+                        widget.genre == 'Animation' ? S.of(context).animation :
+                        widget.genre == 'Comedy' ? S.of(context).comedy :
+                        widget.genre == 'Crime' ? S.of(context).crime :
+                        widget.genre == 'Documentary' ? S.of(context).documentary :
+                        widget.genre == 'Drama' ? S.of(context).drama :
+                        widget.genre == 'Family' ? S.of(context).family :
+                        widget.genre == 'Fantasy' ? S.of(context).fantasy :
+                        widget.genre == 'History' ? S.of(context).history :
+                        widget.genre == 'Horror' ? S.of(context).horror :
+                        widget.genre == 'Music' ? S.of(context).music :
+                        widget.genre == 'Mystery' ? S.of(context).mystery :
+                        widget.genre == 'Romance' ? S.of(context).romance :
+                        widget.genre == 'Science Fiction' ? S.of(context).scienceFiction :
+                        widget.genre == 'TV Movie' ? S.of(context).tvMovie :
+                        widget.genre == 'Thriller' ? S.of(context).thriller :
+                        widget.genre == 'War' ? S.of(context).war :
+                        widget.genre == 'Western' ? S.of(context).western : widget.genre, 
+                  style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                  ),
+                ),
               ],
             ),
           ),
         ),
         actions: [
           PopupMenuButton<String>(
-            icon: const Icon(Icons.view_list, color: Colors.white),
+            icon: Icon(
+              Icons.view_list, 
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+            ),
             onSelected: _changePopularType,
             color: const Color.fromARGB(255, 44, 50, 60),
             itemBuilder: (BuildContext context) {
               return {'Daily', 'Weekly', 'Monthly'}.map((String choice) {
                 return PopupMenuItem<String>(
                   value: choice,
-                  child: Text(choice== 'Daily' ? S.of(context).daily :
-                              choice== 'Weekly' ? S.of(context).weekly :
-                              choice== 'Monthly' ? S.of(context).monthly : choice, style: const TextStyle(color: Colors.white)),
+                  child: Text(
+                    choice == 'Daily' ? S.of(context).daily :
+                    choice == 'Weekly' ? S.of(context).weekly :
+                    choice == 'Monthly' ? S.of(context).monthly : choice, 
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                    ),
+                  ),
                 );
               }).toList();
             },
@@ -142,31 +177,60 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
-              ? SingleChildScrollView(child: Column(
-                children: [
-                  PersonMoviesWidget(movies: _movies, personType: 'Genre', isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
-                  if(_adService.bannerAd != null)
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: _adService.bannerAd!.size.width.toDouble(),
-                height: _adService.bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _adService.bannerAd!),
-              ),
-              ),
-                ],
-              ))
+              ? SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: ScreenUtil.getAdaptivePadding(context),
+                        child: PersonMoviesWidget(
+                          movies: _movies, 
+                          personType: 'Genre', 
+                          isFromWishlist: widget.isFromWishlist, 
+                          userEmail: widget.userEmail,
+                        ),
+                      ),
+                      if(_adService.bannerAd != null)
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            width: _adService.bannerAd!.size.width.toDouble(),
+                            height: _adService.bannerAd!.size.height.toDouble(),
+                            child: AdWidget(ad: _adService.bannerAd!),
+                          ),
+                        ),
+                    ],
+                  ),
+                )
               : Center(
-                child: Column(
-                  children: [
-                    Text(S.of(context).noMoviesForGenre,
-                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045)
-                    ),
-                    Text(S.of(context).returnPreviousScreen,
-                    style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
-                    ),
-                  ],
-                )),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        S.of(context).noMoviesForGenre,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+                        ),
+                      ),
+                      Text(
+                        S.of(context).returnPreviousScreen,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+                        ),
+                      ),
+                      if(_adService.bannerAd != null)
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            width: _adService.bannerAd!.size.width.toDouble(),
+                            height: _adService.bannerAd!.size.height.toDouble(),
+                            child: AdWidget(ad: _adService.bannerAd!),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
     );
   }
   @override

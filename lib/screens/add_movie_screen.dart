@@ -22,6 +22,7 @@ import '../sup/businessLogic.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:hive/hive.dart';
 import '../services/ad_service.dart';
+import '../sup/screen_util.dart';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -629,11 +630,21 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: Text(S.of(context).addNewMovie, style: const TextStyle(color: Colors.white),),
-        iconTheme: const IconThemeData(color: Colors.white),
+        title: Text(
+          S.of(context).addNewMovie, 
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+          ),
+        ),
+        iconTheme: IconThemeData(
+          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+        ),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),
       body: Stack(
@@ -664,35 +675,36 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             ),
           ),
         SingleChildScrollView(
-          padding: const EdgeInsets.all(16.0),
+          padding: ScreenUtil.getAdaptivePadding(context),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
                 TextField(
                   controller: _searchController,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
                   decoration: InputDecoration(
                     hintText: S.of(context).searchMovies,
-                    hintStyle: const TextStyle(color: Colors.white54),
-                    prefixIcon: const Icon(Icons.search, color: Colors.white54,),
-                    suffixIcon: _isSearching
-                        ? const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: Colors.white,
-                              backgroundColor: Colors.black,
-                            ),
-                          )
-                        : null,
+                    hintStyle: TextStyle(
+                      color: Colors.white54,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                    ),
+                    prefixIcon: Icon(
+                      Icons.search, 
+                      color: Colors.white54,
+                      size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                    ),
                   ),
-                  style: const TextStyle(color: Colors.white),
                   onChanged: _onSearchChanged,
                 ),
                 if (_searchResults.isNotEmpty)
                   Container(
-                    constraints: const BoxConstraints(maxHeight: 200),
+                    constraints: BoxConstraints(
+                      maxHeight: ScreenUtil.getAdaptiveCardHeight(context, 200),
+                    ),
                     child: Card(
                       color: const Color.fromARGB(255, 44, 50, 60),
                       child: ListView.builder(
@@ -701,18 +713,29 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         itemBuilder: (context, index) {
                           final movie = _searchResults[index];
                           return ListTile(
+                            //contentPadding: ScreenUtil.getAdaptivePadding(context),
                             leading: movie['poster_path'] != null
                                 ? Image.network(
                                     'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
-                                    width: 50,
+                                    width: ScreenUtil.getAdaptiveCardWidth(context, 50),
                                     errorBuilder: (context, error, stackTrace) =>
                                         const Icon(Icons.movie, color: Colors.white54),
                                   )
-                                : const Icon(Icons.movie, color: Colors.white54),
-                            title: Text(movie['title'], style: const TextStyle(color: Colors.white70)),
+                                : Icon(
+                                    Icons.movie, 
+                                    color: Colors.white54,
+                                    size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                  ),
+                            title: Text(
+                              movie['title'], 
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                              ),
+                            ),
                             subtitle: Text(movie['release_date'] != null
                                 ? movie['release_date'].split('-')[0]
-                                : 'Unknown', style: const TextStyle(color: Colors.white54)),
+                                : 'Unknown', style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),)),
                             onTap: () => _selectMovie(movie['id']),
                           );
                         },
@@ -722,8 +745,17 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _movieNameController,
-                  decoration:  InputDecoration(labelText: '${S.of(context).movieTitle} *', labelStyle: const TextStyle(color: Colors.white54),),
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
+                  decoration: InputDecoration(
+                    labelText: '${S.of(context).movieTitle} *',
+                    labelStyle: TextStyle(
+                      color: Colors.white54,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                    ),
+                  ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return S.of(context).pleaseEnterMovieTitle;
@@ -733,8 +765,17 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
                 TextFormField(
                   controller: _sortTitleController,
-                  decoration: InputDecoration(labelText: S.of(context).customSortTitle, labelStyle: const TextStyle(color: Colors.white54),),
-                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    labelText: S.of(context).customSortTitle,
+                    labelStyle: TextStyle(
+                      color: Colors.white54,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
                 ),
                 SizedBox(height: screenWidth * 0.1),
                 if ((_providers['flatrate']!.isNotEmpty || 
@@ -750,7 +791,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               S.of(context).whereToWatch,
                               style: TextStyle(
                                 color: Colors.white, 
-                                fontSize: screenHeight * 0.03, 
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), //18
                                 fontWeight: FontWeight.bold
                               ),
                             ),
@@ -810,7 +851,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                        Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
                         IconButton(
                         onPressed: () async {
                           await _addDetails('Add Genre', (genre) {
@@ -833,8 +874,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 _selectedGenres.isNotEmpty
                     ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount:  _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
-                          childAspectRatio: 1.5,
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length : 2
+                          ),
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                         ),
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -882,8 +927,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                     _selectedGenres[index] == 'War' ? S.of(context).war :
                                     _selectedGenres[index] == 'Western' ? S.of(context).western : _selectedGenres[index],
                                     style: TextStyle(color: Colors.white, 
-                                    fontSize: _selectedGenres.length <= 2 ? screenWidth * 0.055 : 
-                                    _selectedGenres.length == 3 ? screenWidth * 0.04 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                    fontSize: _selectedGenres.length <= 2 ? ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.055) : //14
+                                    _selectedGenres.length == 3 ? ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04) : ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), fontWeight: FontWeight.bold), //12, 10
                                   ),
                                 ),
                               ),
@@ -891,16 +936,16 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noGenresSelected, style: const TextStyle(color: Colors.white54)),
-                SizedBox(height: screenHeight * 0.02,),
+                    : Text(S.of(context).noGenresSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.02),), //20
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                    Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.05), fontWeight: FontWeight.bold),), //18
                   ],
                 ),
                 const Divider(height: 0, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.05),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
                 GestureDetector(
                   onLongPress: () {
                     _deleteDirector();
@@ -926,35 +971,36 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   child: Card(
                     color: const Color.fromARGB(255, 44, 50, 60),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: ScreenUtil.getAdaptivePadding(context), //8
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(width: screenWidth * 0.1),
+                          SizedBox(width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.1)),
                           Text(
                             _directorNameController.text.isNotEmpty 
                                 ? _directorNameController.text 
                                 : S.of(context).directorNull,
-                            style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                              fontWeight: FontWeight.bold,
                           ),
-                          Row(
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.edit, color: Colors.white),
-                                onPressed: _editDirector,
                               ),
-                            ],
+                          Icon(
+                            Icons.edit,
+                            color: Colors.white,
+                            size: ScreenUtil.getAdaptiveIconSize(context, 24),
                           ),
                         ],
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: screenWidth * 0.05),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                        Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),), //18
                         IconButton(
                         onPressed: () async {
                           await _addDetails('Add Actor', (actor) {
@@ -973,12 +1019,16 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       ],
                     ),
                     const Divider(height: 0, color: Colors.white60,),
-                    SizedBox(height: screenWidth * 0.05),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
                 _selectedActors.isNotEmpty
                     ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2 ,
-                          childAspectRatio: 2,
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedActors.length == 1 ? 2 : _selectedActors.length >= 3 ? 3 : 2
+                          ),
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                         ),
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -1008,8 +1058,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   child: Text(
                                     _selectedActors[index],
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white, fontSize: 
-                                    _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedActors.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -1017,12 +1066,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noActorsSelected, style: const TextStyle(color: Colors.white54)),
-                SizedBox(height: screenWidth * 0.05),
+                    : Text(S.of(context).noActorsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                    Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),//18
                     IconButton(
                     onPressed: () async {
                       await _addDetails('Add Writer', (writer) {
@@ -1041,12 +1090,16 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   ],
                 ),
                 const Divider(height: 0, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.05),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),),//50
                 _selectedWriters.isNotEmpty
                     ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedWriters.length >= 3 ? 3 : _selectedWriters.length
+                          ),
                           childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                         ),
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -1076,8 +1129,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   child: Text(
                                     _selectedWriters[index],
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white, fontSize:
-                                    _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03, fontWeight: FontWeight.bold),
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedWriters.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -1085,12 +1137,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noWritersSelected, style: const TextStyle(color: Colors.white54)),
-                SizedBox(height: screenWidth * 0.05),
+                    : Text(S.of(context).noWritersSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: screenHeight * 0.03, fontWeight: FontWeight.bold),),
+                    Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
                     IconButton(
                     onPressed: () async {
                       await _addDetails('Add Production Company', (company) {
@@ -1109,7 +1161,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   ],
                 ),
                 const Divider(height: 0, color: Colors.white60,),
-                SizedBox(height: screenWidth * 0.05),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),),
                 _selectedProductionCompanies.isNotEmpty
                     ? GridView.builder(
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -1144,7 +1196,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   child: Text(
                                     _selectedProductionCompanies[index],
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.white, fontSize: screenWidth* 0.045, fontWeight: FontWeight.bold),
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth* 0.045), fontWeight: FontWeight.bold),
                                   ),
                                 ),
                               ),
@@ -1152,9 +1204,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noCompaniesSelected, style: const TextStyle(color: Colors.white54)),
+                    : Text(S.of(context).noCompaniesSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14)),),
+                //SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),),
                   ListTile(
-                    contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
+                  contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01), horizontal: ScreenUtil.getAdaptiveCardWidth(context, screenHeight * 0.02)), // Padding for better spacing
                     tileColor: Colors.transparent, // Optional: make the background transparent
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
@@ -1167,7 +1220,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 style: TextStyle(
                                   color: Colors.white70, 
                                   fontWeight: FontWeight.normal, 
-                                  fontSize: screenHeight * 0.015,
+                                  fontSize: ScreenUtil.getAdaptiveTextSize(context,  screenHeight * 0.015),
                                 ),
                               ),
                               TextSpan(
@@ -1175,14 +1228,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 style: TextStyle(
                                   color: Colors.white, 
                                   fontWeight: FontWeight.bold, 
-                                  fontSize: screenHeight * 0.025,
+                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.023),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
+                          padding: EdgeInsets.symmetric(horizontal: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.01)),
                           child: const Icon(
                             Icons.edit_calendar,
                             color: Colors.white70,
@@ -1197,28 +1250,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
-                    SizedBox(width: screenWidth * 0.1,),
-                    Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: screenWidth * 0.03, color: Colors.red)),
+                    Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
+                    SizedBox(width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.1),),
+                    Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
                   ],
                 ),
                 if(_countryController.text.isNotEmpty)
                 Padding(
-                  padding: EdgeInsets.fromLTRB(screenWidth * 0.05, screenWidth * 0.05, screenWidth * 0.05, 0),
+                  padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.05), ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.055), ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.05), 0),
                   child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
                 ),
                 TextFormField(
                   controller: _plotController,
-                  decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: const TextStyle(color: Colors.white54),),
+                  decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
                   maxLines: 3,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                 ),
                 Row(
                 children: [
                   Expanded(
                     child: TextFormField(
                       controller: _runtimeController,
-                      decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: const TextStyle(color: Colors.white54),),
+                      decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
                       keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value != null && value.isNotEmpty) {
@@ -1229,11 +1282,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         }
                         return null;
                       },
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                     ),
                   ),
                   Container(
-                    height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
+                    height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),  // Çizginin yüksekliğini ayarlayın
                     child: const VerticalDivider(
                       color: Colors.white54,  // Dikey çizgi rengi
                       thickness: 1,  // Çizginin kalınlığı
@@ -1242,9 +1295,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   Expanded(
                     child: TextFormField(
                       controller: _imdbRatingController,
-                      decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: const TextStyle(color: Colors.white54)),
+                      decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
                       keyboardType: TextInputType.number,
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                       validator: (value) {
                     if (value != null && value.isNotEmpty) {
                       final number = double.tryParse(value);
@@ -1260,9 +1313,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               ),
               TextFormField(
                 controller: _notesController,
-                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: const TextStyle(color: Colors.white54),),
+                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
                 maxLines: 3,
-                style: const TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
               ),
               if(!widget.isFromWishlist)
               Row(
@@ -1271,18 +1324,18 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     child: DropdownButtonFormField<String>(
                     value: _selectedCollectionType,
                     dropdownColor: const Color.fromARGB(255, 44, 50, 60),
-                    style: const TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                     decoration: InputDecoration(
                       labelText: S.of(context).collectionType,
-                      labelStyle: const TextStyle(color: Colors.white54),
+                      labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                     ),
                     items: [
-                      DropdownMenuItem(value: '', alignment: Alignment.center, child: Text(S.of(context).none, style: const TextStyle(color: Colors.white)),),
-                      DropdownMenuItem(value: 'VHS', alignment: Alignment.center, child: Text(S.of(context).vhs, style: const TextStyle(color: Colors.white)),),
-                      DropdownMenuItem(value: 'DVD', alignment: Alignment.center, child: Text(S.of(context).dvd, style: const TextStyle(color: Colors.white)),),
-                      DropdownMenuItem(value: 'BLU-RAY', alignment: Alignment.center, child: Text(S.of(context).bluRay, style: const TextStyle(color: Colors.white)),),
-                      DropdownMenuItem(value: 'Steelbook', alignment: Alignment.center, child: Text(S.of(context).steelbook, style: const TextStyle(color: Colors.white)),),
-                      DropdownMenuItem(value: 'Digital', alignment: Alignment.center, child: Text(S.of(context).digital, style: const TextStyle(color: Colors.white)),),
+                      DropdownMenuItem(value: '', alignment: Alignment.center, child: Text(S.of(context).none, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),)),
+                      DropdownMenuItem(value: 'VHS', alignment: Alignment.center, child: Text(S.of(context).vhs, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),)),
+                      DropdownMenuItem(value: 'DVD', alignment: Alignment.center, child: Text(S.of(context).dvd, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),)),
+                      DropdownMenuItem(value: 'BLU-RAY', alignment: Alignment.center, child: Text(S.of(context).bluRay, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),)),
+                      DropdownMenuItem(value: 'Steelbook', alignment: Alignment.center, child: Text(S.of(context).steelbook, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),)),
+                      DropdownMenuItem(value: 'Digital', alignment: Alignment.center, child: Text(S.of(context).digital, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),)),
                     ],
                     onChanged: (String? newValue) {
                       if (newValue != null) {
@@ -1291,10 +1344,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         });
                       }
                     },
-                                    ),
+                   ),
                   ),
               Container(
-                    height: screenHeight *0.05,  // Çizginin yüksekliğini ayarlayın
+                    height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),  // Çizginin yüksekliğini ayarlayın
                     child: const VerticalDivider(
                       color: Colors.white54,  // Dikey çizgi rengi
                       thickness: 1,  // Çizginin kalınlığı
@@ -1303,7 +1356,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               Expanded(
                 child: TextFormField(
                   controller: _watchCountController,
-                  decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: const TextStyle(color: Colors.white54),),
+                  decoration: InputDecoration(labelText: S.of(context).watchCount, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value != null && value.isNotEmpty) {
@@ -1314,7 +1367,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     }
                     return null;
                   },
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                 ),
               ),
                 ],
@@ -1328,7 +1381,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 const SizedBox(height: 10,),
                 if (!widget.isFromWishlist) ...{
                   ListTile(
-                    contentPadding: EdgeInsets.symmetric(vertical: screenHeight * 0.01, horizontal: screenHeight * 0.02), // Padding for better spacing
+                    contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01), horizontal: ScreenUtil.getAdaptiveCardWidth(context, screenHeight * 0.02)), // Padding for better spacing
                     tileColor: Colors.transparent, // Optional: make the background transparent
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Space between the text and icon
@@ -1341,7 +1394,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 style: TextStyle(
                                   color: Colors.white70, 
                                   fontWeight: FontWeight.normal, 
-                                  fontSize: screenHeight * 0.015,
+                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.015),
                                 ),
                               ),
                               TextSpan(
@@ -1349,14 +1402,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 style: TextStyle(
                                   color: Colors.white, 
                                   fontWeight: FontWeight.bold, 
-                                  fontSize: screenHeight * 0.025,
+                                  fontSize: ScreenUtil.getAdaptiveTextSize(context,screenHeight * 0.023),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: screenHeight * 0.01),
+                          padding: EdgeInsets.symmetric(horizontal: ScreenUtil.getAdaptiveCardWidth(context, screenHeight * 0.01)),
                           child: const Icon(
                             Icons.edit_calendar,
                             color: Colors.white70,
@@ -1377,7 +1430,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 if(!widget.isFromWishlist)
                 RatingBar.builder(
                   unratedColor: Colors.blueGrey.withOpacity(0.6),
-                  itemSize: 30,
+                  itemSize: ScreenUtil.getAdaptiveIconSize(context, 30),
                   initialRating: _userScore,
                   minRating: 0,
                   direction: Axis.horizontal,
@@ -1407,7 +1460,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           ),                 
                           RatingBar.builder(
                           unratedColor: Colors.blueGrey.withOpacity(0.6),
-                          itemSize: 30,
+                          itemSize: ScreenUtil.getAdaptiveIconSize(context, 30),
                           initialRating: _hypeScore,
                           minRating: 0,
                           direction: Axis.horizontal,
@@ -1462,8 +1515,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                width: _adService.bannerAd!.size.width.toDouble(),
-                height: _adService.bannerAd!.size.height.toDouble(),
+                width: isTablet ? 
+                  _adService.bannerAd!.size.width.toDouble() * 1.5 :
+                  _adService.bannerAd!.size.width.toDouble(),
+                height: isTablet ? 
+                  _adService.bannerAd!.size.height.toDouble() * 1.5 :
+                  _adService.bannerAd!.size.height.toDouble(),
                 child: AdWidget(ad: _adService.bannerAd!),
               ),
             ),
@@ -1472,10 +1529,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
-                    fixedSize: const Size(double.infinity, 50),
+                    fixedSize: Size(
+                      double.infinity,
+                      ScreenUtil.getAdaptiveCardHeight(context, 50),
+                    ),
                   ),
                   onPressed: _saveMovie,
-                  child: Text(S.of(context).addMovie, style: const TextStyle(fontSize: 18),),
+                  child: Text(S.of(context).addMovie, style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, 18)),),
                 ),
               ],
             ),

@@ -147,6 +147,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   Future<void> _signOut(BuildContext context) async {
+    return;
     final shouldSignOut = await showDialog<bool>(
       context: context,
       builder: (BuildContext context) {
@@ -620,7 +621,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 icon: const Icon(Icons.login, size: 50),
                 onPressed: () async {
                   // Google hesabına giriş yap
-                  await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
+                  //await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
                 },
               ),
             ),

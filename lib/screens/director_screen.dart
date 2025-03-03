@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../services/ad_service.dart';
 import '../services/tmdb_service.dart';
 import '../widgets/person_movies_widget.dart';
+import '../sup/screen_util.dart';
 
 class DirectorScreen extends StatefulWidget {
   final String personName;
@@ -121,60 +122,70 @@ class _DirectorScreenState extends State<DirectorScreen> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
+
     if(_personMovies.isNotEmpty) {
       if(_personDetails[0]['profile_path'] != null){
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-      body: CustomScrollView(
-        controller: _scrollController,
-        slivers: [
-          SliverAppBar(
-            iconTheme: const IconThemeData(color: Colors.white),
-            backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-            expandedHeight: screenHeight * 0.5,
-            //title: Center(child: Text('Sort and View ?', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
-            title: _isCollapsed ?  Container(
-                              padding: const EdgeInsets.all(8.0),
-                              color: Colors.transparent,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                       Image.network(
-                                          'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
-                                          width: 50,
-                                          fit: BoxFit.cover,
-                                        ),
-                                  SizedBox(width: screenWidth * 0.1),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        _personDetails[0]['name'],
-                                        style: const TextStyle(fontSize: 16, color: Colors.white),
-                                      ),
-                                      Text(
-                                        widget.personType == 'Director' ? S.of(context).director :
-                                        widget.personType == 'Actor' ? S.of(context).actor :
-                                        widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
-                                        style: const TextStyle(fontSize: 12 , color: Colors.white60),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ) : const Text(''),
-            flexibleSpace: FlexibleSpaceBar(
-              collapseMode: CollapseMode.parallax,
-              background: _isLoading
-                  ? const Center(child: CircularProgressIndicator())
-                  : _personDetails.isNotEmpty
+        return Scaffold(
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          body: CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              SliverAppBar(
+                iconTheme: IconThemeData(
+                  color: Colors.white,
+                  size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                ),
+                backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                expandedHeight: isTablet ? screenHeight * 0.4 : screenHeight * 0.5,
+                title: _isCollapsed ? Container(
+                  padding: ScreenUtil.getAdaptivePadding(context),
+                  color: Colors.transparent,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Image.network(
+                        'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
+                        width: ScreenUtil.getAdaptiveCardWidth(context, 50),
+                        fit: BoxFit.cover,
+                      ),
+                      SizedBox(width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.1)),
+                      Column(
+                        children: [
+                          Text(
+                            _personDetails[0]['name'],
+                            style: TextStyle(
+                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            widget.personType == 'Director' ? S.of(context).director :
+                            widget.personType == 'Actor' ? S.of(context).actor :
+                            widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
+                            style: TextStyle(
+                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
+                              color: Colors.white60,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ) : const Text(''),
+                flexibleSpace: FlexibleSpaceBar(
+                  collapseMode: CollapseMode.parallax,
+                  background: _isLoading
+                    ? const Center(child: CircularProgressIndicator())
+                    : _personDetails.isNotEmpty
                       ? Card(
                           color: const Color.fromARGB(255, 34, 40, 50),
                           child: Padding(
-                            padding: EdgeInsets.fromLTRB(0, screenHeight * 0.08, 0, 0),
+                            padding: EdgeInsets.fromLTRB(0, screenHeight * 0.06, 0, 0),
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                  padding: ScreenUtil.getAdaptivePadding(context, vertical: 20),
                                   child: Card(
                                     color: const Color.fromARGB(255, 24, 30, 40),
                                     child: Column(
@@ -199,25 +210,36 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                 borderRadius: BorderRadius.circular(10),
                                                 child: Image.network(
                                                   'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
-                                                  height: screenHeight * 0.3,
-                                                  width: screenWidth * 0.45,
+                                                  height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.3),
+                                                  width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.45),
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
                                             )
-                                            : const Icon(Icons.person, color: Colors.white54),
-                                        SizedBox(height: screenHeight * 0.015),
+                                          : Icon(
+                                              Icons.person,
+                                              color: Colors.white54,
+                                              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                            ),
+                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.015)),
                                         Text(
                                           _personDetails[0]['name'],
-                                          style: const TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+                                          style: TextStyle(
+                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                       Text(
+                                        Text(
                                           widget.personType == 'Director' ? S.of(context).director :
                                           widget.personType == 'Actor' ? S.of(context).actor :
                                           widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
-                                          style: const TextStyle(fontSize: 16, color: Colors.white54, fontWeight: FontWeight.bold),
+                                          style: TextStyle(
+                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                                            color: Colors.white54,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                        
                                       ],
                                     ),
                                   ),
@@ -228,29 +250,36 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
+                                        /*
                                         if (_personPersonalDetails!['also_known_as'].length > 0)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 24, 30, 40),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: ScreenUtil.getAdaptivePadding(context),
                                               child: Text(
                                                 '${S.of(context).aliasColon} ${_personPersonalDetails!['also_known_as'][0]}',
-                                                style: const TextStyle(fontSize: 11, color: Colors.white),
+                                                style: TextStyle(
+                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                  color: Colors.white,
+                                                ),
                                                 overflow: TextOverflow.ellipsis,
                                                 maxLines: 1,
                                               ),
                                             ),
-                                          ),
+                                          ),*/
                                         if (_personPersonalDetails!['birthday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 24, 30, 40),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: ScreenUtil.getAdaptivePadding(context),
                                               child: Text(
                                                 '${S.of(context).birthDateColon} ${_personPersonalDetails!['birthday']}',
-                                                style: const TextStyle(fontSize: 11, color: Colors.white),
+                                                style: TextStyle(
+                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -259,10 +288,13 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 24, 30, 40),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: ScreenUtil.getAdaptivePadding(context),
                                               child: Text(
                                                 '${S.of(context).deathDateColon} ${_personPersonalDetails!['deathday']}',
-                                                style: const TextStyle(fontSize: 11, color: Colors.white),
+                                                style: TextStyle(
+                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -271,12 +303,15 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 24, 30, 40),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: ScreenUtil.getAdaptivePadding(context),
                                               child: Text(
                                                 '${S.of(context).birthPlaceColon} ${_personPersonalDetails!['place_of_birth']}',
-                                                style: const TextStyle(fontSize: 11, color: Colors.white),
-                                                overflow: TextOverflow.ellipsis,
-                                                maxLines: 2,
+                                                style: TextStyle(
+                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                  color: Colors.white,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                  maxLines: 2,      
                                               ),
                                             ),
                                           ),
@@ -285,41 +320,44 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             shadowColor: Colors.white,
                                             color: const Color.fromARGB(255, 24, 30, 40),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding: ScreenUtil.getAdaptivePadding(context),
                                               child: SingleChildScrollView(
                                                 child: Text(
                                                   '${S.of(context).biographyColon} ${_personPersonalDetails!['biography']}',
-                                                  style: const TextStyle(fontSize: 11, color: Colors.white),
+                                                  style: TextStyle(
+                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                    color: Colors.white,
+                                                  ),
                                                   overflow: TextOverflow.ellipsis,
-                                                  maxLines: 6,
+                                                  maxLines: isTablet ? 8 : 5,
                                                 ),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(height: screenHeight * 0.004,),
-                                          Center(
-                                            child: Padding(
-                                              padding: EdgeInsets.symmetric(vertical: screenHeight * 0.01),
-                                              child: ElevatedButton(
-                                               onPressed: () {
-                                                _launchIMDb();
-                                                },
-                                               style: ElevatedButton.styleFrom(
-                                                 padding: EdgeInsets.zero,
-                                                 backgroundColor: Colors.transparent
+                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.004)),
+                                        Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01),
+                                            ),
+                                            child: ElevatedButton(
+                                              onPressed: _launchIMDb,
+                                              style: ElevatedButton.styleFrom(
+                                                padding: EdgeInsets.zero,
+                                                backgroundColor: Colors.transparent,
                                               ),
-                                               child: ClipRRect(
+                                              child: ClipRRect(
                                                 borderRadius: BorderRadius.circular(16),
-                                                 child: Image.asset(
-                                                   'assets/images/imdb.png', // Buraya kullanmak istediğiniz resmin yolunu yazın
-                                                   width: screenWidth * 0.3,
-                                                   height: screenHeight *0.08,
-                                                   fit: BoxFit.cover,
-                                                 ),
-                                               ),
-                                                                                         ),
+                                                child: Image.asset(
+                                                  'assets/images/imdb.png',
+                                                  width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.3),
+                                                  height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
                                             ),
                                           ),
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -328,38 +366,52 @@ class _DirectorScreenState extends State<DirectorScreen> {
                           ),
                         )
                       : const SizedBox.shrink(),
+                ),
+                pinned: true,
+              ),
+              SliverToBoxAdapter(
+                child: _personMovies.isNotEmpty
+                  ? Column(
+                      children: [
+                        PersonMoviesWidget(
+                          movies: _personMovies,
+                          personType: widget.personType,
+                        ),
+                        if(_adService.bannerAd != null)
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              width: _adService.bannerAd!.size.width.toDouble(),
+                              height: _adService.bannerAd!.size.height.toDouble(),
+                              child: AdWidget(ad: _adService.bannerAd!),
+                            ),
+                          ),
+                      ],
+                    )
+                  : Center(
+                      child: Text(
+                        S.of(context).noMoviesFound,
+                        style: TextStyle(
+                          color: Colors.white54,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
+                    ),
+              ),
+            ],
+          ),
+        );
+      } else {
+        return Scaffold(
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          appBar: AppBar(
+            iconTheme: IconThemeData(
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),
-            pinned: true,
-          ),
-          SliverToBoxAdapter(
-            child: _personMovies.isNotEmpty
-                ? Column(
-                  children: [
-                    PersonMoviesWidget(movies: _personMovies, personType: widget.personType,),
-                    if(_adService.bannerAd != null)
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        width: _adService.bannerAd!.size.width.toDouble(),
-                        height: _adService.bannerAd!.size.height.toDouble(),
-                        child: AdWidget(ad: _adService.bannerAd!),
-                      ),
-                      ),
-                  ],
-                )
-                : Center(child: Text(S.of(context).noMoviesFound, style: const TextStyle(color: Colors.white54))),
-          ),
-        ],
-      ),
-    );
-    } else {
-      return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
             backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-          title: Center(
-            child: Column(
+            title: Center(
+              child: Column(
                  children: [
                    Text(
                      _personDetails[0]['name'],
@@ -375,42 +427,47 @@ class _DirectorScreenState extends State<DirectorScreen> {
                    ),
                  ],
                ),
+            ),
           ),
-        ),
-        body: _personMovies.isNotEmpty
-                ? 
-                    Column(
-                      children: [
-                        SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,)),
-                        if(_adService.bannerAd != null)
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            width: _adService.bannerAd!.size.width.toDouble(),
-                            height: _adService.bannerAd!.size.height.toDouble(),
-                            child: AdWidget(ad: _adService.bannerAd!),
+          body: _personMovies.isNotEmpty
+                  ? 
+                      Column(
+                        children: [
+                          SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,)),
+                          if(_adService.bannerAd != null)
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              width: _adService.bannerAd!.size.width.toDouble(),
+                              height: _adService.bannerAd!.size.height.toDouble(),
+                              child: AdWidget(ad: _adService.bannerAd!),
+                            ),
                           ),
-                          ),
-                      ],
-                    )   
-                : Center(child: Text(S.of(context).noMoviesFound, style: const TextStyle(color: Colors.white54))),
-
-      );
-    }
+                        ],
+                      )   
+                  : Center(child: Text(S.of(context).noMoviesFound, style: const TextStyle(color: Colors.white54))),
+        );
+      }
     } else{
       if(_isLoading) {
-      return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: const IconThemeData(color: Colors.white),
-      ),
-      body: const Center(child: CircularProgressIndicator()));
+        return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          iconTheme: IconThemeData(
+            color: Colors.white,
+            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+          ),
+        ),
+        body: const Center(child: CircularProgressIndicator()));
       }
       else {
         return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+        ),
       ),
       body: Center(
         child: Column(
@@ -420,10 +477,10 @@ class _DirectorScreenState extends State<DirectorScreen> {
               widget.personType == 'Director' ? S.of(context).dataNotRetrivedDirector :
               widget.personType == 'Actor' ? S.of(context).dataNotRetrivedActor :
               widget.personType == 'Writer' ? S.of(context).dataNotRetrivedWriter : widget.personType, 
-              style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+              style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045)),
               ),
               Text(S.of(context).returnPreviousScreen,
-              style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+              style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045)),
               ),
             if(_adService.bannerAd != null)
             Align(
