@@ -345,6 +345,21 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 final movie = _movies.firstWhere((m) => m.id.toString() == movieId);
                 await toggleWatchedStatus(context, movie, true, false); // true for collection,  false for canPop
               }
+              final snackBar = SnackBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              behavior: SnackBarBehavior.floating,
+              content: AwesomeSnackbarContent(
+                title: S.of(context).succesful, 
+                message:  S.of(context).moviesMovedToCollection, 
+                contentType: ContentType.success, 
+                inMaterialBanner: true,
+              ), 
+              dismissDirection: DismissDirection.horizontal,
+            );
+            ScaffoldMessenger.of(context)
+              ..hideCurrentMaterialBanner()
+              ..showSnackBar(snackBar);
               setState(() {
                 _selectedMovies.clear();
               });

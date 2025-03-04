@@ -357,6 +357,21 @@ class _CollectionScreenState extends State<CollectionScreen> {
                 final movie = _movies.firstWhere((m) => m.id.toString() == movieId);
                 await toggleWatchedStatus(context, movie, false, false); // 1. false for collection 2. false for canPop
               }
+              final snackBar = SnackBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              behavior: SnackBarBehavior.floating,
+              content: AwesomeSnackbarContent(
+                title: S.of(context).succesful, 
+                message:  S.of(context).moviesMovedToWatchlist, 
+                contentType: ContentType.success, 
+                inMaterialBanner: true,
+              ), 
+              dismissDirection: DismissDirection.horizontal,
+            );
+            ScaffoldMessenger.of(context)
+              ..hideCurrentMaterialBanner()
+              ..showSnackBar(snackBar);
               setState(() {
                 _selectedMovies.clear();
               });
@@ -576,7 +591,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                       crossAxisCount: isTablet ? 5 : 3,
                       childAspectRatio: isTablet 
                       ? (_viewType == "Card" ? 0.7 : 0.75)  // Tablet için aspect ratio
-                      : (_viewType == "Card" ? 0.45 : 0.5), // Telefon için aspect ratio
+                      : (_viewType == "Card" ? 0.43 : 0.5), // Telefon için aspect ratio
                     mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                     crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                     ),
@@ -605,7 +620,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                     crossAxisCount: isTablet ? 5 : 3, // Tablet için 5, telefon için 3 sütun
                     childAspectRatio: isTablet 
                       ? (_viewType == "Card" ? 0.7 : 0.75)  // Tablet için aspect ratio
-                      : (_viewType == "Card" ? 0.45 : 0.5), // Telefon için aspect ratio
+                      : (_viewType == "Card" ? 0.43 : 0.5), // Telefon için aspect ratio
                     mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                     crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                   ),

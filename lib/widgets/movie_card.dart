@@ -76,7 +76,7 @@ class MovieCard extends StatelessWidget {
                             direction: Axis.horizontal,
                             allowHalfRating: true,
                             itemCount: 10,
-                            itemSize: ScreenUtil.getAdaptiveIconSize(context, 17),
+                            itemSize: ScreenUtil.getAdaptiveIconSize(context, 15.5),
                             itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
                             onRatingUpdate: (rating) {},
                           ),
@@ -108,7 +108,7 @@ class MovieCard extends StatelessWidget {
                           maxLines: 1,
                         ),
                       ),
-                      SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
+                      //SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -144,7 +144,7 @@ class MovieCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: ScreenUtil.getAdaptivePadding(context),
+                              padding: ScreenUtil.getAdaptiveLTRBPadding(context, bottom: 5),
                               child: Text(
                                 '${movie.releaseDate.day}/${movie.releaseDate.month}/${movie.releaseDate.year}',
                                 style: TextStyle(
@@ -170,7 +170,7 @@ class MovieCard extends StatelessWidget {
                               ),
                           ],
                         ),
-                      SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
+                      //SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
                       const SizedBox(
                         height: 0,
                         child: Divider(
@@ -267,7 +267,7 @@ class MovieCard extends StatelessWidget {
                       direction: Axis.horizontal,
                       allowHalfRating: true,
                       itemCount: 10,
-                      itemSize: ScreenUtil.getAdaptiveIconSize(context, 10),
+                      itemSize: ScreenUtil.getAdaptiveIconSize(context, 9),
                       itemBuilder: (context, _) => const Icon(Icons.star, color: Colors.amber),
                       onRatingUpdate: (rating) {},
                     ),

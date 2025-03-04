@@ -27,6 +27,21 @@ class ScreenUtil {
       vertical: vertical * multiplier,
     );
   }
+  static EdgeInsets getAdaptiveLTRBPadding(BuildContext context, {
+    double left = 16.0,
+    double top = 16.0,
+    double right = 16.0,
+    double bottom = 16.0,
+  }) {
+    // Tablet için padding değerlerini ayarla
+    final multiplier = isTablet(context) ? 1.5 : 1.0;
+    return EdgeInsets.fromLTRB(
+      left * multiplier,
+      top * multiplier,
+      right * multiplier,
+      bottom * multiplier
+    );
+  }
 
   static double getAdaptiveCardWidth(BuildContext context, double baseWidth) {
     // Tablet için kart genişliklerini ayarla

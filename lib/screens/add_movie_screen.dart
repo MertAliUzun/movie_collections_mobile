@@ -854,7 +854,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
                         IconButton(
                         onPressed: () async {
-                          await _addDetails('Add Genre', (genre) {
+                          await _addDetails(S.of(context).addGenre, (genre) {
                             setState(() {
                               _selectedGenres.add(genre);
                             });
@@ -1003,7 +1003,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),), //18
                         IconButton(
                         onPressed: () async {
-                          await _addDetails('Add Actor', (actor) {
+                          await _addDetails(S.of(context).addActor, (actor) {
                             setState(() {
                               _selectedActors.add(actor);
                             });
@@ -1074,7 +1074,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),//18
                     IconButton(
                     onPressed: () async {
-                      await _addDetails('Add Writer', (writer) {
+                      await _addDetails(S.of(context).addWriter, (writer) {
                         setState(() {
                           _selectedWriters.add(writer);
                         });
@@ -1145,7 +1145,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
                     IconButton(
                     onPressed: () async {
-                      await _addDetails('Add Production Company', (company) {
+                      await _addDetails(S.of(context).addProductionCompany, (company) {
                         setState(() {
                           _selectedProductionCompanies.add(company);
                         });
