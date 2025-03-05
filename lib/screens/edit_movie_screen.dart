@@ -591,7 +591,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           _selectedDate = DateTime.parse(movieDetails['release_date'] ?? DateTime.now().toString());
           _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
           _selectedGenres = movieDetails['genres'] != null 
-                ? List<String>.from(movieDetails['genres'].take(4).map((genre) => genre['name'])) 
+                ? List<String>.from(movieDetails['genres'].take(6).map((genre) => genre['name'])) 
                 : [];
           _selectedActors = movieDetails['credits']['cast'] != null 
                 ? List<String>.from(movieDetails['credits']['cast'].take(6).map((actor) => actor['name'])) 
@@ -663,11 +663,11 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             Positioned.fill(
              child: Image.network(
                _imageLink!, // Resim URL'si
-               fit: BoxFit.cover, // Tüm alanı kaplar
+               fit: BoxFit.contain, // Tüm alanı kaplar
                errorBuilder: (context, error, stackTrace) =>
                Image.asset(
                 'assets/images/placeholder_poster.png',
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
                ),
              ),
            ),
@@ -804,7 +804,9 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   _selectedGenres.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length :2,
+                            crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedGenres.length >= 3 ? 3 : 2
+                          ),
                             childAspectRatio: isTablet ? 2.0 : 1.5,
                             mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                             crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
@@ -1019,8 +1021,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   _selectedWriters.isNotEmpty
                       ? GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: _selectedWriters.length >= 3 ? 3 : _selectedWriters.length,
-                            childAspectRatio: isTablet ? 2.0 : 1.5,
+                              crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                              _selectedWriters.length >= 3 ? 3 : 2
+                            ),
+                            childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
                             mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                             crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                           ),
@@ -1339,7 +1343,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       children: [
                         Positioned.fill(
                             child: Container(
+                              decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                             ),
                 ),
                 if(!widget.isFromWishlist)
@@ -1370,7 +1377,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         children: [
                             Positioned.fill(
                             child: Container(
+                              decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                             ),
                           ),                 
                           RatingBar.builder(
@@ -1444,7 +1454,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                       ? 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}'
                                       : '',
                                   genres: movieDetails['genres']
-                                      ?.take(4)
+                                      ?.take(6)
                                       .map<String>((genre) => genre['name'] as String)
                                       .toList(),
                                   productionCompany: movieDetails['production_companies']

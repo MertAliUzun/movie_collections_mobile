@@ -73,6 +73,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   List<String> _selectedProductionCompanies = [];
   String _selectedCollectionType = ''; // Varsayılan değer
   bool canShowProviders = false;
+  FocusNode _searchFocusNode = FocusNode();
   Map<String, List<dynamic>> _providers = {
     'flatrate': [],
     'rent': [],
@@ -264,7 +265,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           }
           _imageLink = 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}';
           _selectedGenres = movieDetails['genres'] != null 
-              ? List<String>.from(movieDetails['genres'].take(4).map((genre) => genre['name'])) 
+              ? List<String>.from(movieDetails['genres'].take(6).map((genre) => genre['name'])) 
               : [];
           _selectedActors = movieDetails['credits']['cast'] != null 
               ? List<String>.from(movieDetails['credits']['cast'].take(6).map((actor) => actor['name'])) 
@@ -284,6 +285,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         });
         _searchController.clear();
         _searchResults = [];
+        _searchFocusNode.unfocus();
         canShowProviders = false;
       }
     } catch (e) {
@@ -653,11 +655,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             Positioned.fill(
              child: Image.network(
                _imageLink!, // Resim URL'si
-               fit: BoxFit.cover, // Tüm alanı kaplar
+               fit: BoxFit.contain, // Tüm alanı kaplar
                errorBuilder: (context, error, stackTrace) =>
                Image.asset(
                 'assets/images/placeholder_poster.png',
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
                ),
              ),
            ),
@@ -682,6 +684,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               children: [
                 TextField(
                   controller: _searchController,
+                  focusNode: _searchFocusNode,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
@@ -875,7 +878,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
-                            _selectedGenres.length >= 5 ? 4 : _selectedGenres.length > 2 ? _selectedGenres.length : 2
+                            _selectedGenres.length >= 3 ? 3 : 2
                           ),
                           childAspectRatio: isTablet ? 2.0 : 1.5,
                           mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
@@ -1095,7 +1098,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     ? GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
-                            _selectedWriters.length >= 3 ? 3 : _selectedWriters.length
+                            _selectedWriters.length >= 3 ? 3 : 2
                           ),
                           childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
                           mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
@@ -1421,11 +1424,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     onTap: () => _watchDate(context),
                   ),
                   Stack(
-                      children: [
-                        Positioned.fill(
-                            child: Container(
-                              color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
-                            ),
+                    children: [
+                      Positioned.fill(
+                          child: Container(
+                            decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                            borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
                 ),
                 if(!widget.isFromWishlist)
                 RatingBar.builder(
@@ -1455,7 +1461,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         children: [
                             Positioned.fill(
                             child: Container(
+                              decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.3), // Siyah yarı saydam filtre
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                             ),
                           ),                 
                           RatingBar.builder(
@@ -1550,6 +1559,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   void dispose() {
     _debounce?.cancel();
     _searchController.dispose();
+    _searchFocusNode.dispose();
     _adService.disposeAds();
     _movieNameController.dispose();
     _sortTitleController.dispose();

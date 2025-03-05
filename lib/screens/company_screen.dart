@@ -131,7 +131,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         ? 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}'
                         : '',
                     genres: movieDetails['genres']
-                        ?.take(4)
+                        ?.take(6)
                         .map<String>((genre) => genre['name'] as String)
                         .toList(),
                     productionCompany: movieDetails['production_companies']
