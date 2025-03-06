@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -469,30 +470,37 @@ class _DirectorScreenState extends State<DirectorScreen> {
           size: ScreenUtil.getAdaptiveIconSize(context, 24),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              widget.personType == 'Director' ? S.of(context).dataNotRetrivedDirector :
-              widget.personType == 'Actor' ? S.of(context).dataNotRetrivedActor :
-              widget.personType == 'Writer' ? S.of(context).dataNotRetrivedWriter : widget.personType, 
-              style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045)),
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    widget.personType == 'Director' ? S.of(context).dataNotRetrivedDirector :
+                    widget.personType == 'Actor' ? S.of(context).dataNotRetrivedActor :
+                    widget.personType == 'Writer' ? S.of(context).dataNotRetrivedWriter : widget.personType, 
+                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045)),
+                    ),
+                    Text(S.of(context).returnPreviousScreen,
+                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045)),
+                    ),
+                  
+                ],
               ),
-              Text(S.of(context).returnPreviousScreen,
-              style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045)),
-              ),
-            if(_adService.bannerAd != null)
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: _adService.bannerAd!.size.width.toDouble(),
-                height: _adService.bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _adService.bannerAd!),
-              ),
-              ),
-          ],
-        ),
+            ),
+          ),
+          if(_adService.bannerAd != null)
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    width: _adService.bannerAd!.size.width.toDouble(),
+                    height: _adService.bannerAd!.size.height.toDouble(),
+                    child: AdWidget(ad: _adService.bannerAd!),
+                  ),
+                  ),
+        ],
       )
         );
       }

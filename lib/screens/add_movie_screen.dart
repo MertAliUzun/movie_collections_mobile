@@ -45,7 +45,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   final _notesController = TextEditingController();
   final _runtimeController = TextEditingController();
   final _watchCountController = TextEditingController();
-  final _imdbRatingController = TextEditingController();
+  final _imdbRatingController = TextEditingController(text: '0.0');
   final _sortTitleController = TextEditingController();
   final _productionCompanyController = TextEditingController();
   final _countryController = TextEditingController();
@@ -584,6 +584,95 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       }
   }
 
+  // Runtime'ı saat ve dakika formatına çeviren yardımcı fonksiyon
+  String _formatRuntime(String? minutes) {
+    if (minutes == null || minutes.isEmpty) {
+      //return S.of(context).runtimeNull;
+      return 'null';
+    }
+    
+    int? totalMinutes = int.tryParse(minutes);
+    if (totalMinutes == null) {
+      //return S.of(context).runtimeNull;
+      return 'null';
+    }
+
+    int hours = totalMinutes ~/ 60;
+    int remainingMinutes = totalMinutes % 60;
+
+    if (hours > 0) {
+      return '${hours}h ${remainingMinutes}m';
+    } else {
+      return '${remainingMinutes}m';
+    }
+  }
+
+  // Runtime düzenleme dialog'unu gösteren fonksiyon
+  Future<void> _editRuntime() async {
+    String? newRuntime = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        String tempRuntime = _runtimeController.text;
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          title: Text(
+            S.of(context).runtimeMinutes,
+              style: TextStyle(
+              color: Colors.white,
+              fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+            ),
+          ),
+          content: TextField(
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+            ),
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              //hintText: S.of(context).enterMinutes,
+              hintStyle: TextStyle(
+                color: Colors.white54,
+                fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
+              ),
+            ),
+            onChanged: (value) {
+              tempRuntime = value;
+            },
+            controller: TextEditingController(text: _runtimeController.text),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(
+                S.of(context).cancel,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, tempRuntime),
+              child: Text(
+                S.of(context).ok,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (newRuntime != null) {
+      setState(() {
+        _runtimeController.text = newRuntime;
+      });
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -780,6 +869,124 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
                   ),
                 ),
+                 SizedBox(height: screenWidth * 0.1),
+                Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.2),
+                    child: Column(
+                      children: [
+                        Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              S.of(context).movieDetails,
+                              style: TextStyle(
+                                color: Colors.white, 
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03),
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                          const Divider(height: 0, color: Colors.white60,),
+                          SizedBox(height: screenHeight *0.02,),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: _editRuntime,
+                              child: Container(
+                                height: screenHeight * 0.1,
+                                width: screenWidth * 0.45,
+                                child: Card(
+                                  color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(16.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.timer,
+                                          color: Colors.white,
+                                          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                        ),
+                                        SizedBox(width: 8),
+                                        Text(
+                                          _formatRuntime(_runtimeController.text),
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        Expanded(
+                          child: Container(
+                            height: screenHeight * 0.1,
+                            width: screenWidth * 0.45,
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: TextFormField(
+                                textAlign: TextAlign.center,
+                                controller: _imdbRatingController,
+                                decoration: InputDecoration(
+                                //labelText: S.of(context).imdbScore,
+                                //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
+                                prefixIcon: Padding(
+                                  padding: const EdgeInsets.all(8.0), // İkonun etrafında boşluk ekleyebilirsiniz
+                                  child: Image.asset(
+                                    'assets/images/imdb.png', // IMDb logosunun bulunduğu asset yolunu buraya yazın
+                                    width: 50,  // İkonun boyutunu ayarlayın
+                                    height: 50, // İkonun boyutunu ayarlayın
+                                  ),
+                                ),
+                              ),
+                                keyboardType: TextInputType.number,
+                                style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
+                                validator: (value) {
+                              if (value != null && value.isNotEmpty) {
+                                final number = double.tryParse(value);
+                                if (number == null || number < 0 || number > 10) {
+                                  return S.of(context).enterValidScore;
+                                }
+                              }
+                              return null;
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                          ],
+                        ),
+                        SizedBox(height: screenWidth * 0.05),
+                    if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                  Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical/2, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal/3),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                          Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
+                          SizedBox(width: screenWidth * 0.1,),
+                          Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
+                                          ],
+                          ),
+                        ),
+                        if(_countryController.text.isNotEmpty)
+                        Padding(
+                    padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, 0, ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, ScreenUtil.getAdaptivePadding(context).vertical * 0.5),
+                    child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
+                ),
+                      ],
+                    ),
+                  ),    
+                      ],
+                    ),
+                  ),
                 SizedBox(height: screenWidth * 0.1),
                 if ((_providers['flatrate']!.isNotEmpty || 
                       _providers['rent']!.isNotEmpty || 
@@ -1100,7 +1307,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
                             _selectedWriters.length >= 3 ? 3 : 2
                           ),
-                          childAspectRatio: _selectedWriters.length == 1 ? 5 : 2,
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
                           mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                           crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                         ),
@@ -1249,77 +1456,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     ),
                     onTap: () => _selectDate(context),
                   ),
-                if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
-                    SizedBox(width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.1),),
-                    Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
-                  ],
-                ),
-                if(_countryController.text.isNotEmpty)
-                Padding(
-                  padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.05), ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.055), ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.05), 0),
-                  child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
-                ),
                 TextFormField(
                   controller: _plotController,
                   decoration: InputDecoration(labelText: S.of(context).plot, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
                   maxLines: 3,
                   style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                 ),
-                Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: _runtimeController,
-                      decoration: InputDecoration(labelText: S.of(context).runtimeMinutes, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value != null && value.isNotEmpty) {
-                          final number = int.tryParse(value);
-                          if (number == null) {
-                            return S.of(context).enterValidNumber;
-                          }
-                        }
-                        return null;
-                      },
-                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
-                    ),
-                  ),
-                  Container(
-                    height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),  // Çizginin yüksekliğini ayarlayın
-                    child: const VerticalDivider(
-                      color: Colors.white54,  // Dikey çizgi rengi
-                      thickness: 1,  // Çizginin kalınlığı
-                    ),
-                  ),
-                  Expanded(
-                    child: TextFormField(
-                      controller: _imdbRatingController,
-                      decoration: InputDecoration(labelText: S.of(context).imdbScore, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
-                      keyboardType: TextInputType.number,
-                      style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
-                      validator: (value) {
-                    if (value != null && value.isNotEmpty) {
-                      final number = double.tryParse(value);
-                      if (number == null || number < 0 || number > 10) {
-                        return S.of(context).enterValidScore;
-                      }
-                    }
-                    return null;
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              TextFormField(
-                controller: _notesController,
-                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
-                maxLines: 3,
-                style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
-              ),
+                SizedBox(height: screenHeight * 0.03,),
               if(!widget.isFromWishlist)
               Row(
                 children: [
@@ -1374,6 +1517,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 ),
               ),
                 ],
+              ),
+              TextFormField(
+                controller: _notesController,
+                decoration: InputDecoration(labelText: S.of(context).myNotes, labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),),
+                maxLines: 3,
+                style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
               ),
                 /*TextFormField(
                   controller: _popularityController,

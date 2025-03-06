@@ -255,36 +255,43 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       ),
                   ],
                 )
-              : Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        S.of(context).noMoviesFoundForCompany,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+              : Column(
+                children: [
+                  Expanded(
+                    child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              S.of(context).noMoviesFoundForCompany,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+                              ),
+                            ),
+                            Text(
+                              S.of(context).returnPreviousScreen,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
+                              ),
+                            ),
+                            
+                          ],
                         ),
                       ),
-                      Text(
-                        S.of(context).returnPreviousScreen,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),
-                        ),
-                      ),
-                      if(_adService.bannerAd != null)
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            width: _adService.bannerAd!.size.width.toDouble(),
-                            height: _adService.bannerAd!.size.height.toDouble(),
-                            child: AdWidget(ad: _adService.bannerAd!),
-                          ),
-                        ),
-                    ],
                   ),
-                ),
+                    if(_adService.bannerAd != null)
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                width: _adService.bannerAd!.size.width.toDouble(),
+                                height: _adService.bannerAd!.size.height.toDouble(),
+                                child: AdWidget(ad: _adService.bannerAd!),
+                              ),
+                            ),
+                ],
+              ),
     );
   }
   @override
