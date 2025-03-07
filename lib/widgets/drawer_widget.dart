@@ -236,8 +236,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const MyHomePage(
-            
+          builder: (context) => MyHomePage(
+            isInit: false,
           ),
         ),
       );
@@ -453,8 +453,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const MyHomePage(
-            
+          builder: (context) => MyHomePage(
+            isInit: false,
           ),
         ),
       );

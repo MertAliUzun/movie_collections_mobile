@@ -405,6 +405,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             builder: (context) => MyHomePage(
               userEmail: widget.userEmail,
               systemLanguage: widget.systemLanguage,
+              isInit: false,
             ),
           ),
         );

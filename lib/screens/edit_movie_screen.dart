@@ -819,7 +819,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             GestureDetector(
                               onTap: _editRuntime,
                               child: Container(
-                                height: screenHeight * 0.08,
+                                height: screenHeight * 0.1,
                                 width: screenWidth * 0.45,
                                 child: Card(
                                   color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),

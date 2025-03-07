@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(systemLanguage: systemLanguage,),
+      home: MyHomePage(systemLanguage: systemLanguage, isInit: true,),
     );
   }
 }
@@ -80,8 +80,9 @@ class MyHomePage extends StatefulWidget {
   final String? userPicture; // Kullanıcı Resmi
   final String? userName; // Kullanıcı Adı
   final String? systemLanguage;
+  bool isInit = true;
 
-  const MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage});
+  MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage, required this.isInit});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -99,7 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _googleSignIn();
+    if(widget.isInit!) {_googleSignIn(); widget.isInit = false;}
+    else { _isLoaded = true; }
+    
     _adService.loadBannerAd(
       onAdLoaded: (ad) {
         setState(() {});
@@ -115,8 +118,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
     Future<AuthResponse> _googleSignIn() async {
-    if (_userEmail != null || _userEmail == null) {
-      _isLoaded = true;
+    if (_userEmail != null) {
+      setState(() {
+          _isLoaded = true;
+        });
+      
       return AuthResponse();
     }
 
@@ -160,7 +166,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
 
-      _isLoaded = true;
+      setState(() {
+          _isLoaded = true;
+        });
 
       // Update movies box
       final moviesBox = Hive.box<Movie>('movies');
@@ -183,12 +191,13 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     } catch (e) {
       if (mounted) {
-        _showErrorDialog(e.toString());
+        //_showErrorDialog(e.toString());
       }
 
       if (mounted) {
         setState(() {
           _userId = '0'; // User did not log in
+          _isLoaded = true;
         });
       }
 
