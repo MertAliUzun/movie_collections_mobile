@@ -54,6 +54,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   void initState() {
     super.initState();
     _loadViewType();
+    _loadSortPreferences();
     _fetchMovies();
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
@@ -69,6 +70,21 @@ class _CollectionScreenState extends State<CollectionScreen> {
     setState(() {
       _viewType = prefs.getString('viewType') ?? 'List';
     });
+  }
+
+  Future<void> _loadSortPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _sortBy = prefs.getString('sortByCollection') ?? 'movieName'; // Varsayılan sıralama
+      _sortDir = prefs.getString('sortDirCollection') ?? 'Ascending'; // Varsayılan sıralama yönü
+      _isAscending = _sortDir == 'Ascending'; // Sıralama yönünü ayarla
+    });
+  }
+
+  Future<void> _saveSortPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('sortByCollection', _sortBy);
+    await prefs.setString('sortDirCollection', _sortDir);
   }
 
   Future<void> _fetchMovies() async {
@@ -123,16 +139,20 @@ class _CollectionScreenState extends State<CollectionScreen> {
       return _isAscending ? comparison : -comparison;
     });
   }
+
   void _onSortByChanged(String newSortBy) {
-  setState(() {
-    _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
-    _sortMovies(); // Filmleri sırala
-  });
+    setState(() {
+      _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
+      _saveSortPreferences(); // Sıralama tercihlerini kaydet
+      _sortMovies(); // Filmleri sırala
+    });
   }
+
   void _onSortDirChanged(String newSortDir) {
     setState(() {
-      _sortDir = newSortDir; // Yeni sıralama kriterini güncelle
-      if(newSortDir == 'Ascending') { _isAscending = true;} else { _isAscending = false;}
+      _sortDir = newSortDir; // Yeni sıralama yönünü güncelle
+      _isAscending = newSortDir == 'Ascending'; // Sıralama yönünü ayarla
+      _saveSortPreferences(); // Sıralama tercihlerini kaydet
       _sortMovies(); // Filmleri sırala
     });
   }
@@ -200,41 +220,41 @@ class _CollectionScreenState extends State<CollectionScreen> {
   }
 
   void _toggleGroupBy(String value) {
-  setState(() {
-    // Tüm gruplamaları sıfırla
-    _groupByDirector = false;
-    _groupByGenre = false;
-    _groupByReleaseYear = false;
-    _groupByWatchYear = false;
-    _groupBy = false;
+    setState(() {
+      // Tüm gruplamaları sıfırla
+      _groupByDirector = false;
+      _groupByGenre = false;
+      _groupByReleaseYear = false;
+      _groupByWatchYear = false;
+      _groupBy = false;
 
-    // Seçime göre gruplamayı etkinleştir
-    switch (value) {
-      case 'Director':
-        _groupByDirector = true;
-        _groupBy = true;
-        break;
-      case 'Genre':
-        _groupByGenre = true;
-        _groupBy = true;
-        break;
-      case 'Release Year':
-        _groupByReleaseYear = true;
-        _groupBy = true;
-        break;
-      case 'Watch Year':
-        _groupByWatchYear = true;
-        _groupBy = true;
-        break;
-      default:
-        // 'None' veya diğer durumlarda zaten tüm gruplamalar sıfırlanmış durumda
-        break;
-    }
+      // Seçime göre gruplamayı etkinleştir
+      switch (value) {
+        case 'Director':
+          _groupByDirector = true;
+          _groupBy = true;
+          break;
+        case 'Genre':
+          _groupByGenre = true;
+          _groupBy = true;
+          break;
+        case 'Release Year':
+          _groupByReleaseYear = true;
+          _groupBy = true;
+          break;
+        case 'Watch Year':
+          _groupByWatchYear = true;
+          _groupBy = true;
+          break;
+        default:
+          // 'None' veya diğer durumlarda zaten tüm gruplamalar sıfırlanmış durumda
+          break;
+      }
 
-    // Seçilen grup adını güncelle
-    _groupByText = value;
-  });
-}
+      // Seçilen grup adını güncelle
+      _groupByText = value;
+    });
+  }
 
   void _handleMovieSelection(Movie movie) {
     setState(() {

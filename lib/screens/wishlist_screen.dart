@@ -53,6 +53,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   void initState() {
     super.initState();
     _loadViewType();
+    _loadSortPreferences(); // Sıralama tercihlerini yükle
     _fetchMovies();
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
@@ -68,6 +69,21 @@ class _WishlistScreenState extends State<WishlistScreen> {
     setState(() {
       _viewType = prefs.getString('viewType') ?? 'List';
     });
+  }
+
+  Future<void> _loadSortPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _sortBy = prefs.getString('sortByWishlist') ?? 'movieName'; // Varsayılan sıralama
+      _sortDir = prefs.getString('sortDirWishlist') ?? 'Ascending'; // Varsayılan sıralama yönü
+      _isAscending = _sortDir == 'Ascending'; // Sıralama yönünü ayarla
+    });
+  }
+
+  Future<void> _saveSortPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('sortByWishlist', _sortBy);
+    await prefs.setString('sortDirWishlist', _sortDir);
   }
 
   Future<void> _fetchMovies() async {
@@ -119,15 +135,17 @@ class _WishlistScreenState extends State<WishlistScreen> {
     });
   }
   void _onSortByChanged(String newSortBy) {
-  setState(() {
-    _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
-    _sortMovies(); // Filmleri sırala
-  });
+    setState(() {
+      _sortBy = newSortBy; // Yeni sıralama kriterini güncelle
+      _saveSortPreferences(); // Sıralama tercihlerini kaydet
+      _sortMovies(); // Filmleri sırala
+    });
   }
   void _onSortDirChanged(String newSortDir) {
     setState(() {
-      _sortDir = newSortDir; // Yeni sıralama kriterini güncelle
-      if(newSortDir == 'Ascending') { _isAscending = true;} else { _isAscending = false;}
+      _sortDir = newSortDir; // Yeni sıralama yönünü güncelle
+      _isAscending = newSortDir == 'Ascending'; // Sıralama yönünü ayarla
+      _saveSortPreferences(); // Sıralama tercihlerini kaydet
       _sortMovies(); // Filmleri sırala
     });
   }
