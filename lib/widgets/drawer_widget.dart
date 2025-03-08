@@ -128,7 +128,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).noAccessToken, 
+          title: S.of(context).noMoviesFound, 
           message: S.of(context).unableToDetectMovies, 
           contentType: ContentType.failure, 
           inMaterialBanner: true,
@@ -147,7 +147,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   Future<void> _signOut(BuildContext context) async {
-    return;
+    //return;
     final shouldSignOut = await showDialog<bool>(
       context: context,
       builder: (BuildContext context) {
@@ -621,7 +621,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 icon: const Icon(Icons.login, size: 50),
                 onPressed: () async {
                   // Google hesabına giriş yap
-                  //await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
+                  await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
                 },
               ),
             ),

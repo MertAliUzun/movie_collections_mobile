@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
       clientId: iosClientId,
       serverClientId: webClientId,
     );
-
+    
     try {
       final googleUser = await googleSignIn.signIn();
       if (googleUser == null) {
@@ -166,6 +166,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
 
+      
+
       setState(() {
           _isLoaded = true;
         });
@@ -191,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     } catch (e) {
       if (mounted) {
-        //_showErrorDialog(e.toString());
+        //_showErrorDialog(e.toString());y
       }
 
       if (mounted) {
