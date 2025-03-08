@@ -55,6 +55,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
     super.initState();
     _loadViewType();
     _loadSortPreferences();
+    _loadGroupByText();
+    _loadGroupByBooleans();
     _fetchMovies();
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
@@ -68,7 +70,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   Future<void> _loadViewType() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      _viewType = prefs.getString('viewType') ?? 'List';
+      _viewType = prefs.getString('viewTypeCollection') ?? 'List';
     });
   }
 
@@ -85,6 +87,37 @@ class _CollectionScreenState extends State<CollectionScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('sortByCollection', _sortBy);
     await prefs.setString('sortDirCollection', _sortDir);
+  }
+
+  Future<void> _loadGroupByText() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _groupByText = prefs.getString('groupByTextCollection') ?? 'None'; // Varsayılan grup metni
+    });
+  }
+
+  Future<void> _saveGroupByText(String value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('groupByTextCollection', value);
+  }
+
+  Future<void> _loadGroupByBooleans() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _groupByDirector = prefs.getBool('groupByDirectorCollection') ?? false;
+      _groupByGenre = prefs.getBool('groupByGenreCollection') ?? false;
+      _groupByReleaseYear = prefs.getBool('groupByReleaseYearCollection') ?? false;
+      _groupByWatchYear = prefs.getBool('groupByWatchYearCollection') ?? false;
+      _groupBy = prefs.getBool('groupByCollection') ?? false;
+    });
+  }
+
+  Future<void> _saveGroupByBooleans() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('groupByDirectorCollection', _groupByDirector);
+    await prefs.setBool('groupByGenreCollection', _groupByGenre);
+    await prefs.setBool('groupByReleaseYearCollection', _groupByReleaseYear);
+    await prefs.setBool('groupByCollection', _groupBy);
   }
 
   Future<void> _fetchMovies() async {
@@ -216,7 +249,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
 
   Future<void> _saveViewType(String viewType) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('viewType', viewType);
+    await prefs.setString('viewTypeCollection', viewType);
   }
 
   void _toggleGroupBy(String value) {
@@ -251,8 +284,10 @@ class _CollectionScreenState extends State<CollectionScreen> {
           break;
       }
 
-      // Seçilen grup adını güncelle
+      // Seçilen grup adını güncelle ve kaydet
       _groupByText = value;
+      _saveGroupByText(value); // Grup metnini kaydet
+      _saveGroupByBooleans(); // Group by boolean değerlerini kaydet
     });
   }
 

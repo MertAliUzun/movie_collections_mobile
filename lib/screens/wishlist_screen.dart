@@ -54,6 +54,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
     super.initState();
     _loadViewType();
     _loadSortPreferences(); // Sıralama tercihlerini yükle
+    _loadGroupByText(); // Group by metnini yükle
+    _loadGroupByBooleans(); // Group by boolean değerlerini yükle
     _fetchMovies();
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
@@ -67,7 +69,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   Future<void> _loadViewType() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      _viewType = prefs.getString('viewType') ?? 'List';
+      _viewType = prefs.getString('viewTypeWishlist') ?? 'List';
     });
   }
 
@@ -84,6 +86,36 @@ class _WishlistScreenState extends State<WishlistScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('sortByWishlist', _sortBy);
     await prefs.setString('sortDirWishlist', _sortDir);
+  }
+
+  Future<void> _loadGroupByText() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _groupByText = prefs.getString('groupByTextWishlist') ?? 'None'; // Varsayılan grup metni
+    });
+  }
+
+  Future<void> _saveGroupByText(String value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('groupByTextWishlist', value);
+  }
+
+  Future<void> _loadGroupByBooleans() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _groupByDirector = prefs.getBool('groupByDirectorWishlist') ?? false;
+      _groupByGenre = prefs.getBool('groupByGenreWishlist') ?? false;
+      _groupByReleaseYear = prefs.getBool('groupByReleaseYearWishlist') ?? false;
+      _groupBy = prefs.getBool('groupByWishlist') ?? false;
+    });
+  }
+
+  Future<void> _saveGroupByBooleans() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('groupByDirectorWishlist', _groupByDirector);
+    await prefs.setBool('groupByGenreWishlist', _groupByGenre);
+    await prefs.setBool('groupByReleaseYearWishlist', _groupByReleaseYear);
+    await prefs.setBool('groupByWishlist', _groupBy);
   }
 
   Future<void> _fetchMovies() async {
@@ -209,40 +241,42 @@ class _WishlistScreenState extends State<WishlistScreen> {
 
   Future<void> _saveViewType(String viewType) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('viewType', viewType);
+    await prefs.setString('viewTypeWishlist', viewType);
   }
 
   void _toggleGroupBy(String value) {
-  setState(() {
-    // Tüm gruplamaları sıfırla
-    _groupByDirector = false;
-    _groupByGenre = false;
-    _groupByReleaseYear = false;
-    _groupBy = false;
+    setState(() {
+      // Tüm gruplamaları sıfırla
+      _groupByDirector = false;
+      _groupByGenre = false;
+      _groupByReleaseYear = false;
+      _groupBy = false;
 
-    // Seçime göre gruplamayı etkinleştir
-    switch (value) {
-      case 'Director':
-        _groupByDirector = true;
-        _groupBy = true;
-        break;
-      case 'Genre':
-        _groupByGenre = true;
-        _groupBy = true;
-        break;
-      case 'Release Year':
-        _groupByReleaseYear = true;
-        _groupBy = true;
-        break;
-      default:
-        // 'None' veya diğer durumlarda zaten tüm gruplamalar sıfırlanmış durumda
-        break;
-    }
+      // Seçime göre gruplamayı etkinleştir
+      switch (value) {
+        case 'Director':
+          _groupByDirector = true;
+          _groupBy = true;
+          break;
+        case 'Genre':
+          _groupByGenre = true;
+          _groupBy = true;
+          break;
+        case 'Release Year':
+          _groupByReleaseYear = true;
+          _groupBy = true;
+          break;
+        default:
+          // 'None' veya diğer durumlarda zaten tüm gruplamalar sıfırlanmış durumda
+          break;
+      }
 
-    // Seçilen grup adını güncelle
-    _groupByText = value;
-  });
-}
+      // Seçilen grup adını güncelle ve kaydet
+      _groupByText = value;
+      _saveGroupByText(value); // Grup metnini kaydet
+      _saveGroupByBooleans(); // Group by boolean değerlerini kaydet
+    });
+  }
 
   void _handleMovieSelection(Movie movie) {
     setState(() {
