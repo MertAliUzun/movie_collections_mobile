@@ -96,6 +96,9 @@ flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/images/logo.png"
+  adaptive_icon: true
+  android_adaptive_icon_background: "#1e232d" 
+  android_adaptive_icon_foreground: "assets/images/logo.png" 
 
 
 flutter_native_splash:

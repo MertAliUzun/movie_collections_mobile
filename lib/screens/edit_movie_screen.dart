@@ -66,6 +66,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<String> _selectedWriters = [];
   List<String> _selectedProductionCompanies = [];
   List<Map<String, dynamic>> _similarMovies = [];
+  String? _pgRating;
   final ScrollController _scrollController = ScrollController();
   String _selectedCollectionType = ''; // Varsayılan değer
   Map<String, List<dynamic>> _providers = {
@@ -571,6 +572,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _fetchSimilarMovies();
+      _fetchPgRating();
+      
       //_fetchProviders();
       Future.microtask(() => _fetchProviders());    
     }
@@ -609,6 +612,30 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           };
         });
       }
+  }
+  Future<void> _fetchPgRating() async { 
+    if (int.parse(widget.movie!.id) < 0) { return; }
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Skip fetching similar movies if there's no internet
+      return;
+    }
+    final tmdbService = TmdbService();
+    final movieDetails = await tmdbService.searchMovies(widget.movie!.movieName);
+
+    if (movieDetails.isNotEmpty) { 
+      final movieId = movieDetails[0]['id'];
+      final pgRating = await tmdbService.getPgRating(movieId);
+
+      if (mounted) {
+        setState(() {
+          _pgRating = pgRating.where((rating) => rating['iso_3166_1'] == 'US')
+          .map((rating) => rating['release_dates']?.first['certification'])
+          .toString();
+        });
+        //print('xxxxxx'+_pgRating!);
+      }
+    }
   }
  
   Future<void> _fetchSimilarMovies() async {
@@ -797,122 +824,119 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
                   ),
                   SizedBox(height: screenWidth * 0.1),
-                  Card(
-                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.2),
-                    child: Column(
-                      children: [
-                        Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Text(
-                              S.of(context).movieDetails,
-                              style: TextStyle(
-                                color: Colors.white, 
-                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03),
-                                fontWeight: FontWeight.bold
-                              ),
+                  Column(
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            S.of(context).movieDetails,
+                            style: TextStyle(
+                              color: Colors.white, 
+                              fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028),
+                              fontWeight: FontWeight.bold
                             ),
                           ),
-                          const Divider(height: 0, color: Colors.white60,),
-                          SizedBox(height: screenHeight *0.02,),
-                        Row(
-                          children: [
-                            GestureDetector(
-                              onTap: _editRuntime,
-                              child: Container(
-                                height: screenHeight * 0.1,
-                                width: screenWidth * 0.45,
-                                child: Card(
-                                  color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(16.0),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.timer,
+                        ),
+                        const Divider(height: 0, color: Colors.white60,),
+                        SizedBox(height: screenHeight * 0.02,),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: _editRuntime,
+                            child: Container(
+                              height: screenHeight * 0.1,
+                              width: screenWidth * 0.45,
+                              child: Card(
+                                color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                child: Padding(
+                                  padding: EdgeInsets.all(16.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.timer,
+                                        color: Colors.white,
+                                        size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                      ),
+                                      SizedBox(width: 8),
+                                      Text(
+                                        _formatRuntime(_runtimeController.text),
+                                        style: TextStyle(
                                           color: Colors.white,
-                                          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        SizedBox(width: 8),
-                                        Text(
-                                          _formatRuntime(_runtimeController.text),
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
-                        Expanded(
-                          child: Container(
-                            height: screenHeight * 0.1,
-                            width: screenWidth * 0.45,
-                            child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                              child: TextFormField(
-                                textAlign: TextAlign.center,
-                                controller: _imdbRatingController,
-                                decoration: InputDecoration(
-                                //labelText: S.of(context).imdbScore,
-                                //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
-                                prefixIcon: Padding(
-                                  padding: const EdgeInsets.all(8.0), // İkonun etrafında boşluk ekleyebilirsiniz
-                                  child: Image.asset(
-                                    'assets/images/imdb.png', // IMDb logosunun bulunduğu asset yolunu buraya yazın
-                                    width: 50,  // İkonun boyutunu ayarlayın
-                                    height: 50, // İkonun boyutunu ayarlayın
-                                  ),
+                          ),
+                      Expanded(
+                        child: Container(
+                          height: screenHeight * 0.1,
+                          width: screenWidth * 0.45,
+                          child: Card(
+                            color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              controller: _imdbRatingController,
+                              decoration: InputDecoration(
+                              //labelText: S.of(context).imdbScore,
+                              //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.all(8.0), // İkonun etrafında boşluk ekleyebilirsiniz
+                                child: Image.asset(
+                                  'assets/images/imdb.png', // IMDb logosunun bulunduğu asset yolunu buraya yazın
+                                  width: 50,  // İkonun boyutunu ayarlayın
+                                  height: 50, // İkonun boyutunu ayarlayın
                                 ),
                               ),
-                                keyboardType: TextInputType.number,
-                                style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
-                                validator: (value) {
-                              if (value != null && value.isNotEmpty) {
-                                final number = double.tryParse(value);
-                                if (number == null || number < 0 || number > 10) {
-                                  return S.of(context).enterValidScore;
-                                }
+                            ),
+                              keyboardType: TextInputType.number,
+                              style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
+                              validator: (value) {
+                            if (value != null && value.isNotEmpty) {
+                              final number = double.tryParse(value);
+                              if (number == null || number < 0 || number > 10) {
+                                return S.of(context).enterValidScore;
                               }
-                              return null;
-                                },
-                              ),
+                            }
+                            return null;
+                              },
                             ),
                           ),
                         ),
-                          ],
+                      ),
+                        ],
+                      ),
+                      SizedBox(height: screenWidth * 0.05),
+                  if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                                    Card(
+                  color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical/2, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal/3),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                        Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
+                        SizedBox(width: screenWidth * 0.1,),
+                        Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
+                                        ],
                         ),
-                        SizedBox(height: screenWidth * 0.05),
-                    if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
-                  Card(
-                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical/2, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal/3),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                          Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
-                          SizedBox(width: screenWidth * 0.1,),
-                          Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.03), color: Colors.red)),
-                                          ],
-                          ),
-                        ),
-                        if(_countryController.text.isNotEmpty)
-                        Padding(
-                    padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, 0, ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, ScreenUtil.getAdaptivePadding(context).vertical * 0.5),
-                    child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
-                ),
-                      ],
-                    ),
-                  ),    
-                      ],
-                    ),
+                      ),
+                      if(_countryController.text.isNotEmpty)
+                      Padding(
+                  padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, 0, ScreenUtil.getAdaptivePadding(context).horizontal * 0.6, ScreenUtil.getAdaptivePadding(context).vertical * 0.5),
+                  child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
+                                  ),
+                    ],
+                  ),
+                                    ),    
+                    ],
                   ),
                         
                   SizedBox(height: screenWidth * 0.1),
@@ -929,7 +953,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               S.of(context).whereToWatch,
                               style: TextStyle(
                                 color: Colors.white, 
-                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03),
+                                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028),
                                 fontWeight: FontWeight.bold
                               ),
                             ),
@@ -989,7 +1013,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addGenre, (genre) {
@@ -1080,7 +1104,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
                     ],
                   ),
                   const Divider(height: 0, color: Colors.white60,),
@@ -1138,7 +1162,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addActor, (actor) {
@@ -1207,7 +1231,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addWriter, (writer) {
@@ -1278,7 +1302,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.03), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addProductionCompany, (company) {
@@ -1560,7 +1584,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: Text(S.of(context).similarMovies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.07), fontWeight: FontWeight.bold),),
+                        child: Text(S.of(context).similarMovies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
                       ),
                       GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

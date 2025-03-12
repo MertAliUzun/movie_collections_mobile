@@ -145,6 +145,20 @@ class TmdbService {
 
   return similarMovies.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
 }
+Future<List<Map<String, dynamic>>> getPgRating(int movieId) async {
+  List<Map<String, dynamic>> pgRatings = [];
+  final response = await http.get(
+    Uri.parse('$_baseUrl/movie/$movieId?api_key=$_apiKey&language=en-US&append_to_response=release_dates'),
+  );
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+    if (data['release_dates']['results'] != null) {
+      pgRatings.addAll(List<Map<String, dynamic>>.from(data['release_dates']['results']));
+    }
+  }
+
+  return pgRatings.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
+}
 
   Future<List<Map<String, dynamic>>> getMoviesByCompany(int companyId) async {
     List<Map<String, dynamic>> allMovies = [];
