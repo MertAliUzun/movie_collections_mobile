@@ -56,6 +56,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   DateTime _watchedDate = DateTime.now();
   double _userScore = 0.0;
   double _hypeScore = 0.0;
+  String? _pgRating;
   int newId = -1;
   File? _selectedImage;
   bool _isUploading = false;
@@ -287,6 +288,17 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         _searchResults = [];
         _searchFocusNode.unfocus();
         canShowProviders = false;
+
+        final pgRating = await _tmdbService.getPgRating(movieId);
+
+      if (mounted) {
+        setState(() {
+          _pgRating = pgRating.where((rating) => rating['iso_3166_1'] == 'US')
+          .map((rating) => rating['release_dates']?.first['certification'])
+          .toString();
+        });
+        print('xxxxxx'+_pgRating!);
+      } 
       }
     } catch (e) {
       if (mounted) {
@@ -583,6 +595,30 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         });
       }
   }
+  Future<void> _fetchPgRating() async { 
+    if (int.parse(widget.movie!.id) < 0) { return; }
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult[0] == ConnectivityResult.none) {
+      // Skip fetching similar movies if there's no internet
+      return;
+    }
+    final tmdbService = TmdbService();
+    final movieDetails = await tmdbService.searchMovies(widget.movie!.movieName);
+
+    if (movieDetails.isNotEmpty) { 
+      final movieId = movieDetails[0]['id'];
+      final pgRating = await tmdbService.getPgRating(movieId);
+
+      if (mounted) {
+        setState(() {
+          _pgRating = pgRating.where((rating) => rating['iso_3166_1'] == 'US')
+          .map((rating) => rating['release_dates']?.first['certification'])
+          .toString();
+        });
+        print('xxxxxx'+_pgRating!);
+      }
+    }
+  }
 
   // Runtime'ı saat ve dakika formatına çeviren yardımcı fonksiyon
   String _formatRuntime(String? minutes) {
@@ -700,6 +736,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _revenueController.text = widget.movie!.revenue?.toString() ?? '';
       _selectedCollectionType = widget.movie!.collectionType ?? '';
 
+      _fetchPgRating();
       Future.microtask(() => _fetchProviders());
       
     }
@@ -886,12 +923,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       const Divider(height: 0, color: Colors.white60),
                       SizedBox(height: screenHeight * 0.02,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
                           onTap: _editRuntime,
                           child: Container(
-                            height: screenHeight * 0.1,
-                            width: screenWidth * 0.45,
+                            height: screenHeight * 0.08,
+                            width: screenWidth * 0.3,
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
@@ -902,14 +940,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                     Icon(
                                       Icons.timer,
                                       color: Colors.white,
-                                      size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                      size: ScreenUtil.getAdaptiveIconSize(context, 17),
                                     ),
-                                    SizedBox(width: 8),
+                                    SizedBox(width: 2),
                                     Text(
                                       _formatRuntime(_runtimeController.text),
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 17),
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -919,46 +957,63 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             ),
                           ),
                         ),
-                    Expanded(
-                      child: Container(
-                        height: screenHeight * 0.1,
-                        width: screenWidth * 0.45,
-                        child: Card(
-                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                          child: TextFormField(
-                            textAlign: TextAlign.center,
-                            controller: _imdbRatingController,
-                            decoration: InputDecoration(
-                            //labelText: S.of(context).imdbScore,
-                            //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
-                            prefixIcon: Padding(
-                              padding: const EdgeInsets.all(8.0), // İkonun etrafında boşluk ekleyebilirsiniz
-                              child: Image.asset(
-                                'assets/images/imdb.png', // IMDb logosunun bulunduğu asset yolunu buraya yazın
-                                width: 50,  // İkonun boyutunu ayarlayın
-                                height: 50, // İkonun boyutunu ayarlayın
+                        Container(
+                            height: screenHeight * 0.08,
+                            width:  screenWidth * 0.2,
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: Padding(
+                                padding: const EdgeInsets.all(6.0),
+                                child: Image.asset(
+                                        _pgRating == '(G)' ? 'assets/images/G.png' :
+                                        _pgRating == '(R)' ? 'assets/images/R.png' :
+                                        _pgRating == '(PG)' ? 'assets/images/PG.png' :
+                                        _pgRating == '(PG-13)' ? 'assets/images/PG13.png' :
+                                        _pgRating == '(NC-17)' ? 'assets/images/NC17.png' : 'assets/images/Unrated.png',
+                                        width: 100,
+                                        height: 50,
+                                        ),
+                              )
                               ),
+                          ),
+                    Container(
+                      height: screenHeight * 0.08,
+                      width: screenWidth * 0.3,
+                      child: Card(
+                        color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                        child: TextFormField(
+                          textAlign: TextAlign.center,
+                          controller: _imdbRatingController,
+                          decoration: InputDecoration(
+                          //labelText: S.of(context).imdbScore,
+                          //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.all(8.0), // İkonun etrafında boşluk ekleyebilirsiniz
+                            child: Image.asset(
+                              'assets/images/imdb.png', // IMDb logosunun bulunduğu asset yolunu buraya yazın
+                              width: 50,  // İkonun boyutunu ayarlayın
+                              height: 50, // İkonun boyutunu ayarlayın
                             ),
                           ),
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
-                            validator: (value) {
-                          if (value != null && value.isNotEmpty) {
-                            final number = double.tryParse(value);
-                            if (number == null || number < 0 || number > 10) {
-                              return S.of(context).enterValidScore;
-                            }
+                        ),
+                          keyboardType: TextInputType.number,
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
+                          validator: (value) {
+                        if (value != null && value.isNotEmpty) {
+                          final number = double.tryParse(value);
+                          if (number == null || number < 0 || number > 10) {
+                            return S.of(context).enterValidScore;
                           }
-                          return null;
-                            },
-                          ),
+                        }
+                        return null;
+                          },
                         ),
                       ),
                     ),
                       ],
                     ),
                     SizedBox(height: screenWidth * 0.05),
-                if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0 && _revenueController.text.isNotEmpty && toDouble(_revenueController.text)! > 0)
                                   Card(
                 color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                 child: Column(
@@ -976,7 +1031,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     ),
                     if(_countryController.text.isNotEmpty)
                     Padding(
-                padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, 0, ScreenUtil.getAdaptivePadding(context).horizontal * 0.6, ScreenUtil.getAdaptivePadding(context).vertical * 0.5),
+                padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, 0, ScreenUtil.getAdaptivePadding(context).horizontal * 0.4, ScreenUtil.getAdaptivePadding(context).vertical * 0.5),
                 child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
                                 ),
                   ],
@@ -1148,7 +1203,18 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                    Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
+                    IconButton(
+                        onPressed: () async {
+                          _editDirector();
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(_directorNameController.text.isEmpty ? Icons.add_circle_outline : Icons.edit, color: Colors.white,),
+                          )),
+                      ) //18
                   ],
                 ),
                 const Divider(height: 0, color: Colors.white60,),
@@ -1158,9 +1224,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     _deleteDirector();
                   },
                   onTap: () async {
-                    if(_directorNameController.text.isEmpty){
-                      _editDirector();
-                    }else{
                     final movieId = await Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -1173,31 +1236,24 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       _selectMovie(movieId);
                       // Handle the movie details as needed
                     }
-                    }
                   },
                   child: Card(
                     color: const Color.fromARGB(255, 44, 50, 60),
                     child: Padding(
                       padding: ScreenUtil.getAdaptivePadding(context), //8
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.1)),
                           Text(
                             _directorNameController.text.isNotEmpty 
                                 ? _directorNameController.text 
                                 : S.of(context).directorNull,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
                               fontWeight: FontWeight.bold,
                           ),
                               ),
-                          Icon(
-                            Icons.edit,
-                            color: Colors.white,
-                            size: ScreenUtil.getAdaptiveIconSize(context, 24),
-                          ),
                         ],
                       ),
                     ),

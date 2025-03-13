@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
     Future<AuthResponse> _googleSignIn() async {
-    if (_userEmail != null || _userEmail == null) {
+    if (_userEmail != null) {
       setState(() {
           _isLoaded = true;
         });
