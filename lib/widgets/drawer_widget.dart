@@ -292,7 +292,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         'To Sync',
         'Watch Count',
         'My Notes',
-        'Collection Type'
+        'Collection Type',
+        'Creation Date',
+        'PG Rating',
+        'Franchises',
+        'Tags'
       ],
     ];
 
@@ -324,6 +328,10 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         movie.watchCount?.toString() ?? '',  
         movie.myNotes?.toString() ?? '',  
         movie.collectionType?.toString() ?? '',  
+        movie.creationDate?.toIso8601String() ?? '', 
+        movie.pgRating?.toString() ?? '', 
+        movie.franchises?.join(', ') ?? '', 
+        movie.tags?.join(', ') ?? '', 
       ]);
     }
 
@@ -423,6 +431,10 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               watchCount: row[23].toString().isEmpty ? null : int.parse(row[23].toString()),
               myNotes: row[24].toString().isEmpty ? null : row[24].toString(), 
               collectionType: row[25].toString().isEmpty ? null : row[25].toString(), 
+              creationDate: row[26].toString().isEmpty ? null : DateTime.parse(row[26].toString()),
+              pgRating: row[27].toString().isEmpty ? null : row[27].toString(),
+              franchises: row[28].toString().isEmpty ? null : row[28].toString().split(', '),  
+              tags: row[29].toString().isEmpty ? null : row[29].toString().split(', '),  
             );
 
             moviesBox.put(movie.id, movie);
@@ -543,6 +555,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
        DropdownMenuItem(value: 'directorName', child: Text(S.of(context).director)),
        DropdownMenuItem(value: 'imdbRating', child: Text(S.of(context).imdbRating)),
        DropdownMenuItem(value: 'runtime', child: Text(S.of(context).runtime)),
+       DropdownMenuItem(value: 'creationDate', child: Text(S.of(context).creationDate)),
+       
     ];
     if (_isFromWishlist) {
       sortingOptions.add(DropdownMenuItem(value: 'hypeScore', child: Text(S.of(context).hypeScore)));

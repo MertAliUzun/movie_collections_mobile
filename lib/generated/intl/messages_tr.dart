@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Oyuncular"),
         "add": MessageLookupByLibrary.simpleMessage("Ekle"),
         "addActor": MessageLookupByLibrary.simpleMessage("Oyuncu Ekle"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage(" Seri Ekle"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Tür Ekle"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film Ekle"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Yeni Film Ekle"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Yapım Şirketi Ekle"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Etiket Ekle"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Yazar Ekle"),
         "adventure": MessageLookupByLibrary.simpleMessage("Macera"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Takma Ad: "),
@@ -56,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Koleksiyon Türü"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Şirket"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Oluşturulma Tarihi"),
         "crime": MessageLookupByLibrary.simpleMessage("Suç"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV dosyası başarıyla oluşturuldu: "),
@@ -104,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Başarısız!"),
         "family": MessageLookupByLibrary.simpleMessage("Aile"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantastik"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Seri"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Seriler"),
         "genre": MessageLookupByLibrary.simpleMessage("Tür"),
         "genres": MessageLookupByLibrary.simpleMessage("Türler"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupla"),
@@ -143,6 +149,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hiçbir Oyuncu Seçilmedi"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Hiçbir Şirket Seçilmedi"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("No Franchises Selected"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Hiçbir Tür Seçilmedi"),
         "noIdToken":
@@ -155,6 +163,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bu şirket için hiçbir film bulunamadı"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Depolama izinleri verilmedi."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir Etiket Seçilmedi"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Film Adı Yok"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Hiçbir Yazar Seçilmedi"),
@@ -206,6 +216,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Başarılı!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" başarıyla silindi"),
+        "tag": MessageLookupByLibrary.simpleMessage("Etiket"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etiketler"),
         "thriller": MessageLookupByLibrary.simpleMessage("Gerilim"),
         "title": MessageLookupByLibrary.simpleMessage("Film Adı"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Filmi"),

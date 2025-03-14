@@ -43,13 +43,18 @@ class MovieAdapter extends TypeAdapter<Movie> {
       watchCount: fields[23] as int?,
       myNotes: fields[24] as String?,
       collectionType: fields[25] as String?,
+      creationDate: fields[26] as DateTime?,
+      pgRating: fields[27] as String?,
+      franchises: (fields[28] as List?)?.cast<String>(),
+      tags: (fields[29] as List?)?.cast<String>(),
+
     );
   }
 
   @override
   void write(BinaryWriter writer, Movie obj) {
     writer
-      ..writeByte(26)
+      ..writeByte(30)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -101,7 +106,15 @@ class MovieAdapter extends TypeAdapter<Movie> {
       ..writeByte(24)
       ..write(obj.myNotes)
       ..writeByte(25)
-      ..write(obj.collectionType);
+      ..write(obj.collectionType)
+      ..writeByte(26)
+      ..write(obj.creationDate)
+      ..writeByte(27)
+      ..write(obj.pgRating)
+      ..writeByte(28)
+      ..write(obj.franchises)
+      ..writeByte(29)
+      ..write(obj.tags);
   }
 
   @override

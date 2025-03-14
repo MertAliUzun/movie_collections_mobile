@@ -48,6 +48,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final _writersController = TextEditingController();
   final _actorsController = TextEditingController();
   final _productionCompanyController = TextEditingController();
+  final _franchisesController = TextEditingController();
+  final _tagsController = TextEditingController();
   final _countryController = TextEditingController();
   final _popularityController = TextEditingController();
   final _budgetController = TextEditingController();
@@ -65,6 +67,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<String> _selectedActors = [];
   List<String> _selectedWriters = [];
   List<String> _selectedProductionCompanies = [];
+  List<String> _selectedFranchises = [];
+  List<String> _selectedTags = [];
   List<Map<String, dynamic>> _similarMovies = [];
   String? _pgRating;
   final ScrollController _scrollController = ScrollController();
@@ -233,6 +237,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         productionCompany: _selectedProductionCompanies,
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
         collectionType: _selectedCollectionType,
+        creationDate: widget.movie!.creationDate ?? DateTime.now(),
+        pgRating: _pgRating != null || _pgRating!.isNotEmpty ? _pgRating : null,
+        franchises: _selectedFranchises.isNotEmpty 
+            ? _selectedFranchises 
+            : null,
+        tags: _selectedTags.isNotEmpty 
+            ? _selectedTags
+            : null,
       );
       
 
@@ -330,6 +342,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           value: 'add_producer',
           child: Text(S.of(context).addProductionCompany, style: const TextStyle(color: Colors.white)),
         ),
+        PopupMenuItem<String>(
+          value: 'add_franchise',
+          child: Text(S.of(context).addFranchise, style: const TextStyle(color: Colors.white)),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_tags',
+          child: Text(S.of(context).addTag, style: const TextStyle(color: Colors.white)),
+        ),
       ],
     ).then((value) {
       if (value != null) {
@@ -359,6 +379,20 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             _addDetails('Add Production Company', (company) {
               setState(() {
                 _selectedProductionCompanies.add(company);
+              });
+            });
+            break;
+          case 'add_franchise':
+            _addDetails('Add Franchise', (franchise) {
+              setState(() {
+                _selectedFranchises.add(franchise);
+              });
+            });
+            break;
+          case 'add_tag':
+            _addDetails('Add Tag', (tag) {
+              setState(() {
+                _selectedTags.add(tag);
               });
             });
             break;
@@ -445,6 +479,20 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   }
   void _deleteCompany(int index) {
     deleteDetails(context, S.of(context).company, index: index, selected: _selectedProductionCompanies, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteFranchise(int index) {
+    deleteDetails(context, S.of(context).franchise, index: index, selected: _selectedFranchises, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteTag(int index) {
+    deleteDetails(context, S.of(context).tag, index: index, selected: _selectedTags, onDelete: () {
       setState(() {
         // This will trigger a rebuild of the widget tree
       });
@@ -560,6 +608,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _watchCountController.text = widget.movie!.watchCount?.toString() ?? '';
       _writersController.text = widget.movie!.writers?.join(', ') ?? '';
       _actorsController.text = widget.movie!.actors?.join(', ') ?? '';
+      _franchisesController.text = widget.movie!.franchises?.join(', ') ?? '';
+      _tagsController.text = widget.movie!.tags?.join(', ') ?? '';
       _productionCompanyController.text = widget.movie!.productionCompany?.join(', ') ?? '';
       _countryController.text = widget.movie!.country ?? '';
       _popularityController.text = widget.movie!.popularity?.toString() ?? '';
@@ -573,7 +623,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _selectedActors = widget.movie!.actors ?? [];
       _selectedWriters = widget.movie!.writers ?? [];
       _selectedProductionCompanies = widget.movie!.productionCompany ?? [];
+      _selectedFranchises = widget.movie!.franchises ?? [];
+      _selectedTags = widget.movie!.tags ?? [];
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
+      _pgRating = widget.movie!.pgRating ?? '';
       _fetchSimilarMovies();
       _fetchPgRating();
       
@@ -617,7 +670,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       }
   }
   Future<void> _fetchPgRating() async { 
-    if (int.parse(widget.movie!.id) < 0) { return; }
+    if (int.parse(widget.movie!.id) < 0 || _pgRating!.isNotEmpty) { return; }
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult[0] == ConnectivityResult.none) {
       // Skip fetching similar movies if there's no internet
@@ -849,7 +902,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             onTap: _editRuntime,
                             child: Container(
                               height: screenHeight * 0.08,
-                              width: screenWidth * 0.3,
+                              width: screenWidth * 0.32,
                               child: Card(
                                 color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                                 child: Padding(
@@ -898,7 +951,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           ),
                       Container(
                         height: screenHeight * 0.08,
-                        width:  screenWidth * 0.3,
+                        width:  screenWidth * 0.32,
                         child: Card(
                           color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                           child: TextFormField(
@@ -911,13 +964,13 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset(
                                 'assets/images/imdb.png',
-                                width: 50,
-                                height: 50,
+                                width: 40,
+                                height: 40,
                               ),
                             ),
                           ),
                             keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
+                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),
                             validator: (value) {
                           if (value != null && value.isNotEmpty) {
                             final number = double.tryParse(value);
@@ -1384,6 +1437,124 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           },
                         )
                       : Text(S.of(context).noCompaniesSelected, style: const TextStyle(color: Colors.white54)),
+                      SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),),
+                Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(S.of(context).franchises, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                        IconButton(
+                        onPressed: () async {
+                          await _addDetails(S.of(context).addFranchise, (actor) {
+                            setState(() {
+                              _selectedFranchises.add(actor);
+                            });
+                          });
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                          )),
+                      )
+                      ],
+                    ),
+                    const Divider(height: 0, color: Colors.white60,),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
+                _selectedFranchises.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedFranchises.length == 1 ? 2 : _selectedFranchises.length >= 3 ? 3 : 2
+                          ),
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedFranchises.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                             _deleteFranchise(index);
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedFranchises[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedFranchises.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noFranchisesSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(S.of(context).tags, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                        IconButton(
+                        onPressed: () async {
+                          await _addDetails(S.of(context).addTag, (actor) {
+                            setState(() {
+                              _selectedTags.add(actor);
+                            });
+                          });
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                          )),
+                      )
+                      ],
+                    ),
+                    const Divider(height: 0, color: Colors.white60,),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
+                    _selectedTags.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedTags.length == 1 ? 2 : _selectedTags.length >= 3 ? 3 : 2
+                          ),
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedTags.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                             _deleteTag(index);
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedTags[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedTags.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noTagsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
                 ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal), // Padding for better spacing
                   tileColor: Colors.transparent, // Optional: make the background transparent

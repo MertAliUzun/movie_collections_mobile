@@ -158,6 +158,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
         comparison = a.imdbRating!.compareTo(b.imdbRating!);
       } else if (_sortBy == 'runtime') {
         comparison = a.runtime!.compareTo(b.runtime!);
+      } else if (_sortBy == 'creationDate') {
+        comparison = a.creationDate!.compareTo(b.creationDate!);
       } else if (_sortBy == 'hypeScore') {
         comparison = a.hypeScore!.compareTo(b.hypeScore!);
       } else {

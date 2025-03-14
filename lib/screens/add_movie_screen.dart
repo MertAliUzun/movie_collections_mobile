@@ -72,6 +72,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   List<String> _selectedActors = [];
   List<String> _selectedWriters = [];
   List<String> _selectedProductionCompanies = [];
+  List<String> _selectedFranchises = [];
+  List<String> _selectedTags = [];
   String _selectedCollectionType = ''; // Varsayılan değer
   bool canShowProviders = false;
   FocusNode _searchFocusNode = FocusNode();
@@ -297,7 +299,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           .map((rating) => rating['release_dates']?.first['certification'])
           .toString();
         });
-        print('xxxxxx'+_pgRating!);
       } 
       }
     } catch (e) {
@@ -383,6 +384,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             ? double.tryParse(_revenueController.text)
             : null,
         collectionType: _selectedCollectionType,
+        creationDate: DateTime.now(),
+        pgRating: _pgRating != null || _pgRating!.isNotEmpty ? _pgRating : null,
+        franchises: _selectedFranchises.isNotEmpty ? _selectedFranchises : null,
+        tags: _selectedTags.isNotEmpty ? _selectedTags : null,
       );
 
       // Save to Hive
@@ -448,6 +453,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           value: 'add_producer',
           child: Text(S.of(context).addProductionCompany, style: const TextStyle(color: Colors.white)),
         ),
+        PopupMenuItem<String>(
+          value: 'add_franchise',
+          child: Text(S.of(context).addFranchise, style: const TextStyle(color: Colors.white)),
+        ),
+        PopupMenuItem<String>(
+          value: 'add_tags',
+          child: Text(S.of(context).addTag, style: const TextStyle(color: Colors.white)),
+        ),
       ],
     ).then((value) {
       if (value != null) {
@@ -477,6 +490,20 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             _addDetails('Add Production Company', (company) {
               setState(() {
                 _selectedProductionCompanies.add(company);
+              });
+            });
+            break;
+          case 'add_franchise':
+            _addDetails('Add Franchise', (franchise) {
+              setState(() {
+                _selectedFranchises.add(franchise);
+              });
+            });
+            break;
+          case 'add_tag':
+            _addDetails('Add Tag', (tag) {
+              setState(() {
+                _selectedTags.add(tag);
               });
             });
             break;
@@ -569,6 +596,20 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       });
     });
   }
+  void _deleteFranchise(int index) {
+    deleteDetails(context, S.of(context).franchise, index: index, selected: _selectedFranchises, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
+  void _deleteTag(int index) {
+    deleteDetails(context, S.of(context).tag, index: index, selected: _selectedTags, onDelete: () {
+      setState(() {
+        // This will trigger a rebuild of the widget tree
+      });
+    });
+  }
 
   String _formatCurrency(double? value) {
     if (value == null) return '\$0.00';
@@ -596,7 +637,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       }
   }
   Future<void> _fetchPgRating() async { 
-    if (int.parse(widget.movie!.id) < 0) { return; }
+    if (int.parse(widget.movie!.id) < 0 || _pgRating!.isNotEmpty) { return; }
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult[0] == ConnectivityResult.none) {
       // Skip fetching similar movies if there's no internet
@@ -615,7 +656,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           .map((rating) => rating['release_dates']?.first['certification'])
           .toString();
         });
-        print('xxxxxx'+_pgRating!);
       }
     }
   }
@@ -735,6 +775,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _budgetController.text = widget.movie!.budget?.toString() ?? '';
       _revenueController.text = widget.movie!.revenue?.toString() ?? '';
       _selectedCollectionType = widget.movie!.collectionType ?? '';
+      _pgRating = widget.movie!.pgRating ?? '';
+      _selectedFranchises = widget.movie!.franchises ?? [];
+      _selectedTags = widget.movie!.tags ?? [];
 
       _fetchPgRating();
       Future.microtask(() => _fetchProviders());
@@ -929,7 +972,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           onTap: _editRuntime,
                           child: Container(
                             height: screenHeight * 0.08,
-                            width: screenWidth * 0.3,
+                            width: screenWidth * 0.32,
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
@@ -978,7 +1021,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           ),
                     Container(
                       height: screenHeight * 0.08,
-                      width: screenWidth * 0.3,
+                      width: screenWidth * 0.32,
                       child: Card(
                         color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                         child: TextFormField(
@@ -991,13 +1034,13 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             padding: const EdgeInsets.all(8.0), // İkonun etrafında boşluk ekleyebilirsiniz
                             child: Image.asset(
                               'assets/images/imdb.png', // IMDb logosunun bulunduğu asset yolunu buraya yazın
-                              width: 50,  // İkonun boyutunu ayarlayın
-                              height: 50, // İkonun boyutunu ayarlayın
+                              width: 40,  // İkonun boyutunu ayarlayın
+                              height: 40, // İkonun boyutunu ayarlayın
                             ),
                           ),
                         ),
                           keyboardType: TextInputType.number,
-                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 24)),
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),
                           validator: (value) {
                         if (value != null && value.isNotEmpty) {
                           final number = double.tryParse(value);
@@ -1163,7 +1206,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               }
                             },
                             child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
@@ -1238,7 +1281,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     }
                   },
                   child: Card(
-                    color: const Color.fromARGB(255, 44, 50, 60),
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                     child: Padding(
                       padding: ScreenUtil.getAdaptivePadding(context), //8
                       child: Row(
@@ -1314,7 +1357,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               }
                             },
                             child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
@@ -1385,7 +1428,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               }
                             },
                             child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
@@ -1452,7 +1495,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               }
                             },
                             child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
@@ -1468,7 +1511,124 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         },
                       )
                     : Text(S.of(context).noCompaniesSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14)),),
-                //SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),),
+                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),),
+                Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(S.of(context).franchises, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                        IconButton(
+                        onPressed: () async {
+                          await _addDetails(S.of(context).addFranchise, (actor) {
+                            setState(() {
+                              _selectedFranchises.add(actor);
+                            });
+                          });
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                          )),
+                      )
+                      ],
+                    ),
+                    const Divider(height: 0, color: Colors.white60,),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
+                _selectedFranchises.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedFranchises.length == 1 ? 2 : _selectedFranchises.length >= 3 ? 3 : 2
+                          ),
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedFranchises.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                             _deleteFranchise(index);
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedFranchises[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedFranchises.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noFranchisesSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(S.of(context).tags, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                        IconButton(
+                        onPressed: () async {
+                          await _addDetails(S.of(context).addTag, (actor) {
+                            setState(() {
+                              _selectedTags.add(actor);
+                            });
+                          });
+                        },
+                        icon: Card( 
+                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(Icons.add_circle_outline, color: Colors.white,),
+                          )),
+                      )
+                      ],
+                    ),
+                    const Divider(height: 0, color: Colors.white60,),
+                    SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
+                    _selectedTags.isNotEmpty
+                    ? GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: ScreenUtil.getAdaptiveGridCrossAxisCount(context, 
+                            _selectedTags.length == 1 ? 2 : _selectedTags.length >= 3 ? 3 : 2
+                          ),
+                          childAspectRatio: isTablet ? 2.0 : 1.5,
+                          mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                          crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
+                        ),
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: _selectedTags.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onLongPress: () {
+                             _deleteTag(index);
+                            },
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: Text(
+                                    _selectedTags[index],
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedTags.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : Text(S.of(context).noTagsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
                   ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01), horizontal: ScreenUtil.getAdaptiveCardWidth(context, screenHeight * 0.02)), // Padding for better spacing
                     tileColor: Colors.transparent, // Optional: make the background transparent

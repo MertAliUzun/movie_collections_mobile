@@ -159,5 +159,14 @@
     "rent": "(Rent)",
     "buy": "(Buy)",
     "subscription": "(Subscription)",
-    "whereToWatch": "Where to Watch?"
+    "whereToWatch": "Where to Watch?",
+    "creationDate": "Creation Date",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Add Franchise",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Add Tag",
+    "noTagsSelected": "No Tags Selected",
+    "noFranchisesSelected": "No Franchises Selected"
 }

@@ -159,5 +159,14 @@
     "rent": "(Kirala)",
     "buy": "(Satın Al)",
     "subscription": "(Abonelik)",
-    "whereToWatch": "Nereden İzlenebilir?"
+    "whereToWatch": "Nereden İzlenebilir?",
+    "creationDate": "Oluşturulma Tarihi",
+    "franchise": "Seri",
+    "franchises": "Seriler",
+    "addFranchise": " Seri Ekle",
+    "tag": "Etiket",
+    "tags": "Etiketler",
+    "addTag": "Etiket Ekle",
+    "noTagsSelected": "Hiçbir Etiket Seçilmedi",
+    "noFranchisesSelected": "No Franchises Selected"
 }

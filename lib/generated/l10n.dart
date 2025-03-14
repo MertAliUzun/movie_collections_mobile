@@ -1659,6 +1659,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Creation Date`
+  String get creationDate {
+    return Intl.message(
+      'Creation Date',
+      name: 'creationDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Franchise`
+  String get franchise {
+    return Intl.message(
+      'Franchise',
+      name: 'franchise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Franchises`
+  String get franchises {
+    return Intl.message(
+      'Franchises',
+      name: 'franchises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Franchise`
+  String get addFranchise {
+    return Intl.message(
+      'Add Franchise',
+      name: 'addFranchise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tag`
+  String get tag {
+    return Intl.message(
+      'Tag',
+      name: 'tag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tags`
+  String get tags {
+    return Intl.message(
+      'Tags',
+      name: 'tags',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Tag`
+  String get addTag {
+    return Intl.message(
+      'Add Tag',
+      name: 'addTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Tags Selected`
+  String get noTagsSelected {
+    return Intl.message(
+      'No Tags Selected',
+      name: 'noTagsSelected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Franchises Selected`
+  String get noFranchisesSelected {
+    return Intl.message(
+      'No Franchises Selected',
+      name: 'noFranchisesSelected',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

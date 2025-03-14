@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     if(widget.isInit!) {_googleSignIn(); widget.isInit = false;}
     else { _isLoaded = true; }
-    
+    /*
     _adService.loadBannerAd(
       onAdLoaded: (ad) {
         setState(() {});
@@ -115,10 +115,11 @@ class _MyHomePageState extends State<MyHomePage> {
         });
       }
     );
+    */
   }
 
     Future<AuthResponse> _googleSignIn() async {
-    if (_userEmail != null) {
+    if (_userEmail != null && _userEmail == null) {
       setState(() {
           _isLoaded = true;
         });

@@ -82,6 +82,18 @@ class Movie {
   @HiveField(25)
   final String? collectionType;
 
+  @HiveField(26)
+  DateTime? creationDate;
+
+  @HiveField(27)
+  final String? pgRating;
+
+  @HiveField(15)
+  final List<String>? franchises;
+
+  @HiveField(15)
+  final List<String>? tags;
+
   //delete writers
     /*"cast": [
         {"id": 123456, "name": "Tessa Thompson", "character": "Lady", "order": 1},
@@ -114,7 +126,11 @@ class Movie {
     this.toSync = false,
     this.watchCount,
     this.myNotes,
-    this.collectionType
+    this.collectionType,
+    this.creationDate,
+    this.pgRating,
+    this.franchises,
+    this.tags
   });
 
   Map<String, dynamic> toJson() {
@@ -142,9 +158,13 @@ class Movie {
       'budget' : budget,
       'revenue' : revenue,
       'toSync': toSync,
-      'watchCount': watchCount,
+      'watch_count': watchCount,
       'myNotes': myNotes,
-      'collectionType': collectionType
+      'collection_type': collectionType,
+      'creation_date': creationDate?.toIso8601String(),
+      'pgRating': pgRating,
+      'franchises': franchises,
+      'tags': tags
     };
   }
 
@@ -175,7 +195,11 @@ class Movie {
       toSync: json['toSync'] ?? false,
       watchCount: json['watchCount'],
       myNotes: json['myNotes'],
-      collectionType: json['collectionType']
+      collectionType: json['collectionType'],
+      creationDate: json['creation_date'] != null ? DateTime.parse(json['creation_date']) : null,
+      pgRating: json['pgRating'],
+      franchises: json['franchises'] != null ? List<String>.from(json['franchises']) : null,
+      tags: json['tags'] != null ? List<String>.from(json['tags']) : null
     );
   }
 } 
