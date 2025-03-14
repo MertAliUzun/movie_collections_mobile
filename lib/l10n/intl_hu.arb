@@ -159,5 +159,14 @@
     "rent": "(Bérlés)",
     "buy": "(Vásárlás)",
     "subscription": "(Előfizetés)",
-    "whereToWatch": "Hol nézhető?"
+    "whereToWatch": "Hol nézhető?",
+    "creationDate": "Létrehozás dátuma",
+    "franchise": "Franchise",
+    "franchises": "Franchise-ok",
+    "addFranchise": "Franchise hozzáadása",
+    "tag": "Címke",
+    "tags": "Címkék",
+    "addTag": "Címke hozzáadása",
+    "noTagsSelected": "Nincsenek kiválasztott címkék",
+    "noFranchisesSelected": "Nincsenek kiválasztott franchise-ok"
 }

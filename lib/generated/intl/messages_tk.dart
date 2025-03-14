@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktyörler"),
         "add": MessageLookupByLibrary.simpleMessage("Goşmak"),
         "addActor": MessageLookupByLibrary.simpleMessage("Hudaý goşmak"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Françiza goşmak"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Žanr goşmak"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film goşmak"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Täze film goşmak"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Ýerli kompaniýa goşmak"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Teg goşmak"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Yazgyjy goşmak"),
         "adventure": MessageLookupByLibrary.simpleMessage("Sergäniş"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Takma at: "),
@@ -58,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Toplama görnüşi"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komediýa"),
         "company": MessageLookupByLibrary.simpleMessage("Kompaniýa"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Ýaradyş güni"),
         "crime": MessageLookupByLibrary.simpleMessage("Jenaýat"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV faýly üstünlikli döredildi: "),
@@ -107,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Aýdym!"),
         "family": MessageLookupByLibrary.simpleMessage("Aile"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaziýa"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Françiza"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Françizalar"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrlar"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Toparlamak"),
@@ -150,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hiç hili hudaý saýlanmady"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Hiç hili kompaniýa saýlanmady"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir françiza saýlanmady"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Hiç hili žanr saýlanmady"),
         "noIdToken":
@@ -162,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bu kompaniýa üçin film tapylmady"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Haryt ýazgylary üçin rugsat berilmedi."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Hiçbir teg saýlanmady"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Ady ýok"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Hiç hili yazgyjy saýlanmady"),
@@ -214,6 +223,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Başarýar!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" üstünlikli pozuldy"),
+        "tag": MessageLookupByLibrary.simpleMessage("Teg"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tegler"),
         "thriller": MessageLookupByLibrary.simpleMessage("Gorky"),
         "title": MessageLookupByLibrary.simpleMessage("At"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filmi"),

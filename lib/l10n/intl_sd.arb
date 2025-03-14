@@ -159,5 +159,14 @@
     "rent": "(ڪرايو)",
     "buy": "(خريداري)",
     "subscription": "(سبسڪرپشن)",
-    "whereToWatch": "ڪٿي ڏسو؟"
+    "whereToWatch": "ڪٿي ڏسو؟",
+    "creationDate": "تخليق جي تاريخ",
+    "franchise": "فرينچائز",
+    "franchises": "فرينچائزز",
+    "addFranchise": "فرينچائز شامل ڪريو",
+    "tag": "ٽئگ",
+    "tags": "ٽئگس",
+    "addTag": "ٽئگ شامل ڪريو",
+    "noTagsSelected": "ڪو به ٽئگ چونڊيو ناهي",
+    "noFranchisesSelected": "ڪو به فرينچائز چونڊيو ناهي"
 }

@@ -159,5 +159,14 @@
     "rent": "(Наем)",
     "buy": "(Купи)",
     "subscription": "(Абонамент)",
-    "whereToWatch": "Къде да гледате?"
+    "whereToWatch": "Къде да гледате?",
+    "creationDate": "Дата на създаване",
+    "franchise": "Франчайз",
+    "franchises": "Франчайзи",
+    "addFranchise": "Добавяне на франчайз",
+    "tag": "Етикет",
+    "tags": "Етикети",
+    "addTag": "Добавяне на етикет",
+    "noTagsSelected": "Няма избрани етикети",
+    "noFranchisesSelected": "Няма избрани франчайзи"
 }

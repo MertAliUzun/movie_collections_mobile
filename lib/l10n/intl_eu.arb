@@ -132,5 +132,14 @@
     "rent": "(Alokatzea)",
     "buy": "(Erosteko)",
     "subscription": "(Harpidetzaz)",
-    "whereToWatch": "Non ikusi?"
+    "whereToWatch": "Non ikusi?",
+    "creationDate": "Sortze data",
+    "franchise": "Frantzia",
+    "franchises": "Frantziak",
+    "addFranchise": "Gehitu frantzia",
+    "tag": "Etiketa",
+    "tags": "Etiketak",
+    "addTag": "Gehitu etiketa",
+    "noTagsSelected": "Ez da etiketa bat ere aukeratu",
+    "noFranchisesSelected": "Ez da frantzia bat ere aukeratu"
 }

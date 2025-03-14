@@ -159,5 +159,14 @@
     "rent": "(भाड्याने)",
     "buy": "(खरेदी)",
     "subscription": "(सदस्यता)",
-    "whereToWatch": "कोठे पहा?"
+    "whereToWatch": "कोठे पहा?",
+    "creationDate": "निर्माण तारीख",
+    "franchise": "फ्रँचायझी",
+    "franchises": "फ्रँचायझी",
+    "addFranchise": "फ्रँचायझी जोडा",
+    "tag": "टॅग",
+    "tags": "टॅग्ज",
+    "addTag": "टॅग जोडा",
+    "noTagsSelected": "कोणतेही टॅग निवडलेले नाहीत",
+    "noFranchisesSelected": "कोणतीही फ्रँचायझी निवडलेली नाही"
 }

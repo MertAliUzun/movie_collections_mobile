@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("သရုပ်ဆောင်များ"),
         "add": MessageLookupByLibrary.simpleMessage("ထည့်ပါ"),
         "addActor": MessageLookupByLibrary.simpleMessage("သရုပ်ဆောင်ထည့်ပါ"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("ဖရန်ချိုင်းစီထည့်ရန်"),
         "addGenre": MessageLookupByLibrary.simpleMessage("အမျိုးအစားထည့်ပါ"),
         "addMovie": MessageLookupByLibrary.simpleMessage("ဇာတ်ကားထည့်ပါ"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("ဇာတ်ကားအသစ်ထည့်ပါ"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("ထုတ်လုပ်မှုကုမ္ပဏီထည့်ပါ"),
+        "addTag": MessageLookupByLibrary.simpleMessage("တိုင်ထည့်ရန်"),
         "addWriter": MessageLookupByLibrary.simpleMessage("ရေးဆွဲသူထည့်ပါ"),
         "adventure": MessageLookupByLibrary.simpleMessage("ခရီးသွား"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("အမည်အနောက်: "),
@@ -57,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("စုစည်းမှုအမျိုးအစား"),
         "comedy": MessageLookupByLibrary.simpleMessage("ဟာသ"),
         "company": MessageLookupByLibrary.simpleMessage("ကုမ္ပဏီ"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("ဖန်တီးသည့်နေ့ရက်"),
         "crime": MessageLookupByLibrary.simpleMessage("အပြစ်"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV ဖိုင်ကိုအောင်မြင်စွာဖန်တီးခဲ့ပါသည်: "),
@@ -105,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("အတွင်းပါသည်!"),
         "family": MessageLookupByLibrary.simpleMessage("မိသားစု"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ပုံပြင်"),
+        "franchise": MessageLookupByLibrary.simpleMessage("ဖရန်ချိုင်းစီ"),
+        "franchises": MessageLookupByLibrary.simpleMessage("ဖရန်ချိုင်းစီများ"),
         "genre": MessageLookupByLibrary.simpleMessage("အမျိုးအစား"),
         "genres": MessageLookupByLibrary.simpleMessage("အမျိုးအစားများ"),
         "groupBy": MessageLookupByLibrary.simpleMessage("အုပ်စုလိုက်သွားပါ"),
@@ -151,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("သရုပ်ဆောင်များမရွေးချယ်ပါ"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("ကုမ္ပဏီများမရွေးချယ်ပါ"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "ဖရန်ချိုင်းစီမရွေးချယ်ရသေးပါ"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("အမျိုးအစားမရွေးချယ်ပါ"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID Token မရှိပါ။"),
@@ -161,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ဤကုမ္ပဏီအတွက်ဇာတ်ကားမတွေ့ပါ"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "သိုလှောင်မှုအခွင့်အရေးမပေးပါ။"),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("တိုင်မရွေးချယ်ရသေးပါ"),
         "noTitle": MessageLookupByLibrary.simpleMessage("ခေါင်းစဥ်မရှိပါ"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("ရေးဆွဲသူများမရွေးချယ်ပါ"),
@@ -218,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("အောင်မြင်ပါသည်!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("အားလုံးမှတည်း"),
+        "tag": MessageLookupByLibrary.simpleMessage("တိုင်"),
+        "tags": MessageLookupByLibrary.simpleMessage("တိုင်များ"),
         "thriller": MessageLookupByLibrary.simpleMessage("ရိုးရာ"),
         "title": MessageLookupByLibrary.simpleMessage("ခေါင်းစဥ်"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("တီဗွီ ဇာတ်ကား"),

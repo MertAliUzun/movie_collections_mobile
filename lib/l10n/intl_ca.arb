@@ -159,5 +159,14 @@
     "rent": "(Lloguer)",
     "buy": "(Comprar)",
     "subscription": "(Subscripció)",
-    "whereToWatch": "On veure?"
+    "whereToWatch": "On veure?",
+    "creationDate": "Data de creació",
+    "franchise": "Franquícia",
+    "franchises": "Franquícies",
+    "addFranchise": "Afegeix franquícia",
+    "tag": "Etiqueta",
+    "tags": "Etiquetes",
+    "addTag": "Afegeix etiqueta",
+    "noTagsSelected": "Cap etiqueta seleccionada",
+    "noFranchisesSelected": "Cap franquícia seleccionada"
 }

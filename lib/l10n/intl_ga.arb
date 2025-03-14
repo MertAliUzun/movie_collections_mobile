@@ -159,5 +159,14 @@
     "rent": "(Cuir i gcrích)",
     "buy": "(Ceannaigh)",
     "subscription": "(Síntiús)",
-    "whereToWatch": "Cá le breathnú?"
+    "whereToWatch": "Cá le breathnú?",
+    "creationDate": "Dáta Cruthaithe",
+    "franchise": "Fraincis",
+    "franchises": "Fraincisí",
+    "addFranchise": "Cuir Fraincis Leis",
+    "tag": "Clibe",
+    "tags": "Clibeanna",
+    "addTag": "Cuir Clibe Leis",
+    "noTagsSelected": "Ní roghnaíodh aon chlibeanna",
+    "noFranchisesSelected": "Ní roghnaíodh aon fhraincis"
 }

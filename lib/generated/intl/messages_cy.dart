@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Actorion"),
         "add": MessageLookupByLibrary.simpleMessage("Ychwanegu"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ychwanegu Actor"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Ychwanegu Ffransis"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ychwanegu Genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ychwanegu Ffilm"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Ychwanegu Ffilm Newydd"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Ychwanegu Cwmni Cynhyrchu"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ychwanegu Tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ychwanegu Awdur"),
         "adventure": MessageLookupByLibrary.simpleMessage("Antur"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -57,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Math Casgliad"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comedi"),
         "company": MessageLookupByLibrary.simpleMessage("Cwmni"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Dyddiad Creu"),
         "crime": MessageLookupByLibrary.simpleMessage("Trosedd"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Ffeil CSV wedi\'i chreu\'n llwyddiannus: "),
@@ -107,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Methiant!"),
         "family": MessageLookupByLibrary.simpleMessage("Teulu"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Rhyfeddod"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Ffransis"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Ffransisau"),
         "genre": MessageLookupByLibrary.simpleMessage("Genres"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grŵp Yn ôl"),
@@ -149,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dim actorion wedi\'u dewis"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Dim cwmnïau wedi\'u dewis"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Dim ffransisau wedi\'u dewis"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Dim genres wedi\'u dewis"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
@@ -161,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dim ffilmiau wedi\'u canfod ar gyfer y cwmni hwn"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Dim caniatâd storio wedi\'i roi."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Dim tagiau wedi\'u dewis"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Dim Teitl"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Dim awduron wedi\'u dewis"),
@@ -216,6 +226,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Llwyddiannus!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(
             " wedi\'i ddileu\'n llwyddiannus"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tagiau"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Teitl"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Ffilm Teledu"),

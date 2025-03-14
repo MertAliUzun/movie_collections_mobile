@@ -28,12 +28,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("Hinzufügen"),
         "addActor":
             MessageLookupByLibrary.simpleMessage("Schauspieler hinzufügen"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Franchise hinzufügen"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Genre hinzufügen"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film hinzufügen"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Neuen Film hinzufügen"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Produktionsfirma hinzufügen"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tag hinzufügen"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Schreiber hinzufügen"),
         "adventure": MessageLookupByLibrary.simpleMessage("Abenteuer"),
@@ -58,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Sammlungstyp"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komödie"),
         "company": MessageLookupByLibrary.simpleMessage("Firma"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Erstellungsdatum"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminalität"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV-Datei erstellt: "),
@@ -107,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fehler!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gruppieren nach"),
@@ -147,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Keine Schauspieler ausgewählt"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Keine Firmen ausgewählt"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Keine Franchises ausgewählt"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Keine Genres ausgewählt"),
         "noIdToken":
@@ -159,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Keine Filme für diese Firma gefunden"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Sie haben keine Berechtigung für den Speicher."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Keine Tags ausgewählt"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Kein Titel"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Keine Schreiber ausgewählt"),
@@ -212,6 +223,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Erfolgreich!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("Erfolgreich gelöscht"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV-Film"),

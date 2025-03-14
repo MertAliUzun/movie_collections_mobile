@@ -159,5 +159,14 @@
     "rent": "(Sewa)",
     "buy": "(Beli)",
     "subscription": "(Langganan)",
-    "whereToWatch": "Di Mana Menonton?"
+    "whereToWatch": "Di Mana Menonton?",
+    "creationDate": "Tanggal Pembuatan",
+    "franchise": "Waralaba",
+    "franchises": "Waralaba",
+    "addFranchise": "Tambah Waralaba",
+    "tag": "Label",
+    "tags": "Label",
+    "addTag": "Tambah Label",
+    "noTagsSelected": "Tidak ada label yang dipilih",
+    "noFranchisesSelected": "Tidak ada waralaba yang dipilih"
 }

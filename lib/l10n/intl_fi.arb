@@ -159,5 +159,14 @@
     "rent": "(Vuokraa)",
     "buy": "(Osta)",
     "subscription": "(Tilauksessa)",
-    "whereToWatch": "Missä katsoa?"
+    "whereToWatch": "Missä katsoa?",
+    "creationDate": "Luomispäivämäärä",
+    "franchise": "Franshise",
+    "franchises": "Franshiset",
+    "addFranchise": "Lisää franchise",
+    "tag": "Tunniste",
+    "tags": "Tunnisteet",
+    "addTag": "Lisää tunniste",
+    "noTagsSelected": "Ei tunnisteita valittu",
+    "noFranchisesSelected": "Ei franchisekoita valittu"
 }

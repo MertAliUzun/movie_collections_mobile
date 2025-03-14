@@ -159,5 +159,14 @@
     "rent": "(Ijaraga)",
     "buy": "(Satyn almak)",
     "subscription": "(Abunelik)",
-    "whereToWatch": "Nerede görmek?"
+    "whereToWatch": "Nerede görmek?",
+    "creationDate": "Ýaradyş güni",
+    "franchise": "Françiza",
+    "franchises": "Françizalar",
+    "addFranchise": "Françiza goşmak",
+    "tag": "Teg",
+    "tags": "Tegler",
+    "addTag": "Teg goşmak",
+    "noTagsSelected": "Hiçbir teg saýlanmady",
+    "noFranchisesSelected": "Hiçbir françiza saýlanmady"
 }

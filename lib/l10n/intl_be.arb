@@ -132,5 +132,14 @@
     "rent": "(Аранда)",
     "buy": "(Пакупка)",
     "subscription": "(Падпіска)",
-    "whereToWatch": "Дзе глядзець?"
+    "whereToWatch": "Дзе глядзець?",
+    "creationDate": "Дата стварэння",
+    "franchise": "Франшыза",
+    "franchises": "Франшызы",
+    "addFranchise": "Дадаць франшызу",
+    "tag": "Тэг",
+    "tags": "Тэгі",
+    "addTag": "Дадаць тэг",
+    "noTagsSelected": "Тэгі не выбраны",
+    "noFranchisesSelected": "Франшызы не выбраны"
 }

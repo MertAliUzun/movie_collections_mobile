@@ -159,5 +159,14 @@
     "rent": "(レンタル)",
     "buy": "(購入)",
     "subscription": "(サブスクリプション)",
-    "whereToWatch": "どこで視聴できますか？"
+    "whereToWatch": "どこで視聴できますか？",
+    "creationDate": "作成日",
+    "franchise": "フランチャイズ",
+    "franchises": "フランチャイズ",
+    "addFranchise": "フランチャイズを追加",
+    "tag": "タグ",
+    "tags": "タグ",
+    "addTag": "タグを追加",
+    "noTagsSelected": "タグが選択されていません",
+    "noFranchisesSelected": "フランチャイズが選択されていません"
 }

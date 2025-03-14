@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Jilayaasha"),
         "add": MessageLookupByLibrary.simpleMessage("Kudar"),
         "addActor": MessageLookupByLibrary.simpleMessage("Kudar Jilaa"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Ku dar Franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Kudar Nooc"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Kudar Filim"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Kudar Filim Cusub"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Kudar Shirkadda Soo Saarista"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ku dar Tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Kudar Qoraa"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Laqabsiga: "),
@@ -58,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nooca Ururinta"),
         "comedy": MessageLookupByLibrary.simpleMessage("Koomadi"),
         "company": MessageLookupByLibrary.simpleMessage("Shirkad"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Taariikhda Abuurista"),
         "crime": MessageLookupByLibrary.simpleMessage("Dambi"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Faylka CSV waxaa si guul leh loo abuuray: "),
@@ -108,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fashil!"),
         "family": MessageLookupByLibrary.simpleMessage("Qoyska"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Riyada"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Nooca"),
         "genres": MessageLookupByLibrary.simpleMessage("Noocyada"),
         "groupBy": MessageLookupByLibrary.simpleMessage(
@@ -153,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Jilayaal ma ahan kuwa la xushay"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Shirkado ma ahan kuwa la xushay"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Lama dooneyn Franchise"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Noocyo ma ahan kuwa la xushay"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
@@ -165,6 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filim ma la helay shirkad danbe"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Ogolaanshiyaha kaydinta lama siinin."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Lama dooneyn Tag"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Cinwaan La\'aan"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Qorayaal ma ahan kuwa la xushay"),
@@ -223,6 +234,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Guul!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(
             " si guul leh ayaa loo tirtiray"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Khatar"),
         "title": MessageLookupByLibrary.simpleMessage("Cinwaanka"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Filim TV"),

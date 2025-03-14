@@ -159,5 +159,14 @@
     "rent": "(Huren)",
     "buy": "(Kopen)",
     "subscription": "(Abonnement)",
-    "whereToWatch": "Waar te kijken?"
+    "whereToWatch": "Waar te kijken?",
+    "creationDate": "Aanmakingsdatum",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Voeg franchise toe",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Voeg tag toe",
+    "noTagsSelected": "Geen tags geselecteerd",
+    "noFranchisesSelected": "Geen franchises geselecteerd"
 }

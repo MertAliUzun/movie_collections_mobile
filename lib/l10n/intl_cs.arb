@@ -159,5 +159,14 @@
     "rent": "(Pronájem)",
     "buy": "(Koupit)",
     "subscription": "(Předplatné)",
-    "whereToWatch": "Kde sledovat?"
+    "whereToWatch": "Kde sledovat?",
+    "creationDate": "Datum vytvoření",
+    "franchise": "Franšíza",
+    "franchises": "Franšízy",
+    "addFranchise": "Přidat franšízu",
+    "tag": "Štítek",
+    "tags": "Štítky",
+    "addTag": "Přidat štítek",
+    "noTagsSelected": "Žádné štítky nejsou vybrány",
+    "noFranchisesSelected": "Žádné franšízy nejsou vybrány"
 }

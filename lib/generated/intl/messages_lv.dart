@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktieri"),
         "add": MessageLookupByLibrary.simpleMessage("Pievienot"),
         "addActor": MessageLookupByLibrary.simpleMessage("Pievienot aktieri"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Pievienot franšīzi"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Pievienot žanru"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Pievienot filmu"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Pievienot jaunu filmu"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Pievienot ražošanas uzņēmumu"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Pievienot etiķeti"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Pievienot rakstnieku"),
         "adventure": MessageLookupByLibrary.simpleMessage("Piedzīvojumi"),
@@ -59,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kolekcijas veids"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komēdija"),
         "company": MessageLookupByLibrary.simpleMessage("Uzņēmums"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Izveides datums"),
         "crime": MessageLookupByLibrary.simpleMessage("Noziegums"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV fails veiksmīgi izveidots: "),
@@ -109,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Kļūda!"),
         "family": MessageLookupByLibrary.simpleMessage("Ģimene"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantāzija"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franšīze"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franšīzes"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanrs"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanri"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupēt pēc"),
@@ -153,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nav izvēlēti aktieri"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Nav izvēlēti uzņēmumi"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Nav izvēlētas franšīzes"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nav izvēlēti žanri"),
         "noIdToken":
@@ -165,6 +173,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nav atrastas filmas šim uzņēmumam"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nav piešķirtas glabāšanas tiesības."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Nav izvēlētas etiķetes"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Nav nosaukuma"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nav izvēlēti rakstnieki"),
@@ -219,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Veiksmīgi!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" veiksmīgi dzēsts"),
+        "tag": MessageLookupByLibrary.simpleMessage("Etiķete"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etiķetes"),
         "thriller": MessageLookupByLibrary.simpleMessage("Trilleris"),
         "title": MessageLookupByLibrary.simpleMessage("Nosaukums"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filma"),

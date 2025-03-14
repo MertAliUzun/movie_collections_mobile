@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("പടവാളികൾ"),
         "add": MessageLookupByLibrary.simpleMessage("ചേർക്കുക"),
         "addActor": MessageLookupByLibrary.simpleMessage("പടവാളി ചേർക്കുക"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("ഫ്രാഞ്ചൈസി ചേർക്കുക"),
         "addGenre": MessageLookupByLibrary.simpleMessage("ശാഖ ചേർക്കുക"),
         "addMovie": MessageLookupByLibrary.simpleMessage("ചലച്ചിത്രം ചേർക്കുക"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("പുതിയ ചലച്ചിത്രം ചേർക്കുക"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("പ്രൊഡക്ഷൻ കമ്പനി ചേർക്കുക"),
+        "addTag": MessageLookupByLibrary.simpleMessage("ടാഗ് ചേർക്കുക"),
         "addWriter": MessageLookupByLibrary.simpleMessage("രചയിതാവ് ചേർക്കുക"),
         "adventure": MessageLookupByLibrary.simpleMessage("സാഹസിക"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ഉപനാമം: "),
@@ -55,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("സമാഹാര തരങ്ങൾ"),
         "comedy": MessageLookupByLibrary.simpleMessage("കോമഡി"),
         "company": MessageLookupByLibrary.simpleMessage("കമ്പനി"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("സൃഷ്ടിക്കലിന്റെ തീയതി"),
         "crime": MessageLookupByLibrary.simpleMessage("അപരാധം"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV ഫയൽ വിജയകരമായി സൃഷ്ടിച്ചു: "),
@@ -104,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("പിശക്!"),
         "family": MessageLookupByLibrary.simpleMessage("കുടുംബം"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ഭാവി"),
+        "franchise": MessageLookupByLibrary.simpleMessage("ഫ്രാഞ്ചൈസി"),
+        "franchises": MessageLookupByLibrary.simpleMessage("ഫ്രാഞ്ചൈസികൾ"),
         "genre": MessageLookupByLibrary.simpleMessage("ശാഖ"),
         "genres": MessageLookupByLibrary.simpleMessage("ശാഖകൾ"),
         "groupBy": MessageLookupByLibrary.simpleMessage("ഗ്രൂപ്പ് ചെയ്താൽ"),
@@ -149,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "പടവാളികൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ ഇല്ല"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "കമ്പനികൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ ഇല്ല"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "ഏതാനും ഫ്രാഞ്ചൈസികൾ തിരഞ്ഞെടുക്കപ്പെടുന്നു"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "ശാഖകൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ ഇല്ല"),
         "noIdToken":
@@ -161,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "ഈ കമ്പനി için ചലച്ചിത്രങ്ങൾ കണ്ടെത്തിയില്ല"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "സ്റോറെജിന്റെ അനുമതി നൽകിയിട്ടില്ല."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "ഏതാനും ടാഗുകൾ തിരഞ്ഞെടുക്കപ്പെടുന്നു"),
         "noTitle": MessageLookupByLibrary.simpleMessage("തലക്കെട്ട് ഇല്ല"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "രചയിതാക്കൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ ഇല്ല"),
@@ -216,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("വിജയകരമാണ്!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" വിജയകരമായി നീക്കം ചെയ്തു"),
+        "tag": MessageLookupByLibrary.simpleMessage("ടാഗ്"),
+        "tags": MessageLookupByLibrary.simpleMessage("ടാഗുകൾ"),
         "thriller": MessageLookupByLibrary.simpleMessage("ത്രില്ലർ"),
         "title": MessageLookupByLibrary.simpleMessage("ശീർഷകം"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ടിവി മൂവി"),

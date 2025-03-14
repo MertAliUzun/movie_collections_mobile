@@ -159,5 +159,14 @@
     "rent": "(اجاره)",
     "buy": "(خرید)",
     "subscription": "(اشتراک)",
-    "whereToWatch": "کجا تماشا کنیم؟"
+    "whereToWatch": "کجا تماشا کنیم؟",
+    "creationDate": "تاریخ ایجاد",
+    "franchise": "فرانچایز",
+    "franchises": "فرانچایزها",
+    "addFranchise": "اضافه کردن فرانچایز",
+    "tag": "برچسب",
+    "tags": "برچسب‌ها",
+    "addTag": "اضافه کردن برچسب",
+    "noTagsSelected": "هیچ برچسبی انتخاب نشده",
+    "noFranchisesSelected": "هیچ فرانچایزی انتخاب نشده"
 }

@@ -159,5 +159,14 @@
     "rent": "(Жалдап алуу)",
     "buy": "(Сатып алуу)",
     "subscription": "(Абоненттик)",
-    "whereToWatch": "Кайда көрүү керек?"
+    "whereToWatch": "Кайда көрүү керек?",
+    "creationDate": "Жаралуу күнү",
+    "franchise": "Франшиза",
+    "franchises": "Франшизалар",
+    "addFranchise": "Франшизаны кошуу",
+    "tag": "Тег",
+    "tags": "Тегдер",
+    "addTag": "Тег кошуу",
+    "noTagsSelected": "Тегдер тандалган жок",
+    "noFranchisesSelected": "Франшизалар тандалган жок"
 }

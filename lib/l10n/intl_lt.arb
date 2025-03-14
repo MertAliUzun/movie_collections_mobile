@@ -159,5 +159,14 @@
     "rent": "(Nuoma)",
     "buy": "(Pirkti)",
     "subscription": "(Prenumerata)",
-    "whereToWatch": "Kur žiūrėti?"
+    "whereToWatch": "Kur žiūrėti?",
+    "creationDate": "Kūrimo data",
+    "franchise": "Fransizė",
+    "franchises": "Fransizės",
+    "addFranchise": "Pridėti franšizę",
+    "tag": "Žyma",
+    "tags": "Žymos",
+    "addTag": "Pridėti žymą",
+    "noTagsSelected": "Pasirinkta jokių žymų",
+    "noFranchisesSelected": "Pasirinkta jokių franšizių"
 }

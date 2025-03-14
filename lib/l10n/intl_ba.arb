@@ -132,5 +132,14 @@
     "rent": "(Прокат)",
     "buy": "(Һатып алыу)",
     "subscription": "(Подписка)",
-    "whereToWatch": "Ҡайҙа ҡарарға?"
+    "whereToWatch": "Ҡайҙа ҡарарға?",
+    "creationDate": "Барлыҡҡа килеү датаһы",
+    "franchise": "Франшиза",
+    "franchises": "Франшизалар",
+    "addFranchise": "Франшиза өҫтәргә",
+    "tag": "Тамға",
+    "tags": "Тамғалар",
+    "addTag": "Тамға өҫтәргә",
+    "noTagsSelected": "Бер тамға ла һайланмаған",
+    "noFranchisesSelected": "Бер франшиза ла һайланмаған"
 }

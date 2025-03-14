@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aisteoirí"),
         "add": MessageLookupByLibrary.simpleMessage("Cuir"),
         "addActor": MessageLookupByLibrary.simpleMessage("Cuir aisteoir"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Cuir Fraincis Leis"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Cuir Géine"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Cuir Scannán"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Cuir scannán nua"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Cuir Comhlacht Tionóil"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Cuir Clibe Leis"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Cuir Scríbhneoir"),
         "adventure": MessageLookupByLibrary.simpleMessage("Eachtraíocht"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Ainm Laige: "),
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cineál Cnuasach"),
         "comedy": MessageLookupByLibrary.simpleMessage("Cómáid"),
         "company": MessageLookupByLibrary.simpleMessage("Comhlacht"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Dáta Cruthaithe"),
         "crime": MessageLookupByLibrary.simpleMessage("Coiriúlacht"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Cruthaíodh comhad CSV go rathúil: "),
@@ -106,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Teip!"),
         "family": MessageLookupByLibrary.simpleMessage("Teaghlach"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Ceol na nAoiseanna"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Fraincis"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Fraincisí"),
         "genre": MessageLookupByLibrary.simpleMessage("Géine"),
         "genres": MessageLookupByLibrary.simpleMessage("Géine"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grúpa Trí"),
@@ -150,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ní roghnaíodh aisteoirí"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Ní roghnaíodh comhlachtaí"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Ní roghnaíodh aon fhraincis"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ní roghnaíodh géine"),
         "noIdToken":
@@ -162,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ní raibh aon scannáin le fáil don chomhlacht seo"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Ní bhfuarthas cead stórála."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Ní roghnaíodh aon chlibeanna"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Gan Teideal"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ní roghnaíodh scríbhneoirí"),
@@ -218,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Rathúil!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" scriosta go rathúil"),
+        "tag": MessageLookupByLibrary.simpleMessage("Clibe"),
+        "tags": MessageLookupByLibrary.simpleMessage("Clibeanna"),
         "thriller": MessageLookupByLibrary.simpleMessage("Théagair"),
         "title": MessageLookupByLibrary.simpleMessage("Teideal"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Scannán Teilifíse"),

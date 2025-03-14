@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Glumci"),
         "add": MessageLookupByLibrary.simpleMessage("Dodaj"),
         "addActor": MessageLookupByLibrary.simpleMessage("Dodaj Glumca"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Dodaj franšizu"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Dodaj Žanr"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Dodaj Film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Dodaj Novi Film"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Dodaj Produkcijsku Kompaniju"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Dodaj tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Dodaj Pisca"),
         "adventure": MessageLookupByLibrary.simpleMessage("Avantura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -56,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Tip Kolekcije"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedija"),
         "company": MessageLookupByLibrary.simpleMessage("Kompanija"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Datum kreiranja"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminal"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV fajl je uspešno kreiran: "),
@@ -103,6 +106,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Neuspeh!"),
         "family": MessageLookupByLibrary.simpleMessage("Porodica"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazija"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franšiza"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franšize"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrovi"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupiši po"),
@@ -146,6 +151,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nisu odabrani glumci"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Nisu odabrane kompanije"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Nema odabranih franšiza"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nisu odabrani žanrovi"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("Nema ID tokena."),
@@ -157,6 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nema pronađenih filmova za ovu kompaniju"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nisu dodeljene dozvole za skladištenje."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Nema odabranih tagova"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Nema Naslova"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nisu odabrani pisci"),
@@ -210,6 +219,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Uspešno!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" uspešno obrisano"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tagovi"),
         "thriller": MessageLookupByLibrary.simpleMessage("Triler"),
         "title": MessageLookupByLibrary.simpleMessage("Naslov"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Film"),

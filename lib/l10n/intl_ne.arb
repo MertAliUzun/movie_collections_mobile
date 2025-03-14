@@ -159,5 +159,14 @@
     "rent": "(भाडामा)",
     "buy": "(किन्नुहोस्)",
     "subscription": "(सदस्यता)",
-    "whereToWatch": "कहाँ हेर्ने?"
+    "whereToWatch": "कहाँ हेर्ने?",
+    "creationDate": "सिर्जना मिति",
+    "franchise": "फ्रान्चाइज",
+    "franchises": "फ्रान्चाइजहरू",
+    "addFranchise": "फ्रान्चाइज थप्नुहोस्",
+    "tag": "ट्याग",
+    "tags": "ट्यागहरू",
+    "addTag": "ट्याग थप्नुहोस्",
+    "noTagsSelected": "कुनै ट्याग चयन गरिएको छैन",
+    "noFranchisesSelected": "कुनै फ्रान्चाइज चयन गरिएको छैन"
 }

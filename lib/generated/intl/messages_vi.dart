@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Diễn viên"),
         "add": MessageLookupByLibrary.simpleMessage("Thêm"),
         "addActor": MessageLookupByLibrary.simpleMessage("Thêm diễn viên"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Thêm nhượng quyền"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Thêm thể loại"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Thêm phim"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Thêm phim mới"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Thêm công ty sản xuất"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Thêm thẻ"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Thêm tác giả"),
         "adventure": MessageLookupByLibrary.simpleMessage("Phiêu lưu"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Biệt danh: "),
@@ -55,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Loại bộ sưu tập"),
         "comedy": MessageLookupByLibrary.simpleMessage("Hài hước"),
         "company": MessageLookupByLibrary.simpleMessage("Công ty"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Ngày tạo"),
         "crime": MessageLookupByLibrary.simpleMessage("Tội phạm"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Tệp CSV đã được tạo thành công: "),
@@ -103,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Thất bại!"),
         "family": MessageLookupByLibrary.simpleMessage("Gia đình"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Huyền bí"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Nhượng quyền"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Nhượng quyền"),
         "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
         "genres": MessageLookupByLibrary.simpleMessage("Thể loại"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Nhóm theo"),
@@ -146,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chưa chọn diễn viên nào"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Chưa chọn công ty nào"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Chưa chọn nhượng quyền nào"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Chưa chọn thể loại nào"),
         "noIdToken":
@@ -158,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Không tìm thấy phim cho công ty này"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Không có quyền truy cập bộ nhớ."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Chưa chọn thẻ nào"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Không có tiêu đề"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Chưa chọn tác giả nào"),
@@ -210,6 +220,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Thành công!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" đã xóa thành công"),
+        "tag": MessageLookupByLibrary.simpleMessage("Thẻ"),
+        "tags": MessageLookupByLibrary.simpleMessage("Thẻ"),
         "thriller": MessageLookupByLibrary.simpleMessage("Kinh dị"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Phim truyền hình"),

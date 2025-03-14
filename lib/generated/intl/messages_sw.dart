@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Waigizaji"),
         "add": MessageLookupByLibrary.simpleMessage("Ongeza"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ongeza Mwigizaji"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Ongeza Franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ongeza Aina"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ongeza Filamu"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Ongeza Filamu Mpya"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Ongeza Kampuni ya Uzalishaji"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ongeza Tagi"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ongeza Mwandishi"),
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
         "aliasColon":
@@ -60,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Aina ya Mkusanyiko"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Kampuni"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Tarehe ya Uundaji"),
         "crime": MessageLookupByLibrary.simpleMessage("Uhalifu"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Faili la CSV limeundwa kwa mafanikio: "),
@@ -110,6 +115,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Faili!"),
         "family": MessageLookupByLibrary.simpleMessage("Familia"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Aina"),
         "genres": MessageLookupByLibrary.simpleMessage("Aina"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Pangilia Kwa"),
@@ -155,6 +162,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hakuna Waigizaji Waliyochaguliwa"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Hakuna Makampuni Yaliyochaguliwa"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Hakuna Franchise Zilizochaguliwa"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Hakuna Aina Zilizochaguliwa"),
         "noIdToken":
@@ -167,6 +176,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hakuna filamu zilizopatikana kwa kampuni hii"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Hakuna ruhusa ya uhifadhi."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Hakuna Tagi Zilizochaguliwa"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Hakuna Kichwa"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Hakuna Waandishi Waliyochaguliwa"),
@@ -222,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Imekamilika!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" imetolewa kwa mafanikio"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tagi"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tagi"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Kichwa"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Filamu ya TV"),

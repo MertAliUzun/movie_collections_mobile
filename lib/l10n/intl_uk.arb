@@ -159,5 +159,14 @@
     "rent": "(Оренда)",
     "buy": "(Купити)",
     "subscription": "(Підписка)",
-    "whereToWatch": "Де подивитися?"
+    "whereToWatch": "Де подивитися?",
+    "creationDate": "Дата створення",
+    "franchise": "Франшиза",
+    "franchises": "Франшизи",
+    "addFranchise": "Додати франшизу",
+    "tag": "Тег",
+    "tags": "Теги",
+    "addTag": "Додати тег",
+    "noTagsSelected": "Теги не вибрані",
+    "noFranchisesSelected": "Франшизи не вибрані"
 }

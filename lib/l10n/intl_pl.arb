@@ -159,5 +159,14 @@
     "rent": "(Wynajem)",
     "buy": "(Zakup)",
     "subscription": "(Subskrypcja)",
-    "whereToWatch": "Gdzie oglądać?"
+    "whereToWatch": "Gdzie oglądać?",
+    "creationDate": "Data utworzenia",
+    "franchise": "Franczyza",
+    "franchises": "Franczyzy",
+    "addFranchise": "Dodaj franczyzę",
+    "tag": "Tag",
+    "tags": "Tagi",
+    "addTag": "Dodaj tag",
+    "noTagsSelected": "Brak wybranych tagów",
+    "noFranchisesSelected": "Brak wybranych franczyz"
 }

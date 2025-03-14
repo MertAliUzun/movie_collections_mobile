@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Actaran"),
         "add": MessageLookupByLibrary.simpleMessage("Cuir ris"),
         "addActor": MessageLookupByLibrary.simpleMessage("Cuir ris actair"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Cuir Franchise ris"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Cuir ris seòrsa"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Cuir ris film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Cuir ris film ùr"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Cuir ris companaidh cinneasachaidh"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Cuir Ceanglaiche ris"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Cuir ris sgrìobhadair"),
         "adventure": MessageLookupByLibrary.simpleMessage("Dànachd"),
@@ -57,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Seòrsa Tòrr"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comadaidh"),
         "company": MessageLookupByLibrary.simpleMessage("Companaidh"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Ceann-latha Cruthachaidh"),
         "crime": MessageLookupByLibrary.simpleMessage("Eucorach"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Faidhle CSV air a chruthachadh: "),
@@ -107,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage(" mearachd!"),
         "family": MessageLookupByLibrary.simpleMessage("Teaghlach"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Seòrsa"),
         "genres": MessageLookupByLibrary.simpleMessage("Seòrsa"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grùpa le"),
@@ -149,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chan eil actaran air an taghadh"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Chan eil companaidhean air an taghadh"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Chan eil franchises air an taghadh"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Chan eil seòrsa air an taghadh"),
         "noIdToken":
@@ -161,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Cha deach filmichean a lorg airson an chom-pàirtiche"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Chan eil cead stòraidh agad."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Chan eil ceanglaichean air an taghadh"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Chan eil tiotal"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Chan eil sgrìobhadairean air an taghadh"),
@@ -218,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Soirbheachail!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(
             "air an cuir às gu soirbheachail"),
+        "tag": MessageLookupByLibrary.simpleMessage("Ceanglaiche"),
+        "tags": MessageLookupByLibrary.simpleMessage("Ceanglaichean"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Tiotal"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film Tbh"),

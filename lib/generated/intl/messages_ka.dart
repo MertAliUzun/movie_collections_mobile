@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("მსახიობები"),
         "add": MessageLookupByLibrary.simpleMessage("დამატება"),
         "addActor": MessageLookupByLibrary.simpleMessage("მსახიობის დამატება"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("ფრანჩაიზის დამატება"),
         "addGenre": MessageLookupByLibrary.simpleMessage("ჟანრის დამატება"),
         "addMovie": MessageLookupByLibrary.simpleMessage("ფილმის დამატება"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("ახალი ფილმის დამატება"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "წარმოების კომპანიის დამატება"),
+        "addTag": MessageLookupByLibrary.simpleMessage("ნიშნის დამატება"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("წერილის ავტორის დამატება"),
         "adventure": MessageLookupByLibrary.simpleMessage("მოგზაურობა"),
@@ -59,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("კოლექციის ტიპი"),
         "comedy": MessageLookupByLibrary.simpleMessage("კომედია"),
         "company": MessageLookupByLibrary.simpleMessage("კომპანია"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("შექმნის თარიღი"),
         "crime": MessageLookupByLibrary.simpleMessage("დანაშაული"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV ფაილი შექმნილია: "),
@@ -109,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("შეცდომა!"),
         "family": MessageLookupByLibrary.simpleMessage("ოჯახი"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ფანტაზია"),
+        "franchise": MessageLookupByLibrary.simpleMessage("ფრანჩაიზი"),
+        "franchises": MessageLookupByLibrary.simpleMessage("ფრანჩაიზები"),
         "genre": MessageLookupByLibrary.simpleMessage("ჟანრი"),
         "genres": MessageLookupByLibrary.simpleMessage("ჟანრები"),
         "groupBy": MessageLookupByLibrary.simpleMessage("გაგროვება"),
@@ -150,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("არ არის შერჩეული მსახიობები"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("არ არის შერჩეული კომპანიები"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("არ არის არჩეული ფრანჩაიზი"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("არ არის შერჩეული ჟანრი"),
         "noIdToken":
@@ -162,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "კომპანიისთვის ფილმები ვერ მოიძებნა"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "თქვენ არ გაქვთ ჩამონტაჟებული წვდომა."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("არ არის არჩეული ნიშანი"),
         "noTitle": MessageLookupByLibrary.simpleMessage("სათაური არ არსებობს"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("არ არის შერჩეული ავტორები"),
@@ -218,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("წარმატებული!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("წაშლილი წარმატებით"),
+        "tag": MessageLookupByLibrary.simpleMessage("ნიშანი"),
+        "tags": MessageLookupByLibrary.simpleMessage("ნიშანები"),
         "thriller": MessageLookupByLibrary.simpleMessage("თრილერი"),
         "title": MessageLookupByLibrary.simpleMessage("სათაური"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ტელეფილმი"),

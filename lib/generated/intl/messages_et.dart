@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Näitlejad"),
         "add": MessageLookupByLibrary.simpleMessage("Lisa"),
         "addActor": MessageLookupByLibrary.simpleMessage("Lisa näitleja"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Lisa frantsiis"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Lisa žanr"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Lisa film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Lisa uus film"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Lisa tootmisettevõte"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Lisa märge"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Lisa kirjutaja"),
         "adventure": MessageLookupByLibrary.simpleMessage("Seiklus"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -55,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Kogumise tüüp"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komöödia"),
         "company": MessageLookupByLibrary.simpleMessage("Ettevõte"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Loodud kuupäev"),
         "crime": MessageLookupByLibrary.simpleMessage("Kuritegu"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV-fail on edukalt loodud: "),
@@ -105,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Ebaõnnestumine!"),
         "family": MessageLookupByLibrary.simpleMessage("Perekond"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaasia"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Frantsiis"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Frantsiisid"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrid"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupeerimine järgi"),
@@ -147,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ei ole valitud näitlejaid"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Ei ole valitud ettevõtteid"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Ühtegi frantsiisi pole valitud"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ei ole valitud žanre"),
         "noIdToken":
@@ -159,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filme ei leitud selle ettevõtte jaoks"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Salvestusõigusi ei antud."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Ühtegi märget pole valitud"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Pole pealkirja"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ei ole valitud kirjutajaid"),
@@ -212,6 +221,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Edukalt!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" edukalt kustutatud"),
+        "tag": MessageLookupByLibrary.simpleMessage("Märge"),
+        "tags": MessageLookupByLibrary.simpleMessage("Märgid"),
         "thriller": MessageLookupByLibrary.simpleMessage("Põnevik"),
         "title": MessageLookupByLibrary.simpleMessage("Pealkiri"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV film"),

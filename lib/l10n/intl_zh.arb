@@ -159,5 +159,14 @@
     "rent": "(租赁)",
     "buy": "(购买)",
     "subscription": "(订阅)",
-    "whereToWatch": "在哪里观看？"
+    "whereToWatch": "在哪里观看？",
+    "creationDate": "创建日期",
+    "franchise": "加盟",
+    "franchises": "加盟",
+    "addFranchise": "添加加盟",
+    "tag": "标签",
+    "tags": "标签",
+    "addTag": "添加标签",
+    "noTagsSelected": "未选择标签",
+    "noFranchisesSelected": "未选择加盟"
 }

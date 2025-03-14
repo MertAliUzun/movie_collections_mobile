@@ -159,5 +159,15 @@
     "rent": "(Ijaraga)",
     "buy": "(Sotib olish)",
     "subscription": "(Obuna)",
-    "whereToWatch": "Qayerda tomosha qilish mumkin?"
+    "whereToWatch": "Qayerda tomosha qilish mumkin?",
+    "creationDate": "Yengilik waqtı",
+    "franchise": "Françize",
+    "franchises": "Françizeler",
+    "addFranchise": "Françize qoshush",
+    "tag": "Teg",
+    "tags": "Teglar",
+    "addTag": "Teg qoshush",
+    "noTagsSelected": "Teg tallanmıdı",
+    "noFranchisesSelected": "Françize tallanmıdı"
+
 }

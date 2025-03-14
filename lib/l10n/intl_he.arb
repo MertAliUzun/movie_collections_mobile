@@ -159,5 +159,14 @@
     "rent": "(לשכור)",
     "buy": "(לקנות)",
     "subscription": "(מנוי)",
-    "whereToWatch": "איפה לצפות?"
+    "whereToWatch": "איפה לצפות?",
+    "creationDate": "תאריך יצירה",
+    "franchise": "זיכיון",
+    "franchises": "זיכיונות",
+    "addFranchise": "הוסף זיכיון",
+    "tag": "תג",
+    "tags": "תגים",
+    "addTag": "הוסף תג",
+    "noTagsSelected": "לא נבחרו תגים",
+    "noFranchisesSelected": "לא נבחרו זיכיונות"
 }

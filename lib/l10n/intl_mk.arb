@@ -159,5 +159,14 @@
     "rent": "(Наем)",
     "buy": "(Купи)",
     "subscription": "(Претплата)",
-    "whereToWatch": "Каде да се гледа?"
+    "whereToWatch": "Каде да се гледа?",
+    "creationDate": "Датум на креирање",
+    "franchise": "Франшиза",
+    "franchises": "Франшизи",
+    "addFranchise": "Додај франшиза",
+    "tag": "Таг",
+    "tags": "Тагови",
+    "addTag": "Додај таг",
+    "noTagsSelected": "Нема избраних тагова",
+    "noFranchisesSelected": "Нема избрани франшизи"
 }

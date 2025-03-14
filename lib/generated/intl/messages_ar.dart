@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("الممثلون"),
         "add": MessageLookupByLibrary.simpleMessage("إضافة"),
         "addActor": MessageLookupByLibrary.simpleMessage("إضافة ممثل"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("إضافة امتياز"),
         "addGenre": MessageLookupByLibrary.simpleMessage("إضافة نوع"),
         "addMovie": MessageLookupByLibrary.simpleMessage("إضافة فيلم"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("إضافة فيلم جديد"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("إضافة شركة إنتاج"),
+        "addTag": MessageLookupByLibrary.simpleMessage("إضافة وسم"),
         "addWriter": MessageLookupByLibrary.simpleMessage("إضافة كاتب"),
         "adventure": MessageLookupByLibrary.simpleMessage("مغامرة"),
         "animation": MessageLookupByLibrary.simpleMessage("رسوم متحركة"),
@@ -49,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("نوع المجموعة"),
         "comedy": MessageLookupByLibrary.simpleMessage("كوميديا"),
         "company": MessageLookupByLibrary.simpleMessage("شركة"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
         "crime": MessageLookupByLibrary.simpleMessage("جريمة"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("تم إنشاء ملف CSV بنجاح: "),
@@ -84,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
         "family": MessageLookupByLibrary.simpleMessage("عائلي"),
         "fantasy": MessageLookupByLibrary.simpleMessage("خيال"),
+        "franchise": MessageLookupByLibrary.simpleMessage("امتياز"),
+        "franchises": MessageLookupByLibrary.simpleMessage("امتيازات"),
         "genre": MessageLookupByLibrary.simpleMessage("النوع"),
         "genres": MessageLookupByLibrary.simpleMessage("الأنواع"),
         "groupBy": MessageLookupByLibrary.simpleMessage("تجميع حسب"),
@@ -121,11 +126,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لم يتم اختيار أي ممثل"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("لم يتم اختيار أي شركة"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("لم يتم تحديد أي امتيازات"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("لم يتم اختيار أي نوع"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("لا يوجد رمز تعريف."),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "ليس لديك إذن لحفظ الملفات على جهازك."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("لم يتم تحديد أي وسوم"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("لم يتم اختيار أي كاتب"),
         "none": MessageLookupByLibrary.simpleMessage("لا شيء"),
@@ -172,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("ناجح!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("تم حذفه بنجاح."),
+        "tag": MessageLookupByLibrary.simpleMessage("وسم"),
+        "tags": MessageLookupByLibrary.simpleMessage("وسوم"),
         "thriller": MessageLookupByLibrary.simpleMessage("إثارة"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("فيلم تلفزيوني"),

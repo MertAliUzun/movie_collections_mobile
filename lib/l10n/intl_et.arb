@@ -159,5 +159,14 @@
     "rent": "(Rent)",
     "buy": "(Osta)",
     "subscription": "(Tellimus)",
-    "whereToWatch": "Kus vaadata?"
+    "whereToWatch": "Kus vaadata?",
+    "creationDate": "Loodud kuupäev",
+    "franchise": "Frantsiis",
+    "franchises": "Frantsiisid",
+    "addFranchise": "Lisa frantsiis",
+    "tag": "Märge",
+    "tags": "Märgid",
+    "addTag": "Lisa märge",
+    "noTagsSelected": "Ühtegi märget pole valitud",
+    "noFranchisesSelected": "Ühtegi frantsiisi pole valitud"
 }

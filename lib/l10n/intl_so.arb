@@ -159,5 +159,14 @@
     "rent": "(Kirada)",
     "buy": "(Iibso)",
     "subscription": "(Xubinnimo)",
-    "whereToWatch": "Halkee laga daawan karaa?"
+    "whereToWatch": "Halkee laga daawan karaa?",
+    "creationDate": "Taariikhda Abuurista",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Ku dar Franchise",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Ku dar Tag",
+    "noTagsSelected": "Lama dooneyn Tag",
+    "noFranchisesSelected": "Lama dooneyn Franchise"
 }

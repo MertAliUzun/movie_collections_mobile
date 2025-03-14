@@ -159,5 +159,14 @@
     "rent": "(ਕਿਰਾਏ)",
     "buy": "(ਖਰੀਦ)",
     "subscription": "(ਸਬਸਕ੍ਰਿਪਸ਼ਨ)",
-    "whereToWatch": "ਕਿੱਥੇ ਦੇਖਣਾ ਹੈ?"
+    "whereToWatch": "ਕਿੱਥੇ ਦੇਖਣਾ ਹੈ?",
+    "creationDate": "ਬਣਾਉਣ ਦੀ ਤਾਰੀਖ",
+    "franchise": "ਫਰੈਂਚਾਈਜ਼",
+    "franchises": "ਫਰੈਂਚਾਈਜ਼",
+    "addFranchise": "ਫਰੈਂਚਾਈਜ਼ ਜੋੜੋ",
+    "tag": "ਟੈਗ",
+    "tags": "ਟੈਗ",
+    "addTag": "ਟੈਗ ਜੋੜੋ",
+    "noTagsSelected": "ਕੋਈ ਟੈਗ ਚੁਣਿਆ ਨਹੀਂ ਗਿਆ",
+    "noFranchisesSelected": "ਕੋਈ ਫਰੈਂਚਾਈਜ਼ ਚੁਣੀ ਨਹੀਂ ਗਈ"
 }

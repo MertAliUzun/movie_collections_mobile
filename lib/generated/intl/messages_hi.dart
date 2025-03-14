@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("अभिनेता"),
         "add": MessageLookupByLibrary.simpleMessage("जोड़ें"),
         "addActor": MessageLookupByLibrary.simpleMessage("अभिनेता जोड़ें"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("फ्रेंचाइजी जोड़ें"),
         "addGenre": MessageLookupByLibrary.simpleMessage("शैली जोड़ें"),
         "addMovie": MessageLookupByLibrary.simpleMessage("फिल्म जोड़ें"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("नई फिल्म जोड़ें"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("प्रोडक्शन कंपनी जोड़ें"),
+        "addTag": MessageLookupByLibrary.simpleMessage("टैग जोड़ें"),
         "addWriter": MessageLookupByLibrary.simpleMessage("लेखक जोड़ें"),
         "adventure": MessageLookupByLibrary.simpleMessage("एडवेंचर"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("उपनाम: "),
@@ -54,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("संग्रह प्रकार"),
         "comedy": MessageLookupByLibrary.simpleMessage("कॉमेडी"),
         "company": MessageLookupByLibrary.simpleMessage("कंपनी"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("निर्माण तिथि"),
         "crime": MessageLookupByLibrary.simpleMessage("क्राइम"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV फ़ाइल सफलतापूर्वक बनाई गई: "),
@@ -103,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("विफलता!"),
         "family": MessageLookupByLibrary.simpleMessage("परिवार"),
         "fantasy": MessageLookupByLibrary.simpleMessage("फंतासी"),
+        "franchise": MessageLookupByLibrary.simpleMessage("फ्रेंचाइजी"),
+        "franchises": MessageLookupByLibrary.simpleMessage("फ्रेंचाइजीज़"),
         "genre": MessageLookupByLibrary.simpleMessage("शैली"),
         "genres": MessageLookupByLibrary.simpleMessage("शैलियाँ"),
         "groupBy":
@@ -145,6 +151,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कोई अभिनेता चयनित नहीं"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("कोई कंपनी चयनित नहीं"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "कोई फ्रेंचाइजी चयनित नहीं है"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("कोई शैली चयनित नहीं"),
         "noIdToken":
@@ -157,6 +165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "इस कंपनी के लिए कोई फिल्में नहीं मिलीं"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("स्टोरेज अनुमति नहीं दी गई।"),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("कोई टैग चयनित नहीं है"),
         "noTitle": MessageLookupByLibrary.simpleMessage("कोई शीर्षक नहीं"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("कोई लेखक चयनित नहीं"),
@@ -208,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("सफल!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" सफलतापूर्वक हटा दिया गया"),
+        "tag": MessageLookupByLibrary.simpleMessage("टैग"),
+        "tags": MessageLookupByLibrary.simpleMessage("टैग्स"),
         "thriller": MessageLookupByLibrary.simpleMessage("थ्रिलर"),
         "title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("टीवी मूवी"),

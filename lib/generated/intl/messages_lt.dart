@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktoriai"),
         "add": MessageLookupByLibrary.simpleMessage("Pridėti"),
         "addActor": MessageLookupByLibrary.simpleMessage("Pridėti aktorių"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Pridėti franšizę"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Pridėti žanrą"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Pridėti filmą"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Pridėti naują filmą"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Pridėti gamybos įmonę"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Pridėti žymą"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Pridėti rašytoją"),
         "adventure": MessageLookupByLibrary.simpleMessage("Nuotykiai"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Slapyvardis: "),
@@ -57,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kolekcijos tipas"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedija"),
         "company": MessageLookupByLibrary.simpleMessage("Įmonė"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Kūrimo data"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminalas"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV failas sėkmingai sukurtas: "),
@@ -108,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Klaida!"),
         "family": MessageLookupByLibrary.simpleMessage("Šeima"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazija"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Fransizė"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Fransizės"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanras"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrai"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupuoti pagal"),
@@ -151,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nėra pasirinktų aktorių"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Nėra pasirinktų įmonių"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Pasirinkta jokių franšizių"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nėra pasirinktų žanrų"),
         "noIdToken":
@@ -162,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Šiai įmonei nerasta filmų"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nebuvo suteiktos saugojimo teisės."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Pasirinkta jokių žymų"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Nėra pavadinimo"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nėra pasirinktų rašytojų"),
@@ -216,6 +226,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Sėkmingai!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" sėkmingai ištrinta"),
+        "tag": MessageLookupByLibrary.simpleMessage("Žyma"),
+        "tags": MessageLookupByLibrary.simpleMessage("Žymos"),
         "thriller": MessageLookupByLibrary.simpleMessage("Trileris"),
         "title": MessageLookupByLibrary.simpleMessage("Pavadinimas"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filma"),

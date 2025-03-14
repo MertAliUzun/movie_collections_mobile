@@ -159,5 +159,14 @@
     "rent": "(Ijaraga olish)",
     "buy": "(Sotib olish)",
     "subscription": "(Obuna)",
-    "whereToWatch": "Qayerdan ko'rish mumkin?"
+    "whereToWatch": "Qayerdan ko'rish mumkin?",
+    "creationDate": "Yaratilgan sana",
+    "franchise": "Franshiza",
+    "franchises": "Franshizalar",
+    "addFranchise": "Franshiza qo'shish",
+    "tag": "Tag",
+    "tags": "Taglar",
+    "addTag": "Tag qo'shish",
+    "noTagsSelected": "Hech qanday tag tanlanmadi",
+    "noFranchisesSelected": "Hech qanday franshiza tanlanmadi"
 }

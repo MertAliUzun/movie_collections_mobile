@@ -159,5 +159,14 @@
     "rent": "(Închiriere)",
     "buy": "(Cumpărare)",
     "subscription": "(Abonament)",
-    "whereToWatch": "Unde să vizionez?"
+    "whereToWatch": "Unde să vizionez?",
+    "creationDate": "Data creării",
+    "franchise": "Franciză",
+    "franchises": "Francize",
+    "addFranchise": "Adaugă franciză",
+    "tag": "Etichetă",
+    "tags": "Etichete",
+    "addTag": "Adaugă etichetă",
+    "noTagsSelected": "Nicio etichetă selectată",
+    "noFranchisesSelected": "Nicio franciză selectată"
 }

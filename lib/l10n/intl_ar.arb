@@ -132,5 +132,14 @@
     "rent": "(إيجار)",
     "buy": "(شراء)",
     "subscription": "(اشتراك)",
-    "whereToWatch": "أين يمكن المشاهدة؟"
+    "whereToWatch": "أين يمكن المشاهدة؟",
+    "creationDate": "تاريخ الإنشاء",
+    "franchise": "امتياز",
+    "franchises": "امتيازات",
+    "addFranchise": "إضافة امتياز",
+    "tag": "وسم",
+    "tags": "وسوم",
+    "addTag": "إضافة وسم",
+    "noTagsSelected": "لم يتم تحديد أي وسوم",
+    "noFranchisesSelected": "لم يتم تحديد أي امتيازات"
 }

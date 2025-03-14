@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("שחקנים"),
         "add": MessageLookupByLibrary.simpleMessage("הוסף"),
         "addActor": MessageLookupByLibrary.simpleMessage("הוסף שחקן"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("הוסף זיכיון"),
         "addGenre": MessageLookupByLibrary.simpleMessage("הוסף ז\'אנר"),
         "addMovie": MessageLookupByLibrary.simpleMessage("הוסף סרט"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("הוסף סרט חדש"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("הוסף חברת הפקה"),
+        "addTag": MessageLookupByLibrary.simpleMessage("הוסף תג"),
         "addWriter": MessageLookupByLibrary.simpleMessage("הוסף תסריטאי"),
         "adventure": MessageLookupByLibrary.simpleMessage("הרפתקאות"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("כינוי: "),
@@ -54,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("סוג אוסף"),
         "comedy": MessageLookupByLibrary.simpleMessage("קומדיה"),
         "company": MessageLookupByLibrary.simpleMessage("חברה"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("תאריך יצירה"),
         "crime": MessageLookupByLibrary.simpleMessage("פשע"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("קובץ CSV נוצר בהצלחה: "),
@@ -101,6 +104,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("כישלון!"),
         "family": MessageLookupByLibrary.simpleMessage("משפחה"),
         "fantasy": MessageLookupByLibrary.simpleMessage("פנטזיה"),
+        "franchise": MessageLookupByLibrary.simpleMessage("זיכיון"),
+        "franchises": MessageLookupByLibrary.simpleMessage("זיכיונות"),
         "genre": MessageLookupByLibrary.simpleMessage("ז\'אנר"),
         "genres": MessageLookupByLibrary.simpleMessage("ז\'אנרים"),
         "groupBy": MessageLookupByLibrary.simpleMessage("קבץ לפי"),
@@ -140,6 +145,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("לא נבחרו שחקנים"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("לא נבחרו חברות"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("לא נבחרו זיכיונות"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("לא נבחרו ז\'אנרים"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("לא נמצא טוקן מזהה."),
@@ -150,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("לא נמצאו סרטים עבור חברה זו"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("לא ניתנו הרשאות אחסון."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage("לא נבחרו תגים"),
         "noTitle": MessageLookupByLibrary.simpleMessage("ללא כותרת"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("לא נבחרו תסריטאים"),
@@ -201,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("הצלחה!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" נמחק בהצלחה"),
+        "tag": MessageLookupByLibrary.simpleMessage("תג"),
+        "tags": MessageLookupByLibrary.simpleMessage("תגים"),
         "thriller": MessageLookupByLibrary.simpleMessage("מותחן"),
         "title": MessageLookupByLibrary.simpleMessage("כותרת"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("סרט טלוויזיה"),

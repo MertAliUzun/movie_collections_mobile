@@ -159,5 +159,14 @@
     "rent": "(Iar-pàigheadh)",
     "buy": "(Ceannach)",
     "subscription": "(Cuir-seachad)",
-    "whereToWatch": "Càite an fhaic thu?"
+    "whereToWatch": "Càite an fhaic thu?",
+    "creationDate": "Ceann-latha Cruthachaidh",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Cuir Franchise ris",
+    "tag": "Ceanglaiche",
+    "tags": "Ceanglaichean",
+    "addTag": "Cuir Ceanglaiche ris",
+    "noTagsSelected": "Chan eil ceanglaichean air an taghadh",
+    "noFranchisesSelected": "Chan eil franchises air an taghadh"
 }

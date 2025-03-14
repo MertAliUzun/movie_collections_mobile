@@ -159,5 +159,14 @@
     "rent": "(เช่า)",
     "buy": "(ซื้อ)",
     "subscription": "(สมัครสมาชิก)",
-    "whereToWatch": "ดูที่ไหน?"
+    "whereToWatch": "ดูที่ไหน?",
+    "creationDate": "วันที่สร้าง",
+    "franchise": "แฟรนไชส์",
+    "franchises": "แฟรนไชส์",
+    "addFranchise": "เพิ่มแฟรนไชส์",
+    "tag": "แท็ก",
+    "tags": "แท็ก",
+    "addTag": "เพิ่มแท็ก",
+    "noTagsSelected": "ไม่ได้เลือกแท็กใดๆ",
+    "noFranchisesSelected": "ไม่ได้เลือกแฟรนไชส์ใดๆ"
 }

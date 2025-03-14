@@ -159,5 +159,14 @@
     "rent": "(Najem)",
     "buy": "(Nakup)",
     "subscription": "(Naročnina)",
-    "whereToWatch": "Kje gledati?"
+    "whereToWatch": "Kje gledati?",
+    "creationDate": "Datum ustvarjanja",
+    "franchise": "Franšiza",
+    "franchises": "Franšize",
+    "addFranchise": "Dodaj franšizo",
+    "tag": "Oznaka",
+    "tags": "Oznake",
+    "addTag": "Dodaj oznako",
+    "noTagsSelected": "Ni izbranih oznak",
+    "noFranchisesSelected": "Ni izbranih franšiz"
 }

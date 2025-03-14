@@ -27,12 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("นักแสดง"),
         "add": MessageLookupByLibrary.simpleMessage("เพิ่ม"),
         "addActor": MessageLookupByLibrary.simpleMessage("เพิ่มนักแสดง"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("เพิ่มแฟรนไชส์"),
         "addGenre": MessageLookupByLibrary.simpleMessage("เพิ่มประเภท"),
         "addMovie": MessageLookupByLibrary.simpleMessage("เพิ่มภาพยนตร์"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("เพิ่มภาพยนตร์ใหม่"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("เพิ่มบริษัทผลิต"),
+        "addTag": MessageLookupByLibrary.simpleMessage("เพิ่มแท็ก"),
         "addWriter": MessageLookupByLibrary.simpleMessage("เพิ่มนักเขียน"),
         "adventure": MessageLookupByLibrary.simpleMessage("ผจญภัย"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ชื่อเล่น: "),
@@ -57,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ประเภทคอลเลคชัน"),
         "comedy": MessageLookupByLibrary.simpleMessage("คอมเมดี้"),
         "company": MessageLookupByLibrary.simpleMessage("บริษัท"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("วันที่สร้าง"),
         "crime": MessageLookupByLibrary.simpleMessage("อาชญากรรม"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "ไฟล์ CSV ถูกสร้างขึ้นสำเร็จ: "),
@@ -106,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ล้มเหลว!"),
         "family": MessageLookupByLibrary.simpleMessage("ครอบครัว"),
         "fantasy": MessageLookupByLibrary.simpleMessage("แฟนตาซี"),
+        "franchise": MessageLookupByLibrary.simpleMessage("แฟรนไชส์"),
+        "franchises": MessageLookupByLibrary.simpleMessage("แฟรนไชส์"),
         "genre": MessageLookupByLibrary.simpleMessage("ประเภท"),
         "genres": MessageLookupByLibrary.simpleMessage("ประเภท"),
         "groupBy": MessageLookupByLibrary.simpleMessage("จัดกลุ่มโดย"),
@@ -150,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกนักแสดงใดๆ"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกบริษัทใดๆ"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกแฟรนไชส์ใดๆ"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกประเภทใดๆ"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ไม่พบ ID Token."),
@@ -160,6 +167,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "ไม่พบภาพยนตร์สำหรับบริษัทนี้"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "ไม่ได้รับอนุญาตให้เข้าถึงการจัดเก็บข้อมูล."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกแท็กใดๆ"),
         "noTitle": MessageLookupByLibrary.simpleMessage("ไม่มีชื่อ"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกนักเขียนใดๆ"),
@@ -212,6 +221,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subscription": MessageLookupByLibrary.simpleMessage("(สมัครสมาชิก)"),
         "succesful": MessageLookupByLibrary.simpleMessage("สำเร็จ!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(" ลบสำเร็จ"),
+        "tag": MessageLookupByLibrary.simpleMessage("แท็ก"),
+        "tags": MessageLookupByLibrary.simpleMessage("แท็ก"),
         "thriller": MessageLookupByLibrary.simpleMessage("ระทึกขวัญ"),
         "title": MessageLookupByLibrary.simpleMessage("ชื่อเรื่อง"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ทีวีภาพยนตร์"),

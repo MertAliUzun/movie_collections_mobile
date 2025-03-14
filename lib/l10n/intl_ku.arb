@@ -159,5 +159,14 @@
     "rent": "(Kirîna)",
     "buy": "(Fermîna)",
     "subscription": "(Abone)",
-    "whereToWatch": "Li kû temaşe bikin?"
+    "whereToWatch": "Li kû temaşe bikin?",
+    "creationDate": "Rojekê afirandinê",
+    "franchise": "Franchise",
+    "franchises": "Franchise'ler",
+    "addFranchise": "Franchise zêde bikin",
+    "tag": "Tîpa",
+    "tags": "Tîpan",
+    "addTag": "Tîpa zêde bikin",
+    "noTagsSelected": "Tîpên nehêlîn hatine hilbijartin",
+    "noFranchisesSelected": "Franchise'ên nehêlîn hatine hilbijartin"
 }

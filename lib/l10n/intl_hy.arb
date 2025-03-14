@@ -132,5 +132,14 @@
     "rent": "(Վարձույթ)",
     "buy": "(Գնում)",
     "subscription": "(Բաժանորդագրություն)",
-    "whereToWatch": "Որտեղ դիտել?"
+    "whereToWatch": "Որտեղ դիտել?",
+    "creationDate": "Ստեղծման ամսաթիվ",
+    "franchise": "Ֆրանչայզ",
+    "franchises": "Ֆրանչայզներ",
+    "addFranchise": "Ավելացնել ֆրանչայզ",
+    "tag": "Պիտակ",
+    "tags": "Պիտակներ",
+    "addTag": "Ավելացնել պիտակ",
+    "noTagsSelected": "Պիտակներ չեն ընտրվել",
+    "noFranchisesSelected": "Ֆրանչայզներ չեն ընտրվել"
 }

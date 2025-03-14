@@ -159,5 +159,14 @@
     "rent": "(Kodi)",
     "buy": "(Nunua)",
     "subscription": "(Usajili)",
-    "whereToWatch": "Wapi Kutazama?"
+    "whereToWatch": "Wapi Kutazama?",
+    "creationDate": "Tarehe ya Uundaji",
+    "franchise": "Franchise",
+    "franchises": "Franchise",
+    "addFranchise": "Ongeza Franchise",
+    "tag": "Tagi",
+    "tags": "Tagi",
+    "addTag": "Ongeza Tagi",
+    "noTagsSelected": "Hakuna Tagi Zilizochaguliwa",
+    "noFranchisesSelected": "Hakuna Franchise Zilizochaguliwa"
 }

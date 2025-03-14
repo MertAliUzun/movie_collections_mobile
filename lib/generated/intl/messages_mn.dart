@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Тоглогчид"),
         "add": MessageLookupByLibrary.simpleMessage("Нэмэх"),
         "addActor": MessageLookupByLibrary.simpleMessage("Тоглогч нэмэх"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Франшиз нэмэх"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Төрөл нэмэх"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Кино нэмэх"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Шинэ кино нэмэх"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Үйлдвэрлэгч компани нэмэх"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Таг нэмэх"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Бичигч нэмэх"),
         "adventure": MessageLookupByLibrary.simpleMessage("Адал явдал"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Товчилсон нэр: "),
@@ -58,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Цуглуулгын төрөл"),
         "comedy": MessageLookupByLibrary.simpleMessage("Инээдмийн"),
         "company": MessageLookupByLibrary.simpleMessage("Компани"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Бүтээх огноо"),
         "crime": MessageLookupByLibrary.simpleMessage("Гэмт хэрэг"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV файл амжилттай үүсгэгдлээ: "),
@@ -108,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Амжилтгүй!"),
         "family": MessageLookupByLibrary.simpleMessage("Гэр бүл"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Төсөөлөл"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Франшиз"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Франшизууд"),
         "genre": MessageLookupByLibrary.simpleMessage("Төрөл"),
         "genres": MessageLookupByLibrary.simpleMessage("Төрлүүд"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Бүлэглэх"),
@@ -151,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Тоглогчид сонгогдоогүй байна"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Компаниуд сонгогдоогүй байна"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Франшиз сонгогдоогүй"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Төрөл сонгогдоогүй байна"),
         "noIdToken":
@@ -162,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Энэхүү компанийн кино олдсонгүй"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Орон зайн зөвшөөрөл олгогдоогүй."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Таг сонгогдоогүй"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Гарчиг байхгүй"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Бичигчид сонгогдоогүй байна"),
@@ -216,6 +225,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Амжилттай!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" амжилттай устгагдсан"),
+        "tag": MessageLookupByLibrary.simpleMessage("Таг"),
+        "tags": MessageLookupByLibrary.simpleMessage("Тагууд"),
         "thriller": MessageLookupByLibrary.simpleMessage("Тамирчдын кино"),
         "title": MessageLookupByLibrary.simpleMessage("Гарчиг"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ТВ Кино"),

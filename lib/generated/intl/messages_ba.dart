@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Актерҙар"),
         "add": MessageLookupByLibrary.simpleMessage("Өҫтәү"),
         "addActor": MessageLookupByLibrary.simpleMessage("Актер өҫтәү"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Франшиза өҫтәргә"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Жанр өҫтәү"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Фильм өҫтәү"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Яңы фильм өҫтәү"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Продюсерлыҡ компанияһы өҫтәү"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Тамға өҫтәргә"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Яҙыусы өҫтәү"),
         "adventure": MessageLookupByLibrary.simpleMessage("Маҗара"),
         "animation": MessageLookupByLibrary.simpleMessage("Анимация"),
@@ -50,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Коллекция төрө"),
         "comedy": MessageLookupByLibrary.simpleMessage("Комедия"),
         "company": MessageLookupByLibrary.simpleMessage("Компания"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Барлыҡҡа килеү датаһы"),
         "crime": MessageLookupByLibrary.simpleMessage("Енәйәт"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV файлы булдырылды: "),
@@ -88,6 +93,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Хата!"),
         "family": MessageLookupByLibrary.simpleMessage("Ғаилә"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Фэнтези"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Франшизалар"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
         "genres": MessageLookupByLibrary.simpleMessage("Жанрҙар"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Төркөмләү"),
@@ -124,11 +131,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Актерҙар һайланмаған"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Компаниялар һайланмаған"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Бер франшиза ла һайланмаған"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Жанрҙар һайланмаған"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID таныҡлығы юҡ."),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Хәтер рөхсәте юҡ."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Бер тамға ла һайланмаған"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Яҙыусылар һайланмаған"),
         "none": MessageLookupByLibrary.simpleMessage("Юҡ"),
@@ -175,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Уңышлы!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" уңышлы юйылды."),
+        "tag": MessageLookupByLibrary.simpleMessage("Тамға"),
+        "tags": MessageLookupByLibrary.simpleMessage("Тамғалар"),
         "thriller": MessageLookupByLibrary.simpleMessage("Триллер"),
         "title": MessageLookupByLibrary.simpleMessage("Исем"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ТВ фильмы"),

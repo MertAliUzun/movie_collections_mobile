@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Դերասաններ"),
         "add": MessageLookupByLibrary.simpleMessage("Ավելացնել"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ավելացնել դերասան"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Ավելացնել ֆրանչայզ"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ավելացնել ժանր"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ավելացնել ֆիլմ"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Ավելացնել նոր ֆիլմ"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Ավելացնել արտադրական ընկերություն"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ավելացնել պիտակ"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Ավելացնել սցենարիստ"),
         "adventure": MessageLookupByLibrary.simpleMessage("Արկածային"),
@@ -52,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Հավաքածուի տեսակ"),
         "comedy": MessageLookupByLibrary.simpleMessage("Կատակերգություն"),
         "company": MessageLookupByLibrary.simpleMessage("Ընկերություն"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Ստեղծման ամսաթիվ"),
         "crime": MessageLookupByLibrary.simpleMessage("Հանցագործություն"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV ֆայլը հաջողությամբ ստեղծվեց՝ "),
@@ -89,6 +94,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Անհաջողություն!"),
         "family": MessageLookupByLibrary.simpleMessage("Ընտանեկան"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Ֆանտաստիկա"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Ֆրանչայզ"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Ֆրանչայզներ"),
         "genre": MessageLookupByLibrary.simpleMessage("Ժանր"),
         "genres": MessageLookupByLibrary.simpleMessage("Ժանրեր"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Խմբավորել ըստ"),
@@ -128,12 +135,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Դերասաններ ընտրված չեն"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Ընկերություններ ընտրված չեն"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Ֆրանչայզներ չեն ընտրվել"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ժանրեր ընտրված չեն"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID թոքեն չի գտնվել։"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Պահեստի թույլտվություն չի տրվել։"),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Պիտակներ չեն ընտրվել"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Սցենարիստներ ընտրված չեն"),
         "none": MessageLookupByLibrary.simpleMessage("Ոչ մեկը"),
@@ -183,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Հաջողված!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" հաջողությամբ ջնջվեց։"),
+        "tag": MessageLookupByLibrary.simpleMessage("Պիտակ"),
+        "tags": MessageLookupByLibrary.simpleMessage("Պիտակներ"),
         "thriller": MessageLookupByLibrary.simpleMessage("Թրիլլեր"),
         "title": MessageLookupByLibrary.simpleMessage("Վերնագիր"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Հեռուստաֆիլմ"),

@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktorë"),
         "add": MessageLookupByLibrary.simpleMessage("Shto"),
         "addActor": MessageLookupByLibrary.simpleMessage("Shto Aktor"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Shto franshizë"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Shto Zhanër"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Shto Film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Shto Film të Ri"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Shto Kompani Produksioni"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Shto etiketë"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Shto Skenarist"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventurë"),
         "animation": MessageLookupByLibrary.simpleMessage("Animacion"),
@@ -50,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Lloji i Koleksionit"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Kompani"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Data e krijimit"),
         "crime": MessageLookupByLibrary.simpleMessage("Krim"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Skedari CSV u krijua me sukses: "),
@@ -87,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Dështim!"),
         "family": MessageLookupByLibrary.simpleMessage("Familjar"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazi"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franshiza"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franshiza"),
         "genre": MessageLookupByLibrary.simpleMessage("Zhanri"),
         "genres": MessageLookupByLibrary.simpleMessage("Zhanret"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupimi sipas"),
@@ -127,11 +132,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Asnjë aktor i zgjedhur"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Asnjë kompani e zgjedhur"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Nuk është zgjedhur asnjë franshizë"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Asnjë zhanër i zgjedhur"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("Nuk ka ID Token."),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nuk keni leje për të ruajtur skedarë në pajisjen tuaj."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Nuk është zgjedhur asnjë etiketë"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Asnjë skenarist i zgjedhur"),
         "none": MessageLookupByLibrary.simpleMessage("Asnjë"),
@@ -181,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("E suksesshme!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("u fshi me sukses."),
+        "tag": MessageLookupByLibrary.simpleMessage("Etiketë"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etiketa"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titulli"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film Televiziv"),

@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Yan Wasa"),
         "add": MessageLookupByLibrary.simpleMessage("Ƙara"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ƙara ɗan Wasa"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Ƙara Franshisa"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ƙara Nau\'in"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ƙara Fim"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Ƙara Sabon Fim"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Ƙara Kamfanin Samarwa"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ƙara Alama"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ƙara Marubuci"),
         "adventure": MessageLookupByLibrary.simpleMessage("Kasada"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Laƙabi: "),
@@ -57,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Nau\'in Tari"),
         "comedy": MessageLookupByLibrary.simpleMessage("Wasan Barkwanci"),
         "company": MessageLookupByLibrary.simpleMessage("Kamfani"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Ranar ƙirƙira"),
         "crime": MessageLookupByLibrary.simpleMessage("Laifi"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "An ƙirƙiri fayil ɗin CSV cikin nasara: "),
@@ -105,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Rashin Nasara!"),
         "family": MessageLookupByLibrary.simpleMessage("Iyalin"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franshisa"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franshisoci"),
         "genre": MessageLookupByLibrary.simpleMessage("Nau\'in"),
         "genres": MessageLookupByLibrary.simpleMessage("Nau\'uka"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Rarraba Ta"),
@@ -149,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Babu ɗan wasa da aka zaɓa"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Babu kamfani da aka zaɓa"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Babu franshisoci da aka zaɓa"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Babu nau\'in da aka zaɓa"),
         "noIdToken":
@@ -161,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Babu fina-finai da aka samu don wannan kamfani"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Ba a ba da izinin ajiya ba."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Babu alamomi da aka zaɓa"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Babu Take"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Babu marubuci da aka zaɓa"),
@@ -215,6 +224,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Nasara!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" an share cikin nasara"),
+        "tag": MessageLookupByLibrary.simpleMessage("Alama"),
+        "tags": MessageLookupByLibrary.simpleMessage("Alamomi"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Take"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Fim ɗin TV"),

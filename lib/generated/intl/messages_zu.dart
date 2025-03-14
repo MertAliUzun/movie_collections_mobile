@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Abalingisi"),
         "add": MessageLookupByLibrary.simpleMessage("Engeza"),
         "addActor": MessageLookupByLibrary.simpleMessage("Engeza Umlingisi"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Engeza Ifranchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Engeza Uhlobo"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Engeza Ifilimu"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Engeza Ifilimu Entsha"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Engeza Inkampani Yomkhiqizo"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Engeza Ithegi"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Engeza Umbhali"),
         "adventure": MessageLookupByLibrary.simpleMessage("Uhambo"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Isikhumbuzo: "),
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Uhlobo Lokuqoqwa"),
         "comedy": MessageLookupByLibrary.simpleMessage("Ukuhleka"),
         "company": MessageLookupByLibrary.simpleMessage("Inkampani"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Usuku Lokudala"),
         "crime": MessageLookupByLibrary.simpleMessage("Ubugebengu"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Ifayela le-CSV lenziwe ngempumelelo: "),
@@ -106,6 +110,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Uhlulekile!"),
         "family": MessageLookupByLibrary.simpleMessage("Umndeni"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Amadlelo"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Ifranchise"),
+        "franchises":
+            MessageLookupByLibrary.simpleMessage("Izinkampani ezizimele"),
         "genre": MessageLookupByLibrary.simpleMessage("Uhlobo"),
         "genres": MessageLookupByLibrary.simpleMessage("Izihloko"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Hlanganisa Ngokuya"),
@@ -150,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ayikho Abalingisi Ezikhethiwe"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Ayikho Izinkampani Ezikhethiwe"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Ayikho ifranchise ekhethiwe"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ayikho Izihloko Ezikhethiwe"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
@@ -162,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ayikho ifilimu etholekayo kule nkampani"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Izimvume zokugcina azinikiwe."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Ayikho ithegi ekhethiwe"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Ayikho Isihloko"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ayikho Ababhali Ezikhethiwe"),
@@ -219,6 +230,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Kuphumelele!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" ususwe ngempumelelo"),
+        "tag": MessageLookupByLibrary.simpleMessage("Ithegi"),
+        "tags": MessageLookupByLibrary.simpleMessage("Amathegi"),
         "thriller": MessageLookupByLibrary.simpleMessage("Ithriliz"),
         "title": MessageLookupByLibrary.simpleMessage("Isihloko"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("I-TV Movie"),

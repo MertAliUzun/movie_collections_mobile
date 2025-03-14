@@ -27,10 +27,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("배우들"),
         "add": MessageLookupByLibrary.simpleMessage("추가"),
         "addActor": MessageLookupByLibrary.simpleMessage("배우 추가"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("프랜차이즈 추가"),
         "addGenre": MessageLookupByLibrary.simpleMessage("장르 추가"),
         "addMovie": MessageLookupByLibrary.simpleMessage("영화 추가"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("새 영화 추가"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage("제작사 추가"),
+        "addTag": MessageLookupByLibrary.simpleMessage("태그 추가"),
         "addWriter": MessageLookupByLibrary.simpleMessage("작가 추가"),
         "adventure": MessageLookupByLibrary.simpleMessage("모험"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("별명: "),
@@ -53,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("컬렉션 유형"),
         "comedy": MessageLookupByLibrary.simpleMessage("코미디"),
         "company": MessageLookupByLibrary.simpleMessage("제작사"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("생성 날짜"),
         "crime": MessageLookupByLibrary.simpleMessage("범죄"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV 파일이 성공적으로 생성되었습니다: "),
@@ -98,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("실패!"),
         "family": MessageLookupByLibrary.simpleMessage("가족"),
         "fantasy": MessageLookupByLibrary.simpleMessage("판타지"),
+        "franchise": MessageLookupByLibrary.simpleMessage("프랜차이즈"),
+        "franchises": MessageLookupByLibrary.simpleMessage("프랜차이즈"),
         "genre": MessageLookupByLibrary.simpleMessage("장르"),
         "genres": MessageLookupByLibrary.simpleMessage("장르"),
         "groupBy": MessageLookupByLibrary.simpleMessage("그룹화"),
@@ -137,6 +142,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("선택된 배우가 없습니다"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("선택된 제작사가 없습니다"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("선택된 프랜차이즈가 없습니다"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("선택된 장르가 없습니다"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID 토큰을 찾을 수 없습니다."),
@@ -147,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("이 제작사에서 찾을 수 있는 영화가 없습니다"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("저장 권한이 부여되지 않았습니다."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage("선택된 태그가 없습니다"),
         "noTitle": MessageLookupByLibrary.simpleMessage("제목 없음"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("선택된 작가가 없습니다"),
@@ -194,6 +202,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("성공적!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" 성공적으로 삭제되었습니다"),
+        "tag": MessageLookupByLibrary.simpleMessage("태그"),
+        "tags": MessageLookupByLibrary.simpleMessage("태그"),
         "thriller": MessageLookupByLibrary.simpleMessage("스릴러"),
         "title": MessageLookupByLibrary.simpleMessage("제목"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV 영화"),

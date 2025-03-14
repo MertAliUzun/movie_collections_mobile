@@ -159,5 +159,14 @@
     "rent": "(Taumafa)",
     "buy": "(Fa'atau)",
     "subscription": "(Fa'amaoniga)",
-    "whereToWatch": "O le a le fa'amaoniga?"
+    "whereToWatch": "O le a le fa'amaoniga?",
+    "creationDate": "Asofa o le Mauga",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Faʻaopoopo Franchise",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Faʻaopoopo Tag",
+    "noTagsSelected": "E leai ni Tag na oʻo mai",
+    "noFranchisesSelected": "E leai ni Franchises na oʻo mai"
 }

@@ -159,5 +159,14 @@
     "rent": "(Mënsch)",
     "buy": "(Kafen)",
     "subscription": "(Abo)",
-    "whereToWatch": "Wou fir z'gesin?"
+    "whereToWatch": "Wou fir z'gesin?",
+    "creationDate": "Créatiounsdatum",
+    "franchise": "Franchise",
+    "franchises": "Franchisen",
+    "addFranchise": "Franchise zousetzen",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Tag derbäisetzen",
+    "noTagsSelected": "Keng Tags ausgewielt",
+    "noFranchisesSelected": "Keng Franchisen ausgewielt"
 }

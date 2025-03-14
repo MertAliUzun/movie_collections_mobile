@@ -132,5 +132,14 @@
     "rent": "(Kirayə)",
     "buy": "(Alış)",
     "subscription": "(Abunəlik)",
-    "whereToWatch": "Harada İzləmək Olar?"
+    "whereToWatch": "Harada İzləmək Olar?",
+    "creationDate": "Yaradılma Tarixi",
+    "franchise": "Françayz",
+    "franchises": "Françayzlar",
+    "addFranchise": "Françayz Əlavə Et",
+    "tag": "Etiket",
+    "tags": "Etiketlər",
+    "addTag": "Etiket Əlavə Et",
+    "noTagsSelected": "Heç Bir Etiket Seçilməyib",
+    "noFranchisesSelected": "Heç Bir Françayz Seçilməyib"
 }

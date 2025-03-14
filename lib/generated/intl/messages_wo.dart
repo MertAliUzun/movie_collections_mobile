@@ -27,12 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Acteurs"),
         "add": MessageLookupByLibrary.simpleMessage("Yokk"),
         "addActor": MessageLookupByLibrary.simpleMessage("Acteur Yokk"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Tañci franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Genre Yokk"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film Yokk"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Film Bu Bees Yokk"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Production Company Yokk"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tañci tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Writer Yokk"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -58,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Collection Type"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comédie"),
         "company": MessageLookupByLibrary.simpleMessage("Company"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Ñeneen wu jëfandikoo"),
         "crime": MessageLookupByLibrary.simpleMessage("Crime"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV file am na: "),
@@ -107,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Jàppale!"),
         "family": MessageLookupByLibrary.simpleMessage("Famille"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaisie"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Mbooloo"),
@@ -147,6 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Acteur wuñuñu."),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Company wuñuñu."),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Amul franchises yu jéemle"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Genre wuñuñu."),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID Token wuñuñu."),
@@ -157,6 +165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Film Wuñuñu ci Company bi"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Permission storage wuñuñu."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Amul tags yu jéemle"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Title Wuñuñu"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Writer wuñuñu."),
@@ -210,6 +220,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Am na!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" bañ nañu ko!"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film TV"),

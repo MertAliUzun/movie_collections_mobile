@@ -159,5 +159,14 @@
     "rent": "(ભાડે)",
     "buy": "(ખરીદો)",
     "subscription": "(સબ્સ્ક્રિપ્શન)",
-    "whereToWatch": "ક્યાં જોવું?"
+    "whereToWatch": "ક્યાં જોવું?",
+    "creationDate": "સર્જના તારીખ",
+    "franchise": "ફ્રેન્ચાઇઝ",
+    "franchises": "ફ્રેન્ચાઇઝિસ",
+    "addFranchise": "ફ્રેન્ચાઇઝ ઉમેરો",
+    "tag": "ટૅગ",
+    "tags": "ટૅગ્સ",
+    "addTag": "ટૅગ ઉમેરો",
+    "noTagsSelected": "કોઈ ટૅગ પસંદ નથી કરેલ",
+    "noFranchisesSelected": "કોઈ ફ્રેન્ચાઇઝ પસંદ નથી કરેલ"
 }

@@ -159,5 +159,14 @@
     "rent": "(کرایہ)",
     "buy": "(خریدیں)",
     "subscription": "(سبسکرپشن)",
-    "whereToWatch": "کہاں دیکھیں؟"
+    "whereToWatch": "کہاں دیکھیں؟",
+    "creationDate": "تخلیق کی تاریخ",
+    "franchise": "فرینچائز",
+    "franchises": "فرینچائزیں",
+    "addFranchise": "فرینچائز شامل کریں",
+    "tag": "لیبل",
+    "tags": "لیبلز",
+    "addTag": "لیبل شامل کریں",
+    "noTagsSelected": "کوئی لیبل منتخب نہیں ہے",
+    "noFranchisesSelected": "کوئی فرینچائز منتخب نہیں ہے"
 }

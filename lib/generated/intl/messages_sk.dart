@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Herci"),
         "add": MessageLookupByLibrary.simpleMessage("Pridať"),
         "addActor": MessageLookupByLibrary.simpleMessage("Pridať herca"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Pridať franšízu"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Pridať žáner"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Pridať film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Pridať nový film"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Pridať produkčnú spoločnosť"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Pridať tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Pridať scenáristu"),
         "adventure": MessageLookupByLibrary.simpleMessage("Dobrodružný"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -56,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Typ kolekcie"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komédia"),
         "company": MessageLookupByLibrary.simpleMessage("Spoločnosť"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Dátum vytvorenia"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminálny"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV súbor bol úspešne vytvorený: "),
@@ -106,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Zlyhanie!"),
         "family": MessageLookupByLibrary.simpleMessage("Rodinný"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Žáner"),
         "genres": MessageLookupByLibrary.simpleMessage("Žánre"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Skupina podľa"),
@@ -149,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Žiadni herci neboli vybraní"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Žiadne spoločnosti neboli vybrané"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Žiadne franšízy neboli vybrané"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Žiadne žánre neboli vybrané"),
         "noIdToken":
@@ -161,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pre túto spoločnosť neboli nájdené žiadne filmy"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Udelenie povolenia na ukladanie nebolo poskytnuté."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Žiadne tagy neboli vybrané"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Žiadny názov"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Žiadni scenáristi neboli vybraní"),
@@ -212,6 +222,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Úspešné!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" bol úspešne odstránený"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tagy"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Názov"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV film"),

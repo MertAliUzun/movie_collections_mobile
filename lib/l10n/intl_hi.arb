@@ -159,5 +159,14 @@
     "rent": "(किराए पर)",
     "buy": "(खरीदें)",
     "subscription": "(सदस्यता)",
-    "whereToWatch": "कहां देखें?"
+    "whereToWatch": "कहां देखें?",
+    "creationDate": "निर्माण तिथि",
+    "franchise": "फ्रेंचाइजी",
+    "franchises": "फ्रेंचाइजीज़",
+    "addFranchise": "फ्रेंचाइजी जोड़ें",
+    "tag": "टैग",
+    "tags": "टैग्स",
+    "addTag": "टैग जोड़ें",
+    "noTagsSelected": "कोई टैग चयनित नहीं है",
+    "noFranchisesSelected": "कोई फ्रेंचाइजी चयनित नहीं है"
 }

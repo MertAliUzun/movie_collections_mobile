@@ -159,5 +159,14 @@
     "rent": "(Loyer)",
     "buy": "(Jàpp)",
     "subscription": "(Abonnement)",
-    "whereToWatch": "Fan la Woote?"
+    "whereToWatch": "Fan la Woote?",
+    "creationDate": "Ñeneen wu jëfandikoo",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Tañci franchise",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Tañci tag",
+    "noTagsSelected": "Amul tags yu jéemle",
+    "noFranchisesSelected": "Amul franchises yu jéemle"
 }

@@ -159,5 +159,14 @@
     "rent": "(Thuê)",
     "buy": "(Mua)",
     "subscription": "(Đăng ký)",
-    "whereToWatch": "Xem ở đâu?"
+    "whereToWatch": "Xem ở đâu?",
+    "creationDate": "Ngày tạo",
+    "franchise": "Nhượng quyền",
+    "franchises": "Nhượng quyền",
+    "addFranchise": "Thêm nhượng quyền",
+    "tag": "Thẻ",
+    "tags": "Thẻ",
+    "addTag": "Thêm thẻ",
+    "noTagsSelected": "Chưa chọn thẻ nào",
+    "noFranchisesSelected": "Chưa chọn nhượng quyền nào"
 }

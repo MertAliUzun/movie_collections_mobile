@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Acteurs"),
         "add": MessageLookupByLibrary.simpleMessage("Kotaka"),
         "addActor": MessageLookupByLibrary.simpleMessage("Kotaka Acteur"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Франшизаны кошуу"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Kotaka Genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Kotaka Filimu"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Kotaka Filimu Ya Mpa"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Kotaka Compagnie ya Production"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Тегди кошуу"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Kotaka Mvuluzi"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Type ya Collection"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comédie"),
         "company": MessageLookupByLibrary.simpleMessage("Compagnie"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Жаратылыш күнү"),
         "crime": MessageLookupByLibrary.simpleMessage("Crime"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV fisiye salaka mambu: "),
@@ -107,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Kuvuvu!"),
         "family": MessageLookupByLibrary.simpleMessage("Famille"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaisie"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Франшизалар"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Kutwadisa na"),
@@ -151,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Acteur ya kusola kele ve"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Compagnie ya kusola kele ve"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Франшизалар тандалган жок"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Genre ya kusola kele ve"),
         "noIdToken":
@@ -163,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filimu kusolaka ve na compagnie yai"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Permission ya stockage pesaka ve."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Тегдер тандалган жок"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Titre ve"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Mvuluzi ya kusola kele ve"),
@@ -217,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Kumosi mambu!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" fongwaka mambu"),
+        "tag": MessageLookupByLibrary.simpleMessage("Тег"),
+        "tags": MessageLookupByLibrary.simpleMessage("Тегдер"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titre"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Filimu ya TV"),

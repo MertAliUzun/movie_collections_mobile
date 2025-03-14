@@ -28,12 +28,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("Derbäigesat"),
         "addActor":
             MessageLookupByLibrary.simpleMessage("Schauspiller derbäigesat"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Franchise zousetzen"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Genre derbäigesat"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film derbäigesat"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Neie Film derbäigesat"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Produktiounsgesellschaft derbäigesat"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tag derbäisetzen"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Schreifweis derbäigesat"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventuren"),
@@ -59,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Sammelung Typ"),
         "comedy": MessageLookupByLibrary.simpleMessage("Kommëdia"),
         "company": MessageLookupByLibrary.simpleMessage("Firma"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Créatiounsdatum"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminalitéit"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV Datei erfollegräich erstallt: "),
@@ -108,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Feeler!"),
         "family": MessageLookupByLibrary.simpleMessage("Famill"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasie"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchisen"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gruppéieren no"),
@@ -152,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Keng Schauspieler ausgewielt"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Keng Firma ausgewielt"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Keng Franchisen ausgewielt"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Keng Genres ausgewielt"),
         "noIdToken":
@@ -164,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Keng Filmer fonnt fir dës Firma"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Net genuch Berechtegungen fir d\'Spuerer."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Keng Tags ausgewielt"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Keng Titel"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Keng Schreifwiesen ausgewielt"),
@@ -217,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Erfollegräich!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" erfollegräich geläscht"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Film"),

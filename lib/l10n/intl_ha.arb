@@ -159,5 +159,14 @@
     "rent": "(Hayar)",
     "buy": "(Sayar)",
     "subscription": "(Biyan Kuɗi)",
-    "whereToWatch": "Ina Za a Kalla?"
+    "whereToWatch": "Ina Za a Kalla?",
+    "creationDate": "Ranar ƙirƙira",
+    "franchise": "Franshisa",
+    "franchises": "Franshisoci",
+    "addFranchise": "Ƙara Franshisa",
+    "tag": "Alama",
+    "tags": "Alamomi",
+    "addTag": "Ƙara Alama",
+    "noTagsSelected": "Babu alamomi da aka zaɓa",
+    "noFranchisesSelected": "Babu franshisoci da aka zaɓa"
 }

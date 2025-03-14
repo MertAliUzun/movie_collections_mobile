@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Актёрҳо"),
         "add": MessageLookupByLibrary.simpleMessage("Илова"),
         "addActor": MessageLookupByLibrary.simpleMessage("Актёр илова кунед"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Франшиза илова кунед"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Жанр илова кунед"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Филм илова кунед"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Филми нав илова кунед"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Ширкати истеҳсолот илова кунед"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Тег илова кунед"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Нависанда илова кунед"),
         "adventure": MessageLookupByLibrary.simpleMessage("Масъала"),
@@ -57,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Намуди М集合"),
         "comedy": MessageLookupByLibrary.simpleMessage("Комедия"),
         "company": MessageLookupByLibrary.simpleMessage("Ширкат"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Санаи эҷод"),
         "crime": MessageLookupByLibrary.simpleMessage("Ҷиноят"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Файли CSV бо муваффақият сохта шуд: "),
@@ -104,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Шикаст!"),
         "family": MessageLookupByLibrary.simpleMessage("Хонавода"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Ходиса"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Франшизаҳо"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
         "genres": MessageLookupByLibrary.simpleMessage("Жанрҳо"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Гурӯҳбандӣ кунед бо"),
@@ -146,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ҳеҷ актёр интихоб нагардида аст"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Ҳеҷ ширкати интихоб нагардида аст"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Ҳеҷ франшизае интихоб нашудааст"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Ҳеҷ жанр интихоб нагардида аст"),
         "noIdToken":
@@ -158,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ҳеҷ филм барои ин ширкат ёфта нашуд"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Ҳуқуқи нигоҳдорӣ дода нашуд."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Ҳеҷ теге интихоб нашудааст"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Ҳеҷ наслав"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Ҳеҷ нависанда интихоб нагардида аст"),
@@ -211,6 +221,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Муваффақ!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" бо муваффақият нест шуд"),
+        "tag": MessageLookupByLibrary.simpleMessage("Тег"),
+        "tags": MessageLookupByLibrary.simpleMessage("Тегҳо"),
         "thriller": MessageLookupByLibrary.simpleMessage("Триллер"),
         "title": MessageLookupByLibrary.simpleMessage("Наслав"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Филм ТВ"),

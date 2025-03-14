@@ -159,5 +159,14 @@
     "rent": "(Hyra)",
     "buy": "(Köp)",
     "subscription": "(Prenumeration)",
-    "whereToWatch": "Var att titta?"
+    "whereToWatch": "Var att titta?",
+    "creationDate": "Skapelsedatum",
+    "franchise": "Franchise",
+    "franchises": "Franchise",
+    "addFranchise": "Lägg till Franchise",
+    "tag": "Tagg",
+    "tags": "Taggar",
+    "addTag": "Lägg till Tagg",
+    "noTagsSelected": "Inga Taggar Valda",
+    "noFranchisesSelected": "Inga Franchises Valda"
 }

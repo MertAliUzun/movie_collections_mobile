@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktor"),
         "add": MessageLookupByLibrary.simpleMessage("Tambah"),
         "addActor": MessageLookupByLibrary.simpleMessage("Tambah Aktor"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Tambah Waralaba"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Tambah Genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Tambah Film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Tambah Film Baru"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Tambah Perusahaan Produksi"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tambah Label"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Tambah Penulis"),
         "adventure": MessageLookupByLibrary.simpleMessage("Petualangan"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -56,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Jenis Koleksi"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Perusahaan"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Tanggal Pembuatan"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminal"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("File CSV berhasil dibuat: "),
@@ -104,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Gagal!"),
         "family": MessageLookupByLibrary.simpleMessage("Keluarga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasi"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Waralaba"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Waralaba"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genre"),
         "groupBy":
@@ -145,6 +151,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tidak ada aktor yang dipilih"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Tidak ada perusahaan yang dipilih"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Tidak ada waralaba yang dipilih"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Tidak ada genre yang dipilih"),
         "noIdToken":
@@ -157,6 +165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tidak ada film yang ditemukan untuk perusahaan ini"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Izin penyimpanan tidak diberikan."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Tidak ada label yang dipilih"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Tidak Ada Judul"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Tidak ada penulis yang dipilih"),
@@ -208,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Berhasil!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" berhasil dihapus"),
+        "tag": MessageLookupByLibrary.simpleMessage("Label"),
+        "tags": MessageLookupByLibrary.simpleMessage("Label"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Judul"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film TV"),

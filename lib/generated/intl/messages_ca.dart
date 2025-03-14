@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Actors"),
         "add": MessageLookupByLibrary.simpleMessage("Afegir"),
         "addActor": MessageLookupByLibrary.simpleMessage("Afegir actor"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Afegeix franquícia"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Afegir gènere"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Afegir pel·lícula"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Afegir nova pel·lícula"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Afegir empresa de producció"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Afegeix etiqueta"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Afegir escriptor"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Àlies: "),
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tipus de col·lecció"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comèdia"),
         "company": MessageLookupByLibrary.simpleMessage("Empresa"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Data de creació"),
         "crime": MessageLookupByLibrary.simpleMessage("Crim"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("Fitxer CSV creat amb èxit: "),
@@ -106,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Falla!"),
         "family": MessageLookupByLibrary.simpleMessage("Família"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franquícia"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franquícies"),
         "genre": MessageLookupByLibrary.simpleMessage("Gènere"),
         "genres": MessageLookupByLibrary.simpleMessage("Gèneres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Agrupar per"),
@@ -152,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "No s\'han seleccionat actors"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "No s\'han seleccionat empreses"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Cap franquícia seleccionada"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "No s\'han seleccionat gèneres"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
@@ -164,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "No s\'han trobat pel·lícules per aquesta empresa"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "No s\'han donat permisos d\'emmagatzematge."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Cap etiqueta seleccionada"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Sense títol"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "No s\'han seleccionat escriptors"),
@@ -222,6 +232,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Exitós!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" esborrat amb èxit"),
+        "tag": MessageLookupByLibrary.simpleMessage("Etiqueta"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etiquetes"),
         "thriller": MessageLookupByLibrary.simpleMessage("Suspens"),
         "title": MessageLookupByLibrary.simpleMessage("Títol"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Pel·lícula de TV"),

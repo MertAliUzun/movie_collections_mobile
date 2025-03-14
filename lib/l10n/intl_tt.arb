@@ -159,5 +159,14 @@
     "rent": "(Аренда)",
     "buy": "(Сатып алу)",
     "subscription": "(Абонемент)",
-    "whereToWatch": "Кайда карарга?"
+    "whereToWatch": "Кайда карарга?",
+    "creationDate": "Тудыру көне",
+    "franchise": "Франшиза",
+    "franchises": "Франшизалар",
+    "addFranchise": "Франшиза өстәү",
+    "tag": "Тег",
+    "tags": "Теглар",
+    "addTag": "Тег өстәү",
+    "noTagsSelected": "Теглар сайланмаган",
+    "noFranchisesSelected": "Франшизалар сайланмаган"
 }

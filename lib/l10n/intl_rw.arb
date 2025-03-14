@@ -159,5 +159,14 @@
     "rent": "(Kugura)",
     "buy": "(Gura)",
     "subscription": "(Kwiyandikisha)",
-    "whereToWatch": "Waba ushaka kureba he?"
+    "whereToWatch": "Waba ushaka kureba he?",
+    "creationDate": "Itariki y'irema",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Ongeramo franchise",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Ongeramo tag",
+    "noTagsSelected": "Nta tag wahisemo",
+    "noFranchisesSelected": "Nta franchise wahisemo"
 }

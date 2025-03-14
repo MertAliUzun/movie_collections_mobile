@@ -159,5 +159,14 @@
     "rent": "(Baɗo)",
     "buy": "(Nyaama)",
     "subscription": "(Ɓayra)",
-    "whereToWatch": "Holti e ɗum?"
+    "whereToWatch": "Holti e ɗum?",
+    "creationDate": "Ñalaande Sari",
+    "franchise": "Fransayzi",
+    "franchises": "Fransayziji",
+    "addFranchise": "Ñaayde Fransayzi",
+    "tag": "Cifol",
+    "tags": "Cifolji",
+    "addTag": "Ñaayde Cifol",
+    "noTagsSelected": "Cifolji walaa",
+    "noFranchisesSelected": "Fransayziji walaa"
 }

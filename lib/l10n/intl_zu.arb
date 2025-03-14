@@ -159,5 +159,14 @@
     "rent": "(Ukuqasha)",
     "buy": "(Thenga)",
     "subscription": "(Ukubhalisa)",
-    "whereToWatch": "Kuphi Ukubuka?"
+    "whereToWatch": "Kuphi Ukubuka?",
+    "creationDate": "Usuku Lokudala",
+    "franchise": "Ifranchise",
+    "franchises": "Izinkampani ezizimele",
+    "addFranchise": "Engeza Ifranchise",
+    "tag": "Ithegi",
+    "tags": "Amathegi",
+    "addTag": "Engeza Ithegi",
+    "noTagsSelected": "Ayikho ithegi ekhethiwe",
+    "noFranchisesSelected": "Ayikho ifranchise ekhethiwe"
 }

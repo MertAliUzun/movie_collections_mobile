@@ -28,12 +28,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("Lägg till"),
         "addActor":
             MessageLookupByLibrary.simpleMessage("Lägg till skådespelare"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Lägg till Franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Lägg till genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Lägg till film"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Lägg till ny film"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Lägg till produktionsbolag"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Lägg till Tagg"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Lägg till författare"),
         "adventure": MessageLookupByLibrary.simpleMessage("Äventyr"),
@@ -58,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Samlingstyp"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Företag"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Skapelsedatum"),
         "crime": MessageLookupByLibrary.simpleMessage("Brott"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV-fil skapad: "),
@@ -106,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Misslyckande!"),
         "family": MessageLookupByLibrary.simpleMessage("Familj"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genrer"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gruppera efter"),
@@ -147,6 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Inga skådespelare valda"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Inga bolag valda"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Inga Franchises Valda"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Inga genrer valda"),
         "noIdToken":
@@ -159,6 +167,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Inga filmer hittades för detta företag"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Inga lagringstillstånd gavs."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Inga Taggar Valda"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Ingen titel"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Inga författare valda"),
@@ -212,6 +222,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Framgångsrik!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" framgångsrikt raderad"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tagg"),
+        "tags": MessageLookupByLibrary.simpleMessage("Taggar"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV-film"),

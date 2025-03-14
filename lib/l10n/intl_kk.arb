@@ -159,5 +159,14 @@
     "rent": "(Жалға алу)",
     "buy": "(Сатып алу)",
     "subscription": "(Жазылым)",
-    "whereToWatch": "Қайда көруге болады?"
+    "whereToWatch": "Қайда көруге болады?",
+    "creationDate": "Жасалу күні",
+    "franchise": "Франшиза",
+    "franchises": "Франшизалар",
+    "addFranchise": "Франшизаны қосу",
+    "tag": "Тег",
+    "tags": "Тегтер",
+    "addTag": "Тег қосу",
+    "noTagsSelected": "Тегтер таңдалған жоқ",
+    "noFranchisesSelected": "Франшизалар таңдалған жоқ"
 }

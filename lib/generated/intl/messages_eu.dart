@@ -27,12 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktoreak"),
         "add": MessageLookupByLibrary.simpleMessage("Gehitu"),
         "addActor": MessageLookupByLibrary.simpleMessage("Aktorea gehitu"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Gehitu frantzia"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Generoa gehitu"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Filma gehitu"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Filma berria gehitu"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Ekoizpen enpresa gehitu"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Gehitu etiketa"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Idazlea gehitu"),
         "adventure": MessageLookupByLibrary.simpleMessage("Abentura"),
         "animation": MessageLookupByLibrary.simpleMessage("Animazioa"),
@@ -51,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Bilduma mota"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedia"),
         "company": MessageLookupByLibrary.simpleMessage("Enpresa"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Sortze data"),
         "crime": MessageLookupByLibrary.simpleMessage("Krimena"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV fitxategia sortu da: "),
@@ -89,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Errorea!"),
         "family": MessageLookupByLibrary.simpleMessage("Familia"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Frantzia"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Frantziak"),
         "genre": MessageLookupByLibrary.simpleMessage("Generoa"),
         "genres": MessageLookupByLibrary.simpleMessage("Generoak"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Taldekatu"),
@@ -128,12 +133,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ez da aktorerik aukeratu"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Ez da enpresarik aukeratu"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Ez da frantzia bat ere aukeratu"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ez da generorik aukeratu"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID tokenik ez dago."),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Biltegiratzeko baimenik ez dago."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Ez da etiketa bat ere aukeratu"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ez da idazlerik aukeratu"),
         "none": MessageLookupByLibrary.simpleMessage("Bat ere ez"),
@@ -181,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Arrakastatsua!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" behar bezala ezabatu da."),
+        "tag": MessageLookupByLibrary.simpleMessage("Etiketa"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etiketak"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thrillera"),
         "title": MessageLookupByLibrary.simpleMessage("Izenburua"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filma"),

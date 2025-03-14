@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktè"),
         "add": MessageLookupByLibrary.simpleMessage("Ajoute"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ajoute Aktè"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Ajoute franchiz"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ajoute Jan"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ajoute Fim"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Ajoute Nouvo Fim"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Ajoute Konpayi Pwodiksyon"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ajoute etikèt"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ajoute Ekriven"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventi"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -56,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kalite Koleksyon"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedyen"),
         "company": MessageLookupByLibrary.simpleMessage("Konpayi"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Dat Kreyasyon"),
         "crime": MessageLookupByLibrary.simpleMessage("Krim"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Fichye CSV kreye avèk siksè: "),
@@ -103,6 +106,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Echèk!"),
         "family": MessageLookupByLibrary.simpleMessage("Fanmi"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasiz"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchiz"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchiz yo"),
         "genre": MessageLookupByLibrary.simpleMessage("Jan"),
         "genres": MessageLookupByLibrary.simpleMessage("Jan"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gwoupe Pa"),
@@ -143,6 +148,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pa gen aktè chwazi"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Pa gen konpayi chwazi"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Pa gen franchiz ki chwazi"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Pa gen jan chwazi"),
         "noIdToken":
@@ -155,6 +162,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pa gen fim jwenn pou konpayi sa a"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Pèmisyon depo pa te bay."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Pa gen etikèt ki chwazi"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Pa gen Tit"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Pa gen ekriven chwazi"),
@@ -204,6 +213,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Reyisi!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" efase avèk siksè"),
+        "tag": MessageLookupByLibrary.simpleMessage("Etikèt"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etikèt yo"),
         "thriller": MessageLookupByLibrary.simpleMessage("Triler"),
         "title": MessageLookupByLibrary.simpleMessage("Tit"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Fim TV"),

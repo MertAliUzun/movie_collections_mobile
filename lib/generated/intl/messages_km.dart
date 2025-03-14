@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("តួអង្គ"),
         "add": MessageLookupByLibrary.simpleMessage("បន្ថែម"),
         "addActor": MessageLookupByLibrary.simpleMessage("បន្ថែមតួអង្គ"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("បន្ថែមហ្វ្រាំងស៊ីស"),
         "addGenre": MessageLookupByLibrary.simpleMessage("បន្ថែមប្រភេទ"),
         "addMovie": MessageLookupByLibrary.simpleMessage("បន្ថែមភាពយន្ត"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("បន្ថែមភាពយន្តថ្មី"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("បន្ថែមក្រុមហ៊ុនផលិត"),
+        "addTag": MessageLookupByLibrary.simpleMessage("បន្ថែមស្លាក"),
         "addWriter": MessageLookupByLibrary.simpleMessage("បន្ថែមអ្នកនិពន្ធ"),
         "adventure": MessageLookupByLibrary.simpleMessage("ការផ្សងព្រេង"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ឈ្មោះជំនួស: "),
@@ -59,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ប្រភេទប្រមូលផ្តុំ"),
         "comedy": MessageLookupByLibrary.simpleMessage("កមេឌី"),
         "company": MessageLookupByLibrary.simpleMessage("ក្រុមហ៊ុន"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("កាលបរិច្ឆេទបង្កើត"),
         "crime":
             MessageLookupByLibrary.simpleMessage("អំពើប្រព្រឹត្តន៍ខុសច្បាប់"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
@@ -110,6 +115,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ការលុបបែក!"),
         "family": MessageLookupByLibrary.simpleMessage("គ្រួសារ"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ភ្លើង"),
+        "franchise": MessageLookupByLibrary.simpleMessage("ហ្វ្រាំងស៊ីស"),
+        "franchises": MessageLookupByLibrary.simpleMessage("ហ្វ្រាំងស៊ីស"),
         "genre": MessageLookupByLibrary.simpleMessage("ប្រភេទ"),
         "genres": MessageLookupByLibrary.simpleMessage("ប្រភេទ"),
         "groupBy": MessageLookupByLibrary.simpleMessage("ក្រុមតាម"),
@@ -154,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("មិនមានតួអង្គដែលបានជ្រើសរើស"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "មិនមានក្រុមហ៊ុនផលិតដែលបានជ្រើសរើស"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "មិនមានហ្វ្រាំងស៊ីសដែលបានជ្រើសរើសទេ"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("មិនមានប្រភេទដែលបានជ្រើសរើស"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("មិនមានID Token ទេ។"),
@@ -165,6 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "មិនមានភាពយន្តដែលបានរកឃើញសម្រាប់ក្រុមហ៊ុននេះ"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("មិនមានការអនុញ្ញាតផ្ទុកទេ។"),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("មិនមានស្លាកដែលបានជ្រើសរើសទេ"),
         "noTitle": MessageLookupByLibrary.simpleMessage("គ្មានចំណងជើង"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "មិនមានអ្នកនិពន្ធដែលបានជ្រើសរើស"),
@@ -217,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("ជោគជ័យ!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" ត្រូវបានលុបចោលជោគជ័យ"),
+        "tag": MessageLookupByLibrary.simpleMessage("ស្លាក"),
+        "tags": MessageLookupByLibrary.simpleMessage("ស្លាក"),
         "thriller": MessageLookupByLibrary.simpleMessage("ត្រាហ្វហ្គិល"),
         "title": MessageLookupByLibrary.simpleMessage("ចំណងជើង"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ភាពយន្តទូរទស្សន៍"),

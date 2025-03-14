@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Abakinnyi"),
         "add": MessageLookupByLibrary.simpleMessage("Ongeraho"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ongeraho Umukinnyi"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Ongeramo franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ongeraho Ubwoko"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ongeraho Filime"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Ongeraho Filime Nshya"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Ongeraho Isosiyete y\'Ubwubatsi"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ongeramo tag"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Ongeraho Umwanditsi"),
         "adventure": MessageLookupByLibrary.simpleMessage("Ibyagezweho"),
@@ -60,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ubwoko bw\'Urutonde"),
         "comedy": MessageLookupByLibrary.simpleMessage("Imyidagaduro"),
         "company": MessageLookupByLibrary.simpleMessage("Isosiyete"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Itariki y\'irema"),
         "crime": MessageLookupByLibrary.simpleMessage("Icyaha"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Dosiye ya CSV yashizweho neza: "),
@@ -109,6 +114,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Gutsindwa!"),
         "family": MessageLookupByLibrary.simpleMessage("Umuryango"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Icyifuzo"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Ubwoko"),
         "genres": MessageLookupByLibrary.simpleMessage("Ubwoko"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gutsinda"),
@@ -153,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nta mukinnyi watoranijwe"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Nta sosiyete yatoranijwe"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Nta franchise wahisemo"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nta bwoko bwatoranijwe"),
         "noIdToken":
@@ -165,6 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nta filime zabonetse kuri iyi sosiyete"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Ntabwo uburenganzira bwo kubika bwahawe."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Nta tag wahisemo"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Nta mutwe"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nta wanditsi watoranijwe"),
@@ -217,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Byagenze neza!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" byahanwe neza"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Ibyishimo"),
         "title": MessageLookupByLibrary.simpleMessage("Umutwe"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Filime ya TV"),

@@ -159,5 +159,14 @@
     "rent": "(Sewa)",
     "buy": "(Beli)",
     "subscription": "(Langganan)",
-    "whereToWatch": "Di mana nonton?"
+    "whereToWatch": "Di mana nonton?",
+    "creationDate": "Tanggal Pembuatan",
+    "franchise": "Franchise",
+    "franchises": "Franchise",
+    "addFranchise": "Tambah Franchise",
+    "tag": "Tag",
+    "tags": "Tag",
+    "addTag": "Tambah Tag",
+    "noTagsSelected": "Teu Aya Tag Anu Kapilih",
+    "noFranchisesSelected": "Teu Aya Franchise Anu Kapilih"
 }

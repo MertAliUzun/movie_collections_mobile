@@ -28,12 +28,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("Zêdekirin"),
         "addActor":
             MessageLookupByLibrary.simpleMessage("Lîstikvan zêde bikin"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Franchise zêde bikin"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Cure zêde bikin"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Fîlm zêde bikin"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Fîlmê Nû zêde bikin"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Kampaniya Parastinê zêde bikin"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tîpa zêde bikin"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Nivîskar zêde bikin"),
         "adventure": MessageLookupByLibrary.simpleMessage("Serhildan"),
@@ -60,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cureya Koleksiyona"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komediya"),
         "company": MessageLookupByLibrary.simpleMessage("Kampaniya"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Rojekê afirandinê"),
         "crime": MessageLookupByLibrary.simpleMessage("Çewaşî"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Pelê CSV bi serfirazî hate çêkirin: "),
@@ -109,6 +114,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Şewitandin!"),
         "family": MessageLookupByLibrary.simpleMessage("Malbat"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaziya"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchise\'ler"),
         "genre": MessageLookupByLibrary.simpleMessage("Cure"),
         "genres": MessageLookupByLibrary.simpleMessage("Cure"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Bi temen rêz bikin"),
@@ -152,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hîç Lîstikvan hilbijartî nehatîye"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Hîç Kampaniya hilbijartî nehatîye"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Franchise\'ên nehêlîn hatine hilbijartin"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Hîç Cure hilbijartî nehatîye"),
         "noIdToken":
@@ -164,6 +173,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hîç fîlm nehatîye dîtin ji bo vê kampanyayê"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Destûrên daneyê nehatin dayîn."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Tîpên nehêlîn hatine hilbijartin"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Hîç Sernav"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Hîç Nivîskar hilbijartî nehatîye"),
@@ -217,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Serkeftin!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" bi serfirazî hate jêbirin"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tîpa"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tîpan"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Sernav"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Fîlmê TV"),

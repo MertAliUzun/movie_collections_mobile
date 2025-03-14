@@ -159,5 +159,14 @@
     "rent": "(대여)",
     "buy": "(구매)",
     "subscription": "(구독)",
-    "whereToWatch": "어디서 볼까요?"
+    "whereToWatch": "어디서 볼까요?",
+    "creationDate": "생성 날짜",
+    "franchise": "프랜차이즈",
+    "franchises": "프랜차이즈",
+    "addFranchise": "프랜차이즈 추가",
+    "tag": "태그",
+    "tags": "태그",
+    "addTag": "태그 추가",
+    "noTagsSelected": "선택된 태그가 없습니다",
+    "noFranchisesSelected": "선택된 프랜차이즈가 없습니다"
 }

@@ -159,5 +159,14 @@
     "rent": "(Иҷора)",
     "buy": "(Харид)",
     "subscription": "(Аъзогӣ)",
-    "whereToWatch": "Куҷо тамошо кардан мумкин аст?"
+    "whereToWatch": "Куҷо тамошо кардан мумкин аст?",
+    "creationDate": "Санаи эҷод",
+    "franchise": "Франшиза",
+    "franchises": "Франшизаҳо",
+    "addFranchise": "Франшиза илова кунед",
+    "tag": "Тег",
+    "tags": "Тегҳо",
+    "addTag": "Тег илова кунед",
+    "noTagsSelected": "Ҳеҷ теге интихоб нашудааст",
+    "noFranchisesSelected": "Ҳеҷ франшизае интихоб нашудааст"
 }

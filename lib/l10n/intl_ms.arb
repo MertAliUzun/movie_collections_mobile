@@ -159,5 +159,14 @@
     "rent": "(Sewa)",
     "buy": "(Beli)",
     "subscription": "(Langganan)",
-    "whereToWatch": "Di mana untuk menonton?"
+    "whereToWatch": "Di mana untuk menonton?",
+    "creationDate": "Tarikh Penciptaan",
+    "franchise": "Francais",
+    "franchises": "Francais",
+    "addFranchise": "Tambah Francais",
+    "tag": "Tag",
+    "tags": "Tag",
+    "addTag": "Tambah Tag",
+    "noTagsSelected": "Tiada tag yang dipilih",
+    "noFranchisesSelected": "Tiada francais yang dipilih"
 }

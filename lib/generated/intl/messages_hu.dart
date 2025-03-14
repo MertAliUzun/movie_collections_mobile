@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Színészek"),
         "add": MessageLookupByLibrary.simpleMessage("Hozzáadás"),
         "addActor": MessageLookupByLibrary.simpleMessage("Színész hozzáadása"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Franchise hozzáadása"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Műfaj hozzáadása"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film hozzáadása"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Új film hozzáadása"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Gyártócég hozzáadása"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Címke hozzáadása"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Író hozzáadása"),
         "adventure": MessageLookupByLibrary.simpleMessage("Kaland"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Álnév: "),
@@ -58,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Gyűjtemény típusa"),
         "comedy": MessageLookupByLibrary.simpleMessage("Vígjáték"),
         "company": MessageLookupByLibrary.simpleMessage("Cég"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Létrehozás dátuma"),
         "crime": MessageLookupByLibrary.simpleMessage("Bűnügyi"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV fájl sikeresen létrehozva: "),
@@ -107,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Sikertelen!"),
         "family": MessageLookupByLibrary.simpleMessage("Családi"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchise-ok"),
         "genre": MessageLookupByLibrary.simpleMessage("Műfaj"),
         "genres": MessageLookupByLibrary.simpleMessage("Műfajok"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Csoportosítás"),
@@ -149,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nincs kiválasztott színész"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Nincs kiválasztott cég"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Nincsenek kiválasztott franchise-ok"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nincs kiválasztott műfaj"),
         "noIdToken":
@@ -161,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nem található film ehhez a céghez"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nem adták meg a tárolási engedélyt."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "Nincsenek kiválasztott címkék"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Nincs cím"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nincs kiválasztott író"),
@@ -214,6 +225,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Sikeres!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" sikeresen törölve"),
+        "tag": MessageLookupByLibrary.simpleMessage("Címke"),
+        "tags": MessageLookupByLibrary.simpleMessage("Címkék"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Cím"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV film"),

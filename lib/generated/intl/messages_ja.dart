@@ -27,10 +27,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("俳優"),
         "add": MessageLookupByLibrary.simpleMessage("追加"),
         "addActor": MessageLookupByLibrary.simpleMessage("俳優を追加"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("フランチャイズを追加"),
         "addGenre": MessageLookupByLibrary.simpleMessage("ジャンルを追加"),
         "addMovie": MessageLookupByLibrary.simpleMessage("映画を追加"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("新しい映画を追加"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage("制作会社を追加"),
+        "addTag": MessageLookupByLibrary.simpleMessage("タグを追加"),
         "addWriter": MessageLookupByLibrary.simpleMessage("脚本家を追加"),
         "adventure": MessageLookupByLibrary.simpleMessage("アドベンチャー"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("別名: "),
@@ -53,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("コレクションタイプ"),
         "comedy": MessageLookupByLibrary.simpleMessage("コメディ"),
         "company": MessageLookupByLibrary.simpleMessage("会社"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("作成日"),
         "crime": MessageLookupByLibrary.simpleMessage("犯罪"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSVファイルが正常に作成されました: "),
@@ -98,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("失敗！"),
         "family": MessageLookupByLibrary.simpleMessage("家族"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ファンタジー"),
+        "franchise": MessageLookupByLibrary.simpleMessage("フランチャイズ"),
+        "franchises": MessageLookupByLibrary.simpleMessage("フランチャイズ"),
         "genre": MessageLookupByLibrary.simpleMessage("ジャンル"),
         "genres": MessageLookupByLibrary.simpleMessage("ジャンル"),
         "groupBy": MessageLookupByLibrary.simpleMessage("グループ化"),
@@ -134,6 +139,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("俳優が選択されていません"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("会社が選択されていません"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("フランチャイズが選択されていません"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("ジャンルが選択されていません"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("IDトークンが見つかりません。"),
@@ -144,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("この会社の映画が見つかりませんでした"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("ストレージの許可が与えられていません。"),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage("タグが選択されていません"),
         "noTitle": MessageLookupByLibrary.simpleMessage("タイトルなし"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("脚本家が選択されていません"),
@@ -191,6 +199,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("成功！"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" 正常に削除されました"),
+        "tag": MessageLookupByLibrary.simpleMessage("タグ"),
+        "tags": MessageLookupByLibrary.simpleMessage("タグ"),
         "thriller": MessageLookupByLibrary.simpleMessage("スリラー"),
         "title": MessageLookupByLibrary.simpleMessage("タイトル"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV映画"),

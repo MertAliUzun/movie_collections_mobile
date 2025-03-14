@@ -159,5 +159,14 @@
     "rent": "(Түрээслэх)",
     "buy": "(Тамга тавих)",
     "subscription": "(Гишүүнчлэл)",
-    "whereToWatch": "Хаана үзэх вэ?"
+    "whereToWatch": "Хаана үзэх вэ?",
+    "creationDate": "Бүтээх огноо",
+    "franchise": "Франшиз",
+    "franchises": "Франшизууд",
+    "addFranchise": "Франшиз нэмэх",
+    "tag": "Таг",
+    "tags": "Тагууд",
+    "addTag": "Таг нэмэх",
+    "noTagsSelected": "Таг сонгогдоогүй",
+    "noFranchisesSelected": "Франшиз сонгогдоогүй"
 }

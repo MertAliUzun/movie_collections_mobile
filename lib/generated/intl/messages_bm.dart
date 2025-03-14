@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Jɛlenw"),
         "add": MessageLookupByLibrary.simpleMessage("Jɔw"),
         "addActor": MessageLookupByLibrary.simpleMessage("Jɛlen Jɔw"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Fransizi boloki"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Kɛlɛw Jɔw"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Filimu Jɔw"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Filimu Jɔw"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Kɔnɔ Jɔw"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tagu boloki"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Tɛmɛkɛla Jɔw"),
         "adventure": MessageLookupByLibrary.simpleMessage("Kulu Ka Tɛmɛkɛla"),
         "animation": MessageLookupByLibrary.simpleMessage("Filimu Dɛmɛ"),
@@ -49,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Jolow Kɛlɛ"),
         "comedy": MessageLookupByLibrary.simpleMessage("Ka Sɔn Ka Filimu"),
         "company": MessageLookupByLibrary.simpleMessage("Kɔnɔ"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Donni da ji"),
         "crime": MessageLookupByLibrary.simpleMessage("Ka Jɛlenw Filimu"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV file dɔrɔn dɔrɔn: "),
@@ -85,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Ɲàmán!"),
         "family": MessageLookupByLibrary.simpleMessage("Ka Tɛmɛkɛla"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Ka Sɛbɛn Filimu"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Fransizi"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Fransiziyaw"),
         "genre": MessageLookupByLibrary.simpleMessage("Filimu Kɛlɛw"),
         "genres": MessageLookupByLibrary.simpleMessage("Filimu Kɛlɛw"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Tɛrɛn Ka Jɔw"),
@@ -122,11 +127,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Jɛlenw jɔw tɛ yen"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Kɔnɔw jɔw tɛ yen"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Fransizi tɛ bɛ sɛbɛ"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Kɛlɛw jɔw tɛ yen"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID token tɛ yen."),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Dantigɛ tɛ yen."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Tagu tɛ bɛ sɛbɛ"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Tɛmɛkɛlaw jɔw tɛ yen"),
         "none": MessageLookupByLibrary.simpleMessage("O tɛ yen"),
@@ -172,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Se!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" tɔgɔ yen."),
+        "tag": MessageLookupByLibrary.simpleMessage("Tagu"),
+        "tags": MessageLookupByLibrary.simpleMessage("Taguw"),
         "thriller": MessageLookupByLibrary.simpleMessage("Ka Kɛnɛ Filimu"),
         "title": MessageLookupByLibrary.simpleMessage("Tigɛ"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Filimu"),

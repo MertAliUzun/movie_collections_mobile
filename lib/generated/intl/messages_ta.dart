@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("நடிகர்கள்"),
         "add": MessageLookupByLibrary.simpleMessage("சேர்க்கவும்"),
         "addActor": MessageLookupByLibrary.simpleMessage("நடிகர் சேர்க்கவும்"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("பிராண்டை சேர்க்கவும்"),
         "addGenre": MessageLookupByLibrary.simpleMessage("பண்பு சேர்க்கவும்"),
         "addMovie": MessageLookupByLibrary.simpleMessage("படம் சேர்க்கவும்"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("புதிய படம் சேர்க்கவும்"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "தயாரிப்பு நிறுவனம் சேர்க்கவும்"),
+        "addTag": MessageLookupByLibrary.simpleMessage("டேக்கை சேர்க்கவும்"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("கதை எழுத்தாளர் சேர்க்கவும்"),
         "adventure": MessageLookupByLibrary.simpleMessage("சாகசம்"),
@@ -59,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("தொகுப்பு வகை"),
         "comedy": MessageLookupByLibrary.simpleMessage("காமெடி"),
         "company": MessageLookupByLibrary.simpleMessage("நிறுவனம்"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("உருவாக்க தேதி"),
         "crime": MessageLookupByLibrary.simpleMessage("குற்றம்"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV கோப்பு வெற்றிகரமாக உருவாக்கப்பட்டது: "),
@@ -108,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("தவறானது!"),
         "family": MessageLookupByLibrary.simpleMessage("குடும்பம்"),
         "fantasy": MessageLookupByLibrary.simpleMessage("கற்பனை"),
+        "franchise": MessageLookupByLibrary.simpleMessage("பிராண்டு"),
+        "franchises": MessageLookupByLibrary.simpleMessage("பிராண்டுகள்"),
         "genre": MessageLookupByLibrary.simpleMessage("பண்பு"),
         "genres": MessageLookupByLibrary.simpleMessage("பண்புகள்"),
         "groupBy": MessageLookupByLibrary.simpleMessage("குழுவாக"),
@@ -151,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "தேர்ந்தெடுக்கப்பட்ட நடிகர்கள் இல்லை"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட நிறுவனங்கள் இல்லை"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "சேர்க்கப்பட்ட பிராண்டுகள் எதுவும் இல்லை"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட பண்புகள் இல்லை"),
         "noIdToken":
@@ -163,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "இந்த நிறுவனத்திற்கான படங்கள் எதுவும் கிடைக்கவில்லை"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "சேமிப்புத்தள அனுமதிகள் வழங்கப்படவில்லை."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage(
+            "சேர்க்கப்பட்ட டேக்குகள் எதுவும் இல்லை"),
         "noTitle": MessageLookupByLibrary.simpleMessage("தலைப்பு இல்லை"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட எழுத்தாளர்கள் இல்லை"),
@@ -217,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("வெற்றிகரமானது!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" வெற்றிகரமாக அழிக்கப்பட்டது"),
+        "tag": MessageLookupByLibrary.simpleMessage("டேக்"),
+        "tags": MessageLookupByLibrary.simpleMessage("டேக்குகள்"),
         "thriller": MessageLookupByLibrary.simpleMessage("த்ரில்லர்"),
         "title": MessageLookupByLibrary.simpleMessage("தலைப்பு"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("டிவி படம்"),

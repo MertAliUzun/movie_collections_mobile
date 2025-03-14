@@ -159,5 +159,14 @@
     "rent": "(Izīrēt)",
     "buy": "(Pirkt)",
     "subscription": "(Abonēšana)",
-    "whereToWatch": "Kur skatīties?"
+    "whereToWatch": "Kur skatīties?",
+    "creationDate": "Izveides datums",
+    "franchise": "Franšīze",
+    "franchises": "Franšīzes",
+    "addFranchise": "Pievienot franšīzi",
+    "tag": "Etiķete",
+    "tags": "Etiķetes",
+    "addTag": "Pievienot etiķeti",
+    "noTagsSelected": "Nav izvēlētas etiķetes",
+    "noFranchisesSelected": "Nav izvēlētas franšīzes"
 }

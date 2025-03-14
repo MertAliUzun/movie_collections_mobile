@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktorɗi"),
         "add": MessageLookupByLibrary.simpleMessage("Ñaamude"),
         "addActor": MessageLookupByLibrary.simpleMessage("Ñaamude aktore"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Ñaayde Fransayzi"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ñaamude faaɗa"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Ñaamude filmji"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Ñaamude filmji ɗoo"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Ñaamude njiyngol"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Ñaayde Cifol"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ñaamude mujjirɗo"),
         "adventure": MessageLookupByLibrary.simpleMessage("Luundoo"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Aliaas: "),
@@ -57,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Ɓeyda koleejo"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Njiyngol"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Ñalaande Sari"),
         "crime": MessageLookupByLibrary.simpleMessage("Ñaamudo ɗoo"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("Fayil CSV ko yimɓe: "),
@@ -105,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Haaɓo!"),
         "family": MessageLookupByLibrary.simpleMessage("Jom fayde"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasii"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Fransayzi"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Fransayziji"),
         "genre": MessageLookupByLibrary.simpleMessage("Faaɗa"),
         "genres": MessageLookupByLibrary.simpleMessage("Faaɗe"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Ñaamude"),
@@ -144,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Alaa aktorɗi heddii"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Alaa njiyngol heddii"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Fransayziji walaa"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Alaa faaɗe heddii"),
         "noIdToken":
@@ -155,6 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Alaa filmji njiyngol"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Ko feere njiytii fayde kadi."),
+        "noTagsSelected": MessageLookupByLibrary.simpleMessage("Cifolji walaa"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Alaa title"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Alaa mujjirɗo heddii"),
@@ -205,6 +214,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Ko yimɓe!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" yoƴƴi ko yimɓe"),
+        "tag": MessageLookupByLibrary.simpleMessage("Cifol"),
+        "tags": MessageLookupByLibrary.simpleMessage("Cifolji"),
         "thriller": MessageLookupByLibrary.simpleMessage("Wokti"),
         "title": MessageLookupByLibrary.simpleMessage("Ñaamudo"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV film"),

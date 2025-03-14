@@ -27,11 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Skuespillere"),
         "add": MessageLookupByLibrary.simpleMessage("Tilføj"),
         "addActor": MessageLookupByLibrary.simpleMessage("Tilføj skuespiller"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Tilføj franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Tilføj genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Tilføj film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Tilføj ny film"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Tilføj produktionsselskab"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tilføj tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Tilføj forfatter"),
         "adventure": MessageLookupByLibrary.simpleMessage("Eventyr"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -56,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kollektions type"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Selskab"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Oprettelsesdato"),
         "crime": MessageLookupByLibrary.simpleMessage("Krimi"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV-fil oprettet med succes: "),
@@ -105,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fejl!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genrer"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupér efter"),
@@ -148,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ingen skuespillere valgt"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Ingen selskaber valgt"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Ingen franchises valgt"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ingen genrer valgt"),
         "noIdToken":
@@ -160,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ingen film fundet for dette selskab"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Lagringstilladelser blev ikke givet."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Ingen tags valgt"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Ingen titel"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ingen forfattere valgt"),
@@ -212,6 +222,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Succesfuld!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" succesfuldt slettet"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Film"),

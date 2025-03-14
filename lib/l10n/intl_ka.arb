@@ -159,5 +159,14 @@
     "rent": "(გაქირავება)",
     "buy": "(ყიდვა)",
     "subscription": "(წევრობა)",
-    "whereToWatch": "სად უნდა ნახოთ?"
+    "whereToWatch": "სად უნდა ნახოთ?",
+    "creationDate": "შექმნის თარიღი",
+    "franchise": "ფრანჩაიზი",
+    "franchises": "ფრანჩაიზები",
+    "addFranchise": "ფრანჩაიზის დამატება",
+    "tag": "ნიშანი",
+    "tags": "ნიშანები",
+    "addTag": "ნიშნის დამატება",
+    "noTagsSelected": "არ არის არჩეული ნიშანი",
+    "noFranchisesSelected": "არ არის არჩეული ფრანჩაიზი"
 }

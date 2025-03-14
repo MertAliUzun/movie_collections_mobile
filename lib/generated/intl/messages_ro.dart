@@ -27,11 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Actori"),
         "add": MessageLookupByLibrary.simpleMessage("Adaugă"),
         "addActor": MessageLookupByLibrary.simpleMessage("Adaugă actor"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Adaugă franciză"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Adaugă gen"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Adaugă film"),
         "addNewMovie": MessageLookupByLibrary.simpleMessage("Adaugă film nou"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Adaugă companie de producție"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Adaugă etichetă"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Adaugă scriitor"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventură"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -56,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Tip colecție"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comedie"),
         "company": MessageLookupByLibrary.simpleMessage("Companie"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Data creării"),
         "crime": MessageLookupByLibrary.simpleMessage("Crimă"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Fișierul CSV a fost creat cu succes: "),
@@ -105,6 +108,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Eșec!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantezie"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franciză"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Francize"),
         "genre": MessageLookupByLibrary.simpleMessage("Gen"),
         "genres": MessageLookupByLibrary.simpleMessage("Genuri"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupare după"),
@@ -147,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nu au fost selectați actori"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Nu au fost selectate companii"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Nicio franciză selectată"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nu au fost selectate genuri"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
@@ -159,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nu au fost găsite filme pentru această companie"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nu s-au acordat permisiuni pentru stocare."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Nicio etichetă selectată"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Niciun titlu"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Nu au fost selectați scriitori"),
@@ -212,6 +221,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Succes!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("Șters cu succes"),
+        "tag": MessageLookupByLibrary.simpleMessage("Etichetă"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etichete"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titlu"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film TV"),

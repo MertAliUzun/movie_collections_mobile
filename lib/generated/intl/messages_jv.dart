@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Aktor"),
         "add": MessageLookupByLibrary.simpleMessage("Tambah"),
         "addActor": MessageLookupByLibrary.simpleMessage("Tambah Aktor"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Tambah franchise"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Tambah Genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Tambah Film"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Tambah Film Anyar"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Tambah Perusahaan Produksi"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tambah tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Tambah Penulis"),
         "adventure": MessageLookupByLibrary.simpleMessage("Petualangan"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -57,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "collectionType": MessageLookupByLibrary.simpleMessage("Tipe Koleksi"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
         "company": MessageLookupByLibrary.simpleMessage("Perusahaan"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Tanggal nggawe"),
         "crime": MessageLookupByLibrary.simpleMessage("Kriminal"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "File CSV wis digawe kanthi sukses: "),
@@ -106,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Gagal!"),
         "family": MessageLookupByLibrary.simpleMessage("Keluarga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasi"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genre"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Kelompokake miturut"),
@@ -146,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ora ana aktor sing dipilih"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "Ora ana perusahaan sing dipilih"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "Ora ana franchise sing dipilih"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ora ana genre sing dipilih"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
@@ -158,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ora ana film kanggo perusahaan iki"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Ijin panyimpenan ora diwenehake."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Ora ana tag sing dipilih"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Ora Ana Judul"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Ora ana penulis sing dipilih"),
@@ -210,6 +220,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Sukses!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" sukses dihapus"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tag"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Judul"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film TV"),

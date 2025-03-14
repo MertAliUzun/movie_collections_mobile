@@ -159,5 +159,14 @@
     "rent": "(Leje)",
     "buy": "(Køb)",
     "subscription": "(Abonnement)",
-    "whereToWatch": "Hvor kan jeg se?"
+    "whereToWatch": "Hvor kan jeg se?",
+    "creationDate": "Oprettelsesdato",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Tilføj franchise",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Tilføj tag",
+    "noTagsSelected": "Ingen tags valgt",
+    "noFranchisesSelected": "Ingen franchises valgt"
 }

@@ -159,5 +159,14 @@
     "rent": "(Sewa)",
     "buy": "(Tuku)",
     "subscription": "(Langganan)",
-    "whereToWatch": "Endi sing bisa ditonton?"
+    "whereToWatch": "Endi sing bisa ditonton?",
+    "creationDate": "Tanggal nggawe",
+    "franchise": "Franchise",
+    "franchises": "Franchise",
+    "addFranchise": "Tambah franchise",
+    "tag": "Tag",
+    "tags": "Tag",
+    "addTag": "Tambah tag",
+    "noTagsSelected": "Ora ana tag sing dipilih",
+    "noFranchisesSelected": "Ora ana franchise sing dipilih"
 }

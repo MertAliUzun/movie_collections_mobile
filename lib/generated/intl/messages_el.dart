@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Ηθοποιοί"),
         "add": MessageLookupByLibrary.simpleMessage("Προσθήκη"),
         "addActor": MessageLookupByLibrary.simpleMessage("Προσθήκη Ηθοποιού"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Προσθήκη γραφείου"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Προσθήκη Είδους"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Προσθήκη Ταινίας"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Προσθήκη Νέας Ταινίας"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Προσθήκη Παραγωγικής Εταιρείας"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Προσθήκη ετικέτας"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Προσθήκη Συγγραφέα"),
         "adventure": MessageLookupByLibrary.simpleMessage("Περιπέτεια"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Ψευδώνυμο: "),
@@ -58,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Τύπος Συλλογής"),
         "comedy": MessageLookupByLibrary.simpleMessage("Κωμωδία"),
         "company": MessageLookupByLibrary.simpleMessage("Εταιρεία"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Ημερομηνία δημιουργίας"),
         "crime": MessageLookupByLibrary.simpleMessage("Εγκληματικό"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Το αρχείο CSV δημιουργήθηκε με επιτυχία: "),
@@ -108,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Αποτυχία!"),
         "family": MessageLookupByLibrary.simpleMessage("Οικογενειακή"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Φαντασία"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Γραφείο"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Γραφεία"),
         "genre": MessageLookupByLibrary.simpleMessage("Είδος"),
         "genres": MessageLookupByLibrary.simpleMessage("Είδη"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Ομαδοποίηση Από"),
@@ -153,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Δεν επιλέχθηκαν ηθοποιοί"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Δεν επιλέχθηκαν εταιρείες"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Δεν έχουν επιλεγεί γραφεία"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Δεν επιλέχθηκαν είδη"),
         "noIdToken":
@@ -165,6 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Δεν βρέθηκαν ταινίες για αυτή την εταιρεία"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Δεν δόθηκαν δικαιώματα αποθήκευσης."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Δεν έχουν επιλεγεί ετικέτες"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Χωρίς Τίτλο"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Δεν επιλέχθηκαν συγγραφείς"),
@@ -221,6 +232,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Επιτυχία!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" διαγράφηκε με επιτυχία"),
+        "tag": MessageLookupByLibrary.simpleMessage("Ετικέτα"),
+        "tags": MessageLookupByLibrary.simpleMessage("Ετικέτες"),
         "thriller": MessageLookupByLibrary.simpleMessage("Θρίλερ"),
         "title": MessageLookupByLibrary.simpleMessage("Τίτλος"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Ταινία Τηλεόρασης"),

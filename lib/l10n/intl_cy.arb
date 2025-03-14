@@ -159,5 +159,14 @@
     "rent": "(Rhentu)",
     "buy": "(Prynu)",
     "subscription": "(Aelodaeth)",
-    "whereToWatch": "Ble i wylio?"
+    "whereToWatch": "Ble i wylio?",
+    "creationDate": "Dyddiad Creu",
+    "franchise": "Ffransis",
+    "franchises": "Ffransisau",
+    "addFranchise": "Ychwanegu Ffransis",
+    "tag": "Tag",
+    "tags": "Tagiau",
+    "addTag": "Ychwanegu Tag",
+    "noTagsSelected": "Dim tagiau wedi'u dewis",
+    "noFranchisesSelected": "Dim ffransisau wedi'u dewis"
 }

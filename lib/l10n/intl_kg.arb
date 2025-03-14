@@ -159,5 +159,14 @@
     "rent": "(Kulonga)",
     "buy": "(Kusumba)",
     "subscription": "(Abonnement)",
-    "whereToWatch": "Wapi Kutila?"
+    "whereToWatch": "Wapi Kutila?",
+    "creationDate": "Жаратылыш күнү",
+    "franchise": "Франшиза",
+    "franchises": "Франшизалар",
+    "addFranchise": "Франшизаны кошуу",
+    "tag": "Тег",
+    "tags": "Тегдер",
+    "addTag": "Тегди кошуу",
+    "noTagsSelected": "Тегдер тандалган жок",
+    "noFranchisesSelected": "Франшизалар тандалган жок"
 }

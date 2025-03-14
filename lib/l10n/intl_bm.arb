@@ -132,5 +132,14 @@
     "rent": "(Ka jɛlɛ)",
     "buy": "(Ka sɛbɛn)",
     "subscription": "(Ka jɔw)",
-    "whereToWatch": "Filimu Ka Jɔw?"
+    "whereToWatch": "Filimu Ka Jɔw?",
+    "creationDate": "Donni da ji",
+    "franchise": "Fransizi",
+    "franchises": "Fransiziyaw",
+    "addFranchise": "Fransizi boloki",
+    "tag": "Tagu",
+    "tags": "Taguw",
+    "addTag": "Tagu boloki",
+    "noTagsSelected": "Tagu tɛ bɛ sɛbɛ",
+    "noFranchisesSelected": "Fransizi tɛ bɛ sɛbɛ"
 }

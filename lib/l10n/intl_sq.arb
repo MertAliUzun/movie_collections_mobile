@@ -132,5 +132,14 @@
     "rent": "(Qira)",
     "buy": "(Bli)",
     "subscription": "(Abonim)",
-    "whereToWatch": "Ku të shikohet?"
+    "whereToWatch": "Ku të shikohet?",
+    "creationDate": "Data e krijimit",
+    "franchise": "Franshiza",
+    "franchises": "Franshiza",
+    "addFranchise": "Shto franshizë",
+    "tag": "Etiketë",
+    "tags": "Etiketa",
+    "addTag": "Shto etiketë",
+    "noTagsSelected": "Nuk është zgjedhur asnjë etiketë",
+    "noFranchisesSelected": "Nuk është zgjedhur asnjë franshizë"
 }

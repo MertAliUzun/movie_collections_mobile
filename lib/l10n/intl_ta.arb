@@ -159,5 +159,14 @@
     "rent": "(எம்போது)",
     "buy": "(கொள்)",
     "subscription": "(வசதி)",
-    "whereToWatch": "எங்கே பார்க்க?"
+    "whereToWatch": "எங்கே பார்க்க?",
+    "creationDate": "உருவாக்க தேதி",
+    "franchise": "பிராண்டு",
+    "franchises": "பிராண்டுகள்",
+    "addFranchise": "பிராண்டை சேர்க்கவும்",
+    "tag": "டேக்",
+    "tags": "டேக்குகள்",
+    "addTag": "டேக்கை சேர்க்கவும்",
+    "noTagsSelected": "சேர்க்கப்பட்ட டேக்குகள் எதுவும் இல்லை",
+    "noFranchisesSelected": "சேர்க்கப்பட்ட பிராண்டுகள் எதுவும் இல்லை"
 }

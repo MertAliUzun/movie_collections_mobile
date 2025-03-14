@@ -159,5 +159,14 @@
     "rent": "(Lwe)",
     "buy": "(Achte)",
     "subscription": "(Abònman)",
-    "whereToWatch": "Kote Pou Gade?"
+    "whereToWatch": "Kote Pou Gade?",
+    "creationDate": "Dat Kreyasyon",
+    "franchise": "Franchiz",
+    "franchises": "Franchiz yo",
+    "addFranchise": "Ajoute franchiz",
+    "tag": "Etikèt",
+    "tags": "Etikèt yo",
+    "addTag": "Ajoute etikèt",
+    "noTagsSelected": "Pa gen etikèt ki chwazi",
+    "noFranchisesSelected": "Pa gen franchiz ki chwazi"
 }

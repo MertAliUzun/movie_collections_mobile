@@ -159,5 +159,14 @@
     "rent": "(ជួល)",
     "buy": "(ទិញ)",
     "subscription": "(អាណត្តិ)",
-    "whereToWatch": "កន្លែងមើល?"
+    "whereToWatch": "កន្លែងមើល?",
+    "creationDate": "កាលបរិច្ឆេទបង្កើត",
+    "franchise": "ហ្វ្រាំងស៊ីស",
+    "franchises": "ហ្វ្រាំងស៊ីស",
+    "addFranchise": "បន្ថែមហ្វ្រាំងស៊ីស",
+    "tag": "ស្លាក",
+    "tags": "ស្លាក",
+    "addTag": "បន្ថែមស្លាក",
+    "noTagsSelected": "មិនមានស្លាកដែលបានជ្រើសរើសទេ",
+    "noFranchisesSelected": "មិនមានហ្វ្រាំងស៊ីសដែលបានជ្រើសរើសទេ"
 }

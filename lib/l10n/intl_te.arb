@@ -159,5 +159,14 @@
     "rent": "(అద్దె)",
     "buy": "(కొనుగోలు)",
     "subscription": "(సబ్‌స్క్రిప్షన్)",
-    "whereToWatch": "ఎక్కడ చూడాలి?"
+    "whereToWatch": "ఎక్కడ చూడాలి?",
+    "creationDate": "సృష్టి తేదీ",
+    "franchise": "ఫ్రాంచైజీ",
+    "franchises": "ఫ్రాంచైజీలు",
+    "addFranchise": "ఫ్రాంచైజీ జోడించండి",
+    "tag": "ట్యాగ్",
+    "tags": "ట్యాగ్లు",
+    "addTag": "ట్యాగ్ జోడించండి",
+    "noTagsSelected": "ఎటువంటి ట్యాగ్లు ఎంపిక చేయబడలేదు",
+    "noFranchisesSelected": "ఎటువంటి ఫ్రాంచైజీలు ఎంపిక చేయబడలేదు"
 }

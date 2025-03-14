@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("Fa\'amaonia"),
         "addActor": MessageLookupByLibrary.simpleMessage(
             "Fa\'amaonia i le Fa\'atufugaga"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Faʻaopoopo Franchise"),
         "addGenre":
             MessageLookupByLibrary.simpleMessage("Fa\'amaonia i le Vaega"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Fa\'amaonia ata"),
@@ -35,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fa\'amaonia Ata Tetele Fou"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Fa\'amaonia kamupani fa\'atekinolosi"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Faʻaopoopo Tag"),
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Fa\'amaonia fa\'ato\'aga"),
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
@@ -63,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tasi o Fa\'amaoniga"),
         "comedy": MessageLookupByLibrary.simpleMessage("Fa\'ate\'ia"),
         "company": MessageLookupByLibrary.simpleMessage("Kamupani"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Asofa o le Mauga"),
         "crime": MessageLookupByLibrary.simpleMessage("Solia o Fa\'amasinoga"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "Na fa\'amaonia le faila CSV: "),
@@ -113,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fa\'aletonu!"),
         "family": MessageLookupByLibrary.simpleMessage("Aiga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Mafaufauga"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Vaega"),
         "genres": MessageLookupByLibrary.simpleMessage("Vaega"),
         "groupBy":
@@ -160,6 +167,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "E leai ni Fa\'atufugaga na Fa\'amaonia"),
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage(
             "E leai ni Kamupani na Fa\'amaonia"),
+        "noFranchisesSelected": MessageLookupByLibrary.simpleMessage(
+            "E leai ni Franchises na oʻo mai"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "E leai ni Vaega na Fa\'amaonia"),
         "noIdToken":
@@ -172,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "E leai ata mo le kamupani fa\'atekinolosi"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "E leai ni aia tatau mo fa\'amaonia faila."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("E leai ni Tag na oʻo mai"),
         "noTitle": MessageLookupByLibrary.simpleMessage("E leai ni Titulu"),
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "E leai ni Fa\'ato\'aga na Fa\'amaonia"),
@@ -230,6 +241,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Fa\'amaoniga!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" fa\'aleagaina"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Leiloa"),
         "title": MessageLookupByLibrary.simpleMessage("Titulu"),
         "tvMovie":
