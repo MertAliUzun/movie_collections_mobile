@@ -88,10 +88,10 @@ class Movie {
   @HiveField(27)
   final String? pgRating;
 
-  @HiveField(15)
+  @HiveField(28)
   final List<String>? franchises;
 
-  @HiveField(15)
+  @HiveField(29)
   final List<String>? tags;
 
   //delete writers

@@ -664,7 +664,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: viewingOptions,
+                        items: viewingOptions.map<DropdownMenuItem<String>>((dynamic option) {
+                        return DropdownMenuItem<String>(
+                          value: option as String,
+                          child: Text(
+                            option as String,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        );
+                      }).toList(),
                       ),
                     ),
                   ),
@@ -696,7 +705,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: groupingOptions,
+                        items: groupingOptions.map<DropdownMenuItem<String>>((dynamic option) {
+                        return DropdownMenuItem<String>(
+                          value: option as String,
+                          child: Text(
+                            option as String,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        );
+                      }).toList(),
                       ),
                     ),
                   ),
@@ -728,7 +746,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: sortingOptions,
+                        items: sortingOptions.map<DropdownMenuItem<String>>((dynamic option) {
+                        return DropdownMenuItem<String>(
+                          value: option as String,
+                          child: Text(
+                            option as String,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        );
+                      }).toList(),
                       ),
                     ),
                   ),
@@ -765,7 +792,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: sortingDirOptions,
+                        items: sortingDirOptions.map<DropdownMenuItem<String>>((dynamic option) {
+                        return DropdownMenuItem<String>(
+                          value: option as String,
+                          child: Text(
+                            option as String,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        );
+                      }).toList(),
                       ),
                     ),
                   ),

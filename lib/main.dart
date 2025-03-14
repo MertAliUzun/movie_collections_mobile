@@ -41,10 +41,58 @@ void main() async {
   Hive.registerAdapter(MovieAdapter()); // Register the Movie adapter
   await Hive.openBox<Movie>('movies'); // Open the box for movies
   
+  // Mevcut filmleri yeni alanlarla güncelle
+  await _updateMoviesWithNewFields();
+  
   var systemLanguage = ui.window.locale.languageCode;
 
   runApp(MyApp(systemLanguage: systemLanguage));
   
+}
+
+// Mevcut filmleri yeni alanlarla güncelleyen fonksiyon
+Future<void> _updateMoviesWithNewFields() async {
+  final moviesBox = Hive.box<Movie>('movies');
+  
+  for (var movie in moviesBox.values) {
+    // Yeni bir Movie nesnesi oluştur, eksik alanları varsayılan değerlerle doldur
+    final updatedMovie = Movie(
+      id: movie.id,
+      movieName: movie.movieName,
+      directorName: movie.directorName,
+      releaseDate: movie.releaseDate,
+      plot: movie.plot,
+      runtime: movie.runtime,
+      imdbRating: movie.imdbRating,
+      writers: movie.writers,
+      actors: movie.actors,
+      watched: movie.watched,
+      imageLink: movie.imageLink,
+      userEmail: movie.userEmail,
+      watchDate: movie.watchDate,
+      userScore: movie.userScore,
+      hypeScore: movie.hypeScore,
+      genres: movie.genres,
+      productionCompany: movie.productionCompany,
+      customSortTitle: movie.customSortTitle,
+      country: movie.country,
+      popularity: movie.popularity,
+      budget: movie.budget,
+      revenue: movie.revenue,
+      toSync: movie.toSync,
+      watchCount: movie.watchCount,
+      myNotes: movie.myNotes,
+      collectionType: movie.collectionType,
+      // Yeni alanlar için varsayılan değerler
+      creationDate: movie.creationDate ?? DateTime.now(),
+      pgRating: movie.pgRating ?? '',
+      franchises: movie.franchises ?? ['Test1', 'Test2'],
+      tags: movie.tags ?? ['tagTest']
+    );
+    
+    // Güncellenen filmi kaydet
+    moviesBox.put(movie.id, updatedMovie);
+  }
 }
 
 final supabase = Supabase.instance.client;
@@ -119,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
     Future<AuthResponse> _googleSignIn() async {
-    if (_userEmail != null && _userEmail == null) {
+    if (_userEmail != null) {
       setState(() {
           _isLoaded = true;
         });
