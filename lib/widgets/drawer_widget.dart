@@ -2,6 +2,8 @@ import 'dart:math';
 import 'dart:convert';
 import 'dart:io';
 import 'package:csv/csv.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -550,13 +552,66 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
-       DropdownMenuItem(value: 'movieName', child: Text(S.of(context).title)),
-       DropdownMenuItem(value: 'releaseDate', child: Text(S.of(context).releaseDate)),
-       DropdownMenuItem(value: 'directorName', child: Text(S.of(context).director)),
-       DropdownMenuItem(value: 'imdbRating', child: Text(S.of(context).imdbRating)),
-       DropdownMenuItem(value: 'runtime', child: Text(S.of(context).runtime)),
-       DropdownMenuItem(value: 'creationDate', child: Text(S.of(context).creationDate)),
-       
+       DropdownMenuItem(
+         value: 'movieName', 
+         child: Container(
+           child: Text(
+             S.of(context).title,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'releaseDate', 
+         child: Container(
+           child: Text(
+             S.of(context).releaseDate,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'directorName', 
+         child: Container(
+           child: Text(
+             S.of(context).director,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'imdbRating', 
+         child: Container(
+           child: Text(
+             S.of(context).imdbRating,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'runtime', 
+         child: Container(
+           child: Text(
+             S.of(context).runtime,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'creationDate', 
+         child: Container(
+           child: Text(
+             S.of(context).creationDate,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
     ];
     if (_isFromWishlist) {
       sortingOptions.add(DropdownMenuItem(value: 'hypeScore', child: Text(S.of(context).hypeScore)));
@@ -567,23 +622,113 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     }
 
     List<DropdownMenuItem<String>> groupingOptions = [
-       DropdownMenuItem(value: 'None', child: Text(S.of(context).none)),
-       DropdownMenuItem(value: 'Director', child: Text(S.of(context).director)),
-       DropdownMenuItem(value: 'Genre', child: Text(S.of(context).genre)),
-       DropdownMenuItem(value: 'Release Year', child: Text(S.of(context).releaseYear)),
+       DropdownMenuItem(
+         value: 'None', 
+         child: Container(
+           child: Text(
+             S.of(context).none,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Director', 
+         child: Container(
+           child: Text(
+             S.of(context).director,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Genre', 
+         child: Container(
+           child: Text(
+             S.of(context).genre,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Release Year', 
+         child: Container(
+           child: Text(
+             S.of(context).releaseYear,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
     ];
     if (!_isFromWishlist) {
       groupingOptions.add(DropdownMenuItem(value: 'Watch Year', child: Text(S.of(context).watchYear)));
     } 
     List<DropdownMenuItem<String>> sortingDirOptions = [
-       DropdownMenuItem(value: 'Ascending', child: Text(S.of(context).ascending)),
-       DropdownMenuItem(value: 'Descending', child: Text(S.of(context).descending)),
+       DropdownMenuItem(
+         value: 'Ascending', 
+         child: Container(
+           child: Text(
+             S.of(context).ascending,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Descending', 
+         child: Container(
+           child: Text(
+             S.of(context).descending,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
     ];
     List<DropdownMenuItem<String>> viewingOptions = [
-       DropdownMenuItem(value: 'List', child: Text(S.of(context).list)),
-       DropdownMenuItem(value: 'List(Small)', child: Text(S.of(context).listSmall)),
-       DropdownMenuItem(value: 'Card', child: Text(S.of(context).card)),
-       DropdownMenuItem(value: 'Poster', child: Text(S.of(context).poster)),
+       DropdownMenuItem(
+         value: 'List', 
+         child: Container(
+           child: Text(
+             S.of(context).list,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'List(Small)', 
+         child: Container(
+           child: Text(
+             S.of(context).listSmall,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Card', 
+         child: Container(
+           child: Text(
+             S.of(context).card,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Poster', 
+         child: Container(
+           child: Text(
+             S.of(context).poster,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
     ];
 
     double screenWidth = MediaQuery.of(context).size.width;
@@ -664,16 +809,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: viewingOptions.map<DropdownMenuItem<String>>((dynamic option) {
-                        return DropdownMenuItem<String>(
-                          value: option as String,
-                          child: Text(
-                            option as String,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        );
-                      }).toList(),
+                        items: viewingOptions,
                       ),
                     ),
                   ),
@@ -705,16 +841,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: groupingOptions.map<DropdownMenuItem<String>>((dynamic option) {
-                        return DropdownMenuItem<String>(
-                          value: option as String,
-                          child: Text(
-                            option as String,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        );
-                      }).toList(),
+                        items: groupingOptions,
                       ),
                     ),
                   ),
@@ -746,16 +873,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: sortingOptions.map<DropdownMenuItem<String>>((dynamic option) {
-                        return DropdownMenuItem<String>(
-                          value: option as String,
-                          child: Text(
-                            option as String,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        );
-                      }).toList(),
+                        items: sortingOptions,
                       ),
                     ),
                   ),
@@ -792,16 +910,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             Navigator.of(context).pop();
                           }
                         },
-                        items: sortingDirOptions.map<DropdownMenuItem<String>>((dynamic option) {
-                        return DropdownMenuItem<String>(
-                          value: option as String,
-                          child: Text(
-                            option as String,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        );
-                      }).toList(),
+                        items: sortingDirOptions,
                       ),
                     ),
                   ),
@@ -812,7 +921,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               title: Column(
                 children: [
                   Container(
-                    width: screenWidth * 0.45,
+                    width: screenWidth * 0.5,
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.001, 0, 0),
                       child: TextButton(
@@ -827,13 +936,13 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(S.of(context).exportCSV, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
+                              Expanded(child: Text(S.of(context).exportCSV, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
                               SizedBox(width: screenWidth * 0.03),
-                              Icon(size: screenWidth * 0.055, Icons.import_export, color: Colors.white),
+                              Icon(size: screenWidth * 0.055, Icons.upload, color: Colors.white),
                             ],
                           ),
                         ),
@@ -841,7 +950,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ),
                   ),
                   Container(
-                    width: screenWidth * 0.45,
+                    width: screenWidth * 0.5,
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(
@@ -856,13 +965,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(S.of(context).importCSV, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039)),
+                              Expanded(
+                                child: Text(S.of(context).importCSV, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false),
+                              ),
                               SizedBox(width: screenWidth * 0.03),
-                              Icon(size: screenWidth * 0.055, Icons.file_upload, color: Colors.white),
+                              Icon(size: screenWidth * 0.055, Icons.download, color: Colors.white),
                             ],
                           ),
                         ),
@@ -870,7 +981,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ),
                   ),
                   Container(
-                    width: screenWidth * 0.45,
+                    width: screenWidth * 0.5,
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(onPressed:() {
@@ -891,11 +1002,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         ),
                         backgroundColor: const Color.fromARGB(255, 34, 40, 50),),  
                         child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(S.of(context).randomMovie, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),),
+                            Expanded(child: Text(S.of(context).randomMovie, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),overflow: TextOverflow.ellipsis, softWrap: false)),
                             SizedBox(width: screenWidth * 0.03,),
                             Icon(size: screenWidth * 0.055,
                             _isFromWishlist ? Icons.bookmark : Icons.movie,  

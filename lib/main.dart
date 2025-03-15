@@ -86,8 +86,8 @@ Future<void> _updateMoviesWithNewFields() async {
       // Yeni alanlar için varsayılan değerler
       creationDate: movie.creationDate ?? DateTime.now(),
       pgRating: movie.pgRating ?? '',
-      franchises: movie.franchises ?? ['Test1', 'Test2'],
-      tags: movie.tags ?? ['tagTest']
+      franchises: movie.franchises ?? [],
+      tags: movie.tags ?? []
     );
     
     // Güncellenen filmi kaydet

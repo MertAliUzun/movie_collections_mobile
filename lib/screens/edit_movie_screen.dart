@@ -891,6 +891,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028),
                               fontWeight: FontWeight.bold
                             ),
+                            maxLines: 1, 
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         const Divider(height: 0, color: Colors.white60,),
@@ -1030,6 +1032,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028),
                                 fontWeight: FontWeight.bold
                               ),
+                              maxLines: 1, 
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           const Divider(height: 0, color: Colors.white60,),
@@ -1087,7 +1091,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).genres, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addGenre, (genre) {
@@ -1173,12 +1177,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : Text(S.of(context).noGenresSelected, style: const TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noGenresSelected, style: const TextStyle(color: Colors.white54), maxLines: 1, overflow: TextOverflow.ellipsis,),
                   SizedBox(height: screenHeight * 0.02,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold)),
+                      Text(S.of(context).director, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       IconButton(
                         onPressed: () async {
                           _editDirector();
@@ -1234,7 +1238,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).actors, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addActor, (actor) {
@@ -1298,12 +1302,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : Text(S.of(context).noActorsSelected, style: const TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noActorsSelected, style: const TextStyle(color: Colors.white54), maxLines: 1, overflow: TextOverflow.ellipsis,),
                   SizedBox(height: screenWidth * 0.05),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).writers, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addWriter, (writer) {
@@ -1369,12 +1373,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : Text(S.of(context).noWritersSelected, style: const TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noWritersSelected, style: const TextStyle(color: Colors.white54), maxLines: 1, overflow: TextOverflow.ellipsis,),
                   SizedBox(height: screenWidth * 0.05),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
+                      Text(S.of(context).productionCompanies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       IconButton(
                       onPressed: () async {
                         await _addDetails(S.of(context).addProductionCompany, (company) {
@@ -1436,12 +1440,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             );
                           },
                         )
-                      : Text(S.of(context).noCompaniesSelected, style: const TextStyle(color: Colors.white54)),
+                      : Text(S.of(context).noCompaniesSelected, style: const TextStyle(color: Colors.white54), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),),
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(S.of(context).franchises, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                        Text(S.of(context).franchises, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,), //18
                         IconButton(
                         onPressed: () async {
                           await _addDetails(S.of(context).addFranchise, (actor) {
@@ -1495,12 +1499,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noFranchisesSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                    : Text(S.of(context).noFranchisesSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14)), maxLines: 1, overflow: TextOverflow.ellipsis,),
                     SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenWidth * 0.05),), //50
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(S.of(context).tags, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),), //18
+                        Text(S.of(context).tags, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,), //18
                         IconButton(
                         onPressed: () async {
                           await _addDetails(S.of(context).addTag, (actor) {
@@ -1554,7 +1558,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           );
                         },
                       )
-                    : Text(S.of(context).noTagsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14))),
+                    : Text(S.of(context).noTagsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14)), maxLines: 1, overflow: TextOverflow.ellipsis,),
                 ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal), // Padding for better spacing
                   tileColor: Colors.transparent, // Optional: make the background transparent
@@ -1774,7 +1778,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: Text(S.of(context).similarMovies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold),),
+                        child: Text(S.of(context).similarMovies, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       ),
                       GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
