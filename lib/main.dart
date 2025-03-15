@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:in_app_update/in_app_update.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
@@ -11,6 +12,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'models/movie_model.dart';
 import 'dart:ui' as ui;
 import 'services/ad_service.dart';
+import 'package:in_app_review/in_app_review.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,10 +47,27 @@ void main() async {
   // Mevcut filmleri yeni alanlarla güncelle
   await _updateMoviesWithNewFields();
   
+  //await _checkForUpdate();
+  
   var systemLanguage = ui.window.locale.languageCode;
 
   runApp(MyApp(systemLanguage: systemLanguage));
   
+}
+
+Future<void> _checkForUpdate() async {
+  final updateInfo = await InAppUpdate.checkForUpdate();
+
+  if (updateInfo.updateAvailability == UpdateAvailability.updateAvailable) {
+    if (updateInfo.immediateUpdateAllowed) {
+      // Zorunlu güncelleme
+      await InAppUpdate.performImmediateUpdate();
+    } else if (updateInfo.flexibleUpdateAllowed) {
+      // Esnek güncelleme
+      await InAppUpdate.startFlexibleUpdate();
+      await InAppUpdate.completeFlexibleUpdate();
+    }
+  }
 }
 
 // Mevcut filmleri yeni alanlarla güncelleyen fonksiyon
@@ -144,7 +164,9 @@ class _MyHomePageState extends State<MyHomePage> {
   String? _userName;
   bool? _isLoaded = false;
   final AdService _adService = AdService();
-
+  final InAppReview _inAppReview = InAppReview.instance;
+  DateTime? _appOpenTime;
+  
   @override
   void initState() {
     super.initState();
@@ -164,9 +186,47 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     );
     */
+    _appOpenTime = DateTime.now();
+    _checkAndRequestReview();
   }
 
-    Future<AuthResponse> _googleSignIn() async {
+  Future<void> _checkAndRequestReview() async {
+    final prefs = await SharedPreferences.getInstance();
+    
+    // Uygulama açılma sayısını al ve artır
+    int openCount = prefs.getInt('app_open_count') ?? 0;
+    
+    // Son review isteği zamanını al
+    final lastReviewTime = prefs.getInt('last_review_time');
+    final now = DateTime.now().millisecondsSinceEpoch;
+    
+    // Eğer son review'dan en az 30 gün geçtiyse ve açılış sayısı 5'in katıysa
+    if ((lastReviewTime == null || now - lastReviewTime > 30 * 24 * 60 * 60 * 1000) && 
+        (openCount + 1) % 5 == 0) {
+      
+      // 3 dakika geçmesini bekle
+      await Future.delayed(const Duration(minutes: 3));
+      
+      // Kullanıcı hala uygulamayı kullanıyor mu kontrol et
+      if (!mounted) return;
+      
+      // Uygulama açık kalma süresini kontrol et
+      final usageTime = DateTime.now().difference(_appOpenTime!);
+      if (usageTime.inMinutes >= 3) {
+        // Review dialog'unu göster
+        if (await _inAppReview.isAvailable()) {
+          await _inAppReview.requestReview();
+          // Son review zamanını kaydet
+          await prefs.setInt('last_review_time', now);
+          await prefs.setInt('app_open_count', openCount + 1);
+        }
+      }
+    } else {
+      await prefs.setInt('app_open_count', openCount + 1);
+    }
+  }
+
+  Future<AuthResponse> _googleSignIn() async {
     if (_userEmail != null) {
       setState(() {
           _isLoaded = true;
