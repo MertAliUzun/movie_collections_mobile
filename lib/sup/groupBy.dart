@@ -31,6 +31,54 @@ Map<String, List<Movie>> groupByGenre(List<Movie> movies) {
 
   return groupedMovies;
 }
+Map<String, List<Movie>> groupByFranchise(List<Movie> movies) {
+  Map<String, List<Movie>> groupedMovies = {};
+
+  for (var movie in movies) {
+    // Eğer franchises listesi boş veya null ise
+    if (movie.franchises == null || movie.franchises!.isEmpty) {
+      // "None" grubuna ekle
+      if (!groupedMovies.containsKey('None')) {
+        groupedMovies['None'] = [];
+      }
+      groupedMovies['None']!.add(movie);
+    } else {
+      // Normal franchise gruplandırması
+      for (var franchise in movie.franchises!) {
+        if (!groupedMovies.containsKey(franchise)) {
+          groupedMovies[franchise] = [];
+        }
+        groupedMovies[franchise]!.add(movie);
+      }
+    }
+  }
+
+  return groupedMovies;
+}
+Map<String, List<Movie>> groupByTag(List<Movie> movies) {
+  Map<String, List<Movie>> groupedMovies = {};
+
+  for (var movie in movies) {
+    // Eğer tags listesi boş veya null ise
+    if (movie.tags == null || movie.tags!.isEmpty) {
+      // "None" grubuna ekle
+      if (!groupedMovies.containsKey('None')) {
+        groupedMovies['None'] = [];
+      }
+      groupedMovies['None']!.add(movie);
+    } else {
+      // Normal tag gruplandırması
+      for (var tag in movie.tags!) {
+        if (!groupedMovies.containsKey(tag)) {
+          groupedMovies[tag] = [];
+        }
+        groupedMovies[tag]!.add(movie);
+      }
+    }
+  }
+
+  return groupedMovies;
+}
 Map<String, List<Movie>> groupByYear(List<Movie> movies, String yearType) {
   Map<String, List<Movie>> groupedMovies = {};
 

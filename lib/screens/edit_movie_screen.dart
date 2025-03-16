@@ -56,7 +56,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final _revenueController = TextEditingController();
   final _sortTitleController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
-  DateTime _watchedDate = DateTime.now();
+  DateTime? _watchedDate;
   double _userScore = 0.0;
   double _hypeScore = 0.0;
   File? _selectedImage;
@@ -238,7 +238,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         customSortTitle: _sortTitleController.text.isNotEmpty ? _sortTitleController.text : null,
         collectionType: _selectedCollectionType,
         creationDate: widget.movie!.creationDate ?? DateTime.now(),
-        pgRating: _pgRating != null || _pgRating!.isNotEmpty ? _pgRating : null,
+        pgRating: _pgRating != null && _pgRating!.isNotEmpty ? _pgRating : null,
         franchises: _selectedFranchises.isNotEmpty 
             ? _selectedFranchises 
             : null,
@@ -616,6 +616,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _budgetController.text = widget.movie!.budget?.toString() ?? '';
       _revenueController.text = widget.movie!.revenue?.toString() ?? '';
       _selectedDate = widget.movie!.releaseDate;
+      _watchedDate = widget.movie!.watchDate ?? DateTime.now();
       _imageLink = widget.movie!.imageLink;
       _userScore = widget.movie!.userScore ?? 0;
       _hypeScore = widget.movie!.hypeScore ?? 0;
@@ -1686,7 +1687,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               ),
                             ),
                             TextSpan(
-                              text: DateFormat('dd MMMM yyyy').format(_watchedDate.toLocal()),
+                              text: DateFormat('dd MMMM yyyy').format(_watchedDate!.toLocal()),
                               style: TextStyle(
                                 color: Colors.white, 
                                 fontWeight: FontWeight.bold, 

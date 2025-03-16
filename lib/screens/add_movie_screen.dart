@@ -385,9 +385,9 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             : null,
         collectionType: _selectedCollectionType,
         creationDate: DateTime.now(),
-        pgRating: _pgRating != null || _pgRating!.isNotEmpty ? _pgRating : null,
-        franchises: _selectedFranchises.isNotEmpty ? _selectedFranchises : null,
-        tags: _selectedTags.isNotEmpty ? _selectedTags : null,
+        pgRating: _pgRating != null && _pgRating!.isNotEmpty ? _pgRating : null,
+        franchises: _selectedFranchises.isNotEmpty ? _selectedFranchises : [],
+        tags: _selectedTags.isNotEmpty ? _selectedTags : [],
       );
 
       // Save to Hive

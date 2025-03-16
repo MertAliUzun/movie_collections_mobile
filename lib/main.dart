@@ -201,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final now = DateTime.now().millisecondsSinceEpoch;
     
     // Eğer son review'dan en az 30 gün geçtiyse ve açılış sayısı 5'in katıysa
-    if (lastReviewTime == null || now - lastReviewTime > 7 * 24 * 60 * 60 * 1000) // 7 means 7 days, make 30 for a month
+    if (lastReviewTime == null || now - lastReviewTime > 30 * 24 * 60 * 60 * 1000) // 7 means 7 days, make 30 for a month
        // && (openCount + 1) % 5 == 0) 
         {
       await Future.delayed(const Duration(minutes: 1));

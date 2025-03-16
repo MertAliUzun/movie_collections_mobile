@@ -45,6 +45,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
   bool _groupByGenre = false; // Track if grouping by genre
   bool _groupByReleaseYear = false;
   bool _groupByWatchYear = false;
+  bool _groupByFranchise = false;
+  bool _groupByTag = false;
   bool _groupBy = false;
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
@@ -108,6 +110,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
       _groupByGenre = prefs.getBool('groupByGenreCollection') ?? false;
       _groupByReleaseYear = prefs.getBool('groupByReleaseYearCollection') ?? false;
       _groupByWatchYear = prefs.getBool('groupByWatchYearCollection') ?? false;
+      _groupByFranchise = prefs.getBool('groupByFranchiseCollection') ?? false;
+      _groupByTag = prefs.getBool('groupByTagCollection') ?? false;
       _groupBy = prefs.getBool('groupByCollection') ?? false;
     });
   }
@@ -117,6 +121,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
     await prefs.setBool('groupByDirectorCollection', _groupByDirector);
     await prefs.setBool('groupByGenreCollection', _groupByGenre);
     await prefs.setBool('groupByReleaseYearCollection', _groupByReleaseYear);
+    await prefs.setBool('groupByWatchYearCollection', _groupByWatchYear);
+    await prefs.setBool('groupByFranchiseCollection', _groupByFranchise);
+    await prefs.setBool('groupByTagCollection', _groupByTag);
     await prefs.setBool('groupByCollection', _groupBy);
   }
 
@@ -261,6 +268,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
       _groupByGenre = false;
       _groupByReleaseYear = false;
       _groupByWatchYear = false;
+      _groupByFranchise = false;
+      _groupByTag = false;
       _groupBy = false;
 
       // Seçime göre gruplamayı etkinleştir
@@ -279,6 +288,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
           break;
         case 'Watch Year':
           _groupByWatchYear = true;
+          _groupBy = true;
+          break;
+        case 'Franchise':
+          _groupByFranchise = true;
+          _groupBy = true;
+          break;
+        case 'Tag':
+          _groupByTag = true;
           _groupBy = true;
           break;
         default:
@@ -356,10 +373,11 @@ class _CollectionScreenState extends State<CollectionScreen> {
     // Group movies by director or genre based on the selected option
     Map<String, List<Movie>> groupedMovies = _groupByDirector
         ? groupByDirector(_filteredMovies)
-        : _groupByGenre
-            ? groupByGenre(_filteredMovies)
+        : _groupByGenre ? groupByGenre(_filteredMovies)
             : _groupByReleaseYear ? groupByYear(_filteredMovies, 'Release Date') 
             : _groupByWatchYear ? groupByYear(_filteredMovies, 'Watch Date') 
+            : _groupByFranchise ? groupByFranchise(_filteredMovies)
+            : _groupByTag ? groupByTag(_filteredMovies)
             : {};
 
     return Scaffold(

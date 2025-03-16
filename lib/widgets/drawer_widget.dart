@@ -662,6 +662,26 @@ class _DrawerWidgetState extends State<DrawerWidget> {
            ),
          )
        ),
+       DropdownMenuItem(
+         value: 'Franchise', 
+         child: Container(
+           child: Text(
+             S.of(context).franchise,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
+       DropdownMenuItem(
+         value: 'Tag', 
+         child: Container(
+           child: Text(
+             S.of(context).tag,
+             maxLines: 1,
+             overflow: TextOverflow.ellipsis,
+           ),
+         )
+       ),
     ];
     if (!_isFromWishlist) {
       groupingOptions.add(DropdownMenuItem(value: 'Watch Year', child: Text(S.of(context).watchYear)));

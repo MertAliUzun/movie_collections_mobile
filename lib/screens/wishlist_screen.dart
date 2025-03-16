@@ -44,6 +44,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _groupByDirector = false; // Track if grouping by director
   bool _groupByGenre = false; // Track if grouping by genre
   bool _groupByReleaseYear= false;
+  bool _groupByFranchise = false;
+  bool _groupByTag = false;
   bool _groupBy = false;
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
@@ -106,6 +108,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
       _groupByDirector = prefs.getBool('groupByDirectorWishlist') ?? false;
       _groupByGenre = prefs.getBool('groupByGenreWishlist') ?? false;
       _groupByReleaseYear = prefs.getBool('groupByReleaseYearWishlist') ?? false;
+      _groupByFranchise = prefs.getBool('_groupByFranchiseWishlist') ?? false;
+      _groupByTag = prefs.getBool('groupByTagWishlist') ?? false;
       _groupBy = prefs.getBool('groupByWishlist') ?? false;
     });
   }
@@ -115,6 +119,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
     await prefs.setBool('groupByDirectorWishlist', _groupByDirector);
     await prefs.setBool('groupByGenreWishlist', _groupByGenre);
     await prefs.setBool('groupByReleaseYearWishlist', _groupByReleaseYear);
+    await prefs.setBool('groupByFranchiseWishlist', _groupByFranchise);
+    await prefs.setBool('groupByTagWishlist', _groupByTag);
     await prefs.setBool('groupByWishlist', _groupBy);
   }
 
@@ -252,6 +258,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
       _groupByDirector = false;
       _groupByGenre = false;
       _groupByReleaseYear = false;
+      _groupByFranchise = false;
+      _groupByTag = false;
       _groupBy = false;
 
       // Seçime göre gruplamayı etkinleştir
@@ -266,6 +274,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
           break;
         case 'Release Year':
           _groupByReleaseYear = true;
+          _groupBy = true;
+          break;
+        case 'Franchise':
+          _groupByFranchise = true;
+          _groupBy = true;
+          break;
+        case 'Tag':
+          _groupByTag = true;
           _groupBy = true;
           break;
         default:
@@ -342,9 +358,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
     // Group movies by director or genre based on the selected option
     Map<String, List<Movie>> groupedMovies = _groupByDirector
         ? groupByDirector(_filteredMovies)
-        : _groupByGenre
-            ? groupByGenre(_filteredMovies)
+            : _groupByGenre ? groupByGenre(_filteredMovies)
             : _groupByReleaseYear ? groupByYear(_filteredMovies, 'Release Date') 
+            : _groupByFranchise ? groupByFranchise(_filteredMovies)
+            : _groupByTag ? groupByTag(_filteredMovies)
             : {};
 
     return Scaffold(
