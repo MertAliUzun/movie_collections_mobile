@@ -685,13 +685,13 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       final pgRating = await tmdbService.getPgRating(movieId);
 
       if (mounted) {
-        setState(() {
+          setState(() {
           _pgRating = pgRating.where((rating) => rating['iso_3166_1'] == 'US')
           .map((rating) => rating['release_dates']?.first['certification'])
           .toString();
-        });
+          });
         //print('xxxxxx'+_pgRating!);
-      }
+        }
     }
   }
  
@@ -882,57 +882,57 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   ),
                   SizedBox(height: screenWidth * 0.1),
                   Column(
-                    children: [
-                      Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            S.of(context).movieDetails,
-                            style: TextStyle(
-                              color: Colors.white, 
+                      children: [
+                        Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              S.of(context).movieDetails,
+                              style: TextStyle(
+                                color: Colors.white, 
                               fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028),
-                              fontWeight: FontWeight.bold
-                            ),
+                                fontWeight: FontWeight.bold
+                              ),
                             maxLines: 1, 
                             overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                        ),
-                        const Divider(height: 0, color: Colors.white60,),
+                          const Divider(height: 0, color: Colors.white60,),
                         SizedBox(height: screenHeight * 0.02,),
-                      Row(
+                        Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GestureDetector(
-                            onTap: _editRuntime,
-                            child: Container(
+                          children: [
+                            GestureDetector(
+                              onTap: _editRuntime,
+                              child: Container(
                               height: screenHeight * 0.08,
                               width: screenWidth * 0.32,
-                              child: Card(
-                                color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                                child: Padding(
-                                  padding: EdgeInsets.all(16.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.timer,
-                                        color: Colors.white,
-                                        size: ScreenUtil.getAdaptiveIconSize(context, 17),
-                                      ),
-                                      SizedBox(width: 2),
-                                      Text(
-                                        _formatRuntime(_runtimeController.text),
-                                        style: TextStyle(
+                                child: Card(
+                                  color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(16.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.timer,
                                           color: Colors.white,
-                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 17),
-                                          fontWeight: FontWeight.bold,
+                                        size: ScreenUtil.getAdaptiveIconSize(context, 17),
                                         ),
-                                      ),
-                                    ],
+                                      SizedBox(width: 2),
+                                        Text(
+                                          _formatRuntime(_runtimeController.text),
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 17),
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
                           Container(
                             height: screenHeight * 0.08,
                             width:  screenWidth * 0.2,
@@ -955,65 +955,65 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       Container(
                         height: screenHeight * 0.08,
                         width:  screenWidth * 0.32,
-                        child: Card(
-                          color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                          child: TextFormField(
-                            textAlign: TextAlign.center,
-                            controller: _imdbRatingController,
-                            decoration: InputDecoration(
-                            //labelText: S.of(context).imdbScore,
-                            //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
-                            prefixIcon: Padding(
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                              child: TextFormField(
+                                textAlign: TextAlign.center,
+                                controller: _imdbRatingController,
+                                decoration: InputDecoration(
+                                //labelText: S.of(context).imdbScore,
+                                //labelStyle: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 16)),
+                                prefixIcon: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Image.asset(
+                                  child: Image.asset(
                                 'assets/images/imdb.png',
                                 width: 40,
                                 height: 40,
+                                  ),
+                                ),
                               ),
+                                keyboardType: TextInputType.number,
+                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),
+                                validator: (value) {
+                              if (value != null && value.isNotEmpty) {
+                                final number = double.tryParse(value);
+                                if (number == null || number < 0 || number > 10) {
+                                  return S.of(context).enterValidScore;
+                                }
+                              }
+                              return null;
+                                },
                             ),
                           ),
-                            keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),
-                            validator: (value) {
-                          if (value != null && value.isNotEmpty) {
-                            final number = double.tryParse(value);
-                            if (number == null || number < 0 || number > 10) {
-                              return S.of(context).enterValidScore;
-                            }
-                          }
-                          return null;
-                            },
+                        ),
+                          ],
+                        ),
+                        SizedBox(height: screenWidth * 0.05),
+                    if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                  Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical/2, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal/3),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                        Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
+                          SizedBox(width: screenWidth * 0.1,),
+                        Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
+                                          ],
                           ),
                         ),
-                      ),
-                        ],
-                      ),
-                      SizedBox(height: screenWidth * 0.05),
-                  if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
-                                    Card(
-                  color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical/2, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal/3),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                        Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
-                        SizedBox(width: screenWidth * 0.1,),
-                        Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
-                                        ],
-                        ),
-                      ),
-                      if(_countryController.text.isNotEmpty)
-                      Padding(
+                        if(_countryController.text.isNotEmpty)
+                        Padding(
                   padding: EdgeInsets.fromLTRB(ScreenUtil.getAdaptivePadding(context).horizontal * 0.05, 0, ScreenUtil.getAdaptivePadding(context).horizontal * 0.4, ScreenUtil.getAdaptivePadding(context).vertical * 0.5),
-                  child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
-                                  ),
-                    ],
-                  ),
-                                    ),    
-                    ],
+                    child: CountryFlag.fromCountryCode(_countryController.text.toUpperCase()),
+                ),
+                      ],
+                    ),
+                  ),    
+                      ],
                   ),
                         
                   SizedBox(height: screenWidth * 0.1),

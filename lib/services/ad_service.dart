@@ -1,6 +1,7 @@
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../sup/adHelper.dart';
 import 'dart:async';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AdService {
   static final AdService _instance = AdService._internal();
@@ -103,8 +104,16 @@ class AdService {
     }
   }
 
+  Future<bool> _isPremium() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('isPremium') ?? false;
+  }
+
   // Rewarded reklam gösterme fonksiyonu
   Future<bool> showRewardedAd() async {
+    if (await _isPremium()) {
+      return true; // Premium kullanıcılara reklam gösterme
+    }
     if(!canShowAd()) { return true;}
     if (rewardedAd == null) {
       //print('Rewarded reklam yüklü değil');

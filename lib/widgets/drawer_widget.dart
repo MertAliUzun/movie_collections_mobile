@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -14,6 +15,8 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/movie_model.dart';
 import '../screens/edit_movie_screen.dart';
@@ -87,6 +90,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   late String? userEmail; 
   late String? userName;
   final AdService _adService = AdService();
+  final InAppPurchase _inAppPurchase = InAppPurchase.instance;
+  bool _isPremium = false;
 
   @override
   void initState() {
@@ -113,6 +118,148 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         });
       }
     );
+
+    _loadPremiumStatus();
+    _initInAppPurchase();
+  }
+
+  Future<void> _loadPremiumStatus() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _isPremium = prefs.getBool('isPremium') ?? false;
+    });
+  }
+
+  Future<void> _initInAppPurchase() async {
+    final bool available = await _inAppPurchase.isAvailable();
+    if (!available) {
+      // Store bağlantısı yok
+      return;
+    }
+
+    // Satın alma işlemlerini dinle
+    _inAppPurchase.purchaseStream.listen((List<PurchaseDetails> purchases) {
+      _handlePurchaseUpdates(purchases);
+    });
+  }
+
+  Future<void> _handlePurchaseUpdates(List<PurchaseDetails> purchases) async {
+    for (var purchase in purchases) {
+      if (purchase.status == PurchaseStatus.purchased ||
+          purchase.status == PurchaseStatus.restored) {
+        // Satın alma başarılı
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('isPremium', true);
+        
+        setState(() {
+          _isPremium = true;
+        });
+
+        if (purchase.pendingCompletePurchase) {
+          await _inAppPurchase.completePurchase(purchase);
+        }
+
+        // Başarılı satın alma mesajı göster
+        if (mounted) {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).succesful,
+              message: 'S.of(context).premiumPurchaseSuccess',
+              contentType: ContentType.success,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
+        }
+      } else if (purchase.status == PurchaseStatus.error) {
+        // Hata durumunda mesaj göster
+        if (mounted) {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).error,
+              message: purchase.error?.message ?? 'S.of(context).purchaseError',
+              contentType: ContentType.failure,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
+        }
+      }
+    }
+  }
+
+  Future<void> _buyPremium() async {
+    final bool available = await _inAppPurchase.isAvailable();
+    if (!available) {
+      // Store bağlantısı yoksa hata mesajı göster
+      if (mounted) {
+        final snackBar = SnackBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          behavior: SnackBarBehavior.floating,
+          content: AwesomeSnackbarContent(
+            title: S.of(context).error,
+            message: 'S.of(context).storeNotAvailable',
+            contentType: ContentType.failure,
+            inMaterialBanner: true,
+          ),
+          dismissDirection: DismissDirection.horizontal,
+        );
+        ScaffoldMessenger.of(context)
+          ..hideCurrentMaterialBanner()
+          ..showSnackBar(snackBar);
+      }
+      return;
+    }
+
+    // Ürün ID'sini belirle (App Store ve Play Store'da ayarladığınız ID)
+    String productId =  dotenv.env['PREMIUM_PRODUCT_ID']!;
+
+    final ProductDetailsResponse response =
+        await _inAppPurchase.queryProductDetails({productId});
+
+    if (response.notFoundIDs.isNotEmpty) {
+      // Ürün bulunamadı
+      return;
+    }
+
+    final ProductDetails product = response.productDetails.first;
+    final PurchaseParam purchaseParam = PurchaseParam(productDetails: product);
+    
+    try {
+      await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
+    } catch (e) {
+      // Satın alma hatası
+      if (mounted) {
+        final snackBar = SnackBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          behavior: SnackBarBehavior.floating,
+          content: AwesomeSnackbarContent(
+            title: S.of(context).error,
+            message: e.toString(),
+            contentType: ContentType.failure,
+            inMaterialBanner: true,
+          ),
+          dismissDirection: DismissDirection.horizontal,
+        );
+        ScaffoldMessenger.of(context)
+          ..hideCurrentMaterialBanner()
+          ..showSnackBar(snackBar);
+      }
+    }
   }
 
   Movie? _getRandomMovie(BuildContext context) {
@@ -940,6 +1087,47 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ListTile(
               title: Column(
                 children: [
+                  Container(
+                    width: screenWidth * 0.5,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
+                      child: TextButton(
+                        onPressed: _isPremium ? null : _buyPremium,
+                        style: TextButton.styleFrom(
+                          side: BorderSide(
+                            color: _isPremium ? Colors.grey : Colors.white,
+                            width: .3,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  _isPremium ? 'S.of(context).premiumActive' : 'Premium',
+                                  style: TextStyle(
+                                    color: _isPremium ? Colors.grey : Colors.white,
+                                    fontSize: screenWidth * 0.039
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  softWrap: false
+                                ),
+                              ),
+                              SizedBox(width: screenWidth * 0.03),
+                              Icon(
+                                size: screenWidth * 0.055,
+                                Icons.workspace_premium_outlined,
+                                color: _isPremium ? Colors.grey : Colors.white
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   Container(
                     width: screenWidth * 0.5,
                     child: Padding(
