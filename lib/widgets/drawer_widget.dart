@@ -17,11 +17,13 @@ import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/movie_model.dart';
 import '../screens/edit_movie_screen.dart';
 import '../main.dart';
 import '../services/ad_service.dart';
+import '../services/supabase_service.dart';
 
 class DrawerWidget extends StatefulWidget {
   final String _viewType;
@@ -151,6 +153,18 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setBool('isPremium', true);
         
+        // Supabase'deki kullanıcı bilgisini güncelle
+        if (userId != null) {
+          final service = SupabaseService(Supabase.instance.client);
+          await service.addOrUpdateUser(
+            id: userId!,
+            email: userEmail ?? 'test@test.com',
+            userPicture: userPicture,
+            userName: userName,
+            isPremium: true,
+          );
+        }
+        
         setState(() {
           _isPremium = true;
         });
@@ -201,6 +215,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   Future<void> _buyPremium() async {
+    if(userEmail == null || userEmail == 'test@test.com' || userName == null) { return;}
     final bool available = await _inAppPurchase.isAvailable();
     if (!available) {
       // Store bağlantısı yoksa hata mesajı göster
@@ -1090,7 +1105,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Container(
                     width: screenWidth * 0.5,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.001, 0, 0),
                       child: TextButton(
                         onPressed: _isPremium ? null : _buyPremium,
                         style: TextButton.styleFrom(
@@ -1131,7 +1146,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   Container(
                     width: screenWidth * 0.5,
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.001, 0, 0),
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(
                         onPressed: () {
                           exportMoviesToCSV(); // CSV dışa aktarma fonksiyonunu çağır

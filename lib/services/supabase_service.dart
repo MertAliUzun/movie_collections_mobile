@@ -187,4 +187,43 @@ class SupabaseService {
       }
     }
   }
+
+  Future<void> addOrUpdateUser({
+    required String id,
+    required String email,
+    required String? userPicture,
+    required String? userName,
+    required bool isPremium,
+  }) async {
+    try {
+      // Önce kullanıcının var olup olmadığını kontrol et
+      final response = await _supabaseClient
+          .from('users')
+          .select()
+          .eq('id', id)
+          .single()
+          .execute();
+
+      if (response.data == null) {
+        // Kullanıcı yoksa yeni kullanıcı ekle
+        await _supabaseClient.from('users').insert({
+          'id': id,
+          'email': email,
+          'picture': userPicture,
+          'name': userName,
+          'isPremium': isPremium,
+        }).execute();
+      } else {
+        // Kullanıcı varsa bilgilerini güncelle
+        await _supabaseClient.from('users').update({
+          'email': email,
+          'picture': userPicture,
+          'name': userName,
+          'isPremium': isPremium,
+        }).eq('id', id).execute();
+      }
+    } catch (e) {
+      throw Exception('Failed to add/update user: $e');
+    }
+  }
 } 

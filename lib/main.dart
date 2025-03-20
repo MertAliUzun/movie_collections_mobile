@@ -14,6 +14,7 @@ import 'dart:ui' as ui;
 import 'services/ad_service.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'services/supabase_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -265,7 +266,19 @@ class _MyHomePageState extends State<MyHomePage> {
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
 
-      
+      // SharedPreferences'dan isPremium değerini al
+      final prefs = await SharedPreferences.getInstance();
+      final isPremium = prefs.getBool('isPremium') ?? false;
+
+      // Supabase'e kullanıcıyı ekle veya güncelle
+      final service = SupabaseService(supabase);
+      await service.addOrUpdateUser(
+        id: _userId!,
+        email: _userEmail!,
+        userPicture: _userPicture,
+        userName: _userName,
+        isPremium: isPremium,
+      );
 
       setState(() {
           _isLoaded = true;

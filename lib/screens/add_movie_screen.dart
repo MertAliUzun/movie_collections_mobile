@@ -1068,9 +1068,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                      Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
+                      Expanded(child: Text('${S.of(context).budgetColon} ${_formatCurrency(double.tryParse(_budgetController.text))}', style:  TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red))),
                       SizedBox(width: screenWidth * 0.1,),
-                      Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red)),
+                      //const Spacer(),
+                      Expanded(child: Text('${S.of(context).revenueColon} ${_formatCurrency(double.tryParse(_revenueController.text))}', style: TextStyle(fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.028), color: Colors.red))),
                                       ],
                       ),
                     ),
