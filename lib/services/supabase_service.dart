@@ -1,4 +1,5 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:uuid/uuid.dart';
 import '../models/movie_model.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -188,7 +189,7 @@ class SupabaseService {
     }
   }
 
-  Future<void> addOrUpdateUser({
+  Future<void> addUser({
     required String id,
     required String email,
     required String? userPicture,
@@ -196,34 +197,67 @@ class SupabaseService {
     required bool isPremium,
   }) async {
     try {
-      // Önce kullanıcının var olup olmadığını kontrol et
+      // Önce aynı email ile kullanıcı var mı kontrol et
       final response = await _supabaseClient
           .from('users')
           .select()
-          .eq('id', id)
+          .eq('email', email)
           .single()
           .execute();
 
+      // Eğer kullanıcı yoksa ekle
       if (response.data == null) {
-        // Kullanıcı yoksa yeni kullanıcı ekle
         await _supabaseClient.from('users').insert({
-          'id': id,
           'email': email,
           'picture': userPicture,
           'name': userName,
           'isPremium': isPremium,
         }).execute();
-      } else {
-        // Kullanıcı varsa bilgilerini güncelle
-        await _supabaseClient.from('users').update({
-          'email': email,
-          'picture': userPicture,
-          'name': userName,
-          'isPremium': isPremium,
-        }).eq('id', id).execute();
       }
+      // Kullanıcı varsa hiçbir şey yapma
     } catch (e) {
-      throw Exception('Failed to add/update user: $e');
+      throw Exception('Failed to add user: $e');
+    }
+  }
+
+  // Premium durumunu güncelleyen fonksiyon
+  Future<void> updateUserPremium({
+    required String id,
+    required String email,
+    required String? userPicture,
+    required String? userName,
+    required bool isPremium,
+  }) async {
+    try {
+      await _supabaseClient
+          .from('users')
+          .update({
+            'isPremium': isPremium,
+          })
+          .eq('email', email)
+          .execute();
+    } catch (e) {
+      throw Exception('Failed to update user premium status: $e');
+    }
+  }
+
+  // Email ile premium durumunu kontrol eden fonksiyon
+  Future<bool> getIsPremium(String email) async {
+    try {
+      final response = await _supabaseClient
+          .from('users')
+          .select('isPremium')
+          .eq('email', email)
+          .single()
+          .execute();
+
+      if (response.data != null) {
+        return response.data['isPremium'] ?? false;
+      }
+      return false;
+    } catch (e) {
+      print('Error checking premium status: $e');
+      return false;
     }
   }
 } 

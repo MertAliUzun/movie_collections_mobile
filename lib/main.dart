@@ -243,6 +243,8 @@ class _MyHomePageState extends State<MyHomePage> {
         throw Exception('Sign in canceled');
       }
 
+      
+
       final googleAuth = await googleUser.authentication;
       final accessToken = googleAuth.accessToken;
       final idToken = googleAuth.idToken;
@@ -272,13 +274,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // Supabase'e kullanıcıyı ekle veya güncelle
       final service = SupabaseService(supabase);
-      await service.addOrUpdateUser(
+      await service.addUser(
         id: _userId!,
         email: _userEmail!,
         userPicture: _userPicture,
         userName: _userName,
         isPremium: isPremium,
       );
+
+      // Premium durumunu Supabase'den kontrol et ve SharedPreferences'ı güncelle
+      final isPremiumFromServer = await service.getIsPremium(_userEmail!);
+      if (isPremiumFromServer != isPremium) {
+        await prefs.setBool('isPremium', isPremiumFromServer);
+      }
 
       setState(() {
           _isLoaded = true;

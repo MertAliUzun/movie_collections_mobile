@@ -156,7 +156,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         // Supabase'deki kullanıcı bilgisini güncelle
         if (userId != null) {
           final service = SupabaseService(Supabase.instance.client);
-          await service.addOrUpdateUser(
+          await service.updateUserPremium(
             id: userId!,
             email: userEmail ?? 'test@test.com',
             userPicture: userPicture,
@@ -395,6 +395,26 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       final String userPicture = googleUser.photoUrl ?? '';
       final String userName = googleUser.displayName ?? '';
       */
+
+      // SharedPreferences'dan isPremium değerini al
+      final prefs = await SharedPreferences.getInstance();
+      final isPremium = prefs.getBool('isPremium') ?? false;
+
+      // Supabase'e kullanıcıyı ekle veya güncelle
+      final service = SupabaseService(supabase);
+      await service.addUser(
+        id:  googleUser.id,
+        email: googleUser.email,
+        userPicture: googleUser.photoUrl,
+        userName: googleUser.displayName,
+        isPremium: isPremium,
+      );
+
+      // Premium durumunu Supabase'den kontrol et ve SharedPreferences'ı güncelle
+      final isPremiumFromServer = await service.getIsPremium(googleUser.email);
+      if (isPremiumFromServer != isPremium) {
+        await prefs.setBool('isPremium', isPremiumFromServer);
+      }
 
       // Ana sayfaya yönlendirme yap ve kullanıcı bilgilerini geç
       Navigator.pushReplacement(
