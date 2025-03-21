@@ -885,6 +885,106 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     );
   }
 
+  Future<void> _deleteAccount(BuildContext context) async {
+    if(userEmail == null || userEmail == 'test@test.com' || userName == null) { return;}
+    final shouldDelete = await showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          title: Text(
+            S.of(context).delete,
+            style: const TextStyle(color: Colors.white),
+          ),
+          content: Text(
+            userEmail! + S.of(context).willBeDeleted,
+            style: const TextStyle(color: Colors.white),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                S.of(context).no,
+                style: const TextStyle(color: Colors.white),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+            ),
+            TextButton(
+              child: Text(
+                S.of(context).yes,
+                style: const TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+            ),
+          ],
+        );
+      },
+    );
+
+    if (shouldDelete == true && userEmail != null) {
+      try {
+        // Supabase'den kullanıcıyı sil
+        final supabase = Supabase.instance.client;
+        await supabase.from('users').delete().eq('email', userEmail);
+
+        // Google hesabından çıkış yap
+        final GoogleSignIn googleSignIn = GoogleSignIn();
+        await googleSignIn.signOut();
+        /*
+        // Premium durumunu sıfırla
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('isPremium', false);
+        */
+        // Başarılı silme mesajı göster
+        if (mounted) {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).succesful,
+              message: S.of(context).succesful,
+              contentType: ContentType.success,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
+        }
+
+        // Uygulamayı kapat
+        SystemNavigator.pop();
+      } catch (e) {
+        // Hata durumunda mesaj göster
+        if (mounted) {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).error,
+              message: e.toString(),
+              contentType: ContentType.failure,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
+        }
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
@@ -1102,6 +1202,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   ? Column(
                     children: [
                       GestureDetector(
+                        onLongPress: () => _deleteAccount(context),
                         onTap: () => _signOut(context),
                         child: ClipOval(
                           child: Image.network(
