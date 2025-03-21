@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloudinary_public/cloudinary_public.dart';
@@ -322,8 +323,58 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
-    Future<void> _saveMovie() async {
+  Future<bool> _checkMovieLimit() async {
+    final box = Hive.box<Movie>('movies');
+    final prefs = await SharedPreferences.getInstance();
+    final isPremium = prefs.getBool('isPremium') ?? false;
+    
+    if (!isPremium && box.length >= 1000) {
+      await showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+            title: Text(
+              'S.of(context).movieLimitReached',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+              ),
+            ),
+            content: Text(
+              'S.of(context).movieLimitMessage',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Text(
+                  S.of(context).ok,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      );
+      return false;
+    }
+    return true;
+  }
+
+  Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {
+      // Film limitini kontrol et
+      if (!await _checkMovieLimit()) {
+        return;
+      }
+
       final box = Hive.box<Movie>('movies');
       // Eğer _selectMovie fonksiyonu kullanılmadıysa yeni bir ID oluştur
       if (newId == -1) {
