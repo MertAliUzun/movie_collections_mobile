@@ -379,14 +379,15 @@ class _DirectorScreenState extends State<DirectorScreen> {
                           personType: widget.personType,
                         ),
                         if(_adService.bannerAd != null)
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              width: _adService.bannerAd!.size.width.toDouble(),
-                              height: _adService.bannerAd!.size.height.toDouble(),
-                              child: AdWidget(ad: _adService.bannerAd!),
-                            ),
-                          ),
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),
                       ],
                     )
                   : Center(
@@ -435,15 +436,16 @@ class _DirectorScreenState extends State<DirectorScreen> {
                       Column(
                         children: [
                           SingleChildScrollView(child: PersonMoviesWidget(movies: _personMovies, personType: widget.personType, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,)),
-                          if(_adService.bannerAd != null)
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              width: _adService.bannerAd!.size.width.toDouble(),
-                              height: _adService.bannerAd!.size.height.toDouble(),
-                              child: AdWidget(ad: _adService.bannerAd!),
-                            ),
-                          ),
+                         if(_adService.bannerAd != null)
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),
                         ],
                       )   
                   : Center(child: Text(S.of(context).noMoviesFound, style: const TextStyle(color: Colors.white54))),
@@ -492,14 +494,15 @@ class _DirectorScreenState extends State<DirectorScreen> {
             ),
           ),
           if(_adService.bannerAd != null)
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    width: _adService.bannerAd!.size.width.toDouble(),
-                    height: _adService.bannerAd!.size.height.toDouble(),
-                    child: AdWidget(ad: _adService.bannerAd!),
-                  ),
-                  ),
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),
         ],
       )
         );

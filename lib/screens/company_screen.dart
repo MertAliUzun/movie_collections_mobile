@@ -37,6 +37,16 @@ class _CompanyScreenState extends State<CompanyScreen> {
         });
       }
     );
+    /*
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) async {
+        final bannerWidget = await _adService.showBannerAd(ScreenUtil.isTablet(context));
+        setState(() {
+          // State'i güncelle
+        });
+      },
+    );
+    */
   }
 
   Future<void> _fetchMoviesByCompany() async {
@@ -245,14 +255,15 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       ),
                     ),
                     if(_adService.bannerAd != null)
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          width: _adService.bannerAd!.size.width.toDouble(),
-                          height: _adService.bannerAd!.size.height.toDouble(),
-                          child: AdWidget(ad: _adService.bannerAd!),
-                        ),
-                      ),
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),
                   ],
                 )
               : Column(
@@ -282,14 +293,15 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       ),
                   ),
                     if(_adService.bannerAd != null)
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                width: _adService.bannerAd!.size.width.toDouble(),
-                                height: _adService.bannerAd!.size.height.toDouble(),
-                                child: AdWidget(ad: _adService.bannerAd!),
-                              ),
-                            ),
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),
                 ],
               ),
     );

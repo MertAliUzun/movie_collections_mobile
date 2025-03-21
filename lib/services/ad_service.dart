@@ -2,6 +2,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../sup/adHelper.dart';
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/material.dart';
 
 class AdService {
   static final AdService _instance = AdService._internal();
@@ -143,6 +144,36 @@ class AdService {
     final difference = DateTime.now().difference(_lastAdTime!);
     final remainingMinutes = _minimumMinutesBetweenAds - difference.inMinutes;
     return remainingMinutes.toString();
+  }
+
+  Future<Widget> showBannerAd(bool isTablet) async {
+    if (await _isPremium()) {
+      return const SizedBox.shrink(); // Premium kullanıcılara reklam gösterme
+    }
+
+    if (bannerAd == null) {
+      //print('Banner reklam yüklü değil');
+      return const SizedBox.shrink();
+    }
+
+    try {
+      loadBannerAd();
+      return Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          width: isTablet ? 
+            bannerAd!.size.width.toDouble() * 1.5 :
+            bannerAd!.size.width.toDouble(),
+          height: isTablet ? 
+            bannerAd!.size.height.toDouble() * 1.5 :
+            bannerAd!.size.height.toDouble(),
+          child: AdWidget(ad: bannerAd!),
+        ),
+      );
+    } catch (e) {
+      //print('Banner reklam gösterilirken hata: $e');
+      return const SizedBox.shrink();
+    }
   }
 
   void disposeAds() {

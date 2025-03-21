@@ -1958,17 +1958,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
               ),
               */
               if(_adService.bannerAd != null)
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: isTablet ? 
-                  _adService.bannerAd!.size.width.toDouble() * 1.5 :
-                  _adService.bannerAd!.size.width.toDouble(),
-                height: isTablet ? 
-                  _adService.bannerAd!.size.height.toDouble() * 1.5 :
-                  _adService.bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _adService.bannerAd!),
-              ),
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
             ),
               const SizedBox(height: 25),
                   Row(
