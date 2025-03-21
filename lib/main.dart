@@ -51,8 +51,6 @@ void main() async {
   
   await _checkForUpdate();
   
-  await _checkPremiumStatus();
-  
   var systemLanguage = ui.window.locale.languageCode;
 
   runApp(MyApp(systemLanguage: systemLanguage));
@@ -221,6 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     if(widget.isInit!) {_googleSignIn(); widget.isInit = false;}
     else { _isLoaded = true; }
+    _checkPremiumStatus();
     /*
     _adService.loadBannerAd(
       onAdLoaded: (ad) {

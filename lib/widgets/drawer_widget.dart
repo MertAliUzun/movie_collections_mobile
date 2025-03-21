@@ -1220,12 +1220,12 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             style: const TextStyle(color: Colors.white),
                             children: [
                               TextSpan(
-                                text: _isPremium ? 'Premium' : S.of(context).welcome,
-                                style: const TextStyle(fontWeight: FontWeight.normal),
+                                text:  S.of(context).welcome,
+                                style: const TextStyle(fontWeight: FontWeight.normal,),
                               ),
                               TextSpan(
                                 text: userName!,
-                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                style: TextStyle(fontWeight: FontWeight.bold, color: _isPremium ? Colors.amber : Colors.white),
                               ),
                             ],
                           ),
@@ -1383,11 +1383,13 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.001, 0, 0),
                       child: TextButton(
                         onPressed: () {
+                          if(_isPremium) { null;} else {
                           if (userEmail == null || userEmail == 'test@test.com' || userName == null) {
                             _showErrorDialog(context);
                           } else {
                             _showPremiumDialog(context);
                           }
+                         }
                         },
                         style: TextButton.styleFrom(
                           side: BorderSide(
