@@ -147,7 +147,7 @@ Future<void> _checkPremiumStatus() async {
             await inAppPurchase.completePurchase(purchase);
           }
         } else if (purchase.status == PurchaseStatus.error) {
-          if (purchase.error?.code == 'already_owned') {
+          if (purchase.error?.message == 'BillingResponse.itemAlreadyOwned') {
             // Zaten satın alınmış
             final prefs = await SharedPreferences.getInstance();
             await prefs.setBool('isPremium', true);

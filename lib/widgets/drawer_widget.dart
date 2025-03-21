@@ -147,63 +147,22 @@ class _DrawerWidgetState extends State<DrawerWidget> {
 
   Future<void> _handlePurchaseUpdates(List<PurchaseDetails> purchases) async {
     for (var purchase in purchases) {
-      if (purchase.status == PurchaseStatus.purchased ||
-          purchase.status == PurchaseStatus.restored) {
-        // Satın alma başarılı
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setBool('isPremium', true);
-        /*
-        // Supabase'deki kullanıcı bilgisini güncelle
-        if (userId != null) {
-          final service = SupabaseService(Supabase.instance.client);
-          await service.updateUserPremium(
-            id: userId!,
-            email: userEmail ?? 'test@test.com',
-            userPicture: userPicture,
-            userName: userName,
-            isPremium: true,
-          );
-        }
-        */
-        
-        setState(() {
-          _isPremium = true;
-        });
-
-        if (purchase.pendingCompletePurchase) {
-          await _inAppPurchase.completePurchase(purchase);
-        }
-
-        // Başarılı satın alma mesajı göster
-        if (mounted) {
-          final snackBar = SnackBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            behavior: SnackBarBehavior.floating,
-            content: AwesomeSnackbarContent(
-              title: S.of(context).succesful,
-              message: S.of(context).succesful,
-              contentType: ContentType.success,
-              inMaterialBanner: true,
-            ),
-            dismissDirection: DismissDirection.horizontal,
-          );
-          ScaffoldMessenger.of(context)
-            ..hideCurrentMaterialBanner()
-            ..showSnackBar(snackBar);
-        }
-      } else if (purchase.status == PurchaseStatus.error) {
-        // ItemAlreadyOwned hatası kontrolü
-        if (purchase.error?.code == 'already_owned') {
-          // Zaten satın alınmış, premium durumunu güncelle
+      if (purchase.status == PurchaseStatus.pending) {
+        // Satın alma işlemi devam ediyor
+        continue;
+      }
+      if (purchase.status == PurchaseStatus.error) {
+        if (purchase.error?.message == 'BillingResponse.itemAlreadyOwned') {
+          // Zaten satın alınmış
           final prefs = await SharedPreferences.getInstance();
           await prefs.setBool('isPremium', true);
-          
+          if(mounted) {
           setState(() {
             _isPremium = true;
           });
+        }
         } else {
-          // Diğer hatalar için mesaj göster
+          // Diğer hatalar
           if (mounted) {
             final snackBar = SnackBar(
               elevation: 0,
@@ -221,6 +180,36 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               ..hideCurrentMaterialBanner()
               ..showSnackBar(snackBar);
           }
+        }
+      } else if (purchase.status == PurchaseStatus.purchased ||
+                 purchase.status == PurchaseStatus.restored) {
+        // Satın alma başarılı
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('isPremium', true);
+        setState(() {
+          _isPremium = true;
+        });
+
+        if (purchase.pendingCompletePurchase) {
+          await _inAppPurchase.completePurchase(purchase);
+        }
+
+        if (mounted) {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).succesful,
+              message: S.of(context).succesful,
+              contentType: ContentType.success,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
         }
       }
     }
@@ -267,35 +256,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     
     try {
       // Satın alma işlemini başlat
-      final bool success = await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
-      
-      if (success) {
-        // Satın alma başarılı olduysa
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setBool('isPremium', true);
-        
-        setState(() {
-          _isPremium = true;
-        });
-
-        if (mounted) {
-          final snackBar = SnackBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            behavior: SnackBarBehavior.floating,
-            content: AwesomeSnackbarContent(
-              title: S.of(context).succesful,
-              message: S.of(context).succesful,
-              contentType: ContentType.success,
-              inMaterialBanner: true,
-            ),
-            dismissDirection: DismissDirection.horizontal,
-          );
-          ScaffoldMessenger.of(context)
-            ..hideCurrentMaterialBanner()
-            ..showSnackBar(snackBar);
-        }
-      }
+      await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
     } catch (e) {
       // Satın alma hatası
       if (mounted) {
@@ -1417,7 +1378,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                               SizedBox(width: screenWidth * 0.03),
                               Icon(
                                 size: screenWidth * 0.055,
-                                Icons.workspace_premium_outlined,
+                                Icons.verified,
                                 color: _isPremium ? Colors.grey : Colors.white
                               ),
                             ],
