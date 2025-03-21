@@ -15,6 +15,7 @@ import 'services/ad_service.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'services/supabase_service.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +51,8 @@ void main() async {
   
   await _checkForUpdate();
   
+  await _checkPremiumStatus();
+  
   var systemLanguage = ui.window.locale.languageCode;
 
   runApp(MyApp(systemLanguage: systemLanguage));
@@ -57,7 +60,8 @@ void main() async {
 }
 
 Future<void> _checkForUpdate() async {
-  final updateInfo = await InAppUpdate.checkForUpdate();
+  try {
+    final updateInfo = await InAppUpdate.checkForUpdate();
 
   if (updateInfo.updateAvailability == UpdateAvailability.updateAvailable) {
     if (updateInfo.immediateUpdateAllowed) {
@@ -69,6 +73,10 @@ Future<void> _checkForUpdate() async {
       await InAppUpdate.completeFlexibleUpdate();
     }
   }
+  } catch (e) {
+    
+  }
+  
 }
 
 // Mevcut filmleri yeni alanlarla güncelleyen fonksiyon
@@ -113,6 +121,47 @@ Future<void> _updateMoviesWithNewFields() async {
     
     // Güncellenen filmi kaydet
     moviesBox.put(movie.id, updatedMovie);
+  }
+}
+
+// Premium durumunu kontrol eden fonksiyon
+Future<void> _checkPremiumStatus() async {
+  final InAppPurchase inAppPurchase = InAppPurchase.instance;
+  final bool available = await inAppPurchase.isAvailable();
+  
+  if (!available) return;
+
+  // Ürün ID'sini al
+  String productId = dotenv.env['PREMIUM_PRODUCT_ID']!;
+  
+  try {
+    // Satın alma stream'ini dinle
+    inAppPurchase.purchaseStream.listen((List<PurchaseDetails> purchases) async {
+      for (var purchase in purchases) {
+        if (purchase.productID == productId && 
+            (purchase.status == PurchaseStatus.purchased || 
+             purchase.status == PurchaseStatus.restored)) {
+          // Satın alınmış veya geri yüklenmiş durumda
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setBool('isPremium', true);
+
+          if (purchase.pendingCompletePurchase) {
+            await inAppPurchase.completePurchase(purchase);
+          }
+        } else if (purchase.status == PurchaseStatus.error) {
+          if (purchase.error?.code == 'already_owned') {
+            // Zaten satın alınmış
+            final prefs = await SharedPreferences.getInstance();
+            await prefs.setBool('isPremium', true);
+          }
+        } else if(purchase.status == PurchaseStatus.canceled) {
+            final prefs = await SharedPreferences.getInstance();
+            await prefs.setBool('isPremium', false);
+        }
+      }
+    });
+  } catch (e) {
+    print('Premium durumu kontrol edilirken hata: $e');
   }
 }
 
@@ -268,6 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _userPicture = googleUser.photoUrl;
       _userName = googleUser.displayName;
 
+      /*
       // SharedPreferences'dan isPremium değerini al
       final prefs = await SharedPreferences.getInstance();
       final isPremium = prefs.getBool('isPremium') ?? false;
@@ -287,10 +337,11 @@ class _MyHomePageState extends State<MyHomePage> {
       if (isPremiumFromServer != isPremium) {
         await prefs.setBool('isPremium', isPremiumFromServer);
       }
+      */
 
       setState(() {
-          _isLoaded = true;
-        });
+        _isLoaded = true;
+      });
 
       // Update movies box
       final moviesBox = Hive.box<Movie>('movies');

@@ -152,7 +152,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         // Satın alma başarılı
         final prefs = await SharedPreferences.getInstance();
         await prefs.setBool('isPremium', true);
-        
+        /*
         // Supabase'deki kullanıcı bilgisini güncelle
         if (userId != null) {
           final service = SupabaseService(Supabase.instance.client);
@@ -164,6 +164,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             isPremium: true,
           );
         }
+        */
         
         setState(() {
           _isPremium = true;
@@ -181,7 +182,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             behavior: SnackBarBehavior.floating,
             content: AwesomeSnackbarContent(
               title: S.of(context).succesful,
-              message: 'S.of(context).premiumPurchaseSuccess',
+              message: S.of(context).succesful,
               contentType: ContentType.success,
               inMaterialBanner: true,
             ),
@@ -192,23 +193,34 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             ..showSnackBar(snackBar);
         }
       } else if (purchase.status == PurchaseStatus.error) {
-        // Hata durumunda mesaj göster
-        if (mounted) {
-          final snackBar = SnackBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            behavior: SnackBarBehavior.floating,
-            content: AwesomeSnackbarContent(
-              title: S.of(context).error,
-              message: purchase.error?.message ?? 'S.of(context).purchaseError',
-              contentType: ContentType.failure,
-              inMaterialBanner: true,
-            ),
-            dismissDirection: DismissDirection.horizontal,
-          );
-          ScaffoldMessenger.of(context)
-            ..hideCurrentMaterialBanner()
-            ..showSnackBar(snackBar);
+        // ItemAlreadyOwned hatası kontrolü
+        if (purchase.error?.code == 'already_owned') {
+          // Zaten satın alınmış, premium durumunu güncelle
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setBool('isPremium', true);
+          
+          setState(() {
+            _isPremium = true;
+          });
+        } else {
+          // Diğer hatalar için mesaj göster
+          if (mounted) {
+            final snackBar = SnackBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              behavior: SnackBarBehavior.floating,
+              content: AwesomeSnackbarContent(
+                title: S.of(context).error,
+                message: purchase.error?.message ?? S.of(context).error,
+                contentType: ContentType.failure,
+                inMaterialBanner: true,
+              ),
+              dismissDirection: DismissDirection.horizontal,
+            );
+            ScaffoldMessenger.of(context)
+              ..hideCurrentMaterialBanner()
+              ..showSnackBar(snackBar);
+          }
         }
       }
     }
@@ -226,7 +238,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
             title: S.of(context).error,
-            message: 'S.of(context).storeNotAvailable',
+            message: S.of(context).checkInternet,
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),
@@ -254,7 +266,36 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     final PurchaseParam purchaseParam = PurchaseParam(productDetails: product);
     
     try {
-      await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
+      // Satın alma işlemini başlat
+      final bool success = await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
+      
+      if (success) {
+        // Satın alma başarılı olduysa
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool('isPremium', true);
+        
+        setState(() {
+          _isPremium = true;
+        });
+
+        if (mounted) {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).succesful,
+              message: S.of(context).succesful,
+              contentType: ContentType.success,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
+        }
+      }
     } catch (e) {
       // Satın alma hatası
       if (mounted) {
@@ -395,7 +436,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       final String userPicture = googleUser.photoUrl ?? '';
       final String userName = googleUser.displayName ?? '';
       */
-
+      /*
       // SharedPreferences'dan isPremium değerini al
       final prefs = await SharedPreferences.getInstance();
       final isPremium = prefs.getBool('isPremium') ?? false;
@@ -415,6 +456,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       if (isPremiumFromServer != isPremium) {
         await prefs.setBool('isPremium', isPremiumFromServer);
       }
+      */
 
       // Ana sayfaya yönlendirme yap ve kullanıcı bilgilerini geç
       Navigator.pushReplacement(
@@ -965,7 +1007,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             style: const TextStyle(color: Colors.white),
                             children: [
                               TextSpan(
-                                text: S.of(context).welcome,
+                                text: _isPremium ? 'Premium' : S.of(context).welcome,
                                 style: const TextStyle(fontWeight: FontWeight.normal),
                               ),
                               TextSpan(
@@ -1142,7 +1184,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  _isPremium ? 'S.of(context).premiumActive' : 'Premium',
+                                  _isPremium ? 'S.of(context).premiumBought' : 'Buy Premium',
                                   style: TextStyle(
                                     color: _isPremium ? Colors.grey : Colors.white,
                                     fontSize: screenWidth * 0.039
