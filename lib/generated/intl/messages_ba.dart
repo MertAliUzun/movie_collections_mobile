@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Үҫеүсе"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Һатып алыу)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Һатып ал"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium һатып ал"),
         "cancel": MessageLookupByLibrary.simpleMessage("Кире ҡайтыу"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Файл һайлау кире ҡағылды."),
@@ -48,6 +50,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карт"),
         "checkInternet":
             MessageLookupByLibrary.simpleMessage("Интернетты тикшерегеҙ!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Баһаһы кәметелгән һәм арттырылған фильмдарҙы тикшер"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Фильмдарың өсөн болот һаҡлауы"),
         "collection": MessageLookupByLibrary.simpleMessage("Коллекция"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Коллекция төрө"),
@@ -150,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Фильм исемен тултырығыҙ"),
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium клиенттарға ярҙам"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Постер һайлау өсөн баҫығыҙ"),
         "productionCompanies":
@@ -159,6 +167,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Сығыу датаһы: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Сығыу йылы"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Бөтә рекламаларҙы алып ташлау"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Фильм өҫтәү сикләүен юҡ итеү"),
         "rent": MessageLookupByLibrary.simpleMessage("(Прокат)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Керем: "),
         "romance": MessageLookupByLibrary.simpleMessage("Мөхәббәт"),

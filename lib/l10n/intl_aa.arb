@@ -159,5 +159,21 @@
     "rent": "(Guffat)",
     "buy": "(Gidi)",
     "subscription": "(Xayya)",
-    "whereToWatch": "Amma fiirsima?"
+    "whereToWatch": "Amma fiirsima?",
+    "creationDate": "Tarikh Abak",
+    "franchise": "Fransayis",
+    "franchises": "Fransayisak",
+    "addFranchise": "Fransayis Ekke",
+    "tag": "Tag",
+    "tags": "Tagak",
+    "addTag": "Tag Ekke",
+    "noTagsSelected": "Tag Ma Doorannem",
+    "noFranchisesSelected": "Fransayis Ma Doorannem",
+    "buyPremium": "Premium Gade",
+    "buyButton": "Gade",
+    "removeAds": "Kol Akwa Reklama Fuddu",
+    "removeMovieLimit": "Filim Ekke Haddat Fuddu",
+    "cloudBackUp": "Filimama Ka Cloud BackUp",
+    "premiumSupport": "Premium Taageera Macaamiisha",
+    "checkUnderratedOverrated": "Filim Underrated Kedo Overrated Sug"
 }

@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("الميزانية: "),
         "buy": MessageLookupByLibrary.simpleMessage("(شراء)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("شراء"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("شراء البريميوم"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("تم إلغاء اختيار الملف."),
@@ -47,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("بطاقة"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "يرجى التحقق من اتصالك بالإنترنت!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "التحقق من الأفلام المُقللة من قيمتها والمُبالغ فيها"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "نسخة احتياطية سحابية لأفلامك"),
         "collection": MessageLookupByLibrary.simpleMessage("المجموعة"),
         "collectionType": MessageLookupByLibrary.simpleMessage("نوع المجموعة"),
         "comedy": MessageLookupByLibrary.simpleMessage("كوميديا"),
@@ -144,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يرجى إدخال عنوان الفيلم"),
         "plot": MessageLookupByLibrary.simpleMessage("القصة"),
         "poster": MessageLookupByLibrary.simpleMessage("ملصق"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("دعم العملاء المميز"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("اضغط لاختيار ملصق الفيلم"),
         "productionCompanies":
@@ -153,6 +161,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("تاريخ الإصدار: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("سنة الإصدار"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("إزالة جميع الإعلانات"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("إزالة حد إضافة الأفلام"),
         "rent": MessageLookupByLibrary.simpleMessage("(إيجار)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("الإيرادات: "),
         "romance": MessageLookupByLibrary.simpleMessage("رومانسي"),

@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Byudjet: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Sotib olish)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Satwëlix"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premiyum satwëlix"),
         "cancel": MessageLookupByLibrary.simpleMessage("Bekor qilish"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Faylni tanlash bekor qilindi."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Karta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Internet ulanishingizni tekshirib ko\'ring!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Az baha berilgen wä atalghusi üstide chüşürülgen filimlärni tekshürüng"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Filimläringiz üchün bulut bek ap"),
         "collection": MessageLookupByLibrary.simpleMessage("Toplama"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Toplama turi"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komediya"),
@@ -187,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Syujet"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Mashhurligi"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Premiyum mushtirilirigha yardäm"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Poster tanlash uchun bosing"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage(
@@ -197,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Chiqarilish sanasi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Chiqarilish yili"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Hemme elannarni öçürüş"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Filim qoshush cheklemisini öçürüş"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ijaraga)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Iltimos, oldingi ekranga qaytaring"),

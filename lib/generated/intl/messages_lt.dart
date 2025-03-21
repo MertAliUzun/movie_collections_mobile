@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Biudžetas: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Pirkti)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Pirkti"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Pirkite Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Atšaukti"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Failo pasirinkimas atšauktas."),
@@ -55,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kortelė"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Prašome patikrinti savo interneto ryšį!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Patikrinkite nepastebėtas ir pervertintas filmes"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Debesų atsarginė kopija jūsų filmams"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekcija"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kolekcijos tipas"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Siužetas"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populiarus dėl"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakatas"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium klientų palaikymas"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Spauskite, kad pasirinkti filmo plakatus"),
         "productionCompanies":
@@ -193,6 +201,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Išleidimo data: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Išleidimo metai"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Pašalinti visas reklamas"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Pašalinti filmų pridėjimo ribojimus"),
         "rent": MessageLookupByLibrary.simpleMessage("(Nuoma)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Prašome grįžti į ankstesnį ekraną"),

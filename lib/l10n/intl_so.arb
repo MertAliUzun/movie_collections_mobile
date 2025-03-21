@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Ku dar Tag",
     "noTagsSelected": "Lama dooneyn Tag",
-    "noFranchisesSelected": "Lama dooneyn Franchise"
+    "noFranchisesSelected": "Lama dooneyn Franchise",
+    "buyPremium": "Iibso Premium",
+    "buyButton": "Iibso",
+    "removeAds": "Ka saar dhammaan xayaysiisyada",
+    "removeMovieLimit": "Ka saar xadidaadda filimada lagu daro",
+    "cloudBackUp": "Kaydinta daruuriga ah ee filimadaada",
+    "premiumSupport": "Taageerada Macaamiisha Premium",
+    "checkUnderratedOverrated": "Hubi filimada la qiimeeyay si hoose iyo kuwa la qiimeeyay si xad dhaaf ah"
 }

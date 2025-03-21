@@ -168,5 +168,12 @@
     "tags": "ਟੈਗ",
     "addTag": "ਟੈਗ ਜੋੜੋ",
     "noTagsSelected": "ਕੋਈ ਟੈਗ ਚੁਣਿਆ ਨਹੀਂ ਗਿਆ",
-    "noFranchisesSelected": "ਕੋਈ ਫਰੈਂਚਾਈਜ਼ ਚੁਣੀ ਨਹੀਂ ਗਈ"
+    "noFranchisesSelected": "ਕੋਈ ਫਰੈਂਚਾਈਜ਼ ਚੁਣੀ ਨਹੀਂ ਗਈ",
+    "buyPremium": "ਪ੍ਰੀਮੀਅਮ ਖਰੀਦੋ",
+    "buyButton": "ਖਰੀਦੋ",
+    "removeAds": "ਸਭੀਆਂ ਵਿਗਿਆਪਨਾਂ ਨੂੰ ਹਟਾਓ",
+    "removeMovieLimit": "ਫਿਲਮ ਸ਼ਾਮਿਲ ਕਰਨ ਦੀ ਸੀਮਾ ਹਟਾਓ",
+    "cloudBackUp": "ਤੁਹਾਡੇ ਫਿਲਮਾਂ ਲਈ ਕਲਾਉਡ ਬੈਕਅਪ",
+    "premiumSupport": "ਪ੍ਰੀਮੀਅਮ ਗਾਹਕ ਸਹਾਇਤਾ",
+    "checkUnderratedOverrated": "ਘੱਟ ਮੁੱਲ ਕੀਤੀਆਂ ਅਤੇ ਵੱਧ ਮੁੱਲ ਕੀਤੀਆਂ ਫਿਲਮਾਂ ਦੀ ਜਾਂਚ ਕਰੋ"
 }

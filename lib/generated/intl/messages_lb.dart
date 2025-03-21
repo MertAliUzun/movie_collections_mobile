@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Kafen)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Pērciet"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Pērciet Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Ofbriechen"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Datei wielen gouf ofgebrach."),
@@ -58,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kär"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Gëfft w.e.g. Ären Internetverbindung nach!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Pārbaudiet nepietiekami novērtētās un pārvērtētās filmas"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Mākoņkrātuve jūsu filmām"),
         "collection": MessageLookupByLibrary.simpleMessage("Sammelung"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Sammelung Typ"),
         "comedy": MessageLookupByLibrary.simpleMessage("Kommëdia"),
@@ -186,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Beléift fir"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium klientu atbalsts"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Dréckt fir Film Poster auszewielen"),
         "productionCompanies":
@@ -195,6 +203,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Fräigabe Datum: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Fräigabe Joer"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Noņemiet visas reklāmas"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Noņemiet filmu pievienošanas ierobežojumus"),
         "rent": MessageLookupByLibrary.simpleMessage("(Mënsch)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Gëfft w.e.g. zeréck op déi virdrun Bildschirm"),

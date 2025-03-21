@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Buget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Cumpărare)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Cumpără"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Cumpără Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Anulează"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Alegerea fișierului a fost anulată."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Carte"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Verifică conexiunea la internet!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Verifică filmele subapreciate și supraevaluate"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Backup în cloud pentru filmele tale"),
         "collection": MessageLookupByLibrary.simpleMessage("Colecție"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Tip colecție"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comedie"),
@@ -180,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Intrigă"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popular pentru"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Suport Premium pentru clienți"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Apasă pentru a alege posterul filmului"),
         "productionCompanies":
@@ -189,6 +197,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Data lansării: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Anul lansării"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Elimină toate reclamele"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Elimină limita de adăugare a filmelor"),
         "rent": MessageLookupByLibrary.simpleMessage("(Închiriere)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Te rog să te întorci la ecranul anterior"),

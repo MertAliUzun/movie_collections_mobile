@@ -168,5 +168,12 @@
     "tags": "Amathegi",
     "addTag": "Engeza Ithegi",
     "noTagsSelected": "Ayikho ithegi ekhethiwe",
-    "noFranchisesSelected": "Ayikho ifranchise ekhethiwe"
+    "noFranchisesSelected": "Ayikho ifranchise ekhethiwe",
+    "buyPremium": "Thenga i-Premium",
+    "buyButton": "Thenga",
+    "removeAds": "Susa wonke ama-ads",
+    "removeMovieLimit": "Susa umkhawulo wokwengeza amafilimu",
+    "cloudBackUp": "I-backup ye-Cloud yamafilm wakho",
+    "premiumSupport": "Ukusekela Kwezokuthengisa Okuzenzakalelayo",
+    "checkUnderratedOverrated": "Hlola amafilimu anenani eliphansi noma eliphezulu"
 }

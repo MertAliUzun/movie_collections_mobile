@@ -168,5 +168,12 @@
     "tags": "ស្លាក",
     "addTag": "បន្ថែមស្លាក",
     "noTagsSelected": "មិនមានស្លាកដែលបានជ្រើសរើសទេ",
-    "noFranchisesSelected": "មិនមានហ្វ្រាំងស៊ីសដែលបានជ្រើសរើសទេ"
+    "noFranchisesSelected": "មិនមានហ្វ្រាំងស៊ីសដែលបានជ្រើសរើសទេ",
+    "buyPremium": "ទិញ Premium",
+    "buyButton": "ទិញ",
+    "removeAds": "លុបការផ្សាយពាណិជ្ជកម្មទាំងអស់",
+    "removeMovieLimit": "លុបដំណាក់កាលកំណត់ក្នុងការបន្ថែមភាពយន្ត",
+    "cloudBackUp": "ការសម្តែងរូបភាពក្នុងពពកសម្រាប់ភាពយន្តរបស់អ្នក",
+    "premiumSupport": "ការគាំទ្រប្រាក់កម្ចី Premium",
+    "checkUnderratedOverrated": "ពិនិត្យភាពយន្តដែលត្រូវបានប្រើប្រាស់និងថ្លៃពេក"
 }

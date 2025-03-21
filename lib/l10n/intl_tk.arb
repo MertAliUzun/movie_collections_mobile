@@ -168,5 +168,12 @@
     "tags": "Tegler",
     "addTag": "Teg goşmak",
     "noTagsSelected": "Hiçbir teg saýlanmady",
-    "noFranchisesSelected": "Hiçbir françiza saýlanmady"
+    "noFranchisesSelected": "Hiçbir françiza saýlanmady",
+    "buyPremium": "Premium satyn al",
+    "buyButton": "Satyn al",
+    "removeAds": "Hemme reklamalary aýyryp at",
+    "removeMovieLimit": "Film goşmak üçin çäkleri aýyryp at",
+    "cloudBackUp": "Filmleriňiz üçin bulut ätiýaçlyk nusgasy",
+    "premiumSupport": "Premium müşderi goldawy",
+    "checkUnderratedOverrated": "Aşağı baha berlen we köp baha berlen filmleri barla"
 }

@@ -159,5 +159,21 @@
     "rent": "(Анаҳгара)",
     "buy": "(Ашьҭхара)",
     "subscription": "(Ахархәара азы абонемент)",
-    "whereToWatch": "Иабаԥшыр шәылшоит?"
+    "whereToWatch": "Иабаԥшыр шәылшоит?",
+    "creationDate": "Аамҭа Аԥҵара",
+    "franchise": "Франшиза",
+    "franchises": "Франшизақәа",
+    "addFranchise": "Франшиза Цҵаҵәара",
+    "tag": "Атегориа",
+    "tags": "Атегориақәа",
+    "addTag": "Атегориа Цҵаҵәара",
+    "noTagsSelected": "Атегориа Даҟаҵам",
+    "noFranchisesSelected": "Франшиза Даҟаҵам",
+    "buyPremium": "Premium Ахәаахәҭра",
+    "buyButton": "Ахәаахәҭра",
+    "removeAds": "Ахыԥхьаӡаларатә Рекламақәа Арцәара",
+    "removeMovieLimit": "Акино Ацҵоу Афатә Аҟамзаара",
+    "cloudBackUp": "Акиноқәа Рхаҿӡы Ааԥхьара",
+    "premiumSupport": "Premium Ахархәара Ацхыраара",
+    "checkUnderratedOverrated": "Акиноқәа Иацәхьаҵу/Iаԥхароу Ахәаԥшра"
 }

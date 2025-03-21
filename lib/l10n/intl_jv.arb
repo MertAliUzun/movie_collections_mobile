@@ -168,5 +168,12 @@
     "tags": "Tag",
     "addTag": "Tambah tag",
     "noTagsSelected": "Ora ana tag sing dipilih",
-    "noFranchisesSelected": "Ora ana franchise sing dipilih"
+    "noFranchisesSelected": "Ora ana franchise sing dipilih",
+    "buyPremium": "Tuku Premium",
+    "buyButton": "Tuku",
+    "removeAds": "Hapus kabeh iklan",
+    "removeMovieLimit": "Hapus watesan nambah film",
+    "cloudBackUp": "Cadangan cloud kanggo filem sampeyan",
+    "premiumSupport": "Dhukungan pelanggan Premium",
+    "checkUnderratedOverrated": "Periksa filem sing kurang dihargai lan luwih dihargai"
 }

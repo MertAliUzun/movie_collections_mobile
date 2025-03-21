@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bütçe: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Satın Al)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Satın al"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium Al"),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Dosya seçimi iptal edildi."),
@@ -53,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kart"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Lütfen internet bağlantınızı kontrol edin!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Değeri Verilmemiş ve Abartılmış Filmleri Görün"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Filmleriniz için Bulut Desteği"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksiyon"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Koleksiyon Türü"),
@@ -176,6 +182,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Konu"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popüler"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium Müşteri Hizmetleri"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Film afişini seçmek için tıklayın"),
         "productionCompanies":
@@ -185,6 +193,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Vizyon Tarihi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Çıkış Yılı"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Tüm Reklamları Kaldır"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Film Ekleme Limitini Kaldır"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kirala)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Lütfen önceki ekrana dönün"),

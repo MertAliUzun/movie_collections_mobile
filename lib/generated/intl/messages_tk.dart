@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Büdet: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Satyn almak)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Satyn al"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium satyn al"),
         "cancel": MessageLookupByLibrary.simpleMessage("Ýatyrmak"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Faýl saýlamak ýatyr."),
@@ -55,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kart"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Internet baglanyşygyňyzy barlaň!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Aşağı baha berlen we köp baha berlen filmleri barla"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Filmleriňiz üçin bulut ätiýaçlyk nusgasy"),
         "collection": MessageLookupByLibrary.simpleMessage("Toplum"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Toplama görnüşi"),
@@ -182,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Meşhur üçin"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium müşderi goldawy"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Poster saýlamak üçin basyň"),
         "productionCompanies":
@@ -191,6 +199,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Çykaryş Taryhy: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Çykaryş ýyly"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Hemme reklamalary aýyryp at"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Film goşmak üçin çäkleri aýyryp at"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ijaraga)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Öňki ekrana gaýdyp baryň"),

@@ -168,5 +168,12 @@
     "tags": "Tagi",
     "addTag": "Ongeza Tagi",
     "noTagsSelected": "Hakuna Tagi Zilizochaguliwa",
-    "noFranchisesSelected": "Hakuna Franchise Zilizochaguliwa"
+    "noFranchisesSelected": "Hakuna Franchise Zilizochaguliwa",
+    "buyPremium": "Nunua Premium",
+    "buyButton": "Nunua",
+    "removeAds": "Ondoa matangazo yote",
+    "removeMovieLimit": "Ondoa kikomo cha kuongeza filamu",
+    "cloudBackUp": "Backup ya Cloud kwa Filamu zako",
+    "premiumSupport": "Msaada wa Wateja wa Premium",
+    "checkUnderratedOverrated": "Angalia Filamu za Kupuuziliwa mbali na zinazozidi kupigiwa debe"
 }

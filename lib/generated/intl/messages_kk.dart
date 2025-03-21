@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Сатып алу)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Сатып алу"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium сатып алу"),
         "cancel": MessageLookupByLibrary.simpleMessage("Болдырмау"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Файл таңдау болдырылмады."),
@@ -52,6 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карта"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Интернет байланысын тексеріңіз!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Қате бағаланған және асыра бағаланған фильмдерді тексеру"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Фильмдеріңіз үшін бұлттық сақтық көшірме"),
         "collection": MessageLookupByLibrary.simpleMessage("Коллекция"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Коллекция түрі"),
@@ -180,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Белгілі"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium клиенттерге қолдау"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Фильмнің постерін таңдау үшін басыңыз"),
         "productionCompanies":
@@ -189,6 +197,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Шығару күні: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Шығару жылы"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Барлық жарнамаларды өшіру"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Фильмдер қосу шектеулерін жою"),
         "rent": MessageLookupByLibrary.simpleMessage("(Жалға алу)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Алдыңғы экранға оралыңыз"),

@@ -48,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("ဘတ်ဂျက်: "),
         "buy": MessageLookupByLibrary.simpleMessage("(ဝယ်ရန်)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("ဝယ်ယူပါ"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Premium ကိုဝယ်ယူပါ"),
         "cancel": MessageLookupByLibrary.simpleMessage("မလုပ်ပါ"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "ဖိုင်ရွေးချယ်ခြင်းကိုမတင်ခဲ့ပါ။"),
@@ -55,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("ကတ်"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "သင့်၏အင်တာနက်ချိတ်ဆက်မှုကိုစစ်ဆေးပါ!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "နည်းထားထားသည့်နှင့် အများပြားထားသောရုပ်ရှင်များကိုစစ်ဆေးပါ"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "သင့်ရုပ်ရှင်များအတွက်မိုးကူးထောက်ပံ့မှု"),
         "collection": MessageLookupByLibrary.simpleMessage("စုစည်းမှု"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("စုစည်းမှုအမျိုးအစား"),
@@ -184,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("ဇာတ်လမ်း"),
         "popularFor": MessageLookupByLibrary.simpleMessage("လူကြိုက်များသော"),
         "poster": MessageLookupByLibrary.simpleMessage("ပလက်ကတ်"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium ဖောက်သည်ထောက်ပံ့မှု"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("ဇာတ်ကားပုံတင်ရန်နှိပ်ပါ"),
         "productionCompanies":
@@ -194,6 +203,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ထုတ်ပြန်ရက်: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("ထုတ်ပြန်နှစ်"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("ကြော်ငြာအားလုံးကိုဖယ်ရှားပါ"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "ရုပ်ရှင်ထည့်ရန် ကန့်သတ်ချက်ကိုဖယ်ရှားပါ"),
         "rent": MessageLookupByLibrary.simpleMessage("(ငှားရန်)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "ကျေးဇူးပြု၍ပြီးခဲ့သောหน้าจတင်ပါ"),

@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Køb)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Køb"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Køb Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuller"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Valg af fil blev annulleret."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kort"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Tjek venligst din internetforbindelse!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Tjek undervurderede og overvurderede film"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Cloud-sikkerhedskopiering til dine film"),
         "collection": MessageLookupByLibrary.simpleMessage("Kollektio"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kollektions type"),
@@ -181,6 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Handlingsreferat"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populær for"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakat"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium kundesupport"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Tryk for at vælge filmaffisch"),
         "productionCompanies":
@@ -190,6 +198,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Udgivelsesdato: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Udgivelsesår"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Fjern alle annoncer"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Fjern grænsen for at tilføje film"),
         "rent": MessageLookupByLibrary.simpleMessage("(Leje)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Venligst vend tilbage til forrige skærm"),

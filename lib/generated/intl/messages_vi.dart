@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Ngân sách: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Mua)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Mua"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Mua Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Đã hủy chọn tệp."),
@@ -53,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Thẻ"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Vui lòng kiểm tra kết nối Internet của bạn!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Kiểm tra các bộ phim bị đánh giá thấp và đánh giá cao"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Sao lưu đám mây cho các bộ phim của bạn"),
         "collection": MessageLookupByLibrary.simpleMessage("Bộ Sưu Tập"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Loại bộ sưu tập"),
@@ -179,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Nội dung"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Nổi tiếng với"),
         "poster": MessageLookupByLibrary.simpleMessage("Áp phích"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Hỗ trợ khách hàng Premium"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Nhấn để chọn áp phích phim"),
         "productionCompanies":
@@ -188,6 +196,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Ngày phát hành: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Năm phát hành"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Xóa tất cả quảng cáo"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Xóa giới hạn thêm phim"),
         "rent": MessageLookupByLibrary.simpleMessage("(Thuê)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Vui lòng quay lại màn hình trước"),

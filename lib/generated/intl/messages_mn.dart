@@ -48,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Төсөв: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Тамга тавих)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Худалдан авах"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Premium худалдан авах"),
         "cancel": MessageLookupByLibrary.simpleMessage("Цуцлах"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Файл сонгох цуцлагдсан."),
@@ -55,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карт"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Интернэт холболтоо шалгана уу!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Дутуу үнэлэгдсэн болон хэтэрхий үнэлэгдсэн киног шалгах"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Таны кинод зориулсан үүлний нөөц"),
         "collection": MessageLookupByLibrary.simpleMessage("Цуглуулга"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Цуглуулгын төрөл"),
@@ -182,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Өгүүлэмж"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Алдартай"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Premium үйлчлүүлэгчийн дэмжлэг"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Киноны постер сонгохын тулд дарна уу"),
         "productionCompanies":
@@ -192,6 +201,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Тамга тавих огноо: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Тамга тавих жил"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Бүх зар сурталчилгааг устгах"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Кино нэмэх хязгаарлалт устгах"),
         "rent": MessageLookupByLibrary.simpleMessage("(Түрээслэх)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Дараагийн дэлгэц рүү буцаж очно уу"),

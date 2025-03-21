@@ -168,5 +168,12 @@
     "tags": "Thẻ",
     "addTag": "Thêm thẻ",
     "noTagsSelected": "Chưa chọn thẻ nào",
-    "noFranchisesSelected": "Chưa chọn nhượng quyền nào"
+    "noFranchisesSelected": "Chưa chọn nhượng quyền nào",
+    "buyPremium": "Mua Premium",
+    "buyButton": "Mua",
+    "removeAds": "Xóa tất cả quảng cáo",
+    "removeMovieLimit": "Xóa giới hạn thêm phim",
+    "cloudBackUp": "Sao lưu đám mây cho các bộ phim của bạn",
+    "premiumSupport": "Hỗ trợ khách hàng Premium",
+    "checkUnderratedOverrated": "Kiểm tra các bộ phim bị đánh giá thấp và đánh giá cao"
 }

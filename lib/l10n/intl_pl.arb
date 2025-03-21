@@ -168,5 +168,12 @@
     "tags": "Tagi",
     "addTag": "Dodaj tag",
     "noTagsSelected": "Brak wybranych tagów",
-    "noFranchisesSelected": "Brak wybranych franczyz"
+    "noFranchisesSelected": "Brak wybranych franczyz",
+    "buyPremium": "Kup Premium",
+    "buyButton": "Kup",
+    "removeAds": "Usuń wszystkie reklamy",
+    "removeMovieLimit": "Usuń limit dodawania filmów",
+    "cloudBackUp": "Kopia zapasowa w chmurze dla twoich filmów",
+    "premiumSupport": "Wsparcie dla klientów Premium",
+    "checkUnderratedOverrated": "Sprawdź niedoceniane i przereklamowane filmy"
 }

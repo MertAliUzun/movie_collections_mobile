@@ -168,5 +168,12 @@
     "tags": "Etikèt yo",
     "addTag": "Ajoute etikèt",
     "noTagsSelected": "Pa gen etikèt ki chwazi",
-    "noFranchisesSelected": "Pa gen franchiz ki chwazi"
+    "noFranchisesSelected": "Pa gen franchiz ki chwazi",
+    "buyPremium": "Kupite Premium",
+    "buyButton": "Kupite",
+    "removeAds": "Uklonite sve reklame",
+    "removeMovieLimit": "Uklonite ograničenje za dodavanje filmova",
+    "cloudBackUp": "Sigurnosna kopija na oblaku za vaše filmove",
+    "premiumSupport": "Premium korisnička podrška",
+    "checkUnderratedOverrated": "Provjerite podcijenjene i precijenjene filmove"
 }

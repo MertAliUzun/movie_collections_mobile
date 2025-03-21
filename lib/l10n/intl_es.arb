@@ -168,5 +168,12 @@
     "tags": "Etiquetas",
     "addTag": "Agregar etiqueta",
     "noTagsSelected": "No se han seleccionado etiquetas",
-    "noFranchisesSelected": "No se han seleccionado franquicias"
+    "noFranchisesSelected": "No se han seleccionado franquicias",
+    "buyPremium": "Comprar Premium",
+    "buyButton": "Comprar",
+    "removeAds": "Eliminar todos los anuncios",
+    "removeMovieLimit": "Eliminar el límite de agregar películas",
+    "cloudBackUp": "Copia de seguridad en la nube para tus películas",
+    "premiumSupport": "Soporte al cliente Premium",
+    "checkUnderratedOverrated": "Verifica las películas subestimadas y sobrevaloradas"
 }

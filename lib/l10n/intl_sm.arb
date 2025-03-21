@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Faʻaopoopo Tag",
     "noTagsSelected": "E leai ni Tag na oʻo mai",
-    "noFranchisesSelected": "E leai ni Franchises na oʻo mai"
+    "noFranchisesSelected": "E leai ni Franchises na oʻo mai",
+    "buyPremium": "Fa'atau Premium",
+    "buyButton": "Fa'atau",
+    "removeAds": "Ave uma fa'asalalauga",
+    "removeMovieLimit": "Ave le tapula'a o le fa'aopoopoina o ata tetele",
+    "cloudBackUp": "Fa'amaoniga o ata i le 'au' a le ao",
+    "premiumSupport": "Tautua Fa'atau Premium",
+    "checkUnderratedOverrated": "Siaki ata o lo'o fa'amaonia ma le fa'atau i luga"
 }

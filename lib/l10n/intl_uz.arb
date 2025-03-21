@@ -168,5 +168,12 @@
     "tags": "Taglar",
     "addTag": "Tag qo'shish",
     "noTagsSelected": "Hech qanday tag tanlanmadi",
-    "noFranchisesSelected": "Hech qanday franshiza tanlanmadi"
+    "noFranchisesSelected": "Hech qanday franshiza tanlanmadi",
+    "buyPremium": "Premium sotib oling",
+    "buyButton": "Sotib olish",
+    "removeAds": "Barcha reklamalarni olib tashlang",
+    "removeMovieLimit": "Film qo'shish chegarasini olib tashlang",
+    "cloudBackUp": "Filmlaringiz uchun bulutli zaxira",
+    "premiumSupport": "Premium mijozlarni qo'llab-quvvatlash",
+    "checkUnderratedOverrated": "Kam baholangan va ko'p baholangan filmlarni tekshiring"
 }

@@ -168,5 +168,12 @@
     "tags": "标签",
     "addTag": "添加标签",
     "noTagsSelected": "未选择标签",
-    "noFranchisesSelected": "未选择加盟"
+    "noFranchisesSelected": "未选择加盟",
+    "buyPremium": "购买高级版",
+    "buyButton": "购买",
+    "removeAds": "移除所有广告",
+    "removeMovieLimit": "移除添加电影限制",
+    "cloudBackUp": "您的电影云备份",
+    "premiumSupport": "高级客户支持",
+    "checkUnderratedOverrated": "检查被低估和高估的电影"
 }

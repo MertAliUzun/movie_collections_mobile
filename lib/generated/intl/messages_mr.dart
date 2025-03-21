@@ -46,6 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("ब्लू-रे"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("बजेट: "),
         "buy": MessageLookupByLibrary.simpleMessage("(खरेदी)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("खरेदी करा"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("प्रीमियम खरेदी करा"),
         "cancel": MessageLookupByLibrary.simpleMessage("रद्द करा"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("फाइल निवडणे रद्द केले."),
@@ -53,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("कार्ड"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "कृपया आपली इंटरनेट कनेक्शन तपासा!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "खूप कमी किंवा खूप जास्त मूल्यांकन केलेल्या चित्रपटांची तपासणी करा"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "तुमच्या चित्रांसाठी क्लाउड बॅकअप"),
         "collection": MessageLookupByLibrary.simpleMessage("संग्रह"),
         "collectionType": MessageLookupByLibrary.simpleMessage("संग्रह प्रकार"),
         "comedy": MessageLookupByLibrary.simpleMessage("कॉमेडी"),
@@ -180,6 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("कथानक"),
         "popularFor": MessageLookupByLibrary.simpleMessage("लोकप्रिय कारण"),
         "poster": MessageLookupByLibrary.simpleMessage("पोस्टर"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("प्रीमियम ग्राहक समर्थन"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "चित्रपट पोस्टर निवडण्यासाठी प्रेस करा"),
         "productionCompanies":
@@ -190,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("प्रकाशन तारीख: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("प्रकाशन वर्ष"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("सर्व जाहिराती काढा"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "चित्रे जोडण्याचे मर्यादा काढा"),
         "rent": MessageLookupByLibrary.simpleMessage("(भाड्याने)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "कृपया मागील स्क्रीनवर परत जा"),

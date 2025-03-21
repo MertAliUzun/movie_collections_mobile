@@ -168,6 +168,12 @@
     "tags": "Teglar",
     "addTag": "Teg qoshush",
     "noTagsSelected": "Teg tallanmıdı",
-    "noFranchisesSelected": "Françize tallanmıdı"
-
+    "noFranchisesSelected": "Françize tallanmıdı",
+    "buyPremium": "Premiyum satwëlix",
+    "buyButton": "Satwëlix",
+    "removeAds": "Hemme elannarni öçürüş",
+    "removeMovieLimit": "Filim qoshush cheklemisini öçürüş",
+    "cloudBackUp": "Filimläringiz üchün bulut bek ap",
+    "premiumSupport": "Premiyum mushtirilirigha yardäm",
+    "checkUnderratedOverrated": "Az baha berilgen wä atalghusi üstide chüşürülgen filimlärni tekshürüng"
 }

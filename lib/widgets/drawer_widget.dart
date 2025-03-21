@@ -773,6 +773,118 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     return true; // İzin verildiyse true döndür
   }
 
+  Future<void> _showErrorDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          title: Text(S.of(context).error, style: const TextStyle(color: Colors.white),),
+          content: Text(S.of(context).checkInternet, style: const TextStyle(color: Colors.white),),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(S.of(context).ok, style: const TextStyle(color: Colors.white)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _showPremiumDialog(BuildContext context) async {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+          title: Text(
+            S.of(context).buyPremium,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: screenWidth * 0.055,
+              fontWeight: FontWeight.bold
+            ),
+            textAlign: TextAlign.center,
+          ),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: screenHeight * 0.015),
+                _buildPremiumFeature(Icons.block, S.of(context).removeAds),
+                SizedBox(height: screenHeight * 0.015),
+                _buildPremiumFeature(Icons.movie_outlined, S.of(context).removeMovieLimit),
+                SizedBox(height: screenHeight * 0.015),
+                /*_buildPremiumFeature(Icons.backup_outlined, S.of(context).cloudBackUp),
+                SizedBox(height: screenHeight * 0.015),
+                _buildPremiumFeature(Icons.star_outline, S.of(context).checkUnderratedOverrated),
+                SizedBox(height: screenHeight * 0.015),
+                _buildPremiumFeature(Icons.star_outline, S.of(context).premiumSupport),
+                SizedBox(height: screenHeight * 0.015),*/
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                S.of(context).cancel,
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: screenWidth * 0.04
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text(
+                S.of(context).buyButton,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: screenWidth * 0.04
+                ),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+                _buyPremium();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildPremiumFeature(IconData icon, String text) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Row(
+      children: [
+        Icon(
+          icon,
+          color: Colors.amber,
+          size: screenWidth * 0.05,
+        ),
+        SizedBox(width: screenWidth * 0.03),
+        Expanded(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: screenWidth * 0.04
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> sortingOptions = [
@@ -1169,7 +1281,13 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.001, 0, 0),
                       child: TextButton(
-                        onPressed: _isPremium ? null : _buyPremium,
+                        onPressed: () {
+                          if (userEmail == null || userEmail == 'test@test.com' || userName == null) {
+                            _showErrorDialog(context);
+                          } else {
+                            _showPremiumDialog(context);
+                          }
+                        },
                         style: TextButton.styleFrom(
                           side: BorderSide(
                             color: _isPremium ? Colors.grey : Colors.white,
@@ -1184,7 +1302,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  _isPremium ? 'S.of(context).premiumBought' : 'Buy Premium',
+                                  S.of(context).buyPremium,
                                   style: TextStyle(
                                     color: _isPremium ? Colors.grey : Colors.white,
                                     fontSize: screenWidth * 0.039

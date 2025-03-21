@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Rozpočet: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Koupit)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Koupit"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Koupit Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Výběr souboru byl zrušen."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Karta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Zkontrolujte své internetové připojení!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Zkontrolujte podceňované a přeceňované filmy"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Zálohování filmů na cloudu"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekce"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Typ kolekce"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedie"),
@@ -181,6 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Děj"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populární pro"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakát"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium zákaznická podpora"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Stiskněte pro výběr plakátu filmu"),
         "productionCompanies":
@@ -190,6 +198,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Datum vydání: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Rok vydání"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Odstranit všechny reklamy"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Odstranit limit přidávání filmů"),
         "rent": MessageLookupByLibrary.simpleMessage("(Pronájem)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Prosím vraťte se na předchozí obrazovku"),

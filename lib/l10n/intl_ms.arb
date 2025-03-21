@@ -168,5 +168,12 @@
     "tags": "Tag",
     "addTag": "Tambah Tag",
     "noTagsSelected": "Tiada tag yang dipilih",
-    "noFranchisesSelected": "Tiada francais yang dipilih"
+    "noFranchisesSelected": "Tiada francais yang dipilih",
+    "buyPremium": "Beli Premium",
+    "buyButton": "Beli",
+    "removeAds": "Buang semua iklan",
+    "removeMovieLimit": "Buang had penambahan filem",
+    "cloudBackUp": "Sandaran cloud untuk filem anda",
+    "premiumSupport": "Sokongan pelanggan Premium",
+    "checkUnderratedOverrated": "Periksa filem yang kurang dihargai dan terlalu dihargai"
 }

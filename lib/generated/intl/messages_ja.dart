@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("予算: "),
         "buy": MessageLookupByLibrary.simpleMessage("(購入)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("購入"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("プレミアムを購入"),
         "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("ファイルの選択がキャンセルされました。"),
@@ -51,6 +53,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("カード"),
         "checkInternet":
             MessageLookupByLibrary.simpleMessage("インターネット接続を確認してください！"),
+        "checkUnderratedOverrated":
+            MessageLookupByLibrary.simpleMessage("過小評価と過大評価された映画をチェック"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("あなたの映画のクラウドバックアップ"),
         "collection": MessageLookupByLibrary.simpleMessage("コレクション"),
         "collectionType": MessageLookupByLibrary.simpleMessage("コレクションタイプ"),
         "comedy": MessageLookupByLibrary.simpleMessage("コメディ"),
@@ -163,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("あらすじ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("人気の理由"),
         "poster": MessageLookupByLibrary.simpleMessage("ポスター"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("プレミアムカスタマーサポート"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("ポスターを選択するにはクリックしてください"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("制作会社"),
@@ -170,6 +178,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDate": MessageLookupByLibrary.simpleMessage("公開日"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("公開日: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("公開年"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("すべての広告を削除"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage("映画追加の制限を解除"),
         "rent": MessageLookupByLibrary.simpleMessage("(レンタル)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("前の画面に戻ってください"),

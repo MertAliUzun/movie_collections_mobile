@@ -168,5 +168,12 @@
     "tags": "Теги",
     "addTag": "Добавить тег",
     "noTagsSelected": "Теги не выбраны",
-    "noFranchisesSelected": "Франшизы не выбраны"
+    "noFranchisesSelected": "Франшизы не выбраны",
+    "buyPremium": "Купить Premium",
+    "buyButton": "Купить",
+    "removeAds": "Удалить все объявления",
+    "removeMovieLimit": "Удалить ограничение на добавление фильмов",
+    "cloudBackUp": "Резервное копирование в облаке для ваших фильмов",
+    "premiumSupport": "Премиум поддержка клиентов",
+    "checkUnderratedOverrated": "Проверьте недооцененные и переоцененные фильмы"
 }

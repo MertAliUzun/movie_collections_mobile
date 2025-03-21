@@ -168,5 +168,12 @@
     "tags": "برچسب‌ها",
     "addTag": "اضافه کردن برچسب",
     "noTagsSelected": "هیچ برچسبی انتخاب نشده",
-    "noFranchisesSelected": "هیچ فرانچایزی انتخاب نشده"
+    "noFranchisesSelected": "هیچ فرانچایزی انتخاب نشده",
+    "buyPremium": "خرید Premium",
+    "buyButton": "خرید",
+    "removeAds": "حذف تمام تبلیغات",
+    "removeMovieLimit": "حذف محدودیت افزودن فیلم",
+    "cloudBackUp": "پشتیبان‌گیری ابری برای فیلم‌های شما",
+    "premiumSupport": "پشتیبانی مشتری Premium",
+    "checkUnderratedOverrated": "بررسی فیلم‌های دست‌کم‌گرفته شده و اغراق‌شده"
 }

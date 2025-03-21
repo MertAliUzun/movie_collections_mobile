@@ -168,5 +168,12 @@
     "tags": "Taggar",
     "addTag": "Lägg till Tagg",
     "noTagsSelected": "Inga Taggar Valda",
-    "noFranchisesSelected": "Inga Franchises Valda"
+    "noFranchisesSelected": "Inga Franchises Valda",
+    "buyPremium": "Köp Premium",
+    "buyButton": "Köp",
+    "removeAds": "Ta bort alla annonser",
+    "removeMovieLimit": "Ta bort filmgränsen",
+    "cloudBackUp": "Molnbackup för dina filmer",
+    "premiumSupport": "Premium kundsupport",
+    "checkUnderratedOverrated": "Kolla på underskattade och överskattade filmer"
 }

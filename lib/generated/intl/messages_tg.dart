@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюҷет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Харид)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Харидан"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Премиум хараидан"),
         "cancel": MessageLookupByLibrary.simpleMessage("Бекор"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Ихтиёр кардани файл бекор шуд."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карта"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Лутфан пайвастагии интернетии худро тафтиш кунед!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Филмҳои камарзиш ва аз ҳад зиёд баҳои дода шударо санҷед"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Нусхаи захиравии абрӣ барои филмҳои шумо"),
         "collection": MessageLookupByLibrary.simpleMessage("М集合"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Намуди М集合"),
         "comedy": MessageLookupByLibrary.simpleMessage("Комедия"),
@@ -180,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Машҳур барои"),
         "poster": MessageLookupByLibrary.simpleMessage("Плакат"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Поддержка премиум барои муштариён"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Барои интихоби плакат филм клик кунед"),
         "productionCompanies":
@@ -189,6 +197,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Санаи баромад: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Соли баромад"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Ҳамаи рекламаҳоро бардоред"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Маҳдудияти илова кардани филмҳоро бардоред"),
         "rent": MessageLookupByLibrary.simpleMessage("(Иҷора)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Лутфан ба экрани қаблӣ баргардед"),

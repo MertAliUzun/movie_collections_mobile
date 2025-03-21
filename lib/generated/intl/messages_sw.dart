@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bajeti: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Nunua)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Nunua"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Nunua Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Ghairi"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Imesitishwa kuchagua faili."),
@@ -58,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kadi"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Tafadhali angalia muunganisho wako wa intaneti!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Angalia Filamu za Kupuuziliwa mbali na zinazozidi kupigiwa debe"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Backup ya Cloud kwa Filamu zako"),
         "collection": MessageLookupByLibrary.simpleMessage("Mkusanyiko"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Aina ya Mkusanyiko"),
@@ -189,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Hadithi"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Maarufu Kwa"),
         "poster": MessageLookupByLibrary.simpleMessage("Bango"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Msaada wa Wateja wa Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Bonyeza kuchagua bango la filamu"),
         "productionCompanies":
@@ -201,6 +209,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tarehe ya Kutolewa: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Mwaka wa Kutolewa"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Ondoa matangazo yote"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Ondoa kikomo cha kuongeza filamu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kodi)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Tafadhali rudi kwenye skrini ya awali"),

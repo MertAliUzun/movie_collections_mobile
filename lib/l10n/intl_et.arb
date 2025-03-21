@@ -168,5 +168,12 @@
     "tags": "Märgid",
     "addTag": "Lisa märge",
     "noTagsSelected": "Ühtegi märget pole valitud",
-    "noFranchisesSelected": "Ühtegi frantsiisi pole valitud"
+    "noFranchisesSelected": "Ühtegi frantsiisi pole valitud",
+    "buyPremium": "Osta Premium",
+    "buyButton": "Osta",
+    "removeAds": "Eemalda kõik reklaamid",
+    "removeMovieLimit": "Eemalda filmi lisamise piirang",
+    "cloudBackUp": "Pilvevarundus sinu filmidele",
+    "premiumSupport": "Premium klienditugi",
+    "checkUnderratedOverrated": "Kontrolli alahinnatud ja ülehinnatud filme"
 }

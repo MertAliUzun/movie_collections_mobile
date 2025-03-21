@@ -168,5 +168,12 @@
     "tags": "Теглар",
     "addTag": "Тег өстәү",
     "noTagsSelected": "Теглар сайланмаган",
-    "noFranchisesSelected": "Франшизалар сайланмаган"
+    "noFranchisesSelected": "Франшизалар сайланмаган",
+    "buyPremium": "Премиумны сатып ал",
+    "buyButton": "Сатып ал",
+    "removeAds": "Барлык рекламага ярыйсыз",
+    "removeMovieLimit": "Фильм өстәү чикләрен бетерү",
+    "cloudBackUp": "Сезнең фильмнар өчен болыт резерв копиясе",
+    "premiumSupport": "Премиум клиентлар ярдәме",
+    "checkUnderratedOverrated": "Түбән бәяләнгән һәм артык бәяләнгән фильмнарны тикшерегез"
 }

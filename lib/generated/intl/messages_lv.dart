@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budžets: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Pirkt)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Pērciet"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Pērciet Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Atcelt"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Faila izvēle atcelta."),
@@ -57,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Karte"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Lūdzu, pārbaudiet savu interneta savienojumu!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Pārbaudiet nepietiekami novērtētās un pārvērtētās filmas"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Mākoņkrātuve jūsu filmām"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekcija"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kolekcijas veids"),
@@ -186,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Sižets"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populārs ar"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakāts"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium klientu atbalsts"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Nospiediet, lai izvēlētos filmas plakātu"),
         "productionCompanies":
@@ -196,6 +204,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Izlaišanas datums: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Izlaišanas gads"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Noņemiet visas reklāmas"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Noņemiet filmu pievienošanas ierobežojumus"),
         "rent": MessageLookupByLibrary.simpleMessage("(Izīrēt)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Lūdzu, atgriezieties iepriekšējā ekrānā"),

@@ -168,5 +168,12 @@
     "tags": "ટૅગ્સ",
     "addTag": "ટૅગ ઉમેરો",
     "noTagsSelected": "કોઈ ટૅગ પસંદ નથી કરેલ",
-    "noFranchisesSelected": "કોઈ ફ્રેન્ચાઇઝ પસંદ નથી કરેલ"
+    "noFranchisesSelected": "કોઈ ફ્રેન્ચાઇઝ પસંદ નથી કરેલ",
+    "buyPremium": "પ્રેમિયમ ખરીદો",
+    "buyButton": "ખરીદો",
+    "removeAds": "બધા એડ્સ દૂર કરો",
+    "removeMovieLimit": "ફિલ્મ ઉમેરવાની મર્યાદા દૂર કરો",
+    "cloudBackUp": "તમારા ફિલ્મો માટે ક્લાઉડ બેકઅપ",
+    "premiumSupport": "પ્રેમિયમ ગ્રાહક આધાર",
+    "checkUnderratedOverrated": "અલ્ખી અને વધારે મૂલ્યાંકિત ફિલ્મો તપાસો"
 }

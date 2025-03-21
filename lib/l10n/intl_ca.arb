@@ -168,5 +168,12 @@
     "tags": "Etiquetes",
     "addTag": "Afegeix etiqueta",
     "noTagsSelected": "Cap etiqueta seleccionada",
-    "noFranchisesSelected": "Cap franquícia seleccionada"
+    "noFranchisesSelected": "Cap franquícia seleccionada",
+    "buyPremium": "Comprar Premium",
+    "buyButton": "Comprar",
+    "removeAds": "Eliminar tots els anuncis",
+    "removeMovieLimit": "Eliminar límit d'afegir pel·lícules",
+    "cloudBackUp": "Còpia de seguretat al núvol per a les teves pel·lícules",
+    "premiumSupport": "Suport Premium per als clients",
+    "checkUnderratedOverrated": "Comprova les pel·lícules infravalorades i sobrevalorades"
 }

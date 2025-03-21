@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("ថវិកា: "),
         "buy": MessageLookupByLibrary.simpleMessage("(ទិញ)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("ទិញ"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("ទិញ Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("បោះបង់"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("បានបោះបង់ការជ្រើសរើសឯកសារ។"),
@@ -57,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("កាត"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "សូមពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "ពិនិត្យភាពយន្តដែលត្រូវបានប្រើប្រាស់និងថ្លៃពេក"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "ការសម្តែងរូបភាពក្នុងពពកសម្រាប់ភាពយន្តរបស់អ្នក"),
         "collection": MessageLookupByLibrary.simpleMessage("ប្រមូលផ្តុំ"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("ប្រភេទប្រមូលផ្តុំ"),
@@ -187,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("បណ្តុះ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("ពេញនិយមសម្រាប់"),
         "poster": MessageLookupByLibrary.simpleMessage("ប័ណ្ណ"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "ការគាំទ្រប្រាក់កម្ចី Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "ចុចដើម្បីជ្រើសរើសប័ណ្ណភាពយន្ត"),
         "productionCompanies":
@@ -197,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("កាលបរិច្ឆេទចេញផ្សាយ: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("ឆ្នាំចេញផ្សាយ"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "លុបការផ្សាយពាណិជ្ជកម្មទាំងអស់"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "លុបដំណាក់កាលកំណត់ក្នុងការបន្ថែមភាពយន្ត"),
         "rent": MessageLookupByLibrary.simpleMessage("(ជួល)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "សូមត្រឡប់ទៅស្វ័យប្រវត្តិកាលពីមុន"),

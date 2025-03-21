@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("பட்ஜெட்: "),
         "buy": MessageLookupByLibrary.simpleMessage("(கொள்)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("வாங்கு"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("பிரீமியம் வாங்கு"),
         "cancel": MessageLookupByLibrary.simpleMessage("ரத்து"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "கோப்பை தேர்ந்தெடுப்பது ரத்து செய்யப்பட்டது."),
@@ -58,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("கார்டு"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "தயவு செய்து உங்கள் இணைய இணைப்பை சரிபார்க்கவும்!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "குறைவாக மதிக்கப்பட்ட மற்றும் அதிகமாக மதிக்கப்பட்ட திரைப்படங்களை சரிபார்க்கவும்"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "உங்கள் திரைப்படங்களுக்கான கிளவுட் பதிப்புரிமை"),
         "collection": MessageLookupByLibrary.simpleMessage("தொகுப்பு"),
         "collectionType": MessageLookupByLibrary.simpleMessage("தொகுப்பு வகை"),
         "comedy": MessageLookupByLibrary.simpleMessage("காமெடி"),
@@ -185,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("கதை"),
         "popularFor": MessageLookupByLibrary.simpleMessage("பிரபலமானது"),
         "poster": MessageLookupByLibrary.simpleMessage("போஸ்டர்"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "பிரீமியம் வாடிக்கையாளர் ஆதரவு"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "போஸ்டரை தேர்வு செய்ய அழுத்தவும்"),
         "productionCompanies":
@@ -194,6 +202,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("வெளியீட்டு தேதி: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("வெளியீட்டு ஆண்டு"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "அனைத்து விளம்பரங்களையும் நீக்கு"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "திரைப்பட சேர்க்க limit நீக்கு"),
         "rent": MessageLookupByLibrary.simpleMessage("(எம்போது)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "முந்தைய திரையில் திரும்பவும்"),

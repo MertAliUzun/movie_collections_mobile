@@ -27,12 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Roley"),
         "add": MessageLookupByLibrary.simpleMessage("Qorqoma"),
         "addActor": MessageLookupByLibrary.simpleMessage("Roley qorqoma"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Fransayis Ekke"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Gogga qorqoma"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Film qorqoma"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Haya Film qorqoma"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Firma qorqoma"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Tag Ekke"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Maxne qorqoma"),
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Akaak: "),
@@ -45,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bajeti: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Gidi)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Gade"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium Gade"),
         "cancel": MessageLookupByLibrary.simpleMessage("Qari"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Fayli doorim qariime."),
@@ -52,10 +56,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kaarta"),
         "checkInternet":
             MessageLookupByLibrary.simpleMessage("Internet maqna gexxu!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Filim Underrated Kedo Overrated Sug"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Filimama Ka Cloud BackUp"),
         "collection": MessageLookupByLibrary.simpleMessage("Qolubta"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Qolubta Noole"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comedy"),
         "company": MessageLookupByLibrary.simpleMessage("Firma"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Tarikh Abak"),
         "crime": MessageLookupByLibrary.simpleMessage("Crime"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV fayli takke: "),
@@ -104,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Qaldaw!"),
         "family": MessageLookupByLibrary.simpleMessage("Family"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Fransayis"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Fransayisak"),
         "genre": MessageLookupByLibrary.simpleMessage("Gogga"),
         "genres": MessageLookupByLibrary.simpleMessage("Gogga"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gooruwa"),
@@ -145,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Roley dooram yaku"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Firma dooram yaku"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Fransayis Ma Doorannem"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Gogga dooram yaku"),
         "noIdToken":
@@ -156,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Firma film yaku"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Storage hayyuwa yaku."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Tag Ma Doorannem"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Girta Yaku"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Maxne dooram yaku"),
@@ -167,6 +182,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Tarate"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Xayih film"),
         "poster": MessageLookupByLibrary.simpleMessage("Postera"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Premium Taageera Macaamiisha"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Postera doora fi loqa"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Firma"),
@@ -175,6 +192,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Yana Girta: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Yana Aagaa"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Kol Akwa Reklama Fuddu"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Filim Ekke Haddat Fuddu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Guffat)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Guurama maqna!"),
@@ -207,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Takke!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" fakkitam takke"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tagak"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Girta"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Movie"),

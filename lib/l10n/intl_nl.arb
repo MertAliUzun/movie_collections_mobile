@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Voeg tag toe",
     "noTagsSelected": "Geen tags geselecteerd",
-    "noFranchisesSelected": "Geen franchises geselecteerd"
+    "noFranchisesSelected": "Geen franchises geselecteerd",
+    "buyPremium": "Koop Premium",
+    "buyButton": "Koop",
+    "removeAds": "Verwijder alle advertenties",
+    "removeMovieLimit": "Verwijder filmtoevoegingslimiet",
+    "cloudBackUp": "Cloud back-up voor je films",
+    "premiumSupport": "Premium klantenondersteuning",
+    "checkUnderratedOverrated": "Controleer ondergewaardeerde en overgewaardeerde films"
 }

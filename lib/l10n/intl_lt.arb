@@ -168,5 +168,12 @@
     "tags": "Žymos",
     "addTag": "Pridėti žymą",
     "noTagsSelected": "Pasirinkta jokių žymų",
-    "noFranchisesSelected": "Pasirinkta jokių franšizių"
+    "noFranchisesSelected": "Pasirinkta jokių franšizių",
+    "buyPremium": "Pirkite Premium",
+    "buyButton": "Pirkti",
+    "removeAds": "Pašalinti visas reklamas",
+    "removeMovieLimit": "Pašalinti filmų pridėjimo ribojimus",
+    "cloudBackUp": "Debesų atsarginė kopija jūsų filmams",
+    "premiumSupport": "Premium klientų palaikymas",
+    "checkUnderratedOverrated": "Patikrinkite nepastebėtas ir pervertintas filmes"
 }

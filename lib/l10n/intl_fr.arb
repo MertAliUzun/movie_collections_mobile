@@ -168,5 +168,12 @@
     "tags": "Étiquettes",
     "addTag": "Ajouter une étiquette",
     "noTagsSelected": "Aucune étiquette sélectionnée",
-    "noFranchisesSelected": "Aucune franchise sélectionnée"
+    "noFranchisesSelected": "Aucune franchise sélectionnée",
+    "buyPremium": "Acheter Premium",
+    "buyButton": "Acheter",
+    "removeAds": "Supprimer toutes les publicités",
+    "removeMovieLimit": "Supprimer la limite d'ajout de films",
+    "cloudBackUp": "Sauvegarde cloud pour vos films",
+    "premiumSupport": "Support client Premium",
+    "checkUnderratedOverrated": "Vérifier les films sous-estimés et surévalués"
 }

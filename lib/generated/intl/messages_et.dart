@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Eelarve: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Osta)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Osta"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Osta Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Tühista"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Faili valimine tühistati."),
@@ -53,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kaart"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Palun kontrollige oma internetiühendust!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Kontrolli alahinnatud ja ülehinnatud filme"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Pilvevarundus sinu filmidele"),
         "collection": MessageLookupByLibrary.simpleMessage("Kogumik"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Kogumise tüüp"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komöödia"),
@@ -179,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Süžee"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populaarne jaoks"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakat"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium klienditugi"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Vajuta, et valida filmi plakat"),
         "productionCompanies":
@@ -189,6 +197,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Väljalaske kuupäev: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Väljalaske aasta"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Eemalda kõik reklaamid"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Eemalda filmi lisamise piirang"),
         "rent": MessageLookupByLibrary.simpleMessage("(Rent)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Palun naase eelmist ekraani"),

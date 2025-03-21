@@ -141,5 +141,12 @@
     "tags": "Etiketa",
     "addTag": "Shto etiketë",
     "noTagsSelected": "Nuk është zgjedhur asnjë etiketë",
-    "noFranchisesSelected": "Nuk është zgjedhur asnjë franshizë"
+    "noFranchisesSelected": "Nuk është zgjedhur asnjë franshizë",
+    "buyPremium": "Blej Premium",
+    "buyButton": "Blej",
+    "removeAds": "Heq të gjitha reklamat",
+    "removeMovieLimit": "Heq kufizimin e shtimit të filmave",
+    "cloudBackUp": "Rezervë në re për filmat tuaj",
+    "premiumSupport": "Përkrahje Premium për klientët",
+    "checkUnderratedOverrated": "Kontrollo filmat e nënvlerësuar dhe të mbivlerësuar"
 }

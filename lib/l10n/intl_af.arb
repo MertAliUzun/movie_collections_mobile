@@ -159,5 +159,21 @@
     "rent": "(Huur)",
     "buy": "(Koop)",
     "subscription": "(Intekening)",
-    "whereToWatch": "Waar om te kyk?"
+    "whereToWatch": "Waar om te kyk?",
+    "creationDate": "Skeppingsdatum",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Voeg Franchise By",
+    "tag": "Etiket",
+    "tags": "Etikette",
+    "addTag": "Voeg Etiket By",
+    "noTagsSelected": "Geen Etikette Gekies Nie",
+    "noFranchisesSelected": "Geen Franchises Gekies Nie",
+    "buyPremium": "Koop Premium",
+    "buyButton": "Koop",
+    "removeAds": "Verwyder Alle Advertensies",
+    "removeMovieLimit": "Verwyder Fliek Voeg Beperking",
+    "cloudBackUp": "Wolkrugsteun Vir Jou Flieks",
+    "premiumSupport": "Premium Kliëntediens",
+    "checkUnderratedOverrated": "Kontroleer Onderskatte en Oorskatte Flieks"
 }

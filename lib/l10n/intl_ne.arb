@@ -168,5 +168,12 @@
     "tags": "ट्यागहरू",
     "addTag": "ट्याग थप्नुहोस्",
     "noTagsSelected": "कुनै ट्याग चयन गरिएको छैन",
-    "noFranchisesSelected": "कुनै फ्रान्चाइज चयन गरिएको छैन"
+    "noFranchisesSelected": "कुनै फ्रान्चाइज चयन गरिएको छैन",
+    "buyPremium": "Kjøp Premium",
+    "buyButton": "Kjøp",
+    "removeAds": "Fjern alle annonser",
+    "removeMovieLimit": "Fjern filmenes tillegggrense",
+    "cloudBackUp": "Skyback-up for filmene dine",
+    "premiumSupport": "Premium kundestøtte",
+    "checkUnderratedOverrated": "Sjekk undervurderte og overvurderte filmer"
 }

@@ -168,5 +168,12 @@
     "tags": "Ceanglaichean",
     "addTag": "Cuir Ceanglaiche ris",
     "noTagsSelected": "Chan eil ceanglaichean air an taghadh",
-    "noFranchisesSelected": "Chan eil franchises air an taghadh"
+    "noFranchisesSelected": "Chan eil franchises air an taghadh",
+    "buyPremium": "Ceannaich Premium",
+    "buyButton": "Ceannaich",
+    "removeAds": "Thoir air falbh na h-advertisements uile",
+    "removeMovieLimit": "Thoir air falbh crìoch air filmichean a chur ris",
+    "cloudBackUp": "Còraichean backup san sgòth airson do fhilmichean",
+    "premiumSupport": "Taic teachdaiche Premium",
+    "checkUnderratedOverrated": "Sgrùdadh air filmichean fo-mheasail agus air-toirmeasach"
 }

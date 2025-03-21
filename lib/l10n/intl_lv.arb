@@ -168,5 +168,12 @@
     "tags": "Etiķetes",
     "addTag": "Pievienot etiķeti",
     "noTagsSelected": "Nav izvēlētas etiķetes",
-    "noFranchisesSelected": "Nav izvēlētas franšīzes"
+    "noFranchisesSelected": "Nav izvēlētas franšīzes",
+    "buyPremium": "Pērciet Premium",
+    "buyButton": "Pērciet",
+    "removeAds": "Noņemiet visas reklāmas",
+    "removeMovieLimit": "Noņemiet filmu pievienošanas ierobežojumus",
+    "cloudBackUp": "Mākoņkrātuve jūsu filmām",
+    "premiumSupport": "Premium klientu atbalsts",
+    "checkUnderratedOverrated": "Pārbaudiet nepietiekami novērtētās un pārvērtētās filmas"
 }

@@ -1749,6 +1749,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Buy Premium`
+  String get buyPremium {
+    return Intl.message(
+      'Buy Premium',
+      name: 'buyPremium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy`
+  String get buyButton {
+    return Intl.message(
+      'Buy',
+      name: 'buyButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove All Ads`
+  String get removeAds {
+    return Intl.message(
+      'Remove All Ads',
+      name: 'removeAds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove Movie Adding Limit`
+  String get removeMovieLimit {
+    return Intl.message(
+      'Remove Movie Adding Limit',
+      name: 'removeMovieLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cloud BackUp for Your Movies`
+  String get cloudBackUp {
+    return Intl.message(
+      'Cloud BackUp for Your Movies',
+      name: 'cloudBackUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Premium Customer Support`
+  String get premiumSupport {
+    return Intl.message(
+      'Premium Customer Support',
+      name: 'premiumSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check Underrated and Overrated Movies`
+  String get checkUnderratedOverrated {
+    return Intl.message(
+      'Check Underrated and Overrated Movies',
+      name: 'checkUnderratedOverrated',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("ბიუჯეტი: "),
         "buy": MessageLookupByLibrary.simpleMessage("(ყიდვა)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("შეიძინეთ"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("შეიძინეთ Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("გაუქმება"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("ფაილის არჩევა გაუქმებულია."),
@@ -57,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("ბარათი"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "ინტერნეტთან არ გაქვთ კავშირი!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "ამოწმეთ underrate და overrated ფილმები"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "ფილმებისთვის ღრუბლის სარეზერვო ასლი"),
         "collection": MessageLookupByLibrary.simpleMessage("კოლექცია"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("კოლექციის ტიპი"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("სიუჟეტი"),
         "popularFor": MessageLookupByLibrary.simpleMessage("პოპულარული"),
         "poster": MessageLookupByLibrary.simpleMessage("პოსტერ"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "პრემიუმ მომხმარებლის მხარდაჭერა"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "დაწკაპეთ პოსტერის არჩევისთვის"),
         "productionCompanies":
@@ -194,6 +202,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("გამოშვების თარიღი: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("გამოშვების წელი"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("ამოიღეთ ყველა რეკლამა"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "ამოიღეთ ფილმის დამატების შეზღუდვა"),
         "rent": MessageLookupByLibrary.simpleMessage("(გაქირავება)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("დააბრუნეთ წინა ეკრანზე"),

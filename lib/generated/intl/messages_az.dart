@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Artan"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Büdcə: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Alış)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Al"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium Al"),
         "cancel": MessageLookupByLibrary.simpleMessage("Ləğv et"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Fayl seçimi ləğv edildi."),
@@ -50,6 +52,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kart"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Lütfən, internet bağlantınızı yoxlayın!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Dəyəri Aşağı və Yüksək Qiymətləndirilmiş Filmləri Yoxla"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Filmlərin Üçün Bulud Yedəklənməsi"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolleksiya"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kolleksiya Növü"),
@@ -155,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmin adını daxil edin"),
         "plot": MessageLookupByLibrary.simpleMessage("Süjet"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium Müştəri Dəstəyi"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Filmin posteri üçün klikləyin"),
         "productionCompanies":
@@ -164,6 +172,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Buraxılış tarixi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Buraxılış İli"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Bütün Reklamları Sil"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Film Əlavə Etmə Limitini Sil"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kirayə)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Gəlir: "),
         "romance": MessageLookupByLibrary.simpleMessage("Romantika"),

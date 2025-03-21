@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Miisaaniyadda: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Iibso)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Iibso"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Iibso Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Jooji"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Doorashada faylka waa la joojiyey."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kaarka"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Fadlan hubi isku xirkaaga internetka!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Hubi filimada la qiimeeyay si hoose iyo kuwa la qiimeeyay si xad dhaaf ah"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Kaydinta daruuriga ah ee filimadaada"),
         "collection": MessageLookupByLibrary.simpleMessage("Ururin"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Nooca Ururinta"),
@@ -187,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Sheekada"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Caan ah "),
         "poster": MessageLookupByLibrary.simpleMessage("Boodhka"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Taageerada Macaamiisha Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Riix si aad u doorato boodhka filimka"),
         "productionCompanies":
@@ -199,6 +207,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Taariikhda Sii-deynta: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Sannadka Sii-deynta"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Ka saar dhammaan xayaysiisyada"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Ka saar xadidaadda filimada lagu daro"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kirada)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Fadlan ku noqod shaashadda hore"),

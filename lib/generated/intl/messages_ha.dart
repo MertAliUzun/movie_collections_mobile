@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Kasafin Kuɗi: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Sayar)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Sayi"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Sayi Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Soke"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("An soke zaɓar fayil."),
@@ -55,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kati"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Da fatan za a duba haɗin intanet ɗinku!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Duba fina-finai da aka ƙimar da su ƙasa da yawa ko fiye"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Ajiyar gajimare don fina-finanka"),
         "collection": MessageLookupByLibrary.simpleMessage("Tari"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Nau\'in Tari"),
         "comedy": MessageLookupByLibrary.simpleMessage("Wasan Barkwanci"),
@@ -182,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Makirci"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Shahararren Don"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Taimakon Abokin Ciniki Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Danna don zaɓar poster ɗin fim"),
         "productionCompanies":
@@ -191,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Ranar Saki: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Shekarar Saki"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("Cire dukkan talla"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Cire iyaka na ƙara fina-finai"),
         "rent": MessageLookupByLibrary.simpleMessage("(Hayar)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Da fatan za a koma zuwa allon da ya gabata"),

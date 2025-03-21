@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Tañci tag",
     "noTagsSelected": "Amul tags yu jéemle",
-    "noFranchisesSelected": "Amul franchises yu jéemle"
+    "noFranchisesSelected": "Amul franchises yu jéemle",
+    "buyPremium": "Bule Premium",
+    "buyButton": "Bule",
+    "removeAds": "Wutëël ñepp reklamaan",
+    "removeMovieLimit": "Wutëël xéewal bu jëm ci séy",
+    "cloudBackUp": "Coppitee bu rëy ngir seen xalaat",
+    "premiumSupport": "Jàmm ci ñuul ci jàmm bu buum",
+    "checkUnderratedOverrated": "Nekkaal ci film yu jàpp ne dañu baax te yu jàpp ne dañu"
 }

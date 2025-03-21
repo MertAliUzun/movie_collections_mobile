@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Goranzkoa"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Aurrekontua: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Erosteko)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Erosi"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Erosi Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Utzi"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Fitxategia aukeratzea bertan behera utzi da."),
@@ -49,6 +51,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Txartela"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Egiaztatu internet konexioa!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Aztertu azpimaratutako eta gehiegizko baloratutako filmak"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Zure filmen hodeiko segurtasun kopia"),
         "collection": MessageLookupByLibrary.simpleMessage("Bilduma"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Bilduma mota"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedia"),
@@ -152,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Idatzi filmaren izenburua"),
         "plot": MessageLookupByLibrary.simpleMessage("Sinopsia"),
         "poster": MessageLookupByLibrary.simpleMessage("Kartela"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Premium bezeroarentzako laguntza"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Sakatu kartela aukeratzeko"),
         "productionCompanies":
@@ -162,6 +170,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Argitaratze data: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Argitaratze urtea"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Kendu iragarki guztiak"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Film gehitzeko muga kendu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Alokatzea)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Diru-sarrerak: "),
         "romance": MessageLookupByLibrary.simpleMessage("Erromantzea"),

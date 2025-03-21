@@ -168,5 +168,12 @@
     "tags": "Tîpan",
     "addTag": "Tîpa zêde bikin",
     "noTagsSelected": "Tîpên nehêlîn hatine hilbijartin",
-    "noFranchisesSelected": "Franchise'ên nehêlîn hatine hilbijartin"
+    "noFranchisesSelected": "Franchise'ên nehêlîn hatine hilbijartin",
+    "buyPremium": "Premium Bikarîne",
+    "buyButton": "Bikarîne",
+    "removeAds": "Hemû reklamên jê birin",
+    "removeMovieLimit": "Sînora zêdekirina fîlman jê birin",
+    "cloudBackUp": "Piştgirîya berhemên we li ser xelatê cloud",
+    "premiumSupport": "Piştgirîya premium ya müşteri",
+    "checkUnderratedOverrated": "Fîlmên kêm pêşniyar û zêdetir pêşniyar hate kontrol kirin"
 }

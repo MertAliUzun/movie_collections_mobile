@@ -168,5 +168,12 @@
     "tags": "Таглар",
     "addTag": "Таг къамаган",
     "noTagsSelected": "Таглар хетам цуьнан",
-    "noFranchisesSelected": "Франшизалар хетам цуьнан"
+    "noFranchisesSelected": "Франшизалар хетам цуьнан",
+    "buyPremium": "Премиум хьо",
+    "buyButton": "Хьо",
+    "removeAds": "Рекламехь тӀаьшар",
+    "removeMovieLimit": "Фильм хьо хилла лимит хьо",
+    "cloudBackUp": "Вуллаха хьо фильмаш сагы",
+    "premiumSupport": "Премиум хьо клиентал хилаха",
+    "checkUnderratedOverrated": "Хьо фильмаш хилаха кӀаьна таььша кӀоьрсакх"
 }

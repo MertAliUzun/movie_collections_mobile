@@ -168,5 +168,12 @@
     "tags": "Etiketler",
     "addTag": "Etiket Ekle",
     "noTagsSelected": "Hiçbir Etiket Seçilmedi",
-    "noFranchisesSelected": "No Franchises Selected"
+    "noFranchisesSelected": "No Franchises Selected",
+    "buyPremium": "Premium Al",
+    "buyButton": "Satın al",
+    "removeAds": "Tüm Reklamları Kaldır",
+    "removeMovieLimit": "Film Ekleme Limitini Kaldır",
+    "cloudBackUp": "Filmleriniz için Bulut Desteği",
+    "premiumSupport": "Premium Müşteri Hizmetleri",
+    "checkUnderratedOverrated": "Değeri Verilmemiş ve Abartılmış Filmleri Görün"
 }

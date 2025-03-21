@@ -168,5 +168,12 @@
     "tags": "Tagiau",
     "addTag": "Ychwanegu Tag",
     "noTagsSelected": "Dim tagiau wedi'u dewis",
-    "noFranchisesSelected": "Dim ffransisau wedi'u dewis"
+    "noFranchisesSelected": "Dim ffransisau wedi'u dewis",
+    "buyPremium": "Αγόρασε Premium",
+    "buyButton": "Αγόρασε",
+    "removeAds": "Αφαίρεση όλων των διαφημίσεων",
+    "removeMovieLimit": "Αφαίρεση ορίου προσθήκης ταινιών",
+    "cloudBackUp": "Αντίγραφο ασφαλείας στο cloud για τις ταινίες σας",
+    "premiumSupport": "Υποστήριξη πελατών Premium",
+    "checkUnderratedOverrated": "Ελέγξτε τις υποεκτιμημένες και υπερεκτιμημένες ταινίες"
 }

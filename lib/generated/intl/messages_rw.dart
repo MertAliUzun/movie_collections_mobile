@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "budgetColon":
             MessageLookupByLibrary.simpleMessage("Ingengo y\'imari: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Gura)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Buy"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Buy Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Kureka"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Guhitamo dosiye byahagaritswe."),
@@ -58,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Ikarita"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Nyamuneka gerageza umuyoboro wa interineti wawe!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Reba filimi zasuzumwe nabi cyangwa zigashyirwa hejuru"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Guhagarika ibikoresho muri cloud kubyo kureba"),
         "collection": MessageLookupByLibrary.simpleMessage("Urutonde"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Ubwoko bw\'Urutonde"),
@@ -187,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Icyerekezo"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Birakundwa"),
         "poster": MessageLookupByLibrary.simpleMessage("Ishusho"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Inkunga y\'abakiriya ya Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Kanda kugirango uhitemo ishusho ya filime"),
         "productionCompanies":
@@ -196,6 +204,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Itariki yasohowe: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Umwaka wasohowe"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Kuraho byose byamamaza"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Kuraho umubare ntarengwa w\'amafilm"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kugura)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Nyamuneka subira kuri ecran yabanje"),

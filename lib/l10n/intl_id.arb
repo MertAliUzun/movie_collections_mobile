@@ -168,5 +168,12 @@
     "tags": "Label",
     "addTag": "Tambah Label",
     "noTagsSelected": "Tidak ada label yang dipilih",
-    "noFranchisesSelected": "Tidak ada waralaba yang dipilih"
+    "noFranchisesSelected": "Tidak ada waralaba yang dipilih",
+    "buyPremium": "Beli Premium",
+    "buyButton": "Beli",
+    "removeAds": "Hapus semua iklan",
+    "removeMovieLimit": "Hapus batas penambahan film",
+    "cloudBackUp": "Cadangan awan untuk film Anda",
+    "premiumSupport": "Dukungan pelanggan Premium",
+    "checkUnderratedOverrated": "Periksa film yang diremehkan dan dilebih-lebihkan"
 }

@@ -132,5 +132,21 @@
     "rent": "(Wɔde ma)",
     "buy": "(Tɔ)",
     "subscription": "(Nsɛm Tumi)",
-    "whereToWatch": "Ɛhe na wobɛhwɛ?"
+    "whereToWatch": "Ɛhe na wobɛhwɛ?",
+    "creationDate": "Dwumadi Da",
+    "franchise": "Franchise",
+    "franchises": "Franchises",
+    "addFranchise": "Fa Franchise Ka Ho",
+    "tag": "Tag",
+    "tags": "Tags",
+    "addTag": "Fa Tag Ka Ho",
+    "noTagsSelected": "Tag Biara Nni Hɔ",
+    "noFranchisesSelected": "Franchise Biara Nni Hɔ",
+    "buyPremium": "Tɔ Premium",
+    "buyButton": "Tɔ",
+    "removeAds": "Yi Advertisements Nyinaa",
+    "removeMovieLimit": "Yi Movie Ka Ho Ahyehyɛde",
+    "cloudBackUp": "Cloud BackUp Ma Wo Movies",
+    "premiumSupport": "Premium Boafoɔ Som",
+    "checkUnderratedOverrated": "Hwɛ Movies a Wɔdi Mu Kakraa/Wɔdi Mu Pii"
 }

@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budoje: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Nyaama)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Sii"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Sii Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Kanjirɗe"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Kanjirɗe e kadi fayil."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kartu"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Njaatigi internet maa ko anndi!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Dokkiti fiilm-ɗi ɗe fowndini e ɗe futtini"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Hakkunde koondirde fiilm ngal ɗum e cloud"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleejo"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Ɓeyda koleejo"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
@@ -175,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Njaaje"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Jeyaa woɗɗo"),
         "poster": MessageLookupByLibrary.simpleMessage("Pooste"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Tawtorde Premium ɓe diiɗi"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Pele e seƴƴi pooste"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Njiyngol"),
@@ -184,6 +192,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ñaamudo deftere: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Ñaamudo njillaajo"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("Ɓeydaɗe ɗum gite"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Ɓeydaɗe ndertuɗe film amɗo"),
         "rent": MessageLookupByLibrary.simpleMessage("(Baɗo)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Doddii heɓii no feere"),

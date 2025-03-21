@@ -49,6 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Byudjet: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Sotib olish)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Sotib olish"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Premium sotib oling"),
         "cancel": MessageLookupByLibrary.simpleMessage("Bekor qilish"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Faylni tanlash bekor qilindi."),
@@ -56,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Karta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Iltimos, internet ulanishingizni tekshirib ko\'ring!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Kam baholangan va ko\'p baholangan filmlarni tekshiring"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Filmlaringiz uchun bulutli zaxira"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolleksiya"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kolleksiya turi"),
@@ -189,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Buning uchun mashhur"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Premium mijozlarni qo\'llab-quvvatlash"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Film posterini tanlash uchun bosing"),
         "productionCompanies":
@@ -199,6 +208,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Chiqarilish sanasi: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Chiqarilish yili"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Barcha reklamalarni olib tashlang"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Film qo\'shish chegarasini olib tashlang"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ijaraga olish)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Iltimos, oldingi ekranga qaytaring"),

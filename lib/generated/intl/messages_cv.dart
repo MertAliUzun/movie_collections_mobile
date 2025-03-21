@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Сатып алу)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Kome"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Kome Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Юкка чыгару"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Файл сайлау кире кагылды."),
@@ -52,6 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карта"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Интернет бәйләнешен тикшерегез!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Revisa película subestimá i sobrestimá"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Copia di seguridad pa bo película den nube"),
         "collection": MessageLookupByLibrary.simpleMessage("Коллекция"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Коллекция төре"),
@@ -179,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("План"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Популярлык"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Soporte di cliente Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Постерны сайлау өчен басыгыз"),
         "productionCompanies":
@@ -188,6 +196,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Чыгару датасы: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Чыгару елы"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Remové tur reklamanan"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Remové limít di pone película"),
         "rent": MessageLookupByLibrary.simpleMessage("(Аренда)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Зинһар, алдагы экранга кайтыгыз"),

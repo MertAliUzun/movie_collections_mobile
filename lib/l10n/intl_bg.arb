@@ -168,5 +168,12 @@
     "tags": "Етикети",
     "addTag": "Добавяне на етикет",
     "noTagsSelected": "Няма избрани етикети",
-    "noFranchisesSelected": "Няма избрани франчайзи"
+    "noFranchisesSelected": "Няма избрани франчайзи",
+    "buyPremium": "Купи Premium",
+    "buyButton": "Купи",
+    "removeAds": "Премахни всички реклами",
+    "removeMovieLimit": "Премахни ограниченията за добавяне на филми",
+    "cloudBackUp": "Облачни резервни копия за твоите филми",
+    "premiumSupport": "Premium поддръжка на клиенти",
+    "checkUnderratedOverrated": "Провери недооценени и преувеличени филми"
 }

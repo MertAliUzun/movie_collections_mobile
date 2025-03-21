@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Buidseat: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Ceannach)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Ceannaich"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Ceannaich Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cuir dheth"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Cuir dheth taghadh faidhle."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Cairt"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Chan eil ceangal eadar-lìn agad!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Sgrùdadh air filmichean fo-mheasail agus air-toirmeasach"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Còraichean backup san sgòth airson do fhilmichean"),
         "collection": MessageLookupByLibrary.simpleMessage("Tòrr"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Seòrsa Tòrr"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comadaidh"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Cliùiteach airson"),
         "poster": MessageLookupByLibrary.simpleMessage("Pòstaer"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Taic teachdaiche Premium"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Cliog air taghadh pòstaer"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage(
@@ -195,6 +203,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ceann-latha leigeil ma sgaoil: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Bliadhna leigeil ma sgaoil"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Thoir air falbh na h-advertisements uile"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Thoir air falbh crìoch air filmichean a chur ris"),
         "rent": MessageLookupByLibrary.simpleMessage("(Iar-pàigheadh)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Tilg air ais chun na sgrìn roimhe"),

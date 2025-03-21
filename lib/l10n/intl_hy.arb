@@ -141,5 +141,12 @@
     "tags": "Պիտակներ",
     "addTag": "Ավելացնել պիտակ",
     "noTagsSelected": "Պիտակներ չեն ընտրվել",
-    "noFranchisesSelected": "Ֆրանչայզներ չեն ընտրվել"
+    "noFranchisesSelected": "Ֆրանչայզներ չեն ընտրվել",
+    "buyPremium": "Գնել Premium",
+    "buyButton": "Գնել",
+    "removeAds": "Հեռացնել բոլոր գովազդները",
+    "removeMovieLimit": "Հեռացնել ֆիլմեր ավելացնելու սահմանափակումը",
+    "cloudBackUp": "ՄԱՀՏԵՆ ապահովագրություն ձեր ֆիլմերի համար",
+    "premiumSupport": "Պրեմիում հաճախորդների աջակցություն",
+    "checkUnderratedOverrated": "Ստուգեք undervalued և overrated ֆիլմերը"
 }

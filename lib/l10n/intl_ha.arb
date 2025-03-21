@@ -168,5 +168,12 @@
     "tags": "Alamomi",
     "addTag": "Ƙara Alama",
     "noTagsSelected": "Babu alamomi da aka zaɓa",
-    "noFranchisesSelected": "Babu franshisoci da aka zaɓa"
+    "noFranchisesSelected": "Babu franshisoci da aka zaɓa",
+    "buyPremium": "Sayi Premium",
+    "buyButton": "Sayi",
+    "removeAds": "Cire dukkan talla",
+    "removeMovieLimit": "Cire iyaka na ƙara fina-finai",
+    "cloudBackUp": "Ajiyar gajimare don fina-finanka",
+    "premiumSupport": "Taimakon Abokin Ciniki Premium",
+    "checkUnderratedOverrated": "Duba fina-finai da aka ƙimar da su ƙasa da yawa ko fiye"
 }

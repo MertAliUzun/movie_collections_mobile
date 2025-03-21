@@ -168,5 +168,12 @@
     "tags": "Clibeanna",
     "addTag": "Cuir Clibe Leis",
     "noTagsSelected": "Ní roghnaíodh aon chlibeanna",
-    "noFranchisesSelected": "Ní roghnaíodh aon fhraincis"
+    "noFranchisesSelected": "Ní roghnaíodh aon fhraincis",
+    "buyPremium": "Ceannaigh Premium",
+    "buyButton": "Ceannaigh",
+    "removeAds": "Bain gach fógra",
+    "removeMovieLimit": "Bain an teorainn scannán a chur leis",
+    "cloudBackUp": "Cóipeáil i gcruthúchán scamall do do scannáin",
+    "premiumSupport": "Tacaíocht do chustaiméirí Premium",
+    "checkUnderratedOverrated": "Seiceáil scannáin faoi-mheasaithe agus os-mheasaithe"
 }

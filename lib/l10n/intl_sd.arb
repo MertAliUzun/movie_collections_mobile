@@ -168,5 +168,12 @@
     "tags": "ٽئگس",
     "addTag": "ٽئگ شامل ڪريو",
     "noTagsSelected": "ڪو به ٽئگ چونڊيو ناهي",
-    "noFranchisesSelected": "ڪو به فرينچائز چونڊيو ناهي"
+    "noFranchisesSelected": "ڪو به فرينچائز چونڊيو ناهي",
+    "buyPremium": "پريميئم خريد ڪريو",
+    "buyButton": "خريد ڪريو",
+    "removeAds": "سڀ اشتهار هٽايو",
+    "removeMovieLimit": "فلم شامل ڪرڻ جي حد هٽايو",
+    "cloudBackUp": "توهان جي فلمن لاءِ ڪلائوڊ بيڪ اپ",
+    "premiumSupport": "پريميئم ڪسٽمر سپورٽ",
+    "checkUnderratedOverrated": "گهٽ درجابندي ۽ وڌ ۾ وڌ درجابندي واري فلمن کي چيڪ ڪريو"
 }

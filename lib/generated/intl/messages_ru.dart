@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Покупка)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Купить"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Купить Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Отмена выбора файла."),
@@ -57,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карточка"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, проверьте ваше подключение к интернету!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Проверьте недооцененные и переоцененные фильмы"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Резервное копирование в облаке для ваших фильмов"),
         "collection": MessageLookupByLibrary.simpleMessage("Коллекция"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Тип коллекции"),
         "comedy": MessageLookupByLibrary.simpleMessage("Комедия"),
@@ -184,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Популярен для"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Премиум поддержка клиентов"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Нажмите, чтобы выбрать постер фильма"),
         "productionCompanies":
@@ -193,6 +201,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Дата релиза: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Год релиза"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Удалить все объявления"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Удалить ограничение на добавление фильмов"),
         "rent": MessageLookupByLibrary.simpleMessage("(Аренда)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, вернитесь на предыдущий экран"),

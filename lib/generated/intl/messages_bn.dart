@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("বর্ধমান ক্রমে"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("বাজেট: "),
         "buy": MessageLookupByLibrary.simpleMessage("(কেনা)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("কিনুন"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("প্রিমিয়াম কিনুন"),
         "cancel": MessageLookupByLibrary.simpleMessage("বাতিল করুন"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "ফাইল নির্বাচন বাতিল করা হয়েছে।"),
@@ -49,6 +51,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("কার্ড"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "ইন্টারনেট সংযোগ পরীক্ষা করুন!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "অধিক প্রশংসিত এবং কম প্রশংসিত মুভি চেক করুন"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "আপনার মুভির জন্য ক্লাউড ব্যাকআপ"),
         "collection": MessageLookupByLibrary.simpleMessage("সংগ্রহ"),
         "collectionType": MessageLookupByLibrary.simpleMessage("সংগ্রহের ধরন"),
         "comedy": MessageLookupByLibrary.simpleMessage("কৌতুক"),
@@ -152,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "অনুগ্রহ করে মুভির শিরোনাম লিখুন"),
         "plot": MessageLookupByLibrary.simpleMessage("কাহিনী"),
         "poster": MessageLookupByLibrary.simpleMessage("পোস্টার"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("প্রিমিয়াম কাস্টমার সাপোর্ট"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("পোস্টার নির্বাচন করতে টিপুন"),
         "productionCompanies":
@@ -162,6 +170,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("প্রকাশের তারিখ: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("প্রকাশের বছর"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("সব অ্যাড মুছে ফেলুন"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("ফিল্ম অ্যাড করার সীমা সরান"),
         "rent": MessageLookupByLibrary.simpleMessage("(ভাড়া)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("রাজস্ব: "),
         "romance": MessageLookupByLibrary.simpleMessage("রোমান্স"),

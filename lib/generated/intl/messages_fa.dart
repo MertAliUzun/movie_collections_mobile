@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("بلو-ری"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("بودجه: "),
         "buy": MessageLookupByLibrary.simpleMessage("(خرید)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("خرید"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("خرید Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("لغو"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("انتخاب فایل لغو شد."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("کارت"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "لطفاً اتصال اینترنت خود را بررسی کنید!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "بررسی فیلم‌های دست‌کم‌گرفته شده و اغراق‌شده"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "پشتیبان‌گیری ابری برای فیلم‌های شما"),
         "collection": MessageLookupByLibrary.simpleMessage("مجموعه"),
         "collectionType": MessageLookupByLibrary.simpleMessage("نوع مجموعه"),
         "comedy": MessageLookupByLibrary.simpleMessage("کمدی"),
@@ -177,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("خلاصه داستان"),
         "popularFor": MessageLookupByLibrary.simpleMessage("محبوب برای"),
         "poster": MessageLookupByLibrary.simpleMessage("پوستر"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("پشتیبانی مشتری Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "برای انتخاب پوستر فیلم فشار دهید"),
         "productionCompanies":
@@ -186,6 +194,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("تاریخ انتشار: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("سال انتشار"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("حذف تمام تبلیغات"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("حذف محدودیت افزودن فیلم"),
         "rent": MessageLookupByLibrary.simpleMessage("(اجاره)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("لطفاً به صفحه قبلی بازگردید"),

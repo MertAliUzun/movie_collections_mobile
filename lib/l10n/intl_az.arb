@@ -141,5 +141,12 @@
     "tags": "Etiketlər",
     "addTag": "Etiket Əlavə Et",
     "noTagsSelected": "Heç Bir Etiket Seçilməyib",
-    "noFranchisesSelected": "Heç Bir Françayz Seçilməyib"
+    "noFranchisesSelected": "Heç Bir Françayz Seçilməyib",
+    "buyPremium": "Premium Al",
+    "buyButton": "Al",
+    "removeAds": "Bütün Reklamları Sil",
+    "removeMovieLimit": "Film Əlavə Etmə Limitini Sil",
+    "cloudBackUp": "Filmlərin Üçün Bulud Yedəklənməsi",
+    "premiumSupport": "Premium Müştəri Dəstəyi",
+    "checkUnderratedOverrated": "Dəyəri Aşağı və Yüksək Qiymətləndirilmiş Filmləri Yoxla"
 }

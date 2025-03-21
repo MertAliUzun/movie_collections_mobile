@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Rritëse"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Buxheti: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Bli)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Blej"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Blej Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Anulo"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Përzgjedhja e skedarit u anulua."),
@@ -47,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kartë"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Ju lutem, kontrolloni lidhjen tuaj me internetin!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Kontrollo filmat e nënvlerësuar dhe të mbivlerësuar"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Rezervë në re për filmat tuaj"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksion"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Lloji i Koleksionit"),
@@ -151,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ju lutem shkruani titullin e filmit"),
         "plot": MessageLookupByLibrary.simpleMessage("Përmbledhja"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Përkrahje Premium për klientët"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Kliko për të zgjedhur posteren e filmit"),
         "productionCompanies":
@@ -163,6 +171,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Data e Publikimit: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Viti i Publikimit"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Heq të gjitha reklamat"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Heq kufizimin e shtimit të filmave"),
         "rent": MessageLookupByLibrary.simpleMessage("(Qira)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Të ardhurat: "),
         "romance": MessageLookupByLibrary.simpleMessage("Romancë"),

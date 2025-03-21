@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budjetti: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Osta)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Osta"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Osta Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Peruuta"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Tiedoston valinta peruttiin."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kortti"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Tarkista internet-yhteytesi!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Tarkista aliarvostetut ja yliarvostetut elokuvat"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Pilvipalvelun varmuuskopio elokuvillesi"),
         "collection": MessageLookupByLibrary.simpleMessage("Kokoelma"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kokoelman tyyppi"),
@@ -182,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Suosittu seuraaville"),
         "poster": MessageLookupByLibrary.simpleMessage("Juliste"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium-asiakastuki"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Paina valitaksesi elokuvan julisteen"),
         "productionCompanies":
@@ -193,6 +201,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Julkaisupäivämäärä: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Julkaisuvuosi"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Poista kaikki mainokset"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Poista elokuvien lisäämisraja"),
         "rent": MessageLookupByLibrary.simpleMessage("(Vuokraa)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Palaa edelliselle näytölle"),

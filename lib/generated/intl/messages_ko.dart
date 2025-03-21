@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("예산: "),
         "buy": MessageLookupByLibrary.simpleMessage("(구매)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("구매"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("프리미엄 구매"),
         "cancel": MessageLookupByLibrary.simpleMessage("취소"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("파일 선택이 취소되었습니다."),
@@ -51,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("카드"),
         "checkInternet":
             MessageLookupByLibrary.simpleMessage("인터넷 연결을 확인해주세요!"),
+        "checkUnderratedOverrated":
+            MessageLookupByLibrary.simpleMessage("과소평가 및 과대평가된 영화 확인"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage("영화용 클라우드 백업"),
         "collection": MessageLookupByLibrary.simpleMessage("컬렉션"),
         "collectionType": MessageLookupByLibrary.simpleMessage("컬렉션 유형"),
         "comedy": MessageLookupByLibrary.simpleMessage("코미디"),
@@ -166,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("줄거리"),
         "popularFor": MessageLookupByLibrary.simpleMessage("인기 있는 작품"),
         "poster": MessageLookupByLibrary.simpleMessage("포스터"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage("프리미엄 고객 지원"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("영화 포스터를 선택하려면 누르세요"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("제작사들"),
@@ -173,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDate": MessageLookupByLibrary.simpleMessage("개봉일"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("개봉일: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("개봉 연도"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("모든 광고 제거"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage("영화 추가 제한 해제"),
         "rent": MessageLookupByLibrary.simpleMessage("(대여)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("이전 화면으로 돌아가세요"),

@@ -168,5 +168,12 @@
     "tags": "Tunnisteet",
     "addTag": "Lisää tunniste",
     "noTagsSelected": "Ei tunnisteita valittu",
-    "noFranchisesSelected": "Ei franchisekoita valittu"
+    "noFranchisesSelected": "Ei franchisekoita valittu",
+    "buyPremium": "Osta Premium",
+    "buyButton": "Osta",
+    "removeAds": "Poista kaikki mainokset",
+    "removeMovieLimit": "Poista elokuvien lisäämisraja",
+    "cloudBackUp": "Pilvipalvelun varmuuskopio elokuvillesi",
+    "premiumSupport": "Premium-asiakastuki",
+    "checkUnderratedOverrated": "Tarkista aliarvostetut ja yliarvostetut elokuvat"
 }

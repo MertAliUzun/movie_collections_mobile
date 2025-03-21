@@ -168,5 +168,12 @@
     "tags": "ٹیگ",
     "addTag": "ٹیگ شامل کریں",
     "noTagsSelected": "کوئی ٹیگ منتخب نہیں کیے گئے",
-    "noFranchisesSelected": "کوئی فرنچائز منتخب نہیں کی گئی"
+    "noFranchisesSelected": "کوئی فرنچائز منتخب نہیں کی گئی",
+    "buyPremium": "پریمیئم خریدیں",
+    "buyButton": "خریدیں",
+    "removeAds": "تمام اشتہارات ہٹائیں",
+    "removeMovieLimit": "فلم شامل کرنے کی حد ہٹائیں",
+    "cloudBackUp": "آپ کی فلموں کے لیے کلاؤڈ بیک اپ",
+    "premiumSupport": "پریمیئم کسٹمر سپورٹ",
+    "checkUnderratedOverrated": "کم اور زیادہ جائزہ والی فلموں کی جانچ کریں"
 }

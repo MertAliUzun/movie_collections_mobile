@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Tilføj tag",
     "noTagsSelected": "Ingen tags valgt",
-    "noFranchisesSelected": "Ingen franchises valgt"
+    "noFranchisesSelected": "Ingen franchises valgt",
+    "buyPremium": "Køb Premium",
+    "buyButton": "Køb",
+    "removeAds": "Fjern alle annoncer",
+    "removeMovieLimit": "Fjern grænsen for at tilføje film",
+    "cloudBackUp": "Cloud-sikkerhedskopiering til dine film",
+    "premiumSupport": "Premium kundesupport",
+    "checkUnderratedOverrated": "Tjek undervurderede og overvurderede film"
 }

@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Belanjawan: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Beli)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Beli"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Beli Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Batal"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Pemilihan fail dibatalkan."),
@@ -55,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kad"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Sila semak sambungan internet anda!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Periksa filem yang kurang dihargai dan terlalu dihargai"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Sandaran cloud untuk filem anda"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksi"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Jenis Koleksi"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedi"),
@@ -182,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popular Untuk"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Sokongan pelanggan Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Tekan untuk memilih poster filem"),
         "productionCompanies":
@@ -191,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Tarikh Keluaran: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Tahun Keluaran"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("Buang semua iklan"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Buang had penambahan filem"),
         "rent": MessageLookupByLibrary.simpleMessage("(Sewa)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Sila kembali ke skrin sebelumnya"),

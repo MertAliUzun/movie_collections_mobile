@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Tag hinzufügen",
     "noTagsSelected": "Keine Tags ausgewählt",
-    "noFranchisesSelected": "Keine Franchises ausgewählt"
+    "noFranchisesSelected": "Keine Franchises ausgewählt",
+    "buyPremium": "Premium kaufen",
+    "buyButton": "Kaufen",
+    "removeAds": "Alle Anzeigen entfernen",
+    "removeMovieLimit": "Filme hinzufügen Limit entfernen",
+    "cloudBackUp": "Cloud-Backup für deine Filme",
+    "premiumSupport": "Premium Kundenservice",
+    "checkUnderratedOverrated": "Über- und unterbewertete Filme überprüfen"
 }

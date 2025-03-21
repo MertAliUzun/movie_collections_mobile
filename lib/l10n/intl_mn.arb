@@ -168,5 +168,12 @@
     "tags": "Тагууд",
     "addTag": "Таг нэмэх",
     "noTagsSelected": "Таг сонгогдоогүй",
-    "noFranchisesSelected": "Франшиз сонгогдоогүй"
+    "noFranchisesSelected": "Франшиз сонгогдоогүй",
+    "buyPremium": "Premium худалдан авах",
+    "buyButton": "Худалдан авах",
+    "removeAds": "Бүх зар сурталчилгааг устгах",
+    "removeMovieLimit": "Кино нэмэх хязгаарлалт устгах",
+    "cloudBackUp": "Таны кинод зориулсан үүлний нөөц",
+    "premiumSupport": "Premium үйлчлүүлэгчийн дэмжлэг",
+    "checkUnderratedOverrated": "Дутуу үнэлэгдсэн болон хэтэрхий үнэлэгдсэн киног шалгах"
 }

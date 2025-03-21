@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Ibhajethi: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Thenga)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Thenga"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Thenga i-Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Khansela"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Ukukhetha ifayela kukhanseliwe."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Ikhadi"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Sicela uhlole uxhumano lwakho lwe-inthanethi!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Hlola amafilimu anenani eliphansi noma eliphezulu"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "I-backup ye-Cloud yamafilm wakho"),
         "collection": MessageLookupByLibrary.simpleMessage("Ukuqoqwa"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Uhlobo Lokuqoqwa"),
@@ -184,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Uhlaka"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Ethandwa Ngayo"),
         "poster": MessageLookupByLibrary.simpleMessage("Iphosta"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Ukusekela Kwezokuthengisa Okuzenzakalelayo"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Cindezela ukukhetha iphosta yefilimu"),
         "productionCompanies":
@@ -195,6 +203,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Usuku Lokukhululwa: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Unyaka Lokukhululwa"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("Susa wonke ama-ads"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Susa umkhawulo wokwengeza amafilimu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ukuqasha)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Sicela ubuyele esikrinini esedlule"),

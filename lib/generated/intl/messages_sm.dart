@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "budgetColon":
             MessageLookupByLibrary.simpleMessage("Aso Fa\'atufuga: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Fa\'atau)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Fa\'atau"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Fa\'atau Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Taofia"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Ua taofia le filifiliga faila."),
@@ -61,6 +63,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Karta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Fa\'amalie atu, siaki lau feso\'ota\'iga i le initaneti!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Siaki ata o lo\'o fa\'amaonia ma le fa\'atau i luga"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Fa\'amaoniga o ata i le \'au\' a le ao"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleke"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Tasi o Fa\'amaoniga"),
@@ -194,6 +200,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Fa\'amaoniga"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Fa\'avae mo"),
         "poster": MessageLookupByLibrary.simpleMessage("Polokalame"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Tautua Fa\'atau Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Fa\'amaonia ata fa\'atekinolosi"),
         "productionCompanies":
@@ -205,6 +213,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Aso tatalaina: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Tausaga Fa\'asa\'o"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Ave uma fa\'asalalauga"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Ave le tapula\'a o le fa\'aopoopoina o ata tetele"),
         "rent": MessageLookupByLibrary.simpleMessage("(Taumafa)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Fa\'ava e taunu\'u i fa\'ata\'ita\'iga muamua"),

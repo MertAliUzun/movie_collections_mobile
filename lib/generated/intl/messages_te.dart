@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("బడ్జెట్: "),
         "buy": MessageLookupByLibrary.simpleMessage("(కొనుగోలు)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("కొనండి"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("ప్రీమియం కొనండి"),
         "cancel": MessageLookupByLibrary.simpleMessage("రద్దు చేయండి"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "ఫైల్ ఎంచుకోవడం రద్దు చేయబడింది."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("కార్డు"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "దయచేసి మీ ఇంటర్నెట్ కనెక్షన్‌ని తనిఖీ చేయండి!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "తక్కువగా అంచనా వేసిన మరియు అధికంగా అంచనా వేసిన చిత్రాలను తనిఖీ చేయండి"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("మీ చిత్రాలకు క్లౌడ్ బ్యాకప్"),
         "collection": MessageLookupByLibrary.simpleMessage("సేకరణ"),
         "collectionType": MessageLookupByLibrary.simpleMessage("సేకరణ రకం"),
         "comedy": MessageLookupByLibrary.simpleMessage("కామెడీ"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("కథ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("ప్రసిద్ధి కోసం"),
         "poster": MessageLookupByLibrary.simpleMessage("పోస్టర్"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("ప్రీమియం కస్టమర్ సపోర్ట్"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "సినిమా పోస్టర్ ఎంచుకోవడానికి క్లిక్ చేయండి"),
         "productionCompanies":
@@ -192,6 +200,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("విడుదల తేదీ: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("విడుదల సంవత్సరం"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("అన్ని యాడ్స్ తీసివేయండి"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "చిత్రం చేర్చు పరిమితి తొలగించండి"),
         "rent": MessageLookupByLibrary.simpleMessage("(అద్దె)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "దయచేసి మునుపటి స్క్రీన్‌కు తిరిగి వెళ్లండి"),

@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Akteurs"),
         "add": MessageLookupByLibrary.simpleMessage("Voeg By"),
         "addActor": MessageLookupByLibrary.simpleMessage("Voeg Akteur By"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Voeg Franchise By"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Voeg Genre By"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Voeg Fliek By"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Voeg Nuwe Fliek By"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Voeg Produksiemaatskappy By"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Voeg Etiket By"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Voeg Skrywer By"),
         "adventure": MessageLookupByLibrary.simpleMessage("Avontuur"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
@@ -46,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Begroting: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Koop)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Koop"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Koop Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Kanselleer"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Kies van lêer is gekanselleer."),
@@ -53,11 +58,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kaart"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Kontroleer asseblief jou internetverbinding!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Kontroleer Onderskatte en Oorskatte Flieks"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Wolkrugsteun Vir Jou Flieks"),
         "collection": MessageLookupByLibrary.simpleMessage("Versameling"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Versamelingstipe"),
         "comedy": MessageLookupByLibrary.simpleMessage("Komedie"),
         "company": MessageLookupByLibrary.simpleMessage("Maatskappy"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Skeppingsdatum"),
         "crime": MessageLookupByLibrary.simpleMessage("Misdaad"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV-lêer suksesvol geskep: "),
@@ -107,6 +117,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Mislukking!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasie"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Groepeer volgens"),
@@ -151,6 +163,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Geen Akteurs Gekies Nie"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Geen Maatskappye Gekies Nie"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Geen Franchises Gekies Nie"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Geen Genres Gekies Nie"),
         "noIdToken":
@@ -163,6 +177,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Geen flieks vir hierdie maatskappy gevind nie"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Geen toestemmings vir stoorruimte gegee nie."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Geen Etikette Gekies Nie"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Geen Titel"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Geen Skrywers Gekies Nie"),
@@ -175,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Verhaal"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Gewild Vir"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakkaat"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium Kliëntediens"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Druk om fliekplakkaat te kies"),
         "productionCompanies":
@@ -184,6 +202,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Vrygestel Datum: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Vrylaatjaar"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Verwyder Alle Advertensies"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Verwyder Fliek Voeg Beperking"),
         "rent": MessageLookupByLibrary.simpleMessage("(Huur)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Gaan asseblief terug na die vorige skerm"),
@@ -217,6 +239,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Suksesvol!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" suksesvol verwyder"),
+        "tag": MessageLookupByLibrary.simpleMessage("Etiket"),
+        "tags": MessageLookupByLibrary.simpleMessage("Etikette"),
         "thriller": MessageLookupByLibrary.simpleMessage("Riller"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV-fliek"),

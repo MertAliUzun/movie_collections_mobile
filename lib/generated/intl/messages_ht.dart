@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bidjè: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Achte)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Achte"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Achte Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Anile"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Anile chwazi fichye."),
@@ -53,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kat"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Tanpri tcheke koneksyon entènèt ou!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Tcheke sinema ki pa byen evalye ak sinema ki gen twòp evalyasyon"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Backup nan nwaj pou sinema ou"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksyon"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Kalite Koleksyon"),
@@ -175,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popilè Pou"),
         "poster": MessageLookupByLibrary.simpleMessage("Postè"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Sipò kliyan Premium"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Peze pou chwazi postè fim"),
         "productionCompanies":
@@ -183,6 +191,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dat Lage"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("Dat Lage: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Ane Lage"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Retire tout piblisite"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Retire limit ajoute sinema"),
         "rent": MessageLookupByLibrary.simpleMessage("(Lwe)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Tanpri retounen nan ekran anvan an"),

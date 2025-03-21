@@ -168,5 +168,12 @@
     "tags": "Oznake",
     "addTag": "Dodaj oznaku",
     "noTagsSelected": "Nijedna oznaka nije odabrana",
-    "noFranchisesSelected": "Nijedna franšiza nije odabrana"
+    "noFranchisesSelected": "Nijedna franšiza nije odabrana",
+    "buyPremium": "Kupite Premium",
+    "buyButton": "Kupite",
+    "removeAds": "Uklonite sve reklame",
+    "removeMovieLimit": "Uklonite ograničenje za dodavanje filmova",
+    "cloudBackUp": "Oblačno sigurnosno kopiranje za vaše filmove",
+    "premiumSupport": "Premium korisnička podrška",
+    "checkUnderratedOverrated": "Provjerite nedovoljno i previše cijenjene filmove"
 }

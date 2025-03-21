@@ -168,6 +168,12 @@
     "tags": "Тегләр",
     "addTag": "Тег нэме",
     "noTagsSelected": "Тегләрне сайланмады",
-    "noFranchisesSelected": "Франшизаларне сайланмады"
-
+    "noFranchisesSelected": "Франшизаларне сайланмады",
+    "buyPremium": "Kome Premium",
+    "buyButton": "Kome",
+    "removeAds": "Remové tur reklamanan",
+    "removeMovieLimit": "Remové limít di pone película",
+    "cloudBackUp": "Copia di seguridad pa bo película den nube",
+    "premiumSupport": "Soporte di cliente Premium",
+    "checkUnderratedOverrated": "Revisa película subestimá i sobrestimá"
 }

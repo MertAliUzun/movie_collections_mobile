@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Купити)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Купити"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Купити Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Скасувати"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Вибір файлу скасовано."),
@@ -55,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Карта"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Перевірте ваше інтернет-з\'єднання!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Перевірте недооцінені та переоцінені фільми"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Резервне копіювання в хмарі для ваших фільмів"),
         "collection": MessageLookupByLibrary.simpleMessage("Колекція"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Тип колекції"),
         "comedy": MessageLookupByLibrary.simpleMessage("Комедія"),
@@ -182,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Популярний за"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Преміум підтримка клієнтів"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Натисніть, щоб вибрати постер фільму"),
         "productionCompanies":
@@ -191,6 +199,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Дата випуску: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Рік випуску"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Прибрати всі реклами"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Прибрати обмеження на додавання фільмів"),
         "rent": MessageLookupByLibrary.simpleMessage("(Оренда)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Будь ласка, поверніться на попередній екран"),

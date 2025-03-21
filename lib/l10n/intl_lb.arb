@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Tag derbäisetzen",
     "noTagsSelected": "Keng Tags ausgewielt",
-    "noFranchisesSelected": "Keng Franchisen ausgewielt"
+    "noFranchisesSelected": "Keng Franchisen ausgewielt",
+    "buyPremium": "Pērciet Premium",
+    "buyButton": "Pērciet",
+    "removeAds": "Noņemiet visas reklāmas",
+    "removeMovieLimit": "Noņemiet filmu pievienošanas ierobežojumus",
+    "cloudBackUp": "Mākoņkrātuve jūsu filmām",
+    "premiumSupport": "Premium klientu atbalsts",
+    "checkUnderratedOverrated": "Pārbaudiet nepietiekami novērtētās un pārvērtētās filmas"
 }

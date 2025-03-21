@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Jàpp)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Bule"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Bule Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Bañ"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("File wuñuñu."),
@@ -55,6 +57,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Carte"),
         "checkInternet":
             MessageLookupByLibrary.simpleMessage("Waxtu internet bi xoolal!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Nekkaal ci film yu jàpp ne dañu baax te yu jàpp ne dañu"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Coppitee bu rëy ngir seen xalaat"),
         "collection": MessageLookupByLibrary.simpleMessage("Dëppoo"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Collection Type"),
@@ -178,6 +184,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popularité ci"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Jàmm ci ñuul ci jàmm bu buum"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Poster wuñuñu."),
         "productionCompanies":
@@ -187,6 +195,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Bésu Génération: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Atu Génération"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Wutëël ñepp reklamaan"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Wutëël xéewal bu jëm ci séy"),
         "rent": MessageLookupByLibrary.simpleMessage("(Loyer)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Screen bu ñu ko bañ."),

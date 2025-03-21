@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Add Tag",
     "noTagsSelected": "No Tags Selected",
-    "noFranchisesSelected": "No Franchises Selected"
+    "noFranchisesSelected": "No Franchises Selected",
+    "buyPremium": "Buy Premium",
+    "buyButton": "Buy",
+    "removeAds": "Remove All Ads",
+    "removeMovieLimit": "Remove Movie Adding Limit",
+    "cloudBackUp": "Cloud BackUp for Your Movies",
+    "premiumSupport": "Premium Customer Support",
+    "checkUnderratedOverrated": "Check Underrated and Overrated Movies"
 }

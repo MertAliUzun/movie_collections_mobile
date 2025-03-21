@@ -168,5 +168,12 @@
     "tags": "タグ",
     "addTag": "タグを追加",
     "noTagsSelected": "タグが選択されていません",
-    "noFranchisesSelected": "フランチャイズが選択されていません"
+    "noFranchisesSelected": "フランチャイズが選択されていません",
+    "buyPremium": "プレミアムを購入",
+    "buyButton": "購入",
+    "removeAds": "すべての広告を削除",
+    "removeMovieLimit": "映画追加の制限を解除",
+    "cloudBackUp": "あなたの映画のクラウドバックアップ",
+    "premiumSupport": "プレミアムカスタマーサポート",
+    "checkUnderratedOverrated": "過小評価と過大評価された映画をチェック"
 }

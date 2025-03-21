@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Pressupost: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Comprar)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Comprar"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Comprar Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel·lar"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "S\'ha cancel·lat l\'elecció del fitxer."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Targeta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Si us plau, comprova la teva connexió a Internet!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Comprova les pel·lícules infravalorades i sobrevalorades"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Còpia de seguretat al núvol per a les teves pel·lícules"),
         "collection": MessageLookupByLibrary.simpleMessage("Col·lecció"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Tipus de col·lecció"),
@@ -186,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Argument"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popular per"),
         "poster": MessageLookupByLibrary.simpleMessage("Cartell"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Suport Premium per als clients"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Prem per triar el cartell de la pel·lícula"),
         "productionCompanies":
@@ -198,6 +206,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Data de llançament: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Any de llançament"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Eliminar tots els anuncis"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Eliminar límit d\'afegir pel·lícules"),
         "rent": MessageLookupByLibrary.simpleMessage("(Lloguer)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Si us plau, torna a la pantalla anterior"),

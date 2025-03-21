@@ -141,5 +141,12 @@
     "tags": "Taguw",
     "addTag": "Tagu boloki",
     "noTagsSelected": "Tagu tɛ bɛ sɛbɛ",
-    "noFranchisesSelected": "Fransizi tɛ bɛ sɛbɛ"
+    "noFranchisesSelected": "Fransizi tɛ bɛ sɛbɛ",
+    "buyPremium": "Sɔ Premium",
+    "buyButton": "Sɔ",
+    "removeAds": "Tɔɔrɔ Kɛlɛbɛ Ka Furu",
+    "removeMovieLimit": "Tɔɔrɔ Fɔlɔ Kɔrɔnyen Kɛnɛni",
+    "cloudBackUp": "Sɛbɛ Kɔlɔ Furu Kɔsɛn Sɔrɔ",
+    "premiumSupport": "Premium Tuma Furu Ka Sɛbɛ",
+    "checkUnderratedOverrated": "Tɔrɔlɛ Sira Kɛnɛ Sɛbɛlɛ Tɔrɔ Furu"
 }

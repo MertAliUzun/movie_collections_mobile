@@ -168,5 +168,12 @@
     "tags": "टैग्स",
     "addTag": "टैग जोड़ें",
     "noTagsSelected": "कोई टैग चयनित नहीं है",
-    "noFranchisesSelected": "कोई फ्रेंचाइजी चयनित नहीं है"
+    "noFranchisesSelected": "कोई फ्रेंचाइजी चयनित नहीं है",
+    "buyPremium": "प्रीमियम खरीदें",
+    "buyButton": "खरीदें",
+    "removeAds": "सभी विज्ञापनों को हटाएं",
+    "removeMovieLimit": "फिल्म जोड़ने की सीमा हटाएं",
+    "cloudBackUp": "आपकी फिल्मों के लिए क्लाउड बैकअप",
+    "premiumSupport": "प्रीमियम ग्राहक सहायता",
+    "checkUnderratedOverrated": "कम आंकी गई और अधिक आंकी गई फिल्मों की जांच करें"
 }

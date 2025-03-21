@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Buiséad: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Ceannaigh)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Ceannaigh"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Ceannaigh Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cealaigh"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Cealaíodh roghnú comhad."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Cárta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Le do thoil seiceáil do nasc idirlín!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Seiceáil scannáin faoi-mheasaithe agus os-mheasaithe"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Cóipeáil i gcruthúchán scamall do do scannáin"),
         "collection": MessageLookupByLibrary.simpleMessage("Cnuasach"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Cineál Cnuasach"),
@@ -185,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Áirítear ar a bhfuil tóir"),
         "poster": MessageLookupByLibrary.simpleMessage("Poistéir"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Tacaíocht do chustaiméirí Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Brúigh chun poistéar an scannáin a roghnú"),
         "productionCompanies":
@@ -194,6 +202,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Dáta Scaoilte: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Bliain Scaoilte"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("Bain gach fógra"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Bain an teorainn scannán a chur leis"),
         "rent": MessageLookupByLibrary.simpleMessage("(Cuir i gcrích)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Le do thoil filleadh ar an scáileán roimhe seo"),

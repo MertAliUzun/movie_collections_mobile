@@ -168,5 +168,12 @@
     "tags": "ნიშანები",
     "addTag": "ნიშნის დამატება",
     "noTagsSelected": "არ არის არჩეული ნიშანი",
-    "noFranchisesSelected": "არ არის არჩეული ფრანჩაიზი"
+    "noFranchisesSelected": "არ არის არჩეული ფრანჩაიზი",
+    "buyPremium": "შეიძინეთ Premium",
+    "buyButton": "შეიძინეთ",
+    "removeAds": "ამოიღეთ ყველა რეკლამა",
+    "removeMovieLimit": "ამოიღეთ ფილმის დამატების შეზღუდვა",
+    "cloudBackUp": "ფილმებისთვის ღრუბლის სარეზერვო ასლი",
+    "premiumSupport": "პრემიუმ მომხმარებლის მხარდაჭერა",
+    "checkUnderratedOverrated": "ამოწმეთ underrate და overrated ფილმები"
 }

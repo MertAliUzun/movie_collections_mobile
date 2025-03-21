@@ -168,5 +168,12 @@
     "tags": "แท็ก",
     "addTag": "เพิ่มแท็ก",
     "noTagsSelected": "ไม่ได้เลือกแท็กใดๆ",
-    "noFranchisesSelected": "ไม่ได้เลือกแฟรนไชส์ใดๆ"
+    "noFranchisesSelected": "ไม่ได้เลือกแฟรนไชส์ใดๆ",
+    "buyPremium": "ซื้อพรีเมียม",
+    "buyButton": "ซื้อ",
+    "removeAds": "ลบโฆษณาทั้งหมด",
+    "removeMovieLimit": "ลบข้อจำกัดการเพิ่มหนัง",
+    "cloudBackUp": "สำรองข้อมูลบนคลาวด์สำหรับภาพยนตร์ของคุณ",
+    "premiumSupport": "การสนับสนุนลูกค้าพรีเมียม",
+    "checkUnderratedOverrated": "ตรวจสอบภาพยนตร์ที่ประเมินต่ำเกินไปและสูงเกินไป"
 }

@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Orçamento: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Compra)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Comprar"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Comprar Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Cancelado ao escolher o arquivo."),
@@ -57,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Cartão"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Por favor, verifique sua conexão com a internet!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Verifique filmes subestimados e superestimados"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Backup na nuvem para seus filmes"),
         "collection": MessageLookupByLibrary.simpleMessage("Coleção"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Tipo de Coleção"),
@@ -186,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Enredo"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popular por"),
         "poster": MessageLookupByLibrary.simpleMessage("Pôster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Suporte ao cliente Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pressione para escolher o pôster do filme"),
         "productionCompanies":
@@ -197,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Data de Lançamento: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Ano de Lançamento"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Remover todos os anúncios"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Remover limite de adição de filmes"),
         "rent": MessageLookupByLibrary.simpleMessage("(Aluguel)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Por favor, volte para a tela anterior"),

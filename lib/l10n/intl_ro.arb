@@ -168,5 +168,12 @@
     "tags": "Etichete",
     "addTag": "Adaugă etichetă",
     "noTagsSelected": "Nicio etichetă selectată",
-    "noFranchisesSelected": "Nicio franciză selectată"
+    "noFranchisesSelected": "Nicio franciză selectată",
+    "buyPremium": "Cumpără Premium",
+    "buyButton": "Cumpără",
+    "removeAds": "Elimină toate reclamele",
+    "removeMovieLimit": "Elimină limita de adăugare a filmelor",
+    "cloudBackUp": "Backup în cloud pentru filmele tale",
+    "premiumSupport": "Suport Premium pentru clienți",
+    "checkUnderratedOverrated": "Verifică filmele subapreciate și supraevaluate"
 }

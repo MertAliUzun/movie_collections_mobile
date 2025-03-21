@@ -168,5 +168,12 @@
     "tags": "태그",
     "addTag": "태그 추가",
     "noTagsSelected": "선택된 태그가 없습니다",
-    "noFranchisesSelected": "선택된 프랜차이즈가 없습니다"
+    "noFranchisesSelected": "선택된 프랜차이즈가 없습니다",
+    "buyPremium": "프리미엄 구매",
+    "buyButton": "구매",
+    "removeAds": "모든 광고 제거",
+    "removeMovieLimit": "영화 추가 제한 해제",
+    "cloudBackUp": "영화용 클라우드 백업",
+    "premiumSupport": "프리미엄 고객 지원",
+    "checkUnderratedOverrated": "과소평가 및 과대평가된 영화 확인"
 }

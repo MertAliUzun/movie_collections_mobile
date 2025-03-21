@@ -168,5 +168,12 @@
     "tags": "Tag",
     "addTag": "Aggiungi tag",
     "noTagsSelected": "Nessun tag selezionato",
-    "noFranchisesSelected": "Nessun franchising selezionato"
+    "noFranchisesSelected": "Nessun franchising selezionato",
+    "buyPremium": "Acquista Premium",
+    "buyButton": "Acquista",
+    "removeAds": "Rimuovi tutte le pubblicità",
+    "removeMovieLimit": "Rimuovi il limite di aggiunta film",
+    "cloudBackUp": "Backup cloud per i tuoi film",
+    "premiumSupport": "Supporto clienti Premium",
+    "checkUnderratedOverrated": "Controlla i film sottovalutati e sopravvalutati"
 }

@@ -168,5 +168,12 @@
     "tags": "Tag",
     "addTag": "Tambah Tag",
     "noTagsSelected": "Teu Aya Tag Anu Kapilih",
-    "noFranchisesSelected": "Teu Aya Franchise Anu Kapilih"
+    "noFranchisesSelected": "Teu Aya Franchise Anu Kapilih",
+    "buyPremium": "Mésér Premium",
+    "buyButton": "Mésér",
+    "removeAds": "Hapus sadaya Iklan",
+    "removeMovieLimit": "Hapus Watesan Nambahkeun Film",
+    "cloudBackUp": "Cadangan Awan pikeun Film anjeun",
+    "premiumSupport": "Dukungan Pelanggan Premium",
+    "checkUnderratedOverrated": "Periksa Film anu Dianggap Kurang atawa Kaleuleuwihi"
 }

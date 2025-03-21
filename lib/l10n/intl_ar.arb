@@ -141,5 +141,12 @@
     "tags": "وسوم",
     "addTag": "إضافة وسم",
     "noTagsSelected": "لم يتم تحديد أي وسوم",
-    "noFranchisesSelected": "لم يتم تحديد أي امتيازات"
+    "noFranchisesSelected": "لم يتم تحديد أي امتيازات",
+    "buyPremium": "شراء البريميوم",
+    "buyButton": "شراء",
+    "removeAds": "إزالة جميع الإعلانات",
+    "removeMovieLimit": "إزالة حد إضافة الأفلام",
+    "cloudBackUp": "نسخة احتياطية سحابية لأفلامك",
+    "premiumSupport": "دعم العملاء المميز",
+    "checkUnderratedOverrated": "التحقق من الأفلام المُقللة من قيمتها والمُبالغ فيها"
 }

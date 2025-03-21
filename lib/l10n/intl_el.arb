@@ -168,5 +168,12 @@
     "tags": "Ετικέτες",
     "addTag": "Προσθήκη ετικέτας",
     "noTagsSelected": "Δεν έχουν επιλεγεί ετικέτες",
-    "noFranchisesSelected": "Δεν έχουν επιλεγεί γραφεία"
+    "noFranchisesSelected": "Δεν έχουν επιλεγεί γραφεία",
+    "buyPremium": "Αγοράστε Premium",
+    "buyButton": "Αγοράστε",
+    "removeAds": "Αφαιρέστε όλες τις διαφημίσεις",
+    "removeMovieLimit": "Αφαιρέστε το όριο προσθήκης ταινιών",
+    "cloudBackUp": "Αντίγραφο ασφαλείας στο cloud για τις ταινίες σας",
+    "premiumSupport": "Υποστήριξη πελατών Premium",
+    "checkUnderratedOverrated": "Ελέγξτε τις υποτιμημένες και υπερτιμημένες ταινίες"
 }

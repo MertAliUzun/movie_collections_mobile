@@ -168,5 +168,12 @@
     "tags": "တိုင်များ",
     "addTag": "တိုင်ထည့်ရန်",
     "noTagsSelected": "တိုင်မရွေးချယ်ရသေးပါ",
-    "noFranchisesSelected": "ဖရန်ချိုင်းစီမရွေးချယ်ရသေးပါ"
+    "noFranchisesSelected": "ဖရန်ချိုင်းစီမရွေးချယ်ရသေးပါ",
+    "buyPremium": "Premium ကိုဝယ်ယူပါ",
+    "buyButton": "ဝယ်ယူပါ",
+    "removeAds": "ကြော်ငြာအားလုံးကိုဖယ်ရှားပါ",
+    "removeMovieLimit": "ရုပ်ရှင်ထည့်ရန် ကန့်သတ်ချက်ကိုဖယ်ရှားပါ",
+    "cloudBackUp": "သင့်ရုပ်ရှင်များအတွက်မိုးကူးထောက်ပံ့မှု",
+    "premiumSupport": "Premium ဖောက်သည်ထောက်ပံ့မှု",
+    "checkUnderratedOverrated": "နည်းထားထားသည့်နှင့် အများပြားထားသောရုပ်ရှင်များကိုစစ်ဆေးပါ"
 }

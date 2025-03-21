@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budžet: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Kupnja)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Kupite"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Kupite Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Otkaži"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Otkaženo odabiranje datoteke."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kartica"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Molimo provjerite vašu internetsku vezu!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Provjerite podcijenjene i precijenjene filmove"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Sigurnosna kopija na oblaku za vaše filmove"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekcija"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Vrsta kolekcije"),
@@ -180,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Radnja"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popularno za"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium korisnička podrška"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pritisnite za odabir postera filma"),
         "productionCompanies":
@@ -189,6 +197,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Datum izdanja: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Godina izdanja"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Uklonite sve reklame"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Uklonite ograničenje za dodavanje filmova"),
         "rent": MessageLookupByLibrary.simpleMessage("(Iznajmljivanje)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Molimo se vratite na prethodni ekran"),

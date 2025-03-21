@@ -141,5 +141,12 @@
     "tags": "Etiketak",
     "addTag": "Gehitu etiketa",
     "noTagsSelected": "Ez da etiketa bat ere aukeratu",
-    "noFranchisesSelected": "Ez da frantzia bat ere aukeratu"
+    "noFranchisesSelected": "Ez da frantzia bat ere aukeratu",
+    "buyPremium": "Erosi Premium",
+    "buyButton": "Erosi",
+    "removeAds": "Kendu iragarki guztiak",
+    "removeMovieLimit": "Film gehitzeko muga kendu",
+    "cloudBackUp": "Zure filmen hodeiko segurtasun kopia",
+    "premiumSupport": "Premium bezeroarentzako laguntza",
+    "checkUnderratedOverrated": "Aztertu azpimaratutako eta gehiegizko baloratutako filmak"
 }

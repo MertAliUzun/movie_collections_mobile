@@ -168,5 +168,12 @@
     "tags": "תגים",
     "addTag": "הוסף תג",
     "noTagsSelected": "לא נבחרו תגים",
-    "noFranchisesSelected": "לא נבחרו זיכיונות"
+    "noFranchisesSelected": "לא נבחרו זיכיונות",
+    "buyPremium": "קנה Premium",
+    "buyButton": "קנה",
+    "removeAds": "הסר את כל המודעות",
+    "removeMovieLimit": "הסר את הגבלת הוספת הסרטים",
+    "cloudBackUp": "גיבוי ענן עבור הסרטים שלך",
+    "premiumSupport": "תמיכה ללקוח פרימיום",
+    "checkUnderratedOverrated": "בדוק סרטים מתחת להערכה ומוערכים יותר מדי"
 }

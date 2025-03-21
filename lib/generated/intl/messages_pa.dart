@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("ਬਜਟ: "),
         "buy": MessageLookupByLibrary.simpleMessage("(ਖਰੀਦ)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("ਖਰੀਦੋ"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("ਪ੍ਰੀਮੀਅਮ ਖਰੀਦੋ"),
         "cancel": MessageLookupByLibrary.simpleMessage("ਰੱਦ ਕਰੋ"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("ਫਾਈਲ ਚੁਣਨ ਨੂੰ ਰੱਦ ਕੀਤਾ ਗਿਆ।"),
@@ -53,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("ਕਾਰਡ"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "ਘੱਟ ਮੁੱਲ ਕੀਤੀਆਂ ਅਤੇ ਵੱਧ ਮੁੱਲ ਕੀਤੀਆਂ ਫਿਲਮਾਂ ਦੀ ਜਾਂਚ ਕਰੋ"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "ਤੁਹਾਡੇ ਫਿਲਮਾਂ ਲਈ ਕਲਾਉਡ ਬੈਕਅਪ"),
         "collection": MessageLookupByLibrary.simpleMessage("ਕਲੈਕਸ਼ਨ"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("ਕਲੈਕਸ਼ਨ ਪ੍ਰਕਾਰ"),
@@ -180,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("ਕਹਾਣੀ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("ਪ੍ਰਸਿੱਧ ਲਈ"),
         "poster": MessageLookupByLibrary.simpleMessage("ਪੋਸਟਰ"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("ਪ੍ਰੀਮੀਅਮ ਗਾਹਕ ਸਹਾਇਤਾ"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("ਫਿਲਮ ਪੋਸਟਰ ਚੁਣਨ ਲਈ ਦਬਾਓ"),
         "productionCompanies":
@@ -189,6 +197,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ਰਿਲੀਜ਼ ਦੀ ਤਾਰੀਖ: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("ਰਿਲੀਜ਼ ਸਾਲ"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("ਸਭੀਆਂ ਵਿਗਿਆਪਨਾਂ ਨੂੰ ਹਟਾਓ"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "ਫਿਲਮ ਸ਼ਾਮਿਲ ਕਰਨ ਦੀ ਸੀਮਾ ਹਟਾਓ"),
         "rent": MessageLookupByLibrary.simpleMessage("(ਕਿਰਾਏ)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "ਕਿਰਪਾ ਕਰਕੇ ਪਿਛਲੀ ਸਕ੍ਰੀਨ \'ਤੇ ਵਾਪਸ ਜਾਓ"),

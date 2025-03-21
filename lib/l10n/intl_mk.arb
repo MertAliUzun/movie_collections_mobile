@@ -168,5 +168,12 @@
     "tags": "Тагови",
     "addTag": "Додај таг",
     "noTagsSelected": "Нема избраних тагова",
-    "noFranchisesSelected": "Нема избрани франшизи"
+    "noFranchisesSelected": "Нема избрани франшизи",
+    "buyPremium": "Купи Premium",
+    "buyButton": "Купи",
+    "removeAds": "Отстрани ги сите реклами",
+    "removeMovieLimit": "Отстрани го ограничувањето за додавање филмови",
+    "cloudBackUp": "Облак копија за вашите филмови",
+    "premiumSupport": "Premium поддршка за клиенти",
+    "checkUnderratedOverrated": "Проверете ги потценетите и преценетите филмови"
 }

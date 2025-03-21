@@ -168,5 +168,12 @@
     "tags": "Címkék",
     "addTag": "Címke hozzáadása",
     "noTagsSelected": "Nincsenek kiválasztott címkék",
-    "noFranchisesSelected": "Nincsenek kiválasztott franchise-ok"
+    "noFranchisesSelected": "Nincsenek kiválasztott franchise-ok",
+    "buyPremium": "Premium vásárlása",
+    "buyButton": "Vásárlás",
+    "removeAds": "Minden hirdetés eltávolítása",
+    "removeMovieLimit": "Filmhozzáadási korlátozás eltávolítása",
+    "cloudBackUp": "Felhő biztonsági mentés a filmjeidhez",
+    "premiumSupport": "Premium ügyfélszolgálat",
+    "checkUnderratedOverrated": "Ellenőrizd az alulértékelt és túlértékelt filmeket"
 }

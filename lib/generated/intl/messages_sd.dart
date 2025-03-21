@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("بجيٽ: "),
         "buy": MessageLookupByLibrary.simpleMessage("(خريداري)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("خريد ڪريو"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("پريميئم خريد ڪريو"),
         "cancel": MessageLookupByLibrary.simpleMessage("منسوخ"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("فائل چونڊڻ منسوخ ٿي ويو."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("ڪارڊ"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "مھرباني ڪري پنھنجو انٽرنيٽ ڪنيڪشن چيڪ ڪريو!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "گهٽ درجابندي ۽ وڌ ۾ وڌ درجابندي واري فلمن کي چيڪ ڪريو"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "توهان جي فلمن لاءِ ڪلائوڊ بيڪ اپ"),
         "collection": MessageLookupByLibrary.simpleMessage("ڪليڪشن"),
         "collectionType": MessageLookupByLibrary.simpleMessage("ڪليڪشن جو قسم"),
         "comedy": MessageLookupByLibrary.simpleMessage("ڪاميڊي"),
@@ -181,6 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("ڪهاڻي"),
         "popularFor": MessageLookupByLibrary.simpleMessage("مقبول آهي لاءِ"),
         "poster": MessageLookupByLibrary.simpleMessage("پوسٽر"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("پريميئم ڪسٽمر سپورٽ"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("فلم پوسٽر چونڊڻ لاءِ دٻايو"),
         "productionCompanies":
@@ -190,6 +198,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ريليز جي تاريخ: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("ريليز جو سال"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("سڀ اشتهار هٽايو"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("فلم شامل ڪرڻ جي حد هٽايو"),
         "rent": MessageLookupByLibrary.simpleMessage("(ڪرايو)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "مھرباني ڪري پوئين اسڪرين ڏانهن واپس وڃو"),

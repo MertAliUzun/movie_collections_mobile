@@ -168,5 +168,12 @@
     "tags": "Štítky",
     "addTag": "Přidat štítek",
     "noTagsSelected": "Žádné štítky nejsou vybrány",
-    "noFranchisesSelected": "Žádné franšízy nejsou vybrány"
+    "noFranchisesSelected": "Žádné franšízy nejsou vybrány",
+    "buyPremium": "Koupit Premium",
+    "buyButton": "Koupit",
+    "removeAds": "Odstranit všechny reklamy",
+    "removeMovieLimit": "Odstranit limit přidávání filmů",
+    "cloudBackUp": "Zálohování filmů na cloudu",
+    "premiumSupport": "Premium zákaznická podpora",
+    "checkUnderratedOverrated": "Zkontrolujte podceňované a přeceňované filmy"
 }

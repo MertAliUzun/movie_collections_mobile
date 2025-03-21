@@ -141,5 +141,12 @@
     "tags": "Тамғалар",
     "addTag": "Тамға өҫтәргә",
     "noTagsSelected": "Бер тамға ла һайланмаған",
-    "noFranchisesSelected": "Бер франшиза ла һайланмаған"
+    "noFranchisesSelected": "Бер франшиза ла һайланмаған",
+    "buyPremium": "Premium һатып ал",
+    "buyButton": "Һатып ал",
+    "removeAds": "Бөтә рекламаларҙы алып ташлау",
+    "removeMovieLimit": "Фильм өҫтәү сикләүен юҡ итеү",
+    "cloudBackUp": "Фильмдарың өсөн болот һаҡлауы",
+    "premiumSupport": "Premium клиенттарға ярҙам",
+    "checkUnderratedOverrated": "Баһаһы кәметелгән һәм арттырылған фильмдарҙы тикшер"
 }

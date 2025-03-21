@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("תקציב: "),
         "buy": MessageLookupByLibrary.simpleMessage("(לקנות)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("קנה"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("קנה Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("ביטול"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("ביטול בחירת קובץ."),
@@ -52,6 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("כרטיס"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "אנא בדוק את חיבור האינטרנט שלך!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "בדוק סרטים מתחת להערכה ומוערכים יותר מדי"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("גיבוי ענן עבור הסרטים שלך"),
         "collection": MessageLookupByLibrary.simpleMessage("אוסף"),
         "collectionType": MessageLookupByLibrary.simpleMessage("סוג אוסף"),
         "comedy": MessageLookupByLibrary.simpleMessage("קומדיה"),
@@ -169,6 +175,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("עלילה"),
         "popularFor": MessageLookupByLibrary.simpleMessage("פופולרי עבור"),
         "poster": MessageLookupByLibrary.simpleMessage("פוסטר"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("תמיכה ללקוח פרימיום"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("לחץ כדי לבחור פוסטר סרט"),
         "productionCompanies":
@@ -178,6 +186,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("תאריך יציאה: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("שנת יציאה"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("הסר את כל המודעות"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("הסר את הגבלת הוספת הסרטים"),
         "rent": MessageLookupByLibrary.simpleMessage("(לשכור)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("אנא חזור למסך הקודם"),

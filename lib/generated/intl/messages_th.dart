@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("งบประมาณ: "),
         "buy": MessageLookupByLibrary.simpleMessage("(ซื้อ)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("ซื้อ"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("ซื้อพรีเมียม"),
         "cancel": MessageLookupByLibrary.simpleMessage("ยกเลิก"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("การเลือกไฟล์ถูกยกเลิก."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("การ์ด"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "ตรวจสอบภาพยนตร์ที่ประเมินต่ำเกินไปและสูงเกินไป"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "สำรองข้อมูลบนคลาวด์สำหรับภาพยนตร์ของคุณ"),
         "collection": MessageLookupByLibrary.simpleMessage("คอลเลคชัน"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("ประเภทคอลเลคชัน"),
@@ -180,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("เนื้อเรื่อง"),
         "popularFor": MessageLookupByLibrary.simpleMessage("เป็นที่นิยมสำหรับ"),
         "poster": MessageLookupByLibrary.simpleMessage("โปสเตอร์"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("การสนับสนุนลูกค้าพรีเมียม"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "กดเพื่อเลือกโปสเตอร์ภาพยนตร์"),
         "productionCompanies":
@@ -189,6 +197,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("วันวางจำหน่าย: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("ปีที่วางจำหน่าย"),
+        "removeAds": MessageLookupByLibrary.simpleMessage("ลบโฆษณาทั้งหมด"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("ลบข้อจำกัดการเพิ่มหนัง"),
         "rent": MessageLookupByLibrary.simpleMessage("(เช่า)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("กรุณากลับไปยังหน้าก่อนหน้า"),

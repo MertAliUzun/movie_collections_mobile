@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Ka Jɔw Kɛlɛ"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Filimu Tɛmɛ: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Ka sɛbɛn)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Sɔ"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Sɔ Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Ka jɔw tɛ"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Fayili jɔw tɛ."),
@@ -47,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kàadi"),
         "checkInternet":
             MessageLookupByLibrary.simpleMessage("Jɛ ka internet fila!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Tɔrɔlɛ Sira Kɛnɛ Sɛbɛlɛ Tɔrɔ Furu"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Sɛbɛ Kɔlɔ Furu Kɔsɛn Sɔrɔ"),
         "collection": MessageLookupByLibrary.simpleMessage("Jolow"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Jolow Kɛlɛ"),
         "comedy": MessageLookupByLibrary.simpleMessage("Ka Sɔn Ka Filimu"),
@@ -145,6 +151,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filimu tigɛ jɛlɛ"),
         "plot": MessageLookupByLibrary.simpleMessage("Filimu Ka Jɛlen"),
         "poster": MessageLookupByLibrary.simpleMessage("Filimu Ko"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium Tuma Furu Ka Sɛbɛ"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Filimu Ko Jɔw"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Kɔnɔw"),
@@ -153,6 +161,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Filimu Don: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Filimu Don San"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Tɔɔrɔ Kɛlɛbɛ Ka Furu"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Tɔɔrɔ Fɔlɔ Kɔrɔnyen Kɛnɛni"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ka jɛlɛ)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Filimu Bɔ: "),
         "romance": MessageLookupByLibrary.simpleMessage("Ka Nɛnɛn Filimu"),

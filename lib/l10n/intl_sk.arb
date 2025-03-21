@@ -168,5 +168,12 @@
     "tags": "Tagy",
     "addTag": "Pridať tag",
     "noTagsSelected": "Žiadne tagy neboli vybrané",
-    "noFranchisesSelected": "Žiadne franšízy neboli vybrané"
+    "noFranchisesSelected": "Žiadne franšízy neboli vybrané",
+    "buyPremium": "Kúpte Premium",
+    "buyButton": "Kúpiť",
+    "removeAds": "Odstrániť všetky reklamy",
+    "removeMovieLimit": "Odstrániť obmedzenie pridávania filmov",
+    "cloudBackUp": "Záloha v cloude pre vaše filmy",
+    "premiumSupport": "Premium zákaznícka podpora",
+    "checkUnderratedOverrated": "Skontrolujte podceňované a nadhodnotené filmy"
 }

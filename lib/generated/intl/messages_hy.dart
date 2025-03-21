@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Աճող"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Բյուջե՝ "),
         "buy": MessageLookupByLibrary.simpleMessage("(Գնում)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Գնել"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Գնել Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Չեղարկել"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Ֆայլ ընտրելը չեղարկվեց։"),
@@ -50,6 +52,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Քարտ"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Խնդրում ենք ստուգել ձեր ինտերնետ կապը!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Ստուգեք undervalued և overrated ֆիլմերը"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "ՄԱՀՏԵՆ ապահովագրություն ձեր ֆիլմերի համար"),
         "collection": MessageLookupByLibrary.simpleMessage("Հավաքածու"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Հավաքածուի տեսակ"),
@@ -155,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Խնդրում ենք մուտքագրել ֆիլմի վերնագիրը"),
         "plot": MessageLookupByLibrary.simpleMessage("Սյուժե"),
         "poster": MessageLookupByLibrary.simpleMessage("Աֆիշ"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Պրեմիում հաճախորդների աջակցություն"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Սեղմեք՝ ֆիլմի պաստառ ընտրելու համար"),
         "productionCompanies":
@@ -165,6 +173,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Թողարկման ամսաթիվ՝ "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Թողարկման տարի"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Հեռացնել բոլոր գովազդները"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Հեռացնել ֆիլմեր ավելացնելու սահմանափակումը"),
         "rent": MessageLookupByLibrary.simpleMessage("(Վարձույթ)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Եկամուտ՝ "),
         "romance": MessageLookupByLibrary.simpleMessage("Ռոմանտիկա"),

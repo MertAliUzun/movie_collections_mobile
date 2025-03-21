@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bajet: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Fermîna)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Bikarîne"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium Bikarîne"),
         "cancel": MessageLookupByLibrary.simpleMessage("Betalkirin"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Hilbijartina pelê betalkirî."),
@@ -58,6 +60,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Karta"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Pêşniyar dikin ku têkiliyên internetê we kontrol bikin!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Fîlmên kêm pêşniyar û zêdetir pêşniyar hate kontrol kirin"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Piştgirîya berhemên we li ser xelatê cloud"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksiyon"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Cureya Koleksiyona"),
@@ -187,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Tîr"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populer ji bo"),
         "poster": MessageLookupByLibrary.simpleMessage("Afîş"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Piştgirîya premium ya müşteri"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Bişînin bo hilbijartina afîşê fîlmê"),
         "productionCompanies":
@@ -196,6 +204,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Rojekê Çêkirinê: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Salê Çêkirinê"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Hemû reklamên jê birin"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Sînora zêdekirina fîlman jê birin"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kirîna)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Ji kerema xwe vegerî ser ekranê berê"),

@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Költségvetés: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Vásárlás)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Vásárlás"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium vásárlása"),
         "cancel": MessageLookupByLibrary.simpleMessage("Mégse"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Fájlválasztás megszakítva."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Kártya"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Kérjük, ellenőrizze az internetkapcsolatát!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Ellenőrizd az alulértékelt és túlértékelt filmeket"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Felhő biztonsági mentés a filmjeidhez"),
         "collection": MessageLookupByLibrary.simpleMessage("Gyűjtemény"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Gyűjtemény típusa"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Cselekmény"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Népszerű"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakát"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium ügyfélszolgálat"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Nyomja meg a filmplakát kiválasztásához"),
         "productionCompanies":
@@ -194,6 +202,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Megjelenés dátuma: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Megjelenés éve"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Minden hirdetés eltávolítása"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Filmhozzáadási korlátozás eltávolítása"),
         "rent": MessageLookupByLibrary.simpleMessage("(Bérlés)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Kérjük, térjen vissza az előző képernyőre"),

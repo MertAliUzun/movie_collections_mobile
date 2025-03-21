@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Cyllideb: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Prynu)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Αγόρασε"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Αγόρασε Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Canslo"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Canslwyd dewis ffeil."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Cerdyn"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Os gwelwch yn dda, gwirio eich cysylltiad Rhyngrwyd!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Ελέγξτε τις υποεκτιμημένες και υπερεκτιμημένες ταινίες"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Αντίγραφο ασφαλείας στο cloud για τις ταινίες σας"),
         "collection": MessageLookupByLibrary.simpleMessage("Casgliad"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Math Casgliad"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comedi"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Poblogaidd am"),
         "poster": MessageLookupByLibrary.simpleMessage("Posteri"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Υποστήριξη πελατών Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pwyswch i ddewis poster ffilm"),
         "productionCompanies":
@@ -193,6 +201,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dyddiad rhyddhau: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Blwyddyn Rhyddhau"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Αφαίρεση όλων των διαφημίσεων"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Αφαίρεση ορίου προσθήκης ταινιών"),
         "rent": MessageLookupByLibrary.simpleMessage("(Rhentu)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Os gwelwch yn dda, dychwelyd i\'r sgrin flaenorol"),

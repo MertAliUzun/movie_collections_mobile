@@ -141,5 +141,12 @@
     "tags": "ট্যাগসমূহ",
     "addTag": "ট্যাগ যোগ করুন",
     "noTagsSelected": "কোনো ট্যাগ নির্বাচন করা হয়নি",
-    "noFranchisesSelected": "কোনো ফ্র্যাঞ্চাইজি নির্বাচন করা হয়নি"
+    "noFranchisesSelected": "কোনো ফ্র্যাঞ্চাইজি নির্বাচন করা হয়নি",
+    "buyPremium": "প্রিমিয়াম কিনুন",
+    "buyButton": "কিনুন",
+    "removeAds": "সব অ্যাড মুছে ফেলুন",
+    "removeMovieLimit": "ফিল্ম অ্যাড করার সীমা সরান",
+    "cloudBackUp": "আপনার মুভির জন্য ক্লাউড ব্যাকআপ",
+    "premiumSupport": "প্রিমিয়াম কাস্টমার সাপোর্ট",
+    "checkUnderratedOverrated": "অধিক প্রশংসিত এবং কম প্রশংসিত মুভি চেক করুন"
 }

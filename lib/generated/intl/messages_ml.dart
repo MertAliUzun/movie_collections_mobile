@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("ബജറ്റ്: "),
         "buy": MessageLookupByLibrary.simpleMessage("(കയറി)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("വാങ്ങുക"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("പ്രീമിയം വാങ്ങുക"),
         "cancel": MessageLookupByLibrary.simpleMessage("റദ്ദാക്കുക"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "ഫയൽ തിരഞ്ഞെടുപ്പ് റദ്ദാക്കി."),
@@ -54,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("പട്ടിക"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "ദയവായി നിങ്ങളുടെ ഇന്റർനെറ്റ് കണക്ഷൻ പരിശോധിക്കുക!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "കുറഞ്ഞ മൂല്യനിർണ്ണയവും അമിതമായ മൂല്യനിർണ്ണയവുമുള്ള സിനിമകൾ പരിശോധിക്കുക"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "നിങ്ങളുടെ സിനിമകൾക്ക് ക്ലൗഡ് ബാക്കപ്പ്"),
         "collection": MessageLookupByLibrary.simpleMessage("സമാഹാരം"),
         "collectionType": MessageLookupByLibrary.simpleMessage("സമാഹാര തരങ്ങൾ"),
         "comedy": MessageLookupByLibrary.simpleMessage("കോമഡി"),
@@ -183,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("കഥ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("പ്രശസ്തമായത്"),
         "poster": MessageLookupByLibrary.simpleMessage("പോസ്റ്റർ"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "പ്രീമിയം കസ്റ്റമർ സപ്പോർട്ട്"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "പോസ്റ്റർ തിരഞ്ഞെടുക്കാൻ അമർത്തുക"),
         "productionCompanies":
@@ -192,6 +200,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ചിതറി തീയതി: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("ചിതറി വർഷം"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("എല്ലാ പരസ്യങ്ങളും നീക്കുക"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "ചിത്രം ചേർക്കാനുള്ള പരിധി നീക്കംചെയ്യുക"),
         "rent": MessageLookupByLibrary.simpleMessage("(കവരുക)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "ദയവായി മുൻ സ്ക്രീനിലേക്ക് തിരിച്ചുപോക്കുക"),

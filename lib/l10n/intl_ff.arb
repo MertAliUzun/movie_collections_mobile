@@ -168,5 +168,12 @@
     "tags": "Cifolji",
     "addTag": "Ñaayde Cifol",
     "noTagsSelected": "Cifolji walaa",
-    "noFranchisesSelected": "Fransayziji walaa"
+    "noFranchisesSelected": "Fransayziji walaa",
+    "buyPremium": "Sii Premium",
+    "buyButton": "Sii",
+    "removeAds": "Ɓeydaɗe ɗum gite",
+    "removeMovieLimit": "Ɓeydaɗe ndertuɗe film amɗo",
+    "cloudBackUp": "Hakkunde koondirde fiilm ngal ɗum e cloud",
+    "premiumSupport": "Tawtorde Premium ɓe diiɗi",
+    "checkUnderratedOverrated": "Dokkiti fiilm-ɗi ɗe fowndini e ɗe futtini"
 }

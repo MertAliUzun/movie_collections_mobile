@@ -168,5 +168,12 @@
     "tags": "Tags",
     "addTag": "Ongeramo tag",
     "noTagsSelected": "Nta tag wahisemo",
-    "noFranchisesSelected": "Nta franchise wahisemo"
+    "noFranchisesSelected": "Nta franchise wahisemo",
+    "buyPremium": "Buy Premium",
+    "buyButton": "Buy",
+    "removeAds": "Kuraho byose byamamaza",
+    "removeMovieLimit": "Kuraho umubare ntarengwa w'amafilm",
+    "cloudBackUp": "Guhagarika ibikoresho muri cloud kubyo kureba",
+    "premiumSupport": "Inkunga y'abakiriya ya Premium",
+    "checkUnderratedOverrated": "Reba filimi zasuzumwe nabi cyangwa zigashyirwa hejuru"
 }

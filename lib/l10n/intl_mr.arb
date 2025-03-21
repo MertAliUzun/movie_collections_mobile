@@ -168,5 +168,12 @@
     "tags": "टॅग्ज",
     "addTag": "टॅग जोडा",
     "noTagsSelected": "कोणतेही टॅग निवडलेले नाहीत",
-    "noFranchisesSelected": "कोणतीही फ्रँचायझी निवडलेली नाही"
+    "noFranchisesSelected": "कोणतीही फ्रँचायझी निवडलेली नाही",
+    "buyPremium": "प्रीमियम खरेदी करा",
+    "buyButton": "खरेदी करा",
+    "removeAds": "सर्व जाहिराती काढा",
+    "removeMovieLimit": "चित्रे जोडण्याचे मर्यादा काढा",
+    "cloudBackUp": "तुमच्या चित्रांसाठी क्लाउड बॅकअप",
+    "premiumSupport": "प्रीमियम ग्राहक समर्थन",
+    "checkUnderratedOverrated": "खूप कमी किंवा खूप जास्त मूल्यांकन केलेल्या चित्रपटांची तपासणी करा"
 }

@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Προϋπολογισμός: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Αγορά)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Αγοράστε"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Αγοράστε Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Ακύρωση"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage(
             "Ακυρώθηκε η επιλογή αρχείου."),
@@ -56,6 +58,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Κάρτα"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ ελέγξτε τη σύνδεση στο διαδίκτυο!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Ελέγξτε τις υποτιμημένες και υπερτιμημένες ταινίες"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Αντίγραφο ασφαλείας στο cloud για τις ταινίες σας"),
         "collection": MessageLookupByLibrary.simpleMessage("Συλλογή"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Τύπος Συλλογής"),
@@ -188,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Περίληψη"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Δημοφιλής Για"),
         "poster": MessageLookupByLibrary.simpleMessage("Αφίσα"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Υποστήριξη πελατών Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Πατήστε για να επιλέξετε αφίσα ταινίας"),
         "productionCompanies":
@@ -198,6 +206,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Ημερομηνία Κυκλοφορίας: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Έτος Κυκλοφορίας"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Αφαιρέστε όλες τις διαφημίσεις"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Αφαιρέστε το όριο προσθήκης ταινιών"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ενοικίαση)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ επιστρέψτε στην προηγούμενη οθόνη"),

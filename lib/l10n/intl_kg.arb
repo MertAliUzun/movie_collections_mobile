@@ -168,5 +168,12 @@
     "tags": "Тегдер",
     "addTag": "Тегди кошуу",
     "noTagsSelected": "Тегдер тандалган жок",
-    "noFranchisesSelected": "Франшизалар тандалган жок"
+    "noFranchisesSelected": "Франшизалар тандалган жок",
+    "buyPremium": "Premium сатып алуу",
+    "buyButton": "Сатып алуу",
+    "removeAds": "Бардык жарнамаларды алып салуу",
+    "removeMovieLimit": "Фильм кошуу чектөөлөрүн алып салуу",
+    "cloudBackUp": "Сиздин фильмдер үчүн булутка резервдик көчүрүү",
+    "premiumSupport": "Premium кардарларды колдоо",
+    "checkUnderratedOverrated": "Төмөн бааланган жана ашкере бааланган фильмдерди текшерүү"
 }

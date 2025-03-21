@@ -168,5 +168,12 @@
     "tags": "Etikèt yo",
     "addTag": "Ajoute etikèt",
     "noTagsSelected": "Pa gen etikèt ki chwazi",
-    "noFranchisesSelected": "Pa gen franchiz ki chwazi"
+    "noFranchisesSelected": "Pa gen franchiz ki chwazi",
+    "buyPremium": "Achte Premium",
+    "buyButton": "Achte",
+    "removeAds": "Retire tout piblisite",
+    "removeMovieLimit": "Retire limit ajoute sinema",
+    "cloudBackUp": "Backup nan nwaj pou sinema ou",
+    "premiumSupport": "Sipò kliyan Premium",
+    "checkUnderratedOverrated": "Tcheke sinema ki pa byen evalye ak sinema ki gen twòp evalyasyon"
 }

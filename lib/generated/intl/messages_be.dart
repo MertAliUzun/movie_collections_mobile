@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ascending": MessageLookupByLibrary.simpleMessage("Па ўзрастанні"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджэт: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Пакупка)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Купіць"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Купіць Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Адмяніць"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Выбар файла адменены."),
@@ -48,6 +50,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Картка"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Праверце падключэнне да Інтэрнэту!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Праверыць недаацэненыя і пераацэненыя фільмы"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Хмарнае рэзервовае капіраванне для вашых фільмаў"),
         "collection": MessageLookupByLibrary.simpleMessage("Калекцыя"),
         "collectionType": MessageLookupByLibrary.simpleMessage("Тып калекцыі"),
         "comedy": MessageLookupByLibrary.simpleMessage("Камедыя"),
@@ -149,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Калі ласка, увядзіце назву фільма"),
         "plot": MessageLookupByLibrary.simpleMessage("Сюжэт"),
         "poster": MessageLookupByLibrary.simpleMessage("Постар"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Падтрыманне кліентаў Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Націсніце, каб выбраць постар"),
         "productionCompanies":
@@ -158,6 +166,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Дата выпуску: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Год выпуску"),
+        "removeAds":
+            MessageLookupByLibrary.simpleMessage("Выдаліць усе рэкламы"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Выдаліць абмежаванне дадавання фільмаў"),
         "rent": MessageLookupByLibrary.simpleMessage("(Аранда)"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Прыбытак: "),
         "romance": MessageLookupByLibrary.simpleMessage("Рамантыка"),

@@ -27,12 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Арольдахылаҩцәа"),
         "add": MessageLookupByLibrary.simpleMessage("Иацҵатәуп"),
         "addActor": MessageLookupByLibrary.simpleMessage("Арольдахьы ацҵара"),
+        "addFranchise":
+            MessageLookupByLibrary.simpleMessage("Франшиза Цҵаҵәара"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Ажанр ацҵара"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Афильм ацҵара"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Афильм ҿыц ацҵара"),
         "addProductionCompany":
             MessageLookupByLibrary.simpleMessage("Аҭыжьырҭатә компания ацҵара"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Атегориа Цҵаҵәара"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Аҩҩҩы ацҵара"),
         "adventure": MessageLookupByLibrary.simpleMessage("Аҟынтәышә"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Агәыӡра ахьӡ: "),
@@ -45,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Блу-Реи"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Абџьет: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Ашьҭхара)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Ахәаахәҭра"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Premium Ахәаахәҭра"),
         "cancel": MessageLookupByLibrary.simpleMessage("Аицәыхара"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Афаил алхра аицәыхара."),
@@ -52,11 +58,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Акард"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Шәыргәыхь шәинтернет аиқәыршәарақәа!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Акиноқәа Иацәхьаҵу/Iаԥхароу Ахәаԥшра"),
+        "cloudBackUp":
+            MessageLookupByLibrary.simpleMessage("Акиноқәа Рхаҿӡы Ааԥхьара"),
         "collection": MessageLookupByLibrary.simpleMessage("Коллекциа"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Аколлекциа аҽаԥсахра"),
         "comedy": MessageLookupByLibrary.simpleMessage("Акомедиа"),
         "company": MessageLookupByLibrary.simpleMessage("Акомпания"),
+        "creationDate": MessageLookupByLibrary.simpleMessage("Аамҭа Аԥҵара"),
         "crime": MessageLookupByLibrary.simpleMessage("Ацәаҳәаҿагылара"),
         "csvFileCreated": MessageLookupByLibrary.simpleMessage(
             "CSV афаил ахазырхәра агәалаҟазаара амоуп: "),
@@ -107,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Агәалаҟазаара аԥкраз!"),
         "family": MessageLookupByLibrary.simpleMessage("Аҭаацәаратә"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Афантастика"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Франшизақәа"),
         "genre": MessageLookupByLibrary.simpleMessage("Ажанр"),
         "genres": MessageLookupByLibrary.simpleMessage("Ажанрқәа"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Агруппақәа рыла"),
@@ -150,6 +163,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Арольдахылаҩцәа иалхым"),
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Акомпаниақәа иалхым"),
+        "noFranchisesSelected":
+            MessageLookupByLibrary.simpleMessage("Франшиза Даҟаҵам"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ажанрқәа иалхым"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID Token ахьӡам."),
@@ -161,6 +176,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Акиноқәа ари акомпаниеи ирызку иԥшааӡамызт"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Ахәҭакра азин ҟанамҵеит."),
+        "noTagsSelected":
+            MessageLookupByLibrary.simpleMessage("Атегориа Даҟаҵам"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Аназыӡыра ахьӡам"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Аҩҩцәа иалхым"),
@@ -173,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Иреиҳаӡоу азҿлымҳара змаз"),
         "poster": MessageLookupByLibrary.simpleMessage("Апостер"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium Ахархәара Ацхыраара"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Апостер алхра шәымҩаԥыргала"),
         "productionCompanies":
@@ -183,6 +202,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Иҳартызара амш: "),
         "releaseYear":
             MessageLookupByLibrary.simpleMessage("Иҳартызара ашықәс"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Ахыԥхьаӡаларатә Рекламақәа Арцәара"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Акино Ацҵоу Афатә Аҟамзаара"),
         "rent": MessageLookupByLibrary.simpleMessage("(Анаҳгара)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Шәара иҟалҵозар, ихынҳә!"),
@@ -218,6 +241,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Агәалаҟазаара!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" гәалаҟазаарала ианыхуп"),
+        "tag": MessageLookupByLibrary.simpleMessage("Атегориа"),
+        "tags": MessageLookupByLibrary.simpleMessage("Атегориақәа"),
         "thriller": MessageLookupByLibrary.simpleMessage("Атриллер"),
         "title": MessageLookupByLibrary.simpleMessage("Аназыӡыра"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("АТВ Афильм"),

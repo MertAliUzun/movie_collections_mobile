@@ -49,6 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Kusumba)"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Сатып алуу"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Premium сатып алуу"),
         "cancel": MessageLookupByLibrary.simpleMessage("Kangisa"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Kusola fisiye kukangama."),
@@ -56,6 +59,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "card": MessageLookupByLibrary.simpleMessage("Carte"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Tala internet connection na nge!"),
+        "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
+            "Төмөн бааланган жана ашкере бааланган фильмдерди текшерүү"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "Сиздин фильмдер үчүн булутка резервдик көчүрүү"),
         "collection": MessageLookupByLibrary.simpleMessage("Kusanya"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Type ya Collection"),
@@ -184,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popularité na"),
         "poster": MessageLookupByLibrary.simpleMessage("Affiche"),
+        "premiumSupport":
+            MessageLookupByLibrary.simpleMessage("Premium кардарларды колдоо"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pesa kusola affiche ya filimu"),
         "productionCompanies":
@@ -194,6 +203,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Date ya kopesa: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Mvula ya kopesa"),
+        "removeAds": MessageLookupByLibrary.simpleMessage(
+            "Бардык жарнамаларды алып салуу"),
+        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
+            "Фильм кошуу чектөөлөрүн алып салуу"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kulonga)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Vutukila na ecran ya ntama"),
