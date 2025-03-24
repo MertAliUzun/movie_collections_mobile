@@ -45,7 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "budgetColon": MessageLookupByLibrary.simpleMessage("预算："),
         "buy": MessageLookupByLibrary.simpleMessage("(购买)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("购买"),
-        "buyPremium": MessageLookupByLibrary.simpleMessage("购买高级版"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("升级至高级版"),
         "cancel": MessageLookupByLibrary.simpleMessage("取消"),
         "cancelChooseFile": MessageLookupByLibrary.simpleMessage("取消选择文件。"),
         "cancelled": MessageLookupByLibrary.simpleMessage("已取消！"),

@@ -651,7 +651,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       crossAxisCount: isTablet ? 5 : 3, // Tablet için 5, telefon için 3 sütun
                     childAspectRatio: isTablet 
                       ? (_viewType == "Card" ? 0.7 : 0.75)  // Tablet için aspect ratio
-                      : (_viewType == "Card" ? 0.45 : 0.5), // Telefon için aspect ratio
+                      : (_viewType == "Card" ? 0.43 : 0.5), // Telefon için aspect ratio
                     mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                     ),
                               shrinkWrap: true,
@@ -679,7 +679,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                     crossAxisCount: isTablet ? 5 : 3, // Tablet için 5, telefon için 3 sütun
                     childAspectRatio: isTablet 
                       ? (_viewType == "Card" ? 0.7 : 0.75)  // Tablet için aspect ratio
-                      : (_viewType == "Card" ? 0.45 : 0.5), // Telefon için aspect ratio
+                      : (_viewType == "Card" ? 0.43 : 0.5), // Telefon için aspect ratio
                     mainAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                     crossAxisSpacing: ScreenUtil.getAdaptiveGridSpacing(context, 8),
                   ),

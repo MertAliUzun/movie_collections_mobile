@@ -474,6 +474,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
               userEmail: widget.userEmail,
               systemLanguage: widget.systemLanguage,
               isInit: false,
+              isFromWishlist: widget.isFromWishlist,
             ),
           ),
         );

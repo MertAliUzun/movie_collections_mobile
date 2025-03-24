@@ -45,7 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "budgetColon": MessageLookupByLibrary.simpleMessage("予算: "),
         "buy": MessageLookupByLibrary.simpleMessage("(購入)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("購入"),
-        "buyPremium": MessageLookupByLibrary.simpleMessage("プレミアムを購入"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("プレミアムにアップグレード"),
         "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("ファイルの選択がキャンセルされました。"),

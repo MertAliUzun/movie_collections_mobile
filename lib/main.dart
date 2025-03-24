@@ -196,9 +196,10 @@ class MyHomePage extends StatefulWidget {
   final String? userPicture; // Kullanıcı Resmi
   final String? userName; // Kullanıcı Adı
   final String? systemLanguage;
+  final bool? isFromWishlist;
   bool isInit = true;
 
-  MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage, required this.isInit});
+  MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage, required this.isInit, this.isFromWishlist});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -213,12 +214,26 @@ class _MyHomePageState extends State<MyHomePage> {
   bool? _isLoaded = false;
   final AdService _adService = AdService();
   final InAppReview _inAppReview = InAppReview.instance;
+
+  Future<void> _selectPage() async {
+    if(widget.isFromWishlist != null) {
+      if(widget.isFromWishlist!) {
+        _selectedIndex = 1;
+      } else{
+        _selectedIndex = 0;
+      }
+    } else {
+      _selectedIndex = 0;
+    }
+    
+  }
   
   @override
   void initState() {
     super.initState();
     if(widget.isInit!) {_googleSignIn(); widget.isInit = false;}
     else { _isLoaded = true; }
+    _selectPage();
     _checkPremiumStatus();
     /*
     _adService.loadBannerAd(

@@ -169,11 +169,11 @@
     "addTag": "ट्याग थप्नुहोस्",
     "noTagsSelected": "कुनै ट्याग चयन गरिएको छैन",
     "noFranchisesSelected": "कुनै फ्रान्चाइज चयन गरिएको छैन",
-    "buyPremium": "Kjøp Premium",
-    "buyButton": "Kjøp",
-    "removeAds": "Fjern alle annonser",
-    "removeMovieLimit": "Fjern filmenes tillegggrense",
-    "cloudBackUp": "Skyback-up for filmene dine",
-    "premiumSupport": "Premium kundestøtte",
-    "checkUnderratedOverrated": "Sjekk undervurderte og overvurderte filmer"
+    "buyPremium": "प्रिमियम खरीद्नुहोस्",
+    "buyButton": "किन्नुहोस्",
+    "removeAds": "सबै विज्ञापनहरू हटाउनुहोस्",
+    "removeMovieLimit": "फिल्महरूको अतिरिक्त सीमा हटाउनुहोस्",
+    "cloudBackUp": "तपाईंका फिल्महरूको लागि क्लाउड ब्याकअप",
+    "premiumSupport": "प्रिमियम ग्राहक समर्थन",
+    "checkUnderratedOverrated": "कम मूल्याङ्कन गरिएका र अत्यधिक मूल्याङ्कन गरिएका फिल्महरू जाँच गर्नुहोस्"
 }

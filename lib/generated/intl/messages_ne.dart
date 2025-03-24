@@ -47,8 +47,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("बजेट: "),
         "buy": MessageLookupByLibrary.simpleMessage("(किन्नुहोस्)"),
-        "buyButton": MessageLookupByLibrary.simpleMessage("Kjøp"),
-        "buyPremium": MessageLookupByLibrary.simpleMessage("Kjøp Premium"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("किन्नुहोस्"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("प्रिमियम खरीद्नुहोस्"),
         "cancel": MessageLookupByLibrary.simpleMessage("रद्द गर्नुहोस्"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("फाइल चयन रद्द गरियो।"),
@@ -57,9 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "कृपया आफ्नो इन्टरनेट जडान जाँच गर्नुहोस्!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
-            "Sjekk undervurderte og overvurderte filmer"),
-        "cloudBackUp":
-            MessageLookupByLibrary.simpleMessage("Skyback-up for filmene dine"),
+            "कम मूल्याङ्कन गरिएका र अत्यधिक मूल्याङ्कन गरिएका फिल्महरू जाँच गर्नुहोस्"),
+        "cloudBackUp": MessageLookupByLibrary.simpleMessage(
+            "तपाईंका फिल्महरूको लागि क्लाउड ब्याकअप"),
         "collection": MessageLookupByLibrary.simpleMessage("सङ्ग्रह"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("सङ्ग्रह प्रकार"),
@@ -189,7 +190,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularFor": MessageLookupByLibrary.simpleMessage("प्रसिद्ध लागि"),
         "poster": MessageLookupByLibrary.simpleMessage("पोस्टर"),
         "premiumSupport":
-            MessageLookupByLibrary.simpleMessage("Premium kundestøtte"),
+            MessageLookupByLibrary.simpleMessage("प्रिमियम ग्राहक समर्थन"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "चलचित्र पोस्टर चयन गर्न थिच्नुहोस्"),
         "productionCompanies":
@@ -200,9 +201,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("मुक्ति मिति: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("मुक्ति वर्ष"),
         "removeAds":
-            MessageLookupByLibrary.simpleMessage("Fjern alle annonser"),
+            MessageLookupByLibrary.simpleMessage("सबै विज्ञापनहरू हटाउनुहोस्"),
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
-            "Fjern filmenes tillegggrense"),
+            "फिल्महरूको अतिरिक्त सीमा हटाउनुहोस्"),
         "rent": MessageLookupByLibrary.simpleMessage("(भाडामा)"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "कृपया अघिल्लो स्क्रिनमा फर्कनुहोस्"),
