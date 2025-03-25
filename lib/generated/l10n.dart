@@ -1750,10 +1750,10 @@ class S {
     );
   }
 
-  /// `Buy Premium`
+  /// `Upgrade to Premium`
   String get buyPremium {
     return Intl.message(
-      'Buy Premium',
+      'Upgrade to Premium',
       name: 'buyPremium',
       desc: '',
       args: [],

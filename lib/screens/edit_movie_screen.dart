@@ -971,6 +971,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 height: 40,
                                   ),
                                 ),
+                                border: InputBorder.none,
                               ),
                                 keyboardType: TextInputType.number,
                             style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),

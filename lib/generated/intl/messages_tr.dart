@@ -47,7 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "budgetColon": MessageLookupByLibrary.simpleMessage("Bütçe: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Satın Al)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Satın al"),
-        "buyPremium": MessageLookupByLibrary.simpleMessage("Premium Al"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Premium\'a Yükselt"),
         "cancel": MessageLookupByLibrary.simpleMessage("İptal"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Dosya seçimi iptal edildi."),

@@ -294,7 +294,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).noMoviesFound, 
+          title: S.of(context).error, 
           message: S.of(context).unableToDetectMovies, 
           contentType: ContentType.failure, 
           inMaterialBanner: true,
@@ -1155,7 +1155,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       padding: EdgeInsets.only(top: AppBar().preferredSize.height + MediaQuery.of(context).padding.top),
       width: screenWidth * 0.7,
       child: Drawer(
-        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        backgroundColor: const Color.fromARGB(255, 34, 40, 50),
         child: ListView(
           children: [
             DrawerHeader(

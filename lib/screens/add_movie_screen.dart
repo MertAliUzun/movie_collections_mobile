@@ -935,7 +935,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                       maxHeight: ScreenUtil.getAdaptiveCardHeight(context, 200),
                     ),
                     child: Card(
-                      color: const Color.fromARGB(255, 44, 50, 60),
+                      color: const Color.fromARGB(255, 40, 45, 54),
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: _searchResults.length,
@@ -1097,6 +1097,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               height: 40, // İkonun boyutunu ayarlayın
                             ),
                           ),
+                          border: InputBorder.none,
                         ),
                           keyboardType: TextInputType.number,
                           style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),

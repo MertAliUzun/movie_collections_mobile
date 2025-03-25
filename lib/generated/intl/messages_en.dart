@@ -47,7 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Buy)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Buy"),
-        "buyPremium": MessageLookupByLibrary.simpleMessage("Buy Premium"),
+        "buyPremium":
+            MessageLookupByLibrary.simpleMessage("Upgrade to Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Cancelled choosing file."),
