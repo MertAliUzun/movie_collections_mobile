@@ -366,8 +366,10 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   Future<void> _googleSignIn(BuildContext context) async {
-    const webClientId = '994622404083-l5lm49gg40agjbrh0vvtnbo6b3sddl3u.apps.googleusercontent.com';
-    const iosClientId = '994622404083-pmh33nqujdu7pvekl5djj4nge8hi0v2n.apps.googleusercontent.com';
+    if(!dotenv.isInitialized) { await dotenv.load(fileName: ".env"); }
+
+    final webClientId = dotenv.env['WEB_CLIENT_ID']!;
+    final iosClientId = dotenv.env['IOS_CLIENT_ID']!;
 
     final GoogleSignIn googleSignIn = GoogleSignIn(
       clientId: iosClientId,

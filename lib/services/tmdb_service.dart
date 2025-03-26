@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import '../sup/genreMap.dart';
 
 class TmdbService {
-  static const String _apiKey = '61898fc6229d9ec067b5e35b00e8cda5';
+  static final String _apiKey =  dotenv.env['TMDB_API']!;
   static const String _baseUrl = 'https://api.themoviedb.org/3';
 
   Future<List<Map<String, dynamic>>> searchMovies(String query) async {

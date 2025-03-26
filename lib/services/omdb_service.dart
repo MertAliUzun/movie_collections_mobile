@@ -1,8 +1,9 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class OmdbService {
-  static const String _apiKey = '80523389';
+  static final String _apiKey = dotenv.env['OMDB_API']!;
   static const String _baseUrl = 'http://www.omdbapi.com/';
 
   Future<List<Map<String, dynamic>>> searchMovies(String query) async {

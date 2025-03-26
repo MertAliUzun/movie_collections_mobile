@@ -1,11 +1,13 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:io';
 
 class AdHelper {
   static String get bannerAdUnitId {
+    //if(!dotenv.isInitialized) { await dotenv.load(fileName: ".env"); }
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1085565023845596/9658681403';
+      return dotenv.env['BANNER_AD_UNIT_ID_ANDROID'] ?? 'default-banner-ad-id';
     } else if (Platform.isIOS) {
-      return 'ca-app-pub-1085565023845596/8793188261';
+      return dotenv.env['BANNER_AD_UNIT_ID_IOS'] ?? 'default-banner-ad-id';
     } else {
       throw UnsupportedError('Desteklenmeyen platform');
     }
@@ -13,9 +15,9 @@ class AdHelper {
 
   static String get interstitialAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1085565023845596/5537541362';
+      return dotenv.env['INTERSTITIAL_AD_UNIT_ID_ANDROID'] ?? 'default-interstitial-ad-id';
     } else if (Platform.isIOS) {
-      return 'ca-app-pub-1085565023845596/8127808009';
+      return dotenv.env['INTERSTITIAL_AD_UNIT_ID_IOS'] ?? 'default-interstitial-ad-id';
     } else {
       throw UnsupportedError('Desteklenmeyen platform');
     }
@@ -23,9 +25,9 @@ class AdHelper {
 
   static String get rewardedAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1085565023845596/3270201176';
+      return dotenv.env['REWARDED_AD_UNIT_ID_ANDROID'] ?? 'default-rewarded-ad-id';
     } else if (Platform.isIOS) {
-      return 'ca-app-pub-1085565023845596/1562399656';
+      return dotenv.env['REWARDED_AD_UNIT_ID_IOS'] ?? 'default-rewarded-ad-id';
     } else {
       throw UnsupportedError('Desteklenmeyen platform');
     }
