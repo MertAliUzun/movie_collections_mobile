@@ -23,7 +23,10 @@ import '../models/movie_model.dart';
 import '../screens/edit_movie_screen.dart';
 import '../main.dart';
 import '../services/ad_service.dart';
+import '../services/ai_service.dart';
 import '../services/supabase_service.dart';
+import '../services/tmdb_service.dart';
+import '../screens/ai_movie_recommendations_screen.dart';
 
 class DrawerWidget extends StatefulWidget {
   final String _viewType;
@@ -1395,6 +1398,44 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(
                         onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AiMovieRecommendationsScreen(),
+                            ),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: .3,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(child: Text('AI', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
+                              SizedBox(width: screenWidth * 0.03),
+                              Icon(
+                                size: screenWidth * 0.055,
+                                Icons.movie_filter,
+                                color: Colors.white
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: screenWidth * 0.5,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
+                      child: TextButton(
+                        onPressed: () {
                           exportMoviesToCSV(); // CSV dışa aktarma fonksiyonunu çağır
                         },
                         style: TextButton.styleFrom(
@@ -1487,7 +1528,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                   ),
                 ],
               ),
-
             ),
           ],
         ),

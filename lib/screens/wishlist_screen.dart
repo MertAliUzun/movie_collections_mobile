@@ -230,6 +230,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   }
 
   void _navigateToEditMovieScreen(Movie movie) {
+    print('xxxxx'+movie.id);
     Navigator.push(
       context,
       MaterialPageRoute(

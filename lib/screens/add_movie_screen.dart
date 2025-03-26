@@ -805,6 +805,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   void initState() {
     super.initState();
     if (widget.movie != null) {
+      newId = int.parse(widget.movie!.id);
       _movieNameController.text = widget.movie!.movieName;
       _directorNameController.text = widget.movie!.directorName;
       _plotController.text = widget.movie!.plot ?? '';

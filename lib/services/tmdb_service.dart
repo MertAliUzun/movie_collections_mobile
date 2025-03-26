@@ -95,6 +95,46 @@ class TmdbService {
     return null;
   }
 
+  Future<List<Map<String, dynamic>>> getMovies(List<String> movieTitles) async {
+    final List<Map<String, dynamic>> movies = [];
+  
+    for (final title in movieTitles) {
+      final response = await http.get(
+        Uri.parse('https://api.themoviedb.org/3/search/movie?api_key=$_apiKey&query=$title'),
+      );
+      print(jsonDecode(response.body));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        
+        if (data['results'].isNotEmpty) {
+          movies.add(data['results'][0]); // İlk sonucun ID'si
+        }
+      }
+    }
+  
+    return movies;
+  }
+
+  Future<List<int>> getTMDBIds(List<String> movieTitles) async {
+    final List<int> movieIds = [];
+  
+    for (final title in movieTitles) {
+      final response = await http.get(
+        Uri.parse('https://api.themoviedb.org/3/search/movie?api_key=$_apiKey&query=$title'),
+      );
+      print(jsonDecode(response.body));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        
+        if (data['results'].isNotEmpty) {
+          movieIds.add(data['results'][0]['id']); // İlk sonucun ID'si
+        }
+      }
+    }
+  
+    return movieIds;
+  }
+
   Future<List<Map<String, dynamic>>> getMoviesByGenre(String genre, String popularity) async {
     final genreId = genreMap.entries.firstWhere(
       (entry) => entry.value.toLowerCase() == genre.toLowerCase(),
