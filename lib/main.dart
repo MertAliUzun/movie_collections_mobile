@@ -480,7 +480,7 @@ class _MyHomePageState extends State<MyHomePage> {
             constraints: const BoxConstraints.expand(),
             child: ClipOval(
               child: Image.asset(
-                'assets/images/ai_icon5.png',
+                'assets/images/ai_icon.png',
                 width: 50,
                 height: 50,
               ),

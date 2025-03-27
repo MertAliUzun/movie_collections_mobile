@@ -7,6 +7,7 @@ import '../services/tmdb_service.dart';
 import '../sup/businessLogic.dart';
 import '../sup/genreMap.dart';
 import '../sup/screen_util.dart';
+import '../widgets/custom_floating_button_location.dart';
 import 'add_movie_screen.dart';
 
 class AiMovieRecommendationsScreen extends StatefulWidget {
@@ -22,6 +23,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
   final TextEditingController _textController = TextEditingController();
   List<Map<String, dynamic>> _recommendedMovies = [];
   bool _isLoading = false;
+  String selectedPrompt = 'recommendation';
 
   String _getGenreLocalizedString(String genre) {
     return getGenreLocalizedString(genre, context);
@@ -35,8 +37,9 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
     });
 
     try {
+      print(selectedPrompt);
       // AI servisinden film önerilerini al
-      final movieTitles = await getGroqRecommendations(query);
+      final movieTitles = await getGroqRecommendations(query, selectedPrompt);
 
       
       
@@ -98,7 +101,31 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: const IconThemeData(color: Colors.white),
-        title: Text('Film Önerileri', style: TextStyle(color: Colors.white)),
+        title: Center(child: Text(selectedPrompt, style: TextStyle(color: Colors.white))),
+        /*actions: [
+          DropdownButton<String>(
+        value: selectedPrompt, // Seçili değer
+        dropdownColor: Colors.grey[800], // Açılır menü rengi
+        style: const TextStyle(color: Colors.white), // Yazı rengi
+        underline: Container(), // Alt çizgiyi kaldır
+        icon: const Icon(Icons.arrow_drop_down, color: Colors.white), // Ok ikonu
+        items: const [
+          DropdownMenuItem(
+            value: 'recommendation',
+            child: Text('Film Önerileri'),
+          ),
+          DropdownMenuItem(
+            value: 'find',
+            child: Text('Film Bulma'),
+          ),
+        ],
+        onChanged: (String? newValue) {
+          setState(() {
+            selectedPrompt = newValue ?? 'recommendation'; // Seçilen değeri güncelle
+          });
+        },
+      ),
+        ],*/
       ),
       body: Column(
         children: [
@@ -208,19 +235,21 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                                         child: Image.network(
                                             'https://image.tmdb.org/t/p/w500${recommendedMovie['poster_path']}',
                                             fit: BoxFit.cover,
-                                            height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                            height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.26),
                                             width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
                                             errorBuilder: (context, error, stackTrace) =>
                                             Image.asset(
                                              'assets/images/placeholder_poster.png',
-                                             fit: BoxFit.contain,
+                                             fit: BoxFit.cover,
+                                             height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.26),
+                                             width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
                                             ),
                                           ),
                                       )
                                       : Image.asset(
                                           'assets/images/placeholder_poster.png',
                                           fit: BoxFit.cover,
-                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.26),
                                           width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
                                         ),
                                   SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight *0.01)),
@@ -292,6 +321,42 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
           ),
         ],
       ),
+      floatingActionButton: SizedBox(
+        height: 75,
+        width: 75,
+        child: FloatingActionButton(
+          heroTag: null,
+          shape: CircleBorder(),
+          onPressed: () {
+            setState(() {
+              if(selectedPrompt == 'recommendation') {
+                selectedPrompt = 'find';
+              } else if (selectedPrompt == 'find') {
+                selectedPrompt = 'recommendation';
+              } else {
+                selectedPrompt = 'find';
+              }
+            
+          });
+          },
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints.expand(),
+            child: ClipOval(
+              child: Image.asset(
+                'assets/images/ai_icon2.png',
+                width: 50,
+                height: 50,
+              ),
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation:  CustomFloatingActionButtonLocation(
+  alignment: Alignment.bottomCenter,
+  offsetY: -screenHeight * 0.1, // 📌 FAB’i 30 piksel yukarı kaydır
+),
     );
   }
 

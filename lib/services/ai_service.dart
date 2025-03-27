@@ -4,27 +4,23 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 
-Future<List<String>> getGroqRecommendations(String userInput) async {
+Future<List<String>> getGroqRecommendations(String userInput, String promptType) async {
   final apiKey = dotenv.env['GROQ_API_KEY'];
   final endpoint = 'https://api.groq.com/openai/v1/chat/completions';
 
-  final prompt = '''
+  var prompt = '''
     Kullanıcı şunu arıyor: "$userInput".
     En fazla 9 film öner. Sadece film isimlerini virgülle ayırarak yaz.
-    Örnek: Inception, The Dark Knight, Interstellar
+    Örnek: Inception, Interstellar
   ''';
-  /*
-  Kullanıcı şunu arıyor: "$userInput".
-  En fazla 22 filmin TMDb ID’sini öner. Sadece sayıları virgülle ayırarak yaz.
-  Örnek: 27205, 155, 157336
-  */
-  /*
-  final prompt = '''
+  if(promptType == 'find') {
+    prompt = '''
     Kullanıcı şunu arıyor: "$userInput".
-    Bu aradığı kriterlere göre hangi filmi arıyor olabilir. Aradığı film olabilecek filmlerin isimlerini virgülle ayırarak yaz.
-    Örnek: Inception, The Dark Knight, Interstellar
+    Bu aradığı konu ve kriterlere göre arıyor olabileceği filmlerin adlarını virgülle ayırarak yaz.
+    Örnek: Inception, Interstellar
   ''';
-  */
+  }
+  
 
   final response = await http.post(
     Uri.parse(endpoint),
