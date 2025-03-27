@@ -1,9 +1,11 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:in_app_update/in_app_update.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'screens/ai_movie_recommendations_screen.dart';
 import 'screens/collection_screen.dart';
 import 'screens/wishlist_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -424,6 +426,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ? WishlistScreen(userId: _userId, userEmail: _userEmail, userPicture: _userPicture, userName: _userName, systemLanguage: widget.systemLanguage)
           : WishlistScreen(systemLanguage: widget.systemLanguage),
     ];
+    final List<IconData> iconList = [
+      Icons.movie,
+      Icons.bookmark,
+    ];
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
@@ -444,7 +450,60 @@ class _MyHomePageState extends State<MyHomePage> {
         ]
       ) 
       : const Center(child: CircularProgressIndicator()),
-      bottomNavigationBar: BottomNavigationBar(
+      floatingActionButton: SizedBox(
+        height: 60,
+        width: 60,
+        child: FloatingActionButton(
+          heroTag: null,
+          shape: CircleBorder(),
+          onPressed: () {
+            try {
+              if (!_isLoaded!) { null;}
+            else {
+              if(_selectedIndex == 0) {
+                CollectionScreen.globalKey.currentState?.navigateToAiPage();
+              } else if(_selectedIndex == 1) {
+                WishlistScreen.globalKey.currentState?.navigateToAiPage();
+              } else {
+                CollectionScreen.globalKey.currentState?.navigateToAiPage();
+              }
+              
+            }
+            } catch (e) {
+              print('xxxxxxxxx'+ e.toString());
+            }
+            
+          },
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints.expand(),
+            child: ClipOval(
+              child: Image.asset(
+                'assets/images/ai_icon5.png',
+                width: 50,
+                height: 50,
+              ),
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+        icons: iconList,
+        labels: [S.of(context).collection, S.of(context).wishlist],
+        activeIndex: _selectedIndex,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.defaultEdge,
+        leftCornerRadius: 32,
+        rightCornerRadius: 32,
+        activeColor: _selectedIndex == 0 ? Colors.amber : Colors.red,
+        inactiveColor: Colors.white70,
+        onTap: (index) => setState(() => _selectedIndex = index),
+      //other params
+   ),/*
+      BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -464,7 +523,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white54,
-      ),
+      ),*/
     );
   }
 

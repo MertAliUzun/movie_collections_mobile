@@ -443,6 +443,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
       // Save to Hive
       await box.put(movie.id, movie);
+      //print('xxxx'+ widget.userEmail!);
 
       _adService.showRewardedAd();
 
@@ -818,7 +819,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _watchedDate = widget.movie!.watchDate ?? DateTime.now();
       _userScore = widget.movie!.userScore ?? 0.0;
       _hypeScore = widget.movie!.hypeScore ?? 0.0;
-      _imageLink = widget.movie!.imageLink;
+      _imageLink = widget.movie!.imageLink ?? '';
       _selectedGenres = widget.movie!.genres ?? [];
       _selectedActors = widget.movie!.actors ?? [];
       _selectedWriters = widget.movie!.writers ?? [];

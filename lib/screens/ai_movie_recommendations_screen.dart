@@ -10,6 +10,10 @@ import '../sup/screen_util.dart';
 import 'add_movie_screen.dart';
 
 class AiMovieRecommendationsScreen extends StatefulWidget {
+  final String? userEmail;
+
+  const AiMovieRecommendationsScreen(this.userEmail);
+
   @override
   _AiMovieRecommendationsScreenState createState() => _AiMovieRecommendationsScreenState();
 }
@@ -167,7 +171,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                                     budget: movieDetails['budget']?.toDouble(),
                                     revenue: movieDetails['revenue']?.toDouble(),
                                     watched: false,
-                                    userEmail: 'test@test.com' //widget.userEmail ?? 'test@test.com'
+                                    userEmail: widget.userEmail ?? 'test@test.com' //widget.userEmail ?? 'test@test.com'
                                   );
                                     Navigator.pushReplacement(
                                       context,
@@ -213,7 +217,12 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                                             ),
                                           ),
                                       )
-                                      : const Icon(Icons.movie, size: 100, color: Colors.white54),
+                                      : Image.asset(
+                                          'assets/images/placeholder_poster.png',
+                                          fit: BoxFit.cover,
+                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                          width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                        ),
                                   SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight *0.01)),
                                   Padding(
                                     padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),

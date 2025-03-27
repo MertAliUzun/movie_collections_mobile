@@ -10,9 +10,14 @@ Future<List<String>> getGroqRecommendations(String userInput) async {
 
   final prompt = '''
     Kullanıcı şunu arıyor: "$userInput".
-    En fazla 22 film öner. Sadece film isimlerini virgülle ayırarak yaz.
+    En fazla 9 film öner. Sadece film isimlerini virgülle ayırarak yaz.
     Örnek: Inception, The Dark Knight, Interstellar
   ''';
+  /*
+  Kullanıcı şunu arıyor: "$userInput".
+  En fazla 22 filmin TMDb ID’sini öner. Sadece sayıları virgülle ayırarak yaz.
+  Örnek: 27205, 155, 157336
+  */
   /*
   final prompt = '''
     Kullanıcı şunu arıyor: "$userInput".
@@ -49,7 +54,7 @@ Future<List<String>> getGroqRecommendations(String userInput) async {
         .where((movie) => movie.isNotEmpty)
         .toList();
     
-    return movieList.take(22).toList();
+    return movieList.take(9).toList();
   } else {
     throw Exception('Groq isteği başarısız: ${response.statusCode}');
   }

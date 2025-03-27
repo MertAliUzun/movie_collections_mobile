@@ -9,6 +9,7 @@ import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
+import 'ai_movie_recommendations_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
 import '../sup/groupBy.dart';
@@ -17,13 +18,15 @@ import '../sup/businessLogic.dart';
 import '../sup/screen_util.dart';
 
 class CollectionScreen extends StatefulWidget {
+  static final GlobalKey<_CollectionScreenState> globalKey = GlobalKey();
   final String? userId; // Kullanıcı ID'si
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName;
   final String? systemLanguage;
 
-  const CollectionScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage});
+   CollectionScreen({this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage}) : super(key: globalKey);
+                    
 
   @override
   State<CollectionScreen> createState() => _CollectionScreenState();
@@ -66,6 +69,16 @@ class _CollectionScreenState extends State<CollectionScreen> {
           _adService.showRewardedAd();
         });
       }
+    );
+  }
+
+  void navigateToAiPage() {
+    Navigator.of(context, rootNavigator: true).push(
+      MaterialPageRoute(
+        builder: (context) => AiMovieRecommendationsScreen(
+          widget.userEmail ?? 'test@test.com'
+        ),
+      ),
     );
   }
 

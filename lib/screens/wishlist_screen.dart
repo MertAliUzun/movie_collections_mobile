@@ -11,19 +11,21 @@ import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'add_movie_screen.dart';
+import 'ai_movie_recommendations_screen.dart';
 import 'edit_movie_screen.dart';
 import '../widgets/sort_widget.dart';
 import 'package:hive/hive.dart';
 import '../sup/screen_util.dart';
 
 class WishlistScreen extends StatefulWidget {
+  static final GlobalKey<_WishlistScreenState> globalKey = GlobalKey();
   final String? userId; // Kullanıcı ID'si
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName;
   final String? systemLanguage;
 
-  const WishlistScreen({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage});
+  WishlistScreen({this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage}) : super(key: globalKey);
 
   @override
   State<WishlistScreen> createState() => _WishlistScreenState();
@@ -65,6 +67,16 @@ class _WishlistScreenState extends State<WishlistScreen> {
           _adService.showRewardedAd();
         });
       }
+    );
+  }
+
+  void navigateToAiPage() {
+    Navigator.of(context, rootNavigator: true).push(
+      MaterialPageRoute(
+        builder: (context) => AiMovieRecommendationsScreen(
+          widget.userEmail ?? 'test@test.com'
+        ),
+      ),
     );
   }
 
