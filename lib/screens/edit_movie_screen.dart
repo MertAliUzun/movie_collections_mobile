@@ -312,6 +312,21 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     // Önce rewarded reklamı göster
       // Reklam başarıyla gösterildiyse (ve kullanıcı izlediyse) durumu değiştir
       await toggleWatchedStatus(context, widget.movie!, widget.isFromWishlist, true);
+      final snackBar = SnackBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              behavior: SnackBarBehavior.floating,
+              content: AwesomeSnackbarContent(
+                title: S.of(context).succesful, 
+                message:  S.of(context).moviesMovedToWatchlist, 
+                contentType: ContentType.success, 
+                inMaterialBanner: true,
+              ), 
+              dismissDirection: DismissDirection.horizontal,
+            );
+            ScaffoldMessenger.of(context)
+              ..hideCurrentMaterialBanner()
+              ..showSnackBar(snackBar);
 
       //_adService.showRewardedAd();
   }
