@@ -27,6 +27,7 @@ import '../services/ai_service.dart';
 import '../services/supabase_service.dart';
 import '../services/tmdb_service.dart';
 import '../screens/ai_movie_recommendations_screen.dart';
+import '../screens/discover_movie_screen.dart';
 
 class DrawerWidget extends StatefulWidget {
   final String _viewType;
@@ -1386,6 +1387,82 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                                 Icons.verified,
                                 color: _isPremium ? Colors.grey : Colors.white
                               ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: screenWidth * 0.5,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DiscoverMovieScreen(
+                                discoverType: 'Latest',
+                                isFromWishlist: _isFromWishlist ?? true,
+                                userEmail: userEmail ?? 'test@test.com',
+                              ),
+                            ),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: .3,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(child: Text('S.of(context).latestMovies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
+                              SizedBox(width: screenWidth * 0.03),
+                              Icon(size: screenWidth * 0.055, Icons.slow_motion_video, color: Colors.white),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: screenWidth * 0.5,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DiscoverMovieScreen(
+                                discoverType: 'Upcoming',
+                                isFromWishlist: _isFromWishlist ?? true,
+                                userEmail: userEmail ?? 'test@test.com',
+                              ),
+                            ),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: .3,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(child: Text('S.of(context).upcomingMovies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
+                              SizedBox(width: screenWidth * 0.03),
+                              Icon(size: screenWidth * 0.055, Icons.slow_motion_video, color: Colors.white),
                             ],
                           ),
                         ),

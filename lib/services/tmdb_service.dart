@@ -95,6 +95,61 @@ class TmdbService {
     return null;
   }
 
+  Future<List< dynamic>>  getLatestMovies() async {
+    final List< dynamic> movies = [];
+    final response = await http.get(
+      Uri.parse('$_baseUrl/movie/now_playing?api_key=$_apiKey'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['results'].isNotEmpty) {
+          movies.addAll(data['results']);
+        }
+    }
+     // Filmleri release_date'e göre azalan sırayla sıralıyoruz
+      movies.sort((a, b) {
+        DateTime dateA = DateTime.parse(a['release_date']);
+        DateTime dateB = DateTime.parse(b['release_date']);
+        return dateB.compareTo(dateA);
+      });
+
+    
+    return movies;
+  }
+
+  Future<List< dynamic>>  getUpcomingMovies() async {
+    final List< dynamic> movies = [];
+    // Bugünün tarihini alıyoruz
+    DateTime now = DateTime.now();
+    String startDate = now.toIso8601String().split('T').first; // "YYYY-MM-DD"
+    
+    // 3 ay sonrası
+    DateTime threeMonthsLater = now.add(Duration(days: 90));
+    String endDate = threeMonthsLater.toIso8601String().split('T').first; // "YYYY-MM-DD"
+
+    
+    final response = await http.get(
+      Uri.parse('$_baseUrl/discover/movie?api_key=$_apiKey&primary_release_date.gte=$startDate&primary_release_date.lte=$endDate'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['results'].isNotEmpty) {
+          movies.addAll(data['results']);
+        }
+    }
+
+     // Filmleri release_date'e göre azalan sırayla sıralıyoruz
+      movies.sort((a, b) {
+        DateTime dateA = DateTime.parse(a['release_date']);
+        DateTime dateB = DateTime.parse(b['release_date']);
+        return dateA.compareTo(dateB);
+      });
+
+    return movies;
+  }
+
   Future<List<Map<String, dynamic>>> getMovies(List<String> movieTitles) async {
     final List<Map<String, dynamic>> movies = [];
   
