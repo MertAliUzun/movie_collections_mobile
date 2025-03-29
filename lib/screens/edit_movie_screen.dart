@@ -824,6 +824,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           S.of(context).movieDetails, 
           style: TextStyle(
@@ -1063,9 +1064,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final providerId = provider['provider_id'].toString();
                                 if (!uniqueProviders.containsKey(providerId)) {
                                   uniqueProviders[providerId] = {
+                                    'provider_id': providerId,
                                     'logo_path': provider['logo_path'],
                                     'provider_name': provider['provider_name'],
-                                    'categories': <String>['Subscription']
+                                    'categories': <String>['Subscription'],
                                   };
                                 } else {
                                   uniqueProviders[providerId]!['categories'].add('Subscription');
@@ -1076,6 +1078,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final providerId = provider['provider_id'].toString();
                                 if (!uniqueProviders.containsKey(providerId)) {
                                   uniqueProviders[providerId] = {
+                                    'provider_id': providerId,
                                     'logo_path': provider['logo_path'],
                                     'provider_name': provider['provider_name'],
                                     'categories': <String>['Rent']
@@ -1089,6 +1092,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final providerId = provider['provider_id'].toString();
                                 if (!uniqueProviders.containsKey(providerId)) {
                                   uniqueProviders[providerId] = {
+                                    'provider_id': providerId,
                                     'logo_path': provider['logo_path'],
                                     'provider_name': provider['provider_name'],
                                     'categories': <String>['Buy']

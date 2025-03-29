@@ -95,56 +95,55 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
           color: Colors.white,
           size: ScreenUtil.getAdaptiveIconSize(context, 24),
         ),
-        title: Center(
-          child: RichText(
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.white, 
-                fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
-              ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: _selectedPopularity == 'Daily' ? S.of(context).daily :
-                        _selectedPopularity == 'Weekly' ? S.of(context).weekly :
-                        _selectedPopularity == 'Monthly' ? S.of(context).monthly : _selectedPopularity, 
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
-                  ),
-                ),
-                TextSpan(
-                  text: ' ${S.of(context).popularFor} ',
-                  style: TextStyle(
-                    fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
-                  ),
-                ),
-                TextSpan(
-                  text: widget.genre == 'Action' ? S.of(context).action : 
-                        widget.genre == 'Adventure' ? S.of(context).adventure :
-                        widget.genre == 'Animation' ? S.of(context).animation :
-                        widget.genre == 'Comedy' ? S.of(context).comedy :
-                        widget.genre == 'Crime' ? S.of(context).crime :
-                        widget.genre == 'Documentary' ? S.of(context).documentary :
-                        widget.genre == 'Drama' ? S.of(context).drama :
-                        widget.genre == 'Family' ? S.of(context).family :
-                        widget.genre == 'Fantasy' ? S.of(context).fantasy :
-                        widget.genre == 'History' ? S.of(context).history :
-                        widget.genre == 'Horror' ? S.of(context).horror :
-                        widget.genre == 'Music' ? S.of(context).music :
-                        widget.genre == 'Mystery' ? S.of(context).mystery :
-                        widget.genre == 'Romance' ? S.of(context).romance :
-                        widget.genre == 'Science Fiction' ? S.of(context).scienceFiction :
-                        widget.genre == 'TV Movie' ? S.of(context).tvMovie :
-                        widget.genre == 'Thriller' ? S.of(context).thriller :
-                        widget.genre == 'War' ? S.of(context).war :
-                        widget.genre == 'Western' ? S.of(context).western : widget.genre, 
-                  style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                    fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
-                  ),
-                ),
-              ],
+        centerTitle: true,
+        title: RichText(
+          text: TextSpan(
+            style: TextStyle(
+              color: Colors.white, 
+              fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
             ),
+            children: <TextSpan>[
+              TextSpan(
+                text: _selectedPopularity == 'Daily' ? S.of(context).daily :
+                      _selectedPopularity == 'Weekly' ? S.of(context).weekly :
+                      _selectedPopularity == 'Monthly' ? S.of(context).monthly : _selectedPopularity, 
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                ),
+              ),
+              TextSpan(
+                text: ' ${S.of(context).popularFor} ',
+                style: TextStyle(
+                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                ),
+              ),
+              TextSpan(
+                text: widget.genre == 'Action' ? S.of(context).action : 
+                      widget.genre == 'Adventure' ? S.of(context).adventure :
+                      widget.genre == 'Animation' ? S.of(context).animation :
+                      widget.genre == 'Comedy' ? S.of(context).comedy :
+                      widget.genre == 'Crime' ? S.of(context).crime :
+                      widget.genre == 'Documentary' ? S.of(context).documentary :
+                      widget.genre == 'Drama' ? S.of(context).drama :
+                      widget.genre == 'Family' ? S.of(context).family :
+                      widget.genre == 'Fantasy' ? S.of(context).fantasy :
+                      widget.genre == 'History' ? S.of(context).history :
+                      widget.genre == 'Horror' ? S.of(context).horror :
+                      widget.genre == 'Music' ? S.of(context).music :
+                      widget.genre == 'Mystery' ? S.of(context).mystery :
+                      widget.genre == 'Romance' ? S.of(context).romance :
+                      widget.genre == 'Science Fiction' ? S.of(context).scienceFiction :
+                      widget.genre == 'TV Movie' ? S.of(context).tvMovie :
+                      widget.genre == 'Thriller' ? S.of(context).thriller :
+                      widget.genre == 'War' ? S.of(context).war :
+                      widget.genre == 'Western' ? S.of(context).western : widget.genre, 
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
+                ),
+              ),
+            ],
           ),
         ),
         actions: [

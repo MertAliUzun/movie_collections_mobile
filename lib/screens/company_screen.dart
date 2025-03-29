@@ -79,13 +79,12 @@ class _CompanyScreenState extends State<CompanyScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            widget.companyName, 
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),
-            ),
+        centerTitle: true,
+        title: Text(
+          widget.companyName, 
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),
           ),
         ),
         iconTheme: IconThemeData(

@@ -865,6 +865,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           S.of(context).addNewMovie, 
           style: TextStyle(

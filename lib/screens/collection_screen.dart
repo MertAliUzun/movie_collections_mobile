@@ -409,6 +409,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
             });
           },
         ),
+        centerTitle: true,
         title: Text(
           '${_selectedMovies.length} ${S.of(context).moviesSelected}', 
           style: TextStyle(
@@ -539,6 +540,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
             });
           },
         ) : null,
+        centerTitle: true,
         title: !_isSearching 
           ? Text(
               '${_movies.length} ${S.of(context).movies}', 

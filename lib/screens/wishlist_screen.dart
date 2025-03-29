@@ -393,6 +393,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             });
           },
         ),
+        centerTitle: true,
         title: Text(
           '${_selectedMovies.length} ${S.of(context).moviesSelected}', 
           style: TextStyle(
@@ -524,6 +525,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             });
           },
         ) : null,
+        centerTitle: true,
         title: !_isSearching 
           ? Text(
               '${_movies.length} ${S.of(context).movies}', 

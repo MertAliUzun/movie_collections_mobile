@@ -99,9 +99,14 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: const IconThemeData(color: Colors.white),
-        title: Center(child: Text(selectedPrompt, style: TextStyle(color: Colors.white))),
+        title: Text(
+          selectedPrompt == 'recommend' ? 'S.of(context).recommendMovieMode'
+          : selectedPrompt == 'find' ? 'S.of(context).findMovieMode'
+          : 'S.of(context).recommendMode', 
+        style: TextStyle(color: Colors.white)),
         /*actions: [
           DropdownButton<String>(
         value: selectedPrompt, // Seçili değer

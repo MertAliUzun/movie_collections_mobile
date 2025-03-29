@@ -139,6 +139,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                 ),
                 backgroundColor: const Color.fromARGB(255, 34, 40, 50),
                 expandedHeight: isTablet ? screenHeight * 0.4 : screenHeight * 0.5,
+                centerTitle: true,
                 title: _isCollapsed ? Container(
                   padding: ScreenUtil.getAdaptivePadding(context),
                   color: Colors.transparent,
@@ -412,24 +413,23 @@ class _DirectorScreenState extends State<DirectorScreen> {
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),
             backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-            title: Center(
-              child: Column(
-                 children: [
-                   Text(
-                     _personDetails[0]['name'],
-                     style: TextStyle(fontSize: screenWidth * 0.045, color: Colors.white),
-                     textAlign: TextAlign.center,
-                   ),
-                   Text(
-                     widget.personType == 'Director' ? S.of(context).director :
-                     widget.personType == 'Actor' ? S.of(context).actor :
-                     widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
-                     style: TextStyle(fontSize: screenWidth * 0.035 , color: Colors.white60),
-                     textAlign: TextAlign.center,
-                   ),
-                 ],
-               ),
-            ),
+            centerTitle: true,
+            title: Column(
+               children: [
+                 Text(
+                   _personDetails[0]['name'],
+                   style: TextStyle(fontSize: screenWidth * 0.045, color: Colors.white),
+                   textAlign: TextAlign.center,
+                 ),
+                 Text(
+                   widget.personType == 'Director' ? S.of(context).director :
+                   widget.personType == 'Actor' ? S.of(context).actor :
+                   widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
+                   style: TextStyle(fontSize: screenWidth * 0.035 , color: Colors.white60),
+                   textAlign: TextAlign.center,
+                 ),
+               ],
+             ),
           ),
           body: _personMovies.isNotEmpty
                   ? 

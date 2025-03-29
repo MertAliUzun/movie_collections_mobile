@@ -186,6 +186,25 @@ class TmdbService {
 
   return similarMovies.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
 }
+
+Future<List<Map<String, dynamic>>> getMoviesByProvider(int providerId) async {
+    List<Map<String, dynamic>> providerMovies = [];
+  final response = await http.get(
+    Uri.parse('$_baseUrl/discover/movie?api_key=$_apiKey&with_watch_providers=$providerId&sort_by=popularity.desc'),
+  );
+  print(json.decode(response.body));
+
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+
+    if (data['results'] != null) {
+      providerMovies.addAll(List<Map<String, dynamic>>.from(data['results']));
+    }
+  }
+
+  return providerMovies.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
+}
+
 Future<List<Map<String, dynamic>>> getPgRating(int movieId) async {
   List<Map<String, dynamic>> pgRatings = [];
   final response = await http.get(
@@ -220,31 +239,6 @@ Future<List<Map<String, dynamic>>> getPgRating(int movieId) async {
     // Benzersiz filmleri filtreleyin
     return allMovies.toSet().toList();
 }
-  /*
-  Future<List<Map<String, dynamic>>> getMoviesByCompany(int companyId) async {
-  List<Map<String, dynamic>> allMovies = [];
-  int totalPages = 1;
-
-  for (int page = 1; page <= totalPages; page++) {
-    final response = await http.get(
-      Uri.parse('$_baseUrl/discover/movie?api_key=$_apiKey&with_companies=$companyId&page=$page'),
-    );
-
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      if (page == 1) {
-        totalPages = data['total_pages'] ?? 1;
-      }
-      if (data['results'] != null) {
-        allMovies.addAll(List<Map<String, dynamic>>.from(data['results']));
-      }
-    } else {
-      print('Error: ${response.statusCode}');
-      break;
-    }
-  }
-  return allMovies.toSet().toList();
-} */
 
 Future<Map<String, dynamic>?> getProviders(int movieId) async {
   try {
