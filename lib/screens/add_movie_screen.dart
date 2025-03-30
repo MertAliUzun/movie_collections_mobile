@@ -404,7 +404,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
             ? int.tryParse(_runtimeController.text)
             : null,
         imdbRating: _imdbRatingController.text.isNotEmpty
-            ? double.tryParse(_imdbRatingController.text)
+            ? _imdbRatingController.text.length >= 3 ? double.tryParse(_imdbRatingController.text.substring(0, 3))
+            : double.tryParse(_imdbRatingController.text)
             : null,
         watchCount: _watchCountController.text.isNotEmpty
             ? int.tryParse(_watchCountController.text)
@@ -802,6 +803,77 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
+  // PG Rating seçim dialogunu göstermek için fonksiyon
+  Future<void> _showPgRatingSelector(BuildContext context) async {
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          title: Text(
+            'S.of(context).selectPgRating',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+            ),
+          ),
+          content: Container(
+            width: double.maxFinite,
+            child: GridView.count(
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              children: [
+                _buildPgRatingOption(context, '(G)', 'assets/images/G.png'),
+                _buildPgRatingOption(context, '(PG)', 'assets/images/PG.png'),
+                _buildPgRatingOption(context, '(PG-13)', 'assets/images/PG13.png'),
+                _buildPgRatingOption(context, '(R)', 'assets/images/R.png'),
+                _buildPgRatingOption(context, '(NC-17)', 'assets/images/NC17.png'),
+                _buildPgRatingOption(context, '', 'assets/images/Unrated.png'),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+  
+  // Her bir PG rating seçeneği için widget oluşturan yardımcı fonksiyon
+  Widget _buildPgRatingOption(BuildContext context, String rating, String imagePath) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _pgRating = rating;
+        });
+        Navigator.of(context).pop();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: _pgRating == rating 
+            ? Colors.blue.withOpacity(0.3) 
+            : Colors.transparent,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: _pgRating == rating 
+              ? Colors.blue 
+              : Colors.grey.withOpacity(0.3),
+            width: 2,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
+      ),
+    );
+  } 
+
   @override
   void initState() {
     super.initState();
@@ -812,7 +884,11 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _plotController.text = widget.movie!.plot ?? '';
       _notesController.text = widget.movie!.myNotes ?? '';
       _runtimeController.text = widget.movie!.runtime?.toString() ?? '';
-      _imdbRatingController.text = widget.movie!.imdbRating?.toString() ?? '';
+      _imdbRatingController.text = widget.movie!.imdbRating != null 
+        ? widget.movie!.imdbRating!.toString().length > 3
+            ? widget.movie!.imdbRating!.toString().substring(0, 3)
+            : widget.movie!.imdbRating!.toString()
+        : '';
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _watchCountController.text = widget.movie!.watchCount?.toString() ?? '';
       _selectedDate = widget.movie!.releaseDate;
@@ -1065,21 +1141,26 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         Container(
                             height: screenHeight * 0.08,
                             width:  screenWidth * 0.2,
-                            child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                              child: Padding(
-                                padding: const EdgeInsets.all(6.0),
-                                child: Image.asset(
-                                        _pgRating == '(G)' ? 'assets/images/G.png' :
-                                        _pgRating == '(R)' ? 'assets/images/R.png' :
-                                        _pgRating == '(PG)' ? 'assets/images/PG.png' :
-                                        _pgRating == '(PG-13)' ? 'assets/images/PG13.png' :
-                                        _pgRating == '(NC-17)' ? 'assets/images/NC17.png' : 'assets/images/Unrated.png',
-                                        width: 100,
-                                        height: 50,
-                                        ),
-                              )
-                              ),
+                            child: GestureDetector(
+                              onTap: () {
+                                _showPgRatingSelector(context);
+                              },
+                              child: Card(
+                                color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(6.0),
+                                  child: Image.asset(
+                                          _pgRating == '(G)' ? 'assets/images/G.png' :
+                                          _pgRating == '(R)' ? 'assets/images/R.png' :
+                                          _pgRating == '(PG)' ? 'assets/images/PG.png' :
+                                          _pgRating == '(PG-13)' ? 'assets/images/PG13.png' :
+                                          _pgRating == '(NC-17)' ? 'assets/images/NC17.png' : 'assets/images/Unrated.png',
+                                          width: 100,
+                                          height: 50,
+                                          ),
+                                )
+                                ),
+                            ),
                           ),
                     Container(
                       height: screenHeight * 0.08,
