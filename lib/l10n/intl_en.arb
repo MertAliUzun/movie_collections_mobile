@@ -175,5 +175,17 @@
     "removeMovieLimit": "Remove Movie Adding Limit",
     "cloudBackUp": "Cloud BackUp for Your Movies",
     "premiumSupport": "Premium Customer Support",
-    "checkUnderratedOverrated": "Check Underrated and Overrated Movies"
+    "checkUnderratedOverrated": "Check Underrated and Overrated Movies",
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
 }

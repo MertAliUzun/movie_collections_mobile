@@ -59,6 +59,52 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
     }
   }
 
+  String getMonth(String releaseDate) {
+    String month;
+    switch (releaseDate) {
+      case '01':
+        month = S.of(context).january;
+        break;
+      case '02':
+        month = S.of(context).february;
+        break;
+      case '03':
+        month = S.of(context).march;
+        break;
+      case '04':
+        month = S.of(context).april;
+        break;
+      case '05':
+        month = S.of(context).may;
+        break;
+      case '06':
+        month = S.of(context).june;
+        break;
+      case '07':
+        month = S.of(context).july;
+        break;
+      case '08':
+        month = S.of(context).august;
+        break;
+      case '09':
+        month = S.of(context).september;
+        break;
+      case '10':
+        month = S.of(context).october;
+        break;
+      case '11':
+        month = S.of(context).november;
+        break;
+      case '12':
+        month = S.of(context).december;
+        break;
+      default:
+        month = S.of(context).january;  // Default olarak January ekle
+        break;
+    }
+    return month;
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -97,8 +143,10 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
                         ),
                         padding: ScreenUtil.getAdaptivePadding(context),
                         itemCount: _movies.length,
-                        itemBuilder: (context, index) {
+                        itemBuilder: (context, index) {      
                           final movie = _movies[index];
+                          String _month = getMonth(movie['release_date'].split('-')[1]);
+                          String _day = movie['release_date'].split('-')[2];
                           return GestureDetector(
                             onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
@@ -222,7 +270,7 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
                                           ),
                                         if (movie['release_date'] != null)
                                           Text(
-                                            movie['release_date'].split('-')[0],
+                                            "$_month $_day",
                                             style: TextStyle(
                                               color: Colors.white54,
                                               fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.025),

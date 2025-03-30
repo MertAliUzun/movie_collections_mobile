@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascending"),
+        "august": MessageLookupByLibrary.simpleMessage("August"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biography: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Birth Date: "),
         "birthPlaceColon":
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Data for this Writer could not be found!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Death Date: "),
+        "december": MessageLookupByLibrary.simpleMessage("December"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Delete Chosen Movies"),
@@ -113,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Failure!"),
         "family": MessageLookupByLibrary.simpleMessage("Family"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("February"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -125,8 +129,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Score"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Import from CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("Invalid IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("January"),
+        "july": MessageLookupByLibrary.simpleMessage("July"),
+        "june": MessageLookupByLibrary.simpleMessage("June"),
         "list": MessageLookupByLibrary.simpleMessage("List"),
         "listSmall": MessageLookupByLibrary.simpleMessage("List(Small)"),
+        "march": MessageLookupByLibrary.simpleMessage("March"),
+        "may": MessageLookupByLibrary.simpleMessage("May"),
         "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Movie has been Succesfully Added!"),
@@ -176,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("No Writers Selected"),
         "none": MessageLookupByLibrary.simpleMessage("None"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("October"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Please Enter"),
         "pleaseEnterMovieTitle":
@@ -211,6 +222,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selected": MessageLookupByLibrary.simpleMessage("Selected"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "selected movies will be deleted. Do you confirm?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Sign-In was canceled."),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
