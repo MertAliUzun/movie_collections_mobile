@@ -55,22 +55,37 @@ class TmdbService {
   }
 
   Future<List<Map<String, dynamic>>> getMoviesByPerson(int personId, String personType) async {
-    final response = await http.get(
-      Uri.parse('$_baseUrl/person/$personId/movie_credits?api_key=$_apiKey'),
-    );
+      final response = await http.get(
+        Uri.parse('$_baseUrl/person/$personId/movie_credits?api_key=$_apiKey'),
+      );
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      if (data['crew'] != null) {
-        if(personType == 'Director') { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));  }
-        else if ( personType == 'Actor') { return List<Map<String, dynamic>>.from(data['cast'].where((movie) => movie['character'] != null)); }
-        else if ( personType == 'Writer') { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['department'] == 'Writing')); }
-        else { return List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));}
-        
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        List<Map<String, dynamic>> movies = [];
+
+        if (data['crew'] != null) {
+          if (personType == 'Director') {
+            movies = List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));
+          } else if (personType == 'Actor') {
+            movies = List<Map<String, dynamic>>.from(data['cast'].where((movie) => movie['character'] != null));
+          } else if (personType == 'Writer') {
+            movies = List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['department'] == 'Writing'));
+          } else {
+            movies = List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));
+          }
+        }
+
+        movies.sort((a, b) {
+          DateTime dateA = DateTime.tryParse(a['release_date'] ?? '') ?? DateTime(0);
+          DateTime dateB = DateTime.tryParse(b['release_date'] ?? '') ?? DateTime(0);
+          return dateB.compareTo(dateA);
+        });
+
+        return movies;
       }
+      return [];
     }
-    return [];
-  }
+    
     Future<Map<String, dynamic>?> getPersonalDetails(int personId, String languageCode) async {
     final response = await http.get(
       Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey&language=$languageCode'),

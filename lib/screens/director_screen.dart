@@ -119,6 +119,58 @@ class _DirectorScreenState extends State<DirectorScreen> {
     }
   }
 
+  // Biyografi dialogunu gösterecek fonksiyon ekleyelim
+  void _showFullBiography(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  S.of(context).biographyColon,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Text(
+                      _personPersonalDetails!['biography'] ?? '',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text(
+                    S.of(context).cancel,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -318,20 +370,43 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             ),
                                           ),
                                         if (_personPersonalDetails?['biography']?.isNotEmpty ?? false)
-                                          Card(
-                                            shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 24, 30, 40),
-                                            child: Padding(
-                                              padding: ScreenUtil.getAdaptivePadding(context),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  '${S.of(context).biographyColon} ${_personPersonalDetails!['biography']}',
-                                                  style: TextStyle(
-                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                    color: Colors.white,
+                                          GestureDetector(
+                                            onTap: () => _showFullBiography(context),
+                                            child: Card(
+                                              shadowColor: Colors.white,
+                                              color: const Color.fromARGB(255, 24, 30, 40),
+                                              child: Padding(
+                                                padding: ScreenUtil.getAdaptivePadding(context),
+                                                child: SingleChildScrollView(
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text(
+                                                        '${S.of(context).biographyColon}',
+                                                        style: TextStyle(
+                                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                          color: Colors.white,
+                                                          fontWeight: FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        _personPersonalDetails!['biography'],
+                                                        style: TextStyle(
+                                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                          color: Colors.white,
+                                                        ),
+                                                        overflow: TextOverflow.ellipsis,
+                                                        maxLines: isTablet ? 8 : 5,
+                                                      ),
+                                                      Center(
+                                                        child: Icon(
+                                                          Icons.keyboard_arrow_down,
+                                                          color: Colors.white54,
+                                                          size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                  overflow: TextOverflow.ellipsis,
-                                                  maxLines: isTablet ? 8 : 5,
                                                 ),
                                               ),
                                             ),

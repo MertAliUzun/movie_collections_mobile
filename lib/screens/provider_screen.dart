@@ -241,7 +241,7 @@ class _ProviderScreenState extends State<ProviderScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'S.of(context).noMoviesFoundForProvider',
+                        S.of(context).noMoviesFound,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),

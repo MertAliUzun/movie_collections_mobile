@@ -105,7 +105,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
         title: Text(
           selectedPrompt == 'recommend' ? S.of(context).recommendMovieMode
           : selectedPrompt == 'find' ? S.of(context).findMovieMode
-          : S.of(context).recommendMode, 
+          : S.of(context).recommendMovieMode, 
         style: TextStyle(color: Colors.white)),
         /*actions: [
           DropdownButton<String>(

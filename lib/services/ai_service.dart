@@ -3,6 +3,68 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+Future<List<String>> getGeminiRecommendations(String userInput, String promptType) async {
+  await dotenv.load(fileName: ".env");
+  final apiKey = dotenv.env['GEMINI_API_KEY'];
+  final endpoint = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-lite:generateContent';
+
+  if (apiKey == null) {
+    throw Exception('GEMINI_API_KEY bulunamadı.');
+  }
+
+  var prompt = '''
+    Kullanıcı şunu arıyor: "$userInput".
+    En fazla 10 film öner. Sadece film isimlerini virgülle ayırarak yaz.
+    Örnek: Inception, Interstellar
+  ''';
+
+  if (promptType == 'find') {
+    prompt = '''
+      Kullanıcı şunu arıyor: "$userInput".
+      Bu aradığı konu ve kriterlere göre arıyor olabileceği filmlerin adlarını virgülle ayırarak yaz.
+      Örnek: Inception, Interstellar
+    ''';
+  }
+
+  try {
+    final response = await http.post(
+      Uri.parse(endpoint),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $apiKey',
+      },
+      body: jsonEncode({
+        'contents': [
+          {
+            'parts': [
+              {'text': prompt}
+            ]
+          }
+        ]
+      }),
+    );
+    print(jsonDecode(response.body));
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final content = data['candidates'][0]['content']['parts'][0]['text'] as String;
+
+      final movieList = content
+          .split(',')
+          .map((movie) => movie.trim())
+          .where((movie) => movie.isNotEmpty)
+          .toList();
+
+      return movieList.take(10).toList();
+    } else {
+      print('Gemini API hatası: ${response.statusCode}, ${response.body}');
+      throw Exception('Gemini isteği başarısız: ${response.statusCode}');
+    }
+  } catch (e) {
+    print('Gemini isteği sırasında hata oluştu: $e');
+    throw Exception('Gemini isteği sırasında hata oluştu: $e');
+  }
+}
 
 Future<List<String>> getGroqRecommendations(String userInput, String promptType) async {
   final apiKey = dotenv.env['GROQ_API_KEY'];
