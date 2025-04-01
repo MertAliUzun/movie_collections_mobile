@@ -323,12 +323,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
-  Future<bool> _checkMovieLimit() async {
+  Future<bool> _checkMovieLimit() async {   
     final box = Hive.box<Movie>('movies');
     final prefs = await SharedPreferences.getInstance();
     final isPremium = prefs.getBool('isPremium') ?? false;
+    if(isPremium) { return true;}
+    final int movieLimit;
+    if(widget.isFromWishlist) {
+      movieLimit = box.values.where((movie) => !movie.watched).length;
+    } else {
+      movieLimit = box.values.where((movie) => !movie.watched).length;
+    }
     
-    if (!isPremium && box.length >= 1000) {
+    if (movieLimit > 250) {
       await showDialog(
         context: context,
         builder: (BuildContext context) {
