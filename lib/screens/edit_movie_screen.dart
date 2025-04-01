@@ -1308,7 +1308,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                       final movieId = await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Director', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                          builder: (context) => DirectorScreen(personName: _directorNameController.text, personType: 'Directing', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                         ),
                       );
                       
@@ -1381,7 +1381,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Actor', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                    builder: (context) => DirectorScreen(personName: actorName, personType: 'Acting', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -1452,7 +1452,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writer', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                    builder: (context) => DirectorScreen(personName: writerName, personType: 'Writing', systemLanguage: widget.systemLanguage, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
                                   ),
                                 );
                                 if (movieId != null) {

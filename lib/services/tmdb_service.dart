@@ -64,11 +64,11 @@ class TmdbService {
         List<Map<String, dynamic>> movies = [];
 
         if (data['crew'] != null) {
-          if (personType == 'Director') {
+          if (personType == 'Directing') {
             movies = List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));
-          } else if (personType == 'Actor') {
+          } else if (personType == 'Acting') {
             movies = List<Map<String, dynamic>>.from(data['cast'].where((movie) => movie['character'] != null));
-          } else if (personType == 'Writer') {
+          } else if (personType == 'Writing') {
             movies = List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['department'] == 'Writing'));
           } else {
             movies = List<Map<String, dynamic>>.from(data['crew'].where((movie) => movie['job'] == 'Director'));
@@ -85,7 +85,7 @@ class TmdbService {
       }
       return [];
     }
-    
+
     Future<Map<String, dynamic>?> getPersonalDetails(int personId, String languageCode) async {
     final response = await http.get(
       Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey&language=$languageCode'),
@@ -128,8 +128,6 @@ class TmdbService {
         DateTime dateB = DateTime.parse(b['release_date']);
         return dateB.compareTo(dateA);
       });
-
-    
     return movies;
   }
 
@@ -165,7 +163,7 @@ class TmdbService {
     return movies;
   }
 
-  Future<List<Map<String, dynamic>>> getMovies(List<String> movieTitles) async {
+  Future<List<Map<String, dynamic>>> getMovieIDs(List<String> movieTitles) async {
     final List<Map<String, dynamic>> movies = [];
   
     for (final title in movieTitles) {
@@ -305,6 +303,11 @@ Future<List<Map<String, dynamic>>> getPgRating(int movieId) async {
         }
       }
     }
+    allMovies.sort((a, b) {
+          DateTime dateA = DateTime.tryParse(a['release_date'] ?? '') ?? DateTime(0);
+          DateTime dateB = DateTime.tryParse(b['release_date'] ?? '') ?? DateTime(0);
+          return dateB.compareTo(dateA);
+        });
 
     // Benzersiz filmleri filtreleyin
     return allMovies.toSet().toList();
@@ -338,4 +341,21 @@ Future<Map<String, dynamic>?> getProviders(int movieId) async {
     return null;
   }
 }
+Future<List< dynamic>>  getPopularPeople() async {
+    final List< dynamic> people = [];
+    final response = await http.get(
+      Uri.parse('$_baseUrl/person/popular?api_key=$_apiKey'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['results'].isNotEmpty) {
+          people.addAll(data['results']);
+        }
+    }
+    print(people);
+     
+    return people;
+  }
+
 } 

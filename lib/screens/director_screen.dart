@@ -16,7 +16,7 @@ class DirectorScreen extends StatefulWidget {
   final bool? isFromWishlist;
   final String? userEmail;
 
-  const DirectorScreen({Key? key, required this.personName, required this.personType, this.systemLanguage, this.isFromWishlist, this.userEmail}) : super(key: key);
+  const   DirectorScreen({Key? key, required this.personName, required this.personType, this.systemLanguage, this.isFromWishlist, this.userEmail}) : super(key: key);
 
   @override
   _DirectorScreenState createState() => _DirectorScreenState();
@@ -52,11 +52,11 @@ class _DirectorScreenState extends State<DirectorScreen> {
   Future<void> _fetchDirectorDetails() async {
     try {
       final results = await _tmdbService.searchPeople(widget.personName);
-      if(widget.personType == 'Director'){
+      if(widget.personType == 'Directing'){
         _personDetails = results.where((director) => director['known_for_department'] == 'Directing').take(1).toList();
-      } else if(widget.personType == 'Actor'){
+      } else if(widget.personType == 'Acting'){
         _personDetails = results.where((actor) => actor['known_for_department'] == 'Acting').take(1).toList();
-      } else if(widget.personType == 'Writer'){
+      } else if(widget.personType == 'Writing'){
         _personDetails = results.where((actor) => actor['known_for_department'] == 'Writing').take(1).toList();
       }
       
@@ -66,7 +66,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
         _personMovies = _personMovies.where((movie) => movie['poster_path'] != null).toList();
         
         _personPersonalDetails = await _tmdbService.getPersonalDetails(personId, widget.systemLanguage ?? 'en');
-        
       }
       setState(() {
         _isLoading = false;
