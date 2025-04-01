@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("ماجراجویی"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("نام مستعار: "),
         "animation": MessageLookupByLibrary.simpleMessage("انیمیشن"),
+        "april": MessageLookupByLibrary.simpleMessage("آوریل"),
         "ascending": MessageLookupByLibrary.simpleMessage("صعودی"),
+        "august": MessageLookupByLibrary.simpleMessage("اوت"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("بیوگرافی: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("تاریخ تولد: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("محل تولد: "),
@@ -80,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "اطلاعات برای این نویسنده پیدا نشد!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("تاریخ مرگ: "),
+        "december": MessageLookupByLibrary.simpleMessage("دسامبر"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("حذف فیلم‌های انتخابی"),
@@ -112,6 +115,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("شکست!"),
         "family": MessageLookupByLibrary.simpleMessage("خانوادگی"),
         "fantasy": MessageLookupByLibrary.simpleMessage("فانتزی"),
+        "february": MessageLookupByLibrary.simpleMessage("فوریه"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("حالت جستجوی فیلم"),
         "franchise": MessageLookupByLibrary.simpleMessage("فرانچایز"),
         "franchises": MessageLookupByLibrary.simpleMessage("فرانچایزها"),
         "genre": MessageLookupByLibrary.simpleMessage("ژانر"),
@@ -125,8 +131,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("واردات از CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("شناسه IMDB نامعتبر!"),
+        "january": MessageLookupByLibrary.simpleMessage("ژانویه"),
+        "july": MessageLookupByLibrary.simpleMessage("ژوئیه"),
+        "june": MessageLookupByLibrary.simpleMessage("ژوئن"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("آخرین فیلم ها"),
         "list": MessageLookupByLibrary.simpleMessage("لیست"),
         "listSmall": MessageLookupByLibrary.simpleMessage("لیست (کوچک)"),
+        "march": MessageLookupByLibrary.simpleMessage("مارس"),
+        "may": MessageLookupByLibrary.simpleMessage("مه"),
         "monthly": MessageLookupByLibrary.simpleMessage("ماهانه"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("فیلم با موفقیت اضافه شد!"),
@@ -134,6 +146,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("فیلم با موفقیت حذف شد!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("جزئیات فیلم"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "شما به محدودیت فیلم ها رسیدید (250 برای لیست تماشا، 250 برای مجموعه). لطفاً برای دریافت فیلم های نامحدود به نسخه پریمیوم ارتقا دهید."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("محدودیت فیلم ها رسید"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("عنوان فیلم"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "فیلم با موفقیت به‌روزرسانی شد!"),
@@ -176,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("هیچ نویسنده‌ای انتخاب نشده"),
         "none": MessageLookupByLibrary.simpleMessage("هیچکدام"),
+        "november": MessageLookupByLibrary.simpleMessage("نوامبر"),
+        "october": MessageLookupByLibrary.simpleMessage("اکتبر"),
         "ok": MessageLookupByLibrary.simpleMessage("باشه"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("لطفاً وارد کنید"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -190,6 +208,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("شرکت‌های تولید"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("فیلم تصادفی"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("حالت پیشنهاد فیلم"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("تاریخ انتشار"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("تاریخ انتشار: "),
@@ -207,9 +227,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("مدت زمان (دقیقه)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("علمی-تخیلی"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("جستجوی فیلم‌ها"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("رتبه PG را انتخاب کنید"),
         "selected": MessageLookupByLibrary.simpleMessage("انتخاب شده"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "فیلم‌های انتخابی حذف خواهند شد. آیا تایید می‌کنید؟"),
+        "september": MessageLookupByLibrary.simpleMessage("سپتامبر"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("ورود به گوگل لغو شد."),
         "signOut": MessageLookupByLibrary.simpleMessage("خروج از حساب"),
@@ -242,6 +265,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "عدم توانایی در شناسایی فیلم‌ها!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "عدم توانایی در بارگذاری تصاویر!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("فیلم های آینده"),
         "update": MessageLookupByLibrary.simpleMessage("به‌روزرسانی"),
         "userScore": MessageLookupByLibrary.simpleMessage("امتیاز کاربران"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

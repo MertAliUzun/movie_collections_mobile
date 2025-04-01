@@ -103,9 +103,9 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: const IconThemeData(color: Colors.white),
         title: Text(
-          selectedPrompt == 'recommend' ? 'S.of(context).recommendMovieMode'
-          : selectedPrompt == 'find' ? 'S.of(context).findMovieMode'
-          : 'S.of(context).recommendMode', 
+          selectedPrompt == 'recommend' ? S.of(context).recommendMovieMode
+          : selectedPrompt == 'find' ? S.of(context).findMovieMode
+          : S.of(context).recommendMode, 
         style: TextStyle(color: Colors.white)),
         /*actions: [
           DropdownButton<String>(

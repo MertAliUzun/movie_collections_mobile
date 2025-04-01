@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Seiklus"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animatsioon"),
+        "april": MessageLookupByLibrary.simpleMessage("Aprill"),
         "ascending": MessageLookupByLibrary.simpleMessage("Kasvav"),
+        "august": MessageLookupByLibrary.simpleMessage("August"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Elulugu: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Sünnikuupäev: "),
@@ -80,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Andmeid selle kirjutaja kohta ei leitud!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Surnud kuupäev: "),
+        "december": MessageLookupByLibrary.simpleMessage("Detsember"),
         "delete": MessageLookupByLibrary.simpleMessage("Kustuta"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Kustuta valitud filmid"),
@@ -114,6 +117,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Ebaõnnestumine!"),
         "family": MessageLookupByLibrary.simpleMessage("Perekond"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaasia"),
+        "february": MessageLookupByLibrary.simpleMessage("Veebruar"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Filmi otsimise režiim"),
         "franchise": MessageLookupByLibrary.simpleMessage("Frantsiis"),
         "franchises": MessageLookupByLibrary.simpleMessage("Frantsiisid"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
@@ -126,8 +132,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB hinnang"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Impordi CSV-st"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("Vale IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Jaanuar"),
+        "july": MessageLookupByLibrary.simpleMessage("Juuli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juuni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Viimased filmid"),
         "list": MessageLookupByLibrary.simpleMessage("Nimekiri"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Nimekiri (Väike)"),
+        "march": MessageLookupByLibrary.simpleMessage("Märts"),
+        "may": MessageLookupByLibrary.simpleMessage("Mai"),
         "monthly": MessageLookupByLibrary.simpleMessage("Kuu"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film on edukalt lisatud!"),
@@ -136,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Film on edukalt kustutatud!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Filmi üksikasjad"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Olete jõudnud filmi limiidini (250 vaatamisnimekirja ja 250 kollektsiooni jaoks). Palun uuendage Premium versioonile piiramatu arvu filmide jaoks."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmi limiit on saavutatud"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmi pealkiri"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film on edukalt uuendatud!"),
@@ -178,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ei ole valitud kirjutajaid"),
         "none": MessageLookupByLibrary.simpleMessage("Puudub"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktoober"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Palun sisesta"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -192,6 +210,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Tootmisettevõtted"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Juhuslik film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Filmi soovitamise režiim"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Väljalaske kuupäev"),
         "releaseDateColon":
@@ -211,9 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kestus (minutid)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Teadusulme"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Otsi filme"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Valige PG reiting"),
         "selected": MessageLookupByLibrary.simpleMessage("Valitud"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valitud filmid kustutatakse. Kas kinnitad?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google sisselogimine tühistati."),
         "signOut": MessageLookupByLibrary.simpleMessage("Logi välja"),
@@ -246,6 +269,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filme ei suudetud tuvastada!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Pilte ei õnnestunud üles laadida!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Tulevased filmid"),
         "update": MessageLookupByLibrary.simpleMessage("Uuenda"),
         "userScore": MessageLookupByLibrary.simpleMessage("Kasutaja hinnang"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

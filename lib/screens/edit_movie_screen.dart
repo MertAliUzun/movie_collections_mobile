@@ -828,7 +828,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 44, 50, 60),
           title: Text(
-            'S.of(context).selectPgRating',
+            S.of(context).selectPgRating,
             style: TextStyle(
               color: Colors.white,
               fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),

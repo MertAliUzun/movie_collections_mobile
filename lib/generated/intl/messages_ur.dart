@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("مہم جوئی"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("عرفیت: "),
         "animation": MessageLookupByLibrary.simpleMessage("انیمیشن"),
+        "april": MessageLookupByLibrary.simpleMessage("اپریل"),
         "ascending": MessageLookupByLibrary.simpleMessage("چڑھتا ہوا"),
+        "august": MessageLookupByLibrary.simpleMessage("اگست"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("حیات: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("تاریخ پیدائش: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "اس مصنف کے لیے ڈیٹا نہیں ملا!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("تاریخ وفات: "),
+        "december": MessageLookupByLibrary.simpleMessage("دسمبر"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف کریں"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("منتخب کردہ فلمیں حذف کریں"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ناکامی!"),
         "family": MessageLookupByLibrary.simpleMessage("خاندانی"),
         "fantasy": MessageLookupByLibrary.simpleMessage("فینٹسی"),
+        "february": MessageLookupByLibrary.simpleMessage("فروری"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("فلم تلاش کرنے کا موڈ"),
         "franchise": MessageLookupByLibrary.simpleMessage("فرنچائز"),
         "franchises": MessageLookupByLibrary.simpleMessage("فرنچائزز"),
         "genre": MessageLookupByLibrary.simpleMessage("جینر"),
@@ -128,8 +134,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB اسکور"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV سے درآمد کریں"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("غلط IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("جنوری"),
+        "july": MessageLookupByLibrary.simpleMessage("جولائی"),
+        "june": MessageLookupByLibrary.simpleMessage("جون"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("تازہ ترین فلمیں"),
         "list": MessageLookupByLibrary.simpleMessage("فہرست"),
         "listSmall": MessageLookupByLibrary.simpleMessage("فہرست (چھوٹی)"),
+        "march": MessageLookupByLibrary.simpleMessage("مارچ"),
+        "may": MessageLookupByLibrary.simpleMessage("مئی"),
         "monthly": MessageLookupByLibrary.simpleMessage("ماہانہ"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "فلم کامیابی سے شامل کر دی گئی!"),
@@ -138,6 +150,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "فلم کامیابی سے حذف کر دی گئی!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("فلم کی تفصیلات"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "آپ نے فلم کی حد کو پہنچ لیا ہے (250 واچ لسٹ کے لیے، 250 کلیکشن کے لیے)۔ براہ کرم پریمیم اپ گریڈ کریں تاکہ لامحدود فلمیں دیکھ سکیں۔"),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("فلم کی حد پہنچ گئی"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("فلم کا عنوان"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "فلم کامیابی سے اپ ڈیٹ کر دی گئی!"),
@@ -180,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("کوئی مصنف منتخب نہیں ہے"),
         "none": MessageLookupByLibrary.simpleMessage("کوئی نہیں"),
+        "november": MessageLookupByLibrary.simpleMessage("نومبر"),
+        "october": MessageLookupByLibrary.simpleMessage("اکتوبر"),
         "ok": MessageLookupByLibrary.simpleMessage("ٹھیک ہے"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("براہ کرم درج کریں"),
@@ -195,6 +213,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("پروڈکشن کمپنیاں"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("رینڈم فلم"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("فلم کی سفارش کا موڈ"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("ریلیز کی تاریخ"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ریلیز کی تاریخ: "),
@@ -212,9 +232,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("دورانیہ (منٹ)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("سائنس فکشن"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("فلمیں تلاش کریں"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("پی جی ریٹنگ منتخب کریں"),
         "selected": MessageLookupByLibrary.simpleMessage("منتخب"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "منتخب کردہ فلمیں حذف ہو جائیں گی۔ کیا آپ اس کی تصدیق کرتے ہیں؟"),
+        "september": MessageLookupByLibrary.simpleMessage("ستمبر"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("گوگل سائن ان منسوخ ہو گیا۔"),
         "signOut": MessageLookupByLibrary.simpleMessage("سائن آؤٹ"),
@@ -246,6 +269,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "فلموں کا پتہ لگانے میں ناکامی!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "تصاویر اپ لوڈ کرنے میں ناکامی!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("آنے والی فلمیں"),
         "update": MessageLookupByLibrary.simpleMessage("اپ ڈیٹ کریں"),
         "userScore": MessageLookupByLibrary.simpleMessage("یوزر اسکور"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Dànachd"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animathas"),
+        "april": MessageLookupByLibrary.simpleMessage("An Giblean"),
         "ascending": MessageLookupByLibrary.simpleMessage("A’ tighinn am bàrr"),
+        "august": MessageLookupByLibrary.simpleMessage("Lùnastal"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Bith-eòlas: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Ceann-latha breith: "),
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Cha b’ urrainn an dàta sgrìobhadair a thoirt air ais!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Ceann-latha bàs: "),
+        "december": MessageLookupByLibrary.simpleMessage("An Dùbhlachd"),
         "delete": MessageLookupByLibrary.simpleMessage("Cuir às"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Cuir às filmichean air an taghadh"),
@@ -118,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage(" mearachd!"),
         "family": MessageLookupByLibrary.simpleMessage("Teaghlach"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("An Gearran"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage("Moda Lorg Film"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Seòrsa"),
@@ -130,8 +135,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Sgòr IMDb"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Import CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDb cearr!"),
+        "january": MessageLookupByLibrary.simpleMessage("An t-Ògmhios"),
+        "july": MessageLookupByLibrary.simpleMessage("An t-Iuchar"),
+        "june": MessageLookupByLibrary.simpleMessage("An t-Ògmhios"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Na Filmichean Ùra"),
         "list": MessageLookupByLibrary.simpleMessage("Liosta"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liosta (Lorg)"),
+        "march": MessageLookupByLibrary.simpleMessage("Am Màrt"),
+        "may": MessageLookupByLibrary.simpleMessage("An Cèitean"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mìosail"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film air a chur ris!"),
@@ -140,6 +152,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Film air a chur às!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Fiosrachadh Film"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Tha thu air crìoch nan film a ruighinn (250 airson an Liosta Fhathainn, 250 airson an Cruinneachadh). Cuir a-steach gu Premium airson filmichean gun chrìoch."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Ruigidh Crìoch nan Film"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Tiotal Film"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film air ùrachadh!"),
@@ -182,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Chan eil sgrìobhadairean air an taghadh"),
         "none": MessageLookupByLibrary.simpleMessage("Gun"),
+        "november": MessageLookupByLibrary.simpleMessage("An t-Samhain"),
+        "october": MessageLookupByLibrary.simpleMessage("An Dàmhair"),
         "ok": MessageLookupByLibrary.simpleMessage("Ceart"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Cuir a-steach"),
         "pleaseEnterMovieTitle":
@@ -197,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Companaidhean cinneasachaidh"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Film air thuaiream"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Moda Moladh Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage(
             "Ceann-latha leigeil ma sgaoil"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage(
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Saidhbhinn saidheans"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Lorg Filmichean"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Tagh an Ràith PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Taghadh"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Am bi thu cinnteach gu bheil thu airson na filmichean seo a chur às?"),
+        "september": MessageLookupByLibrary.simpleMessage("An t-Sultain"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Chaidh an clàradh a chur dheth."),
         "signOut": MessageLookupByLibrary.simpleMessage("Suidh out"),
@@ -254,6 +277,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Cha b’ urrainn dhuinn filmichean a lorg!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Cha b’ urrainn dhuinn na ìomhaighean a luchdachadh suas!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Filmichean a\' tighinn"),
         "update": MessageLookupByLibrary.simpleMessage("Ùrachadh"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Sgòr neach-cleachdaidh"),

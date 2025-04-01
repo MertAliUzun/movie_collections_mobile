@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Petualangan"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasi"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Naik"),
+        "august": MessageLookupByLibrary.simpleMessage("Agustus"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Lahir: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Data untuk Penulis ini tidak ditemukan!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Meninggal: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desember"),
         "delete": MessageLookupByLibrary.simpleMessage("Hapus"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Hapus Film yang Dipilih"),
@@ -114,6 +117,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Gagal!"),
         "family": MessageLookupByLibrary.simpleMessage("Keluarga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasi"),
+        "february": MessageLookupByLibrary.simpleMessage("Februari"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage("Mode Cari Film"),
         "franchise": MessageLookupByLibrary.simpleMessage("Waralaba"),
         "franchises": MessageLookupByLibrary.simpleMessage("Waralaba"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -128,8 +133,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Impor dari CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB tidak valid!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januari"),
+        "july": MessageLookupByLibrary.simpleMessage("Juli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Film Terbaru"),
         "list": MessageLookupByLibrary.simpleMessage("Daftar"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Daftar (Kecil)"),
+        "march": MessageLookupByLibrary.simpleMessage("Maret"),
+        "may": MessageLookupByLibrary.simpleMessage("Mei"),
         "monthly": MessageLookupByLibrary.simpleMessage("Bulanan"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film berhasil ditambahkan!"),
@@ -137,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Film berhasil dihapus!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Detail Film"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Anda telah mencapai batas film (250 untuk Daftar Tonton, 250 untuk Koleksi). Silakan upgrade ke Premium untuk film tanpa batas."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Batas film tercapai"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Judul Film"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film berhasil diperbarui!"),
@@ -177,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Tidak ada penulis yang dipilih"),
         "none": MessageLookupByLibrary.simpleMessage("Tidak Ada"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Silakan masukkan"),
         "pleaseEnterMovieTitle":
@@ -191,6 +208,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Perusahaan Produksi"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film Acak"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode Rekomendasi Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Tanggal Rilis"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Rilis: "),
@@ -208,9 +227,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Durasi (Menit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fiksi Ilmiah"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Cari Film"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Pilih Rating PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Dipilih"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "film yang dipilih akan dihapus. Apakah Anda yakin?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Login Google dibatalkan."),
         "signOut": MessageLookupByLibrary.simpleMessage("Keluar"),
@@ -242,6 +264,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tidak dapat Mendeteksi Film!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Tidak dapat Mengunggah Gambar!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Film Mendatang"),
         "update": MessageLookupByLibrary.simpleMessage("Perbarui"),
         "userScore": MessageLookupByLibrary.simpleMessage("Skor Pengguna"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

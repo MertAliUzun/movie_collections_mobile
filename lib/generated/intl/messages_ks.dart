@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("مہم جوئی"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("عرفیت: "),
         "animation": MessageLookupByLibrary.simpleMessage("اینیمیشن"),
+        "april": MessageLookupByLibrary.simpleMessage("اپریل"),
         "ascending": MessageLookupByLibrary.simpleMessage("چڑھتے ہوئے"),
+        "august": MessageLookupByLibrary.simpleMessage("اگست"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("سوانح حیات: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("تاریخ پیدائش: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "اس مصنف کے لیے ڈیٹا حاصل نہیں ہوا!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("تاریخ وفات: "),
+        "december": MessageLookupByLibrary.simpleMessage("دسمبر"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف کریں"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("منتخب فلمیں حذف کریں"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ناکامی!"),
         "family": MessageLookupByLibrary.simpleMessage("خاندان"),
         "fantasy": MessageLookupByLibrary.simpleMessage("فنٹاسی"),
+        "february": MessageLookupByLibrary.simpleMessage("فروری"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("فلم تلاش کرنے کا موڈ"),
         "franchise": MessageLookupByLibrary.simpleMessage("فرینچائز"),
         "franchises": MessageLookupByLibrary.simpleMessage("فرینچائزیں"),
         "genre": MessageLookupByLibrary.simpleMessage("صنف"),
@@ -127,8 +133,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB اسکور"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV سے درآمد کریں"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("غلط IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("جنوری"),
+        "july": MessageLookupByLibrary.simpleMessage("جولائی"),
+        "june": MessageLookupByLibrary.simpleMessage("جون"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("تازہ ترین فلمیں"),
         "list": MessageLookupByLibrary.simpleMessage("فہرست"),
         "listSmall": MessageLookupByLibrary.simpleMessage("فہرست (چھوٹی)"),
+        "march": MessageLookupByLibrary.simpleMessage("مارچ"),
+        "may": MessageLookupByLibrary.simpleMessage("مئی"),
         "monthly": MessageLookupByLibrary.simpleMessage("ماہانہ"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("فلم کامیابی سے شامل ہو گئی!"),
@@ -136,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("فلم کامیابی سے حذف ہو گئی!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("فلم کی تفصیلات"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "آپ نے فلموں کی حد تک پہنچ لیا ہے (250 واچ لسٹ کے لیے، 250 کلیکشن کے لیے). براہ کرم پریمیم میں اپ گریڈ کریں تاکہ لامحدود فلموں کا لطف اٹھا سکیں۔"),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("فلموں کی حد تک پہنچ گئی ہے"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("فلم کا عنوان"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "فلم کامیابی سے اپ ڈیٹ ہو گئی!"),
@@ -178,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "کوئی مصنف منتخب نہیں کیا گیا"),
         "none": MessageLookupByLibrary.simpleMessage("کوئی نہیں"),
+        "november": MessageLookupByLibrary.simpleMessage("نومبر"),
+        "october": MessageLookupByLibrary.simpleMessage("اکتوبر"),
         "ok": MessageLookupByLibrary.simpleMessage("ٹھیک ہے"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("براہ کرم درج کریں"),
@@ -193,6 +211,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("پروڈکشن کمپنیاں"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("بے ترتیب فلم"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("فلم تجویز کرنے کا موڈ"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("تاریخ اجراء"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("تاریخ اجراء: "),
@@ -210,9 +230,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("چلنے کا وقت (منٹ)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("سائنس فکشن"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("فلمیں تلاش کریں"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("پی جی درجہ بندی منتخب کریں"),
         "selected": MessageLookupByLibrary.simpleMessage("منتخب"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "منتخب فلمیں حذف ہو جائیں گی۔ کیا آپ تصدیق کرتے ہیں؟"),
+        "september": MessageLookupByLibrary.simpleMessage("ستمبر"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google سائن ان منسوخ کر دیا گیا۔"),
         "signOut": MessageLookupByLibrary.simpleMessage("سائن آؤٹ"),
@@ -245,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "فلموں کا پتہ لگانے میں ناکام!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "تصاویر اپ لوڈ کرنے میں ناکام!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("آنے والی فلمیں"),
         "update": MessageLookupByLibrary.simpleMessage("اپ ڈیٹ کریں"),
         "userScore": MessageLookupByLibrary.simpleMessage("صارف اسکور"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Kaland"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Álnév: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animáció"),
+        "april": MessageLookupByLibrary.simpleMessage("Április"),
         "ascending": MessageLookupByLibrary.simpleMessage("Növekvő"),
+        "august": MessageLookupByLibrary.simpleMessage("Augusztus"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Életrajz: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Születési dátum: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nem sikerült lekérni az adatokat ehhez az íróhoz!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Halálozási dátum: "),
+        "december": MessageLookupByLibrary.simpleMessage("December"),
         "delete": MessageLookupByLibrary.simpleMessage("Törlés"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Kiválasztott filmek törlése"),
@@ -118,6 +121,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Sikertelen!"),
         "family": MessageLookupByLibrary.simpleMessage("Családi"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("Február"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film keresési mód"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise-ok"),
         "genre": MessageLookupByLibrary.simpleMessage("Műfaj"),
@@ -131,8 +137,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importálás CSV-ből"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Érvénytelen IMDB azonosító!"),
+        "january": MessageLookupByLibrary.simpleMessage("Január"),
+        "july": MessageLookupByLibrary.simpleMessage("Július"),
+        "june": MessageLookupByLibrary.simpleMessage("Június"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Legújabb filmek"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (kicsi)"),
+        "march": MessageLookupByLibrary.simpleMessage("Március"),
+        "may": MessageLookupByLibrary.simpleMessage("Május"),
         "monthly": MessageLookupByLibrary.simpleMessage("Havi"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("A film sikeresen hozzáadva!"),
@@ -141,6 +153,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("A film sikeresen törölve!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Film részletei"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Elérte a filmkorlátot (250 a Megtekintési listához, 250 a Gyűjteményhez). Kérjük, frissítsen a Premium verzióra a korlátlan filmekhez."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmkorlát elérve"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Film címe"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("A film sikeresen frissítve!"),
@@ -182,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nincs kiválasztott író"),
         "none": MessageLookupByLibrary.simpleMessage("Nincs"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Október"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Kérjük, adja meg"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -197,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Gyártócégek"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Véletlenszerű film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film ajánlási mód"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Megjelenés dátuma"),
         "releaseDateColon":
@@ -216,9 +236,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Futamidő (perc)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Sci-Fi"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filmek keresése"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Válassza a PG besorolást"),
         "selected": MessageLookupByLibrary.simpleMessage("Kiválasztott"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "a kiválasztott filmek törlődnek. Biztos benne?"),
+        "september": MessageLookupByLibrary.simpleMessage("Szeptember"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "A Google bejelentkezés megszakítva."),
         "signOut": MessageLookupByLibrary.simpleMessage("Kijelentkezés"),
@@ -250,6 +273,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nem sikerült észlelni a filmeket!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Nem sikerült feltölteni a képeket!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Közelgő filmek"),
         "update": MessageLookupByLibrary.simpleMessage("Frissítés"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Felhasználói pontszám"),

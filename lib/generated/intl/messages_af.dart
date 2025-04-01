@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Avontuur"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasie"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Oplopend"),
+        "august": MessageLookupByLibrary.simpleMessage("Augustus"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Geboortedatum: "),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Data vir hierdie skrywer kon nie gevind word nie!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Sterfdatum: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desember"),
         "delete": MessageLookupByLibrary.simpleMessage("Verwyder"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Verwyder Gekose Flieks"),
@@ -117,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Mislukking!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasie"),
+        "february": MessageLookupByLibrary.simpleMessage("Februarie"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Vind Rolprentmodus"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -130,8 +136,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Voer in vanaf CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Ongeldige IMDB-ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januarie"),
+        "july": MessageLookupByLibrary.simpleMessage("Julie"),
+        "june": MessageLookupByLibrary.simpleMessage("Junie"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Nuutste Rolprente"),
         "list": MessageLookupByLibrary.simpleMessage("Lys"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lys (Klein)"),
+        "march": MessageLookupByLibrary.simpleMessage("Maart"),
+        "may": MessageLookupByLibrary.simpleMessage("Mei"),
         "monthly": MessageLookupByLibrary.simpleMessage("Maandeliks"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Fliek is suksesvol bygevoeg!"),
@@ -141,6 +154,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Fliek is suksesvol verwyder!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Fliekbesonderhede"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Jy het die rolprentlimiet bereik (250 vir Kyklys, 250 vir Versameling). Gradeer asseblief op na Premium vir onbeperkte rolprente."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Rolprentlimiet Bereik"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Fliektitel"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Fliek is suksesvol opgedateer!"),
@@ -183,6 +200,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Geen Skrywers Gekies Nie"),
         "none": MessageLookupByLibrary.simpleMessage("Geen"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Voer asseblief in"),
@@ -198,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produksiemaatskappye"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Lukrake Fliek"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Beveel Rolprentmodus Aan"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Vrygestel Datum"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Vrygestel Datum: "),
@@ -217,9 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Wetenskapfiksie"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Soek Flieks"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Kies PG-gradering"),
         "selected": MessageLookupByLibrary.simpleMessage("Gekies"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "gekose flieks sal verwyder word. Bevestig asseblief?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google-aanmelding is gekanselleer."),
         "signOut": MessageLookupByLibrary.simpleMessage("Meld af"),
@@ -252,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kan nie flieks opspoor nie!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Kan nie beelde oplaai nie!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Opkomende Rolprente"),
         "update": MessageLookupByLibrary.simpleMessage("Opdateer"),
         "userScore": MessageLookupByLibrary.simpleMessage("Gebruikergradering"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

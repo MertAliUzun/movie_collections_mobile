@@ -342,14 +342,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           return AlertDialog(
             backgroundColor: const Color.fromARGB(255, 44, 50, 60),
             title: Text(
-              'S.of(context).movieLimitReached',
+              S.of(context).movieLimitReached,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
               ),
             ),
             content: Text(
-              'S.of(context).movieLimitMessage',
+              S.of(context).movieLimitMessage,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
@@ -818,7 +818,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 44, 50, 60),
           title: Text(
-            'S.of(context).selectPgRating',
+            S.of(context).selectPgRating,
             style: TextStyle(
               color: Colors.white,
               fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),

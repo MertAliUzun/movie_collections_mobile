@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Laqabsiga: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animaatiyo"),
+        "april": MessageLookupByLibrary.simpleMessage("Abriil"),
         "ascending": MessageLookupByLibrary.simpleMessage("Korodhka"),
+        "august": MessageLookupByLibrary.simpleMessage("Agoosto"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Nolosha: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Taariikhda Dhalashada: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Xogta qoraa lama helin!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Taariikhda Geerida: "),
+        "december": MessageLookupByLibrary.simpleMessage("Diseembar"),
         "delete": MessageLookupByLibrary.simpleMessage("Tirtir"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Tirtir Filimada La Xushay"),
@@ -119,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fashil!"),
         "family": MessageLookupByLibrary.simpleMessage("Qoyska"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Riyada"),
+        "february": MessageLookupByLibrary.simpleMessage("Febraayo"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Habka Raadinta Filimada"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Nooca"),
@@ -133,8 +139,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Soo dejinta CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB aan sax ahayn!"),
+        "january": MessageLookupByLibrary.simpleMessage("Janaayo"),
+        "july": MessageLookupByLibrary.simpleMessage("Luulyo"),
+        "june": MessageLookupByLibrary.simpleMessage("Juun"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Filimada Ugu Dambeeyay"),
         "list": MessageLookupByLibrary.simpleMessage("Liiska"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liiska (Yar)"),
+        "march": MessageLookupByLibrary.simpleMessage("Maarso"),
+        "may": MessageLookupByLibrary.simpleMessage("Maajo"),
         "monthly": MessageLookupByLibrary.simpleMessage("Bil kasta"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Filimka waxaa si guul leh loo ku daray!"),
@@ -144,6 +157,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filimka waxaa si guul leh loo tirtiray!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Faahfaahinta Filimka"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Waxaad gaadhay xadiga filimada (250 liiska daawashada, 250 ururinta). Fadlan u beddel Premium si aad u daawato filimaan aan xadidnayn."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Xadiga Filimada La Gaadhay"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Cinwaanka Filimka"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filimka waxaa si guul leh loo cusboonaysiiyay!"),
@@ -186,6 +203,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Qorayaal ma ahan kuwa la xushay"),
         "none": MessageLookupByLibrary.simpleMessage("Eebbe"),
+        "november": MessageLookupByLibrary.simpleMessage("Nofeembar"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktoobar"),
         "ok": MessageLookupByLibrary.simpleMessage("Haa"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Fadlan geli"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -201,6 +220,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Shirkadaha Soo Saarista"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Filim Aan Caadi Ahayn"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Habka Filim Talo Bixin"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Taariikhda sii-deynta"),
         "releaseDateColon":
@@ -222,9 +243,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Sayniska Fikradda"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Raadi Filimada"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Xulo Qiimeynta PG"),
         "selected": MessageLookupByLibrary.simpleMessage("La Xushay"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "filimada la xushay waa la tirtiri doonaa. Ma xaqiijinaysaa?"),
+        "september": MessageLookupByLibrary.simpleMessage("Sebtembar"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Gelitaanka Google waa la joojiyey."),
         "signOut": MessageLookupByLibrary.simpleMessage("Ka soo bax"),
@@ -259,6 +283,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ma la garan karaa filimada!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Ma awoodi karo in aan sawiro soo geliyo!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Filimada Soo Socda"),
         "update": MessageLookupByLibrary.simpleMessage("Cusboonaysii"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Qiimeynta Isticmaalaha"),

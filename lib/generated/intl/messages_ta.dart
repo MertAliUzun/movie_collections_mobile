@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("சாகசம்"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ஊரை: "),
         "animation": MessageLookupByLibrary.simpleMessage("உருவாக்கம்"),
+        "april": MessageLookupByLibrary.simpleMessage("ஏப்ரல்"),
         "ascending": MessageLookupByLibrary.simpleMessage("ஏறுதலாக"),
+        "august": MessageLookupByLibrary.simpleMessage("ஆகஸ்ட்"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("வாழ்க்கை வரலாறு: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("பிறந்த தேதி: "),
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "இந்த எழுத்தாளருக்கான தரவுகள் கிடைக்கவில்லை!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("இறப்பு தேதி: "),
+        "december": MessageLookupByLibrary.simpleMessage("டிசம்பர்"),
         "delete": MessageLookupByLibrary.simpleMessage("அழி"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட படங்களை அழிக்கவும்"),
@@ -118,6 +121,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("தவறானது!"),
         "family": MessageLookupByLibrary.simpleMessage("குடும்பம்"),
         "fantasy": MessageLookupByLibrary.simpleMessage("கற்பனை"),
+        "february": MessageLookupByLibrary.simpleMessage("பிப்ரவரி"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage("பட தேடல் முறை"),
         "franchise": MessageLookupByLibrary.simpleMessage("பிராண்டு"),
         "franchises": MessageLookupByLibrary.simpleMessage("பிராண்டுகள்"),
         "genre": MessageLookupByLibrary.simpleMessage("பண்பு"),
@@ -131,8 +136,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage(
             "CSV இலிருந்து இறக்குமதி செய்யவும்"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("தவறான IMDB ஐடி!"),
+        "january": MessageLookupByLibrary.simpleMessage("ஜனவரி"),
+        "july": MessageLookupByLibrary.simpleMessage("ஜூலை"),
+        "june": MessageLookupByLibrary.simpleMessage("ஜூன்"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("சமீபத்திய படங்கள்"),
         "list": MessageLookupByLibrary.simpleMessage("பட்டியல்"),
         "listSmall": MessageLookupByLibrary.simpleMessage("பட்டியல்(சிறியது)"),
+        "march": MessageLookupByLibrary.simpleMessage("மார்ச்"),
+        "may": MessageLookupByLibrary.simpleMessage("மே"),
         "monthly": MessageLookupByLibrary.simpleMessage("மாதாந்திர"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "படம் வெற்றிகரமாக சேர்க்கப்பட்டுள்ளது!"),
@@ -141,6 +153,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "படம் வெற்றிகரமாக அழிக்கப்பட்டது!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("பட விவரங்கள்"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "நீங்கள் பட வரம்பை எட்டியுள்ளார் (Watch List க்காக 250, Collection க்காக 250). பரமியம் சந்தா எடுக்கலாம், மிகுந்த படங்களை பார்க்க."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("படத்தின் வரம்பு அடைந்தது"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("படத்தின் தலைப்பு"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "படம் வெற்றிகரமாக புதுப்பிக்கப்பட்டது!"),
@@ -183,6 +199,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட எழுத்தாளர்கள் இல்லை"),
         "none": MessageLookupByLibrary.simpleMessage("ஒன்றும் இல்லை"),
+        "november": MessageLookupByLibrary.simpleMessage("நவம்பர்"),
+        "october": MessageLookupByLibrary.simpleMessage("அக்டோபர்"),
         "ok": MessageLookupByLibrary.simpleMessage("சரி"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("தயவு செய்து உள்ளிடவும்"),
@@ -198,6 +216,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("தயாரிப்பு நிறுவனங்கள்"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("சீரற்ற படம்"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("பட பரிந்துரை முறை"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("வெளியீட்டு தேதி"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("வெளியீட்டு தேதி: "),
@@ -217,10 +237,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("அறிவியல் கற்பனை"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("படங்களை தேடு"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage(
+            "PG மதிப்பீட்டை தேர்வு செய்யவும்"),
         "selected":
             MessageLookupByLibrary.simpleMessage("தேர்ந்தெடுக்கப்பட்டது"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட படங்கள் அழிக்கப்படுவதை நீங்கள் உறுதிசெய்கிறீர்களா?"),
+        "september": MessageLookupByLibrary.simpleMessage("செப்டம்பர்"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "கூகுள் சைன் இன் ரத்து செய்யப்பட்டது."),
         "signOut": MessageLookupByLibrary.simpleMessage("வெளியேறு"),
@@ -252,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "படங்களை கண்டுபிடிக்க முடியவில்லை!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "படங்களை பதிவேற்ற முடியவில்லை!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("வந்துகொண்டிருக்கும் படங்கள்"),
         "update": MessageLookupByLibrary.simpleMessage("புதுப்பிக்கவும்"),
         "userScore": MessageLookupByLibrary.simpleMessage("பயனர் மதிப்பெண்"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -42,7 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Äventyr"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animering"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Stigande"),
+        "august": MessageLookupByLibrary.simpleMessage("Augusti"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Födelsedatum: "),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Data för denna författare kunde inte hittas!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Dödsdatum: "),
+        "december": MessageLookupByLibrary.simpleMessage("December"),
         "delete": MessageLookupByLibrary.simpleMessage("Ta bort"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Ta bort valda filmer"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Misslyckande!"),
         "family": MessageLookupByLibrary.simpleMessage("Familj"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("Februari"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Hitta Film Mode"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -129,8 +135,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importera från CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Ogiltigt IMDB-ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januari"),
+        "july": MessageLookupByLibrary.simpleMessage("Juli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Senaste Filmer"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (Liten)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "may": MessageLookupByLibrary.simpleMessage("Maj"),
         "monthly": MessageLookupByLibrary.simpleMessage("Månatlig"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filmen har lagts till!"),
@@ -138,6 +150,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Filmen har raderats!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Filmdetaljer"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Du har nått filmgränsen (250 för Watch List, 250 för Collection). Vänligen uppgradera till Premium för obegränsade filmer."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmgräns Uppnådd"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmtitel"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filmen har uppdaterats!"),
@@ -179,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Inga författare valda"),
         "none": MessageLookupByLibrary.simpleMessage("Ingen"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Vänligen ange"),
         "pleaseEnterMovieTitle":
@@ -193,6 +211,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produktionsbolag"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Slumpmässig Film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Rekommendera Film Mode"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Utgivningsdatum"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Utgivningsdatum: "),
@@ -212,9 +232,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Sök filmer"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Välj PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Vald"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valda filmer kommer att tas bort. Bekräftar du?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google-inloggning avbröts."),
         "signOut": MessageLookupByLibrary.simpleMessage("Logga ut"),
@@ -247,6 +270,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kunde inte upptäcka filmer!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Kunde inte ladda upp bilder!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Kommande Filmer"),
         "update": MessageLookupByLibrary.simpleMessage("Uppdatera"),
         "userScore": MessageLookupByLibrary.simpleMessage("Användarbetyg"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

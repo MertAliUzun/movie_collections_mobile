@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Περιπέτεια"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Ψευδώνυμο: "),
         "animation": MessageLookupByLibrary.simpleMessage("Κινουμένων Σχεδίων"),
+        "april": MessageLookupByLibrary.simpleMessage("Απρίλιος"),
         "ascending": MessageLookupByLibrary.simpleMessage("Αύξουσα"),
+        "august": MessageLookupByLibrary.simpleMessage("Αύγουστος"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Βιογραφία: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Ημερομηνία Γέννησης: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Δεν βρέθηκαν δεδομένα για αυτόν τον συγγραφέα!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Ημερομηνία Θανάτου: "),
+        "december": MessageLookupByLibrary.simpleMessage("Δεκέμβριος"),
         "delete": MessageLookupByLibrary.simpleMessage("Διαγραφή"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Διαγραφή Επιλεγμένων Ταινιών"),
@@ -119,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Αποτυχία!"),
         "family": MessageLookupByLibrary.simpleMessage("Οικογενειακή"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Φαντασία"),
+        "february": MessageLookupByLibrary.simpleMessage("Φεβρουάριος"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Λειτουργία αναζήτησης ταινίας"),
         "franchise": MessageLookupByLibrary.simpleMessage("Γραφείο"),
         "franchises": MessageLookupByLibrary.simpleMessage("Γραφεία"),
         "genre": MessageLookupByLibrary.simpleMessage("Είδος"),
@@ -133,8 +139,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Εισαγωγή από CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Μη έγκυρο IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Ιανουάριος"),
+        "july": MessageLookupByLibrary.simpleMessage("Ιούλιος"),
+        "june": MessageLookupByLibrary.simpleMessage("Ιούνιος"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Τελευταίες ταινίες"),
         "list": MessageLookupByLibrary.simpleMessage("Λίστα"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Λίστα (Μικρή)"),
+        "march": MessageLookupByLibrary.simpleMessage("Μάρτιος"),
+        "may": MessageLookupByLibrary.simpleMessage("Μάιος"),
         "monthly": MessageLookupByLibrary.simpleMessage("Μηνιαία"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Η ταινία προστέθηκε με επιτυχία!"),
@@ -144,6 +157,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Η ταινία διαγράφηκε με επιτυχία!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Στοιχεία Ταινίας"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Έχετε φτάσει το όριο ταινιών (250 για τη Λίστα Παρακολούθησης, 250 για τη Συλλογή). Αναβαθμίστε σε Premium για απεριόριστες ταινίες."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Έχει επιτευχθεί το όριο ταινιών"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Τίτλος Ταινίας"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Η ταινία ενημερώθηκε με επιτυχία!"),
@@ -186,6 +203,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Δεν επιλέχθηκαν συγγραφείς"),
         "none": MessageLookupByLibrary.simpleMessage("Καμία"),
+        "november": MessageLookupByLibrary.simpleMessage("Νοέμβριος"),
+        "october": MessageLookupByLibrary.simpleMessage("Οκτώβριος"),
         "ok": MessageLookupByLibrary.simpleMessage("Εντάξει"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Παρακαλώ εισάγετε"),
@@ -201,6 +220,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Παραγωγικές Εταιρείες"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Τυχαία Ταινία"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Λειτουργία σύστασης ταινίας"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Ημερομηνία Κυκλοφορίας"),
         "releaseDateColon":
@@ -222,9 +243,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Επιστημονικής Φαντασίας"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Αναζήτηση Ταινιών"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Επιλέξτε βαθμολογία PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Επιλεγμένο"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "οι επιλεγμένες ταινίες θα διαγραφούν. Είστε σίγουροι;"),
+        "september": MessageLookupByLibrary.simpleMessage("Σεπτέμβριος"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Η είσοδος μέσω Google ακυρώθηκε."),
         "signOut": MessageLookupByLibrary.simpleMessage("Αποσύνδεση"),
@@ -257,6 +281,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Αδύνατο να ανιχνευθούν οι ταινίες!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Αδύνατο να ανεβάσετε εικόνες!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Επερχόμενες ταινίες"),
         "update": MessageLookupByLibrary.simpleMessage("Ενημέρωση"),
         "userScore": MessageLookupByLibrary.simpleMessage("Βαθμολογία Χρηστών"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("ការផ្សងព្រេង"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ឈ្មោះជំនួស: "),
         "animation": MessageLookupByLibrary.simpleMessage("អានីមេ이션"),
+        "april": MessageLookupByLibrary.simpleMessage("មេសា"),
         "ascending": MessageLookupByLibrary.simpleMessage("កើនឡើង"),
+        "august": MessageLookupByLibrary.simpleMessage("សីហា"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("ប្រវត្តិជីវិត: "),
         "birthDateColon":
@@ -87,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "ទិន្នន័យសម្រាប់អ្នកនិពន្ធនេះមិនអាចរកបាន!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("កាលបរិច្ឆេទស្លាប់: "),
+        "december": MessageLookupByLibrary.simpleMessage("ធ្នូ"),
         "delete": MessageLookupByLibrary.simpleMessage("លុប"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("លុបភាពយន្តដែលបានជ្រើស"),
@@ -121,6 +124,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ការលុបបែក!"),
         "family": MessageLookupByLibrary.simpleMessage("គ្រួសារ"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ភ្លើង"),
+        "february": MessageLookupByLibrary.simpleMessage("កុម្ភៈ"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("របៀបស្វែងរកភាពយន្ត"),
         "franchise": MessageLookupByLibrary.simpleMessage("ហ្វ្រាំងស៊ីស"),
         "franchises": MessageLookupByLibrary.simpleMessage("ហ្វ្រាំងស៊ីស"),
         "genre": MessageLookupByLibrary.simpleMessage("ប្រភេទ"),
@@ -134,8 +140,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("បញ្ចូលពីCSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID មិនត្រឹមត្រូវ!"),
+        "january": MessageLookupByLibrary.simpleMessage("មករា"),
+        "july": MessageLookupByLibrary.simpleMessage("កក្តត"),
+        "june": MessageLookupByLibrary.simpleMessage("មិថុនា"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("ភាពយន្តថ្មីៗ"),
         "list": MessageLookupByLibrary.simpleMessage("បញ្ជី"),
         "listSmall": MessageLookupByLibrary.simpleMessage("បញ្ជី(តូច)"),
+        "march": MessageLookupByLibrary.simpleMessage("មីនា"),
+        "may": MessageLookupByLibrary.simpleMessage("ឧសភា"),
         "monthly": MessageLookupByLibrary.simpleMessage("ប្រចាំខែ"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "ភាពយន្តត្រូវបានបញ្ចូលជោគជ័យ!"),
@@ -145,6 +157,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "ភាពយន្តត្រូវបានលុបចោលជោគជ័យ!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("ព័ត៌មានលម្អិតភាពយន្ត"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "អ្នកបានដល់គ្រោងភាពយន្ត (250 សម្រាប់បញ្ជីមើល, 250 សម្រាប់បញ្ជីសម្រេច). សូមធ្វើបច្ចុប្បន្នភាពទៅPremium សម្រាប់ភាពយន្តដែលគ្មានកំណត់។"),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("បានដល់គ្រោងភាពយន្ត"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("ចំណងជើងភាពយន្ត"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "ភាពយន្តត្រូវបានបន្ទាន់សម័យជោគជ័យ!"),
@@ -186,6 +202,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "មិនមានអ្នកនិពន្ធដែលបានជ្រើសរើស"),
         "none": MessageLookupByLibrary.simpleMessage("គ្មាន"),
+        "november": MessageLookupByLibrary.simpleMessage("វិច្ឆិកា"),
+        "october": MessageLookupByLibrary.simpleMessage("តុលា"),
         "ok": MessageLookupByLibrary.simpleMessage("ព្រម"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("សូមបញ្ចូល"),
         "pleaseEnterMovieTitle":
@@ -200,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("ក្រុមហ៊ុនផលិត"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("ភាពយន្តចៃដន្យ"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("របៀបស្នើសុំភាពយន្ត"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("កាលបរិច្ឆេទចេញផ្សាយ"),
         "releaseDateColon":
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("វិទ្យាសាស្ត្របច្ចេកវិទ្យា"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("ស្វែងរកភាពយន្ត"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("ជ្រើសរើសការវាយតម្លៃ PG"),
         "selected": MessageLookupByLibrary.simpleMessage("បានជ្រើសរើស"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "ភាពយន្តដែលបានជ្រើសនឹងត្រូវបានលុបចោល។ តើអ្នកព្រមទេ?"),
+        "september": MessageLookupByLibrary.simpleMessage("កញ្ញា"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "ការចូលគណនីGoogle ត្រូវបានបោះបង់។"),
         "signOut": MessageLookupByLibrary.simpleMessage("ចាកចេញ"),
@@ -253,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("មិនអាចរកឃើញភាពយន្តបានទេ!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("មិនអាចផ្ទុករូបភាពបានទេ!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("ភាពយន្តដែលមកដល់"),
         "update": MessageLookupByLibrary.simpleMessage("បន្ទាន់សម័យ"),
         "userScore": MessageLookupByLibrary.simpleMessage("ពិន្ទុអ្នកប្រើ"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

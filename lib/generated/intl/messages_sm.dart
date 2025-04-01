@@ -43,7 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Fa\'amaoniga: "),
         "animation": MessageLookupByLibrary.simpleMessage("Fa\'amaliega"),
+        "april": MessageLookupByLibrary.simpleMessage("Aperila"),
         "ascending": MessageLookupByLibrary.simpleMessage("Fa\'ateleina"),
+        "august": MessageLookupByLibrary.simpleMessage("Aokuso"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("Fa\'amaoniga o le Fa\'ava: "),
         "birthDateColon":
@@ -90,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Fa\'amaoniga Fa\'ato\'aga le mafai ona maua!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Aso Fa\'amanatu: "),
+        "december": MessageLookupByLibrary.simpleMessage("Tesema"),
         "delete": MessageLookupByLibrary.simpleMessage("Fa\'aleagaina"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Tausia ata fa\'avae na filifilia"),
@@ -124,6 +127,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fa\'aletonu!"),
         "family": MessageLookupByLibrary.simpleMessage("Aiga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Mafaufauga"),
+        "february": MessageLookupByLibrary.simpleMessage("Feburari"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Tafuta Ata Tifaga Fa\'atonu"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Vaega"),
@@ -139,8 +145,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fa\'amaonia mai CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID Fa\'aletonu!"),
+        "january": MessageLookupByLibrary.simpleMessage("Ianuari"),
+        "july": MessageLookupByLibrary.simpleMessage("Iulai"),
+        "june": MessageLookupByLibrary.simpleMessage("Iuni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Ata Tifaga Fou"),
         "list": MessageLookupByLibrary.simpleMessage("Lisi"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lisi(Small)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mati"),
+        "may": MessageLookupByLibrary.simpleMessage("Mei"),
         "monthly": MessageLookupByLibrary.simpleMessage("Aso Fa\'amasinoga"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Ata tetele na fa\'amaonia!"),
@@ -150,6 +162,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ata na fa\'alea\'ai!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Fa\'amaoniga Ata"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Ua e oʻo i le tapulaʻa o ata tifaga (250 mo Watch List, 250 mo Collection). Fa\'amalie atu e fa\'amae\'a i Premium mo ata tifaga leai ni tapula\'a."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Ua maeʻa le tapulaʻa o ata tifaga"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Titulu Ata Tetele"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Ata na fa\'amaonia!"),
@@ -193,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "E leai ni Fa\'ato\'aga na Fa\'amaonia"),
         "none": MessageLookupByLibrary.simpleMessage("Leai"),
+        "november": MessageLookupByLibrary.simpleMessage("Novema"),
+        "october": MessageLookupByLibrary.simpleMessage("Oketopa"),
         "ok": MessageLookupByLibrary.simpleMessage("Ioe"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Fa\'amaonia"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -208,6 +226,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kamupani Fa\'atekinolosi"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Ata Fa\'atekinolosi"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Fesili Ata Tifaga Fa\'atonu"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Aso Tatalaina"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Aso tatalaina: "),
@@ -230,9 +250,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Fa\'atekinolosi i le Faalauilo"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Su\'esu\'e ata tetele"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Filifili PG Uiga"),
         "selected": MessageLookupByLibrary.simpleMessage("Filifilia"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "fa\'ate\'ia ata fa\'avae. E mafai ona e fa\'amaonia?"),
+        "september": MessageLookupByLibrary.simpleMessage("Setema"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Na taofia le Google Sign-In."),
         "signOut": MessageLookupByLibrary.simpleMessage("Taofi"),
@@ -267,6 +290,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "E le mafai ona fa\'amaonia ata tetele!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "E le mafai ona fa\'amaonia ata fa\'atekinolosi!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Ata Tifaga o Lo\'o Tatala"),
         "update": MessageLookupByLibrary.simpleMessage("Fa\'amaonia"),
         "userScore": MessageLookupByLibrary.simpleMessage(
             "Fa\'ailoga o le tagata fa\'aoga"),

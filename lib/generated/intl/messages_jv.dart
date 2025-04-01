@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Petualangan"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasi"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Meningkat"),
+        "august": MessageLookupByLibrary.simpleMessage("Agustus"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Lair: "),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Data kanggo penulis iki ora bisa ditemokake!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Meninggal: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desember"),
         "delete": MessageLookupByLibrary.simpleMessage("Hapus"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Hapus Film Pilihan"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Gagal!"),
         "family": MessageLookupByLibrary.simpleMessage("Keluarga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasi"),
+        "february": MessageLookupByLibrary.simpleMessage("Februari"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode Pencarian Film"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -128,8 +134,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Poin IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Impor saka CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDB ora sah!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januari"),
+        "july": MessageLookupByLibrary.simpleMessage("Juli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Film Terbaru"),
         "list": MessageLookupByLibrary.simpleMessage("Daftar"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Daftar (Cilik)"),
+        "march": MessageLookupByLibrary.simpleMessage("Maret"),
+        "may": MessageLookupByLibrary.simpleMessage("Mei"),
         "monthly": MessageLookupByLibrary.simpleMessage("Saben wulan"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Film wis ditambahake kanthi sukses!"),
@@ -137,6 +149,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Film wis dihapus kanthi sukses!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Rincian Film"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Sampeyan wis tekan watesan film (250 kanggo Dhaptar Tonton, 250 kanggo Koleksi). Mangga upgrade menyang Premium kanggo film tanpa wates."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Watesan film wis tekan"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Judul Film"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Film wis diupdate kanthi sukses!"),
@@ -178,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Ora ana penulis sing dipilih"),
         "none": MessageLookupByLibrary.simpleMessage("Ora ana"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Mangga masukkan"),
         "pleaseEnterMovieTitle":
@@ -192,6 +210,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Perusahaan Produksi"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film Acak"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode Rekomendasi Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Tanggal Rilis"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Rilis: "),
@@ -209,9 +229,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Durasi (Menit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fiksi Ilmiah"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Golek Film"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Pilih Rating PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Dipilih"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Film sing dipilih bakal dihapus. Apa sampeyan konfirmasi?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Login Google dibatalake."),
         "signOut": MessageLookupByLibrary.simpleMessage("Mlebu metu"),
@@ -244,6 +267,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ora bisa deteksi Film!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Ora bisa unggah gambar!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Film Sing Bakal Tampil"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "userScore": MessageLookupByLibrary.simpleMessage("Poin Pengguna"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("ผจญภัย"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ชื่อเล่น: "),
         "animation": MessageLookupByLibrary.simpleMessage("แอนิเมชัน"),
+        "april": MessageLookupByLibrary.simpleMessage("เมษายน"),
         "ascending": MessageLookupByLibrary.simpleMessage("เพิ่มขึ้น"),
+        "august": MessageLookupByLibrary.simpleMessage("สิงหาคม"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ประวัติ: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("วันเกิด: "),
         "birthPlaceColon":
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "ไม่พบข้อมูลสำหรับนักเขียนคนนี้!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("วันเสียชีวิต: "),
+        "december": MessageLookupByLibrary.simpleMessage("ธันวาคม"),
         "delete": MessageLookupByLibrary.simpleMessage("ลบ"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("ลบภาพยนตร์ที่เลือก"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ล้มเหลว!"),
         "family": MessageLookupByLibrary.simpleMessage("ครอบครัว"),
         "fantasy": MessageLookupByLibrary.simpleMessage("แฟนตาซี"),
+        "february": MessageLookupByLibrary.simpleMessage("กุมภาพันธ์"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("โหมดค้นหาภาพยนตร์"),
         "franchise": MessageLookupByLibrary.simpleMessage("แฟรนไชส์"),
         "franchises": MessageLookupByLibrary.simpleMessage("แฟรนไชส์"),
         "genre": MessageLookupByLibrary.simpleMessage("ประเภท"),
@@ -128,8 +134,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("นำเข้าจาก CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("รหัส IMDB ไม่ถูกต้อง!"),
+        "january": MessageLookupByLibrary.simpleMessage("มกราคม"),
+        "july": MessageLookupByLibrary.simpleMessage("กรกฎาคม"),
+        "june": MessageLookupByLibrary.simpleMessage("มิถุนายน"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("ภาพยนตร์ล่าสุด"),
         "list": MessageLookupByLibrary.simpleMessage("รายการ"),
         "listSmall": MessageLookupByLibrary.simpleMessage("รายการ (ขนาดเล็ก)"),
+        "march": MessageLookupByLibrary.simpleMessage("มีนาคม"),
+        "may": MessageLookupByLibrary.simpleMessage("พฤษภาคม"),
         "monthly": MessageLookupByLibrary.simpleMessage("รายเดือน"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("เพิ่มภาพยนตร์สำเร็จ!"),
@@ -139,6 +151,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ลบภาพยนตร์สำเร็จ!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("รายละเอียดภาพยนตร์"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "คุณได้ถึงขีดจำกัดภาพยนตร์แล้ว (250 สำหรับรายการที่ต้องการชม, 250 สำหรับคอลเลกชัน) กรุณาอัปเกรดเป็น Premium เพื่อภาพยนตร์ไม่จำกัด"),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("ถึงขีดจำกัดภาพยนตร์แล้ว"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("ชื่อภาพยนตร์"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("อัพเดทภาพยนตร์สำเร็จ!"),
@@ -179,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกนักเขียนใดๆ"),
         "none": MessageLookupByLibrary.simpleMessage("ไม่มี"),
+        "november": MessageLookupByLibrary.simpleMessage("พฤศจิกายน"),
+        "october": MessageLookupByLibrary.simpleMessage("ตุลาคม"),
         "ok": MessageLookupByLibrary.simpleMessage("ตกลง"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("กรุณากรอก"),
         "pleaseEnterMovieTitle":
@@ -193,6 +211,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("บริษัทผลิต"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("ภาพยนตร์สุ่ม"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("โหมดแนะนำภาพยนตร์"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("วันวางจำหน่าย"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("วันวางจำหน่าย: "),
@@ -211,9 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("วิทยาศาสตร์สมมุติ"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("ค้นหาภาพยนตร์"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("เลือกการจัดอันดับ PG"),
         "selected": MessageLookupByLibrary.simpleMessage("เลือกแล้ว"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "ภาพยนตร์ที่เลือกจะถูกลบ คุณยืนยันไหม?"),
+        "september": MessageLookupByLibrary.simpleMessage("กันยายน"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "การเข้าสู่ระบบด้วย Google ถูกยกเลิก."),
         "signOut": MessageLookupByLibrary.simpleMessage("ออกจากระบบ"),
@@ -245,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "ไม่สามารถตรวจจับภาพยนตร์ได้!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("ไม่สามารถอัปโหลดภาพได้!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("ภาพยนตร์ที่กำลังจะมา"),
         "update": MessageLookupByLibrary.simpleMessage("อัพเดท"),
         "userScore": MessageLookupByLibrary.simpleMessage("คะแนนผู้ใช้"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

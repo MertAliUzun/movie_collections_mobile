@@ -42,7 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventuren"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animatioun"),
+        "april": MessageLookupByLibrary.simpleMessage("Abrëll"),
         "ascending": MessageLookupByLibrary.simpleMessage("Opstiechend"),
+        "august": MessageLookupByLibrary.simpleMessage("August"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biographie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Geburtsdatum: "),
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Donnéeën fir dës Schreifwiesen konnten net recuperéiert ginn!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Doudesdatum: "),
+        "december": MessageLookupByLibrary.simpleMessage("Dezember"),
         "delete": MessageLookupByLibrary.simpleMessage("Läschten"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Geläscht gewielte Filmer"),
@@ -118,6 +121,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Feeler!"),
         "family": MessageLookupByLibrary.simpleMessage("Famill"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasie"),
+        "february": MessageLookupByLibrary.simpleMessage("Februar"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film Fënnermodus"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchisen"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -132,8 +138,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Importéieren aus CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Ongëlteg IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januar"),
+        "july": MessageLookupByLibrary.simpleMessage("Juli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Leschte Filmer"),
         "list": MessageLookupByLibrary.simpleMessage("Lëscht"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lëscht (Klein)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mäerz"),
+        "may": MessageLookupByLibrary.simpleMessage("Mee"),
         "monthly": MessageLookupByLibrary.simpleMessage("Monatlich"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Film gouf erfollegräich derbäigesat!"),
@@ -142,6 +154,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Film gouf erfollegräich geläscht!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Filmdetailer"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Dir hutt de Filmlimit erreecht (250 fir d\'Watch List, 250 fir d\'Collection). W.e.g., upgraden op Premium fir onlimitéiert Filmer."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmlimit erreecht"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmtitel"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Film gouf erfollegräich aktualiséiert!"),
@@ -184,6 +200,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Keng Schreifwiesen ausgewielt"),
         "none": MessageLookupByLibrary.simpleMessage("Keng"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Gëfft w.e.g. aginn"),
@@ -199,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produktiounsgesellschaften"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Zoufälleg Film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film Recommandatiounsmodus"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Fräigabe Datum"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Fräigabe Datum: "),
@@ -218,9 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Wëssenschaftsfiktion"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filmer sichen"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Wielt PG-Bewäertung"),
         "selected": MessageLookupByLibrary.simpleMessage("Ausgewielt"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Wëlls de confirméieren datt d\'gewielte Filmer geläscht ginn?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Login gouf ofgebrach."),
         "signOut": MessageLookupByLibrary.simpleMessage("Ausloggen"),
@@ -252,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Net fäeg Filmer ze detektéieren!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Net fäeg Biller eropzelueden!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Kommend Filmer"),
         "update": MessageLookupByLibrary.simpleMessage("Aktualiséieren"),
         "userScore": MessageLookupByLibrary.simpleMessage("Benotzer Score"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

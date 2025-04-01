@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Eventyr"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasjon"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Stigende"),
+        "august": MessageLookupByLibrary.simpleMessage("August"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografi: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Fødselsdato: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("Fødested: "),
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Data for denne forfatteren kunne ikke hentes!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Dødsdato: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desember"),
         "delete": MessageLookupByLibrary.simpleMessage("Slett"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Slett valgte filmer"),
@@ -114,6 +117,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Feil!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("Februar"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage("Finn filmmodus"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchiser"),
         "genre": MessageLookupByLibrary.simpleMessage("Sjanger"),
@@ -126,8 +131,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Vurdering"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Importer fra CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("Ugyldig IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januar"),
+        "july": MessageLookupByLibrary.simpleMessage("Juli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Nyeste filmer"),
         "list": MessageLookupByLibrary.simpleMessage("Liste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste (Lite)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "may": MessageLookupByLibrary.simpleMessage("Mai"),
         "monthly": MessageLookupByLibrary.simpleMessage("Månedlig"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Filmen ble lagt til vellykket!"),
@@ -136,6 +147,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Filmen ble slettet vellykket!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Filmdetaljer"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Du har nådd filmtjenestegrensen (250 for Watch List, 250 for Collection). Vennligst oppgrader til Premium for ubegrenset filmer."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmtjenestegrensen er nådd"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmtittel"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filmen ble oppdatert vellykket!"),
@@ -177,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ingen forfattere valgt"),
         "none": MessageLookupByLibrary.simpleMessage("Ingen"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Vennligst skriv inn"),
@@ -192,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produksjonsselskaper"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Tilfeldig film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Anbefalingsmodus for film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Utgivelsesdato"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Utgivelsesdato: "),
@@ -212,9 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Science fiction"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Søk etter filmer"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Velg PG-vurdering"),
         "selected": MessageLookupByLibrary.simpleMessage("Valgt"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valgte filmer vil bli slettet. Bekrefter du?"),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google pålogging ble kansellert."),
         "signOut": MessageLookupByLibrary.simpleMessage("Logg ut"),
@@ -247,6 +269,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kan ikke oppdage filmer!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Kan ikke laste opp bilder!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Kommende filmer"),
         "update": MessageLookupByLibrary.simpleMessage("Oppdater"),
         "userScore": MessageLookupByLibrary.simpleMessage("Bruker Vurdering"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

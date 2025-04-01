@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("साहस"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("उपनाम: "),
         "animation": MessageLookupByLibrary.simpleMessage("ऍनिमेशन"),
+        "april": MessageLookupByLibrary.simpleMessage("एप्रिल"),
         "ascending": MessageLookupByLibrary.simpleMessage("वाढत जाणारा"),
+        "august": MessageLookupByLibrary.simpleMessage("ऑगस्ट"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("जीवितवृत्त: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("जन्म तारीख: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("जन्मस्थळ: "),
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "या लेखकाची माहिती मिळवता येत नाही!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("मृत्यू तारीख: "),
+        "december": MessageLookupByLibrary.simpleMessage("डिसेंबर"),
         "delete": MessageLookupByLibrary.simpleMessage("हटवा"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("निवडलेले चित्रपट हटवा"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("विफलता!"),
         "family": MessageLookupByLibrary.simpleMessage("कुटुंब"),
         "fantasy": MessageLookupByLibrary.simpleMessage("कल्पनावादी"),
+        "february": MessageLookupByLibrary.simpleMessage("फेब्रुवारी"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("चित्रपट शोध मोड"),
         "franchise": MessageLookupByLibrary.simpleMessage("फ्रँचायझी"),
         "franchises": MessageLookupByLibrary.simpleMessage("फ्रँचायझी"),
         "genre": MessageLookupByLibrary.simpleMessage("प्रकार"),
@@ -127,8 +133,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB स्कोर"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV मध्ये आयात करा"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("अवैध IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("जानेवारी"),
+        "july": MessageLookupByLibrary.simpleMessage("जुलै"),
+        "june": MessageLookupByLibrary.simpleMessage("जून"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("नवीन चित्रपट"),
         "list": MessageLookupByLibrary.simpleMessage("यादी"),
         "listSmall": MessageLookupByLibrary.simpleMessage("यादी (लहान)"),
+        "march": MessageLookupByLibrary.simpleMessage("मार्च"),
+        "may": MessageLookupByLibrary.simpleMessage("मे"),
         "monthly": MessageLookupByLibrary.simpleMessage("मासिक"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "चित्रपट यशस्वीपणे जोडले गेले!"),
@@ -137,6 +149,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "चित्रपट यशस्वीपणे हटवले गेले!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("चित्रपट तपशील"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "आपण चित्रपट मर्यादा पोहोचली आहे (Watch List साठी 250, Collection साठी 250). अनलिमिटेड चित्रपटांसाठी कृपया Premium मध्ये अपग्रेड करा."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("चित्रपट मर्यादा पोहोचली"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("चित्रपटाचे शीर्षक"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "चित्रपट यशस्वीपणे अद्ययावत केला गेला!"),
@@ -179,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("कोणतेही लेखक निवडलेले नाहीत"),
         "none": MessageLookupByLibrary.simpleMessage("काहीच नाही"),
+        "november": MessageLookupByLibrary.simpleMessage("नोव्हेंबर"),
+        "october": MessageLookupByLibrary.simpleMessage("ऑक्टोबर"),
         "ok": MessageLookupByLibrary.simpleMessage("ठीक आहे"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("कृपया प्रविष्ट करा"),
@@ -195,6 +213,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("उत्पादन कंपन्या"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("यादृच्छिक चित्रपट"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("चित्रपट शिफारस मोड"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("प्रकाशन तारीख"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("प्रकाशन तारीख: "),
@@ -212,9 +232,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कालावधी (मिनिटांमध्ये)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("विज्ञानकथा"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("चित्रपट शोधा"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG रेटिंग निवडा"),
         "selected": MessageLookupByLibrary.simpleMessage("निवडलेले"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "निवडलेले चित्रपट हटवले जातील. तुम्ही खात्री करता का?"),
+        "september": MessageLookupByLibrary.simpleMessage("सप्टेंबर"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "गूगल साइन-इन रद्द केला गेला."),
         "signOut": MessageLookupByLibrary.simpleMessage("साइन आउट करा"),
@@ -246,6 +269,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("चित्रपट ओळखता येत नाहीत!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "प्रतिमा अपलोड करता येत नाहीत!"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("आगामी चित्रपट"),
         "update": MessageLookupByLibrary.simpleMessage("अद्ययावत करा"),
         "userScore": MessageLookupByLibrary.simpleMessage("वापरकर्ता स्कोर"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

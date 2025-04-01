@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Avventura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animazione"),
+        "april": MessageLookupByLibrary.simpleMessage("Aprile"),
         "ascending": MessageLookupByLibrary.simpleMessage("Crescente"),
+        "august": MessageLookupByLibrary.simpleMessage("Agosto"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografia: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Data di Nascita: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dati per questo scrittore non trovati!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Data di Morte: "),
+        "december": MessageLookupByLibrary.simpleMessage("Dicembre"),
         "delete": MessageLookupByLibrary.simpleMessage("Elimina"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Elimina i film scelti"),
@@ -118,6 +121,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Errore!"),
         "family": MessageLookupByLibrary.simpleMessage("Famiglia"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "february": MessageLookupByLibrary.simpleMessage("Febbraio"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Modalità di ricerca film"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchising"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchising"),
         "genre": MessageLookupByLibrary.simpleMessage("Genere"),
@@ -131,8 +137,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importa da CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB non valido!"),
+        "january": MessageLookupByLibrary.simpleMessage("Gennaio"),
+        "july": MessageLookupByLibrary.simpleMessage("Luglio"),
+        "june": MessageLookupByLibrary.simpleMessage("Giugno"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Ultimi film"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (Piccola)"),
+        "march": MessageLookupByLibrary.simpleMessage("Marzo"),
+        "may": MessageLookupByLibrary.simpleMessage("Maggio"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mensile"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film aggiunto con successo!"),
@@ -142,6 +154,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Film eliminato con successo!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Dettagli del Film"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Hai raggiunto il limite di film (250 per la Watch List, 250 per la Collection). Per favore, aggiorna a Premium per film illimitati."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Limite film raggiunto"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Titolo del Film"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Film aggiornato con successo!"),
@@ -184,6 +200,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Nessun scrittore selezionato"),
         "none": MessageLookupByLibrary.simpleMessage("Nessuno"),
+        "november": MessageLookupByLibrary.simpleMessage("Novembre"),
+        "october": MessageLookupByLibrary.simpleMessage("Ottobre"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Per favore, inserisci"),
@@ -199,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Compagnie di Produzione"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film Casuale"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Modalità di raccomandazione film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Data di Uscita"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Data di Uscita: "),
@@ -217,9 +237,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Durata (Minuti)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fantascienza"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Cerca Film"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Seleziona la valutazione PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Selezionato"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "I film selezionati saranno eliminati. Confermi?"),
+        "september": MessageLookupByLibrary.simpleMessage("Settembre"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Il login con Google è stato annullato."),
         "signOut": MessageLookupByLibrary.simpleMessage("Disconnettersi"),
@@ -251,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Impossibile rilevare i film!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Impossibile caricare le immagini!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Film in arrivo"),
         "update": MessageLookupByLibrary.simpleMessage("Aggiorna"),
         "userScore": MessageLookupByLibrary.simpleMessage("Punteggio Utente"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

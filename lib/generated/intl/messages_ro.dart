@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventură"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animație"),
+        "april": MessageLookupByLibrary.simpleMessage("Aprilie"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascendent"),
+        "august": MessageLookupByLibrary.simpleMessage("August"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Data nașterii: "),
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nu s-au obținut date pentru acest scriitor!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Data decesului: "),
+        "december": MessageLookupByLibrary.simpleMessage("Decembrie"),
         "delete": MessageLookupByLibrary.simpleMessage("Șterge"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Șterge filmele alese"),
@@ -114,6 +117,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Eșec!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantezie"),
+        "february": MessageLookupByLibrary.simpleMessage("Februarie"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mod căutare filme"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franciză"),
         "franchises": MessageLookupByLibrary.simpleMessage("Francize"),
         "genre": MessageLookupByLibrary.simpleMessage("Gen"),
@@ -126,8 +132,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Scor IMDb"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Importă CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDb invalid!"),
+        "january": MessageLookupByLibrary.simpleMessage("Ianuarie"),
+        "july": MessageLookupByLibrary.simpleMessage("Iulie"),
+        "june": MessageLookupByLibrary.simpleMessage("Iunie"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Filme recente"),
         "list": MessageLookupByLibrary.simpleMessage("Listă"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Listă (mică)"),
+        "march": MessageLookupByLibrary.simpleMessage("Martie"),
+        "may": MessageLookupByLibrary.simpleMessage("Mai"),
         "monthly": MessageLookupByLibrary.simpleMessage("Lunar"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film adăugat cu succes!"),
@@ -136,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Film șters cu succes!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Detalii film"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Ați atins limita de filme (250 pentru Lista de Vizionare, 250 pentru Colecție). Vă rugăm să faceți upgrade la Premium pentru filme nelimitate."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Limita de filme atinsă"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Titlu film"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film actualizat cu succes!"),
@@ -178,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Nu au fost selectați scriitori"),
         "none": MessageLookupByLibrary.simpleMessage("Niciunul"),
+        "november": MessageLookupByLibrary.simpleMessage("Noiembrie"),
+        "october": MessageLookupByLibrary.simpleMessage("Octombrie"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Te rog să introduci"),
@@ -193,6 +211,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Companii de producție"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film aleatoriu"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mod recomandare filme"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Data lansării"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Data lansării: "),
@@ -212,9 +232,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Științifico-fantastic"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Căutare filme"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Selectați rating-ul PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Selectat"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Filmele selectate vor fi șterse. Ești sigur?"),
+        "september": MessageLookupByLibrary.simpleMessage("Septembrie"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Autentificarea Google a fost anulată."),
         "signOut": MessageLookupByLibrary.simpleMessage("Deconectare"),
@@ -246,6 +269,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Imposibil de detectat filmele!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Imposibil de încărcat imagini!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Filme viitoare"),
         "update": MessageLookupByLibrary.simpleMessage("Actualizează"),
         "userScore": MessageLookupByLibrary.simpleMessage("Scor utilizator"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Macera"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Takma Ad: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
+        "april": MessageLookupByLibrary.simpleMessage("Nisan"),
         "ascending": MessageLookupByLibrary.simpleMessage("Artan"),
+        "august": MessageLookupByLibrary.simpleMessage("Ağustos"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Doğum Tarihi: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Bu Yazar hakkında veri bulunamadı!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Ölüm Tarihi: "),
+        "december": MessageLookupByLibrary.simpleMessage("Aralık"),
         "delete": MessageLookupByLibrary.simpleMessage("Sil"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Seçilen Filmleri Sil"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Başarısız!"),
         "family": MessageLookupByLibrary.simpleMessage("Aile"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantastik"),
+        "february": MessageLookupByLibrary.simpleMessage("Şubat"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film Bulma Modu"),
         "franchise": MessageLookupByLibrary.simpleMessage("Seri"),
         "franchises": MessageLookupByLibrary.simpleMessage("Seriler"),
         "genre": MessageLookupByLibrary.simpleMessage("Tür"),
@@ -128,8 +134,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV\'den Aktar"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Geçersiz IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Ocak"),
+        "july": MessageLookupByLibrary.simpleMessage("Temmuz"),
+        "june": MessageLookupByLibrary.simpleMessage("Haziran"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Son Çıkan Filmler"),
         "list": MessageLookupByLibrary.simpleMessage("Liste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste(Küçük)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mart"),
+        "may": MessageLookupByLibrary.simpleMessage("Mayıs"),
         "monthly": MessageLookupByLibrary.simpleMessage("Aylık"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film Başarıyla Eklendi!"),
@@ -138,6 +151,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Film Başarıyla Silindi!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Film Detayları"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Film limitine ulaştınız (İzleme Listesi için 250 , Koleksiyon için 250). Lütfen Sınırsız Film Ekleyebilmek için Premium\'a yükseltin."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Film Limitine Ulaşıldı"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Film Adı"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film Başarıyla Güncellendi!"),
@@ -176,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Hiçbir Yazar Seçilmedi"),
         "none": MessageLookupByLibrary.simpleMessage("Yok"),
+        "november": MessageLookupByLibrary.simpleMessage("Kasım"),
+        "october": MessageLookupByLibrary.simpleMessage("Ekim"),
         "ok": MessageLookupByLibrary.simpleMessage("Tamam"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Lütfen Giriniz"),
         "pleaseEnterMovieTitle":
@@ -190,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Yapım Şirketleri"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Rastgele Film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film Önerme Modu"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Çıkış Tarihi"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Vizyon Tarihi: "),
@@ -208,9 +229,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Süresi (Dakika)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Bilim Kurgu"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Film Ara"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG Derecelendirmesi Seçin"),
         "selected": MessageLookupByLibrary.simpleMessage("Seçili"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "seçilen filmler silinecek. Onaylıyor musunuz?"),
+        "september": MessageLookupByLibrary.simpleMessage("Eylül"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google oturum açma iptal edildi."),
         "signOut": MessageLookupByLibrary.simpleMessage("Çıkış Yap"),
@@ -242,6 +266,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmler Tespit Edilemedi!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Görseller Yüklenemiyor!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Yakında Çıkacak Filmler"),
         "update": MessageLookupByLibrary.simpleMessage("Güncelle"),
         "userScore": MessageLookupByLibrary.simpleMessage("Kullanıcı Puanı"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -117,6 +117,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "family": MessageLookupByLibrary.simpleMessage("Family"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
         "february": MessageLookupByLibrary.simpleMessage("February"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Find Movie Mode"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -132,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "january": MessageLookupByLibrary.simpleMessage("January"),
         "july": MessageLookupByLibrary.simpleMessage("July"),
         "june": MessageLookupByLibrary.simpleMessage("June"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Latest Movies"),
         "list": MessageLookupByLibrary.simpleMessage("List"),
         "listSmall": MessageLookupByLibrary.simpleMessage("List(Small)"),
         "march": MessageLookupByLibrary.simpleMessage("March"),
@@ -144,6 +147,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Movie has been Succesfully Deleted!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Movie Details"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "You have reached movie limit (250 for Watch List, 250 for Collection). Please upgrade to Premium for Unlimited Movies. "),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Movie Limit Reached"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Movie Title"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Movie has been Succesfully Updated!"),
@@ -201,6 +208,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Production Companies"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Random Movie"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Recommend Movie Mode"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Release Date"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Release Date: "),
@@ -219,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Search Movies"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Select PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Selected"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "selected movies will be deleted. Do you confirm?"),
@@ -254,6 +265,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unable to Detect Movies!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Unable to Upload Images!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Upcoming Movies"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "userScore": MessageLookupByLibrary.simpleMessage("User Score"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

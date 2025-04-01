@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Àlies: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animació"),
+        "april": MessageLookupByLibrary.simpleMessage("Abril"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascendent"),
+        "august": MessageLookupByLibrary.simpleMessage("Agost"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografia: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Data de naixement: "),
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "No s\'han pogut obtenir dades per aquest escriptor!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Data de mort: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desembre"),
         "delete": MessageLookupByLibrary.simpleMessage("Esborrar"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Esborrar pel·lícules seleccionades"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Falla!"),
         "family": MessageLookupByLibrary.simpleMessage("Família"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "february": MessageLookupByLibrary.simpleMessage("Febrer"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Mode de cerca de pel·lícules"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franquícia"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franquícies"),
         "genre": MessageLookupByLibrary.simpleMessage("Gènere"),
@@ -130,8 +136,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Importar des de CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB no vàlid!"),
+        "january": MessageLookupByLibrary.simpleMessage("Gener"),
+        "july": MessageLookupByLibrary.simpleMessage("Juliol"),
+        "june": MessageLookupByLibrary.simpleMessage("Juny"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Últimes pel·lícules"),
         "list": MessageLookupByLibrary.simpleMessage("Llista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Llista (petita)"),
+        "march": MessageLookupByLibrary.simpleMessage("Març"),
+        "may": MessageLookupByLibrary.simpleMessage("Maig"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mensual"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Pel·lícula afegida amb èxit!"),
@@ -141,6 +154,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pel·lícula esborrada amb èxit!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Detalls de la pel·lícula"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Heu arribat al límit de pel·lícules (250 per a la Llista de reproducció, 250 per a la Col·lecció). Si us plau, actualitzeu a Premium per obtenir pel·lícules il·limitades."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Límite de pel·lícules assolit"),
         "movieTitle":
             MessageLookupByLibrary.simpleMessage("Títol de la pel·lícula"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
@@ -184,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "No s\'han seleccionat escriptors"),
         "none": MessageLookupByLibrary.simpleMessage("Cap"),
+        "november": MessageLookupByLibrary.simpleMessage("Novembre"),
+        "october": MessageLookupByLibrary.simpleMessage("Octubre"),
         "ok": MessageLookupByLibrary.simpleMessage("D\'acord"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Si us plau, introdueix"),
@@ -200,6 +219,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Empreses de producció"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Pel·lícula aleatòria"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Mode recomanació de pel·lícules"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Data de llançament"),
         "releaseDateColon":
@@ -222,9 +243,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ciència ficció"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Cercar pel·lícules"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage(
+            "Seleccioneu la qualificació PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Seleccionat"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Les pel·lícules seleccionades seran esborrades. Ho confirmes?"),
+        "september": MessageLookupByLibrary.simpleMessage("Setembre"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Inici de sessió de Google cancel·lat."),
         "signOut": MessageLookupByLibrary.simpleMessage("Tancar sessió"),
@@ -257,6 +281,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "No es poden detectar les pel·lícules!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("No es poden pujar imatges!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Properes pel·lícules"),
         "update": MessageLookupByLibrary.simpleMessage("Actualitzar"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Puntuació d\'usuari"),

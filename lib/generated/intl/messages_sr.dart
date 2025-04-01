@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Avantura"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animacija"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Rastuće"),
+        "august": MessageLookupByLibrary.simpleMessage("Avgust"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografija: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Datum Rođenja: "),
@@ -80,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Podaci za ovog pisca nisu mogli biti pronađeni!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Datum Smrti: "),
+        "december": MessageLookupByLibrary.simpleMessage("Decembar"),
         "delete": MessageLookupByLibrary.simpleMessage("Obriši"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Obriši odabrane filmove"),
@@ -112,6 +115,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Neuspeh!"),
         "family": MessageLookupByLibrary.simpleMessage("Porodica"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazija"),
+        "february": MessageLookupByLibrary.simpleMessage("Februar"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Nađi režim filma"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franšiza"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franšize"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
@@ -125,8 +131,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importuj iz CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Nevalidan IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januar"),
+        "july": MessageLookupByLibrary.simpleMessage("Jul"),
+        "june": MessageLookupByLibrary.simpleMessage("Jun"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Najnoviji filmovi"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (Mala)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mart"),
+        "may": MessageLookupByLibrary.simpleMessage("Maj"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mesečno"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film je uspešno dodat!"),
@@ -135,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Film je uspešno obrisan!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Detalji o filmu"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Dostigli ste limit za filmove (250 za Watch List, 250 za Collection). Molimo vas da se nadogradite na Premium za neograničene filmove."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Dostignut limit filmova"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Naslov Filma"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film je uspešno ažuriran!"),
@@ -176,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nisu odabrani pisci"),
         "none": MessageLookupByLibrary.simpleMessage("Nema"),
+        "november": MessageLookupByLibrary.simpleMessage("Novembar"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktobar"),
         "ok": MessageLookupByLibrary.simpleMessage("U redu"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Molimo unesite"),
         "pleaseEnterMovieTitle":
@@ -190,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produkciona Kompanija"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Slučajni Film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Preporuči režim filma"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Datum Izlaska"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Datum izlaska: "),
@@ -210,9 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Naučna Fantastika"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Pretraga filmova"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Izaberite PG ocenu"),
         "selected": MessageLookupByLibrary.simpleMessage("Odabrano"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Odabrani filmovi će biti obrisani. Da li potvrdite?"),
+        "september": MessageLookupByLibrary.simpleMessage("Septembar"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google prijavljivanje je otkazano."),
         "signOut": MessageLookupByLibrary.simpleMessage("Odjava"),
@@ -244,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nije moguće detektovati filmove!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Nije moguće postaviti slike!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Predstojeći filmovi"),
         "update": MessageLookupByLibrary.simpleMessage("Ažuriraj"),
         "userScore": MessageLookupByLibrary.simpleMessage("Ocena Korisnika"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

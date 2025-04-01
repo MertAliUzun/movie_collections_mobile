@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter": MessageLookupByLibrary.simpleMessage("লেখক যোগ করুন"),
         "adventure": MessageLookupByLibrary.simpleMessage("অ্যাডভেঞ্চার"),
         "animation": MessageLookupByLibrary.simpleMessage("অ্যানিমেশন"),
+        "april": MessageLookupByLibrary.simpleMessage("এপ্রিল"),
         "ascending": MessageLookupByLibrary.simpleMessage("বর্ধমান ক্রমে"),
+        "august": MessageLookupByLibrary.simpleMessage("আগস্ট"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("বাজেট: "),
         "buy": MessageLookupByLibrary.simpleMessage("(কেনা)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("কিনুন"),
@@ -67,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV ফাইল ইমপোর্ট করা হয়েছে।"),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("কাস্টম সাজানোর শিরোনাম"),
+        "december": MessageLookupByLibrary.simpleMessage("ডিসেম্বর"),
         "delete": MessageLookupByLibrary.simpleMessage("মুছুন"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("নির্বাচিত মুভি মুছে ফেলুন"),
@@ -98,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ব্যর্থতা!"),
         "family": MessageLookupByLibrary.simpleMessage("পারিবারিক"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ফ্যান্টাসি"),
+        "february": MessageLookupByLibrary.simpleMessage("ফেব্রুয়ারী"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage("মুভি খোঁজা মোড"),
         "franchise": MessageLookupByLibrary.simpleMessage("ফ্র্যাঞ্চাইজি"),
         "franchises": MessageLookupByLibrary.simpleMessage("ফ্র্যাঞ্চাইজিগুলি"),
         "genre": MessageLookupByLibrary.simpleMessage("জঁর"),
@@ -109,13 +114,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDb রেটিং"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDb স্কোর"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV ইমপোর্ট করুন"),
+        "january": MessageLookupByLibrary.simpleMessage("জানুয়ারী"),
+        "july": MessageLookupByLibrary.simpleMessage("জুলাই"),
+        "june": MessageLookupByLibrary.simpleMessage("জুন"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("সর্বশেষ মুভি"),
         "list": MessageLookupByLibrary.simpleMessage("তালিকা"),
         "listSmall": MessageLookupByLibrary.simpleMessage("তালিকা (ছোট)"),
+        "march": MessageLookupByLibrary.simpleMessage("মার্চ"),
+        "may": MessageLookupByLibrary.simpleMessage("মে"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("মুভি যোগ করা হয়েছে।"),
         "movieCollection": MessageLookupByLibrary.simpleMessage("মুভি সংগ্রহ"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("মুভি মুছে ফেলা হয়েছে।"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "আপনি মুভির সীমা পৌঁছেছেন (Watch List এর জন্য 250, Collection এর জন্য 250)। অনুগ্রহ করে প্রিমিয়াম এ আপগ্রেড করুন একাধিক মুভি দেখার জন্য।"),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("মুভি সীমা পৌঁছেছে"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("মুভির শিরোনাম"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("মুভি আপডেট হয়েছে।"),
@@ -151,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("কোনো লেখক নির্বাচিত হয়নি"),
         "none": MessageLookupByLibrary.simpleMessage("কিছুই না"),
+        "november": MessageLookupByLibrary.simpleMessage("নভেম্বর"),
+        "october": MessageLookupByLibrary.simpleMessage("অক্টোবর"),
         "ok": MessageLookupByLibrary.simpleMessage("ওকে"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("অনুগ্রহ করে লিখুন"),
@@ -166,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("প্রযোজনা সংস্থাগুলি"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("একটি র্যান্ডম মুভি"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("মুভি সুপারিশ মোড"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("প্রকাশের তারিখ"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("প্রকাশের তারিখ: "),
@@ -184,9 +203,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("বিজ্ঞান কল্পকাহিনী"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("মুভি অনুসন্ধান করুন"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG রেটিং নির্বাচন করুন"),
         "selected": MessageLookupByLibrary.simpleMessage("নির্বাচিত"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             " মুভি মুছে ফেলা হবে। আপনি কি নিশ্চিত?"),
+        "september": MessageLookupByLibrary.simpleMessage("সেপ্টেম্বর"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "গুগল সাইন-ইন বাতিল করা হয়েছে।"),
         "signOut": MessageLookupByLibrary.simpleMessage("সাইন আউট"),
@@ -216,6 +238,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("মুভি সনাক্ত করা যায়নি!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("ছবি আপলোড করা যায়নি।"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("আসন্ন মুভি"),
         "userScore": MessageLookupByLibrary.simpleMessage("ব্যবহারকারী স্কোর"),
         "viewAs": MessageLookupByLibrary.simpleMessage("যেভাবে দেখবেন"),
         "war": MessageLookupByLibrary.simpleMessage("যুদ্ধ"),

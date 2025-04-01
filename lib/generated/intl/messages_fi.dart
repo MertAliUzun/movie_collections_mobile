@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Seikkailu"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animaatio"),
+        "april": MessageLookupByLibrary.simpleMessage("Huhtikuu"),
         "ascending": MessageLookupByLibrary.simpleMessage("Nouseva"),
+        "august": MessageLookupByLibrary.simpleMessage("Elokuu"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Elämäkerta: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Syntymäaika: "),
         "birthPlaceColon":
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Tämän kirjoittajan tietoja ei löytynyt!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Kuolinaika: "),
+        "december": MessageLookupByLibrary.simpleMessage("Joulukuu"),
         "delete": MessageLookupByLibrary.simpleMessage("Poista"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Poista valitut elokuvat"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Epäonnistui!"),
         "family": MessageLookupByLibrary.simpleMessage("Perhe"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "february": MessageLookupByLibrary.simpleMessage("Helmikuu"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Elokuvan etsiminen -tila"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franshise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franshiset"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -128,8 +134,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Tuo CSV:stä"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Virheellinen IMDB-tunnus!"),
+        "january": MessageLookupByLibrary.simpleMessage("Tammikuu"),
+        "july": MessageLookupByLibrary.simpleMessage("Heinäkuu"),
+        "june": MessageLookupByLibrary.simpleMessage("Kesäkuu"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Uusimmat elokuvat"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (Pieni)"),
+        "march": MessageLookupByLibrary.simpleMessage("Maaliskuu"),
+        "may": MessageLookupByLibrary.simpleMessage("Toukokuu"),
         "monthly": MessageLookupByLibrary.simpleMessage("Kuukausittain"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Elokuva lisätty onnistuneesti!"),
@@ -138,6 +151,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Elokuva poistettu onnistuneesti!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Elokuvan tiedot"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Olet saavuttanut elokuvarajan (250 Katselulistalle, 250 Kokoelmaan). Päivitä Premiumiin saadaksesi rajattomat elokuvat."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Elokuvaraja saavutettu"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Elokuvan otsikko"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Elokuva päivitetty onnistuneesti!"),
@@ -180,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ei kirjoittajia valittu"),
         "none": MessageLookupByLibrary.simpleMessage("Ei mitään"),
+        "november": MessageLookupByLibrary.simpleMessage("Marraskuu"),
+        "october": MessageLookupByLibrary.simpleMessage("Lokakuu"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Syötä"),
         "pleaseEnterMovieTitle":
@@ -196,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tuotantoyhtiöt"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Satunnainen elokuva"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Elokuvan suosittelu -tila"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Julkaisupäivämäärä"),
         "releaseDateColon":
@@ -215,9 +236,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kesto (Minuutit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Tieteisfiktio"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Etsi elokuvia"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Valitse PG-luokitus"),
         "selected": MessageLookupByLibrary.simpleMessage("Valittu"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valitut elokuvat poistetaan. Vahvistatko?"),
+        "september": MessageLookupByLibrary.simpleMessage("Syyskuu"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google-kirjautuminen peruttiin."),
         "signOut": MessageLookupByLibrary.simpleMessage("Kirjaudu ulos"),
@@ -250,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Elokuvia ei voitu tunnistaa!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Kuvien lataaminen epäonnistui!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Tulevat elokuvat"),
         "update": MessageLookupByLibrary.simpleMessage("Päivitä"),
         "userScore": MessageLookupByLibrary.simpleMessage("Käyttäjän arvio"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

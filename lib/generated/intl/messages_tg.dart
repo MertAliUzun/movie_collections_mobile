@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Масъала"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Ном: "),
         "animation": MessageLookupByLibrary.simpleMessage("Аниматсия"),
+        "april": MessageLookupByLibrary.simpleMessage("Апрел"),
         "ascending": MessageLookupByLibrary.simpleMessage("Рафти боло"),
+        "august": MessageLookupByLibrary.simpleMessage("Август"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Таърих: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Санаи таваллуд: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Додаҳо барои нависанда ёфта нашуд!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Санаи фавт: "),
+        "december": MessageLookupByLibrary.simpleMessage("Декабр"),
         "delete": MessageLookupByLibrary.simpleMessage("Нест кардан"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Нест кардани филмҳои интихобшуда"),
@@ -114,6 +117,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Шикаст!"),
         "family": MessageLookupByLibrary.simpleMessage("Хонавода"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Ходиса"),
+        "february": MessageLookupByLibrary.simpleMessage("Феврал"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Режими ҷустуҷӯи филм"),
         "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
         "franchises": MessageLookupByLibrary.simpleMessage("Франшизаҳо"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
@@ -127,8 +133,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Ворид кардани CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB хато аст!"),
+        "january": MessageLookupByLibrary.simpleMessage("Январ"),
+        "july": MessageLookupByLibrary.simpleMessage("Июл"),
+        "june": MessageLookupByLibrary.simpleMessage("Июн"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Филмҳои охирин"),
         "list": MessageLookupByLibrary.simpleMessage("Рӯйхат"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Рӯйхат (Кам)"),
+        "march": MessageLookupByLibrary.simpleMessage("Март"),
+        "may": MessageLookupByLibrary.simpleMessage("Май"),
         "monthly": MessageLookupByLibrary.simpleMessage("Моҳона"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Филм бо муваффақият илова шуд!"),
@@ -136,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Филм бо муваффақият нест шуд!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Тафсилоти филм"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Шумо ба ҳадди филм расидед (250 барои Watch List, 250 барои Collection). Лутфан ба Premium барои филмҳои бе маҳдудият обуна шавед."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Ҳадди Филм расида шуд"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Наслави филм"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Филм бо муваффақият навсозӣ шуд!"),
@@ -178,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Ҳеҷ нависанда интихоб нагардида аст"),
         "none": MessageLookupByLibrary.simpleMessage("Ҳеҷ"),
+        "november": MessageLookupByLibrary.simpleMessage("Ноябр"),
+        "october": MessageLookupByLibrary.simpleMessage("Октябр"),
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Лутфан ворид кунед"),
@@ -193,6 +211,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ширкатҳои истеҳсолӣ"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Филми тасодуфӣ"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Режими тавсия кардани филм"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Санаи баромад"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Санаи баромад: "),
@@ -212,9 +232,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Фантастикаи илмӣ"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ҷустуҷӯи филмҳо"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Оценкаи PG-ро интихоб кунед"),
         "selected": MessageLookupByLibrary.simpleMessage("Интихобшуда"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Филмҳои интихобшуда нест карда хоҳанд шуд. Шумо тасдиқ мекунед?"),
+        "september": MessageLookupByLibrary.simpleMessage("Сентябр"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Вуруд бо Google бекор карда шуд."),
         "signOut": MessageLookupByLibrary.simpleMessage("Баромадан"),
@@ -246,6 +269,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Немогуни шенасоии филмҳо!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Немогуни бор кардани тасвирҳо!"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("Филмҳои оянда"),
         "update": MessageLookupByLibrary.simpleMessage("Навсозӣ"),
         "userScore": MessageLookupByLibrary.simpleMessage("Нуқтаи корбар"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

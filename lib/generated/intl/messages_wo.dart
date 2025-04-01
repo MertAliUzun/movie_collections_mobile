@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "april": MessageLookupByLibrary.simpleMessage("Avril"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascendant"),
+        "august": MessageLookupByLibrary.simpleMessage("Awt"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biographie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Bésu Génération: "),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter":
             MessageLookupByLibrary.simpleMessage("Writer data wuñuñu!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Bésu Déth: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desanber"),
         "delete": MessageLookupByLibrary.simpleMessage("Bañ"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Film yi ñu ko tànn bañ"),
@@ -117,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Jàppale!"),
         "family": MessageLookupByLibrary.simpleMessage("Famille"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaisie"),
+        "february": MessageLookupByLibrary.simpleMessage("Fewvriyeer"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode bi ci jëfandikoo filme"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -130,14 +136,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Import ci CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID bu am solo!"),
+        "january": MessageLookupByLibrary.simpleMessage("Sanvwee"),
+        "july": MessageLookupByLibrary.simpleMessage("Julee"),
+        "june": MessageLookupByLibrary.simpleMessage("Juune"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Filme yi ci ginnaaw"),
         "list": MessageLookupByLibrary.simpleMessage("Listu"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Listu (Tuuti)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "may": MessageLookupByLibrary.simpleMessage("Mee"),
         "monthly": MessageLookupByLibrary.simpleMessage("Ay Weer"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("Film am na!"),
         "movieCollection": MessageLookupByLibrary.simpleMessage("Dëppoo Film"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Film bañ nañu ko!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Film Détails"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Duma am ci filme yi ci (250 ci Watch List, 250 ci Collection). Tere naa Premium ngir wone filme yu amul limite."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Limite bi ci filme gi am"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Film Title"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage("Film am na!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
@@ -177,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Writer wuñuñu."),
         "none": MessageLookupByLibrary.simpleMessage("Dara"),
+        "november": MessageLookupByLibrary.simpleMessage("Noomber"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktoober"),
         "ok": MessageLookupByLibrary.simpleMessage("Waaw"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Bindal"),
         "pleaseEnterMovieTitle":
@@ -191,6 +210,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Production Companies"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film Aléatoire"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode bi tax film yi"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Bésu Génération"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Bésu Génération: "),
@@ -211,9 +232,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science-Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Wut Film"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage("Jox PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Tànn"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "film yi ñu ko tànn dinañu ko bañ. Danga ko gëna xam?"),
+        "september": MessageLookupByLibrary.simpleMessage("Sektanber"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google Sign-In dañu ko bañ."),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
@@ -245,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Film yi wuñuñu!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Image yi wuñuñu!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Filme yi ngi tàbbi"),
         "update": MessageLookupByLibrary.simpleMessage("Soppi"),
         "userScore": MessageLookupByLibrary.simpleMessage("User Score"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

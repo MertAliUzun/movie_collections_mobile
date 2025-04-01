@@ -37,7 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter": MessageLookupByLibrary.simpleMessage("إضافة كاتب"),
         "adventure": MessageLookupByLibrary.simpleMessage("مغامرة"),
         "animation": MessageLookupByLibrary.simpleMessage("رسوم متحركة"),
+        "april": MessageLookupByLibrary.simpleMessage("أبريل"),
         "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
+        "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("الميزانية: "),
         "buy": MessageLookupByLibrary.simpleMessage("(شراء)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("شراء"),
@@ -65,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "csvFileImported":
             MessageLookupByLibrary.simpleMessage("تم استيراد ملف CSV بنجاح."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage("فرز مخصص"),
+        "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("حذف الأفلام المحددة"),
@@ -94,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
         "family": MessageLookupByLibrary.simpleMessage("عائلي"),
         "fantasy": MessageLookupByLibrary.simpleMessage("خيال"),
+        "february": MessageLookupByLibrary.simpleMessage("فبراير"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("وضع البحث عن الأفلام"),
         "franchise": MessageLookupByLibrary.simpleMessage("امتياز"),
         "franchises": MessageLookupByLibrary.simpleMessage("امتيازات"),
         "genre": MessageLookupByLibrary.simpleMessage("النوع"),
@@ -105,14 +111,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("تقييم IMDB"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("تقييم IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("استيراد CSV"),
+        "january": MessageLookupByLibrary.simpleMessage("يناير"),
+        "july": MessageLookupByLibrary.simpleMessage("يوليو"),
+        "june": MessageLookupByLibrary.simpleMessage("يونيو"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("أحدث الأفلام"),
         "list": MessageLookupByLibrary.simpleMessage("قائمة"),
         "listSmall": MessageLookupByLibrary.simpleMessage("قائمة (صغيرة)"),
+        "march": MessageLookupByLibrary.simpleMessage("مارس"),
+        "may": MessageLookupByLibrary.simpleMessage("مايو"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "تمت إضافة الفيلم إلى المجموعة!"),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("مجموعة الأفلام"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("تم حذف الفيلم بنجاح!"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "لقد وصلت إلى الحد الأقصى للأفلام (250 لقائمة المشاهدة، 250 للمجموعة). يرجى الترقية إلى Premium لمشاهدة عدد غير محدود من الأفلام."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "تم الوصول إلى الحد الأقصى للأفلام"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("عنوان الفيلم"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("تم تحديث الفيلم بنجاح!"),
@@ -145,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("لم يتم اختيار أي كاتب"),
         "none": MessageLookupByLibrary.simpleMessage("لا شيء"),
+        "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
+        "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
         "ok": MessageLookupByLibrary.simpleMessage("حسنًا"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("يرجى إدخال"),
         "pleaseEnterMovieTitle":
@@ -158,6 +176,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("شركات الإنتاج"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("فيلم عشوائي"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("وضع توصية الأفلام"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("تاريخ الإصدار: "),
@@ -175,9 +195,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction": MessageLookupByLibrary.simpleMessage("خيال علمي"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("البحث عن الأفلام"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage("اختر تصنيف PG"),
         "selected": MessageLookupByLibrary.simpleMessage("محدد"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد حذف هذه الأفلام؟"),
+        "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "تم إلغاء تسجيل الدخول إلى Google."),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -207,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تعذر اكتشاف الأفلام!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("تعذر تحميل الصور!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("الأفلام القادمة"),
         "userScore": MessageLookupByLibrary.simpleMessage("تقييم المستخدم"),
         "viewAs": MessageLookupByLibrary.simpleMessage("عرض كـ"),
         "war": MessageLookupByLibrary.simpleMessage("حرب"),

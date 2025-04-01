@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Avontuur"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animatie"),
+        "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Oplopend"),
+        "august": MessageLookupByLibrary.simpleMessage("Augustus"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Geboortedatum: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Data voor deze schrijver kan niet worden opgehaald!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Overlijdensdatum: "),
+        "december": MessageLookupByLibrary.simpleMessage("December"),
         "delete": MessageLookupByLibrary.simpleMessage("Verwijder"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Verwijder Geselecteerde Films"),
@@ -119,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Fout!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("Februari"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Vind Film Modus"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -133,8 +139,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Importeer vanuit CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Ongeldig IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januari"),
+        "july": MessageLookupByLibrary.simpleMessage("Juli"),
+        "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Laatste Films"),
         "list": MessageLookupByLibrary.simpleMessage("Lijst"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lijst (Klein)"),
+        "march": MessageLookupByLibrary.simpleMessage("Maart"),
+        "may": MessageLookupByLibrary.simpleMessage("Mei"),
         "monthly": MessageLookupByLibrary.simpleMessage("Maandelijks"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Film is succesvol toegevoegd!"),
@@ -143,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Film is succesvol verwijderd!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Filmdetails"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Je hebt de filmlimiet bereikt (250 voor de Watch List, 250 voor de Collectie). Upgrade naar Premium voor onbeperkte films."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Film Limiet Bereikt"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmtitel"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Film is succesvol bijgewerkt!"),
@@ -185,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Geen schrijvers geselecteerd"),
         "none": MessageLookupByLibrary.simpleMessage("Geen"),
+        "november": MessageLookupByLibrary.simpleMessage("November"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Voer in"),
         "pleaseEnterMovieTitle":
@@ -200,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Productiebedrijven"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Willekeurige Film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Aanbeveling Film Modus"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Releasedatum"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Releasedatum: "),
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Sciencefiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Zoek Films"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Selecteer PG Beoordeling"),
         "selected": MessageLookupByLibrary.simpleMessage("Geselecteerd"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Geselecteerde films worden verwijderd. Bevestig je keuze."),
+        "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google-inloggen werd geannuleerd."),
         "signOut": MessageLookupByLibrary.simpleMessage("Uitloggen"),
@@ -254,6 +277,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kan geen films detecteren!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Kan afbeeldingen niet uploaden!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Aankomende Films"),
         "update": MessageLookupByLibrary.simpleMessage("Bijwerken"),
         "userScore": MessageLookupByLibrary.simpleMessage("Gebruikersscore"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

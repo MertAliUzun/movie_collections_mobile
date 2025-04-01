@@ -37,7 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter": MessageLookupByLibrary.simpleMessage("Shto Skenarist"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventurë"),
         "animation": MessageLookupByLibrary.simpleMessage("Animacion"),
+        "april": MessageLookupByLibrary.simpleMessage("Prill"),
         "ascending": MessageLookupByLibrary.simpleMessage("Rritëse"),
+        "august": MessageLookupByLibrary.simpleMessage("Gusht"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Buxheti: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Bli)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Blej"),
@@ -66,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Skedari CSV u importua me sukses."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Renditje e Personalizuar"),
+        "december": MessageLookupByLibrary.simpleMessage("Dhjetor"),
         "delete": MessageLookupByLibrary.simpleMessage("Fshi"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Fshi Filmat e Zgjedhur"),
@@ -96,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Dështim!"),
         "family": MessageLookupByLibrary.simpleMessage("Familjar"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazi"),
+        "february": MessageLookupByLibrary.simpleMessage("Shkurt"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Gjej Režimin e Filmit"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franshiza"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franshiza"),
         "genre": MessageLookupByLibrary.simpleMessage("Zhanri"),
@@ -108,14 +114,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("Vlerësimi IMDB"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("Vlerësimi IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Importo CSV"),
+        "january": MessageLookupByLibrary.simpleMessage("Janar"),
+        "july": MessageLookupByLibrary.simpleMessage("Korrik"),
+        "june": MessageLookupByLibrary.simpleMessage("Qershor"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Filmat e Fundit"),
         "list": MessageLookupByLibrary.simpleMessage("Listë"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Listë (E Vogël)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "may": MessageLookupByLibrary.simpleMessage("Maj"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filmi u shtua në koleksion!"),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("Koleksioni i Filmave"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Filmi u fshi me sukses!"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Keni arritur limitin e filmave (250 për Listën e Dëgjimit, 250 për Koleksionin). Ju lutemi përmirësoni në Premium për Filme Pa Kufizime."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Limiti i Filmit është Arritur"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Titulli i Filmit"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filmi u përditësua me sukses!"),
@@ -150,6 +166,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Asnjë skenarist i zgjedhur"),
         "none": MessageLookupByLibrary.simpleMessage("Asnjë"),
+        "november": MessageLookupByLibrary.simpleMessage("Nëntor"),
+        "october": MessageLookupByLibrary.simpleMessage("Tetor"),
         "ok": MessageLookupByLibrary.simpleMessage("Në rregull"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Ju lutem shkruani"),
@@ -165,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kompanitë e Produksionit"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Film i Rastësishëm"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Rekomando Režimin e Filmit"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Data e Publikimit"),
         "releaseDateColon":
@@ -183,9 +203,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kohezgjatja (Minuta)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fantashkencë"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Kërko Filma"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Zgjidhni Vlerësimin PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Zgjedhur"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "A jeni i sigurt që doni të fshini këto filma?"),
+        "september": MessageLookupByLibrary.simpleMessage("Shtator"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Identifikimi në Google u anulua."),
         "signOut": MessageLookupByLibrary.simpleMessage("Shkyçu"),
@@ -215,6 +238,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nuk mund të zbulohen filma!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Nuk mund të ngarkohen imazhet!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Filmat që Vijnë"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Pikët e Përdoruesit"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Shiko si"),

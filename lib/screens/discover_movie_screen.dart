@@ -116,7 +116,7 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          widget.discoverType == 'Latest' ? 'S.of(context).latestMovies' : 'S.of(context).upcomingMovies',
+          widget.discoverType == 'Latest' ? S.of(context).latestMovies : S.of(context).upcomingMovies,
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),

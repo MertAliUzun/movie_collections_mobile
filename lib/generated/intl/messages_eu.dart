@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter": MessageLookupByLibrary.simpleMessage("Idazlea gehitu"),
         "adventure": MessageLookupByLibrary.simpleMessage("Abentura"),
         "animation": MessageLookupByLibrary.simpleMessage("Animazioa"),
+        "april": MessageLookupByLibrary.simpleMessage("Apirila"),
         "ascending": MessageLookupByLibrary.simpleMessage("Goranzkoa"),
+        "august": MessageLookupByLibrary.simpleMessage("Abuztua"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Aurrekontua: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Erosteko)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Erosi"),
@@ -67,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV fitxategia inportatu da."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Neurrirako ordenatze izenburua"),
+        "december": MessageLookupByLibrary.simpleMessage("Abendua"),
         "delete": MessageLookupByLibrary.simpleMessage("Ezabatu"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Aukeratutako filmak ezabatu"),
@@ -98,6 +101,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Errorea!"),
         "family": MessageLookupByLibrary.simpleMessage("Familia"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasia"),
+        "february": MessageLookupByLibrary.simpleMessage("Otsaila"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film bilatzeko modua"),
         "franchise": MessageLookupByLibrary.simpleMessage("Frantzia"),
         "franchises": MessageLookupByLibrary.simpleMessage("Frantziak"),
         "genre": MessageLookupByLibrary.simpleMessage("Generoa"),
@@ -109,13 +115,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB balorazioa"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB balorazioa"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV inportatu"),
+        "january": MessageLookupByLibrary.simpleMessage("Urtarrila"),
+        "july": MessageLookupByLibrary.simpleMessage("Uztaila"),
+        "june": MessageLookupByLibrary.simpleMessage("Ekaina"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Azken filmak"),
         "list": MessageLookupByLibrary.simpleMessage("Zerrenda"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Zerrenda (txikia)"),
+        "march": MessageLookupByLibrary.simpleMessage("Martxoa"),
+        "may": MessageLookupByLibrary.simpleMessage("Maiatza"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("Filma gehitu da."),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("Filmen Bilduma"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Filma ezabatu da."),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Filmen muga iritsi duzu (250 Zerrenda Ikusteko, 250 Bilduma). Mesedez, eguneratu Premium-ra mugagabe filmak lortzeko."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmen muga gainditu da"),
         "movieTitle":
             MessageLookupByLibrary.simpleMessage("Filmaren izenburua"),
         "movieUpdated":
@@ -152,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Ez da idazlerik aukeratu"),
         "none": MessageLookupByLibrary.simpleMessage("Bat ere ez"),
+        "november": MessageLookupByLibrary.simpleMessage("Azaroa"),
+        "october": MessageLookupByLibrary.simpleMessage("Urria"),
         "ok": MessageLookupByLibrary.simpleMessage("Ados"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Mesedez, sartu"),
         "pleaseEnterMovieTitle":
@@ -165,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ekoizpen enpresak"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Ausazko filma"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film gomendatzeko modua"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Argitaratze data"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Argitaratze data: "),
@@ -183,9 +203,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Zientzia fikzioa"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filmak bilatu"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Hautatu PG sailkapena"),
         "selected": MessageLookupByLibrary.simpleMessage("Aukeratua"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             " film ezabatuko dira. Ziur zaude?"),
+        "september": MessageLookupByLibrary.simpleMessage("Iraila"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google bidezko saioa bertan behera utzi da."),
         "signOut": MessageLookupByLibrary.simpleMessage("Saioa itxi"),
@@ -215,6 +238,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ezin izan dira filmak detektatu!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Ezin dira irudiak igo."),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Datozen filmak"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Erabiltzaileen balorazioa"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Ikuspegia"),

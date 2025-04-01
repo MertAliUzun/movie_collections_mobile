@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Piedzīvojumi"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Segvārds: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animācija"),
+        "april": MessageLookupByLibrary.simpleMessage("Aprīlis"),
         "ascending": MessageLookupByLibrary.simpleMessage("Augošā secībā"),
+        "august": MessageLookupByLibrary.simpleMessage("Augusts"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biogrāfija: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Dzimšanas datums: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dati par šo rakstnieku nav atrasti!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Nāves datums: "),
+        "december": MessageLookupByLibrary.simpleMessage("Decembris"),
         "delete": MessageLookupByLibrary.simpleMessage("Dzēst"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Dzēst izvēlētās filmas"),
@@ -119,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Kļūda!"),
         "family": MessageLookupByLibrary.simpleMessage("Ģimene"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantāzija"),
+        "february": MessageLookupByLibrary.simpleMessage("Februāris"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Filmu meklēšanas režīms"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franšīze"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franšīzes"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanrs"),
@@ -133,8 +139,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importēt no CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Nederīgs IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Janvāris"),
+        "july": MessageLookupByLibrary.simpleMessage("Jūlijs"),
+        "june": MessageLookupByLibrary.simpleMessage("Jūnijs"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Jaunākās filmas"),
         "list": MessageLookupByLibrary.simpleMessage("Saraksts"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Saraksts (mazais)"),
+        "march": MessageLookupByLibrary.simpleMessage("Marts"),
+        "may": MessageLookupByLibrary.simpleMessage("Maijs"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mēnesī"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filma veiksmīgi pievienota!"),
@@ -143,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Filma veiksmīgi dzēsta!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Filmas detaļas"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Jūs esat sasniedzis filmu limitu (250 skatīšanās sarakstam, 250 kolekcijai). Lūdzu, atjauniniet uz Premium, lai skatītos neierobežotu filmu skaitu."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Filmu limits sasniegts"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmas nosaukums"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filma veiksmīgi atjaunināta!"),
@@ -185,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nav izvēlēti rakstnieki"),
         "none": MessageLookupByLibrary.simpleMessage("Nav"),
+        "november": MessageLookupByLibrary.simpleMessage("Novembris"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktobris"),
         "ok": MessageLookupByLibrary.simpleMessage("Labi"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Lūdzu, ievadiet"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -199,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ražošanas uzņēmumi"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Izlases filma"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Filmu ieteikumu režīms"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Izlaišanas datums"),
         "releaseDateColon":
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Zinātniskā fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Meklēt filmas"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Izvēlieties PG vērtējumu"),
         "selected": MessageLookupByLibrary.simpleMessage("Izvēlēts"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Izvēlētās filmas tiks dzēstas. Vai apstiprināt?"),
+        "september": MessageLookupByLibrary.simpleMessage("Septembris"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google pieteikšanās tika atcelta."),
         "signOut": MessageLookupByLibrary.simpleMessage("Izrakstīties"),
@@ -254,6 +277,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nevarēja noteikt filmas!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Nevarēja augšupielādēt attēlus!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Gaidāmās filmas"),
         "update": MessageLookupByLibrary.simpleMessage("Atjaunināt"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Lietotāja vērtējums"),

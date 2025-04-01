@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter": MessageLookupByLibrary.simpleMessage("Дадаць сцэнарыста"),
         "adventure": MessageLookupByLibrary.simpleMessage("Прыгоды"),
         "animation": MessageLookupByLibrary.simpleMessage("Анімацыя"),
+        "april": MessageLookupByLibrary.simpleMessage("Красавік"),
         "ascending": MessageLookupByLibrary.simpleMessage("Па ўзрастанні"),
+        "august": MessageLookupByLibrary.simpleMessage("Жнівень"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Бюджэт: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Пакупка)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Купіць"),
@@ -66,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Файл CSV імпартаваны."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Індывідуальны загаловак сартавання"),
+        "december": MessageLookupByLibrary.simpleMessage("Снежань"),
         "delete": MessageLookupByLibrary.simpleMessage("Выдаліць"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Выдаліць выбраныя фільмы"),
@@ -96,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Памылка!"),
         "family": MessageLookupByLibrary.simpleMessage("Сямейны"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Фэнтэзі"),
+        "february": MessageLookupByLibrary.simpleMessage("Люты"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Рэжым пошуку фільмаў"),
         "franchise": MessageLookupByLibrary.simpleMessage("Франшыза"),
         "franchises": MessageLookupByLibrary.simpleMessage("Франшызы"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
@@ -107,12 +113,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("Рэйтынг IMDb"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("Рэйтынг IMDb"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Імпартаваць CSV"),
+        "january": MessageLookupByLibrary.simpleMessage("Студзень"),
+        "july": MessageLookupByLibrary.simpleMessage("Ліпень"),
+        "june": MessageLookupByLibrary.simpleMessage("Чэрвень"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Апошнія фільмы"),
         "list": MessageLookupByLibrary.simpleMessage("Спіс"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Спіс (маленькі)"),
+        "march": MessageLookupByLibrary.simpleMessage("Сакавік"),
+        "may": MessageLookupByLibrary.simpleMessage("Травень"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("Фільм дададзены."),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("Калекцыя фільмаў"),
         "movieDeleted": MessageLookupByLibrary.simpleMessage("Фільм выдалены."),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Вы дасягнулі ліміту фільмаў (250 для спісу прагляду, 250 для калекцыі). Калі ласка, перайдзіце на Premium для неабмежаванай колькасці фільмаў."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Дасігнуты ліміт фільмаў"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Назва фільма"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Фільм абноўлены."),
@@ -148,6 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Сцэнарысты не выбраны"),
         "none": MessageLookupByLibrary.simpleMessage("Няма"),
+        "november": MessageLookupByLibrary.simpleMessage("Лістапад"),
+        "october": MessageLookupByLibrary.simpleMessage("Кастрычнік"),
         "ok": MessageLookupByLibrary.simpleMessage("ОК"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Калі ласка, увядзіце"),
@@ -162,6 +180,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Кінакампаніі"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Выпадковы фільм"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Рэжым рэкамендацый фільмаў"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Дата выхаду"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Дата выпуску: "),
@@ -179,9 +199,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Навуковая фантастыка"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Шукаць фільмы"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Выберыце рэйтынг PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Выбрана"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             " фільм(аў) будуць выдалены. Вы ўпэўнены?"),
+        "september": MessageLookupByLibrary.simpleMessage("Верасень"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Уваход праз Google быў адменены."),
         "signOut": MessageLookupByLibrary.simpleMessage("Выйсці"),
@@ -211,6 +234,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Не ўдалося выявіць фільмы!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Не ўдалося загрузіць выявы."),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Хутка выходзяць фільмы"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Ацэнка карыстальнікаў"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Прагляд у выглядзе"),

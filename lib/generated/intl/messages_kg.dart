@@ -27,20 +27,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "actors": MessageLookupByLibrary.simpleMessage("Acteurs"),
         "add": MessageLookupByLibrary.simpleMessage("Kotaka"),
         "addActor": MessageLookupByLibrary.simpleMessage("Kotaka Acteur"),
-        "addFranchise":
-            MessageLookupByLibrary.simpleMessage("Франшизаны кошуу"),
+        "addFranchise": MessageLookupByLibrary.simpleMessage("Kokota Fransiza"),
         "addGenre": MessageLookupByLibrary.simpleMessage("Kotaka Genre"),
         "addMovie": MessageLookupByLibrary.simpleMessage("Kotaka Filimu"),
         "addNewMovie":
             MessageLookupByLibrary.simpleMessage("Kotaka Filimu Ya Mpa"),
         "addProductionCompany": MessageLookupByLibrary.simpleMessage(
             "Kotaka Compagnie ya Production"),
-        "addTag": MessageLookupByLibrary.simpleMessage("Тегди кошуу"),
+        "addTag": MessageLookupByLibrary.simpleMessage("Kokota Tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Kotaka Mvuluzi"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "april": MessageLookupByLibrary.simpleMessage("Avril"),
         "ascending": MessageLookupByLibrary.simpleMessage("Kukwenda"),
+        "august": MessageLookupByLibrary.simpleMessage("Out"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biographie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Date ya kuzala: "),
@@ -49,9 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bluRay": MessageLookupByLibrary.simpleMessage("Blu-Ray"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Budget: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Kusumba)"),
-        "buyButton": MessageLookupByLibrary.simpleMessage("Сатып алуу"),
-        "buyPremium":
-            MessageLookupByLibrary.simpleMessage("Premium сатып алуу"),
+        "buyButton": MessageLookupByLibrary.simpleMessage("Tinda"),
+        "buyPremium": MessageLookupByLibrary.simpleMessage("Tinda Premium"),
         "cancel": MessageLookupByLibrary.simpleMessage("Kangisa"),
         "cancelChooseFile":
             MessageLookupByLibrary.simpleMessage("Kusola fisiye kukangama."),
@@ -60,15 +60,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkInternet": MessageLookupByLibrary.simpleMessage(
             "Tala internet connection na nge!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
-            "Төмөн бааланган жана ашкере бааланган фильмдерди текшерүү"),
+            "Tala filme oyo ebomaka moke to oyo ebandi kolendisa mingi"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
-            "Сиздин фильмдер үчүн булутка резервдик көчүрүү"),
+            "Kopesa ebandeli na filme na yo na cloud"),
         "collection": MessageLookupByLibrary.simpleMessage("Kusanya"),
         "collectionType":
             MessageLookupByLibrary.simpleMessage("Type ya Collection"),
         "comedy": MessageLookupByLibrary.simpleMessage("Comédie"),
         "company": MessageLookupByLibrary.simpleMessage("Compagnie"),
-        "creationDate": MessageLookupByLibrary.simpleMessage("Жаратылыш күнү"),
+        "creationDate":
+            MessageLookupByLibrary.simpleMessage("Mokolo ya kobumba"),
         "crime": MessageLookupByLibrary.simpleMessage("Crime"),
         "csvFileCreated":
             MessageLookupByLibrary.simpleMessage("CSV fisiye salaka mambu: "),
@@ -85,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Data ya mvuluzi yai kuzabaka ve!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Date ya lufu: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desanbri"),
         "delete": MessageLookupByLibrary.simpleMessage("Fongola"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Fongola Filimu ya Kusola"),
@@ -118,8 +120,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Kuvuvu!"),
         "family": MessageLookupByLibrary.simpleMessage("Famille"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaisie"),
-        "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
-        "franchises": MessageLookupByLibrary.simpleMessage("Франшизалар"),
+        "february": MessageLookupByLibrary.simpleMessage("Fevriye"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode ya Kelelisa filimi"),
+        "franchise": MessageLookupByLibrary.simpleMessage("Fransiza"),
+        "franchises": MessageLookupByLibrary.simpleMessage("Fransiza"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Kutwadisa na"),
@@ -131,8 +136,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Kotaka na CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID ya mfunu ve!"),
+        "january": MessageLookupByLibrary.simpleMessage("Januari"),
+        "july": MessageLookupByLibrary.simpleMessage("Yuli"),
+        "june": MessageLookupByLibrary.simpleMessage("Yuni"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Filimi ya Latest"),
         "list": MessageLookupByLibrary.simpleMessage("Nkanda"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Nkanda (Fioti)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "may": MessageLookupByLibrary.simpleMessage("Mai"),
         "monthly": MessageLookupByLibrary.simpleMessage("Sanza na sanza"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filimu kotaka mambu!"),
@@ -142,6 +154,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filimu fongwaka mambu!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Détails ya Filimu"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Ove mwa liwombo ya filimi (250 mpo na Lisiti ya Kanda, 250 mpo na Kolekyo). Zola kulemisa Premium mpo na filimi nzimbu."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Limite ya filimi efungolama"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Titre ya Filimu"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filimu komatisaka mambu!"),
@@ -165,7 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noCompaniesSelected":
             MessageLookupByLibrary.simpleMessage("Compagnie ya kusola kele ve"),
         "noFranchisesSelected":
-            MessageLookupByLibrary.simpleMessage("Франшизалар тандалган жок"),
+            MessageLookupByLibrary.simpleMessage("Kaka te Fransiza ekoti"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Genre ya kusola kele ve"),
         "noIdToken":
@@ -179,11 +195,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Permission ya stockage pesaka ve."),
         "noTagsSelected":
-            MessageLookupByLibrary.simpleMessage("Тегдер тандалган жок"),
+            MessageLookupByLibrary.simpleMessage("Kaka te Tags ekoti"),
         "noTitle": MessageLookupByLibrary.simpleMessage("Titre ve"),
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Mvuluzi ya kusola kele ve"),
         "none": MessageLookupByLibrary.simpleMessage("Moko ve"),
+        "november": MessageLookupByLibrary.simpleMessage("Novembri"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktobri"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Nyongesa"),
         "pleaseEnterMovieTitle":
@@ -191,22 +209,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popularité na"),
         "poster": MessageLookupByLibrary.simpleMessage("Affiche"),
-        "premiumSupport":
-            MessageLookupByLibrary.simpleMessage("Premium кардарларды колдоо"),
+        "premiumSupport": MessageLookupByLibrary.simpleMessage(
+            "Lisungi ya ba client Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pesa kusola affiche ya filimu"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Compagnies ya Production"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Filimu ya Kimpwanza"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode ya Mibeko ya filimi"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Date ya kopesa"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Date ya kopesa: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Mvula ya kopesa"),
         "removeAds": MessageLookupByLibrary.simpleMessage(
-            "Бардык жарнамаларды алып салуу"),
-        "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
-            "Фильм кошуу чектөөлөрүн алып салуу"),
+            "Koboma biloko ya mobali nyonso"),
+        "removeMovieLimit":
+            MessageLookupByLibrary.simpleMessage("Koboma limit ya filme"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kulonga)"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Vutukila na ecran ya ntama"),
@@ -218,9 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science-Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Sosa Filimu"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Vanda Rating PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Sola"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "filimu ya kusola fongwaka. Nge kele na ntembe?"),
+        "september": MessageLookupByLibrary.simpleMessage("Septanbri"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Kukota na Google kukangama."),
         "signOut": MessageLookupByLibrary.simpleMessage("Basika"),
@@ -240,8 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("Kumosi mambu!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" fongwaka mambu"),
-        "tag": MessageLookupByLibrary.simpleMessage("Тег"),
-        "tags": MessageLookupByLibrary.simpleMessage("Тегдер"),
+        "tag": MessageLookupByLibrary.simpleMessage("Tag"),
+        "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
         "title": MessageLookupByLibrary.simpleMessage("Titre"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Filimu ya TV"),
@@ -253,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Kuzola kuzaba Filimu kele ve!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Kuzola kotaka bilili kele ve!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Filimi ya Kusomba"),
         "update": MessageLookupByLibrary.simpleMessage("Komatisa"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Score ya Utilisateur"),

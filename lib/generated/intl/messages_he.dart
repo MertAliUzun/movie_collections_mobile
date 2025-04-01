@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("הרפתקאות"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("כינוי: "),
         "animation": MessageLookupByLibrary.simpleMessage("אנימציה"),
+        "april": MessageLookupByLibrary.simpleMessage("אפריל"),
         "ascending": MessageLookupByLibrary.simpleMessage("עולה"),
+        "august": MessageLookupByLibrary.simpleMessage("אוגוסט"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ביוגרפיה: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("תאריך לידה: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("מקום לידה: "),
@@ -78,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "לא נמצאו נתונים עבור תסריטאי זה!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("תאריך פטירה: "),
+        "december": MessageLookupByLibrary.simpleMessage("דצמבר"),
         "delete": MessageLookupByLibrary.simpleMessage("מחק"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("מחק סרטים נבחרים"),
@@ -110,6 +113,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("כישלון!"),
         "family": MessageLookupByLibrary.simpleMessage("משפחה"),
         "fantasy": MessageLookupByLibrary.simpleMessage("פנטזיה"),
+        "february": MessageLookupByLibrary.simpleMessage("פברואר"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("מצב חיפוש סרטים"),
         "franchise": MessageLookupByLibrary.simpleMessage("זיכיון"),
         "franchises": MessageLookupByLibrary.simpleMessage("זיכיונות"),
         "genre": MessageLookupByLibrary.simpleMessage("ז\'אנר"),
@@ -123,14 +129,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("ייבא מ-CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("מספר IMDB לא תקין!"),
+        "january": MessageLookupByLibrary.simpleMessage("ינואר"),
+        "july": MessageLookupByLibrary.simpleMessage("יולי"),
+        "june": MessageLookupByLibrary.simpleMessage("יוני"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("הסרטים האחרונים"),
         "list": MessageLookupByLibrary.simpleMessage("רשימה"),
         "listSmall": MessageLookupByLibrary.simpleMessage("רשימה (קטנה)"),
+        "march": MessageLookupByLibrary.simpleMessage("מרץ"),
+        "may": MessageLookupByLibrary.simpleMessage("מאי"),
         "monthly": MessageLookupByLibrary.simpleMessage("חודשי"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("הסרט נוסף בהצלחה!"),
         "movieCollection": MessageLookupByLibrary.simpleMessage("אוסף סרטים"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("הסרט נמחק בהצלחה!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("פרטי הסרט"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "הגעת למגבלת הסרטים (250 לרשימת הצפייה, 250 לאוסף). אנא שדרג לגרסת פרימיום עבור סרטים ללא הגבלה."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("הגעת למגבלת הסרטים"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("כותרת הסרט"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("הסרט עודכן בהצלחה!"),
@@ -168,6 +184,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("לא נבחרו תסריטאים"),
         "none": MessageLookupByLibrary.simpleMessage("ללא"),
+        "november": MessageLookupByLibrary.simpleMessage("נובמבר"),
+        "october": MessageLookupByLibrary.simpleMessage("אוקטובר"),
         "ok": MessageLookupByLibrary.simpleMessage("אישור"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("אנא הזן"),
         "pleaseEnterMovieTitle":
@@ -182,6 +200,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("חברות הפקה"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("סרט אקראי"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("מצב המלצת סרטים"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("תאריך יציאה"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("תאריך יציאה: "),
@@ -199,9 +219,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("זמן ריצה (דקות)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("מדע בדיוני"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("חפש סרטים"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage("בחר דירוג PG"),
         "selected": MessageLookupByLibrary.simpleMessage("נבחר"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "הסרטים הנבחרים יימחקו. האם אתה מאשר?"),
+        "september": MessageLookupByLibrary.simpleMessage("ספטמבר"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("הכניסה עם Google בוטלה."),
         "signOut": MessageLookupByLibrary.simpleMessage("התנתק"),
@@ -233,6 +255,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("לא ניתן לזהות סרטים!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("לא ניתן להעלות תמונות!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("הסרטים הקרובים"),
         "update": MessageLookupByLibrary.simpleMessage("עדכן"),
         "userScore": MessageLookupByLibrary.simpleMessage("ציון משתמש"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

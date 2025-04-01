@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("సాహసాలు"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ఉపనామం: "),
         "animation": MessageLookupByLibrary.simpleMessage("యానిమేషన్"),
+        "april": MessageLookupByLibrary.simpleMessage("ఏప్రిల్"),
         "ascending": MessageLookupByLibrary.simpleMessage("వృద్ధి"),
+        "august": MessageLookupByLibrary.simpleMessage("ఆగస్టు"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("జీవిత చరిత్ర: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("జననం తేదీ: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "ఈ రచయిత కోసం డేటా లభించలేదు!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("మరణ తేదీ: "),
+        "december": MessageLookupByLibrary.simpleMessage("డిసెంబర్"),
         "delete": MessageLookupByLibrary.simpleMessage("తొలగించండి"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "ఎంచుకున్న సినిమాలను తొలగించండి"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("విఫలమైంది!"),
         "family": MessageLookupByLibrary.simpleMessage("కుటుంబం"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ఫాంటసీ"),
+        "february": MessageLookupByLibrary.simpleMessage("ఫిబ్రవరి"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("సినిమా శోధన మోడ్"),
         "franchise": MessageLookupByLibrary.simpleMessage("ఫ్రాంచైజీ"),
         "franchises": MessageLookupByLibrary.simpleMessage("ఫ్రాంచైజీలు"),
         "genre": MessageLookupByLibrary.simpleMessage("జానర్"),
@@ -129,8 +135,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV":
             MessageLookupByLibrary.simpleMessage("CSV నుండి దిగుమతి చేయండి"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("అసాధువ IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("జనవరి"),
+        "july": MessageLookupByLibrary.simpleMessage("జూలై"),
+        "june": MessageLookupByLibrary.simpleMessage("జూన్"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("తాజా సినిమాలు"),
         "list": MessageLookupByLibrary.simpleMessage("జాబితా"),
         "listSmall": MessageLookupByLibrary.simpleMessage("జాబితా(చిన్న)"),
+        "march": MessageLookupByLibrary.simpleMessage("మార్చి"),
+        "may": MessageLookupByLibrary.simpleMessage("మే"),
         "monthly": MessageLookupByLibrary.simpleMessage("మాసిక"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "సినిమా విజయవంతంగా జోడించబడింది!"),
@@ -139,6 +151,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "సినిమా విజయవంతంగా తొలగించబడింది!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("సినిమా వివరాలు"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "మీరు సినిమా పరిమితిని చేరుకున్నారు (Watch List కోసం 250, Collection కోసం 250). పరిమితిలేని సినిమాలు చూసేందుకు Premium కు అప్‌గ్రేడ్ చేయండి."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("సినిమా పరిమితి చేరుకుంది"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("సినిమా శీర్షిక"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "సినిమా విజయవంతంగా నవీకరించబడింది!"),
@@ -181,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "ఎటువంటి రచయితలు ఎంచుకోబడలేదు"),
         "none": MessageLookupByLibrary.simpleMessage("కోئی"),
+        "november": MessageLookupByLibrary.simpleMessage("నవంబర్"),
+        "october": MessageLookupByLibrary.simpleMessage("అక్టోబర్"),
         "ok": MessageLookupByLibrary.simpleMessage("సరే"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("దయచేసి నమోదు చేయండి"),
@@ -196,6 +214,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("ప్రొడక్షన్ కంపెనీలు"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("ఆకస్మిక చిత్రం"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("సినిమా సిఫారసు మోడ్"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("విడుదల తేదీ"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("విడుదల తేదీ: "),
@@ -216,9 +236,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("సైన్స్ ఫిక్షన్"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("సినిమాలు వెతకండి"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG రేటింగ్ ఎంచుకోండి"),
         "selected": MessageLookupByLibrary.simpleMessage("ఎంచుకున్న"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "ఎంచుకున్న సినిమాలు తొలగించబడతాయి. మీరు నిర్ధారించారా?"),
+        "september": MessageLookupByLibrary.simpleMessage("సెప్టెంబర్"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "గూగుల్ సైన్-ఇన్ రద్దు చేయబడింది."),
         "signOut": MessageLookupByLibrary.simpleMessage("సైన్ అవుట్"),
@@ -251,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "చలనచిత్రాలను గుర్తించలేకపోయాము!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("చిత్రాలను అప్‌లోడ్ చేయలేము!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("రాబోయే సినిమాలు"),
         "update": MessageLookupByLibrary.simpleMessage("నవీకరించండి"),
         "userScore": MessageLookupByLibrary.simpleMessage("వాడుకరి స్కోర్"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Sergäniş"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Takma at: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasiýa"),
+        "april": MessageLookupByLibrary.simpleMessage("Aprel"),
         "ascending": MessageLookupByLibrary.simpleMessage("Artykmaç"),
+        "august": MessageLookupByLibrary.simpleMessage("Awgust"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografiýa: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Doglan Taryhy: "),
@@ -82,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Bu yazgyjy üçin maglumat tapylmady!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Ölüm Taryhy: "),
+        "december": MessageLookupByLibrary.simpleMessage("Dekabr"),
         "delete": MessageLookupByLibrary.simpleMessage("Pozmak"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Saýlanan filmleri pozmak"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Aýdym!"),
         "family": MessageLookupByLibrary.simpleMessage("Aile"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaziýa"),
+        "february": MessageLookupByLibrary.simpleMessage("Fewral"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film gözleg usuly"),
         "franchise": MessageLookupByLibrary.simpleMessage("Françiza"),
         "franchises": MessageLookupByLibrary.simpleMessage("Françizalar"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
@@ -130,8 +136,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CSV-den import etmek"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID geçerli däl!"),
+        "january": MessageLookupByLibrary.simpleMessage("Ýanwar"),
+        "july": MessageLookupByLibrary.simpleMessage("Iýul"),
+        "june": MessageLookupByLibrary.simpleMessage("Iýun"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Soňky filmler"),
         "list": MessageLookupByLibrary.simpleMessage("Sanaw"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Sanaw (Kiçi)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mart"),
+        "may": MessageLookupByLibrary.simpleMessage("Maý"),
         "monthly": MessageLookupByLibrary.simpleMessage("Aýda"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film üstünlikli goşuldy!"),
@@ -139,6 +151,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage("Film pozuldy!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Film Maglumatlary"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Siz film çäklenmesine ýetdiňiz (Watch List üçin 250, Collection üçin 250). Iň köp filmleri görmek üçin Premium-a geçiň."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Film çäklenmesi ýetildi"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Film At"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film täzeledildi!"),
@@ -181,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Hiç hili yazgyjy saýlanmady"),
         "none": MessageLookupByLibrary.simpleMessage("Hiç hili"),
+        "november": MessageLookupByLibrary.simpleMessage("Noýabr"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktýabr"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Pleze girizmek"),
         "pleaseEnterMovieTitle":
@@ -195,6 +213,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Işletmeler"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Ýaňy film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Film teklip etmegiň usuly"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Çykaryş Taryhy"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Çykaryş Taryhy: "),
@@ -214,9 +234,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ylmy fantastika"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Filmleri gözlemek"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG reýtingini saýlaň"),
         "selected": MessageLookupByLibrary.simpleMessage("Saýlanan"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Saýlanan filmler pozuljakdygyny tassyklaýarsyňyzmy?"),
+        "september": MessageLookupByLibrary.simpleMessage("Sentýabr"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google girmäge synanyşmak yza gaýtaryldy."),
         "signOut": MessageLookupByLibrary.simpleMessage("Çykyş etmek"),
@@ -248,6 +271,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filmleri kesgitlemek mümkin däl!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Suratlary ýükläp bolmaýar!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Geljekdeki filmler"),
         "update": MessageLookupByLibrary.simpleMessage("Täzeden täzelemek"),
         "userScore": MessageLookupByLibrary.simpleMessage("Ulanyjy Bahasy"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

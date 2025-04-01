@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("സാഹസിക"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ഉപനാമം: "),
         "animation": MessageLookupByLibrary.simpleMessage("ആനിമേഷൻ"),
+        "april": MessageLookupByLibrary.simpleMessage("ഏപ്രിൽ"),
         "ascending": MessageLookupByLibrary.simpleMessage("മുകളിലേക്ക്"),
+        "august": MessageLookupByLibrary.simpleMessage("ഓഗസ്റ്റ്"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ജീവചരിത്രം: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("ജനന തീയതി: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("ജനന സ്ഥലം: "),
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "ഈ രചയിതാവിന്റെ വിവരങ്ങൾ ലഭ്യമാക്കാൻ കഴിഞ്ഞില്ല!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("മരണ തീയതി: "),
+        "december": MessageLookupByLibrary.simpleMessage("ഡിസംബർ"),
         "delete": MessageLookupByLibrary.simpleMessage("നീക്കം ചെയ്യുക"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "തിരഞ്ഞെടുത്ത ചലച്ചിത്രങ്ങൾ നീക്കം ചെയ്യുക"),
@@ -115,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("പിശക്!"),
         "family": MessageLookupByLibrary.simpleMessage("കുടുംബം"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ഭാവി"),
+        "february": MessageLookupByLibrary.simpleMessage("ഫെബ്രുവരി"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര തിരയൽ മോഡ്"),
         "franchise": MessageLookupByLibrary.simpleMessage("ഫ്രാഞ്ചൈസി"),
         "franchises": MessageLookupByLibrary.simpleMessage("ഫ്രാഞ്ചൈസികൾ"),
         "genre": MessageLookupByLibrary.simpleMessage("ശാഖ"),
@@ -129,8 +135,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV ൽ നിന്നും ഇറക്കുമതി ചെയ്യുക"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("അസാധുവായ IMDB ഐഡി!"),
+        "january": MessageLookupByLibrary.simpleMessage("ജനുവരി"),
+        "july": MessageLookupByLibrary.simpleMessage("ജൂലൈ"),
+        "june": MessageLookupByLibrary.simpleMessage("ജൂൺ"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("സമീപകാല ചലച്ചിത്രങ്ങൾ"),
         "list": MessageLookupByLibrary.simpleMessage("പട്ടിക"),
         "listSmall": MessageLookupByLibrary.simpleMessage("പട്ടിക (ചെറിയ)"),
+        "march": MessageLookupByLibrary.simpleMessage("മാർച്ച്"),
+        "may": MessageLookupByLibrary.simpleMessage("മേയ്"),
         "monthly": MessageLookupByLibrary.simpleMessage("മാസേന"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രം വിജയകരമായി ചേർത്തു!"),
@@ -140,6 +153,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "ചലച്ചിത്രം വിജയകരമായി നീക്കം ചെയ്തു!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര വിശദാംശങ്ങൾ"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "നിങ്ങൾ ചലച്ചിത്ര പരിധി എത്തി (Watch List-ന് 250, Collection-ന് 250). അനലിമിറ്റഡ് ചിത്രങ്ങൾക്കായി Premium-ൽ അപ്ഗ്രേഡ് ചെയ്യുക."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര പരിധി എത്തി"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര ശീർഷകം"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രം വിജയകരമായി അപ്ഡേറ്റ് ചെയ്തു!"),
@@ -182,6 +199,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "രചയിതാക്കൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ ഇല്ല"),
         "none": MessageLookupByLibrary.simpleMessage("എന്തും ഇല്ല"),
+        "november": MessageLookupByLibrary.simpleMessage("നവംബർ"),
+        "october": MessageLookupByLibrary.simpleMessage("ഒക്റ്റോബർ"),
         "ok": MessageLookupByLibrary.simpleMessage("ശരി"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("ദയവായി നൽകുക"),
         "pleaseEnterMovieTitle":
@@ -196,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("പ്രൊഡക്ഷൻ കമ്പനികൾ"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("രണ്ട് ചലച്ചിത്രം"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര ശുപാർശ മോഡ്"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("വിളംബര തീയതി"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ചിതറി തീയതി: "),
@@ -216,9 +237,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ശാസ്ത്ര ഫിക്ഷൻ"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്രങ്ങൾ അന്വേഷിക്കുക"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG റേറ്റിംഗ് തിരഞ്ഞെടുക്കുക"),
         "selected": MessageLookupByLibrary.simpleMessage("തിരഞ്ഞെടുത്തത്"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "തിരഞ്ഞെടുത്ത ചലച്ചിത്രങ്ങൾ നീക്കം ചെയ്യും. നിങ്ങൾക്ക് ഉറപ്പായിരിക്കേ?"),
+        "september": MessageLookupByLibrary.simpleMessage("സെപ്റ്റംബർ"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("ഗൂഗിൾ സൈൻ ഇൻ റദ്ദാക്കി."),
         "signOut": MessageLookupByLibrary.simpleMessage("ലോഗ് ഔട്ട്"),
@@ -252,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "ചലച്ചിത്രങ്ങൾ കണ്ടെത്താൻ കഴിയുന്നില്ല!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "ഇമേജുകൾ അപ്‌ലോഡ് ചെയ്യാനാകുന്നില്ല!"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage(
+            "ര próximamente ചലച്ചിത്രങ്ങൾ"),
         "update": MessageLookupByLibrary.simpleMessage("അപ്ഡേറ്റ്"),
         "userScore": MessageLookupByLibrary.simpleMessage("ഉപയോക്തൃ സ്കോർ"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

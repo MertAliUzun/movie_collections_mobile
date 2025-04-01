@@ -37,7 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("모험"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("별명: "),
         "animation": MessageLookupByLibrary.simpleMessage("애니메이션"),
+        "april": MessageLookupByLibrary.simpleMessage("4월"),
         "ascending": MessageLookupByLibrary.simpleMessage("오름차순"),
+        "august": MessageLookupByLibrary.simpleMessage("8월"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("생애: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("생년월일: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("출생지: "),
@@ -75,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter":
             MessageLookupByLibrary.simpleMessage("이 작가의 데이터는 찾을 수 없습니다!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("사망일: "),
+        "december": MessageLookupByLibrary.simpleMessage("12월"),
         "delete": MessageLookupByLibrary.simpleMessage("삭제"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage("선택된 영화 삭제"),
         "descending": MessageLookupByLibrary.simpleMessage("내림차순"),
@@ -106,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("실패!"),
         "family": MessageLookupByLibrary.simpleMessage("가족"),
         "fantasy": MessageLookupByLibrary.simpleMessage("판타지"),
+        "february": MessageLookupByLibrary.simpleMessage("2월"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage("영화 찾기 모드"),
         "franchise": MessageLookupByLibrary.simpleMessage("프랜차이즈"),
         "franchises": MessageLookupByLibrary.simpleMessage("프랜차이즈"),
         "genre": MessageLookupByLibrary.simpleMessage("장르"),
@@ -118,8 +123,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB 평점"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV에서 가져오기"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("유효하지 않은 IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("1월"),
+        "july": MessageLookupByLibrary.simpleMessage("7월"),
+        "june": MessageLookupByLibrary.simpleMessage("6월"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("최신 영화"),
         "list": MessageLookupByLibrary.simpleMessage("목록"),
         "listSmall": MessageLookupByLibrary.simpleMessage("목록(소형)"),
+        "march": MessageLookupByLibrary.simpleMessage("3월"),
+        "may": MessageLookupByLibrary.simpleMessage("5월"),
         "monthly": MessageLookupByLibrary.simpleMessage("월간"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("영화가 성공적으로 추가되었습니다!"),
@@ -127,6 +138,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("영화가 성공적으로 삭제되었습니다!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("영화 세부 정보"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "영화 제한에 도달했습니다 (Watch List 250개, Collection 250개). 무제한 영화를 이용하려면 Premium으로 업그레이드하세요."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("영화 제한에 도달했습니다"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("영화 제목"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("영화가 성공적으로 업데이트되었습니다!"),
@@ -164,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("선택된 작가가 없습니다"),
         "none": MessageLookupByLibrary.simpleMessage("없음"),
+        "november": MessageLookupByLibrary.simpleMessage("11월"),
+        "october": MessageLookupByLibrary.simpleMessage("10월"),
         "ok": MessageLookupByLibrary.simpleMessage("확인"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("입력해주세요"),
         "pleaseEnterMovieTitle":
@@ -176,6 +193,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("영화 포스터를 선택하려면 누르세요"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("제작사들"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("랜덤 영화"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage("영화 추천 모드"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("개봉일"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("개봉일: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("개봉 연도"),
@@ -190,9 +208,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("상영 시간 (분)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("SF"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("영화 검색"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage("PG 등급 선택"),
         "selected": MessageLookupByLibrary.simpleMessage("선택됨"),
         "selectedMoviesDeleteConfirm":
             MessageLookupByLibrary.simpleMessage("선택한 영화가 삭제됩니다. 삭제하시겠습니까?"),
+        "september": MessageLookupByLibrary.simpleMessage("9월"),
         "signInCancel": MessageLookupByLibrary.simpleMessage("Google 로그인 취소됨."),
         "signOut": MessageLookupByLibrary.simpleMessage("로그아웃"),
         "signOutConfirm":
@@ -223,6 +243,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("영화를 감지할 수 없습니다!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("이미지 업로드 불가!"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("개봉 예정 영화"),
         "update": MessageLookupByLibrary.simpleMessage("업데이트"),
         "userScore": MessageLookupByLibrary.simpleMessage("사용자 점수"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

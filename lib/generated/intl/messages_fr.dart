@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias : "),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "april": MessageLookupByLibrary.simpleMessage("Avril"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascendant"),
+        "august": MessageLookupByLibrary.simpleMessage("Août"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biographie : "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Date de naissance : "),
@@ -86,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Les données pour cet écrivain n\'ont pas pu être récupérées !"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Date de décès : "),
+        "december": MessageLookupByLibrary.simpleMessage("Décembre"),
         "delete": MessageLookupByLibrary.simpleMessage("Supprimer"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Supprimer les films choisis"),
@@ -119,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Échec !"),
         "family": MessageLookupByLibrary.simpleMessage("Famille"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaisie"),
+        "february": MessageLookupByLibrary.simpleMessage("Février"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mode de recherche de films"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
@@ -133,8 +139,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Importer depuis CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB invalide !"),
+        "january": MessageLookupByLibrary.simpleMessage("Janvier"),
+        "july": MessageLookupByLibrary.simpleMessage("Juillet"),
+        "june": MessageLookupByLibrary.simpleMessage("Juin"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Derniers films"),
         "list": MessageLookupByLibrary.simpleMessage("Liste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste (petite)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "may": MessageLookupByLibrary.simpleMessage("Mai"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mensuel"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Le film a été ajouté avec succès !"),
@@ -143,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Le film a été supprimé avec succès !"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Détails du film"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Vous avez atteint la limite de films (250 pour la Liste de visionnage, 250 pour la Collection). Veuillez passer à la version Premium pour des films illimités."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Limite de films atteinte"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Titre du film"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Le film a été mis à jour avec succès !"),
@@ -185,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Aucun écrivain sélectionné"),
         "none": MessageLookupByLibrary.simpleMessage("Aucun"),
+        "november": MessageLookupByLibrary.simpleMessage("Novembre"),
+        "october": MessageLookupByLibrary.simpleMessage("Octobre"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Veuillez entrer"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -199,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Sociétés de production"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film aléatoire"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Mode de recommandation de films"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Date de sortie"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Date de sortie : "),
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Science-fiction"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Rechercher des films"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage(
+            "Sélectionner la classification PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Sélectionné"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Les films sélectionnés seront supprimés. Confirmez-vous ?"),
+        "september": MessageLookupByLibrary.simpleMessage("Septembre"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "L\'inscription Google a été annulée."),
         "signOut": MessageLookupByLibrary.simpleMessage("Se déconnecter"),
@@ -254,6 +277,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Impossible de détecter les films !"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Impossible de télécharger les images !"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("Films à venir"),
         "update": MessageLookupByLibrary.simpleMessage("Mettre à jour"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Note des utilisateurs"),

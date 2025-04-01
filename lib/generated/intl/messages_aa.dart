@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Akaak: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "april": MessageLookupByLibrary.simpleMessage("Agda Baxisso"),
         "ascending": MessageLookupByLibrary.simpleMessage("Salba"),
+        "august": MessageLookupByLibrary.simpleMessage("Siima"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Naylife: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Haqmak Alaa: "),
         "birthPlaceColon":
@@ -79,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter":
             MessageLookupByLibrary.simpleMessage("Maxne faname yaku!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Faname Alaa: "),
+        "december": MessageLookupByLibrary.simpleMessage("Garablu"),
         "delete": MessageLookupByLibrary.simpleMessage("Fakkita"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Dooram film fakkita"),
@@ -113,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Qaldaw!"),
         "family": MessageLookupByLibrary.simpleMessage("Family"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "february": MessageLookupByLibrary.simpleMessage("Kudo"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Fílmii Gexa Mode"),
         "franchise": MessageLookupByLibrary.simpleMessage("Fransayis"),
         "franchises": MessageLookupByLibrary.simpleMessage("Fransayisak"),
         "genre": MessageLookupByLibrary.simpleMessage("Gogga"),
@@ -125,8 +131,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Suggul"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV fayli daxxa"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("IMDB ID yaku!"),
+        "january": MessageLookupByLibrary.simpleMessage("Qunxa Garablu"),
+        "july": MessageLookupByLibrary.simpleMessage("Yegga Garablu"),
+        "june": MessageLookupByLibrary.simpleMessage("Yegga"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Qunxa Fílmii"),
         "list": MessageLookupByLibrary.simpleMessage("Qofolla"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Qofolla (Tinnike)"),
+        "march": MessageLookupByLibrary.simpleMessage("Ciggilta Kudo"),
+        "may": MessageLookupByLibrary.simpleMessage("Agda Garablu"),
         "monthly": MessageLookupByLibrary.simpleMessage("Waxi"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film qorqorma takke!"),
@@ -134,6 +146,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Film fakkitam takke!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Film Faname"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Fílmii kéemih (250 Watch Listih, 250 Collectionih) gadal len. Fílmii Keele Madqa Premiumih upgrade madqa."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Fílmii Kéemih Gadal"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Film Girta"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film maxne takke!"),
@@ -175,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Maxne dooram yaku"),
         "none": MessageLookupByLibrary.simpleMessage("Baaxo"),
+        "november": MessageLookupByLibrary.simpleMessage("Qari Garablu"),
+        "october": MessageLookupByLibrary.simpleMessage("Qari"),
         "ok": MessageLookupByLibrary.simpleMessage("Eyyo"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Maqna galqa"),
         "pleaseEnterMovieTitle":
@@ -188,6 +206,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Postera doora fi loqa"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Firma"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Haya Film"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Fílmii Adde Mode"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Yana Girta"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Yana Girta: "),
@@ -207,9 +227,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Film yassassa"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("PG Ratingih Yanxa"),
         "selected": MessageLookupByLibrary.simpleMessage("Dooram"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Dooram film fakkitam takke. Maqna?"),
+        "september": MessageLookupByLibrary.simpleMessage("Siima Garablu"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Sign-In yokko qariime."),
         "signOut": MessageLookupByLibrary.simpleMessage("Fakkita"),
@@ -241,6 +264,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Film tekkeyna yaku!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Surta safreeh yaku!"),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("Lih Fílmii"),
         "update": MessageLookupByLibrary.simpleMessage("Maxne"),
         "userScore": MessageLookupByLibrary.simpleMessage("Istemaale Suggul"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

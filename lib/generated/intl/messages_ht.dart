@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Aventi"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
+        "april": MessageLookupByLibrary.simpleMessage("Avril"),
         "ascending": MessageLookupByLibrary.simpleMessage("Montan"),
+        "august": MessageLookupByLibrary.simpleMessage("Out"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografi: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Dat Nesans: "),
         "birthPlaceColon":
@@ -80,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Pa gen done pou Ekriven sa a!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Dat Lanmò: "),
+        "december": MessageLookupByLibrary.simpleMessage("Desanm"),
         "delete": MessageLookupByLibrary.simpleMessage("Efase"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Efase Fim Chwazi"),
@@ -112,6 +115,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Echèk!"),
         "family": MessageLookupByLibrary.simpleMessage("Fanmi"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasiz"),
+        "february": MessageLookupByLibrary.simpleMessage("Fevriye"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mòd Rechèch Film"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchiz"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchiz yo"),
         "genre": MessageLookupByLibrary.simpleMessage("Jan"),
@@ -124,8 +130,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Skoz IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Enpòte nan CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDB Envalid!"),
+        "january": MessageLookupByLibrary.simpleMessage("Janvye"),
+        "july": MessageLookupByLibrary.simpleMessage("Jiyè"),
+        "june": MessageLookupByLibrary.simpleMessage("Jen"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Dernye Fim yo"),
         "list": MessageLookupByLibrary.simpleMessage("Lis"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lis (Ti)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mas"),
+        "may": MessageLookupByLibrary.simpleMessage("Me"),
         "monthly": MessageLookupByLibrary.simpleMessage("Chak Mwa"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Fim ajoute avèk siksè!"),
@@ -134,6 +146,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Fim efase avèk siksè!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Detay Fim"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Ou rive nan limite fim yo (250 pou Watch List, 250 pou Collection). Tanpri mete ajou nan Premium pou fim san limit."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Limite fim yo rive"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Tit Fim"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Fim mete ajou avèk siksè!"),
@@ -174,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Pa gen ekriven chwazi"),
         "none": MessageLookupByLibrary.simpleMessage("Okenn"),
+        "november": MessageLookupByLibrary.simpleMessage("Novanm"),
+        "october": MessageLookupByLibrary.simpleMessage("Oktòb"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Tanpri antre"),
         "pleaseEnterMovieTitle":
@@ -188,6 +206,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Konpayi Pwodiksyon"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Fim O aza"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Mòd Rekòmandasyon Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dat Lage"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("Dat Lage: "),
         "releaseYear": MessageLookupByLibrary.simpleMessage("Ane Lage"),
@@ -204,9 +224,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("Dire (Minit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Syans Fiksyon"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Chèche Fim"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Chwazi PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Chwazi"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "fim chwazi yo pral efase. Èske w konfime?"),
+        "september": MessageLookupByLibrary.simpleMessage("Septanm"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google Sign-In te anile."),
         "signOut": MessageLookupByLibrary.simpleMessage("Dekonekte"),
@@ -238,6 +261,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pa kapab Detekte Fim!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Pa kapab Upload Imaj!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Fim kap vini yo"),
         "update": MessageLookupByLibrary.simpleMessage("Mete Ajou"),
         "userScore": MessageLookupByLibrary.simpleMessage("Skoz Itilizatè"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

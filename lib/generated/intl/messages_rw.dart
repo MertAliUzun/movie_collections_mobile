@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Ibyagezweho"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Izina ry\'ubusa: "),
         "animation": MessageLookupByLibrary.simpleMessage("Ikoranabuhanga"),
+        "april": MessageLookupByLibrary.simpleMessage(" Mata"),
         "ascending": MessageLookupByLibrary.simpleMessage("Kuzamuka"),
+        "august": MessageLookupByLibrary.simpleMessage("Kanama"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Ubuzima bwe: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Itariki y\'amavuko: "),
@@ -87,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ntabwo byabonetse kuri uyu wanditsi!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Itariki y\'urupfu: "),
+        "december": MessageLookupByLibrary.simpleMessage("Ukuboza"),
         "delete": MessageLookupByLibrary.simpleMessage("Kuraho"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Kuraho Filime Zihiswemo"),
@@ -120,6 +123,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Gutsindwa!"),
         "family": MessageLookupByLibrary.simpleMessage("Umuryango"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Icyifuzo"),
+        "february": MessageLookupByLibrary.simpleMessage("Gashyantare"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Imikorere yo gushaka amafilimi"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Ubwoko"),
@@ -133,8 +139,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Kwinjiza muri CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID ntabwo ari yo!"),
+        "january": MessageLookupByLibrary.simpleMessage("Mutarama"),
+        "july": MessageLookupByLibrary.simpleMessage("Nyakanga"),
+        "june": MessageLookupByLibrary.simpleMessage("Kamena"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Amafilimi y\'ubu"),
         "list": MessageLookupByLibrary.simpleMessage("Urutonde"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Urutonde (Nto)"),
+        "march": MessageLookupByLibrary.simpleMessage("Werurwe"),
+        "may": MessageLookupByLibrary.simpleMessage("Gicurasi"),
         "monthly": MessageLookupByLibrary.simpleMessage("Buri kwezi"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filime yongewe neza!"),
@@ -144,6 +157,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filime yahanwe neza!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Ibyerekeye Filime"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Ugeze ku gipimo cy\'amafilimi (250 kuri Watch List, 250 kuri Collection). Nyamuneka, komeza kuri Premium kugirango witegure kureba amafilimi nta gipimo."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Umubare w\'amafilimi wose wose wagezeho"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Umutwe wa Filime"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filime yavugururwa neza!"),
@@ -186,6 +203,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nta wanditsi watoranijwe"),
         "none": MessageLookupByLibrary.simpleMessage("Nta na kimwe"),
+        "november": MessageLookupByLibrary.simpleMessage("Ugushyingo"),
+        "october": MessageLookupByLibrary.simpleMessage("Ukwakira"),
         "ok": MessageLookupByLibrary.simpleMessage("Yego"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Nyamuneka injiza"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -200,6 +219,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Isosiyete y\'Ubwubatsi"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Filime idasanzwe"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Imikorere yo gutanga inama y\'amafilimi"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Itariki yasohowe"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Itariki yasohowe: "),
@@ -219,9 +240,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Igihe cyo gukina (iminota)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Ibya siyansi"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Shakisha Filime"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Hitamo PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Byahiswemo"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "filime zahiswemo zizahanwa. Urabyizeye?"),
+        "september": MessageLookupByLibrary.simpleMessage("Nzeli"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Kwinjira muri Google byahagaritswe."),
         "signOut": MessageLookupByLibrary.simpleMessage("Sohoka"),
@@ -253,6 +277,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ntabwo bishoboka Gukusanya Filime!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Ntabwo bishoboka Kwinjiza amashusho!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Amafilimi azaza"),
         "update": MessageLookupByLibrary.simpleMessage("Kuvugurura"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Ingano y\'umukoresha"),

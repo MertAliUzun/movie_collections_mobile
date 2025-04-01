@@ -1939,6 +1939,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Movie Limit Reached`
+  String get movieLimitReached {
+    return Intl.message(
+      'Movie Limit Reached',
+      name: 'movieLimitReached',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have reached movie limit (250 for Watch List, 250 for Collection). Please upgrade to Premium for Unlimited Movies. `
+  String get movieLimitMessage {
+    return Intl.message(
+      'You have reached movie limit (250 for Watch List, 250 for Collection). Please upgrade to Premium for Unlimited Movies. ',
+      name: 'movieLimitMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select PG Rating`
+  String get selectPgRating {
+    return Intl.message(
+      'Select PG Rating',
+      name: 'selectPgRating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommend Movie Mode`
+  String get recommendMovieMode {
+    return Intl.message(
+      'Recommend Movie Mode',
+      name: 'recommendMovieMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Find Movie Mode`
+  String get findMovieMode {
+    return Intl.message(
+      'Find Movie Mode',
+      name: 'findMovieMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest Movies`
+  String get latestMovies {
+    return Intl.message(
+      'Latest Movies',
+      name: 'latestMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming Movies`
+  String get upcomingMovies {
+    return Intl.message(
+      'Upcoming Movies',
+      name: 'upcomingMovies',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

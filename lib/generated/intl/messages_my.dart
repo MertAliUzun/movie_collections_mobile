@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("ခရီးသွား"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("အမည်အနောက်: "),
         "animation": MessageLookupByLibrary.simpleMessage("သရုပ်ဆောင်ပုံ"),
+        "april": MessageLookupByLibrary.simpleMessage("ဧပြီ"),
         "ascending": MessageLookupByLibrary.simpleMessage("အပေါ်သို့"),
+        "august": MessageLookupByLibrary.simpleMessage("အောက်တိုး"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ဘဝဇာတ်လမ်း: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("မွေးနေ့: "),
         "birthPlaceColon":
@@ -84,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter":
             MessageLookupByLibrary.simpleMessage("ဤရေးဆွဲသူအတွက်ဒေတာမတွေ့ပါ!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("သေဆုံးနေ့: "),
+        "december": MessageLookupByLibrary.simpleMessage("ဒီဇင်ဘာ"),
         "delete": MessageLookupByLibrary.simpleMessage("ဖျက်ပါ"),
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "ရွေးချယ်ထားသော ဇာတ်ကားများကိုဖျက်ပါ"),
@@ -117,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("အတွင်းပါသည်!"),
         "family": MessageLookupByLibrary.simpleMessage("မိသားစု"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ပုံပြင်"),
+        "february": MessageLookupByLibrary.simpleMessage("ဖေဖော်ဝါရီ"),
+        "findMovieMode": MessageLookupByLibrary.simpleMessage(
+            "ရုပ်ရှင် ရှာဖွေရန် ပြင်ဆင်ချက်"),
         "franchise": MessageLookupByLibrary.simpleMessage("ဖရန်ချိုင်းစီ"),
         "franchises": MessageLookupByLibrary.simpleMessage("ဖရန်ချိုင်းစီများ"),
         "genre": MessageLookupByLibrary.simpleMessage("အမျိုးအစား"),
@@ -133,8 +139,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV မှ သွင်းပါ"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("မမှန်ကန်သော IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("ဇန်နဝါရီ"),
+        "july": MessageLookupByLibrary.simpleMessage("ဇူလိုင်"),
+        "june": MessageLookupByLibrary.simpleMessage("ြွန်"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("သတင်းပေးရုပ်ရှင်များ"),
         "list": MessageLookupByLibrary.simpleMessage("စာရင်း"),
         "listSmall": MessageLookupByLibrary.simpleMessage("စာရင်း (သေးငယ်)"),
+        "march": MessageLookupByLibrary.simpleMessage("မတ်"),
+        "may": MessageLookupByLibrary.simpleMessage("မေ"),
         "monthly": MessageLookupByLibrary.simpleMessage("လစဉ်"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "ဇာတ်ကားကိုအောင်မြင်စွာထည့်ခဲ့ပါသည်!"),
@@ -143,6 +156,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "ဇာတ်ကားကိုအောင်မြင်စွာဖျက်ခဲ့ပါသည်!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("ဇာတ်ကားအသေးစိတ်"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "သင့်အား ရုပ်ရှင်အကန့်အသတ်ရောက်ပြီ (ကြည့်ရှုရန် စာရင်းအတွက် 250၊ ကော်လက်ရှင်အတွက် 250)။ အကန့်အသတ်မဲ့ရုပ်ရှင်များကို ကြည့်ရှုရန် Premium သို့ အဆင့်မြှင့်ပါ။"),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "ရုပ်ရှင်အကန့်အသတ်ရောက်ပြီးပါပြီ"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("ဇာတ်ကားခေါင်းစဥ်"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "ဇာတ်ကားကိုအောင်မြင်စွာအပ်ဒိတ်ခဲ့ပါသည်!"),
@@ -183,6 +200,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("ရေးဆွဲသူများမရွေးချယ်ပါ"),
         "none": MessageLookupByLibrary.simpleMessage("မည်မျှမ"),
+        "november": MessageLookupByLibrary.simpleMessage("နိုဝင်ဘာ"),
+        "october": MessageLookupByLibrary.simpleMessage("အောက်တိုဘာ"),
         "ok": MessageLookupByLibrary.simpleMessage("အိုကေ"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("ကျေးဇူးပြု၍ထည့်ပါ"),
@@ -199,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ထုတ်လုပ်မှုကုမ္ပဏီများ"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("အကြောင်းအရာမသေချာဇာတ်ကား"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "ရုပ်ရှင် အကြံပြုမှု ပြင်ဆင်ချက်"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("ထုတ်ပြန်ရက်"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("ထုတ်ပြန်ရက်: "),
@@ -219,9 +240,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("သိပ္ပံနဲ့ကွန်ပျူတာကဗျာ"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("ဇာတ်ကားများရှာဖွေပါ"),
+        "selectPgRating": MessageLookupByLibrary.simpleMessage(
+            "PG အဆင့်သတ်မှတ်ချက်ကို ရွေးပါ"),
         "selected": MessageLookupByLibrary.simpleMessage("ရွေးချယ်ထားသည်"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "ရွေးချယ်ထားသော ဇာတ်ကားများကို ဖျက်မည်။ သတိပြုပါ၊ အတည်ပြုပါသလား?"),
+        "september": MessageLookupByLibrary.simpleMessage("စက်တင်ဘာ"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Sign-In ကိုဖျက်သိမ်းလိုက်ပါသည်။"),
         "signOut": MessageLookupByLibrary.simpleMessage("ထွက်ရန်"),
@@ -255,6 +279,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ဇာတ်ကားများကိုရှာမရပါ!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("ဓါတ်ပုံများတင်ရန်မရနိုင်ပါ!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("နီးကပ်သော ရုပ်ရှင်များ"),
         "update": MessageLookupByLibrary.simpleMessage("အပ်ဒိတ်"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("အသုံးပြုသူအဆင့်သတ်မှတ်ချက်"),

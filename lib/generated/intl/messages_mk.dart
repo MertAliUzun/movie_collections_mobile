@@ -38,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Авантура"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Псевдоним: "),
         "animation": MessageLookupByLibrary.simpleMessage("Анимација"),
+        "april": MessageLookupByLibrary.simpleMessage("Април"),
         "ascending": MessageLookupByLibrary.simpleMessage("Нарасно"),
+        "august": MessageLookupByLibrary.simpleMessage("Август"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Биографија: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Датум на раѓање: "),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Податоците за овој писател не можат да се најдат!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Датум на смрт: "),
+        "december": MessageLookupByLibrary.simpleMessage("Декември"),
         "delete": MessageLookupByLibrary.simpleMessage("Избриши"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Избриши избрани филмови"),
@@ -116,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Неуспех!"),
         "family": MessageLookupByLibrary.simpleMessage("Семјејство"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Фантазија"),
+        "february": MessageLookupByLibrary.simpleMessage("Февруари"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Режим на наоѓање филмови"),
         "franchise": MessageLookupByLibrary.simpleMessage("Франшиза"),
         "franchises": MessageLookupByLibrary.simpleMessage("Франшизи"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
@@ -129,8 +135,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Увези од CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Невалиден IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Јануари"),
+        "july": MessageLookupByLibrary.simpleMessage("Јули"),
+        "june": MessageLookupByLibrary.simpleMessage("Јуни"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Најнови филмови"),
         "list": MessageLookupByLibrary.simpleMessage("Листа"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Листа (Мала)"),
+        "march": MessageLookupByLibrary.simpleMessage("Март"),
+        "may": MessageLookupByLibrary.simpleMessage("Мај"),
         "monthly": MessageLookupByLibrary.simpleMessage("Месечно"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Филмот беше успешно додаден!"),
@@ -140,6 +152,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Филмот беше успешно избришан!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Детали за филмот"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Достигнавте лимит од филмови (250 за Листа за гледање, 250 за Колекција). Ве молиме надградете на Premium за неограничени филмови."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Достигнат е лимитот на филмови"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Наслов на филмот"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Филмот беше успешно ажуриран!"),
@@ -182,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Нема избрани писатели"),
         "none": MessageLookupByLibrary.simpleMessage("Никој"),
+        "november": MessageLookupByLibrary.simpleMessage("Ноември"),
+        "october": MessageLookupByLibrary.simpleMessage("Октомври"),
         "ok": MessageLookupByLibrary.simpleMessage("ОК"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Ве молиме внесете"),
@@ -197,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Продукциски компании"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Случаен филм"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "Режим на препорака на филмови"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("Датум на издавање"),
         "releaseDateColon":
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Научна фантастика"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Пребарувај филмови"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Изберете PG оценка"),
         "selected": MessageLookupByLibrary.simpleMessage("Избрано"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Избраните филмови ќе бидат избришани. Дали потврдувате?"),
+        "september": MessageLookupByLibrary.simpleMessage("Септември"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google пријавувањето е откажано."),
         "signOut": MessageLookupByLibrary.simpleMessage("Одјави се"),
@@ -253,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Невозможно е да се откријат филмови!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "Невозможно е да се прикачат слики!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Предстојни филмови"),
         "update": MessageLookupByLibrary.simpleMessage("Ажурирај"),
         "userScore": MessageLookupByLibrary.simpleMessage("Оценка на корисник"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

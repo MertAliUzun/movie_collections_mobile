@@ -42,7 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Serhildan"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Têgihiştin: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
+        "april": MessageLookupByLibrary.simpleMessage("Nîsan"),
         "ascending": MessageLookupByLibrary.simpleMessage("Hilmend"),
+        "august": MessageLookupByLibrary.simpleMessage("Tebax"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografî: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Rojekê Jiyanê: "),
@@ -87,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Daneyên vê nivîskarê nehatîn dîtin!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Rojekê Mirinê: "),
+        "december": MessageLookupByLibrary.simpleMessage("Kanûn"),
         "delete": MessageLookupByLibrary.simpleMessage("Jêbirin"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Fîlman hilbijartî jêbirin"),
@@ -120,6 +123,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Şewitandin!"),
         "family": MessageLookupByLibrary.simpleMessage("Malbat"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaziya"),
+        "february": MessageLookupByLibrary.simpleMessage("Şubat"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Rejîma Lêgerîna Fîlm"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise\'ler"),
         "genre": MessageLookupByLibrary.simpleMessage("Cure"),
@@ -132,8 +138,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Nirxê IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Import bi CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("IMDB ID çewtî!"),
+        "january": MessageLookupByLibrary.simpleMessage("Çile"),
+        "july": MessageLookupByLibrary.simpleMessage("Tîrmeh"),
+        "june": MessageLookupByLibrary.simpleMessage("Hezîran"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Fîlman Nû"),
         "list": MessageLookupByLibrary.simpleMessage("Lîste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lîste (Bêhîz)"),
+        "march": MessageLookupByLibrary.simpleMessage("Adar"),
+        "may": MessageLookupByLibrary.simpleMessage("Gulan"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mehane"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Fîlm bi serfirazî hat zêdekirin!"),
@@ -143,6 +155,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Fîlm bi serfirazî hat jêbirin!"),
         "movieDetails":
             MessageLookupByLibrary.simpleMessage("Hûrguliyên Fîlmê"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Hûn gihîştine sînorê fîlman (250 ji bo Lîsteya Dîtinê, 250 ji bo Kolleksiyona). Ji kerema xwe bi Premium veguherînin bo fîlmên bê sînor."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Sînorê fîlman gihîştin"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Sernavê Fîlmê"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Fîlm bi serfirazî hat nûvekirin!"),
@@ -185,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected": MessageLookupByLibrary.simpleMessage(
             "Hîç Nivîskar hilbijartî nehatîye"),
         "none": MessageLookupByLibrary.simpleMessage("Hîç"),
+        "november": MessageLookupByLibrary.simpleMessage("Mijdar"),
+        "october": MessageLookupByLibrary.simpleMessage("Tîrmeh"),
         "ok": MessageLookupByLibrary.simpleMessage("Baş"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Ji kerema xwe binivîse"),
@@ -200,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Kampaniyên Parastinê"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Fîlmê Rastî"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Rejîma Pêşniyara Fîlm"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Rojekê Çêkirinê"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Rojekê Çêkirinê: "),
@@ -219,9 +239,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Pêşbînîya Zanistî"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Lêgerîn Fîlman"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Rêjeya PG-ê hilbijêrin"),
         "selected": MessageLookupByLibrary.simpleMessage("Hilbijartî"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Fîlman hilbijartî dê jêbikin. Ma piştrast î?"),
+        "september": MessageLookupByLibrary.simpleMessage("Îlon"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Têketina Google hate betalkirin."),
         "signOut": MessageLookupByLibrary.simpleMessage("Derkeve"),
@@ -253,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nabe fîlman nas bikî!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Nabe wêneyan barkirin!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Fîlman Bi Dawî"),
         "update": MessageLookupByLibrary.simpleMessage("Nûvekirin"),
         "userScore": MessageLookupByLibrary.simpleMessage("Nirxê Bikarhêner"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Antur"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animeiddio"),
+        "april": MessageLookupByLibrary.simpleMessage("Ebrill"),
         "ascending": MessageLookupByLibrary.simpleMessage("Cynyddol"),
+        "august": MessageLookupByLibrary.simpleMessage("Awst"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Bywgraffiad: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Dyddiad Geni: "),
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ni allwyd adfer data ar gyfer yr Awdur hwn!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Dyddiad Marwolaeth: "),
+        "december": MessageLookupByLibrary.simpleMessage("Rhagfyr"),
         "delete": MessageLookupByLibrary.simpleMessage("Dileu"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Dileu Ffilmiau Dewisiedig"),
@@ -117,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Methiant!"),
         "family": MessageLookupByLibrary.simpleMessage("Teulu"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Rhyfeddod"),
+        "february": MessageLookupByLibrary.simpleMessage("Chwefror"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Modd Chwiliad Ffilm"),
         "franchise": MessageLookupByLibrary.simpleMessage("Ffransis"),
         "franchises": MessageLookupByLibrary.simpleMessage("Ffransisau"),
         "genre": MessageLookupByLibrary.simpleMessage("Genres"),
@@ -129,8 +135,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Sgôr IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Mewnforio o CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDB Annilys!"),
+        "january": MessageLookupByLibrary.simpleMessage("Ionawr"),
+        "july": MessageLookupByLibrary.simpleMessage("Gwenhwyseg"),
+        "june": MessageLookupByLibrary.simpleMessage("Mehefin"),
+        "latestMovies":
+            MessageLookupByLibrary.simpleMessage("Ffilmiau Diweddaraf"),
         "list": MessageLookupByLibrary.simpleMessage("Rhestr"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Rhestr (Bach)"),
+        "march": MessageLookupByLibrary.simpleMessage("Mawrth"),
+        "may": MessageLookupByLibrary.simpleMessage("Mai"),
         "monthly": MessageLookupByLibrary.simpleMessage("Misol"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Mae\'r ffilm wedi\'i hychwanegu\'n llwyddiannus!"),
@@ -139,6 +152,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Mae\'r ffilm wedi\'i ddileu\'n llwyddiannus!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Manylion Ffilm"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Rydych wedi cyrraedd y terfyn ffilmiau (250 ar gyfer y Rhestr Gwylio, 250 ar gyfer y Casgliad). Os gwelwch yn dda, uwchraddiwch i Premium ar gyfer ffilmiau di-dor."),
+        "movieLimitReached": MessageLookupByLibrary.simpleMessage(
+            "Cyrhaeddwyd y terfyn ffilmiau"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Teitl Ffilm"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Mae\'r ffilm wedi\'i diweddaru\'n llwyddiannus!"),
@@ -181,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Dim awduron wedi\'u dewis"),
         "none": MessageLookupByLibrary.simpleMessage("Dim"),
+        "november": MessageLookupByLibrary.simpleMessage("Tachwedd"),
+        "october": MessageLookupByLibrary.simpleMessage("Hydref"),
         "ok": MessageLookupByLibrary.simpleMessage("Iawn"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Os gwelwch yn dda, rhowch"),
@@ -196,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Cwmnïau Cynhyrchu"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Ffilm Ddibynadwy"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Modd Argymell Ffilm"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dyddiad Rhyddhau"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Dyddiad rhyddhau: "),
@@ -217,9 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ffuglen Wyddonol"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Chwilio Ffilmiau"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Dewiswch y Gradd PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Dewiswyd"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Bydd y ffilmiau a ddewiswyd yn cael eu dileu. Ydych chi\'n cadarnhau?"),
+        "september": MessageLookupByLibrary.simpleMessage("Medwar"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Mewngofnodi Google wedi\'i ganslo."),
         "signOut": MessageLookupByLibrary.simpleMessage("Allgofnodi"),
@@ -251,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Methwyd canfod ffilmiau!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Methwyd llwytho lluniau!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Ffilmiau sy\'n Dod i Fyny"),
         "update": MessageLookupByLibrary.simpleMessage("Diweddaru"),
         "userScore": MessageLookupByLibrary.simpleMessage("Sgôr Defnyddiwr"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

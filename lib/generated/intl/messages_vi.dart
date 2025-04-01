@@ -39,7 +39,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Phiêu lưu"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Biệt danh: "),
         "animation": MessageLookupByLibrary.simpleMessage("Hoạt hình"),
+        "april": MessageLookupByLibrary.simpleMessage("Tháng Tư"),
         "ascending": MessageLookupByLibrary.simpleMessage("Tăng dần"),
+        "august": MessageLookupByLibrary.simpleMessage("Tháng Tám"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Tiểu sử: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Ngày sinh: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("Nơi sinh: "),
@@ -80,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dataNotRetrivedWriter": MessageLookupByLibrary.simpleMessage(
             "Không thể lấy dữ liệu cho tác giả này!"),
         "deathDateColon": MessageLookupByLibrary.simpleMessage("Ngày mất: "),
+        "december": MessageLookupByLibrary.simpleMessage("Tháng Mười Hai"),
         "delete": MessageLookupByLibrary.simpleMessage("Xóa"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Xóa phim đã chọn"),
@@ -113,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Thất bại!"),
         "family": MessageLookupByLibrary.simpleMessage("Gia đình"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Huyền bí"),
+        "february": MessageLookupByLibrary.simpleMessage("Tháng Hai"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Chế độ Tìm Phim"),
         "franchise": MessageLookupByLibrary.simpleMessage("Nhượng quyền"),
         "franchises": MessageLookupByLibrary.simpleMessage("Nhượng quyền"),
         "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
@@ -126,8 +132,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Nhập từ CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB không hợp lệ!"),
+        "january": MessageLookupByLibrary.simpleMessage("Tháng Một"),
+        "july": MessageLookupByLibrary.simpleMessage("Tháng Bảy"),
+        "june": MessageLookupByLibrary.simpleMessage("Tháng Sáu"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Phim Mới Nhất"),
         "list": MessageLookupByLibrary.simpleMessage("Danh sách"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Danh sách (Nhỏ)"),
+        "march": MessageLookupByLibrary.simpleMessage("Tháng Ba"),
+        "may": MessageLookupByLibrary.simpleMessage("Tháng Năm"),
         "monthly": MessageLookupByLibrary.simpleMessage("Hằng tháng"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Phim đã được thêm thành công!"),
@@ -136,6 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted": MessageLookupByLibrary.simpleMessage(
             "Phim đã được xóa thành công!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Chi tiết phim"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Bạn đã đạt giới hạn phim (250 cho Danh sách Xem, 250 cho Bộ sưu tập). Vui lòng nâng cấp lên Premium để xem phim không giới hạn."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Đã đạt giới hạn phim"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Tiêu đề phim"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Phim đã được cập nhật thành công!"),
@@ -178,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Chưa chọn tác giả nào"),
         "none": MessageLookupByLibrary.simpleMessage("Không có"),
+        "november": MessageLookupByLibrary.simpleMessage("Tháng Mười Một"),
+        "october": MessageLookupByLibrary.simpleMessage("Tháng Mười"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Vui lòng nhập"),
         "pleaseEnterMovieTitle":
@@ -192,6 +210,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Các công ty sản xuất"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Phim ngẫu nhiên"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Chế độ Gợi ý Phim"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Ngày phát hành"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Ngày phát hành: "),
@@ -211,9 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Khoa học viễn tưởng"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Tìm phim"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Chọn Đánh giá PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Đã chọn"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Các phim đã chọn sẽ bị xóa. Bạn có xác nhận không?"),
+        "september": MessageLookupByLibrary.simpleMessage("Tháng Chín"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Đăng nhập Google bị hủy."),
         "signOut": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
@@ -245,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Không thể phát hiện phim!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Không thể tải lên hình ảnh!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Phim Sắp Ra Mắt"),
         "update": MessageLookupByLibrary.simpleMessage("Cập nhật"),
         "userScore": MessageLookupByLibrary.simpleMessage("Điểm người dùng"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

@@ -37,7 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter": MessageLookupByLibrary.simpleMessage("Tɛmɛkɛla Jɔw"),
         "adventure": MessageLookupByLibrary.simpleMessage("Kulu Ka Tɛmɛkɛla"),
         "animation": MessageLookupByLibrary.simpleMessage("Filimu Dɛmɛ"),
+        "april": MessageLookupByLibrary.simpleMessage("Avríl"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ka Jɔw Kɛlɛ"),
+        "august": MessageLookupByLibrary.simpleMessage("Ògùsùt"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Filimu Tɛmɛ: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Ka sɛbɛn)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Sɔ"),
@@ -65,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CSV file dɔrɔn dɔrɔn."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Ka Kɛlɛw Tigɛ"),
+        "december": MessageLookupByLibrary.simpleMessage("Dèsèmbà"),
         "delete": MessageLookupByLibrary.simpleMessage("Ka tɔgɔ"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Filimu tɔgɔ jɔw"),
@@ -94,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Ɲàmán!"),
         "family": MessageLookupByLibrary.simpleMessage("Ka Tɛmɛkɛla"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Ka Sɛbɛn Filimu"),
+        "february": MessageLookupByLibrary.simpleMessage("Feburuwári"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Sɛgɛn Film Kɛsɛ"),
         "franchise": MessageLookupByLibrary.simpleMessage("Fransizi"),
         "franchises": MessageLookupByLibrary.simpleMessage("Fransiziyaw"),
         "genre": MessageLookupByLibrary.simpleMessage("Filimu Kɛlɛw"),
@@ -105,12 +111,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB Filan"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Filan"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Ka CSV jɔw"),
+        "january": MessageLookupByLibrary.simpleMessage("Januwári"),
+        "july": MessageLookupByLibrary.simpleMessage("Jùlù"),
+        "june": MessageLookupByLibrary.simpleMessage("Jùn"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Kɛnɛ Film"),
         "list": MessageLookupByLibrary.simpleMessage("Jɛgɛlenw"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Jɛgɛlenw (Dɔgɔn)"),
+        "march": MessageLookupByLibrary.simpleMessage("Màars"),
+        "may": MessageLookupByLibrary.simpleMessage("Mày"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("Filimu kɛ yen."),
         "movieCollection": MessageLookupByLibrary.simpleMessage("Filimu Jolow"),
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Filimu tɔgɔ yen."),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "I bèna film limit (250 kɔrɔ Watch List, 250 kɔrɔ Collection). A bɛɛ fɔ Premium la a bɛɛ yɛrɛ kɔrɔ film fɔ."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Film Limit Bèna"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filimu Tigɛ"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filimu dɔrɔn dɔrɔn."),
@@ -145,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Tɛmɛkɛlaw jɔw tɛ yen"),
         "none": MessageLookupByLibrary.simpleMessage("O tɛ yen"),
+        "november": MessageLookupByLibrary.simpleMessage("Nòvèmbà"),
+        "october": MessageLookupByLibrary.simpleMessage("Òktòbà"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Jɛlɛ fila"),
         "pleaseEnterMovieTitle":
@@ -157,6 +175,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filimu Ko Jɔw"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Kɔnɔw"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Tɛtɛrɛ Filimu"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Yèrè Film Kɛsɛ"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Filimu Don"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Filimu Don: "),
@@ -174,9 +194,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Ka Sɛbɛn Filimu"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filimu Jɛlɛ"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Fɛnbɛ PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Jɔw yen"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             " filimu tɔgɔ yen. I bɛ kɛ wa?"),
+        "september": MessageLookupByLibrary.simpleMessage("Sèptèmba"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google donni jɔw tɛ."),
         "signOut": MessageLookupByLibrary.simpleMessage("Ka bɔ"),
@@ -206,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filimu bɛna jɔw!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Filimu dɛn jɔw tɛ."),
+        "upcomingMovies": MessageLookupByLibrary.simpleMessage("Kɔfɔ Film"),
         "userScore": MessageLookupByLibrary.simpleMessage("Jɛlenw Filan"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Jɔw Kɔrɔ"),
         "war": MessageLookupByLibrary.simpleMessage("Ka Ban Filimu"),

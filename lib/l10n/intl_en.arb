@@ -187,5 +187,12 @@
     "september": "September",
     "october": "October",
     "november": "November",
-    "december": "December"
+    "december": "December",
+    "movieLimitReached": "Movie Limit Reached",
+    "movieLimitMessage": "You have reached movie limit (250 for Watch List, 250 for Collection). Please upgrade to Premium for Unlimited Movies. ",
+    "selectPgRating": "Select PG Rating",
+    "recommendMovieMode": "Recommend Movie Mode",
+    "findMovieMode": "Find Movie Mode",
+    "latestMovies": "Latest Movies",
+    "upcomingMovies": "Upcoming Movies"
 }

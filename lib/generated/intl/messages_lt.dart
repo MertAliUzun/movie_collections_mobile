@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("Nuotykiai"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Slapyvardis: "),
         "animation": MessageLookupByLibrary.simpleMessage("Animacija"),
+        "april": MessageLookupByLibrary.simpleMessage("Balandis"),
         "ascending": MessageLookupByLibrary.simpleMessage("Augantys"),
+        "august": MessageLookupByLibrary.simpleMessage("Rugpjūtis"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografija: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Gimimo data: "),
         "birthPlaceColon":
@@ -83,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Duomenų apie šį rašytoją nerasta!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("Mirties data: "),
+        "december": MessageLookupByLibrary.simpleMessage("Gruodis"),
         "delete": MessageLookupByLibrary.simpleMessage("Ištrinti"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Ištrinti pasirinktus filmus"),
@@ -118,6 +121,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Klaida!"),
         "family": MessageLookupByLibrary.simpleMessage("Šeima"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazija"),
+        "february": MessageLookupByLibrary.simpleMessage("Vasaris"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("Filmo paieškos režimas"),
         "franchise": MessageLookupByLibrary.simpleMessage("Fransizė"),
         "franchises": MessageLookupByLibrary.simpleMessage("Fransizės"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanras"),
@@ -131,8 +137,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importuoti iš CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Netinkamas IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("Sausis"),
+        "july": MessageLookupByLibrary.simpleMessage("Liepa"),
+        "june": MessageLookupByLibrary.simpleMessage("Birželis"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("Naujausi filmai"),
         "list": MessageLookupByLibrary.simpleMessage("Sąrašas"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Sąrašas (mažas)"),
+        "march": MessageLookupByLibrary.simpleMessage("Kovas"),
+        "may": MessageLookupByLibrary.simpleMessage("Gegužė"),
         "monthly": MessageLookupByLibrary.simpleMessage("Kas mėnesį"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filma sėkmingai pridėta!"),
@@ -141,6 +153,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieDeleted":
             MessageLookupByLibrary.simpleMessage("Filma sėkmingai ištrinta!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("Filmo detalės"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "Pasiekėte filmų limitą (250 žiūrėjimo sąrašui, 250 kolekcijai). Prašome atnaujinti į Premium, kad galėtumėte žiūrėti neribotą skaičių filmų."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("Pasiektas filmų limitas"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("Filmo pavadinimas"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filma sėkmingai atnaujinta!"),
@@ -182,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("Nėra pasirinktų rašytojų"),
         "none": MessageLookupByLibrary.simpleMessage("Nėra"),
+        "november": MessageLookupByLibrary.simpleMessage("Lapkritis"),
+        "october": MessageLookupByLibrary.simpleMessage("Spalis"),
         "ok": MessageLookupByLibrary.simpleMessage("Gerai"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Prašome įvesti"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -197,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Gamybos įmonės"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Atsitiktinė filma"),
+        "recommendMovieMode":
+            MessageLookupByLibrary.simpleMessage("Filmo rekomendacijų režimas"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Išleidimo data"),
         "releaseDateColon":
             MessageLookupByLibrary.simpleMessage("Išleidimo data: "),
@@ -216,9 +236,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Mokslinė fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ieškoti filmų"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("Pasirinkite PG įvertinimą"),
         "selected": MessageLookupByLibrary.simpleMessage("Pasirinktas"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Pasirinkti filmai bus ištrinti. Ar patvirtinate?"),
+        "september": MessageLookupByLibrary.simpleMessage("Rugsėjis"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google prisijungimas buvo atšauktas."),
         "signOut": MessageLookupByLibrary.simpleMessage("Atsijungti"),
@@ -251,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nepavyko nustatyti filmų!"),
         "unableUploadImages":
             MessageLookupByLibrary.simpleMessage("Nepavyko įkelti nuotraukų!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("Artėjantys filmai"),
         "update": MessageLookupByLibrary.simpleMessage("Atnaujinti"),
         "userScore": MessageLookupByLibrary.simpleMessage("Naudotojo balas"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),

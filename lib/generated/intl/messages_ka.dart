@@ -41,7 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "adventure": MessageLookupByLibrary.simpleMessage("მოგზაურობა"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ალია: "),
         "animation": MessageLookupByLibrary.simpleMessage("ანიმაცია"),
+        "april": MessageLookupByLibrary.simpleMessage("აპრილი"),
         "ascending": MessageLookupByLibrary.simpleMessage("ამაღლებული"),
+        "august": MessageLookupByLibrary.simpleMessage("აგვისტო"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ბიოგრაფია: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("დაბადების თარიღი: "),
@@ -85,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "წერილის ავტორის მონაცემები ვერ მოიძებნა!"),
         "deathDateColon":
             MessageLookupByLibrary.simpleMessage("გარდაცვალების თარიღი: "),
+        "december": MessageLookupByLibrary.simpleMessage("დეკემბერი"),
         "delete": MessageLookupByLibrary.simpleMessage("წაშლა"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("წაშალე შერჩეული ფილმები"),
@@ -119,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("შეცდომა!"),
         "family": MessageLookupByLibrary.simpleMessage("ოჯახი"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ფანტაზია"),
+        "february": MessageLookupByLibrary.simpleMessage("თებერვალი"),
+        "findMovieMode":
+            MessageLookupByLibrary.simpleMessage("ფილმების ძებნის რეჟიმი"),
         "franchise": MessageLookupByLibrary.simpleMessage("ფრანჩაიზი"),
         "franchises": MessageLookupByLibrary.simpleMessage("ფრანჩაიზები"),
         "genre": MessageLookupByLibrary.simpleMessage("ჟანრი"),
@@ -132,14 +138,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("იმპორტი CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("არასწორი IMDB ID!"),
+        "january": MessageLookupByLibrary.simpleMessage("იანვარი"),
+        "july": MessageLookupByLibrary.simpleMessage("ივლივი"),
+        "june": MessageLookupByLibrary.simpleMessage("ივნისი"),
+        "latestMovies": MessageLookupByLibrary.simpleMessage("ბოლო ფილმები"),
         "list": MessageLookupByLibrary.simpleMessage("სიის"),
         "listSmall": MessageLookupByLibrary.simpleMessage("სია (მოძიება)"),
+        "march": MessageLookupByLibrary.simpleMessage("მარტი"),
+        "may": MessageLookupByLibrary.simpleMessage("მაისი"),
         "monthly": MessageLookupByLibrary.simpleMessage("ყოველთვიურად"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("ფილმი დაემატა!"),
         "movieCollection":
             MessageLookupByLibrary.simpleMessage("ფილმების კოლექცია"),
         "movieDeleted": MessageLookupByLibrary.simpleMessage("ფილმი წაიშალა!"),
         "movieDetails": MessageLookupByLibrary.simpleMessage("ფილმის დეტალები"),
+        "movieLimitMessage": MessageLookupByLibrary.simpleMessage(
+            "თქვენ მიაღწიეთ ფილმების ლიმიტს (250 სანახავი სია, 250 კოლექცია). გთხოვთ, განაახლოთ Premium-ზე ულიმიტო ფილმებისთვის."),
+        "movieLimitReached":
+            MessageLookupByLibrary.simpleMessage("ფილმების ლიმიტი მიღწეულია"),
         "movieTitle": MessageLookupByLibrary.simpleMessage("ფილმის სათაური"),
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("ფილმი განახლებულია!"),
@@ -182,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noWritersSelected":
             MessageLookupByLibrary.simpleMessage("არ არის შერჩეული ავტორები"),
         "none": MessageLookupByLibrary.simpleMessage("არაფერი"),
+        "november": MessageLookupByLibrary.simpleMessage("ნოემბერი"),
+        "october": MessageLookupByLibrary.simpleMessage("ოქტომბერი"),
         "ok": MessageLookupByLibrary.simpleMessage("კარგი"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("გთხოვთ შეიყვანოთ"),
         "pleaseEnterMovieTitle":
@@ -197,6 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("წარმოების კომპანიები"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("შემთხვევითი ფილმი"),
+        "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
+            "ფილმების რეკომენდაციის რეჟიმი"),
         "releaseDate":
             MessageLookupByLibrary.simpleMessage("გამოშვების თარიღი"),
         "releaseDateColon":
@@ -218,9 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("სამეცნიერო ფანტასტიკა"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("ფილმების მოძიება"),
+        "selectPgRating":
+            MessageLookupByLibrary.simpleMessage("არჩიეთ PG რეიტინგი"),
         "selected": MessageLookupByLibrary.simpleMessage("შერჩეული"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "დარწმუნებული ხართ რომ გსურთ წაშლა?"),
+        "september": MessageLookupByLibrary.simpleMessage("სექტემბერი"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("შესვლა გაუქმებულია."),
         "signOut": MessageLookupByLibrary.simpleMessage("გამოსვლა"),
@@ -253,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ფილმები ვერ აღმოაჩინეს!"),
         "unableUploadImages": MessageLookupByLibrary.simpleMessage(
             "აღარ შევძლებთ სურათების ატვირთვას!"),
+        "upcomingMovies":
+            MessageLookupByLibrary.simpleMessage("მომავალი ფილმები"),
         "update": MessageLookupByLibrary.simpleMessage("განახლება"),
         "userScore": MessageLookupByLibrary.simpleMessage("მომხმარებლის ქულა"),
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
