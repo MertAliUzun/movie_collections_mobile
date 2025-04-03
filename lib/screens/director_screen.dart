@@ -189,7 +189,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                   size: ScreenUtil.getAdaptiveIconSize(context, 24),
                 ),
                 backgroundColor: const Color.fromARGB(255, 34, 40, 50),
-                expandedHeight: isTablet ? screenHeight * 0.4 : screenHeight * 0.5,
+                expandedHeight: isTablet ? screenHeight * 0.4 : screenHeight * 0.55,
                 centerTitle: true,
                 title: _isCollapsed ? Container(
                   padding: ScreenUtil.getAdaptivePadding(context),
@@ -263,7 +263,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                 borderRadius: BorderRadius.circular(10),
                                                 child: Image.network(
                                                   'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
-                                                  height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.3),
+                                                  height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.35),
                                                   width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.45),
                                                   fit: BoxFit.cover,
                                                 ),
@@ -274,16 +274,18 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                               color: Colors.white54,
                                               size: ScreenUtil.getAdaptiveIconSize(context, 24),
                                             ),
-                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.015)),
-                                        Text(
-                                          _personDetails[0]['name'],
-                                          style: TextStyle(
-                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        Text(
+                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.025)),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              _personDetails[0]['name'],
+                                              style: TextStyle(
+                                                fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
                                           widget.personType == 'Director' ? S.of(context).director :
                                           widget.personType == 'Actor' ? S.of(context).actor :
                                           widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
@@ -293,6 +295,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
+                                          ],
+                                        ),
+                                        
                                       ],
                                     ),
                                   ),

@@ -20,6 +20,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/movie_model.dart';
+import '../screens/discover_main_screen.dart';
 import '../screens/edit_movie_screen.dart';
 import '../main.dart';
 import '../services/ad_service.dart';
@@ -1403,7 +1404,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PopularPeopleScreen(
+                              builder: (context) => DiscoverMainScreen(
                                 isFromWishlist: _isFromWishlist,
                                 userEmail: userEmail,
                                 systemLanguage: 'en', //Change with widget.systemLanguage
