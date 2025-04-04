@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:movie_collections_mobile/screens/discover_movie_screen.dart';
+import 'package:movie_collections_mobile/screens/edit_movie_screen.dart';
 import '../services/tmdb_service.dart';
 import '../sup/screen_util.dart';
 import '../screens/popular_people_screen.dart';
@@ -24,12 +26,15 @@ class DiscoverMainScreen extends StatefulWidget {
 class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
   final _tmdbService = TmdbService();
   List<dynamic> _popularPeople = [];
-  bool _isLoading = true;
+  bool _isLoadingPeople = true;
+  List<dynamic> _upcomingMovies = [];
+  bool _isLoadingUpcoming = true;
 
   @override
   void initState() {
     super.initState();
     _loadPopularPeople();
+    _loadUpcomingMovies();
   }
 
   Future<void> _loadPopularPeople() async {
@@ -39,13 +44,32 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         setState(() {
           // Sadece ilk 10 kişiyi al
           _popularPeople = people.take(10).toList();
-          _isLoading = false;
+          _isLoadingPeople = false;
         });
       }
     } catch (e) {
       if (mounted) {
         setState(() {
-          _isLoading = false;
+          _isLoadingPeople = false;
+        });
+      }
+    }
+  }
+
+  Future<void> _loadUpcomingMovies() async {
+    try {
+      final people = await _tmdbService.getUpcomingMovies();
+      if (mounted) {
+        setState(() {
+          // Sadece ilk 10 kişiyi al
+          _upcomingMovies = people.take(10).toList();
+          _isLoadingUpcoming = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoadingUpcoming = false;
         });
       }
     }
@@ -79,6 +103,151 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
+            // Upcoming Movies Header
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DiscoverMovieScreen(
+                            discoverType: 'Upcoming',
+                            isFromWishlist: true,
+                            userEmail: widget.userEmail ?? 'test@test.com',
+                          ),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          S.of(context).upcomingMovies,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                          ),
+                        ),
+                        SizedBox(width: screenWidth * 0.03),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade700,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.keyboard_arrow_right,
+                            color: Colors.white70,
+                            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                          )
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            _isLoadingUpcoming
+                ? const Center(child: CircularProgressIndicator())
+                : Container(
+                    height: isTablet ? 280 : 275,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      itemCount: _upcomingMovies.length,
+                      itemBuilder: (context, index) {
+                        final movie = _upcomingMovies[index];
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EditMovieScreen(
+                                  movie: movie,
+                                  systemLanguage: widget.systemLanguage ?? 'en',
+                                  isFromWishlist: true,
+                                  userEmail: widget.userEmail ?? 'test@test.com',
+                                ),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: isTablet ? 180 : 140,
+                            margin: const EdgeInsets.symmetric(horizontal: 2),
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Expanded(
+                                    flex: 6,
+                                    child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(16.0),
+                                      topRight: Radius.circular(16.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                                      fit: BoxFit.cover,
+                                      height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                      width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                      errorBuilder: (context, error, stackTrace) =>
+                                        Image.asset(
+                                          'assets/images/placeholder_poster.png',
+                                          fit: BoxFit.cover,
+                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                          width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                        ),
+                                    ),
+                                  ),
+                                  ),
+                                  
+                                  Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(8.0),
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromARGB(255, 44, 50, 60),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            movie['original_title'],
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+
+            const SizedBox(height: 16),
             // Popüler Kişiler Başlık
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -110,7 +279,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade700,
+                            color: Colors.grey.shade800,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -127,7 +296,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
             ),
             
             // Popüler Kişiler Yatay Liste
-            _isLoading
+            _isLoadingPeople
                 ? const Center(child: CircularProgressIndicator())
                 : Container(
                     height: isTablet ? 280 : 275,
@@ -168,8 +337,8 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                     flex: 6,
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10),
+                                        topLeft: Radius.circular(16.0),
+                                        topRight: Radius.circular(16.0),
                                       ),
                                       child: person['profile_path'] != null
                                           ? Image.network(
