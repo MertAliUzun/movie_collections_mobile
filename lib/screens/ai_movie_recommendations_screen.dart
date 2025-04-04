@@ -45,7 +45,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
       
       // TMDB ID'lerini al
       final tmdbService = TmdbService();
-      final movies = await tmdbService.getMovieIDs(movieTitles);
+      final movies = await tmdbService.getMultipleMovies(movieTitles);
       /*
       final ids = await tmdbService.getTMDBIds(movieTitles);
       // Her film için detayları al

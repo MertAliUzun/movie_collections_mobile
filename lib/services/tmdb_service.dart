@@ -163,7 +163,7 @@ class TmdbService {
     return movies;
   }
 
-  Future<List<Map<String, dynamic>>> getMovieIDs(List<String> movieTitles) async {
+  Future<List<Map<String, dynamic>>> getMultipleMovies(List<String> movieTitles) async {
     final List<Map<String, dynamic>> movies = [];
   
     for (final title in movieTitles) {
@@ -238,6 +238,7 @@ class TmdbService {
 
     return allMovies;
   }
+
   Future<List<Map<String, dynamic>>> getSimilarMovies(int movieId) async {
     List<Map<String, dynamic>> similarMovies = [];
   final response = await http.get(
@@ -253,6 +254,23 @@ class TmdbService {
   }
 
   return similarMovies.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
+}
+
+Future<List<Map<String, dynamic>>> getCollectionMovies(int collectionId) async {
+    List<Map<String, dynamic>> collectionMovies = [];
+  final response = await http.get(
+    Uri.parse('$_baseUrl/collection/$collectionId?api_key=$_apiKey'),
+  );
+
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+
+    if (data['parts'] != null) {
+      collectionMovies.addAll(List<Map<String, dynamic>>.from(data['parts']));
+    }
+  }
+
+  return collectionMovies.toSet().toList(); // Eğer hata veya sonuç yoksa boş liste döndür
 }
 
 Future<List<Map<String, dynamic>>> getMoviesByProvider(int providerId) async {

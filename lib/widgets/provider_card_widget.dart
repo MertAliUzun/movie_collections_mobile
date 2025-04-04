@@ -23,19 +23,32 @@ class ProviderCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
-          children: providers.map((provider) => 
-            Padding(
+          children: providers.map((provider) {
+            // Güvenli bir şekilde provider_id'yi kontrol et
+            int? providerId;
+            if (provider['provider_id'] != null) {
+              providerId = (provider['provider_id'] is int) 
+                  ? provider['provider_id'] 
+                  : int.tryParse(provider['provider_id'].toString());
+            }
+            
+            // Eğer providerId null ise, bu card'ı gösterme
+            if (providerId == null) {
+              return const SizedBox.shrink();
+            }
+            
+            return Padding(
               padding: const EdgeInsets.only(right: 4.0),
               child: ProviderCardItem(
                 logoUrl: 'https://image.tmdb.org/t/p/original${provider['logo_path']}',
                 name: provider['provider_name'],
                 categories: List<String>.from(provider['categories']),
-                providerId: int.parse(provider['provider_id']),
+                providerId: providerId,
                 isFromWishlist: isFromWishlist ?? true,
                 userEmail: userEmail ?? 'test@test.com',
               ),
-            )
-          ).toList(),
+            );
+          }).toList(),
         ),
       ),
     );

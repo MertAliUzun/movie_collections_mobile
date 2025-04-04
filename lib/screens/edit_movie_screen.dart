@@ -70,6 +70,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<String> _selectedFranchises = [];
   List<String> _selectedTags = [];
   List<Map<String, dynamic>> _similarMovies = [];
+  List<Map<String, dynamic>> _seriesMovies = [];
   String? _pgRating;
   final ScrollController _scrollController = ScrollController();
   String _selectedCollectionType = ''; // Varsayılan değer
@@ -649,6 +650,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _sortTitleController.text = widget.movie!.customSortTitle ?? '';
       _pgRating = widget.movie!.pgRating ?? '';
       _fetchSimilarMovies();
+      _fetchCollectionMovies();
       //_fetchPgRating();
       
       //_fetchProviders();
@@ -714,9 +716,43 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         }
     }
   }
- 
+  
+  Future<void> _fetchCollectionMovies() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+   if (connectivityResult[0] == ConnectivityResult.none) {
+     // Skip fetching similar movies if there's no internet
+     return;
+   }
+   try {
+     final tmdbService = TmdbService();
+     final movie = await tmdbService.searchMovies(widget.movie!.movieName);
+
+     if (movie.isNotEmpty) {
+      final movieDetails = await tmdbService.getMovieDetails(movie[0]['id']);
+      if(movieDetails !=null || movieDetails!.isNotEmpty || movieDetails['belongs_to_collection']['id'].isNotEmpty) {
+        final collectionId = movieDetails['belongs_to_collection']['id'];
+
+      final collectionMovies = await tmdbService.getCollectionMovies(collectionId);
+
+      if (collectionMovies != null) {
+         if (mounted) {
+           setState(() {
+             _seriesMovies = collectionMovies.where((movie) => movie['original_language'] == 'en')
+               .where((movie) => movie['poster_path'] != null)
+               .take(6) // İlk 6 filmi al
+               .map((movie) => Map<String, dynamic>.from(movie)) // Filmleri Map formatında döndür
+               .toList();
+           });
+         }
+       }
+      }
+     }
+   } catch (e) {
+     
+   }
+  }
   Future<void> _fetchSimilarMovies() async {
-   if (int.parse(widget.movie!.id) < 0) { return; }
+   if (int.parse(widget.movie!.id) < 0) { return; } //CHANGE This shouldn't matter. We search movie with title then get the id.
    
    var connectivityResult = await (Connectivity().checkConnectivity());
    if (connectivityResult[0] == ConnectivityResult.none) {
@@ -1087,7 +1123,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           ],
                         ),
                         SizedBox(height: screenWidth * 0.05),
-                    if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0)
+                    if((_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0) && (_revenueController.text.isNotEmpty && toDouble(_revenueController.text)! > 0))
                   Card(
                     color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                     child: Column(
@@ -1873,6 +1909,182 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         ],
                       ),
                     ),
+                  const SizedBox(height: 30),
+                  if(_seriesMovies.isNotEmpty)
+                  Card(
+                    color: Colors.transparent,
+                    child: Column(
+                      children: [
+                        Padding(
+                        padding: const EdgeInsets.all(16.0), //'S.of
+                        child: Text('Other Movies in Series', style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
+                      ),
+                        Container(
+                          height: isTablet ? 350 : 300,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            itemCount: _seriesMovies.length,
+                            itemBuilder: (context, index) {
+                              final movie = _seriesMovies[index];
+                              return GestureDetector(
+                                onTap: () async {
+                                    final movieDetails = await TmdbService().getMovieDetails(movie['id']);
+                                    if (movieDetails != null) {
+                                      final chosenMovie = Movie(
+                                        id: movieDetails['id'].toString(),
+                                        movieName: movieDetails['title'] ?? '',
+                                        directorName: movieDetails['credits']['crew']
+                                            ?.firstWhere((crew) => crew['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '',
+                                        releaseDate: movieDetails['release_date'] != null 
+                                            ? DateTime.parse(movieDetails['release_date']) 
+                                            : DateTime.now(),
+                                        plot: movieDetails['overview'],
+                                        runtime: movieDetails['runtime'],
+                                        imdbRating: movieDetails['vote_average']?.toDouble(),
+                                        writers: movieDetails['credits']['crew']
+                                            ?.where((member) => member['department'] == 'Writing')
+                                            .take(3)
+                                            .map<String>((writer) => writer['name'] as String)
+                                            .toList(),
+                                        actors: movieDetails['credits']['cast']
+                                            ?.take(6)
+                                            .map<String>((actor) => actor['name'] as String)
+                                            .toList(),
+                                        imageLink: movieDetails['poster_path'] != null 
+                                            ? 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}'
+                                            : '',
+                                        genres: movieDetails['genres']
+                                            ?.take(6)
+                                            .map<String>((genre) => genre['name'] as String)
+                                            .toList(),
+                                        productionCompany: movieDetails['production_companies']
+                                            ?.take(2)
+                                            .map<String>((company) => company['name'] as String)
+                                            .toList(),
+                                        country: movieDetails['production_countries']?.isNotEmpty 
+                                            ? movieDetails['production_countries'][0]['iso_3166_1']
+                                            : null,
+                                        popularity: movieDetails['popularity']?.toDouble(),
+                                        budget: movieDetails['budget']?.toDouble(),
+                                        revenue: movieDetails['revenue']?.toDouble(),
+                                        watched: false,
+                                        userEmail: widget.userEmail ?? 'test@test.com'
+                                      );
+                        
+                                      if (mounted) {
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => AddMovieScreen(
+                                              isFromWishlist: true,
+                                              movie: chosenMovie,
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                    }
+                                },
+                                child: Container(
+                                  width: isTablet ? 180 : 140,
+                                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                                  child: Card(
+                                    color: const Color.fromARGB(255, 44, 50, 60),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    elevation: 8,
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                                      children: [
+                                        Expanded(
+                                          flex: 4,
+                                          child: ClipRRect(
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(16.0),
+                                            topRight: Radius.circular(16.0),
+                                          ),
+                                          child: Image.network(
+                                            'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                                            fit: BoxFit.cover,
+                                            height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                            width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                            errorBuilder: (context, error, stackTrace) =>
+                                              Image.asset(
+                                                'assets/images/placeholder_poster.png',
+                                                fit: BoxFit.cover,
+                                                height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                                width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                              ),
+                                          ),
+                                        ),
+                                        ),
+                                        
+                                        Expanded(
+                                          flex: 2,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(8.0),
+                                            decoration: BoxDecoration(
+                                              color: const Color.fromARGB(255, 44, 50, 60),
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(10),
+                                                bottomRight: Radius.circular(10),
+                                              ),
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight *0.005)),
+                                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),
+                                  child: Text(
+                                    movie['title'] ?? S.of(context).noTitle,
+                                    style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.027), fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center,
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  ),
+                                ),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
+                                    child: Column(
+                                      children: [
+                                        if(movie['genre_ids'] != null && movie['genre_ids'].any((id) => genreMap[id] != null))
+                                        Text(
+                                          '${movie['genre_ids'].map((id) => 
+                                          _getGenreLocalizedString(genreMap[id] ?? 'Action')
+                                          ).take(3).join(', ')}',
+                                          style:  TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.025)),
+                                          textAlign: TextAlign.center,
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.001)),
+                                        if (movie['release_date'] != null)
+                                        Text(
+                                          '${movie['release_date'].split('-')[0]}',
+                                          style:  TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.025)),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 30),
                   if(_similarMovies.length > 3)
                   Card(color: Colors.transparent,

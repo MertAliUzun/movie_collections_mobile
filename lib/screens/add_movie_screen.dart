@@ -290,7 +290,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         _searchController.clear();
         _searchResults = [];
         _searchFocusNode.unfocus();
-        canShowProviders = false;
+        //canShowProviders = false;
 
         final pgRating = await _tmdbService.getPgRating(movieId);
 
@@ -687,7 +687,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     final tmdbService = TmdbService();
     final providers = await tmdbService.getProviders(int.parse(widget.movie!.id));
       if (providers != null) {
-        canShowProviders = true;
+        canShowProviders = false;
         setState(() {
           _providers = {
             'flatrate': List<dynamic>.from(providers['flatrate'] ?? []),
