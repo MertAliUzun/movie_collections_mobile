@@ -29,12 +29,15 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
   bool _isLoadingPeople = true;
   List<dynamic> _upcomingMovies = [];
   bool _isLoadingUpcoming = true;
+  List<dynamic> _latestMovies = [];
+  bool _isLoadingLatest = true;
 
   @override
   void initState() {
     super.initState();
     _loadPopularPeople();
     _loadUpcomingMovies();
+    _loadLatestMovies();
   }
 
   Future<void> _loadPopularPeople() async {
@@ -75,6 +78,25 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
     }
   }
 
+  Future<void> _loadLatestMovies() async {
+    try {
+      final people = await _tmdbService.getLatestMovies();
+      if (mounted) {
+        setState(() {
+          // Sadece ilk 10 kişiyi al
+          _latestMovies = people.take(10).toList();
+          _isLoadingLatest = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoadingLatest = false;
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -102,6 +124,150 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 16),
+            // Popüler Kişiler Başlık
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DiscoverMovieScreen(
+                            discoverType: 'Latest',
+                            isFromWishlist: true,
+                            userEmail: widget.userEmail ?? 'test@test.com',
+                          ),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          S.of(context).latestMovies,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                          ),
+                        ),
+                        SizedBox(width: screenWidth * 0.03),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade700,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.keyboard_arrow_right,
+                            color: Colors.white70,
+                            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                          )
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            _isLoadingLatest
+                ? const Center(child: CircularProgressIndicator())
+                : Container(
+                    height: isTablet ? 280 : 275,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      itemCount: _latestMovies.length,
+                      itemBuilder: (context, index) {
+                        final movie = _latestMovies[index];
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EditMovieScreen(
+                                  movie: movie,
+                                  systemLanguage: widget.systemLanguage ?? 'en',
+                                  isFromWishlist: true,
+                                  userEmail: widget.userEmail ?? 'test@test.com',
+                                ),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: isTablet ? 180 : 140,
+                            margin: const EdgeInsets.symmetric(horizontal: 2),
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Expanded(
+                                    flex: 6,
+                                    child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(16.0),
+                                      topRight: Radius.circular(16.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                                      fit: BoxFit.cover,
+                                      height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                      width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                      errorBuilder: (context, error, stackTrace) =>
+                                        Image.asset(
+                                          'assets/images/placeholder_poster.png',
+                                          fit: BoxFit.cover,
+                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                          width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                        ),
+                                    ),
+                                  ),
+                                  ),
+                                  
+                                  Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(8.0),
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromARGB(255, 44, 50, 60),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            movie['original_title'],
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
             const SizedBox(height: 16),
             // Upcoming Movies Header
             Padding(
