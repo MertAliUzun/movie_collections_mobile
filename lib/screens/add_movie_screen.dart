@@ -447,6 +447,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         pgRating: _pgRating != null && _pgRating!.isNotEmpty ? _pgRating : null,
         franchises: _selectedFranchises.isNotEmpty ? _selectedFranchises : [],
         tags: _selectedTags.isNotEmpty ? _selectedTags : [],
+        hidden: false,
       );
 
       // Save to Hive

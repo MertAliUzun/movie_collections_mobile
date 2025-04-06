@@ -152,7 +152,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
       // If there's an error (like no internet), load from Hive
       final box = Hive.box<Movie>('movies');
       List<Movie> allMovies = box.values.toList();
-      List<Movie> movies = box.values.where((movie) => movie.watched).toList();
+      List<Movie> movies = box.values.where((movie) => movie.watched && movie.hidden == false).toList();
       setState(() {
         _movies = movies;
         _filteredMovies = _movies; // Initialize filtered list

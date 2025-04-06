@@ -57,6 +57,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final _sortTitleController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   DateTime? _watchedDate;
+  bool _isHidden = false;
   double _userScore = 0.0;
   double _hypeScore = 0.0;
   File? _selectedImage;
@@ -233,6 +234,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         userScore: widget.isFromWishlist ? null : _userScore,
         hypeScore: widget.isFromWishlist ? _hypeScore : null,
         watched: !widget.isFromWishlist,
+        hidden: widget.movie!.hidden ?? false,
         imageLink: _imageLink ?? '',
         userEmail: 'test@test.com',
         genres: _selectedGenres,
@@ -638,6 +640,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _revenueController.text = widget.movie!.revenue?.toString() ?? '';
       _selectedDate = widget.movie!.releaseDate;
       _watchedDate = widget.movie!.watchDate ?? DateTime.now();
+      _isHidden = widget.movie!.hidden ?? false;
       _imageLink = widget.movie!.imageLink;
       _userScore = widget.movie!.userScore ?? 0;
       _hypeScore = widget.movie!.hypeScore ?? 0;
@@ -1969,7 +1972,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                         budget: movieDetails['budget']?.toDouble(),
                                         revenue: movieDetails['revenue']?.toDouble(),
                                         watched: false,
-                                        userEmail: widget.userEmail ?? 'test@test.com'
+                                        userEmail: widget.userEmail ?? 'test@test.com',
+                                        hidden: false
                                       );
                         
                                       if (mounted) {
@@ -2151,7 +2155,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                   budget: movieDetails['budget']?.toDouble(),
                                   revenue: movieDetails['revenue']?.toDouble(),
                                   watched: !widget.isFromWishlist,
-                                  userEmail: widget.userEmail ?? 'test@test.com'
+                                  userEmail: widget.userEmail ?? 'test@test.com',
+                                  hidden: false
                                 );
                                   Navigator.pushReplacement(
                                     context,

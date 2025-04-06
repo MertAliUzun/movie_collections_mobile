@@ -290,8 +290,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     
     // Koşula göre filtreleme yap
     List<Movie> filteredMovies = _isFromWishlist
-        ? _movies.where((movie) => !movie.watched).toList() // watched == false
-        : _movies.where((movie) => movie.watched).toList(); // watched == true
+        ? _movies.where((movie) => !movie.watched && !movie.hidden!).toList() // watched == false
+        : _movies.where((movie) => movie.watched && !movie.hidden!).toList(); // watched == true
   
     if (filteredMovies.isEmpty) {
       // Eğer filtrelenmiş listede film yoksa, Snackbar göster
@@ -491,7 +491,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         'Creation Date',
         'PG Rating',
         'Franchises',
-        'Tags'
+        'Tags',
+        'Hidden'
       ],
     ];
 
@@ -527,6 +528,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         movie.pgRating?.toString() ?? '', 
         movie.franchises?.join(', ') ?? '', 
         movie.tags?.join(', ') ?? '', 
+        movie.hidden.toString(), 
       ]);
     }
 
@@ -630,6 +632,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               pgRating: row[27].toString().isEmpty ? null : row[27].toString(),
               franchises: row[28].toString().isEmpty ? null : row[28].toString().split(', '),  
               tags: row[29].toString().isEmpty ? null : row[29].toString().split(', '),  
+              hidden: row[30].toString().toLowerCase() == 'true', 
             );
 
             moviesBox.put(movie.id, movie);

@@ -94,6 +94,9 @@ class Movie {
   @HiveField(29)
   final List<String>? tags;
 
+  @HiveField(30)
+  bool? hidden;
+
   //delete writers
     /*"cast": [
         {"id": 123456, "name": "Tessa Thompson", "character": "Lady", "order": 1},
@@ -130,7 +133,8 @@ class Movie {
     this.creationDate,
     this.pgRating,
     this.franchises,
-    this.tags
+    this.tags,
+    this.hidden
   });
 
   Map<String, dynamic> toJson() {
@@ -164,7 +168,8 @@ class Movie {
       'creation_date': creationDate?.toIso8601String(),
       'pgRating': pgRating,
       'franchises': franchises,
-      'tags': tags
+      'tags': tags,
+      'hidden': hidden
     };
   }
 
@@ -199,7 +204,8 @@ class Movie {
       creationDate: json['creation_date'] != null ? DateTime.parse(json['creation_date']) : null,
       pgRating: json['pgRating'],
       franchises: json['franchises'] != null ? List<String>.from(json['franchises']) : null,
-      tags: json['tags'] != null ? List<String>.from(json['tags']) : null
+      tags: json['tags'] != null ? List<String>.from(json['tags']) : null,
+      hidden: json['hidden'],
     );
   }
 } 

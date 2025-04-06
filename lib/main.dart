@@ -116,7 +116,8 @@ Future<void> _updateMoviesWithNewFields() async {
       creationDate: movie.creationDate ?? DateTime.now(),
       pgRating: movie.pgRating ?? '',
       franchises: movie.franchises ?? [],
-      tags: movie.tags ?? []
+      tags: movie.tags ?? [],
+      hidden: movie.hidden ?? false,
     );
     
     // Güncellenen filmi kaydet

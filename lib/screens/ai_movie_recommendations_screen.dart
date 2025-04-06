@@ -203,7 +203,8 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                                     budget: movieDetails['budget']?.toDouble(),
                                     revenue: movieDetails['revenue']?.toDouble(),
                                     watched: false,
-                                    userEmail: widget.userEmail ?? 'test@test.com' //widget.userEmail ?? 'test@test.com'
+                                    userEmail: widget.userEmail ?? 'test@test.com',
+                                    hidden: false,
                                   );
                                     Navigator.pushReplacement(
                                       context,

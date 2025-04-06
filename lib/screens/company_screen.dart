@@ -154,7 +154,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     budget: movieDetails['budget']?.toDouble(),
                     revenue: movieDetails['revenue']?.toDouble(),
                     watched: widget.isFromWishlist ?? false,
-                    userEmail: widget.userEmail ?? 'test@test.com'
+                    userEmail: widget.userEmail ?? 'test@test.com',
+                    hidden: false
                   );
                     Navigator.pushReplacement(
                       context,

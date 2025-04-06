@@ -189,7 +189,8 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
                                   budget: movieDetails['budget']?.toDouble(),
                                   revenue: movieDetails['revenue']?.toDouble(),
                                   watched: false,
-                                  userEmail: widget.userEmail ?? 'test@test.com'
+                                  userEmail: widget.userEmail ?? 'test@test.com',
+                                  hidden: false
                                 );
 
                                 if (mounted) {

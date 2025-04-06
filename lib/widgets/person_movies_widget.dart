@@ -74,7 +74,8 @@ class PersonMoviesWidget extends StatelessWidget {
                 budget: movieDetails['budget']?.toDouble(),
                 revenue: movieDetails['revenue']?.toDouble(),
                 watched: isFromWishlist ?? false,
-                userEmail: userEmail ?? 'test@test.com'
+                userEmail: userEmail ?? 'test@test.com',
+                hidden: false
               );
                 Navigator.pushReplacement(
                   context,

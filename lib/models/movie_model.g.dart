@@ -47,6 +47,7 @@ class MovieAdapter extends TypeAdapter<Movie> {
       pgRating: fields[27] as String?,
       franchises: (fields[28] as List?)?.cast<String>(),
       tags: (fields[29] as List?)?.cast<String>(),
+      hidden: fields[30] as bool?,
 
     );
   }
@@ -54,7 +55,7 @@ class MovieAdapter extends TypeAdapter<Movie> {
   @override
   void write(BinaryWriter writer, Movie obj) {
     writer
-      ..writeByte(30)
+      ..writeByte(31)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -114,7 +115,9 @@ class MovieAdapter extends TypeAdapter<Movie> {
       ..writeByte(28)
       ..write(obj.franchises)
       ..writeByte(29)
-      ..write(obj.tags);
+      ..write(obj.tags)
+      ..writeByte(30)
+      ..write(obj.hidden);
   }
 
   @override
