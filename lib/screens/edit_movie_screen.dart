@@ -952,7 +952,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         actions: [
           IconButton(
             icon: Icon(
-              Icons.hide_source, 
+              Icons.visibility, 
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),
@@ -961,7 +961,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 context: context,
                 builder: (context) => AlertDialog(
                   backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-                  title: Text(
+                  title: Text(widget.movie!.hidden! ? 
+                    'S.of(context).restoreHiddenMovies' :
                     'S.of(context).hideChosenMovies', 
                     style: TextStyle(
                       color: Colors.white,
@@ -1000,7 +1001,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           ..showSnackBar(snackBar);
                       },
                       child: Text(
-                        'S.of(context).hide',  
+                        S.of(context).ok,  
                         style: TextStyle(
                           color: Colors.red,
                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),

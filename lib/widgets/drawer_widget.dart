@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:movie_collections_mobile/screens/hidden_movies_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:file_picker/file_picker.dart';
@@ -1433,6 +1434,44 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                               Icons.people),
                             ],
                           ), 
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: screenWidth * 0.5,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HiddenMoviesScreen(
+                                systemLanguage: 'en', //TO Change system language
+                                isFromWishlist: _isFromWishlist ?? true,
+                                userEmail: userEmail ?? 'test@test.com',
+                              ),
+                            ),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: .3,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(child: Text('S.of(context).hiddenMovies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
+                              SizedBox(width: screenWidth * 0.03),
+                              Icon(size: screenWidth * 0.055, Icons.slow_motion_video, color: Colors.white),
+                            ],
+                          ),
                         ),
                       ),
                     ),

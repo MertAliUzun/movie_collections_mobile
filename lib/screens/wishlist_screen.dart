@@ -423,7 +423,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
           IconButton(
             icon: Icon(
-              Icons.hide_source, 
+              Icons.visibility, 
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),

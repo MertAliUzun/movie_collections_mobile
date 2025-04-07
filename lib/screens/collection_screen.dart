@@ -438,7 +438,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           ),
           IconButton(
             icon: Icon(
-              Icons.hide_source, 
+              Icons.visibility, 
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),
