@@ -485,7 +485,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           await _fetchMovies(); // Sayfayı yenile
                       },
                       child: Text(
-                        'S.of(context).hide',  
+                        S.of(context).ok,  
                         style: TextStyle(
                           color: Colors.red,
                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),

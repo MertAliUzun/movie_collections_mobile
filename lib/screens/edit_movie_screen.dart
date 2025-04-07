@@ -951,6 +951,68 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
+            icon: Icon(
+              Icons.hide_source, 
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+            ),
+            onPressed: () {
+             showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+                  title: Text(
+                    'S.of(context).hideChosenMovies', 
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(
+                        S.of(context).cancel,  
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        Navigator.pop(context);
+                          await hideMovies(context, widget.movie!, true);
+                          final snackBar = SnackBar(
+                          elevation: 0,
+                          backgroundColor: Colors.transparent,
+                          behavior: SnackBarBehavior.floating,
+                          content: AwesomeSnackbarContent(
+                            title: S.of(context).succesful, 
+                            message:  'S.of(context).moviesAreHidden', 
+                            contentType: ContentType.success, 
+                            inMaterialBanner: true,
+                          ), 
+                          dismissDirection: DismissDirection.horizontal,
+                        );
+                        ScaffoldMessenger.of(context)
+                          ..hideCurrentMaterialBanner()
+                          ..showSnackBar(snackBar);
+                      },
+                      child: Text(
+                        'S.of(context).hide',  
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.input, color: Colors.white),
             onPressed: _toggleWatchedStatus,
           ),
