@@ -129,6 +129,30 @@ Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromW
       }
 }
 
+Future<void> hideMovies(BuildContext context, Movie movie, bool canPop) async {
+  final box = Hive.box<Movie>('movies');
+  
+  String movieId = movie.id;
+
+  movie.hidden = !movie.hidden!;
+  if(movie.hidden!) 
+  {
+
+  } else {
+
+  }
+  // Hive'da güncelle
+  box.put(movieId, movie);
+
+  _adService.showRewardedAd();
+
+  // Kullanıcıya bildirim göster
+  
+  if (canPop) {
+        Navigator.pop(context, true);
+      }
+}
+
 String getGenreLocalizedString(String genre, BuildContext context) {
   switch (genre) {
     case 'Action': return S.of(context).action;

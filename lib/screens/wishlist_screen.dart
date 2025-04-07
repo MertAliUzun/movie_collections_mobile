@@ -423,6 +423,82 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
           IconButton(
             icon: Icon(
+              Icons.hide_source, 
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+            ),
+            onPressed: () {
+             showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+                  title: Text(
+                    'S.of(context).hideChosenMovies', 
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                    ),
+                  ),
+                  content: Text(
+                    '${_selectedMovies.length} ${'S.of(context).selectedMoviesHideConfirm'}',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(
+                        S.of(context).cancel,  
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        Navigator.pop(context);
+                          for (String movieId in _selectedMovies) {
+                            final movie = _movies.firstWhere((m) => m.id.toString() == movieId);
+                            await hideMovies(context, movie, false);
+                          }
+                          final snackBar = SnackBar(
+                          elevation: 0,
+                          backgroundColor: Colors.transparent,
+                          behavior: SnackBarBehavior.floating,
+                          content: AwesomeSnackbarContent(
+                            title: S.of(context).succesful, 
+                            message:  'S.of(context).moviesAreHidden', 
+                            contentType: ContentType.success, 
+                            inMaterialBanner: true,
+                          ), 
+                          dismissDirection: DismissDirection.horizontal,
+                        );
+                        ScaffoldMessenger.of(context)
+                          ..hideCurrentMaterialBanner()
+                          ..showSnackBar(snackBar);
+                          setState(() {
+                            _selectedMovies.clear();
+                          });
+                          await _fetchMovies(); // Sayfayı yenile
+                      },
+                      child: Text(
+                        'S.of(context).hide',  
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(
               Icons.input, 
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
