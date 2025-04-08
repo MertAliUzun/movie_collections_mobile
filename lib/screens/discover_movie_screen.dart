@@ -41,8 +41,12 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
       List<dynamic> results;
       if (widget.discoverType == 'Latest') {
         results = await _tmdbService.getLatestMovies();
-      } else {
+      } else if (widget.discoverType == 'Upcoming') {
         results = await _tmdbService.getUpcomingMovies();
+      } else if (widget.discoverType == 'Popular') {
+        results = await _tmdbService.getPopularMovies();
+      } else {
+        results = await _tmdbService.getPopularMovies();
       }
       
       // results'ın ilk elemanı bir liste olduğu için onu alıyoruz
@@ -116,7 +120,9 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          widget.discoverType == 'Latest' ? S.of(context).latestMovies : S.of(context).upcomingMovies,
+          widget.discoverType == 'Latest' ? S.of(context).latestMovies : 
+          widget.discoverType == 'Upcoming' ? S.of(context).upcomingMovies
+          : 'S.of(context).popularMovies',
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),

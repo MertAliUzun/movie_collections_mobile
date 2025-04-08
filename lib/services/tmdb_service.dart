@@ -110,6 +110,21 @@ class TmdbService {
     return null;
   }
 
+  Future<List< dynamic>>  getPopularMovies() async {
+    final List< dynamic> movies = [];
+    final response = await http.get(
+      Uri.parse('$_baseUrl/movie/popular?api_key=$_apiKey'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['results'].isNotEmpty) {
+          movies.addAll(data['results']);
+        }
+    }
+    return movies;
+  }
+
   Future<List< dynamic>>  getLatestMovies() async {
     final List< dynamic> movies = [];
     final response = await http.get(

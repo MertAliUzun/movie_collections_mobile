@@ -33,6 +33,8 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
   bool _isLoadingUpcoming = true;
   List<dynamic> _latestMovies = [];
   bool _isLoadingLatest = true;
+  List<dynamic> _popularMovies = [];
+  bool _isLoadingPopularMovies = true;
 
   @override
   void initState() {
@@ -40,6 +42,26 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
     _loadPopularPeople();
     _loadUpcomingMovies();
     _loadLatestMovies();
+    _loadUPopulargMovies();
+  }
+
+  Future<void> _loadUPopulargMovies() async {
+    try {
+      final people = await _tmdbService.getPopularMovies();
+      if (mounted) {
+        setState(() {
+          // Sadece ilk 10 kişiyi al
+          _popularMovies = people.take(10).toList();
+          _isLoadingPopularMovies = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoadingPopularMovies = false;
+        });
+      }
+    }
   }
 
   Future<void> _loadPopularPeople() async {
@@ -111,7 +133,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         centerTitle: true,
         title: Text(
-          'S.of(context).discover',
+          'S.of(context).discoverMovies',
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
@@ -126,6 +148,194 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DiscoverMovieScreen(
+                            discoverType: 'Popular',
+                            isFromWishlist: true,
+                            userEmail: widget.userEmail ?? 'test@test.com',
+                          ),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          'S.of(context).popularMovies',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                          ),
+                        ),
+                        SizedBox(width: screenWidth * 0.03),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade700,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.keyboard_arrow_right,
+                            color: Colors.white70,
+                            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                          )
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            _isLoadingPopularMovies
+                ? const Center(child: CircularProgressIndicator())
+                : Container(
+                    height: isTablet ? 280 : 275,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      itemCount: _popularMovies.length,
+                      itemBuilder: (context, index) {
+                        final movie = _popularMovies[index];
+                        return GestureDetector(
+                          onTap: () async {
+                              final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
+                              if (movieDetails != null) {
+                                final chosenMovie = Movie(
+                                  id: movieDetails['id'].toString(),
+                                  movieName: movieDetails['title'] ?? '',
+                                  directorName: movieDetails['credits']['crew']
+                                      ?.firstWhere((crew) => crew['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '',
+                                  releaseDate: movieDetails['release_date'] != null 
+                                      ? DateTime.parse(movieDetails['release_date']) 
+                                      : DateTime.now(),
+                                  plot: movieDetails['overview'],
+                                  runtime: movieDetails['runtime'],
+                                  imdbRating: movieDetails['vote_average']?.toDouble(),
+                                  writers: movieDetails['credits']['crew']
+                                      ?.where((member) => member['department'] == 'Writing')
+                                      .take(3)
+                                      .map<String>((writer) => writer['name'] as String)
+                                      .toList(),
+                                  actors: movieDetails['credits']['cast']
+                                      ?.take(6)
+                                      .map<String>((actor) => actor['name'] as String)
+                                      .toList(),
+                                  imageLink: movieDetails['poster_path'] != null 
+                                      ? 'https://image.tmdb.org/t/p/w500${movieDetails['poster_path']}'
+                                      : '',
+                                  genres: movieDetails['genres']
+                                      ?.take(6)
+                                      .map<String>((genre) => genre['name'] as String)
+                                      .toList(),
+                                  productionCompany: movieDetails['production_companies']
+                                      ?.take(2)
+                                      .map<String>((company) => company['name'] as String)
+                                      .toList(),
+                                  country: movieDetails['production_countries']?.isNotEmpty 
+                                      ? movieDetails['production_countries'][0]['iso_3166_1']
+                                      : null,
+                                  popularity: movieDetails['popularity']?.toDouble(),
+                                  budget: movieDetails['budget']?.toDouble(),
+                                  revenue: movieDetails['revenue']?.toDouble(),
+                                  watched: false,
+                                  userEmail: widget.userEmail ?? 'test@test.com',
+                                  hidden: false
+                                );
+
+                                if (mounted) {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AddMovieScreen(
+                                        isFromWishlist: true,
+                                        movie: chosenMovie,
+                                      ),
+                                    ),
+                                  );
+                                }
+                              }
+                          },
+                          child: Container(
+                            width: isTablet ? 180 : 140,
+                            margin: const EdgeInsets.symmetric(horizontal: 2),
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Expanded(
+                                    flex: 6,
+                                    child: ClipRRect(
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(16.0),
+                                      topRight: Radius.circular(16.0),
+                                    ),
+                                    child: Image.network(
+                                      'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
+                                      fit: BoxFit.cover,
+                                      height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                      width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                      errorBuilder: (context, error, stackTrace) =>
+                                        Image.asset(
+                                          'assets/images/placeholder_poster.png',
+                                          fit: BoxFit.cover,
+                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
+                                          width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                        ),
+                                    ),
+                                  ),
+                                  ),
+                                  
+                                  Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(8.0),
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromARGB(255, 44, 50, 60),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            movie['original_title'],
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
             const SizedBox(height: 16),
             // Popüler Kişiler Başlık
             Padding(
