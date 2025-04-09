@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Dijital"),
         "director": MessageLookupByLibrary.simpleMessage("Yönetmen"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Yönetmen Yok"),
+        "discover": MessageLookupByLibrary.simpleMessage("Keşfet"),
         "documentary": MessageLookupByLibrary.simpleMessage("Belgesel"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Seriler"),
         "genre": MessageLookupByLibrary.simpleMessage("Tür"),
         "genres": MessageLookupByLibrary.simpleMessage("Türler"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Film türü veya konusu yazarak öneriler alabilirsiniz"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupla"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Gizli Filmler"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Seçili Filmleri Gizle"),
         "history": MessageLookupByLibrary.simpleMessage("Tarih"),
         "horror": MessageLookupByLibrary.simpleMessage("Korku"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Puanı"),
@@ -159,9 +165,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film Başarıyla Güncellendi!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Film izleme listenize eklenmiştir."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmler gizlendi"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film silindi."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmler Koleksiyona Taşındı!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "Filmler eski haline getirildi"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" film seçildi"),
         "music": MessageLookupByLibrary.simpleMessage("Müzik"),
         "myNotes": MessageLookupByLibrary.simpleMessage("Notlarım"),
@@ -177,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No Franchises Selected"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Hiçbir Tür Seçilmedi"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Gizlenmiş Filminiz Bulunmamaktadır"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID Tokeni bulunamadı."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -196,19 +210,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Kasım"),
         "october": MessageLookupByLibrary.simpleMessage("Ekim"),
         "ok": MessageLookupByLibrary.simpleMessage("Tamam"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Serideki Diğer Filmler"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Lütfen Giriniz"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Lütfen film adını giriniz"),
         "plot": MessageLookupByLibrary.simpleMessage("Konu"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popüler"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Popüler Filmler"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Popüler Kişiler"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium Müşteri Hizmetleri"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Film afişini seçmek için tıklayın"),
+        "producer": MessageLookupByLibrary.simpleMessage("Yapımcı"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Yapım Şirketleri"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Rastgele Film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Film önerme dosyası oluşturuldu."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Seçili filmlerle bir film önerme dosyası oluşturmayı onaylıyor musunuz?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Film Önerme Modu"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Çıkış Tarihi"),
@@ -220,6 +245,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Film Ekleme Limitini Kaldır"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kirala)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Gizli Filmleri Görünür Yap"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Lütfen önceki ekrana dönün"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Gelir: "),
@@ -229,11 +256,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Süresi (Dakika)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Bilim Kurgu"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Film Ara"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Kişileri Ara"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "İzleme Listenize eklemek için film seçin"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG Derecelendirmesi Seçin"),
         "selected": MessageLookupByLibrary.simpleMessage("Seçili"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "seçilen filmler silinecek. Onaylıyor musunuz?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Seçili filmleri gizlemeyi onaylıyor musunuz?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Seçili filmleri gizlilikten çıkarmayı onaylıyor musunuz?"),
         "september": MessageLookupByLibrary.simpleMessage("Eylül"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google oturum açma iptal edildi."),
@@ -281,6 +315,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Haftalık"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoş geldiniz, "),
         "western": MessageLookupByLibrary.simpleMessage("Vahşi Batı"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Ne tür filmler arıyorsunuz?"),
         "whereToWatch":
             MessageLookupByLibrary.simpleMessage("Nereden İzlenebilir?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("silinsin mi?"),

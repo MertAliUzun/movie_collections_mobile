@@ -2009,6 +2009,206 @@ class S {
       args: [],
     );
   }
+
+  /// `What kind of movies are you looking for?`
+  String get whatKindMoviesLookingFor {
+    return Intl.message(
+      'What kind of movies are you looking for?',
+      name: 'whatKindMoviesLookingFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By typing the genre or topic of the film, you can get recommendations`
+  String get getRecommendationFromAI {
+    return Intl.message(
+      'By typing the genre or topic of the film, you can get recommendations',
+      name: 'getRecommendationFromAI',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Producer`
+  String get producer {
+    return Intl.message(
+      'Producer',
+      name: 'producer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hide Chosen Movies`
+  String get hideChosenMovies {
+    return Intl.message(
+      'Hide Chosen Movies',
+      name: 'hideChosenMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you confirm hiding selected movies?`
+  String get selectedMoviesHideConfirm {
+    return Intl.message(
+      'Do you confirm hiding selected movies?',
+      name: 'selectedMoviesHideConfirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movies have been hidden`
+  String get moviesAreHidden {
+    return Intl.message(
+      'Movies have been hidden',
+      name: 'moviesAreHidden',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover`
+  String get discover {
+    return Intl.message(
+      'Discover',
+      name: 'discover',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Movies`
+  String get popularMovies {
+    return Intl.message(
+      'Popular Movies',
+      name: 'popularMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular People`
+  String get popularPeople {
+    return Intl.message(
+      'Popular People',
+      name: 'popularPeople',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restore Hidden Movies`
+  String get restoreHiddenMovies {
+    return Intl.message(
+      'Restore Hidden Movies',
+      name: 'restoreHiddenMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other Movies in Series`
+  String get otherMoviesInSeries {
+    return Intl.message(
+      'Other Movies in Series',
+      name: 'otherMoviesInSeries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movies restored`
+  String get moviesRestored {
+    return Intl.message(
+      'Movies restored',
+      name: 'moviesRestored',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you confirm restoring selected movies?`
+  String get selectedMoviesRestoreConfirm {
+    return Intl.message(
+      'Do you confirm restoring selected movies?',
+      name: 'selectedMoviesRestoreConfirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hidden Movies`
+  String get hiddenMovies {
+    return Intl.message(
+      'Hidden Movies',
+      name: 'hiddenMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Hidden Movies`
+  String get noHiddenMovies {
+    return Intl.message(
+      'No Hidden Movies',
+      name: 'noHiddenMovies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search People`
+  String get searchPeople {
+    return Intl.message(
+      'Search People',
+      name: 'searchPeople',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movie recommend file created.`
+  String get recommendFileCreated {
+    return Intl.message(
+      'Movie recommend file created.',
+      name: 'recommendFileCreated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you confirm creating a recommed movie file with selected movies?`
+  String get recommendFileCreationConfirm {
+    return Intl.message(
+      'Do you confirm creating a recommed movie file with selected movies?',
+      name: 'recommendFileCreationConfirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select movies to add to your Watch List`
+  String get selectMoviesToAdd {
+    return Intl.message(
+      'Select movies to add to your Watch List',
+      name: 'selectMoviesToAdd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movies have been added to your Watch List.`
+  String get moviesAddedToWatchList {
+    return Intl.message(
+      'Movies have been added to your Watch List.',
+      name: 'moviesAddedToWatchList',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

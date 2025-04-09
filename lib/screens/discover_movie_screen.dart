@@ -122,7 +122,7 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
         title: Text(
           widget.discoverType == 'Latest' ? S.of(context).latestMovies : 
           widget.discoverType == 'Upcoming' ? S.of(context).upcomingMovies
-          : 'S.of(context).popularMovies',
+          : S.of(context).popularMovies,
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),

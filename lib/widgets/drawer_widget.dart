@@ -31,6 +31,7 @@ import '../services/tmdb_service.dart';
 import '../screens/ai_movie_recommendations_screen.dart';
 import '../screens/discover_movie_screen.dart';
 import '../screens/popular_people_screen.dart';
+import '../sup/screen_util.dart';
 
 class DrawerWidget extends StatefulWidget {
   final String _viewType;
@@ -1206,13 +1207,21 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       ),
                     ],
                   )
-                  : IconButton(
-                icon: const Icon(Icons.login, size: 50),
-                onPressed: () async {
-                  // Google hesabına giriş yap
-                  await _googleSignIn(context); // Google Sign-In fonksiyonunu çağır
-                },
-              ),
+                  : GestureDetector(
+                    onTap: () async {
+                      // Google hesabına giriş yap
+                      await _googleSignIn(context);
+                    } ,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0,0,0,10),
+                      child: Image.asset(
+                       'assets/images/splash.png',
+                       fit: BoxFit.cover,
+                       height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.2),
+                       width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.3),
+                      ),
+                    ),
+                  )
             ),
             ListTile(
               title: Column(
@@ -1428,7 +1437,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Expanded(child: Text('S.of(context).popularMovies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),overflow: TextOverflow.ellipsis, softWrap: false)),
+                              Expanded(child: Text(S.of(context).popularMovies, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),overflow: TextOverflow.ellipsis, softWrap: false)),
                               SizedBox(width: screenWidth * 0.03,),
                               Icon(size: screenWidth * 0.055,
                               Icons.trending_up, color: Colors.white,),
@@ -1467,7 +1476,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Expanded(child: Text('S.of(context).hiddenMovies', style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
+                              Expanded(child: Text(S.of(context).hiddenMovies, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039), overflow: TextOverflow.ellipsis, softWrap: false)),
                               SizedBox(width: screenWidth * 0.03),
                               Icon(size: screenWidth * 0.055, Icons.slow_motion_video, color: Colors.white),
                             ],

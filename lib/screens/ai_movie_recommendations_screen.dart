@@ -139,10 +139,13 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                 ? Center(child: CircularProgressIndicator(color: Colors.white))
                 : _recommendedMovies.isEmpty
                     ? Center(
-                        child: Text(
-                          'Film türü veya konusu yazarak\nöneriler alabilirsiniz',
-                          style: TextStyle(color: Colors.white70),
-                          textAlign: TextAlign.center,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.18),
+                          child: Text(
+                            S.of(context).getRecommendationFromAI,
+                            style: TextStyle(color: Colors.white70),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       )
                     :SingleChildScrollView(
@@ -307,7 +310,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
               controller: _textController,
               style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
-                hintText: 'Ne tür filmler arıyorsunuz?',
+                hintText: S.of(context).whatKindMoviesLookingFor,
                 hintStyle: TextStyle(color: Colors.white70),
                 suffixIcon: IconButton(
                   icon: Icon(Icons.search, color: Colors.white),
@@ -361,7 +364,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
       ),
       floatingActionButtonLocation:  CustomFloatingActionButtonLocation(
   alignment: Alignment.bottomCenter,
-  offsetY: -screenHeight * 0.1, // 📌 FAB’i 30 piksel yukarı kaydır
+  offsetY: -screenHeight * 0.1,
 ),
     );
   }

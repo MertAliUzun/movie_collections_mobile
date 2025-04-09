@@ -121,8 +121,8 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
       content: AwesomeSnackbarContent(
         title: S.of(context).succesful, 
         message: hasError 
-          ? 'S.of(context).someMoviesRestoredWithErrors' 
-          : '${_selectedMovies.length} ${'S.of(context).moviesRestored'}', 
+          ? S.of(context).error 
+          : '${_selectedMovies.length} ${S.of(context).moviesRestored}', 
         contentType: ContentType.success, 
         inMaterialBanner: true,
       ), 
@@ -167,7 +167,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
       content: AwesomeSnackbarContent(
         title: S.of(context).succesful, 
         message: hasError 
-          ? 'S.of(context).someMoviesDeletedWithErrors' 
+          ? S.of(context).error
           : '${_selectedMovies.length} ${S.of(context).moviesDeleted}', 
         contentType: ContentType.success, 
         inMaterialBanner: true,
@@ -242,14 +242,14 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
                     builder: (context) => AlertDialog(
                       backgroundColor: const Color.fromARGB(255, 44, 50, 60),
                       title: Text(
-                        'S.of(context).restoreHiddenMovies', 
+                        S.of(context).restoreHiddenMovies, 
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
                         ),
                       ),
                       content: Text(
-                        '${_selectedMovies.length} ${'S.of(context).selectedMoviesRestoreConfirm'}',
+                        '${_selectedMovies.length} ${S.of(context).selectedMoviesRestoreConfirm}',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
@@ -374,7 +374,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
             centerTitle: true,
             title: !_isSearching 
               ? Text(
-                  '${_hiddenMovies.length} ${'S.of(context).hiddenMovies'}', 
+                  '${_hiddenMovies.length} ${S.of(context).hiddenMovies}', 
                   style: TextStyle(
                     color: Colors.white, 
                     fontSize: ScreenUtil.getAdaptiveTextSize(context, 18),
@@ -411,7 +411,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
       body: _hiddenMovies.isEmpty 
         ? Center(
             child: Text(
-              'S.of(context).noHiddenMovies',
+              S.of(context).noHiddenMovies,
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),

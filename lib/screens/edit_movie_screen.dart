@@ -962,8 +962,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                 builder: (context) => AlertDialog(
                   backgroundColor: const Color.fromARGB(255, 44, 50, 60),
                   title: Text(widget.movie!.hidden! ? 
-                    'S.of(context).restoreHiddenMovies' :
-                    'S.of(context).hideChosenMovies', 
+                    S.of(context).restoreHiddenMovies :
+                    S.of(context).hideChosenMovies, 
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
@@ -990,7 +990,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           behavior: SnackBarBehavior.floating,
                           content: AwesomeSnackbarContent(
                             title: S.of(context).succesful, 
-                            message:  'S.of(context).moviesAreHidden', 
+                            message:  S.of(context).moviesAreHidden, 
                             contentType: ContentType.success, 
                             inMaterialBanner: true,
                           ), 
@@ -1982,8 +1982,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     child: Column(
                       children: [
                         Padding(
-                        padding: const EdgeInsets.all(16.0), //'S.of
-                        child: Text('Other Movies in Series', style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(S.of(context).otherMoviesInSeries, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       ),
                         Container(
                           height: isTablet ? 350 : 300,

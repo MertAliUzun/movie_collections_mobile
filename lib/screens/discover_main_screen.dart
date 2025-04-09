@@ -133,7 +133,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         centerTitle: true,
         title: Text(
-          'S.of(context).discoverMovies',
+          S.of(context).discover,
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
@@ -170,7 +170,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                     child: Row(
                       children: [
                         Text(
-                          'S.of(context).popularMovies',
+                          S.of(context).popularMovies,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
@@ -738,7 +738,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                     child: Row(
                       children: [
                         Text(
-                          'S.of(context).popularPeople',
+                          S.of(context).popularPeople,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),

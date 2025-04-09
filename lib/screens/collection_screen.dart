@@ -448,14 +448,14 @@ class _CollectionScreenState extends State<CollectionScreen> {
                 builder: (context) => AlertDialog(
                   backgroundColor: const Color.fromARGB(255, 44, 50, 60),
                   title: Text(
-                    'S.of(context).hideChosenMovies', 
+                    S.of(context).hideChosenMovies, 
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
                     ),
                   ),
                   content: Text(
-                    '${_selectedMovies.length} ${'S.of(context).selectedMoviesHideConfirm'}',
+                    '${_selectedMovies.length} ${S.of(context).selectedMoviesHideConfirm}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
@@ -485,7 +485,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                           behavior: SnackBarBehavior.floating,
                           content: AwesomeSnackbarContent(
                             title: S.of(context).succesful, 
-                            message:  'S.of(context).moviesAreHidden', 
+                            message:  S.of(context).moviesAreHidden, 
                             contentType: ContentType.success, 
                             inMaterialBanner: true,
                           ), 

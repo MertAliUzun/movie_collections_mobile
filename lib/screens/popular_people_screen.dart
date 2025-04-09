@@ -108,7 +108,7 @@ class _PopularPeopleScreenState extends State<PopularPeopleScreen> {
                 fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
               ),
               decoration: InputDecoration(
-                hintText: 'S.of(context).searchPeople',
+                hintText: S.of(context).searchPeople,
                 hintStyle: TextStyle(
                   color: Colors.white54,
                   fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
@@ -253,7 +253,10 @@ class _PopularPeopleScreenState extends State<PopularPeopleScreen> {
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                       Text(
-                                        person['known_for_department'] ?? 'Unknown',
+                                        person['known_for_department'] == 'Acting' ? S.of(context).actor : 
+                                        person['known_for_department'] == 'Directing' ? S.of(context).director :
+                                        person['known_for_department'] == 'Producing' ? S.of(context).producer :
+                                        person['known_for_department'] == 'Writing' ? S.of(context).writer  : S.of(context).actor,
                                         style: TextStyle(
                                           color: Colors.white54,
                                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
