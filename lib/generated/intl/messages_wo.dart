@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Réalisateur"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Réalisateur Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Xamle"),
         "documentary": MessageLookupByLibrary.simpleMessage("Documentaire"),
         "drama": MessageLookupByLibrary.simpleMessage("Drame"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -127,7 +128,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Tugge ak tema film bi, ngeen naa jox sa ndamlu."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Mbooloo"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Film yu sàcc"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Sàcc ci film yu yoon"),
         "history": MessageLookupByLibrary.simpleMessage("Histoire"),
         "horror": MessageLookupByLibrary.simpleMessage("Horreur"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Score"),
@@ -158,12 +164,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieTitle": MessageLookupByLibrary.simpleMessage("Film Title"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage("Film am na!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Film yu yoon am nañu ci sa laaj"),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Film yu yoon sàcc nañu"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film ñu ko bañ."),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Film yi ñu ko dëppoo!"),
         "moviesMovedToWatchlist":
             MessageLookupByLibrary.simpleMessage("Film yi ñu ko listu woote!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Film yu yoon jàmmé nañu"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film ñu ko tànn."),
         "music": MessageLookupByLibrary.simpleMessage("Musique"),
@@ -180,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Amul franchises yu jéemle"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Genre wuñuñu."),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Amul film yu sàcc"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID Token wuñuñu."),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("Film Wuñuñu ci Genre bi!"),
@@ -197,19 +211,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Noomber"),
         "october": MessageLookupByLibrary.simpleMessage("Oktoober"),
         "ok": MessageLookupByLibrary.simpleMessage("Waaw"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Film yu bees ci sa réew"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Bindal"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Film title bind"),
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popularité ci"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Film yu jàmm"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Nit yu jàmm"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Jàmm ci ñuul ci jàmm bu buum"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Poster wuñuñu."),
+        "producer": MessageLookupByLibrary.simpleMessage("Tëmmant"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Production Companies"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film Aléatoire"),
+        "recommendFileCreated":
+            MessageLookupByLibrary.simpleMessage("Ndégg-dëgg yi jàngé nañu."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ndax teewul ngeen ci jàngé ci ndégg-dëgg yi jàngé nañu?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Mode bi tax film yi"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Bésu Génération"),
@@ -221,6 +244,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Wutëël xéewal bu jëm ci séy"),
         "rent": MessageLookupByLibrary.simpleMessage("(Loyer)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Boo jàmmé film yu yoon"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Screen bu ñu ko bañ."),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Revenue: "),
@@ -232,10 +257,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science-Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Wut Film"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Sàmm nit"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Film yu yoon aji jàmmé ci samay laaj"),
         "selectPgRating": MessageLookupByLibrary.simpleMessage("Jox PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Tànn"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "film yi ñu ko tànn dinañu ko bañ. Danga ko gëna xam?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ndax teewul ngeen ci sàcc ci film yu yoon?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ndax teewul ngeen ci jàmmé ci film yu yoon?"),
         "september": MessageLookupByLibrary.simpleMessage("Sektanber"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google Sign-In dañu ko bañ."),
@@ -282,6 +314,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Ay Dóór"),
         "welcome": MessageLookupByLibrary.simpleMessage("Dégg naa, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Naka film yu nekk ngeen ci?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Fan la Woote?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("dinañu ko bañ?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Listu Woote"),

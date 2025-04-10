@@ -194,5 +194,26 @@
     "recommendMovieMode": "Mode ya Mibeko ya filimi",
     "findMovieMode": "Mode ya Kelelisa filimi",
     "latestMovies": "Filimi ya Latest",
-    "upcomingMovies": "Filimi ya Kusomba"
+    "upcomingMovies": "Filimi ya Kusomba",
+    "whatKindMoviesLookingFor": "Nki filimi yawu kele keba?",
+    "getRecommendationFromAI": "Kuma kulanda genre to topiki ya filimi, uta fwana vudimu",
+    "producer": "Mokambi",
+    "hideChosenMovies": "Kebisa filimi zikwidi",
+    "selectedMoviesHideConfirm": "Umekisa ki okeba filimi zikwidi?",
+    "moviesAreHidden": "Filimi zikwidi zikebisiwa",
+    "discover": "Lenda",
+    "popularMovies": "Filimi ziwuti",
+    "popularPeople": "Bantu bikwidi",
+    "restoreHiddenMovies": "Kansela filimi zikebisiwe",
+    "otherMoviesInSeries": "Filimi zimbote mu sere",
+    "moviesRestored": "Filimi zikebiswe",
+    "selectedMoviesRestoreConfirm": "Umekisa ki okansela filimi zikwidi?",
+    "hiddenMovies": "Filimi zikebisiwe",
+    "noHiddenMovies": "Zala fi filimi zikebisiwe",
+    "searchPeople": "Landa bantu",
+    "recommendFileCreated": "Fayilu ya vudimu ya filimi ke keba.",
+    "recommendFileCreationConfirm": "Umekisa ki okeba fayilu ya vudimu ya filimi na filimi zikwidi?",
+    "selectMoviesToAdd": "Landa filimi zikwidi na lisita ya ku mona",
+    "moviesAddedToWatchList": "Filimi zikwidi zikebisiwe na lisita ya ku mona."
+    
 }

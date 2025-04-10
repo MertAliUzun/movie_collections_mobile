@@ -194,5 +194,26 @@
     "recommendMovieMode": "حالت پیشنهاد فیلم",
     "findMovieMode": "حالت جستجوی فیلم",
     "latestMovies": "آخرین فیلم ها",
-    "upcomingMovies": "فیلم های آینده"
+    "upcomingMovies": "فیلم های آینده",
+    "whatKindMoviesLookingFor": "چه نوع فیلم‌هایی دنبال می‌کنید؟",
+    "getRecommendationFromAI": "با تایپ کردن ژانر یا موضوع فیلم، می‌توانید پیشنهادات دریافت کنید",
+    "producer": "تهیه‌کننده",
+    "hideChosenMovies": "فیلم‌های انتخاب شده را مخفی کن",
+    "selectedMoviesHideConfirm": "آیا تأیید می‌کنید که فیلم‌های انتخاب شده را مخفی کنید؟",
+    "moviesAreHidden": "فیلم‌ها مخفی شدند",
+    "discover": "کشف کن",
+    "popularMovies": "فیلم‌های محبوب",
+    "popularPeople": "افراد محبوب",
+    "restoreHiddenMovies": "فیلم‌های مخفی شده را بازیابی کن",
+    "otherMoviesInSeries": "فیلم‌های دیگر در این سری",
+    "moviesRestored": "فیلم‌ها بازیابی شدند",
+    "selectedMoviesRestoreConfirm": "آیا تأیید می‌کنید که فیلم‌های انتخاب شده را بازیابی کنید؟",
+    "hiddenMovies": "فیلم‌های مخفی شده",
+    "noHiddenMovies": "هیچ فیلم مخفی‌شده‌ای وجود ندارد",
+    "searchPeople": "جستجو برای افراد",
+    "recommendFileCreated": "فایل پیشنهاد فیلم ایجاد شد.",
+    "recommendFileCreationConfirm": "آیا تأیید می‌کنید که فایل پیشنهادی با فیلم‌های انتخاب شده ایجاد شود؟",
+    "selectMoviesToAdd": "فیلم‌ها را انتخاب کنید تا به لیست تماشا اضافه کنید",
+    "moviesAddedToWatchList": "فیلم‌ها به لیست تماشا اضافه شدند."
+
 }

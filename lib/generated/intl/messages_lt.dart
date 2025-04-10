@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Režisierius"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Režisierius neegzistuoja"),
+        "discover": MessageLookupByLibrary.simpleMessage("Atrasti"),
         "documentary":
             MessageLookupByLibrary.simpleMessage("Dokumentinė filma"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
@@ -128,7 +129,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Fransizės"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanras"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrai"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Įveskite filmo žanrą ar temą ir gaukite rekomendacijas"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupuoti pagal"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Paslėpti filmai"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Slėpti pasirinktas filmes"),
         "history": MessageLookupByLibrary.simpleMessage("Istorija"),
         "horror": MessageLookupByLibrary.simpleMessage("Siaubo"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Eksaltacijos balas"),
@@ -161,12 +167,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filma sėkmingai atnaujinta!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmos"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmai pridėti prie jūsų peržiūros sąrašo."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmai paslėpti"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmai ištrinti."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmos perkeltos į kolekciją!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmos perkeltos į norų sąrašą!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmai atkurti"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" filmai pasirinkti"),
         "music": MessageLookupByLibrary.simpleMessage("Muzika"),
@@ -183,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pasirinkta jokių franšizių"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nėra pasirinktų žanrų"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Nėra paslėptų filmų"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID žetonas nerastas."),
         "noMoviesForGenre":
@@ -201,20 +215,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Lapkritis"),
         "october": MessageLookupByLibrary.simpleMessage("Spalis"),
         "ok": MessageLookupByLibrary.simpleMessage("Gerai"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Kiti filmai serijoje"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Prašome įvesti"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Prašome įvesti filmo pavadinimą"),
         "plot": MessageLookupByLibrary.simpleMessage("Siužetas"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populiarus dėl"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Populiarūs filmai"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Populiarūs žmonės"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakatas"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium klientų palaikymas"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Spauskite, kad pasirinkti filmo plakatus"),
+        "producer": MessageLookupByLibrary.simpleMessage("Prodiuseris"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Gamybos įmonės"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Atsitiktinė filma"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Filmo rekomendacijų failas sukurtas."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ar patvirtinate rekomendacijų failo kūrimą su pasirinktais filmais?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Filmo rekomendacijų režimas"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Išleidimo data"),
@@ -226,6 +251,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Pašalinti filmų pridėjimo ribojimus"),
         "rent": MessageLookupByLibrary.simpleMessage("(Nuoma)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Atkurti paslėptus filmus"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Prašome grįžti į ankstesnį ekraną"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Pajamos: "),
@@ -236,11 +263,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Mokslinė fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ieškoti filmų"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Ieškoti žmonių"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Pasirinkite filmus, kuriuos norite pridėti prie savo peržiūros sąrašo"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Pasirinkite PG įvertinimą"),
         "selected": MessageLookupByLibrary.simpleMessage("Pasirinktas"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Pasirinkti filmai bus ištrinti. Ar patvirtinate?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ar patvirtinate pasirinktas filmes paslėpti?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ar patvirtinate pasirinktas filmes atkurti?"),
         "september": MessageLookupByLibrary.simpleMessage("Rugsėjis"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google prisijungimas buvo atšauktas."),
@@ -290,6 +324,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Kas savaitę"),
         "welcome": MessageLookupByLibrary.simpleMessage("Sveiki, "),
         "western": MessageLookupByLibrary.simpleMessage("Vesterna"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Kokių filmų ieškote?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Kur žiūrėti?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("bus ištrinta?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Norų sąrašas"),

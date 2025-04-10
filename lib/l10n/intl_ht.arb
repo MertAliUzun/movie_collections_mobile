@@ -194,5 +194,26 @@
     "recommendMovieMode": "Mòd Rekòmandasyon Film",
     "findMovieMode": "Mòd Rechèch Film",
     "latestMovies": "Dernye Fim yo",
-    "upcomingMovies": "Fim kap vini yo"
+    "upcomingMovies": "Fim kap vini yo",
+    "whatKindMoviesLookingFor": "Kisa kalite fim ou ap chèche a?",
+    "getRecommendationFromAI": "Lè ou tape jan oswa sijè fim nan, ou ka jwenn rekòmandasyon",
+    "producer": "Pwodiktè",
+    "hideChosenMovies": "Kache fim yo chwazi",
+    "selectedMoviesHideConfirm": "Èske ou konfime ke ou vle kache fim yo chwazi?",
+    "moviesAreHidden": "Fim yo kache",
+    "discover": "Dekouvri",
+    "popularMovies": "Fim popilè",
+    "popularPeople": "Moun popilè",
+    "restoreHiddenMovies": "Restore fim yo kache",
+    "otherMoviesInSeries": "Lòt fim nan seri a",
+    "moviesRestored": "Fim yo restore",
+    "selectedMoviesRestoreConfirm": "Èske ou konfime ke ou vle restore fim yo chwazi?",
+    "hiddenMovies": "Fim yo kache",
+    "noHiddenMovies": "Pa gen fim ki kache",
+    "searchPeople": "Chèche moun",
+    "recommendFileCreated": "Dosye rekòmandasyon fim te kreye.",
+    "recommendFileCreationConfirm": "Èske ou konfime kreye yon dosye rekòmandasyon fim ak fim yo chwazi?",
+    "selectMoviesToAdd": "Chwazi fim pou ajoute nan lis gade ou",
+    "moviesAddedToWatchList": "Fim yo ajoute nan lis gade ou."
+
 }

@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("डिजिटल"),
         "director": MessageLookupByLibrary.simpleMessage("निर्देशक"),
         "directorNull": MessageLookupByLibrary.simpleMessage("निर्देशक शून्य"),
+        "discover": MessageLookupByLibrary.simpleMessage("पत्ता लगाउनुहोस्"),
         "documentary": MessageLookupByLibrary.simpleMessage("डोक्युमेन्ट्री"),
         "drama": MessageLookupByLibrary.simpleMessage("नाटक"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -126,8 +127,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("फ्रान्चाइजहरू"),
         "genre": MessageLookupByLibrary.simpleMessage("प्रकार"),
         "genres": MessageLookupByLibrary.simpleMessage("प्रकारहरू"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "चलचित्रको प्रकार वा बिषय टाइप गर्दा तपाईं सिफारिस प्राप्त गर्न सक्नुहुन्छ"),
         "groupBy":
             MessageLookupByLibrary.simpleMessage("द्वारा समूहबद्ध गर्नुहोस्"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("लुकेका चलचित्रहरू"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "चयन गरिएका चलचित्रहरू लुकाउनुहोस्"),
         "history": MessageLookupByLibrary.simpleMessage("इतिहास"),
         "horror": MessageLookupByLibrary.simpleMessage("भय"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("हाइप स्कोर"),
@@ -161,12 +168,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "चलचित्र सफलतापूर्वक अद्यावधिक गरियो!"),
         "movies": MessageLookupByLibrary.simpleMessage("चलचित्रहरू"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "चलचित्रहरू तपाईंको हेर्नको लागि सूचीमा थपिएको छ।"),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("चलचित्रहरू लुकेको छ"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" चलचित्र मेटाइएको छ।"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "चलचित्रहरू सङ्ग्रहमा सारियो!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "चलचित्रहरू हेर्न चाहिने सूचीमा सारियो!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "चलचित्रहरू पुन: स्थापना गरियो"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" चलचित्र चयन गरिएको छ"),
         "music": MessageLookupByLibrary.simpleMessage("संगीत"),
@@ -183,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "कुनै फ्रान्चाइज चयन गरिएको छैन"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("कुनै प्रकार चयन गरिएको छैन"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("कोही लुकेको चलचित्रहरू छैन"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID टोकन फेला परेको छैन।"),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -202,19 +217,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("नोभेम्बर"),
         "october": MessageLookupByLibrary.simpleMessage("अक्टोबर"),
         "ok": MessageLookupByLibrary.simpleMessage("ठीक छ"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("श्रृंखलामा अन्य चलचित्रहरू"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("कृपया राख्नुहोस्"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "कृपया चलचित्रको शीर्षक राख्नुहोस्"),
         "plot": MessageLookupByLibrary.simpleMessage("कथा"),
         "popularFor": MessageLookupByLibrary.simpleMessage("प्रसिद्ध लागि"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("लोकप्रिय चलचित्रहरू"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("लोकप्रिय व्यक्तिहरू"),
         "poster": MessageLookupByLibrary.simpleMessage("पोस्टर"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("प्रिमियम ग्राहक समर्थन"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "चलचित्र पोस्टर चयन गर्न थिच्नुहोस्"),
+        "producer": MessageLookupByLibrary.simpleMessage("निर्माता"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("निर्माण कम्पनीहरू"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("सामान्य चलचित्र"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "चलचित्र सिफारिस फाइल बनाइएको छ।"),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "के तपाईं चयन गरिएका चलचित्रहरूबाट चलचित्र सिफारिस फाइल बनाउन पुष्टि गर्नुहुन्छ?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("चलचित्र सिफारिस मोड"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("मुक्ति मिति"),
@@ -226,6 +252,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "फिल्महरूको अतिरिक्त सीमा हटाउनुहोस्"),
         "rent": MessageLookupByLibrary.simpleMessage("(भाडामा)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "लुकेका चलचित्रहरू पुन: स्थापना गर्नुहोस्"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "कृपया अघिल्लो स्क्रिनमा फर्कनुहोस्"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("आम्दानी: "),
@@ -237,11 +265,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("विज्ञान कल्पना"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("चलचित्रहरू खोज्नुहोस्"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("व्यक्तिहरू खोज्नुहोस्"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "तपाईंको हेर्नको लागि सूचीमा थप्नको लागि चलचित्रहरू चयन गर्नुहोस्"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG रेटिंग चयन गर्नुहोस्"),
         "selected": MessageLookupByLibrary.simpleMessage("चयन गरिएको"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "चयन गरिएको चलचित्र मेटिनेछ। के तपाईं पुष्टि गर्न चाहनुहुन्छ?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "के तपाईं चयन गरिएका चलचित्रहरू लुकाउने कुरा पुष्टि गर्नुहुन्छ?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "के तपाईं चयन गरिएका चलचित्रहरू पुन: स्थापना गर्ने कुरा पुष्टि गर्नुहुन्छ?"),
         "september": MessageLookupByLibrary.simpleMessage("सप्टेम्बर"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google साइन-इन रद्द गरियो।"),
@@ -290,6 +326,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("साप्ताहिक"),
         "welcome": MessageLookupByLibrary.simpleMessage("स्वागत छ, "),
         "western": MessageLookupByLibrary.simpleMessage("पश्चिमी"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "तपाईं कस्तो प्रकारको चलचित्र खोज्दै हुनुहुन्छ?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("कहाँ हेर्ने?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("मेटिनेछ?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("हेर्न चाहिने सूची"),

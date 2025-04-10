@@ -194,5 +194,26 @@
     "recommendMovieMode": "Режим рекомендации фильма",
     "findMovieMode": "Режим поиска фильма",
     "latestMovies": "Последние фильмы",
-    "upcomingMovies": "Предстоящие фильмы"
+    "upcomingMovies": "Предстоящие фильмы",
+    "whatKindMoviesLookingFor": "Хьо кхо кино ю? ",
+    "getRecommendationFromAI": "Фильм жанри дийца кхо, кхетам гӏарарта, рецоммендациеш дола кхетар",
+    "producer": "Продюсер",
+    "hideChosenMovies": "Тиже хьо кино",
+    "selectedMoviesHideConfirm": "Тиже хьо кино тиже долу?",
+    "moviesAreHidden": "Кино тиже гӏараш",
+    "discover": "Дахар",
+    "popularMovies": "Популяр кино",
+    "popularPeople": "Популяр хьаккхуш",
+    "restoreHiddenMovies": "Тиже хьо кино йоьлчаш",
+    "otherMoviesInSeries": "Тӏоху кино сериал да",
+    "moviesRestored": "Кино йоьлчаш",
+    "selectedMoviesRestoreConfirm": "Тиже хьо кино йоьлчаш долу?",
+    "hiddenMovies": "Тиже хьо кино",
+    "noHiddenMovies": "Тиже хьо кино йоьлчаш ю",
+    "searchPeople": "Хьаккхуш ца хетар",
+    "recommendFileCreated": "Фильм рецоммендациеш файл гӏараш",
+    "recommendFileCreationConfirm": "Тиже хьо фильм рецоммендациеш файл гӏараш долу?",
+    "selectMoviesToAdd": "Кино-сийт яьссах куизабер",
+    "moviesAddedToWatchList": "Кино-сийт кхетар сийт туьгаш"
+
 }

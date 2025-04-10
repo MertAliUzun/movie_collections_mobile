@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Režisér"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Režisér nezadaný"),
+        "discover": MessageLookupByLibrary.simpleMessage("Objavovať"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentárny"),
         "drama": MessageLookupByLibrary.simpleMessage("Dráma"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -126,7 +127,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Žáner"),
         "genres": MessageLookupByLibrary.simpleMessage("Žánre"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Zadaním žánru alebo témy filmu môžete získať odporúčania."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Skupina podľa"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Skryté filmy"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Skryť vybrané filmy"),
         "history": MessageLookupByLibrary.simpleMessage("História"),
         "horror": MessageLookupByLibrary.simpleMessage("Horor"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hodnotenie Hype"),
@@ -159,12 +165,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Film bol úspešne aktualizovaný!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmy"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmy boli pridané do vášho zoznamu na sledovanie."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmy boli skryté"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmy boli vymazané."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmy boli presunuté do kolekcie!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmy boli presunuté do zoznamu na sledovanie!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmy boli obnovené"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" filmy boli vybrané"),
         "music": MessageLookupByLibrary.simpleMessage("Hudba"),
@@ -181,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Žiadne franšízy neboli vybrané"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Žiadne žánre neboli vybrané"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Žiadne skryté filmy"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID token nebol nájdený."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -200,19 +214,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("November"),
         "october": MessageLookupByLibrary.simpleMessage("Október"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Ďalšie filmy v sérii"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Prosím zadajte"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Prosím zadajte názov filmu"),
         "plot": MessageLookupByLibrary.simpleMessage("Dej"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populárne pre"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Populárne filmy"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Populárni ľudia"),
         "poster": MessageLookupByLibrary.simpleMessage("Plagát"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium zákaznícka podpora"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Kliknite pre výber plagátu filmu"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produkčné spoločnosti"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Náhodný film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Súbor s odporúčaním filmov bol vytvorený."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Potvrdzujete vytvorenie súboru s odporúčanými filmami?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Odporučiť režim filmu"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dátum vydania"),
@@ -224,6 +249,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Odstrániť obmedzenie pridávania filmov"),
         "rent": MessageLookupByLibrary.simpleMessage("(Prenájom)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Obnoviť skryté filmy"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Prosím, vráťte sa na predchádzajúcu obrazovku"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Výnosy: "),
@@ -233,11 +260,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dĺžka (minúty)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Sci-Fi"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Hľadať filmy"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Hľadať ľudí"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Vyberte filmy na pridanie do zoznamu na sledovanie"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Vyberte PG hodnotenie"),
         "selected": MessageLookupByLibrary.simpleMessage("Vybrané"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "vybrané filmy budú odstránené. Potvrdzujete?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Potvrdzujete skrytie vybraných filmov?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Potvrdzujete obnovenie vybraných filmov?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Prihlásenie cez Google bolo zrušené."),
@@ -286,6 +320,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Týždenný"),
         "welcome": MessageLookupByLibrary.simpleMessage("Vitajte, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Aký druh filmov hľadáte?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Kde pozerať?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("bude odstránené?"),

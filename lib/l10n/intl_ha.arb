@@ -194,5 +194,26 @@
     "recommendMovieMode": "Yanayin Shawarar Fim",
     "findMovieMode": "Yanayin Neman Fim",
     "latestMovies": "Sabbin Fim",
-    "upcomingMovies": "Fina-Finan Da Zasu Zo"
+    "upcomingMovies": "Fina-Finan Da Zasu Zo",
+    "whatKindMoviesLookingFor": "Wane irin fina-finai kake nema?",
+    "getRecommendationFromAI": "Ta hanyar rubuta nau'in ko jigo na fim, zaka iya samun shawarwari",
+    "producer": "Mai samarwa",
+    "hideChosenMovies": "Boye fina-finai da aka zaba",
+    "selectedMoviesHideConfirm": "Shin ka tabbatar da boye fina-finai da aka zaba?",
+    "moviesAreHidden": "Fina-finai sun kasance a boye",
+    "discover": "Gano",
+    "popularMovies": "Fina-finai masu shahara",
+    "popularPeople": "Mutane masu shahara",
+    "restoreHiddenMovies": "Mayar da fina-finai da aka boye",
+    "otherMoviesInSeries": "Wasu fina-finai a cikin jerin",
+    "moviesRestored": "Fina-finai an mayar dasu",
+    "selectedMoviesRestoreConfirm": "Shin ka tabbatar da mayar da fina-finai da aka zaba?",
+    "hiddenMovies": "Fina-finai da aka boye",
+    "noHiddenMovies": "Babu fina-finai da aka boye",
+    "searchPeople": "Nema mutane",
+    "recommendFileCreated": "An ƙirƙiri fayil ɗin shawarwarin fim.",
+    "recommendFileCreationConfirm": "Shin ka tabbatar da ƙirƙirar fayil ɗin shawarwarin fim tare da fina-finai da aka zaba?",
+    "selectMoviesToAdd": "Zaɓi fina-finai don ƙara zuwa jerin kallo",
+    "moviesAddedToWatchList": "Fina-finai an ƙara su zuwa jerin kallo."
+
 }

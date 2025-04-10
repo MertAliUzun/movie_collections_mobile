@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Digitaalinen"),
         "director": MessageLookupByLibrary.simpleMessage("Ohjaaja"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Ohjaaja puuttuu"),
+        "discover": MessageLookupByLibrary.simpleMessage("Löydä"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentti"),
         "drama": MessageLookupByLibrary.simpleMessage("Draama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franshiset"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genret"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Kirjoittamalla elokuvan genren tai aiheen, voit saada suosituksia"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Ryhmittele mukaan"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Piilotetut elokuvat"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Piilota valitut elokuvat"),
         "history": MessageLookupByLibrary.simpleMessage("Historia"),
         "horror": MessageLookupByLibrary.simpleMessage("Kauhu"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype-pisteet"),
@@ -159,12 +166,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Elokuva päivitetty onnistuneesti!"),
         "movies": MessageLookupByLibrary.simpleMessage("Elokuvat"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Elokuvat on lisätty katselulistallesi."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Elokuvat on piilotettu"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" elokuvia poistettu."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Elokuvat siirrettiin kokoelmaan!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Elokuvat siirrettiin toivelistalle!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Elokuvat on palautettu"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" elokuvaa valittu"),
         "music": MessageLookupByLibrary.simpleMessage("Musiikki"),
@@ -181,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ei franchisekoita valittu"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ei genrejä valittu"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ei piilotettuja elokuvia"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID-tunnusta ei löytynyt."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -200,21 +215,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Marraskuu"),
         "october": MessageLookupByLibrary.simpleMessage("Lokakuu"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Muut elokuvat sarjassa"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Syötä"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Syötä elokuvan otsikko"),
         "plot": MessageLookupByLibrary.simpleMessage("Juoni"),
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Suosittu seuraaville"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Suositut elokuvat"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Suositut henkilöt"),
         "poster": MessageLookupByLibrary.simpleMessage("Juliste"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium-asiakastuki"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Paina valitaksesi elokuvan julisteen"),
+        "producer": MessageLookupByLibrary.simpleMessage("Tuottaja"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Tuotantoyhtiöt"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Satunnainen elokuva"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Elokuvien suositustiedosto on luotu."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Vahvistatko, että haluat luoda suositustiedoston valituilla elokuvilla?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Elokuvan suosittelu -tila"),
         "releaseDate":
@@ -227,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Poista elokuvien lisäämisraja"),
         "rent": MessageLookupByLibrary.simpleMessage("(Vuokraa)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Palauta piilotetut elokuvat"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Palaa edelliselle näytölle"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Tulot: "),
@@ -236,11 +264,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kesto (Minuutit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Tieteisfiktio"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Etsi elokuvia"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Etsi henkilöitä"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Valitse elokuvat lisättäväksi katselulistallesi"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Valitse PG-luokitus"),
         "selected": MessageLookupByLibrary.simpleMessage("Valittu"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valitut elokuvat poistetaan. Vahvistatko?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Vahvistatko, että haluat piilottaa valitut elokuvat?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Vahvistatko, että haluat palauttaa valitut elokuvat?"),
         "september": MessageLookupByLibrary.simpleMessage("Syyskuu"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google-kirjautuminen peruttiin."),
@@ -289,6 +324,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Viikoittain"),
         "welcome": MessageLookupByLibrary.simpleMessage("Tervetuloa, "),
         "western": MessageLookupByLibrary.simpleMessage("Lännenelokuvat"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Minkälaista elokuvaa etsit?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Missä katsoa?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("poistetaan?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Toivelista"),

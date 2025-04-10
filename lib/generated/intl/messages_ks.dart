@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("ڈیجیٹل"),
         "director": MessageLookupByLibrary.simpleMessage("ہدایت کار"),
         "directorNull": MessageLookupByLibrary.simpleMessage("ہدایت کار Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("دریافت کرو"),
         "documentary": MessageLookupByLibrary.simpleMessage("دستاویزی"),
         "drama": MessageLookupByLibrary.simpleMessage("ڈراما"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("فرینچائزیں"),
         "genre": MessageLookupByLibrary.simpleMessage("صنف"),
         "genres": MessageLookupByLibrary.simpleMessage("اصناف"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "فلم دا ژانر یا موضوع لکھ کر آپ ہنٹر کمیشنز حاصل کرسکتے ہو"),
         "groupBy": MessageLookupByLibrary.simpleMessage("گروپ بندی کریں"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("چھپائی گئی فلمیں"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("چُنے ہوے فلمہاں چھپاؤ"),
         "history": MessageLookupByLibrary.simpleMessage("تاریخ"),
         "horror": MessageLookupByLibrary.simpleMessage("ہارر"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("ہائپ اسکور"),
@@ -156,12 +163,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "فلم کامیابی سے اپ ڈیٹ ہو گئی!"),
         "movies": MessageLookupByLibrary.simpleMessage("فلمیں"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "فلمیں آپ کی واچ لسٹ میں شامل کی گئی ہیں۔"),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("فلمہاں چھپائی گئی ہیں"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" فلمیں حذف ہو گئیں۔"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "فلمیں کالکشن میں منتقل ہو گئیں!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "فلمیں دیکھنے کی فہرست میں منتقل ہو گئیں!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("فلموں کو بحال کیا گیا ہے"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" فلمیں منتخب ہو گئیں"),
         "music": MessageLookupByLibrary.simpleMessage("موسیقی"),
@@ -178,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("کوئی فرینچائز منتخب نہیں ہے"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("کوئی صنف منتخب نہیں کی گئی"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "کوئی چھپائی گئی فلمیں نہیں ہیں"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("کوئی ID ٹوکن نہیں ملا۔"),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -197,20 +212,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("نومبر"),
         "october": MessageLookupByLibrary.simpleMessage("اکتوبر"),
         "ok": MessageLookupByLibrary.simpleMessage("ٹھیک ہے"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("سریز میں دوسری فلمیں"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("براہ کرم درج کریں"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "براہ کرم فلم کا عنوان درج کریں"),
         "plot": MessageLookupByLibrary.simpleMessage("پلاٹ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("مقبول"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("مقبول فلمیں"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("مقبول لوگ"),
         "poster": MessageLookupByLibrary.simpleMessage("پوسٹر"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("پریمیئم کسٹمر سپورٹ"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "فلم پوسٹر منتخب کرنے کے لیے دبائیں"),
+        "producer": MessageLookupByLibrary.simpleMessage("پروڈیوسر"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("پروڈکشن کمپنیاں"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("بے ترتیب فلم"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "فلموں کی سفارش فائل بنائی گئی ہے۔"),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "کیا آپ چُنے ہوے فلموں کے ساتھ فلم سفارش فائل بنانے کی تصدیق کرتے ہو؟"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("فلم تجویز کرنے کا موڈ"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("تاریخ اجراء"),
@@ -221,6 +245,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("فلم شامل کرنے کی حد ہٹاؤ"),
         "rent": MessageLookupByLibrary.simpleMessage("(کرایہ)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "چھپائی گئی فلموں کو بحال کرو"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "براہ کرم پچھلی اسکرین پر واپس جائیں"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("آمدنی: "),
@@ -230,11 +256,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("چلنے کا وقت (منٹ)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("سائنس فکشن"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("فلمیں تلاش کریں"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("لوگوں کی تلاش کرو"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "اپنی واچ لسٹ میں شامل کرنے کے لیے فلموں کو منتخب کریں"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("پی جی درجہ بندی منتخب کریں"),
         "selected": MessageLookupByLibrary.simpleMessage("منتخب"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "منتخب فلمیں حذف ہو جائیں گی۔ کیا آپ تصدیق کرتے ہیں؟"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "کیا آپ چُنے ہوے فلمہاں چھپانے کی تصدیق کرتے ہو؟"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "کیا آپ چُنے ہوے فلمہاں بحال کرنے کی تصدیق کرتے ہو؟"),
         "september": MessageLookupByLibrary.simpleMessage("ستمبر"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google سائن ان منسوخ کر دیا گیا۔"),
@@ -283,6 +317,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("ہفتہ وار"),
         "welcome": MessageLookupByLibrary.simpleMessage("خوش آمدید، "),
         "western": MessageLookupByLibrary.simpleMessage("مغربی"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "تُسہ کِنہ قسم کی فلمہاں تلاش کر رہے ہو؟"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("کہاں دیکھیں؟"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("حذف ہو جائے گا؟"),

@@ -194,5 +194,26 @@
     "recommendMovieMode": "Režim preporuke filma",
     "findMovieMode": "Režim pronalaženja filma",
     "latestMovies": "Najnoviji filmovi",
-    "upcomingMovies": "Nadolazeći filmovi"
+    "upcomingMovies": "Nadolazeći filmovi",
+    "whatKindMoviesLookingFor": "Kakve filmove tražiš?",
+    "getRecommendationFromAI": "Upiši žanr ili temu filma kako bi dobio preporuke",
+    "producer": "Producent",
+    "hideChosenMovies": "Sakrij odabrane filmove",
+    "selectedMoviesHideConfirm": "Da li potvrđuješ da sakriješ odabrane filmove?",
+    "moviesAreHidden": "Filmove su sakriveni",
+    "discover": "Otkrij",
+    "popularMovies": "Popularni filmovi",
+    "popularPeople": "Popularni ljudi",
+    "restoreHiddenMovies": "Vrati skrivene filmove",
+    "otherMoviesInSeries": "Ostali filmovi u seriji",
+    "moviesRestored": "Filmove su vraćeni",
+    "selectedMoviesRestoreConfirm": "Da li potvrđuješ da vratiš odabrane filmove?",
+    "hiddenMovies": "Skriveni filmovi",
+    "noHiddenMovies": "Nema skrivenih filmova",
+    "searchPeople": "Pretraži ljude",
+    "recommendFileCreated": "Datoteka za preporuku filmova je kreirana.",
+    "recommendFileCreationConfirm": "Da li potvrđuješ kreiranje datoteke sa preporukama za odabrane filmove?",
+    "selectMoviesToAdd": "Odaberi filmove za dodavanje u svoju listu za gledanje",
+    "moviesAddedToWatchList": "Filmove su dodani u tvoju listu za gledanje."
+
 }

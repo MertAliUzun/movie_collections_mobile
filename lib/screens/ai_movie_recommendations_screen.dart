@@ -39,7 +39,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
     try {
       print(selectedPrompt);
       // AI servisinden film önerilerini al
-      final movieTitles = await getGroqRecommendations(query, selectedPrompt);
+      final movieTitles = await getOpenAIRecommendations(query, selectedPrompt);
 
       
       

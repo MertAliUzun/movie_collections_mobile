@@ -80,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("数字版"),
         "director": MessageLookupByLibrary.simpleMessage("导演"),
         "directorNull": MessageLookupByLibrary.simpleMessage("导演为空"),
+        "discover": MessageLookupByLibrary.simpleMessage("发现"),
         "documentary": MessageLookupByLibrary.simpleMessage("纪录片"),
         "drama": MessageLookupByLibrary.simpleMessage("剧情"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -105,7 +106,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("加盟"),
         "genre": MessageLookupByLibrary.simpleMessage("类型"),
         "genres": MessageLookupByLibrary.simpleMessage("类型"),
+        "getRecommendationFromAI":
+            MessageLookupByLibrary.simpleMessage("通过输入电影的类型或主题，您可以获得推荐。"),
         "groupBy": MessageLookupByLibrary.simpleMessage("分组方式"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("隐藏的电影"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage("隐藏选定的电影"),
         "history": MessageLookupByLibrary.simpleMessage("历史"),
         "horror": MessageLookupByLibrary.simpleMessage("恐怖"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("热度评分"),
@@ -132,11 +137,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieTitle": MessageLookupByLibrary.simpleMessage("电影标题"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage("电影已成功更新！"),
         "movies": MessageLookupByLibrary.simpleMessage("电影"),
+        "moviesAddedToWatchList":
+            MessageLookupByLibrary.simpleMessage("电影已添加到您的观看列表。"),
+        "moviesAreHidden": MessageLookupByLibrary.simpleMessage("电影已隐藏"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" 部电影已删除。"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("电影已移至收藏！"),
         "moviesMovedToWatchlist":
             MessageLookupByLibrary.simpleMessage("电影已移至观影清单！"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage("电影已恢复"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" 部电影已选中"),
         "music": MessageLookupByLibrary.simpleMessage("音乐"),
         "myNotes": MessageLookupByLibrary.simpleMessage("我的笔记"),
@@ -147,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noCompaniesSelected": MessageLookupByLibrary.simpleMessage("未选择公司"),
         "noFranchisesSelected": MessageLookupByLibrary.simpleMessage("未选择加盟"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage("未选择类型"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage("没有隐藏的电影"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("未找到ID令牌。"),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage("未找到该类型电影！"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("未找到电影"),
@@ -160,16 +170,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("十一月"),
         "october": MessageLookupByLibrary.simpleMessage("十月"),
         "ok": MessageLookupByLibrary.simpleMessage("确定"),
+        "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage("系列中的其他电影"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("请输入"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("请输入电影标题"),
         "plot": MessageLookupByLibrary.simpleMessage("剧情"),
         "popularFor": MessageLookupByLibrary.simpleMessage("因...而流行"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("热门电影"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("热门人物"),
         "poster": MessageLookupByLibrary.simpleMessage("海报"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage("高级客户支持"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage("点击选择电影海报"),
+        "producer": MessageLookupByLibrary.simpleMessage("制片人"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("制作公司"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("随机电影"),
+        "recommendFileCreated":
+            MessageLookupByLibrary.simpleMessage("电影推荐文件已创建。"),
+        "recommendFileCreationConfirm":
+            MessageLookupByLibrary.simpleMessage("您确认要创建包含选定电影的推荐文件吗？"),
         "recommendMovieMode": MessageLookupByLibrary.simpleMessage("推荐电影模式"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("发布日期"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("发布日期："),
@@ -177,6 +195,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeAds": MessageLookupByLibrary.simpleMessage("移除所有广告"),
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage("移除添加电影限制"),
         "rent": MessageLookupByLibrary.simpleMessage("(租赁)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage("恢复隐藏的电影"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage("请返回上一屏"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("收入："),
         "romance": MessageLookupByLibrary.simpleMessage("浪漫"),
@@ -184,10 +203,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("片长（分钟）"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("科幻"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("搜索电影"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("搜索人物"),
+        "selectMoviesToAdd":
+            MessageLookupByLibrary.simpleMessage("选择要添加到观看列表中的电影"),
         "selectPgRating": MessageLookupByLibrary.simpleMessage("选择 PG 评级"),
         "selected": MessageLookupByLibrary.simpleMessage("已选"),
         "selectedMoviesDeleteConfirm":
             MessageLookupByLibrary.simpleMessage("确认删除选中的电影吗？"),
+        "selectedMoviesHideConfirm":
+            MessageLookupByLibrary.simpleMessage("您确认要隐藏选定的电影吗？"),
+        "selectedMoviesRestoreConfirm":
+            MessageLookupByLibrary.simpleMessage("您确认要恢复选定的电影吗？"),
         "september": MessageLookupByLibrary.simpleMessage("九月"),
         "signInCancel": MessageLookupByLibrary.simpleMessage("Google登录已取消。"),
         "signOut": MessageLookupByLibrary.simpleMessage("退出登录"),
@@ -226,6 +252,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("每周"),
         "welcome": MessageLookupByLibrary.simpleMessage("欢迎，"),
         "western": MessageLookupByLibrary.simpleMessage("西部"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("您在寻找什么类型的电影？"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("在哪里观看？"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("将被删除？"),
         "wishlist": MessageLookupByLibrary.simpleMessage("观影清单"),

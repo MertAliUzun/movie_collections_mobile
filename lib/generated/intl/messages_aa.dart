@@ -90,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Diraakteera"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Diraakteera Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Baruu"),
         "documentary": MessageLookupByLibrary.simpleMessage("Documentary"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -123,7 +124,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Fransayisak"),
         "genre": MessageLookupByLibrary.simpleMessage("Gogga"),
         "genres": MessageLookupByLibrary.simpleMessage("Gogga"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Genre amaa mowduuca filmak galissa, talinta argatta."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gooruwa"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Filmat qarifamte"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Filmat dooratamte qari"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "horror": MessageLookupByLibrary.simpleMessage("Horror"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Suggul"),
@@ -154,12 +161,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film maxne takke!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmat Liistii Ilaalcha kee keessatti ida\'aman."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmat qarifamne"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film fakkitam takke."),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Film qolubta leqqi takke!"),
         "moviesMovedToWatchlist":
             MessageLookupByLibrary.simpleMessage("Film qunxa leqqi takke!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmat deebifamne"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film dooram takke"),
         "music": MessageLookupByLibrary.simpleMessage("Music"),
@@ -176,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fransayis Ma Doorannem"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Gogga dooram yaku"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Filmat qarifamte hinjiran"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID Token yaku faname."),
         "noMoviesForGenre":
@@ -194,18 +209,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Qari Garablu"),
         "october": MessageLookupByLibrary.simpleMessage("Qari"),
         "ok": MessageLookupByLibrary.simpleMessage("Eyyo"),
+        "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
+            "Filmat kaan sirii keessa jiran"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Maqna galqa"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Film girta galqa"),
         "plot": MessageLookupByLibrary.simpleMessage("Tarate"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Xayih film"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Filmat namatti tolu"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Namoota beekamoo"),
         "poster": MessageLookupByLibrary.simpleMessage("Postera"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Premium Taageera Macaamiisha"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Postera doora fi loqa"),
+        "producer": MessageLookupByLibrary.simpleMessage("Sooressa"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Firma"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Haya Film"),
+        "recommendFileCreated":
+            MessageLookupByLibrary.simpleMessage("Fayil filmat gorsa uumame."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Filmat dooratamte fayil gorsaa uumuu ni hubtoomi?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Fílmii Adde Mode"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Yana Girta"),
@@ -217,6 +243,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Filim Ekke Haddat Fuddu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Guffat)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Filmat qarifamte deebisi"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Guurama maqna!"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Daggayta: "),
@@ -227,11 +255,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Film yassassa"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Namoota barbaadi"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Filmat Liistii Ilaalcha kee keessatti ida\'uuf dooradhu"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG Ratingih Yanxa"),
         "selected": MessageLookupByLibrary.simpleMessage("Dooram"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Dooram film fakkitam takke. Maqna?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Filmat dooratamte qarissuuf hubtoomi?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Filmat dooratamte deebisuuf hubtoomi?"),
         "september": MessageLookupByLibrary.simpleMessage("Siima Garablu"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Sign-In yokko qariime."),
@@ -278,6 +314,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Sabaa"),
         "welcome": MessageLookupByLibrary.simpleMessage("Marhaba, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Caka filmat tan ittakke?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Amma fiirsima?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("fakkitam?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Film Qunxa"),

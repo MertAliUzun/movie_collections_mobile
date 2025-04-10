@@ -194,5 +194,26 @@
     "recommendMovieMode": "Режим за препоръчване на филми",
     "findMovieMode": "Режим за намиране на филми",
     "latestMovies": "Последни филми",
-    "upcomingMovies": "Предстоящи филми"
+    "upcomingMovies": "Предстоящи филми",
+    "whatKindMoviesLookingFor": "Какъв тип филми търсите?",
+    "getRecommendationFromAI": "Като въведете жанра или темата на филма, можете да получите препоръки",
+    "producer": "Продуцент",
+    "hideChosenMovies": "Скриване на избраните филми",
+    "selectedMoviesHideConfirm": "Потвърждавате ли, че искате да скриете избраните филми?",
+    "moviesAreHidden": "Филмите бяха скрити",
+    "discover": "Открий",
+    "popularMovies": "Популярни филми",
+    "popularPeople": "Популярни личности",
+    "restoreHiddenMovies": "Възстановяване на скритите филми",
+    "otherMoviesInSeries": "Други филми от поредицата",
+    "moviesRestored": "Филмите бяха възстановени",
+    "selectedMoviesRestoreConfirm": "Потвърждавате ли, че искате да възстановите избраните филми?",
+    "hiddenMovies": "Скрити филми",
+    "noHiddenMovies": "Няма скрити филми",
+    "searchPeople": "Търсене на хора",
+    "recommendFileCreated": "Файл с препоръчани филми беше създаден.",
+    "recommendFileCreationConfirm": "Потвърждавате ли създаването на файл с препоръки за избраните филми?",
+    "selectMoviesToAdd": "Изберете филми, които да добавите към списъка за гледане",
+    "moviesAddedToWatchList": "Филмите бяха добавени към списъка за гледане."
+
 }

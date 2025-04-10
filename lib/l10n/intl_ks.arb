@@ -194,5 +194,26 @@
     "recommendMovieMode": "فلم تجویز کرنے کا موڈ",
     "findMovieMode": "فلم تلاش کرنے کا موڈ",
     "latestMovies": "تازہ ترین فلمیں",
-    "upcomingMovies": "آنے والی فلمیں"
+    "upcomingMovies": "آنے والی فلمیں",
+    "whatKindMoviesLookingFor": "تُسہ کِنہ قسم کی فلمہاں تلاش کر رہے ہو؟",
+    "getRecommendationFromAI": "فلم دا ژانر یا موضوع لکھ کر آپ ہنٹر کمیشنز حاصل کرسکتے ہو",
+    "producer": "پروڈیوسر",
+    "hideChosenMovies": "چُنے ہوے فلمہاں چھپاؤ",
+    "selectedMoviesHideConfirm": "کیا آپ چُنے ہوے فلمہاں چھپانے کی تصدیق کرتے ہو؟",
+    "moviesAreHidden": "فلمہاں چھپائی گئی ہیں",
+    "discover": "دریافت کرو",
+    "popularMovies": "مقبول فلمیں",
+    "popularPeople": "مقبول لوگ",
+    "restoreHiddenMovies": "چھپائی گئی فلموں کو بحال کرو",
+    "otherMoviesInSeries": "سریز میں دوسری فلمیں",
+    "moviesRestored": "فلموں کو بحال کیا گیا ہے",
+    "selectedMoviesRestoreConfirm": "کیا آپ چُنے ہوے فلمہاں بحال کرنے کی تصدیق کرتے ہو؟",
+    "hiddenMovies": "چھپائی گئی فلمیں",
+    "noHiddenMovies": "کوئی چھپائی گئی فلمیں نہیں ہیں",
+    "searchPeople": "لوگوں کی تلاش کرو",
+    "recommendFileCreated": "فلموں کی سفارش فائل بنائی گئی ہے۔",
+    "recommendFileCreationConfirm": "کیا آپ چُنے ہوے فلموں کے ساتھ فلم سفارش فائل بنانے کی تصدیق کرتے ہو؟",
+    "selectMoviesToAdd": "اپنی واچ لسٹ میں شامل کرنے کے لیے فلموں کو منتخب کریں",
+    "moviesAddedToWatchList": "فلمیں آپ کی واچ لسٹ میں شامل کی گئی ہیں۔"
+
 }

@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Cyfarwyddwr"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Cyfarwyddwr Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Darganfod"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dogfen"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -127,7 +128,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Ffransisau"),
         "genre": MessageLookupByLibrary.simpleMessage("Genres"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Trwy deipio genres neu bwnc y ffilm, gallwch gael argymhellion"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grŵp Yn ôl"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ffilmiau Wedi\'u Cuddio"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Cuddio ffilmiau dewisol"),
         "history": MessageLookupByLibrary.simpleMessage("Hanes"),
         "horror": MessageLookupByLibrary.simpleMessage("Arswyd"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Sgôr Hype"),
@@ -160,12 +167,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Mae\'r ffilm wedi\'i diweddaru\'n llwyddiannus!"),
         "movies": MessageLookupByLibrary.simpleMessage("Ffilmiau"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Mae\'r ffilmiau wedi\'u hychwanegu at eich rhestr gwylio."),
+        "moviesAreHidden": MessageLookupByLibrary.simpleMessage(
+            "Mae\'r ffilmiau wedi\'u cuddio"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" ffilmiau wedi\'u dileu."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Mae\'r ffilmiau wedi cael eu symud i\'r Casgliad!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Mae\'r ffilmiau wedi cael eu symud i\'r Rhestr Gwylio!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "Mae\'r ffilmiau wedi\'u hadfer"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" ffilmiau wedi\'u dewis"),
         "music": MessageLookupByLibrary.simpleMessage("Cerddoriaeth"),
@@ -182,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dim ffransisau wedi\'u dewis"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Dim genres wedi\'u dewis"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Dim ffilmiau wedi\'u cuddio"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
             "Dim Token ID wedi\'i ganfod."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -201,20 +216,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Tachwedd"),
         "october": MessageLookupByLibrary.simpleMessage("Hydref"),
         "ok": MessageLookupByLibrary.simpleMessage("Iawn"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Ffilmiau eraill yn y gyfres"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Os gwelwch yn dda, rhowch"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Os gwelwch yn dda, rhowch deitl y ffilm"),
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Poblogaidd am"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Ffilmiau Poblogaidd"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Pobl Poblogaidd"),
         "poster": MessageLookupByLibrary.simpleMessage("Posteri"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Υποστήριξη πελατών Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pwyswch i ddewis poster ffilm"),
+        "producer": MessageLookupByLibrary.simpleMessage("Cynhyrchydd"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Cwmnïau Cynhyrchu"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Ffilm Ddibynadwy"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Ffeil argymell ffilm wedi\'i chreu."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ydych chi\'n cadarnhau creu ffeil argymell gyda\'r ffilmiau dewisol?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Modd Argymell Ffilm"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dyddiad Rhyddhau"),
@@ -227,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Αφαίρεση ορίου προσθήκης ταινιών"),
         "rent": MessageLookupByLibrary.simpleMessage("(Rhentu)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Ail-droi ffilmiau wedi\'u cuddio"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Os gwelwch yn dda, dychwelyd i\'r sgrin flaenorol"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Incwm: "),
@@ -238,11 +266,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ffuglen Wyddonol"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Chwilio Ffilmiau"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Chwilio am bobl"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Dewiswch ffilmiau i\'w hychwanegu at eich rhestr gwylio"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Dewiswch y Gradd PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Dewiswyd"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Bydd y ffilmiau a ddewiswyd yn cael eu dileu. Ydych chi\'n cadarnhau?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ydych chi\'n cadarnhau cuddio\'r ffilmiau dewisol?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ydych chi\'n cadarnhau adfer y ffilmiau dewisol?"),
         "september": MessageLookupByLibrary.simpleMessage("Medwar"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Mewngofnodi Google wedi\'i ganslo."),
@@ -290,6 +325,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Wythnosol"),
         "welcome": MessageLookupByLibrary.simpleMessage("Croeso, "),
         "western": MessageLookupByLibrary.simpleMessage("Gorllewin"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Pa fath o ffilmiau ydych chi\'n chwilio amdanyn?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Ble i wylio?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("bydd yn cael ei ddileu?"),

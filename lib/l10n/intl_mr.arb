@@ -194,5 +194,26 @@
     "recommendMovieMode": "चित्रपट शिफारस मोड",
     "findMovieMode": "चित्रपट शोध मोड",
     "latestMovies": "नवीन चित्रपट",
-    "upcomingMovies": "आगामी चित्रपट"
+    "upcomingMovies": "आगामी चित्रपट",
+    "whatKindMoviesLookingFor": "तुम्ही कोणत्या प्रकारच्या चित्रपटांची शोध घेत आहात?",
+    "getRecommendationFromAI": "चित्रपटाचा प्रकार किंवा विषय टाईप करून तुम्ही शिफारसी मिळवू शकता",
+    "producer": "उत्पादक",
+    "hideChosenMovies": "चुंडलेले चित्रपट लपवा",
+    "selectedMoviesHideConfirm": "तुम्ही चुंडलेले चित्रपट लपवण्यास पुष्टी करता का?",
+    "moviesAreHidden": "चित्रपट लपवले गेले आहेत",
+    "discover": "शोधा",
+    "popularMovies": "लोकप्रिय चित्रपट",
+    "popularPeople": "लोकप्रिय लोक",
+    "restoreHiddenMovies": "लपवलेले चित्रपट पुनर्स्थापित करा",
+    "otherMoviesInSeries": "सिरीजमधील इतर चित्रपट",
+    "moviesRestored": "चित्रपट पुनर्स्थापित केले गेले",
+    "selectedMoviesRestoreConfirm": "तुम्ही चुंडलेले चित्रपट पुनर्स्थापित करण्यास पुष्टी करता का?",
+    "hiddenMovies": "लपवलेले चित्रपट",
+    "noHiddenMovies": "कोणतेही लपवलेले चित्रपट नाहीत",
+    "searchPeople": "लोक शोधा",
+    "recommendFileCreated": "चित्रपट शिफारस फाइल तयार करण्यात आली.",
+    "recommendFileCreationConfirm": "चुंडलेले चित्रपट वापरून चित्रपट शिफारस फाइल तयार करण्यास पुष्टी करता का?",
+    "selectMoviesToAdd": "तुमच्या वॉच लिस्टमध्ये जोडण्यासाठी चित्रपट निवडा",
+    "moviesAddedToWatchList": "चित्रपट तुमच्या वॉच लिस्टमध्ये जोडले गेले आहेत."
+
 }

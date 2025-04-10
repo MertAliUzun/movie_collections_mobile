@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Režissöör"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Režissöör puudub"),
+        "discover": MessageLookupByLibrary.simpleMessage("Avasta"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentaal"),
         "drama": MessageLookupByLibrary.simpleMessage("Draama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -124,7 +125,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Frantsiisid"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrid"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Sisestades filmi žanri või teema, saate soovitusi"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupeerimine järgi"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Peidetud filmid"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Peida valitud filmid"),
         "history": MessageLookupByLibrary.simpleMessage("Ajalugu"),
         "horror": MessageLookupByLibrary.simpleMessage("Horror"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype reiting"),
@@ -156,12 +162,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film on edukalt uuendatud!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmid"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmid on lisatud teie vaatamisloendisse."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmid on peidetud"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film(i) kustutatud."),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Filmid on kantud kogusse!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmid on kantud soovide nimekirja!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmid on taastatud"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film(i) valitud"),
         "music": MessageLookupByLibrary.simpleMessage("Muusika"),
@@ -178,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ühtegi frantsiisi pole valitud"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ei ole valitud žanre"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Pole peidetud filme"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID-märki ei leitud."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -197,19 +211,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("November"),
         "october": MessageLookupByLibrary.simpleMessage("Oktoober"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Teised sarja filmid"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Palun sisesta"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Palun sisesta filmi pealkiri"),
         "plot": MessageLookupByLibrary.simpleMessage("Süžee"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populaarne jaoks"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Populaarsed filmid"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Populaarsed inimesed"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakat"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium klienditugi"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Vajuta, et valida filmi plakat"),
+        "producer": MessageLookupByLibrary.simpleMessage("Tootja"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Tootmisettevõtted"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Juhuslik film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Filmi soovituste fail on loodud."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Kas kinnitate filmi soovituste faili loomist valitud filmidega?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Filmi soovitamise režiim"),
         "releaseDate":
@@ -222,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Eemalda filmi lisamise piirang"),
         "rent": MessageLookupByLibrary.simpleMessage("(Rent)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Taasta peidetud filmid"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Palun naase eelmist ekraani"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Tulu: "),
@@ -231,11 +258,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kestus (minutid)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Teadusulme"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Otsi filme"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Otsi inimesi"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Valige filmid, mida lisada oma vaatamisloendisse"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Valige PG reiting"),
         "selected": MessageLookupByLibrary.simpleMessage("Valitud"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valitud filmid kustutatakse. Kas kinnitad?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Kas kinnitate, et soovite valitud filme peita?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Kas kinnitate, et soovite valitud filme taastada?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google sisselogimine tühistati."),
@@ -284,6 +318,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Nädalane"),
         "welcome": MessageLookupByLibrary.simpleMessage("Tere tulemast, "),
         "western": MessageLookupByLibrary.simpleMessage("Lääne"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Millist tüüpi filme otsite?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Kus vaadata?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("kustutatakse?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Soovide nimekiri"),

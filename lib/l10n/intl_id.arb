@@ -194,5 +194,26 @@
     "recommendMovieMode": "Mode Rekomendasi Film",
     "findMovieMode": "Mode Cari Film",
     "latestMovies": "Film Terbaru",
-    "upcomingMovies": "Film Mendatang"
+    "upcomingMovies": "Film Mendatang",
+    "whatKindMoviesLookingFor": "Jenis film apa yang Anda cari?",
+    "getRecommendationFromAI": "Dengan mengetikkan genre atau topik film, Anda bisa mendapatkan rekomendasi",
+    "producer": "Produser",
+    "hideChosenMovies": "Sembunyikan film yang dipilih",
+    "selectedMoviesHideConfirm": "Apakah Anda yakin ingin menyembunyikan film yang dipilih?",
+    "moviesAreHidden": "Film telah disembunyikan",
+    "discover": "Temukan",
+    "popularMovies": "Film Populer",
+    "popularPeople": "Orang Populer",
+    "restoreHiddenMovies": "Pulihkan film yang disembunyikan",
+    "otherMoviesInSeries": "Film lain dalam seri",
+    "moviesRestored": "Film telah dipulihkan",
+    "selectedMoviesRestoreConfirm": "Apakah Anda yakin ingin memulihkan film yang dipilih?",
+    "hiddenMovies": "Film yang disembunyikan",
+    "noHiddenMovies": "Tidak ada film yang disembunyikan",
+    "searchPeople": "Cari orang",
+    "recommendFileCreated": "File rekomendasi film telah dibuat.",
+    "recommendFileCreationConfirm": "Apakah Anda yakin ingin membuat file rekomendasi film dengan film yang dipilih?",
+    "selectMoviesToAdd": "Pilih film untuk ditambahkan ke Daftar Tonton Anda",
+    "moviesAddedToWatchList": "Film telah ditambahkan ke Daftar Tonton Anda."
+    
 }

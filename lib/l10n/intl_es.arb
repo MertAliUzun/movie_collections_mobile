@@ -194,5 +194,26 @@
     "recommendMovieMode": "Modo de recomendación de películas",
     "findMovieMode": "Modo de búsqueda de películas",
     "latestMovies": "Últimas películas",
-    "upcomingMovies": "Películas próximas"
+    "upcomingMovies": "Películas próximas",
+    "whatKindMoviesLookingFor": "¿Qué tipo de películas estás buscando?",
+    "getRecommendationFromAI": "Escribe el género o tema de la película para obtener recomendaciones",
+    "producer": "Productor",
+    "hideChosenMovies": "Ocultar películas seleccionadas",
+    "selectedMoviesHideConfirm": "¿Confirmas que quieres ocultar las películas seleccionadas?",
+    "moviesAreHidden": "Las películas han sido ocultadas",
+    "discover": "Descubrir",
+    "popularMovies": "Películas populares",
+    "popularPeople": "Personas populares",
+    "restoreHiddenMovies": "Restaurar películas ocultas",
+    "otherMoviesInSeries": "Otras películas en la serie",
+    "moviesRestored": "Las películas han sido restauradas",
+    "selectedMoviesRestoreConfirm": "¿Confirmas que quieres restaurar las películas seleccionadas?",
+    "hiddenMovies": "Películas ocultas",
+    "noHiddenMovies": "No hay películas ocultas",
+    "searchPeople": "Buscar personas",
+    "recommendFileCreated": "Se ha creado el archivo de recomendaciones de películas.",
+    "recommendFileCreationConfirm": "¿Confirmas la creación de un archivo de películas recomendadas con las películas seleccionadas?",
+    "selectMoviesToAdd": "Selecciona películas para agregar a tu lista de seguimiento",
+    "moviesAddedToWatchList": "Las películas han sido agregadas a tu lista de seguimiento."
+
 }

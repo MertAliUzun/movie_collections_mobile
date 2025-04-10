@@ -194,5 +194,26 @@
     "recommendMovieMode": "Elokuvan suosittelu -tila",
     "findMovieMode": "Elokuvan etsiminen -tila",
     "latestMovies": "Uusimmat elokuvat",
-    "upcomingMovies": "Tulevat elokuvat"
+    "upcomingMovies": "Tulevat elokuvat",
+    "whatKindMoviesLookingFor": "Minkälaista elokuvaa etsit?",
+    "getRecommendationFromAI": "Kirjoittamalla elokuvan genren tai aiheen, voit saada suosituksia",
+    "producer": "Tuottaja",
+    "hideChosenMovies": "Piilota valitut elokuvat",
+    "selectedMoviesHideConfirm": "Vahvistatko, että haluat piilottaa valitut elokuvat?",
+    "moviesAreHidden": "Elokuvat on piilotettu",
+    "discover": "Löydä",
+    "popularMovies": "Suositut elokuvat",
+    "popularPeople": "Suositut henkilöt",
+    "restoreHiddenMovies": "Palauta piilotetut elokuvat",
+    "otherMoviesInSeries": "Muut elokuvat sarjassa",
+    "moviesRestored": "Elokuvat on palautettu",
+    "selectedMoviesRestoreConfirm": "Vahvistatko, että haluat palauttaa valitut elokuvat?",
+    "hiddenMovies": "Piilotetut elokuvat",
+    "noHiddenMovies": "Ei piilotettuja elokuvia",
+    "searchPeople": "Etsi henkilöitä",
+    "recommendFileCreated": "Elokuvien suositustiedosto on luotu.",
+    "recommendFileCreationConfirm": "Vahvistatko, että haluat luoda suositustiedoston valituilla elokuvilla?",
+    "selectMoviesToAdd": "Valitse elokuvat lisättäväksi katselulistallesi",
+    "moviesAddedToWatchList": "Elokuvat on lisätty katselulistallesi."
+
 }

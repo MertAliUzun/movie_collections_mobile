@@ -194,5 +194,26 @@
     "recommendMovieMode": "Rejîma Pêşniyara Fîlm",
     "findMovieMode": "Rejîma Lêgerîna Fîlm",
     "latestMovies": "Fîlman Nû",
-    "upcomingMovies": "Fîlman Bi Dawî"
+    "upcomingMovies": "Fîlman Bi Dawî",
+    "whatKindMoviesLookingFor": "Kîjan cîhên fîlman hûn digerin?",
+    "getRecommendationFromAI": "Bi tîp kirina genre an jî mijara fîlman, hûn dikarin pêşniyaran bistînin",
+    "producer": "Prodyûser",
+    "hideChosenMovies": "Fîlmên hilbijartî veşêrin",
+    "selectedMoviesHideConfirm": "Hûn piştrast in ku fîlmên hilbijartî veşêrin?",
+    "moviesAreHidden": "Fîlmên veşartin",
+    "discover": "Dîtin",
+    "popularMovies": "Fîlman populer",
+    "popularPeople": "Kesên populer",
+    "restoreHiddenMovies": "Fîlmên veşartî vegerînin",
+    "otherMoviesInSeries": "Fîlmên din li sîpîyê",
+    "moviesRestored": "Fîlmên vegerandin",
+    "selectedMoviesRestoreConfirm": "Hûn piştrast in ku fîlmên hilbijartî vegerînin?",
+    "hiddenMovies": "Fîlmên veşartî",
+    "noHiddenMovies": "Tu fîlmên veşartî nîne",
+    "searchPeople": "Kesan lêgerîn",
+    "recommendFileCreated": "Pelê pêşniyarê fîlmê hate afirandin.",
+    "recommendFileCreationConfirm": "Hûn piştrast in ku pelê pêşniyarê fîlmê bi fîlmên hilbijartî afirînin?",
+    "selectMoviesToAdd": "Fîlmên ji bo zêdekirinê li listeya seyrê xwe hilbijêrin",
+    "moviesAddedToWatchList": "Fîlmên di listeya seyrê we de hate zêdekirin."
+
 }

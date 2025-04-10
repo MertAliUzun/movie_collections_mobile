@@ -167,5 +167,26 @@
     "recommendMovieMode": "Yèrè Film Kɛsɛ",
     "findMovieMode": "Sɛgɛn Film Kɛsɛ",
     "latestMovies": "Kɛnɛ Film",
-    "upcomingMovies": "Kɔfɔ Film"
+    "upcomingMovies": "Kɔfɔ Film",
+    "whatKindMoviesLookingFor": "Nye filimuw ka fo?",
+    "getRecommendationFromAI": "Filimi janra an ka tema tɛ, i bɛ ka fɔlɔ ɲɛ fɛlɛ ka taara.",
+    "producer": "Prodyusɔr",
+    "hideChosenMovies": "Fiilimuw tɛgɛ ka fo",
+    "selectedMoviesHideConfirm": "I bɛ se ka fiilimuw tɛgɛ ka fo?",
+    "moviesAreHidden": "Fiilimuw tɛgɛ ka fo",
+    "discover": "Fɛɛrɛ",
+    "popularMovies": "Filimuw bɛɛ ka dɔɔnin",
+    "popularPeople": "Nɛnɛw bɛɛ ka dɔɔnin",
+    "restoreHiddenMovies": "Fiilimuw tɛgɛ ka fɔlɔ",
+    "otherMoviesInSeries": "Filimuw bɛɛ ka fɔlɔ dansi serie",
+    "moviesRestored": "Fiilimuw fɔlɔ ka bɛɛ",
+    "selectedMoviesRestoreConfirm": "I bɛ se ka fiilimuw fɔlɔ ka bɛɛ?",
+    "hiddenMovies": "Fiilimuw tɛgɛ ka fo",
+    "noHiddenMovies": "Ayi fiilimuw tɛgɛ ka fo",
+    "searchPeople": "Sariw Nɛnɛw",
+    "recommendFileCreated": "Fiilimuw taara ka fɔlɔ",
+    "recommendFileCreationConfirm": "I bɛ se ka fiilimuw taara ka fɔlɔ?",
+    "selectMoviesToAdd": "Paw fiilimuw ka sɔrɔ yɔrɔ yɔrɔ",
+    "moviesAddedToWatchList": "Fiilimuw sɔrɔ yɔrɔ yɔrɔ."
+
 }

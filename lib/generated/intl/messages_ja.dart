@@ -85,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("デジタル"),
         "director": MessageLookupByLibrary.simpleMessage("監督"),
         "directorNull": MessageLookupByLibrary.simpleMessage("監督Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("発見する"),
         "documentary": MessageLookupByLibrary.simpleMessage("ドキュメンタリー"),
         "drama": MessageLookupByLibrary.simpleMessage("ドラマ"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -116,7 +117,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("フランチャイズ"),
         "genre": MessageLookupByLibrary.simpleMessage("ジャンル"),
         "genres": MessageLookupByLibrary.simpleMessage("ジャンル"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "映画のジャンルやトピックを入力することで、おすすめを受け取ることができます"),
         "groupBy": MessageLookupByLibrary.simpleMessage("グループ化"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("非表示の映画"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("選択した映画を非表示にする"),
         "history": MessageLookupByLibrary.simpleMessage("歴史"),
         "horror": MessageLookupByLibrary.simpleMessage("ホラー"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("ハイプスコア"),
@@ -143,11 +149,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieTitle": MessageLookupByLibrary.simpleMessage("映画のタイトル"),
         "movieUpdated": MessageLookupByLibrary.simpleMessage("映画が正常に更新されました！"),
         "movies": MessageLookupByLibrary.simpleMessage("映画"),
+        "moviesAddedToWatchList":
+            MessageLookupByLibrary.simpleMessage("映画が視聴リストに追加されました。"),
+        "moviesAreHidden": MessageLookupByLibrary.simpleMessage("映画が非表示になりました"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" 映画が削除されました。"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("映画がコレクションに移動されました！"),
         "moviesMovedToWatchlist":
             MessageLookupByLibrary.simpleMessage("映画がウォッチリストに移動されました！"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage("映画が復元されました"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" 映画が選択されました"),
         "music": MessageLookupByLibrary.simpleMessage("音楽"),
         "myNotes": MessageLookupByLibrary.simpleMessage("私のメモ"),
@@ -163,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("フランチャイズが選択されていません"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("ジャンルが選択されていません"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage("非表示の映画はありません"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("IDトークンが見つかりません。"),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("このジャンルの映画が見つかりませんでした！"),
@@ -179,18 +190,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("11月"),
         "october": MessageLookupByLibrary.simpleMessage("10月"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("シリーズの他の映画"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("入力してください"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("映画のタイトルを入力してください"),
         "plot": MessageLookupByLibrary.simpleMessage("あらすじ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("人気の理由"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("人気の映画"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("人気の人々"),
         "poster": MessageLookupByLibrary.simpleMessage("ポスター"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("プレミアムカスタマーサポート"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("ポスターを選択するにはクリックしてください"),
+        "producer": MessageLookupByLibrary.simpleMessage("プロデューサー"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("制作会社"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("ランダムな映画"),
+        "recommendFileCreated":
+            MessageLookupByLibrary.simpleMessage("映画の推薦ファイルが作成されました。"),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "選択した映画で映画推薦ファイルを作成してもよろしいですか？"),
         "recommendMovieMode": MessageLookupByLibrary.simpleMessage("映画推薦モード"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("公開日"),
         "releaseDateColon": MessageLookupByLibrary.simpleMessage("公開日: "),
@@ -198,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeAds": MessageLookupByLibrary.simpleMessage("すべての広告を削除"),
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage("映画追加の制限を解除"),
         "rent": MessageLookupByLibrary.simpleMessage("(レンタル)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("非表示にした映画を復元する"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("前の画面に戻ってください"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("収益: "),
@@ -206,10 +228,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("上映時間（分）"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("SF"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("映画を検索"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("人を検索する"),
+        "selectMoviesToAdd":
+            MessageLookupByLibrary.simpleMessage("視聴リストに追加する映画を選択してください"),
         "selectPgRating": MessageLookupByLibrary.simpleMessage("PG評価を選択"),
         "selected": MessageLookupByLibrary.simpleMessage("選択済み"),
         "selectedMoviesDeleteConfirm":
             MessageLookupByLibrary.simpleMessage("選択した映画が削除されます。よろしいですか？"),
+        "selectedMoviesHideConfirm":
+            MessageLookupByLibrary.simpleMessage("選択した映画を非表示にしてもよろしいですか？"),
+        "selectedMoviesRestoreConfirm":
+            MessageLookupByLibrary.simpleMessage("選択した映画を復元してもよろしいですか？"),
         "september": MessageLookupByLibrary.simpleMessage("9月"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Googleサインインがキャンセルされました。"),
@@ -253,6 +282,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("毎週"),
         "welcome": MessageLookupByLibrary.simpleMessage("ようこそ、"),
         "western": MessageLookupByLibrary.simpleMessage("西部劇"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("どんな種類の映画を探していますか？"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("どこで視聴できますか？"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("削除されますか？"),
         "wishlist": MessageLookupByLibrary.simpleMessage("ウォッチリスト"),

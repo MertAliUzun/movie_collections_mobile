@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Idijithali"),
         "director": MessageLookupByLibrary.simpleMessage("Umqondisi"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Umqondisi Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Thola"),
         "documentary": MessageLookupByLibrary.simpleMessage("Idokhumenti"),
         "drama": MessageLookupByLibrary.simpleMessage("Idrama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -127,7 +128,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Izinkampani ezizimele"),
         "genre": MessageLookupByLibrary.simpleMessage("Uhlobo"),
         "genres": MessageLookupByLibrary.simpleMessage("Izihloko"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Ngokubhala uhlobo noma isihloko sefayela, ungathola iziphakamiso."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Hlanganisa Ngokuya"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ama-movie afihliwe"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Fihla ama-movie akhethiwe"),
         "history": MessageLookupByLibrary.simpleMessage("Imbali"),
         "horror": MessageLookupByLibrary.simpleMessage("Ukwesaba"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Score"),
@@ -162,12 +169,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Ifilimu ihlaziywe ngempumelelo!"),
         "movies": MessageLookupByLibrary.simpleMessage("Amafilimu"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Ama-movie afakwe kuhlu lwakho lokubuka."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Ama-movie afihliwe"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" amafilimu asusiwe."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Amafilimu ahudluliwe kuQoqo!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Amafilimu ahudluliwe ku-List of Watch!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Ama-movie abuyiselwe"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" amafilimu akhethiwe"),
         "music": MessageLookupByLibrary.simpleMessage("Umculo"),
@@ -184,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ayikho ifranchise ekhethiwe"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ayikho Izihloko Ezikhethiwe"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ayikho imovie efihliwe"),
         "noIdToken": MessageLookupByLibrary.simpleMessage(
             "Ayikho i-ID Token etholakalayo."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -203,19 +218,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Novemba"),
         "october": MessageLookupByLibrary.simpleMessage("Okthoba"),
         "ok": MessageLookupByLibrary.simpleMessage("Kulungile"),
+        "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
+            "Ezinye izithombe kuhlobene neziqu"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Sicela ufake"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Sicela ufake isihloko sefilimu"),
         "plot": MessageLookupByLibrary.simpleMessage("Uhlaka"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Ethandwa Ngayo"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Ama-movie adumile"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Abantu abathandwayo"),
         "poster": MessageLookupByLibrary.simpleMessage("Iphosta"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Ukusekela Kwezokuthengisa Okuzenzakalelayo"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Cindezela ukukhetha iphosta yefilimu"),
+        "producer": MessageLookupByLibrary.simpleMessage("Umkhiqizi"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Izinkampani Zokukhiqiza"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Ifilimu Ohlanga"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Ithrekhi yokuphakela ama-movie yadalwa."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Uqinisekisa ukudala ifayela le-iphakheji lamafilimu akhethiwe?"),
         "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
             "Imodi yeFilimu Yokuphakamisa"),
         "releaseDate":
@@ -228,6 +254,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Susa umkhawulo wokwengeza amafilimu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ukuqasha)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Buyisela ama-movie afihliwe"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Sicela ubuyele esikrinini esedlule"),
         "revenueColon":
@@ -240,11 +268,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Isayensi Yokufakelwa"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Sesha Amafilimu"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Sesha abantu"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Khetha ama-movie ukuze uwengeze kuhlu lwezobuka"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Khetha Ukuhlola kwe-PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Khethiwe"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Amafilimu akhethiwe azosuswa. Uqinisekile?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Uqinisekisa ukufihla ama-movie akhethiwe?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Uqinisekisa ukubuyisela ama-movie akhethiwe?"),
         "september": MessageLookupByLibrary.simpleMessage("Septhemba"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Ukungena kwe-Google kuhlaziywe."),
@@ -293,6 +328,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Ngeviki"),
         "welcome": MessageLookupByLibrary.simpleMessage("Siyakwamukela, "),
         "western": MessageLookupByLibrary.simpleMessage("Okwesifundazwe"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Izinhlobo zomdwebo ofuna ukuzibona?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Kuphi Ukubuka?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("izoba suswa?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Uhlu Lokubuka"),

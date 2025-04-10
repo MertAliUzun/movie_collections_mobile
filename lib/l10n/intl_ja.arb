@@ -194,5 +194,26 @@
     "recommendMovieMode": "映画推薦モード",
     "findMovieMode": "映画検索モード",
     "latestMovies": "最新映画",
-    "upcomingMovies": "公開予定映画"
+    "upcomingMovies": "公開予定映画",
+    "whatKindMoviesLookingFor": "どんな種類の映画を探していますか？",
+    "getRecommendationFromAI": "映画のジャンルやトピックを入力することで、おすすめを受け取ることができます",
+    "producer": "プロデューサー",
+    "hideChosenMovies": "選択した映画を非表示にする",
+    "selectedMoviesHideConfirm": "選択した映画を非表示にしてもよろしいですか？",
+    "moviesAreHidden": "映画が非表示になりました",
+    "discover": "発見する",
+    "popularMovies": "人気の映画",
+    "popularPeople": "人気の人々",
+    "restoreHiddenMovies": "非表示にした映画を復元する",
+    "otherMoviesInSeries": "シリーズの他の映画",
+    "moviesRestored": "映画が復元されました",
+    "selectedMoviesRestoreConfirm": "選択した映画を復元してもよろしいですか？",
+    "hiddenMovies": "非表示の映画",
+    "noHiddenMovies": "非表示の映画はありません",
+    "searchPeople": "人を検索する",
+    "recommendFileCreated": "映画の推薦ファイルが作成されました。",
+    "recommendFileCreationConfirm": "選択した映画で映画推薦ファイルを作成してもよろしいですか？",
+    "selectMoviesToAdd": "視聴リストに追加する映画を選択してください",
+    "moviesAddedToWatchList": "映画が視聴リストに追加されました。"
+    
 }

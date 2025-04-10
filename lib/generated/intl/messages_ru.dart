@@ -95,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Режиссер"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Режиссер отсутствует"),
+        "discover": MessageLookupByLibrary.simpleMessage("Открыть"),
         "documentary": MessageLookupByLibrary.simpleMessage("Документальный"),
         "drama": MessageLookupByLibrary.simpleMessage("Драма"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -128,7 +129,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Франшизы"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
         "genres": MessageLookupByLibrary.simpleMessage("Жанры"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Введя жанр или тему фильма, вы можете получить рекомендации"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Группировать по"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Скрытые фильмы"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Скрыть выбранные фильмы"),
         "history": MessageLookupByLibrary.simpleMessage("История"),
         "horror": MessageLookupByLibrary.simpleMessage("Ужасы"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Рейтинг ожиданий"),
@@ -162,12 +168,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Фильм успешно обновлен!"),
         "movies": MessageLookupByLibrary.simpleMessage("Фильмы"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Фильмы добавлены в ваш список для просмотра."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Фильмы скрыты"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" фильмы удалены."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Фильмы перемещены в коллекцию!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Фильмы перемещены в список желаемого!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Фильмы восстановлены"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" фильмов выбрано"),
         "music": MessageLookupByLibrary.simpleMessage("Музыка"),
@@ -184,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Франшизы не выбраны"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Жанры не выбраны"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Нет скрытых фильмов"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID токен не найден."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -203,20 +217,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Ноябрь"),
         "october": MessageLookupByLibrary.simpleMessage("Октябрь"),
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Другие фильмы в серии"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, введите"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите название фильма"),
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Популярен для"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Популярные фильмы"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Популярные люди"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Премиум поддержка клиентов"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Нажмите, чтобы выбрать постер фильма"),
+        "producer": MessageLookupByLibrary.simpleMessage("Продюсер"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Производственные компании"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Случайный фильм"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Файл с рекомендациями фильмов создан."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Вы подтверждаете создание файла с рекомендациями фильмов из выбранных фильмов?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Режим рекомендаций фильмов"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Дата релиза"),
@@ -228,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Удалить ограничение на добавление фильмов"),
         "rent": MessageLookupByLibrary.simpleMessage("(Аренда)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Восстановить скрытые фильмы"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, вернитесь на предыдущий экран"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Доход: "),
@@ -238,11 +265,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Научная фантастика"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Поиск фильмов"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Искать людей"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Выберите фильмы, чтобы добавить в ваш список для просмотра"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Выберите рейтинг PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Выбрано"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Вы уверены, что хотите удалить выбранные фильмы?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Вы подтверждаете скрытие выбранных фильмов?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Вы подтверждаете восстановление выбранных фильмов?"),
         "september": MessageLookupByLibrary.simpleMessage("Сентябрь"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Вход через Google был отменен."),
@@ -292,6 +326,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Еженедельно"),
         "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать, "),
         "western": MessageLookupByLibrary.simpleMessage("Вестерн"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Какой тип фильмов вы ищете?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Где смотреть?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("будет удален?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Список желаемого"),

@@ -90,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Kỹ thuật số"),
         "director": MessageLookupByLibrary.simpleMessage("Đạo diễn"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Đạo diễn trống"),
+        "discover": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "documentary": MessageLookupByLibrary.simpleMessage("Tài liệu"),
         "drama": MessageLookupByLibrary.simpleMessage("Kịch"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -123,7 +124,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Nhượng quyền"),
         "genre": MessageLookupByLibrary.simpleMessage("Thể loại"),
         "genres": MessageLookupByLibrary.simpleMessage("Thể loại"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Bằng cách nhập thể loại hoặc chủ đề của bộ phim, bạn có thể nhận được các đề xuất."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Nhóm theo"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Phim đã ẩn"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Ẩn các bộ phim đã chọn"),
         "history": MessageLookupByLibrary.simpleMessage("Lịch sử"),
         "horror": MessageLookupByLibrary.simpleMessage("Kinh dị"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Điểm Hype"),
@@ -156,12 +162,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Phim đã được cập nhật thành công!"),
         "movies": MessageLookupByLibrary.simpleMessage("Phim"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Các bộ phim đã được thêm vào danh sách xem của bạn."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Các bộ phim đã bị ẩn"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" phim đã bị xóa."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Phim đã được chuyển đến bộ sưu tập!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Phim đã được chuyển đến danh sách xem!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "Các bộ phim đã được khôi phục"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" phim đã được chọn"),
         "music": MessageLookupByLibrary.simpleMessage("Âm nhạc"),
@@ -178,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chưa chọn nhượng quyền nào"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Chưa chọn thể loại nào"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Không có phim nào bị ẩn"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Không tìm thấy ID Token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -197,19 +211,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Tháng Mười Một"),
         "october": MessageLookupByLibrary.simpleMessage("Tháng Mười"),
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Các bộ phim khác trong loạt"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Vui lòng nhập"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Vui lòng nhập tiêu đề phim"),
         "plot": MessageLookupByLibrary.simpleMessage("Nội dung"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Nổi tiếng với"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Phim phổ biến"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Những người nổi tiếng"),
         "poster": MessageLookupByLibrary.simpleMessage("Áp phích"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Hỗ trợ khách hàng Premium"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Nhấn để chọn áp phích phim"),
+        "producer": MessageLookupByLibrary.simpleMessage("Nhà sản xuất"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Các công ty sản xuất"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Phim ngẫu nhiên"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Tệp đề xuất phim đã được tạo."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bạn có xác nhận việc tạo tệp đề xuất phim với các bộ phim đã chọn không?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Chế độ Gợi ý Phim"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Ngày phát hành"),
@@ -221,6 +245,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Xóa giới hạn thêm phim"),
         "rent": MessageLookupByLibrary.simpleMessage("(Thuê)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Khôi phục các bộ phim đã ẩn"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Vui lòng quay lại màn hình trước"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Doanh thu: "),
@@ -231,11 +257,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Khoa học viễn tưởng"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Tìm phim"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Tìm kiếm người"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Chọn các bộ phim để thêm vào danh sách xem của bạn"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Chọn Đánh giá PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Đã chọn"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Các phim đã chọn sẽ bị xóa. Bạn có xác nhận không?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bạn có xác nhận việc ẩn các bộ phim đã chọn không?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bạn có xác nhận việc khôi phục các bộ phim đã chọn không?"),
         "september": MessageLookupByLibrary.simpleMessage("Tháng Chín"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Đăng nhập Google bị hủy."),
@@ -282,6 +315,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Hằng tuần"),
         "welcome": MessageLookupByLibrary.simpleMessage("Chào mừng, "),
         "western": MessageLookupByLibrary.simpleMessage("Viễn Tây"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Bạn đang tìm kiếm loại phim nào?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Xem ở đâu?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("sẽ bị xóa?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Danh Sách Xem"),

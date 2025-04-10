@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Zuzendaria"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Zuzendaririk ez dago"),
+        "discover": MessageLookupByLibrary.simpleMessage("Aurkitu"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentala"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "editDirector":
@@ -108,7 +109,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Frantziak"),
         "genre": MessageLookupByLibrary.simpleMessage("Generoa"),
         "genres": MessageLookupByLibrary.simpleMessage("Generoak"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Filmakin lotutako genero edo gai bat idatzita, gomendioak jaso ditzakezu"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Taldekatu"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ezkutatutako filmak"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Hautatutako filmak ezkutatu"),
         "history": MessageLookupByLibrary.simpleMessage("Historia"),
         "horror": MessageLookupByLibrary.simpleMessage("Beldurra"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype puntuazioa"),
@@ -137,12 +144,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filma eguneratu da."),
         "movies": MessageLookupByLibrary.simpleMessage("Filmak"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmak zure ikusi zerrendara gehitu dira."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmak ezkutatu dira"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film ezabatu da."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmak bildumara mugitu dira."),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmak gogokoen zerrendara mugitu dira."),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmak berreskuratu dira"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film aukeratuta"),
         "music": MessageLookupByLibrary.simpleMessage("Musika"),
@@ -159,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ez da frantzia bat ere aukeratu"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ez da generorik aukeratu"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ez dago ezkutatutako filmik"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID tokenik ez dago."),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
@@ -171,18 +186,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Azaroa"),
         "october": MessageLookupByLibrary.simpleMessage("Urria"),
         "ok": MessageLookupByLibrary.simpleMessage("Ados"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Seriako beste filmak"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Mesedez, sartu"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Idatzi filmaren izenburua"),
         "plot": MessageLookupByLibrary.simpleMessage("Sinopsia"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Filme ospetsuak"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Pertsona ospetsuak"),
         "poster": MessageLookupByLibrary.simpleMessage("Kartela"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Premium bezeroarentzako laguntza"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Sakatu kartela aukeratzeko"),
+        "producer": MessageLookupByLibrary.simpleMessage("Ekoizlea"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ekoizpen enpresak"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Ausazko filma"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Filme gomendioen fitxategia sortu da."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Hautatutako filmekin filme gomendioen fitxategia sortzea baiezta al dezakezu?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Film gomendatzeko modua"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Argitaratze data"),
@@ -195,6 +221,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Film gehitzeko muga kendu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Alokatzea)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Ezkutatutako filmak berreskuratu"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Diru-sarrerak: "),
         "romance": MessageLookupByLibrary.simpleMessage("Erromantzea"),
         "runtime": MessageLookupByLibrary.simpleMessage("Iraupena"),
@@ -203,11 +231,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Zientzia fikzioa"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filmak bilatu"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Pertsonak bilatu"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Hautatu filmak zure ikusi zerrendara gehitzeko"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Hautatu PG sailkapena"),
         "selected": MessageLookupByLibrary.simpleMessage("Aukeratua"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             " film ezabatuko dira. Ziur zaude?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Ezkutatu nahi dituzula baiezta al dezakezu hautatutako filmak?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Hautatutako filmak berreskuratu nahi dituzula baiezta al dezakezu?"),
         "september": MessageLookupByLibrary.simpleMessage("Iraila"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google bidezko saioa bertan behera utzi da."),
@@ -250,6 +286,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "watchYear": MessageLookupByLibrary.simpleMessage("Ikusteko urtea"),
         "welcome": MessageLookupByLibrary.simpleMessage("Ongi etorri, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Zein film mota bilatzen ari zara?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Non ikusi?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("ezabatuko da. Ziur zaude?"),

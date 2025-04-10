@@ -194,5 +194,26 @@
     "recommendMovieMode": "영화 추천 모드",
     "findMovieMode": "영화 찾기 모드",
     "latestMovies": "최신 영화",
-    "upcomingMovies": "개봉 예정 영화"
+    "upcomingMovies": "개봉 예정 영화",
+    "whatKindMoviesLookingFor": "어떤 종류의 영화를 찾고 계신가요?",
+    "getRecommendationFromAI": "영화의 장르나 주제를 입력하면 추천을 받을 수 있습니다",
+    "producer": "프로듀서",
+    "hideChosenMovies": "선택한 영화를 숨기기",
+    "selectedMoviesHideConfirm": "선택한 영화를 숨기시겠습니까?",
+    "moviesAreHidden": "영화가 숨겨졌습니다",
+    "discover": "발견하기",
+    "popularMovies": "인기 영화",
+    "popularPeople": "인기 인물",
+    "restoreHiddenMovies": "숨겨진 영화 복원",
+    "otherMoviesInSeries": "시리즈의 다른 영화",
+    "moviesRestored": "영화가 복원되었습니다",
+    "selectedMoviesRestoreConfirm": "선택한 영화를 복원하시겠습니까?",
+    "hiddenMovies": "숨겨진 영화",
+    "noHiddenMovies": "숨겨진 영화가 없습니다",
+    "searchPeople": "사람 검색",
+    "recommendFileCreated": "영화 추천 파일이 생성되었습니다.",
+    "recommendFileCreationConfirm": "선택한 영화들로 영화 추천 파일을 생성하시겠습니까?",
+    "selectMoviesToAdd": "내 시청 목록에 추가할 영화를 선택하세요",
+    "moviesAddedToWatchList": "영화가 내 시청 목록에 추가되었습니다."
+
 }

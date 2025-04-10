@@ -194,5 +194,26 @@
     "recommendMovieMode": "Фильм тавышы режими",
     "findMovieMode": "Фильм эзләв режими",
     "latestMovies": "Соңғы кинемалар",
-    "upcomingMovies": "Киләсе кинемалар"
+    "upcomingMovies": "Киләсе кинемалар",
+    "whatKindMoviesLookingFor": "Кай фильмне ҫултараҫҫӗн?",
+    "getRecommendationFromAI": "Фильм жанрӗне ҫарӗмӗшҫӗн или темаҫҫӗн кӗсӗн, хӗрлешерене ҫултар",
+    "producer": "Продусер",
+    "hideChosenMovies": "Тӗнӗк ҫултарылган фильмне йӗлӗрӗп ку",
+    "selectedMoviesHideConfirm": "Тӗнӗк ҫултарылган фильмне йӗлӗрӗп ку куҫӑнмы?",
+    "moviesAreHidden": "Фильмне йӗлӗрӗп ку",
+    "discover": "Ҫултар",
+    "popularMovies": "Популяр фильмне",
+    "popularPeople": "Популяр хӑнар",
+    "restoreHiddenMovies": "Йӗлӗрӗп ку фильмне ҫултар",
+    "otherMoviesInSeries": "Сериӗ ҫултар фильмне",
+    "moviesRestored": "Фильмне ҫултарлӑн",
+    "selectedMoviesRestoreConfirm": "Тӗнӗк ҫултарылган фильмне ҫултару куҫӑнмы?",
+    "hiddenMovies": "Йӗлӗрӗп ку фильмне",
+    "noHiddenMovies": "Йӗлӗрӗп ку фильмне тӗнӗ",
+    "searchPeople": "Хӑнар ҫултар",
+    "recommendFileCreated": "Фильмне рекомендация файлы ҫултарлӑн.",
+    "recommendFileCreationConfirm": "Тӗнӗк ҫултарылган фильмне рекомендация файлы ҫултару куҫӑнмы?",
+    "selectMoviesToAdd": "Ҫултаруҫӑн фильмне ҫултару ҫапар",
+    "moviesAddedToWatchList": "Фильмне ҫапар ҫултаруҫӑн."
+
 }

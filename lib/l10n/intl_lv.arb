@@ -194,5 +194,26 @@
     "recommendMovieMode": "Filmu ieteikumu režīms",
     "findMovieMode": "Filmu meklēšanas režīms",
     "latestMovies": "Jaunākās filmas",
-    "upcomingMovies": "Gaidāmās filmas"
+    "upcomingMovies": "Gaidāmās filmas",
+    "whatKindMoviesLookingFor": "Kādu filmu jūs meklējat?",
+    "getRecommendationFromAI": "Ievadot filmas žanru vai tēmu, varat saņemt ieteikumus",
+    "producer": "Producenta",
+    "hideChosenMovies": "Paslēpt izvēlētās filmas",
+    "selectedMoviesHideConfirm": "Vai apstiprināt izvēlēto filmu paslēpšanu?",
+    "moviesAreHidden": "Filmas ir paslēptas",
+    "discover": "Atklāt",
+    "popularMovies": "Populāras filmas",
+    "popularPeople": "Populāri cilvēki",
+    "restoreHiddenMovies": "Atjaunot paslēptās filmas",
+    "otherMoviesInSeries": "Citas filmas sērijā",
+    "moviesRestored": "Filmas ir atjaunotas",
+    "selectedMoviesRestoreConfirm": "Vai apstiprināt izvēlēto filmu atjaunošanu?",
+    "hiddenMovies": "Paslēptās filmas",
+    "noHiddenMovies": "Nav paslēptu filmu",
+    "searchPeople": "Meklēt cilvēkus",
+    "recommendFileCreated": "Filmu ieteikumu fails ir izveidots.",
+    "recommendFileCreationConfirm": "Vai apstiprināt filmu ieteikumu faila izveidi ar izvēlētajām filmām?",
+    "selectMoviesToAdd": "Izvēlieties filmas, ko pievienot savai skatīšanās sarakstam",
+    "moviesAddedToWatchList": "Filmas ir pievienotas jūsu skatīšanās sarakstam."
+
 }

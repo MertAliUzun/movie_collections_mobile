@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Sutradara"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Sutradara Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Panggihan"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumenter"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -127,7 +128,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Ku ngetikkeun genre atanapi topik pilem, anjeun tiasa kéngingkeun rekomendasi."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Kelompokkeun Ku"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Pilem Disumputkeun"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "Sembunyikeun pilem anu dipilih"),
         "history": MessageLookupByLibrary.simpleMessage("Sejarah"),
         "horror": MessageLookupByLibrary.simpleMessage("Horor"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Skor Hype"),
@@ -159,11 +166,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film geus hasil diropéa!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Pilem parantos ditambahkeun kana Daptar Nonton anjeun."),
+        "moviesAreHidden": MessageLookupByLibrary.simpleMessage(
+            "Pilem-pilem parantos disumputkeun"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film dihapus."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Film geus dipindahkeun ka Koleksi!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Film geus dipindahkeun ka Daptar Nonton!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "Pilem-pilem parantos dibalikeun"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" film dipilih"),
         "music": MessageLookupByLibrary.simpleMessage("Musik"),
         "myNotes": MessageLookupByLibrary.simpleMessage("Catetan Kuring"),
@@ -179,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Teu Aya Franchise Anu Kapilih"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Teu aya Genre anu dipilih"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Teu aya pilem anu disumputkeun"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("Teu aya Token ID."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Teu aya film pikeun genre ieu!"),
@@ -197,19 +212,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Nopember"),
         "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Pilem séjén dina séri"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Mangga lebetkeun"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Mangga lebetkeun judul film"),
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populer Pikeun"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Pilem Populer"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Jalma Populer"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Dukungan Pelanggan Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pencet pikeun milih poster film"),
+        "producer": MessageLookupByLibrary.simpleMessage("Produser"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Perusahaan Produksi"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film Acak"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "File rekomendasi pilem parantos didamel."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Naha anjeun mastikeun pikeun nyiptakeun file rekomendasi pilem anu anjeun pilih?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Mode Rekomendasi Filem"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Tanggal Rilis"),
@@ -220,6 +244,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Hapus Watesan Nambahkeun Film"),
         "rent": MessageLookupByLibrary.simpleMessage("(Sewa)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Balikeun deui pilem anu disumputkeun"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Mangga balikkeun ka layar sateuacanna"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Pendapatan: "),
@@ -229,11 +255,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Durasi (Menit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fiksi Sains"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Milarian Film"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Milarian Jalma"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Pilih pilem pikeun ditambahkeun kana Daptar Nonton anjeun"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Pilih Penilaian PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Dipilih"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "film anu dipilih bakal dihapus. Naha anjeun ngonfirmasi?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Naha anjeun mastikeun pikeun nyumputkeun pilem anu dipilih?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Naha anjeun mastikeun pikeun mulangkeun pilem anu dipilih?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Login Google dibatalkeun."),
@@ -281,6 +314,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Mingguan"),
         "welcome": MessageLookupByLibrary.simpleMessage("Wilujeng sumping, "),
         "western": MessageLookupByLibrary.simpleMessage("Barat"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Naon jinis pilem anu anjeun pilari?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Di mana nonton?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("bakal dihapus?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Daptar Nonton"),

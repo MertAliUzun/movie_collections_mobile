@@ -194,5 +194,26 @@
     "recommendMovieMode": "ფილმების რეკომენდაციის რეჟიმი",
     "findMovieMode": "ფილმების ძებნის რეჟიმი",
     "latestMovies": "ბოლო ფილმები",
-    "upcomingMovies": "მომავალი ფილმები"
+    "upcomingMovies": "მომავალი ფილმები",
+    "whatKindMoviesLookingFor": "რა ტიპის ფილმებს ეძებთ?",
+    "getRecommendationFromAI": "თუ ფილმის ჟანრის ან თემის აკრიფავთ, შეგიძლიათ მიიღოთ რეკომენდაციები",
+    "producer": "პროდიუსერი",
+    "hideChosenMovies": "გამორთული ფილმები დამალვა",
+    "selectedMoviesHideConfirm": "დარწმუნებული ხართ, რომ გსურთ შერჩეული ფილმების დამალვა?",
+    "moviesAreHidden": "ფილმები დამალულია",
+    "discover": "გამოიკვლიეთ",
+    "popularMovies": "პოპულარული ფილმები",
+    "popularPeople": "პოპულარული ადამიანები",
+    "restoreHiddenMovies": "დამალული ფილმების აღდგენა",
+    "otherMoviesInSeries": "სხვა ფილმები სერიებში",
+    "moviesRestored": "ფილმები აღდგენილია",
+    "selectedMoviesRestoreConfirm": "დარწმუნებული ხართ, რომ გსურთ შერჩეული ფილმების აღდგენა?",
+    "hiddenMovies": "დამალული ფილმები",
+    "noHiddenMovies": "დამალული ფილმები არ არის",
+    "searchPeople": "მოძებნე ადამიანები",
+    "recommendFileCreated": "ფილმის რეკომენდაციის ფაილი შეიქმნა.",
+    "recommendFileCreationConfirm": "დარწმუნებული ხართ, რომ გსურთ შექმნათ ფილმის რეკომენდაციის ფაილი შერჩეულ ფილმებთან ერთად?",
+    "selectMoviesToAdd": "მოიყვანეთ ფილმები თქვენი სანახავი სიის დამატებისათვის",
+    "moviesAddedToWatchList": "ფილმები დაემატა თქვენს სანახავი სიაში."
+
 }

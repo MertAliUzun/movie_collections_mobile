@@ -194,5 +194,26 @@
     "recommendMovieMode": "ਫਿਲਮ ਦੀ ਸਿਫਾਰਿਸ਼ ਮੋਡ",
     "findMovieMode": "ਫਿਲਮ ਖੋਜਣ ਦਾ ਮੋਡ",
     "latestMovies": "ਨਵੀਆਂ ਫਿਲਮਾਂ",
-    "upcomingMovies": "ਆਉਣ ਵਾਲੀਆਂ ਫਿਲਮਾਂ"
+    "upcomingMovies": "ਆਉਣ ਵਾਲੀਆਂ ਫਿਲਮਾਂ",
+    "whatKindMoviesLookingFor": "ਤੁਸੀਂ ਕਿਹੜੀਆਂ ਕਿਸਮ ਦੀਆਂ ਫਿਲਮਾਂ ਦੀ ਤਲਾਸ਼ ਕਰ ਰਹੇ ਹੋ?",
+    "getRecommendationFromAI": "ਫਿਲਮ ਦੇ ਜੇਨਰ ਜਾਂ ਵਿਸ਼ੇ ਨੂੰ ਟਾਈਪ ਕਰਕੇ ਤੁਸੀਂ ਸੁਝਾਵ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦੇ ਹੋ",
+    "producer": "ਪੈਦਾਕਾਰ",
+    "hideChosenMovies": "ਚੁਣੀਆਂ ਗਈਆਂ ਫਿਲਮਾਂ ਨੂੰ ਛਪਾਓ",
+    "selectedMoviesHideConfirm": "ਕੀ ਤੁਸੀਂ ਚੁਣੀਆਂ ਗਈਆਂ ਫਿਲਮਾਂ ਨੂੰ ਛਪਾਉਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?",
+    "moviesAreHidden": "ਫਿਲਮਾਂ ਨੂੰ ਛਪਾ ਦਿੱਤਾ ਗਿਆ ਹੈ",
+    "discover": "ਖੋਜੋ",
+    "popularMovies": "ਪ੍ਰਸਿੱਧ ਫਿਲਮਾਂ",
+    "popularPeople": "ਪ੍ਰਸਿੱਧ ਲੋਕ",
+    "restoreHiddenMovies": "ਛਪਾਈਆਂ ਗਈਆਂ ਫਿਲਮਾਂ ਨੂੰ ਦੁਬਾਰਾ ਦਿਖਾਓ",
+    "otherMoviesInSeries": "ਸਿਰੀਜ਼ ਵਿੱਚ ਹੋਰ ਫਿਲਮਾਂ",
+    "moviesRestored": "ਫਿਲਮਾਂ ਨੂੰ ਦੁਬਾਰਾ ਦਿਖਾ ਦਿੱਤਾ ਗਿਆ ਹੈ",
+    "selectedMoviesRestoreConfirm": "ਕੀ ਤੁਸੀਂ ਚੁਣੀਆਂ ਗਈਆਂ ਫਿਲਮਾਂ ਨੂੰ ਦੁਬਾਰਾ ਦਿਖਾਉਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?",
+    "hiddenMovies": "ਛਪਾਈਆਂ ਗਈਆਂ ਫਿਲਮਾਂ",
+    "noHiddenMovies": "ਕੋਈ ਛਪਾਈਆਂ ਗਈਆਂ ਫਿਲਮਾਂ ਨਹੀਂ ਹਨ",
+    "searchPeople": "ਲੋਕਾਂ ਨੂੰ ਖੋਜੋ",
+    "recommendFileCreated": "ਫਿਲਮ ਸਿਫਾਰਸ਼ ਫਾਈਲ ਬਣਾਈ ਗਈ ਹੈ",
+    "recommendFileCreationConfirm": "ਕੀ ਤੁਸੀਂ ਚੁਣੀਆਂ ਗਈਆਂ ਫਿਲਮਾਂ ਨਾਲ ਫਿਲਮ ਸਿਫਾਰਸ਼ ਫਾਈਲ ਬਣਾਉਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?",
+    "selectMoviesToAdd": "ਆਪਣੀ ਵਾਚ ਲਿਸਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਫਿਲਮਾਂ ਚੁਣੋ",
+    "moviesAddedToWatchList": "ਫਿਲਮਾਂ ਤੁਹਾਡੀ ਵਾਚ ਲਿਸਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੀਆਂ ਗਈਆਂ ਹਨ"
+
 }

@@ -75,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("رقمي"),
         "director": MessageLookupByLibrary.simpleMessage("المخرج"),
         "directorNull": MessageLookupByLibrary.simpleMessage("لا يوجد مخرج"),
+        "discover": MessageLookupByLibrary.simpleMessage("استكشاف"),
         "documentary": MessageLookupByLibrary.simpleMessage("وثائقي"),
         "drama": MessageLookupByLibrary.simpleMessage("دراما"),
         "editDirector": MessageLookupByLibrary.simpleMessage("تحرير المخرج"),
@@ -104,7 +105,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("امتيازات"),
         "genre": MessageLookupByLibrary.simpleMessage("النوع"),
         "genres": MessageLookupByLibrary.simpleMessage("الأنواع"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "بكتابة نوع أو موضوع الفيلم، يمكنك الحصول على توصيات"),
         "groupBy": MessageLookupByLibrary.simpleMessage("تجميع حسب"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("الأفلام المخفية"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("إخفاء الأفلام المحددة"),
         "history": MessageLookupByLibrary.simpleMessage("تاريخ"),
         "horror": MessageLookupByLibrary.simpleMessage("رعب"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("درجة الترقب"),
@@ -133,11 +139,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("تم تحديث الفيلم بنجاح!"),
         "movies": MessageLookupByLibrary.simpleMessage("أفلام"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "تمت إضافة الأفلام إلى قائمة المشاهدة الخاصة بك."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("تم إخفاء الأفلام"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" أفلام محذوفة."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "تمت إضافة الأفلام إلى المجموعة!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "تمت إضافة الأفلام إلى قائمة الرغبات!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("تمت استعادة الأفلام"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" أفلام محددة"),
         "music": MessageLookupByLibrary.simpleMessage("موسيقى"),
         "myNotes": MessageLookupByLibrary.simpleMessage("ملاحظاتي"),
@@ -153,6 +165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لم يتم تحديد أي امتيازات"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("لم يتم اختيار أي نوع"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("لا توجد أفلام مخفية"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("لا يوجد رمز تعريف."),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "ليس لديك إذن لحفظ الملفات على جهازك."),
@@ -164,18 +178,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
         "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
         "ok": MessageLookupByLibrary.simpleMessage("حسنًا"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("أفلام أخرى في السلسلة"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("يرجى إدخال"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال عنوان الفيلم"),
         "plot": MessageLookupByLibrary.simpleMessage("القصة"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("الأفلام الشائعة"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("الأشخاص الشائعون"),
         "poster": MessageLookupByLibrary.simpleMessage("ملصق"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("دعم العملاء المميز"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("اضغط لاختيار ملصق الفيلم"),
+        "producer": MessageLookupByLibrary.simpleMessage("المنتج"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("شركات الإنتاج"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("فيلم عشوائي"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "تم إنشاء ملف توصيات الأفلام."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "هل تؤكد إنشاء ملف توصيات بالأفلام المحددة؟"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("وضع توصية الأفلام"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("تاريخ الإصدار"),
@@ -187,6 +212,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("إزالة حد إضافة الأفلام"),
         "rent": MessageLookupByLibrary.simpleMessage("(إيجار)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("استعادة الأفلام المخفية"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("الإيرادات: "),
         "romance": MessageLookupByLibrary.simpleMessage("رومانسي"),
         "runtime": MessageLookupByLibrary.simpleMessage("مدة التشغيل"),
@@ -195,10 +222,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction": MessageLookupByLibrary.simpleMessage("خيال علمي"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("البحث عن الأفلام"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("ابحث عن أشخاص"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "اختر الأفلام لإضافتها إلى قائمة المشاهدة الخاصة بك"),
         "selectPgRating": MessageLookupByLibrary.simpleMessage("اختر تصنيف PG"),
         "selected": MessageLookupByLibrary.simpleMessage("محدد"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد حذف هذه الأفلام؟"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "هل تؤكد إخفاء الأفلام المحددة؟"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "هل تؤكد استعادة الأفلام المحددة؟"),
         "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "تم إلغاء تسجيل الدخول إلى Google."),
@@ -240,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "watchYear": MessageLookupByLibrary.simpleMessage("سنة المشاهدة"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا، "),
         "western": MessageLookupByLibrary.simpleMessage("غربي"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "ما نوع الأفلام التي تبحث عنها؟"),
         "whereToWatch":
             MessageLookupByLibrary.simpleMessage("أين يمكن المشاهدة؟"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("سيتم حذفه."),

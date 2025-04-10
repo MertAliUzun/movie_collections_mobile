@@ -194,5 +194,26 @@
     "recommendMovieMode": "Moda Moladh Film",
     "findMovieMode": "Moda Lorg Film",
     "latestMovies": "Na Filmichean Ùra",
-    "upcomingMovies": "Filmichean a' tighinn"
+    "upcomingMovies": "Filmichean a' tighinn",
+    "whatKindMoviesLookingFor": "Dè seòrsa filmichean a tha thu a' lorg?",
+    "getRecommendationFromAI": "Le bhith a' sgrìobhadh genre no cuspair na film, faodaidh tu molaidhean fhaighinn",
+    "producer": "Dèiligeadair",
+    "hideChosenMovies": "Folaich filmichean taghte",
+    "selectedMoviesHideConfirm": "A bheil thu ag ath-thagradh gu bheil thu airson na filmichean taghte a fholaich?",
+    "moviesAreHidden": "Tha na filmichean air am fàgail falaichte",
+    "discover": "Lorg",
+    "popularMovies": "Filmichean ainmeil",
+    "popularPeople": "Luchd ainmeil",
+    "restoreHiddenMovies": "Ath-shuidhich filmichean falaichte",
+    "otherMoviesInSeries": "Filmichean eile anns an t-sreath",
+    "moviesRestored": "Tha na filmichean air an ath-shuidheachadh",
+    "selectedMoviesRestoreConfirm": "A bheil thu ag ath-thagradh gu bheil thu airson na filmichean taghte a thoirt air ais?",
+    "hiddenMovies": "Filmichean falaichte",
+    "noHiddenMovies": "Chan eil filmichean falaichte ann",
+    "searchPeople": "Lorg daoine",
+    "recommendFileCreated": "Faidhle molaidhean filmichean air a chruthachadh.",
+    "recommendFileCreationConfirm": "A bheil thu ag ath-thagradh gu bheil faidhle molaidhean filmichean a' cruthachadh le na filmichean taghte?",
+    "selectMoviesToAdd": "Tagh filmichean gus an cur ri do liosta-fhaicinn",
+    "moviesAddedToWatchList": "Tha na filmichean air an cur ris an liosta-fhaicinn agad."
+    
 }

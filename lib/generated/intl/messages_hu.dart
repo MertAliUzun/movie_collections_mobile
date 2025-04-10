@@ -95,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Digitális"),
         "director": MessageLookupByLibrary.simpleMessage("Rendező"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Rendező Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Felfedezés"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentumfilm"),
         "drama": MessageLookupByLibrary.simpleMessage("Dráma"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -128,7 +129,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise-ok"),
         "genre": MessageLookupByLibrary.simpleMessage("Műfaj"),
         "genres": MessageLookupByLibrary.simpleMessage("Műfajok"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "A film műfajának vagy témájának megírásával ajánlásokat kaphatsz"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Csoportosítás"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Rejtett filmek"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "Rejtse el a kiválasztott filmeket"),
         "history": MessageLookupByLibrary.simpleMessage("Történelem"),
         "horror": MessageLookupByLibrary.simpleMessage("Horror"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype pontszám"),
@@ -161,11 +167,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("A film sikeresen frissítve!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmek"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "A filmek hozzá lettek adva a Nézési listádhoz."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("A filmek el vannak rejtve"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film törölve."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "A filmek áthelyezve a gyűjteménybe!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "A filmek áthelyezve a nézőlistára!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "A filmek vissza lettek állítva"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film kiválasztva"),
         "music": MessageLookupByLibrary.simpleMessage("Zene"),
@@ -182,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nincsenek kiválasztott franchise-ok"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nincs kiválasztott műfaj"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Nincsenek rejtett filmek"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Nem található ID token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -201,20 +215,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("November"),
         "october": MessageLookupByLibrary.simpleMessage("Október"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Egyéb filmek a sorozatban"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Kérjük, adja meg"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Kérjük, adja meg a film címét"),
         "plot": MessageLookupByLibrary.simpleMessage("Cselekmény"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Népszerű"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Népszerű filmek"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Népszerű emberek"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakát"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium ügyfélszolgálat"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Nyomja meg a filmplakát kiválasztásához"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producer"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Gyártócégek"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Véletlenszerű film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "A film ajánló fájl létrehozva."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Biztosan létre szeretnél hozni egy ajánló fájlt a kiválasztott filmekkel?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Film ajánlási mód"),
         "releaseDate":
@@ -227,6 +252,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Filmhozzáadási korlátozás eltávolítása"),
         "rent": MessageLookupByLibrary.simpleMessage("(Bérlés)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Rejtett filmek visszaállítása"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Kérjük, térjen vissza az előző képernyőre"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Bevétel: "),
@@ -236,11 +263,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Futamidő (perc)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Sci-Fi"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filmek keresése"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Keresés emberekre"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Válassz filmeket a Nézési listádhoz való hozzáadáshoz"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Válassza a PG besorolást"),
         "selected": MessageLookupByLibrary.simpleMessage("Kiválasztott"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "a kiválasztott filmek törlődnek. Biztos benne?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Biztosan el szeretnéd rejteni a kiválasztott filmeket?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Biztosan vissza akarod állítani a kiválasztott filmeket?"),
         "september": MessageLookupByLibrary.simpleMessage("Szeptember"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "A Google bejelentkezés megszakítva."),
@@ -290,6 +325,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Heti"),
         "welcome": MessageLookupByLibrary.simpleMessage("Üdvözöljük, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Milyen típusú filmeket keresel?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Hol nézhető?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("törlődik?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Nézőlista"),

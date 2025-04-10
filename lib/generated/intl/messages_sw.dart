@@ -98,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Mkurugenzi"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Mkurugenzi Sio Halali"),
+        "discover": MessageLookupByLibrary.simpleMessage("Gundua"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentari"),
         "drama": MessageLookupByLibrary.simpleMessage("Densi"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -131,7 +132,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Aina"),
         "genres": MessageLookupByLibrary.simpleMessage("Aina"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Kwa kuandika aina au mada ya filamu, unaweza kupata mapendekezo."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Pangilia Kwa"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Filamu Zilizofichwa"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Ficha filamu ulizochagua"),
         "history": MessageLookupByLibrary.simpleMessage("Historia"),
         "horror": MessageLookupByLibrary.simpleMessage("Hofu"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Alama ya Hype"),
@@ -167,12 +174,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filamu imefanikiwa kusasishwa!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filamu"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filamu zimeongezwa kwenye Orodha yako ya Kuangalia."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filamu zimefichwa"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filamu zimefutwa."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filamu zimehamishiwa kwa Mkusanyiko!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filamu zimehamishiwa kwa Orodha ya Kutazama!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filamu zimerejeshwa"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" filamu zimechaguliwa"),
         "music": MessageLookupByLibrary.simpleMessage("Muziki"),
@@ -189,6 +202,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hakuna Franchise Zilizochaguliwa"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Hakuna Aina Zilizochaguliwa"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Hakuna Filamu Zilizofichwa"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Hakuna Token ya ID."),
         "noMoviesForGenre":
@@ -208,20 +223,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Novemba"),
         "october": MessageLookupByLibrary.simpleMessage("Oktoba"),
         "ok": MessageLookupByLibrary.simpleMessage("Sawa"),
+        "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
+            "Filamu Nyingine Katika Mfululizo"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Tafadhali ingiza"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Tafadhali ingiza kichwa cha filamu"),
         "plot": MessageLookupByLibrary.simpleMessage("Hadithi"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Maarufu Kwa"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Filamu Maarufu"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Watu Maarufu"),
         "poster": MessageLookupByLibrary.simpleMessage("Bango"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Msaada wa Wateja wa Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Bonyeza kuchagua bango la filamu"),
+        "producer": MessageLookupByLibrary.simpleMessage("Mtayarishaji"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Makampuni ya Uzalishaji"),
         "randomMovie":
             MessageLookupByLibrary.simpleMessage("Filamu ya Bahati nasibu"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Faili ya mapendekezo ya filamu imeundwa."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Je, unathibitisha kuunda faili ya mapendekezo ya filamu ulizochagua?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Mode ya Kupendekeza Filamu"),
         "releaseDate":
@@ -235,6 +259,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Ondoa kikomo cha kuongeza filamu"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kodi)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Rejesha filamu zilizofichwa"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Tafadhali rudi kwenye skrini ya awali"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Mapato: "),
@@ -244,11 +270,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Sayansi ya Kubuni"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Tafuta Filamu"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Tafuta Watu"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Chagua filamu za kuongeza kwenye Orodha yako ya Kuangalia"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Chagua Ukadiriaji wa PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Imechaguliwa"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "filamu zilizochaguliwa zitafutwa. Je, unakubali?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Je, unathibitisha kuficha filamu ulizochagua?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Je, unathibitisha kurejesha filamu ulizochagua?"),
         "september": MessageLookupByLibrary.simpleMessage("Septemba"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Kujiandikisha kwa Google kumesitishwa."),
@@ -297,6 +330,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Kila Wiki"),
         "welcome": MessageLookupByLibrary.simpleMessage("Karibu, "),
         "western": MessageLookupByLibrary.simpleMessage("Magharibi"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Unatafuta aina gani ya filamu?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Wapi Kutazama?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("itafutwa?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Orodha ya Kutazama"),

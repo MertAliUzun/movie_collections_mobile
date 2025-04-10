@@ -80,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Թվային"),
         "director": MessageLookupByLibrary.simpleMessage("Ռեժիսոր"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Ռեժիսոր չկա"),
+        "discover": MessageLookupByLibrary.simpleMessage("Ապացուցեք"),
         "documentary": MessageLookupByLibrary.simpleMessage("Վավերագրական"),
         "drama": MessageLookupByLibrary.simpleMessage("Դրամա"),
         "editDirector":
@@ -110,7 +111,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Ֆրանչայզներ"),
         "genre": MessageLookupByLibrary.simpleMessage("Ժանր"),
         "genres": MessageLookupByLibrary.simpleMessage("Ժանրեր"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Ֆիլմի ժանրի կամ թեմայի գրմամբ կարող եք ստանալ առաջարկություններ"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Խմբավորել ըստ"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Թաքցված ֆիլմեր"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "Սկզբունքային ֆիլմերը թաքցնել"),
         "history": MessageLookupByLibrary.simpleMessage("Պատմական"),
         "horror": MessageLookupByLibrary.simpleMessage("Սարսափ"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Հիացմունքի միավոր"),
@@ -139,12 +145,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Ֆիլմը հաջողությամբ թարմացվեց։"),
         "movies": MessageLookupByLibrary.simpleMessage("Ֆիլմեր"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Ֆիլմերը ավելացվել են ձեր դիտելու ցանկում:"),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Ֆիլմերը թաքցված են"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" ֆիլմերը ջնջվեցին։"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Ֆիլմերը տեղափոխվել են հավաքածու։"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Ֆիլմերը տեղափոխվել են դիտման ցանկ։"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Ֆիլմերը վերականգնվել են"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" ֆիլմերը ընտրվել են"),
         "music": MessageLookupByLibrary.simpleMessage("Երաժշտություն"),
@@ -161,6 +173,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ֆրանչայզներ չեն ընտրվել"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ժանրեր ընտրված չեն"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Թաքցված ֆիլմեր չկան"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID թոքեն չի գտնվել։"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
@@ -173,19 +187,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Նոյեմբեր"),
         "october": MessageLookupByLibrary.simpleMessage("Հոկտեմբեր"),
         "ok": MessageLookupByLibrary.simpleMessage("Լավ"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Այլ ֆիլմեր շարքում"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Խնդրում ենք մուտքագրել"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Խնդրում ենք մուտքագրել ֆիլմի վերնագիրը"),
         "plot": MessageLookupByLibrary.simpleMessage("Սյուժե"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Հանրաճանաչ ֆիլմեր"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Հանրաճանաչ մարդիկ"),
         "poster": MessageLookupByLibrary.simpleMessage("Աֆիշ"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Պրեմիում հաճախորդների աջակցություն"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Սեղմեք՝ ֆիլմի պաստառ ընտրելու համար"),
+        "producer": MessageLookupByLibrary.simpleMessage("արտադրող"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Արտադրական ընկերություններ"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Պատահական ֆիլմ"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Ֆիլմի առաջարկման ֆայլը ստեղծվել է:"),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Հաստատու՞մ եք, որ ցանկանում եք ստեղծել ֆիլմի առաջարկման ֆայլը ընտրված ֆիլմերով:"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Ֆիլմի առաջարկման ռեժիմ"),
         "releaseDate":
@@ -198,6 +223,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Հեռացնել ֆիլմեր ավելացնելու սահմանափակումը"),
         "rent": MessageLookupByLibrary.simpleMessage("(Վարձույթ)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Վերադարձնել թաքցված ֆիլմերը"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Եկամուտ՝ "),
         "romance": MessageLookupByLibrary.simpleMessage("Ռոմանտիկա"),
         "runtime": MessageLookupByLibrary.simpleMessage("Տևողություն"),
@@ -206,11 +233,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Գիտական ֆանտաստիկա"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Փնտրել ֆիլմեր"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Փնտրեք մարդիկ"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Ընտրեք ֆիլմեր, որպեսզի ավելացնեք դիտելու ցանկում"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Ընտրեք PG վարկանիշը"),
         "selected": MessageLookupByLibrary.simpleMessage("Ընտրված"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "ընտրված ֆիլմերը կջնջվեն։ Հաստատո՞ւմ եք։"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Հաստատու՞մ եք, որ ցանկանում եք թաքցնել ընտրված ֆիլմերը:"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Հաստատու՞մ եք, որ ցանկանում եք վերականգնել ընտրված ֆիլմերը:"),
         "september": MessageLookupByLibrary.simpleMessage("Սեպտեմբեր"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google մուտք գործելը չեղարկվեց։"),
@@ -252,6 +286,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "watchYear": MessageLookupByLibrary.simpleMessage("Դիտման տարի"),
         "welcome": MessageLookupByLibrary.simpleMessage("Բարի գալուստ, "),
         "western": MessageLookupByLibrary.simpleMessage("Վեսթերն"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Ինչպիսի ֆիլմեր եք փնտրում?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Որտեղ դիտել?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("կջնջվի?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Դիտման ցանկ"),

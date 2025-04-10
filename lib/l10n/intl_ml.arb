@@ -194,5 +194,26 @@
     "recommendMovieMode": "ചലച്ചിത്ര ശുപാർശ മോഡ്",
     "findMovieMode": "ചലച്ചിത്ര തിരയൽ മോഡ്",
     "latestMovies": "സമീപകാല ചലച്ചിത്രങ്ങൾ",
-    "upcomingMovies": "ര próximamente ചലച്ചിത്രങ്ങൾ"
+    "upcomingMovies": "ര próximamente ചലച്ചിത്രങ്ങൾ",
+    "whatKindMoviesLookingFor": "നിങ്ങൾ എങ്ങനെ തരത്തിലുള്ള സിനിമകൾ അന്വേഷിക്കുന്നുവോ?",
+    "getRecommendationFromAI": "സിനിമയുടെ ജാന്റർ അല്ലെങ്കിൽ വിഷയം ടൈപ്പ് ചെയ്താൽ നിങ്ങൾക്ക് ശുപാർശകൾ ലഭിക്കും",
+    "producer": "ഉൽപ്പാദകൻ",
+    "hideChosenMovies": "തിരഞ്ഞെടുത്ത സിനിമകൾ മറക്കുക",
+    "selectedMoviesHideConfirm": "തിരഞ്ഞെടുത്ത സിനിമകൾ മറക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?",
+    "moviesAreHidden": "സിനിമകൾ മറച്ചു",
+    "discover": "കണ്ടുപിടിക്കുക",
+    "popularMovies": "പോപ്പുലർ സിനിമകൾ",
+    "popularPeople": "പോപ്പുലർ ആളുകൾ",
+    "restoreHiddenMovies": "മറച്ച സിനിമകൾ പുനഃസ്ഥാപിക്കുക",
+    "otherMoviesInSeries": "സീരീസിലെ മറ്റു സിനിമകൾ",
+    "moviesRestored": "സിനിമകൾ പുനഃസ്ഥാപിച്ചു",
+    "selectedMoviesRestoreConfirm": "തിരഞ്ഞെടുത്ത സിനിമകൾ പുനഃസ്ഥാപിക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?",
+    "hiddenMovies": "മറച്ച സിനിമകൾ",
+    "noHiddenMovies": "മറച്ച സിനിമകൾ ഇല്ല",
+    "searchPeople": "ആളുകൾ തിരയുക",
+    "recommendFileCreated": "സിനിമയുടെ ശുപാർശ ഫയൽ സൃഷ്ടിച്ചു.",
+    "recommendFileCreationConfirm": "തിരഞ്ഞെടുത്ത സിനിമകളുമായി സിനിമ ശുപാർശ ഫയൽ സൃഷ്ടിക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?",
+    "selectMoviesToAdd": "നിങ്ങളുടെ വാച്ച് ലിസ്റ്റിലേക്ക് ചേർക്കാൻ സിനിമകൾ തിരഞ്ഞെടുക്കുക",
+    "moviesAddedToWatchList": "സിനിമകൾ നിങ്ങളുടെ വാച്ച് ലിസ്റ്റിൽ ചേർക്കപ്പെട്ടു."
+
 }

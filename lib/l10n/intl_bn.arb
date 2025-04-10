@@ -167,5 +167,26 @@
     "recommendMovieMode": "মুভি সুপারিশ মোড",
     "findMovieMode": "মুভি খোঁজা মোড",
     "latestMovies": "সর্বশেষ মুভি",
-    "upcomingMovies": "আসন্ন মুভি"
+    "upcomingMovies": "আসন্ন মুভি",
+    "whatKindMoviesLookingFor": "আপনি কী ধরনের সিনেমা খুঁজছেন?",
+    "getRecommendationFromAI": "আপনি যদি সিনেমার জনর বা বিষয়টি টাইপ করেন, তবে আপনি সুপারিশ পেতে পারেন",
+    "producer": "প্রযোজক",
+    "hideChosenMovies": "নির্বাচিত সিনেমাগুলি লুকান",
+    "selectedMoviesHideConfirm": "আপনি কি নির্বাচিত সিনেমাগুলি লুকানোর জন্য নিশ্চিত?",
+    "moviesAreHidden": "সিনেমাগুলি লুকানো হয়েছে",
+    "discover": "আবিষ্কার করুন",
+    "popularMovies": "জনপ্রিয় সিনেমাগুলি",
+    "popularPeople": "জনপ্রিয় মানুষ",
+    "restoreHiddenMovies": "লুকানো সিনেমাগুলি পুনরুদ্ধার করুন",
+    "otherMoviesInSeries": "সিরিজে অন্যান্য সিনেমাগুলি",
+    "moviesRestored": "সিনেমাগুলি পুনরুদ্ধার করা হয়েছে",
+    "selectedMoviesRestoreConfirm": "আপনি কি নির্বাচিত সিনেমাগুলি পুনরুদ্ধারের জন্য নিশ্চিত?",
+    "hiddenMovies": "লুকানো সিনেমাগুলি",
+    "noHiddenMovies": "কোনো লুকানো সিনেমা নেই",
+    "searchPeople": "মানুষ অনুসন্ধান করুন",
+    "recommendFileCreated": "সিনেমা সুপারিশ ফাইল তৈরি করা হয়েছে।",
+    "recommendFileCreationConfirm": "আপনি কি নির্বাচিত সিনেমাগুলির সঙ্গে একটি সুপারিশ ফাইল তৈরি করতে নিশ্চিত?",
+    "selectMoviesToAdd": "আপনার দেখার তালিকায় যোগ করার জন্য সিনেমাগুলি নির্বাচন করুন",
+    "moviesAddedToWatchList": "সিনেমাগুলি আপনার দেখার তালিকায় যোগ করা হয়েছে।"
+
 }

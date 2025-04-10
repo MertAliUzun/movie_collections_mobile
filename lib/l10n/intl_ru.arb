@@ -194,5 +194,26 @@
     "recommendMovieMode": "Режим рекомендаций фильмов",
     "findMovieMode": "Режим поиска фильмов",
     "latestMovies": "Последние фильмы",
-    "upcomingMovies": "Предстоящие фильмы"
+    "upcomingMovies": "Предстоящие фильмы",
+    "whatKindMoviesLookingFor": "Какой тип фильмов вы ищете?",
+    "getRecommendationFromAI": "Введя жанр или тему фильма, вы можете получить рекомендации",
+    "producer": "Продюсер",
+    "hideChosenMovies": "Скрыть выбранные фильмы",
+    "selectedMoviesHideConfirm": "Вы подтверждаете скрытие выбранных фильмов?",
+    "moviesAreHidden": "Фильмы скрыты",
+    "discover": "Открыть",
+    "popularMovies": "Популярные фильмы",
+    "popularPeople": "Популярные люди",
+    "restoreHiddenMovies": "Восстановить скрытые фильмы",
+    "otherMoviesInSeries": "Другие фильмы в серии",
+    "moviesRestored": "Фильмы восстановлены",
+    "selectedMoviesRestoreConfirm": "Вы подтверждаете восстановление выбранных фильмов?",
+    "hiddenMovies": "Скрытые фильмы",
+    "noHiddenMovies": "Нет скрытых фильмов",
+    "searchPeople": "Искать людей",
+    "recommendFileCreated": "Файл с рекомендациями фильмов создан.",
+    "recommendFileCreationConfirm": "Вы подтверждаете создание файла с рекомендациями фильмов из выбранных фильмов?",
+    "selectMoviesToAdd": "Выберите фильмы, чтобы добавить в ваш список для просмотра",
+    "moviesAddedToWatchList": "Фильмы добавлены в ваш список для просмотра."
+
 }

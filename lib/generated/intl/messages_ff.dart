@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Numriik"),
         "director": MessageLookupByLibrary.simpleMessage("Aadaade"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Aadaade NULL"),
+        "discover": MessageLookupByLibrary.simpleMessage("Njaaɓir"),
         "documentary": MessageLookupByLibrary.simpleMessage("Njaarnde"),
         "drama": MessageLookupByLibrary.simpleMessage("Duraama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Fransayziji"),
         "genre": MessageLookupByLibrary.simpleMessage("Faaɗa"),
         "genres": MessageLookupByLibrary.simpleMessage("Faaɗe"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Soɓo genre walla toɓɓere fiilde, ina wonaa faamude"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Ñaamude"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Fiilde ɓe ɗaɓɓitɗe"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Huutora fiilde ɓe ɗaɓɓitɓe"),
         "history": MessageLookupByLibrary.simpleMessage("Jahdii"),
         "horror": MessageLookupByLibrary.simpleMessage("Hore"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Jamaa jeehii"),
@@ -156,11 +163,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filmji ko yimɓe!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmji"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Fiilde ɓe mbaawɗo keɓɓe e laawol maa."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Fiilde ɓe ɗaɓɓitɗe"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" filmji yoƴƴi."),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Filmji yoƴƴi e koleejo!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmji yoƴƴi e liistii huumde!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Fiilde ɓe suɓɓiti"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" filmji heddii"),
         "music": MessageLookupByLibrary.simpleMessage("Muuziik"),
@@ -177,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fransayziji walaa"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Alaa faaɗe heddii"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Aɗa fiilde ɓe ɗaɓɓitɗe"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("A token ID ɗum yoƴƴi."),
         "noMoviesForGenre":
@@ -194,18 +209,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Nuwemburu"),
         "october": MessageLookupByLibrary.simpleMessage("Oktoburu"),
         "ok": MessageLookupByLibrary.simpleMessage("Awa"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Fiilde ɓe goɗɗi e seri"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Sanngo"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Sanngo title film"),
         "plot": MessageLookupByLibrary.simpleMessage("Njaaje"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Jeyaa woɗɗo"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Fiilde ɓe laawol"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Ñaawo ɓe laawol"),
         "poster": MessageLookupByLibrary.simpleMessage("Pooste"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Tawtorde Premium ɓe diiɗi"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Pele e seƴƴi pooste"),
+        "producer": MessageLookupByLibrary.simpleMessage("Soddi"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Njiyngol"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film ɗoo juɓɓii"),
+        "recommendFileCreated":
+            MessageLookupByLibrary.simpleMessage("Fayil ɗaɗi fiilde faamude."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Aɗa ɗum yimɓe fayil ɗaɗi fiilde faamude e fiilde ɓe ɗaɓɓitɓe?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Ndeenndiyol mode film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Ñaamudo deftere"),
@@ -217,6 +243,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Ɓeydaɗe ndertuɗe film amɗo"),
         "rent": MessageLookupByLibrary.simpleMessage("(Baɗo)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Suɓo fiilde ɓe ɗaɓɓitɗe"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Doddii heɓii no feere"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Najaare: "),
@@ -226,11 +254,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Lewru (minuutii)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Saayinsii"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ñaamudo filmji"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Njaɓɓo ñaawo"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Huutora fiilde ɓe mbaawɗo keɓɓe e laawol maa"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Ndiɗi PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Heddi"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Filmji heddii woppita. Ɓe tottude?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Aɗa ɗum yimɓe huutora fiilde ɓe ɗaɓɓitɓe?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Aɗa ɗum yimɓe suɓɓito fiilde ɓe ɗaɓɓitɗe?"),
         "september": MessageLookupByLibrary.simpleMessage("Settemburu"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Njaatigi Google oo yahugo."),
@@ -276,6 +311,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Weelikii"),
         "welcome": MessageLookupByLibrary.simpleMessage("A jaraama, "),
         "western": MessageLookupByLibrary.simpleMessage("Westi"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Hol ko fiilde kaɗiɗi e jeɗi?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Holti e ɗum?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("woɗɗa yoƴƴi?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Liistii Huumde"),

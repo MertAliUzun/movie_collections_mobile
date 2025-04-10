@@ -194,5 +194,26 @@
     "recommendMovieMode": "Aanbeveling Film Modus",
     "findMovieMode": "Vind Film Modus",
     "latestMovies": "Laatste Films",
-    "upcomingMovies": "Aankomende Films"
+    "upcomingMovies": "Aankomende Films",
+    "whatKindMoviesLookingFor": "Wat voor soort films zoekt u?",
+    "getRecommendationFromAI": "Door het genre of onderwerp van de film in te typen, kunt u aanbevelingen krijgen",
+    "producer": "Producent",
+    "hideChosenMovies": "Verberg gekozen films",
+    "selectedMoviesHideConfirm": "Bevestigt u het verbergen van de gekozen films?",
+    "moviesAreHidden": "Films zijn verborgen",
+    "discover": "Ontdek",
+    "popularMovies": "Populaire films",
+    "popularPeople": "Populaire mensen",
+    "restoreHiddenMovies": "Herstel verborgen films",
+    "otherMoviesInSeries": "Andere films in de serie",
+    "moviesRestored": "Films zijn hersteld",
+    "selectedMoviesRestoreConfirm": "Bevestigt u het herstellen van de gekozen films?",
+    "hiddenMovies": "Verborgen films",
+    "noHiddenMovies": "Geen verborgen films",
+    "searchPeople": "Zoek mensen",
+    "recommendFileCreated": "Aanbevelingsbestand voor films is gemaakt.",
+    "recommendFileCreationConfirm": "Bevestigt u het maken van een aanbevelingsbestand voor films met de gekozen films?",
+    "selectMoviesToAdd": "Selecteer films om toe te voegen aan uw kijklijst",
+    "moviesAddedToWatchList": "Films zijn toegevoegd aan uw kijklijst."
+
 }

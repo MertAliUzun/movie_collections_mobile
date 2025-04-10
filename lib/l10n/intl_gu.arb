@@ -194,5 +194,26 @@
     "recommendMovieMode": "ફિલ્મ સૂચન મોડ",
     "findMovieMode": "ફિલ્મ શોધો મોડ",
     "latestMovies": "તાજેતરની ફિલ્મો",
-    "upcomingMovies": "આગામી ફિલ્મો"
+    "upcomingMovies": "આગામી ફિલ્મો",
+    "whatKindMoviesLookingFor": "તમે કઈ પ્રકારની ફિલ્મો જોઈ રહ્યા છો?",
+    "getRecommendationFromAI": "ફિલ્મનો જેણર અથવા વિષય લખીને, તમે ભલામણો મેળવી શકો છો",
+    "producer": "ઉત્પાદક",
+    "hideChosenMovies": "પસંદ કરેલી ફિલ્મો છુપાવો",
+    "selectedMoviesHideConfirm": "શું તમે પસંદ કરેલી ફિલ્મો છુપાવવાનો પુષ્ટિ કરો છો?",
+    "moviesAreHidden": "ફિલ્મો છુપાઈ ગઈ છે",
+    "discover": "ખોજો",
+    "popularMovies": "પ્રખ્યાત ફિલ્મો",
+    "popularPeople": "પ્રખ્યાત લોકો",
+    "restoreHiddenMovies": "છુપાયેલી ફિલ્મો પુનઃપ્રાપ્ત કરો",
+    "otherMoviesInSeries": "સિરીઝની અન્ય ફિલ્મો",
+    "moviesRestored": "ફિલ્મો પુનઃપ્રાપ્ત કરી લીધી છે",
+    "selectedMoviesRestoreConfirm": "શું તમે પસંદ કરેલી ફિલ્મો પુનઃપ્રાપ્ત કરવાનો પુષ્ટિ કરો છો?",
+    "hiddenMovies": "છુપાયેલી ફિલ્મો",
+    "noHiddenMovies": "કોઈ છુપાયેલી ફિલ્મો નથી",
+    "searchPeople": "લોકો શોધો",
+    "recommendFileCreated": "ફિલ્મ ભલામણ ફાઈલ બનાવવામાં આવી છે.",
+    "recommendFileCreationConfirm": "શું તમે પસંદ કરેલી ફિલ્મો સાથે ફિલ્મ ભલામણ ફાઈલ બનાવવાનો પુષ્ટિ કરો છો?",
+    "selectMoviesToAdd": "તમારી વોચલિસ્ટમાં ઉમેરવા માટે ફિલ્મો પસંદ કરો",
+    "moviesAddedToWatchList": "ફિલ્મો તમારી વોચલિસ્ટમાં ઉમેરાઈ ગઈ છે."
+
 }

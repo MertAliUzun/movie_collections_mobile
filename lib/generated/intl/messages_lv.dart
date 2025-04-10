@@ -95,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Digitālais"),
         "director": MessageLookupByLibrary.simpleMessage("Režisors"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Nav režisora"),
+        "discover": MessageLookupByLibrary.simpleMessage("Atklāt"),
         "documentary":
             MessageLookupByLibrary.simpleMessage("Dokumentālā filma"),
         "drama": MessageLookupByLibrary.simpleMessage("Draama"),
@@ -129,7 +130,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franšīzes"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanrs"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanri"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Ievadot filmas žanru vai tēmu, varat saņemt ieteikumus"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupēt pēc"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Paslēptās filmas"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Paslēpt izvēlētās filmas"),
         "history": MessageLookupByLibrary.simpleMessage("Vēsture"),
         "horror": MessageLookupByLibrary.simpleMessage("Šausmas"),
         "hypeScore":
@@ -163,12 +170,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filma veiksmīgi atjaunināta!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmas"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmas ir pievienotas jūsu skatīšanās sarakstam."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmas ir paslēptas"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmas dzēstas."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmas pārvietotas uz kolekciju!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmas pārvietotas uz vēlamo filmu sarakstu!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmas ir atjaunotas"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" filmas izvēlētas"),
         "music": MessageLookupByLibrary.simpleMessage("Mūzika"),
@@ -185,6 +198,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nav izvēlētas franšīzes"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nav izvēlēti žanri"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Nav paslēptu filmu"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Nav atrasts ID žetons."),
         "noMoviesForGenre":
@@ -204,19 +219,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Novembris"),
         "october": MessageLookupByLibrary.simpleMessage("Oktobris"),
         "ok": MessageLookupByLibrary.simpleMessage("Labi"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Citas filmas sērijā"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Lūdzu, ievadiet"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Lūdzu, ievadiet filmas nosaukumu"),
         "plot": MessageLookupByLibrary.simpleMessage("Sižets"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populārs ar"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Populāras filmas"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Populāri cilvēki"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakāts"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium klientu atbalsts"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Nospiediet, lai izvēlētos filmas plakātu"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producenta"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ražošanas uzņēmumi"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Izlases filma"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Filmu ieteikumu fails ir izveidots."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Vai apstiprināt filmu ieteikumu faila izveidi ar izvēlētajām filmām?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Filmu ieteikumu režīms"),
         "releaseDate":
@@ -229,6 +255,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Noņemiet filmu pievienošanas ierobežojumus"),
         "rent": MessageLookupByLibrary.simpleMessage("(Izīrēt)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Atjaunot paslēptās filmas"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Lūdzu, atgriezieties iepriekšējā ekrānā"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Ieņēmumi: "),
@@ -239,11 +267,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Zinātniskā fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Meklēt filmas"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Meklēt cilvēkus"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Izvēlieties filmas, ko pievienot savai skatīšanās sarakstam"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Izvēlieties PG vērtējumu"),
         "selected": MessageLookupByLibrary.simpleMessage("Izvēlēts"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Izvēlētās filmas tiks dzēstas. Vai apstiprināt?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Vai apstiprināt izvēlēto filmu paslēpšanu?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Vai apstiprināt izvēlēto filmu atjaunošanu?"),
         "september": MessageLookupByLibrary.simpleMessage("Septembris"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google pieteikšanās tika atcelta."),
@@ -294,6 +329,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Nedēļā"),
         "welcome": MessageLookupByLibrary.simpleMessage("Sveicināti, "),
         "western": MessageLookupByLibrary.simpleMessage("Vesterna"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Kādu filmu jūs meklējat?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Kur skatīties?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("tiks dzēsts?"),
         "wishlist":

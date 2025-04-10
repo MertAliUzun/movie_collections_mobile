@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Regissör"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Regissör Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Upptäck"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentär"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -126,7 +127,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genrer"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Genom att skriva in filmens genre eller ämne kan du få rekommendationer."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gruppera efter"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Dolda filmer"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Dölj valda filmer"),
         "history": MessageLookupByLibrary.simpleMessage("Historia"),
         "horror": MessageLookupByLibrary.simpleMessage("Skräck"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Poäng"),
@@ -158,12 +164,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Filmen har uppdaterats!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmer"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmer har lagts till i din tittarlista."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmerna har blivit dolda"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmer raderade."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmer har flyttats till Samlingen!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmer har flyttats till Önskelistan!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmerna har återställts"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" filmer valda"),
         "music": MessageLookupByLibrary.simpleMessage("Musik"),
         "myNotes": MessageLookupByLibrary.simpleMessage("Mina anteckningar"),
@@ -179,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Inga Franchises Valda"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Inga genrer valda"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Inga dolda filmer"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Ingen ID-token hittades."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -198,19 +212,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("November"),
         "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Andra filmer i serien"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Vänligen ange"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Vänligen ange filmtitel"),
         "plot": MessageLookupByLibrary.simpleMessage("Handlingsplan"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populär för"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Populära filmer"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Populära personer"),
         "poster": MessageLookupByLibrary.simpleMessage("Affisch"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium kundsupport"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Tryck för att välja film affisch"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produktionsbolag"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Slumpmässig Film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Rekommendationsfil för filmer har skapats."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bekräftar du att du vill skapa en rekommendationsfil med valda filmer?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Rekommendera Film Mode"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Utgivningsdatum"),
@@ -222,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Ta bort filmgränsen"),
         "rent": MessageLookupByLibrary.simpleMessage("(Hyra)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Återställ dolda filmer"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Vänligen gå tillbaka till föregående skärm"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Intäkter: "),
@@ -232,11 +259,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Sök filmer"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Sök personer"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Välj filmer att lägga till i din tittarlista"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Välj PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Vald"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Valda filmer kommer att tas bort. Bekräftar du?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bekräftar du att du vill dölja de valda filmerna?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bekräftar du att du vill återställa de valda filmerna?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google-inloggning avbröts."),
@@ -284,6 +318,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Veckovis"),
         "welcome": MessageLookupByLibrary.simpleMessage("Välkommen, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Vilken typ av filmer letar du efter?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Var att titta?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("kommer att tas bort?"),

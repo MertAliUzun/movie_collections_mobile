@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Regisseur"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Geen Regisseur Nie"),
+        "discover": MessageLookupByLibrary.simpleMessage("Ontdek"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentêr"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -127,7 +128,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Deur die genre of onderwerp van die film in te tik, kan jy aanbevelings kry"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Groepeer volgens"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Versteekte Flieks"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Versteek Gekose Flieks"),
         "history": MessageLookupByLibrary.simpleMessage("Geskiedenis"),
         "horror": MessageLookupByLibrary.simpleMessage("Gruwel"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Opwindingstelling"),
@@ -162,12 +169,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Fliek is suksesvol opgedateer!"),
         "movies": MessageLookupByLibrary.simpleMessage("Flieks"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Flieks is by jou Kyklys gevoeg."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Flieks is versteek"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" flieks verwyder."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Flieks is na versameling geskuif!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Flieks is na kyklys geskuif!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Flieks is herstel"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" flieks gekies"),
         "music": MessageLookupByLibrary.simpleMessage("Musiek"),
@@ -184,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Geen Franchises Gekies Nie"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Geen Genres Gekies Nie"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Geen Versteekte Flieks Nie"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Geen ID-token gevind nie."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -203,20 +218,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("November"),
         "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Ander Flieks in die Reeks"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Voer asseblief in"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Voer asseblief fliektitel in"),
         "plot": MessageLookupByLibrary.simpleMessage("Verhaal"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Gewild Vir"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Gewilde Flieks"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Gewilde Mense"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakkaat"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium Kliëntediens"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Druk om fliekplakkaat te kies"),
+        "producer": MessageLookupByLibrary.simpleMessage("Produsent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produksiemaatskappye"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Lukrake Fliek"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Fliek-aanbevelingslêer is geskep."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bevestig jy dat jy \'n fliek-aanbevelingslêer met die gekose flieks wil skep?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Beveel Rolprentmodus Aan"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Vrygestel Datum"),
@@ -228,6 +252,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Verwyder Fliek Voeg Beperking"),
         "rent": MessageLookupByLibrary.simpleMessage("(Huur)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Herstel Versteekte Flieks"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Gaan asseblief terug na die vorige skerm"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Inkomste: "),
@@ -238,11 +264,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Wetenskapfiksie"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Soek Flieks"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Soek Mense"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Kies flieks om by jou Kyklys te voeg"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Kies PG-gradering"),
         "selected": MessageLookupByLibrary.simpleMessage("Gekies"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "gekose flieks sal verwyder word. Bevestig asseblief?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bevestig jy dat jy die gekose flieks wil versteek?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bevestig jy dat jy die gekose flieks wil herstel?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google-aanmelding is gekanselleer."),
@@ -290,6 +323,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Weekliks"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welkom, "),
         "western": MessageLookupByLibrary.simpleMessage("Wes-Kaap"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Watter soort flieks soek jy?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Waar om te kyk?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("sal verwyder word?"),

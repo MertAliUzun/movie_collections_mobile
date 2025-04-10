@@ -194,5 +194,26 @@
     "recommendMovieMode": "របៀបស្នើសុំភាពយន្ត",
     "findMovieMode": "របៀបស្វែងរកភាពយន្ត",
     "latestMovies": "ភាពយន្តថ្មីៗ",
-    "upcomingMovies": "ភាពយន្តដែលមកដល់"
+    "upcomingMovies": "ភាពយន្តដែលមកដល់",
+    "whatKindMoviesLookingFor": "តើអ្នកកំពុងស្វែងរកភាពយន្តប្រភេទអ្វី?",
+    "getRecommendationFromAI": "ដោយវាយប្រភេទឬប្រធានបទរបស់ភាពយន្ត អ្នកអាចទទួលបានការណែនាំ",
+    "producer": "ផលិតករ",
+    "hideChosenMovies": "លាក់ភាពយន្តដែលបានជ្រើសរើស",
+    "selectedMoviesHideConfirm": "តើអ្នកព្រមទាំងលាក់ភាពយន្តដែលបានជ្រើសរើសទេ?",
+    "moviesAreHidden": "ភាពយន្តត្រូវបានលាក់",
+    "discover": "ស្វែងរក",
+    "popularMovies": "ភាពយន្តពេញនិយម",
+    "popularPeople": "មនុស្សពេញនិយម",
+    "restoreHiddenMovies": "ស្ដារភាពយន្តដែលបានលាក់",
+    "otherMoviesInSeries": "ភាពយន្តផ្សេងទៀតក្នុងស៊េរី",
+    "moviesRestored": "ភាពយន្តត្រូវបានស្ដារឡើងវិញ",
+    "selectedMoviesRestoreConfirm": "តើអ្នកព្រមស្ដារភាពយន្តដែលបានជ្រើសរើសទេ?",
+    "hiddenMovies": "ភាពយន្តដែលបានលាក់",
+    "noHiddenMovies": "គ្មានភាពយន្តដែលបានលាក់",
+    "searchPeople": "ស្វែងរកមនុស្ស",
+    "recommendFileCreated": "ឯកសារណែនាំភាពយន្តត្រូវបានបង្កើត។",
+    "recommendFileCreationConfirm": "តើអ្នកព្រមបង្កើតឯកសារណែនាំភាពយន្តដោយភាពយន្តដែលបានជ្រើសរើសទេ?",
+    "selectMoviesToAdd": "ជ្រើសរើសភាពយន្តដើម្បីបន្ថែមទៅក្នុងបញ្ជីមើលរបស់អ្នក",
+    "moviesAddedToWatchList": "ភាពយន្តត្រូវបានបន្ថែមទៅក្នុងបញ្ជីមើលរបស់អ្នក។"
+
 }

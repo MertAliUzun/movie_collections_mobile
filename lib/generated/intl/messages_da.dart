@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Instruktør"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Ingen instruktør"),
+        "discover": MessageLookupByLibrary.simpleMessage("Opdag"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentar"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genrer"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Ved at skrive filmens genre eller emne kan du få anbefalinger"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupér efter"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Skjulte film"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Skjul valgte film"),
         "history": MessageLookupByLibrary.simpleMessage("Historie"),
         "horror": MessageLookupByLibrary.simpleMessage("Horror"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Score"),
@@ -158,12 +164,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Filmen er blevet opdateret med succes!"),
         "movies": MessageLookupByLibrary.simpleMessage("Film"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmene er blevet tilføjet til din watchlist."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmene er blevet skjult"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film(e) blev slettet."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Film er blevet flyttet til kollektionen!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Film er blevet flyttet til ønskelisten!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmene er blevet gendannet"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film(e) valgt"),
         "music": MessageLookupByLibrary.simpleMessage("Musik"),
@@ -180,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ingen franchises valgt"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ingen genrer valgt"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Ingen skjulte film"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Ingen ID-token fundet."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -199,19 +213,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("November"),
         "october": MessageLookupByLibrary.simpleMessage("Oktober"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Andre film i serien"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Indtast venligst"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Indtast venligst filmtitel"),
         "plot": MessageLookupByLibrary.simpleMessage("Handlingsreferat"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populær for"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Populære film"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Populære personer"),
         "poster": MessageLookupByLibrary.simpleMessage("Plakat"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium kundesupport"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Tryk for at vælge filmaffisch"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produktionsselskaber"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Tilfældig film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Filmanbefalingsfil er oprettet."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bekræfter du, at du vil oprette en fil med anbefalede film?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Anbefal filmtilstand"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Udgivelsesdato"),
@@ -223,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Fjern grænsen for at tilføje film"),
         "rent": MessageLookupByLibrary.simpleMessage("(Leje)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Gendan skjulte film"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Venligst vend tilbage til forrige skærm"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Indtægter: "),
@@ -233,11 +259,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Søg film"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Søg efter personer"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Vælg film, du vil tilføje til din watchlist"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Vælg PG-vurdering"),
         "selected": MessageLookupByLibrary.simpleMessage("Valgt"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "De valgte film vil blive slettet. Bekræft venligst."),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bekræfter du, at du vil skjule de valgte film?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Bekræfter du, at du vil gendanne de valgte film?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google login blev annulleret."),
@@ -283,6 +317,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Ugentlig"),
         "welcome": MessageLookupByLibrary.simpleMessage("Velkommen, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Hvilken slags film leder du efter?"),
         "whereToWatch":
             MessageLookupByLibrary.simpleMessage("Hvor kan jeg se?"),
         "willBeDeleted":

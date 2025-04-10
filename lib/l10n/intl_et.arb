@@ -194,5 +194,26 @@
     "recommendMovieMode": "Filmi soovitamise režiim",
     "findMovieMode": "Filmi otsimise režiim",
     "latestMovies": "Viimased filmid",
-    "upcomingMovies": "Tulevased filmid"
+    "upcomingMovies": "Tulevased filmid",
+    "whatKindMoviesLookingFor": "Millist tüüpi filme otsite?",
+    "getRecommendationFromAI": "Sisestades filmi žanri või teema, saate soovitusi",
+    "producer": "Tootja",
+    "hideChosenMovies": "Peida valitud filmid",
+    "selectedMoviesHideConfirm": "Kas kinnitate, et soovite valitud filme peita?",
+    "moviesAreHidden": "Filmid on peidetud",
+    "discover": "Avasta",
+    "popularMovies": "Populaarsed filmid",
+    "popularPeople": "Populaarsed inimesed",
+    "restoreHiddenMovies": "Taasta peidetud filmid",
+    "otherMoviesInSeries": "Teised sarja filmid",
+    "moviesRestored": "Filmid on taastatud",
+    "selectedMoviesRestoreConfirm": "Kas kinnitate, et soovite valitud filme taastada?",
+    "hiddenMovies": "Peidetud filmid",
+    "noHiddenMovies": "Pole peidetud filme",
+    "searchPeople": "Otsi inimesi",
+    "recommendFileCreated": "Filmi soovituste fail on loodud.",
+    "recommendFileCreationConfirm": "Kas kinnitate filmi soovituste faili loomist valitud filmidega?",
+    "selectMoviesToAdd": "Valige filmid, mida lisada oma vaatamisloendisse",
+    "moviesAddedToWatchList": "Filmid on lisatud teie vaatamisloendisse."
+
 }

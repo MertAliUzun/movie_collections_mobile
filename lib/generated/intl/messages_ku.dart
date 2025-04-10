@@ -97,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Dijîtal"),
         "director": MessageLookupByLibrary.simpleMessage("Rêvebir"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Rêvebir Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Dîtin"),
         "documentary": MessageLookupByLibrary.simpleMessage("Belgefilm"),
         "drama": MessageLookupByLibrary.simpleMessage("Dram"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -130,7 +131,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchise\'ler"),
         "genre": MessageLookupByLibrary.simpleMessage("Cure"),
         "genres": MessageLookupByLibrary.simpleMessage("Cure"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Bi tîp kirina genre an jî mijara fîlman, hûn dikarin pêşniyaran bistînin"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Bi temen rêz bikin"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Fîlmên veşartî"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Fîlmên hilbijartî veşêrin"),
         "history": MessageLookupByLibrary.simpleMessage("Dîrok"),
         "horror": MessageLookupByLibrary.simpleMessage("Teror"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Score"),
@@ -163,12 +169,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Fîlm bi serfirazî hat nûvekirin!"),
         "movies": MessageLookupByLibrary.simpleMessage("Fîlman"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Fîlmên di listeya seyrê we de hate zêdekirin."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Fîlmên veşartin"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" fîlman hate jêbirin."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Fîlman hatin veguhastin bo koleksiyon!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Fîlman hatin veguhastin bo lîsteya temaşe!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Fîlmên vegerandin"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" fîlman hate hilbijartin"),
         "music": MessageLookupByLibrary.simpleMessage("Mûzîk"),
@@ -185,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Franchise\'ên nehêlîn hatine hilbijartin"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Hîç Cure hilbijartî nehatîye"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Tu fîlmên veşartî nîne"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Token-a ID nehat dîtin."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -204,20 +218,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Mijdar"),
         "october": MessageLookupByLibrary.simpleMessage("Tîrmeh"),
         "ok": MessageLookupByLibrary.simpleMessage("Baş"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Fîlmên din li sîpîyê"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Ji kerema xwe binivîse"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Ji kerema xwe sernavê fîlmê binivîse"),
         "plot": MessageLookupByLibrary.simpleMessage("Tîr"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populer ji bo"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Fîlman populer"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Kesên populer"),
         "poster": MessageLookupByLibrary.simpleMessage("Afîş"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Piştgirîya premium ya müşteri"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Bişînin bo hilbijartina afîşê fîlmê"),
+        "producer": MessageLookupByLibrary.simpleMessage("Prodyûser"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Kampaniyên Parastinê"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Fîlmê Rastî"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Pelê pêşniyarê fîlmê hate afirandin."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Hûn piştrast in ku pelê pêşniyarê fîlmê bi fîlmên hilbijartî afirînin?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Rejîma Pêşniyara Fîlm"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Rojekê Çêkirinê"),
@@ -229,6 +252,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Sînora zêdekirina fîlman jê birin"),
         "rent": MessageLookupByLibrary.simpleMessage("(Kirîna)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Fîlmên veşartî vegerînin"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Ji kerema xwe vegerî ser ekranê berê"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Hîrç: "),
@@ -239,11 +264,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Pêşbînîya Zanistî"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Lêgerîn Fîlman"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Kesan lêgerîn"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Fîlmên ji bo zêdekirinê li listeya seyrê xwe hilbijêrin"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Rêjeya PG-ê hilbijêrin"),
         "selected": MessageLookupByLibrary.simpleMessage("Hilbijartî"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Fîlman hilbijartî dê jêbikin. Ma piştrast î?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Hûn piştrast in ku fîlmên hilbijartî veşêrin?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Hûn piştrast in ku fîlmên hilbijartî vegerînin?"),
         "september": MessageLookupByLibrary.simpleMessage("Îlon"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Têketina Google hate betalkirin."),
@@ -291,6 +323,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Hefteyane"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bi xêr hatî, "),
         "western": MessageLookupByLibrary.simpleMessage("Rojhilan"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Kîjan cîhên fîlman hûn digerin?"),
         "whereToWatch":
             MessageLookupByLibrary.simpleMessage("Li kû temaşe bikin?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("dê jêbikin?"),

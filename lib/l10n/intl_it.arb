@@ -194,5 +194,26 @@
     "recommendMovieMode": "Modalità di raccomandazione film",
     "findMovieMode": "Modalità di ricerca film",
     "latestMovies": "Ultimi film",
-    "upcomingMovies": "Film in arrivo"
+    "upcomingMovies": "Film in arrivo",
+    "whatKindMoviesLookingFor": "Che tipo di film stai cercando?",
+    "getRecommendationFromAI": "Digitando il genere o l'argomento del film, puoi ottenere dei consigli",
+    "producer": "Produttore",
+    "hideChosenMovies": "Nascondi i film selezionati",
+    "selectedMoviesHideConfirm": "Confermi di voler nascondere i film selezionati?",
+    "moviesAreHidden": "I film sono stati nascosti",
+    "discover": "Scopri",
+    "popularMovies": "Film popolari",
+    "popularPeople": "Persone popolari",
+    "restoreHiddenMovies": "Ripristina i film nascosti",
+    "otherMoviesInSeries": "Altri film nella serie",
+    "moviesRestored": "I film sono stati ripristinati",
+    "selectedMoviesRestoreConfirm": "Confermi di voler ripristinare i film selezionati?",
+    "hiddenMovies": "Film nascosti",
+    "noHiddenMovies": "Nessun film nascosto",
+    "searchPeople": "Cerca persone",
+    "recommendFileCreated": "Il file delle raccomandazioni dei film è stato creato.",
+    "recommendFileCreationConfirm": "Confermi di voler creare un file delle raccomandazioni dei film con i film selezionati?",
+    "selectMoviesToAdd": "Seleziona i film da aggiungere alla tua lista di visione",
+    "moviesAddedToWatchList": "I film sono stati aggiunti alla tua lista di visione."
+
 }

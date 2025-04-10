@@ -194,5 +194,26 @@
     "recommendMovieMode": "Λειτουργία σύστασης ταινίας",
     "findMovieMode": "Λειτουργία αναζήτησης ταινίας",
     "latestMovies": "Τελευταίες ταινίες",
-    "upcomingMovies": "Επερχόμενες ταινίες"
+    "upcomingMovies": "Επερχόμενες ταινίες",
+    "whatKindMoviesLookingFor": "Τι είδους ταινίες ψάχνετε;",
+    "getRecommendationFromAI": "Πληκτρολογώντας το είδος ή το θέμα της ταινίας, μπορείτε να λάβετε προτάσεις",
+    "producer": "Παραγωγός",
+    "hideChosenMovies": "Απόκρυψη επιλεγμένων ταινιών",
+    "selectedMoviesHideConfirm": "Επιβεβαιώνετε την απόκρυψη των επιλεγμένων ταινιών;",
+    "moviesAreHidden": "Οι ταινίες έχουν αποκρυφτεί",
+    "discover": "Ανακαλύψτε",
+    "popularMovies": "Δημοφιλείς ταινίες",
+    "popularPeople": "Δημοφιλή άτομα",
+    "restoreHiddenMovies": "Επαναφορά αποκρυφών ταινιών",
+    "otherMoviesInSeries": "Άλλες ταινίες στη σειρά",
+    "moviesRestored": "Οι ταινίες έχουν αποκατασταθεί",
+    "selectedMoviesRestoreConfirm": "Επιβεβαιώνετε την επαναφορά των επιλεγμένων ταινιών;",
+    "hiddenMovies": "Αποκρυφές ταινίες",
+    "noHiddenMovies": "Δεν υπάρχουν αποκρυφές ταινίες",
+    "searchPeople": "Αναζήτηση ατόμων",
+    "recommendFileCreated": "Δημιουργήθηκε αρχείο προτάσεων ταινιών.",
+    "recommendFileCreationConfirm": "Επιβεβαιώνετε τη δημιουργία αρχείου προτάσεων με τις επιλεγμένες ταινίες;",
+    "selectMoviesToAdd": "Επιλέξτε ταινίες για να προσθέσετε στη λίστα παρακολούθησης",
+    "moviesAddedToWatchList": "Οι ταινίες προστέθηκαν στη λίστα παρακολούθησης."
+
 }

@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Dijital"),
         "director": MessageLookupByLibrary.simpleMessage("Daraktan"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Daraktan Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Gano"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentari"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -124,7 +125,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franshisoci"),
         "genre": MessageLookupByLibrary.simpleMessage("Nau\'in"),
         "genres": MessageLookupByLibrary.simpleMessage("Nau\'uka"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Ta hanyar rubuta nau\'in ko jigo na fim, zaka iya samun shawarwari"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Rarraba Ta"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Fina-finai da aka boye"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Boye fina-finai da aka zaba"),
         "history": MessageLookupByLibrary.simpleMessage("Tarihi"),
         "horror": MessageLookupByLibrary.simpleMessage("Tsoro"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Makin Hype"),
@@ -158,12 +165,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "An sabunta fim cikin nasara!"),
         "movies": MessageLookupByLibrary.simpleMessage("Fina-Finai"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Fina-finai an ƙara su zuwa jerin kallo."),
+        "moviesAreHidden": MessageLookupByLibrary.simpleMessage(
+            "Fina-finai sun kasance a boye"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" fina-finai an share."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "An motsa fina-finai zuwa Tari!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "An motsa fina-finai zuwa Jerin Abubuwan Kallo!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Fina-finai an mayar dasu"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" fina-finai an zaɓa"),
         "music": MessageLookupByLibrary.simpleMessage("Kiɗa"),
@@ -180,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Babu franshisoci da aka zaɓa"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Babu nau\'in da aka zaɓa"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Babu fina-finai da aka boye"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Babu ID Token da aka samu."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -199,20 +214,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Nuwamba"),
         "october": MessageLookupByLibrary.simpleMessage("Oktoba"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
+            "Wasu fina-finai a cikin jerin"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Da fatan za a shigar da"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Da fatan za a shigar da taken fim"),
         "plot": MessageLookupByLibrary.simpleMessage("Makirci"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Shahararren Don"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Fina-finai masu shahara"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Mutane masu shahara"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Taimakon Abokin Ciniki Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Danna don zaɓar poster ɗin fim"),
+        "producer": MessageLookupByLibrary.simpleMessage("Mai samarwa"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Kamfanonin Samarwa"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Fim ɗin Bazuwar"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "An ƙirƙiri fayil ɗin shawarwarin fim."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Shin ka tabbatar da ƙirƙirar fayil ɗin shawarwarin fim tare da fina-finai da aka zaba?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Yanayin Shawarar Fim"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Ranar Saki"),
@@ -223,6 +249,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Cire iyaka na ƙara fina-finai"),
         "rent": MessageLookupByLibrary.simpleMessage("(Hayar)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Mayar da fina-finai da aka boye"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Da fatan za a koma zuwa allon da ya gabata"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Kudaden Shiga: "),
@@ -233,11 +261,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Kimiyyar Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Nemo Fina-Finai"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Nema mutane"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Zaɓi fina-finai don ƙara zuwa jerin kallo"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Zaɓi PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("An Zaɓa"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "za a share fina-finai da aka zaɓa. Shin kun tabbata?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Shin ka tabbatar da boye fina-finai da aka zaba?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Shin ka tabbatar da mayar da fina-finai da aka zaba?"),
         "september": MessageLookupByLibrary.simpleMessage("Satumba"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Shiga Google an soke."),
@@ -285,6 +320,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Mako-mako"),
         "welcome": MessageLookupByLibrary.simpleMessage("Barka da zuwa, "),
         "western": MessageLookupByLibrary.simpleMessage("Yammacin"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Wane irin fina-finai kake nema?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Ina Za a Kalla?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("za a share?"),
         "wishlist":

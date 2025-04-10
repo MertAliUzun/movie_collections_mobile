@@ -194,5 +194,26 @@
     "recommendMovieMode": "Film ajánlási mód",
     "findMovieMode": "Film keresési mód",
     "latestMovies": "Legújabb filmek",
-    "upcomingMovies": "Közelgő filmek"
+    "upcomingMovies": "Közelgő filmek",
+    "whatKindMoviesLookingFor": "Milyen típusú filmeket keresel?",
+    "getRecommendationFromAI": "A film műfajának vagy témájának megírásával ajánlásokat kaphatsz",
+    "producer": "Producer",
+    "hideChosenMovies": "Rejtse el a kiválasztott filmeket",
+    "selectedMoviesHideConfirm": "Biztosan el szeretnéd rejteni a kiválasztott filmeket?",
+    "moviesAreHidden": "A filmek el vannak rejtve",
+    "discover": "Felfedezés",
+    "popularMovies": "Népszerű filmek",
+    "popularPeople": "Népszerű emberek",
+    "restoreHiddenMovies": "Rejtett filmek visszaállítása",
+    "otherMoviesInSeries": "Egyéb filmek a sorozatban",
+    "moviesRestored": "A filmek vissza lettek állítva",
+    "selectedMoviesRestoreConfirm": "Biztosan vissza akarod állítani a kiválasztott filmeket?",
+    "hiddenMovies": "Rejtett filmek",
+    "noHiddenMovies": "Nincsenek rejtett filmek",
+    "searchPeople": "Keresés emberekre",
+    "recommendFileCreated": "A film ajánló fájl létrehozva.",
+    "recommendFileCreationConfirm": "Biztosan létre szeretnél hozni egy ajánló fájlt a kiválasztott filmekkel?",
+    "selectMoviesToAdd": "Válassz filmeket a Nézési listádhoz való hozzáadáshoz",
+    "moviesAddedToWatchList": "A filmek hozzá lettek adva a Nézési listádhoz."
+
 }

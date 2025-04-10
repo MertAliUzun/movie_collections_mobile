@@ -167,5 +167,26 @@
     "recommendMovieMode": "Фильм тәҡдим итеү режимы",
     "findMovieMode": "Фильм эҙләү режимы",
     "latestMovies": "Һуңғы фильмдар",
-    "upcomingMovies": "Тиҙҙән сығасаҡ фильмдар"
+    "upcomingMovies": "Тиҙҙән сығасаҡ фильмдар",
+    "whatKindMoviesLookingFor": "Һеҙ ниндәй фильмдар эҙләйһегеҙ?",
+    "getRecommendationFromAI": "Фильмдың жанрын йәки темаһын яҙып, тәҡдимдәр ала алаһығыҙ",
+    "producer": "Продюсер",
+    "hideChosenMovies": "Һайланған фильмдарҙы йәшереү",
+    "selectedMoviesHideConfirm": "Һайланған фильмдарҙы йәшереүҙе раҫлайһығыҙмы?",
+    "moviesAreHidden": "Фильмдар йәшерелде",
+    "discover": "Асылығыҙ",
+    "popularMovies": "Популяр фильмдар",
+    "popularPeople": "Популяр шәхестәр",
+    "restoreHiddenMovies": "Йәшерелгән фильмдарҙы тергеҙеү",
+    "otherMoviesInSeries": "Сериалағы башҡа фильмдар",
+    "moviesRestored": "Фильмдар тергеҙелде",
+    "selectedMoviesRestoreConfirm": "Һайланған фильмдарҙы тергеҙеүҙе раҫлайһығыҙмы?",
+    "hiddenMovies": "Йәшерелгән фильмдар",
+    "noHiddenMovies": "Йәшерелгән фильмдар юҡ",
+    "searchPeople": "Кешеләрҙе эҙләгеҙ",
+    "recommendFileCreated": "Фильм тәҡдиме файлы булдырылды.",
+    "recommendFileCreationConfirm": "Һайланған фильмдар менән тәҡдим файлын булдырыуҙы раҫлайһығыҙмы?",
+    "selectMoviesToAdd": "Күҙәтеү исемлегенә өҫтәргә фильмдарҙы һайлағыҙ",
+    "moviesAddedToWatchList": "Фильмдар күҙәтеү исемлегенә өҫтәлде."
+
 }

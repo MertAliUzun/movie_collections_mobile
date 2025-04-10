@@ -90,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Dijital"),
         "director": MessageLookupByLibrary.simpleMessage("Direktè"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Direktè Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Dekouvri"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokimantè"),
         "drama": MessageLookupByLibrary.simpleMessage("Dram"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -122,7 +123,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchiz yo"),
         "genre": MessageLookupByLibrary.simpleMessage("Jan"),
         "genres": MessageLookupByLibrary.simpleMessage("Jan"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Lè ou tape jan oswa sijè fim nan, ou ka jwenn rekòmandasyon"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gwoupe Pa"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Fim yo kache"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Kache fim yo chwazi"),
         "history": MessageLookupByLibrary.simpleMessage("Istwa"),
         "horror": MessageLookupByLibrary.simpleMessage("Laterè"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype Score"),
@@ -154,11 +160,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Fim mete ajou avèk siksè!"),
         "movies": MessageLookupByLibrary.simpleMessage("Fim"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Fim yo ajoute nan lis gade ou."),
+        "moviesAreHidden": MessageLookupByLibrary.simpleMessage("Fim yo kache"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" fim efase."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Fim yo te deplase nan Koleksyon!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Fim yo te deplase nan Lis pou Gade!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Fim yo restore"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(" fim chwazi"),
         "music": MessageLookupByLibrary.simpleMessage("Mizik"),
         "myNotes": MessageLookupByLibrary.simpleMessage("Nòt Mwen"),
@@ -174,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pa gen franchiz ki chwazi"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Pa gen jan chwazi"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Pa gen fim ki kache"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Pa gen ID Token jwenn."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -193,19 +206,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Novanm"),
         "october": MessageLookupByLibrary.simpleMessage("Oktòb"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Lòt fim nan seri a"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Tanpri antre"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Tanpri antre tit fim"),
         "plot": MessageLookupByLibrary.simpleMessage("Plot"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popilè Pou"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Fim popilè"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Moun popilè"),
         "poster": MessageLookupByLibrary.simpleMessage("Postè"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Sipò kliyan Premium"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Peze pou chwazi postè fim"),
+        "producer": MessageLookupByLibrary.simpleMessage("Pwodiktè"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Konpayi Pwodiksyon"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Fim O aza"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Dosye rekòmandasyon fim te kreye."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Èske ou konfime kreye yon dosye rekòmandasyon fim ak fim yo chwazi?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Mòd Rekòmandasyon Film"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dat Lage"),
@@ -216,6 +238,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("Retire limit ajoute sinema"),
         "rent": MessageLookupByLibrary.simpleMessage("(Lwe)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Restore fim yo kache"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Tanpri retounen nan ekran anvan an"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Revni: "),
@@ -224,11 +248,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("Dire (Minit)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Syans Fiksyon"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Chèche Fim"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Chèche moun"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Chwazi fim pou ajoute nan lis gade ou"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Chwazi PG Rating"),
         "selected": MessageLookupByLibrary.simpleMessage("Chwazi"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "fim chwazi yo pral efase. Èske w konfime?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Èske ou konfime ke ou vle kache fim yo chwazi?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Èske ou konfime ke ou vle restore fim yo chwazi?"),
         "september": MessageLookupByLibrary.simpleMessage("Septanm"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google Sign-In te anile."),
@@ -275,6 +306,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Chak Semèn"),
         "welcome": MessageLookupByLibrary.simpleMessage("Byenveni, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Kisa kalite fim ou ap chèche a?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Kote Pou Gade?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("pral efase?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Lis pou Gade"),

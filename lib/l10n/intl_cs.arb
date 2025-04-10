@@ -194,5 +194,26 @@
     "recommendMovieMode": "Režim doporučení filmu",
     "findMovieMode": "Režim hledání filmu",
     "latestMovies": "Nejnovější filmy",
-    "upcomingMovies": "Nadcházející filmy"
+    "upcomingMovies": "Nadcházející filmy",
+    "whatKindMoviesLookingFor": "Jaký druh filmů hledáš?",
+    "getRecommendationFromAI": "Zadáním žánru nebo tématu filmu získáš doporučení",
+    "producer": "Producent",
+    "hideChosenMovies": "Skrýt vybrané filmy",
+    "selectedMoviesHideConfirm": "Ověřujete, že chcete skrýt vybrané filmy?",
+    "moviesAreHidden": "Filmy byly skryty",
+    "discover": "Objevit",
+    "popularMovies": "Populární filmy",
+    "popularPeople": "Populární lidé",
+    "restoreHiddenMovies": "Obnovit skryté filmy",
+    "otherMoviesInSeries": "Další filmy v sérii",
+    "moviesRestored": "Filmy byly obnoveny",
+    "selectedMoviesRestoreConfirm": "Ověřujete, že chcete obnovit vybrané filmy?",
+    "hiddenMovies": "Skryté filmy",
+    "noHiddenMovies": "Žádné skryté filmy",
+    "searchPeople": "Hledat lidi",
+    "recommendFileCreated": "Soubor s doporučeními filmů byl vytvořen.",
+    "recommendFileCreationConfirm": "Ověřujete, že chcete vytvořit soubor s doporučenými filmy?",
+    "selectMoviesToAdd": "Vyberte filmy, které chcete přidat do svého seznamu sledovaných",
+    "moviesAddedToWatchList": "Filmy byly přidány do vašeho seznamu sledovaných."
+
 }

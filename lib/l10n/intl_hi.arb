@@ -194,5 +194,26 @@
     "recommendMovieMode": "फिल्म सिफारिश मोड",
     "findMovieMode": "फिल्म खोज मोड",
     "latestMovies": "नवीनतम फिल्में",
-    "upcomingMovies": "आगामी फिल्में"
+    "upcomingMovies": "आगामी फिल्में",
+    "whatKindMoviesLookingFor": "आप किस तरह की फिल्में देख रहे हैं?",
+    "getRecommendationFromAI": "फिल्म की शैली या विषय लिखकर, आप सिफारिशें प्राप्त कर सकते हैं",
+    "producer": "निर्माता",
+    "hideChosenMovies": "चुनी गई फिल्में छुपाएं",
+    "selectedMoviesHideConfirm": "क्या आप पुष्टि करते हैं कि आप चुनी गई फिल्में छुपाना चाहते हैं?",
+    "moviesAreHidden": "फिल्में छुपा दी गई हैं",
+    "discover": "खोजें",
+    "popularMovies": "लोकप्रिय फिल्में",
+    "popularPeople": "लोकप्रिय लोग",
+    "restoreHiddenMovies": "छुपाई गई फिल्में पुनर्स्थापित करें",
+    "otherMoviesInSeries": "सिरीज़ की अन्य फिल्में",
+    "moviesRestored": "फिल्में पुनर्स्थापित की गईं",
+    "selectedMoviesRestoreConfirm": "क्या आप पुष्टि करते हैं कि आप चुनी गई फिल्में पुनर्स्थापित करना चाहते हैं?",
+    "hiddenMovies": "छुपाई गई फिल्में",
+    "noHiddenMovies": "कोई छुपाई गई फिल्में नहीं हैं",
+    "searchPeople": "लोगों की खोज करें",
+    "recommendFileCreated": "फिल्म सिफारिश फ़ाइल बनाई गई है।",
+    "recommendFileCreationConfirm": "क्या आप पुष्टि करते हैं कि चुनी गई फिल्मों के साथ फिल्म सिफारिश फ़ाइल बनाई जाए?",
+    "selectMoviesToAdd": "अपनी वॉच लिस्ट में जोड़ने के लिए फिल्में चुनें",
+    "moviesAddedToWatchList": "फिल्में आपकी वॉच लिस्ट में जोड़ दी गई हैं।"
+
 }

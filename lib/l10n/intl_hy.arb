@@ -167,5 +167,26 @@
     "recommendMovieMode": "Ֆիլմի առաջարկման ռեժիմ",
     "findMovieMode": "Ֆիլմ գտնելու ռեժիմ",
     "latestMovies": "Վերջին ֆիլմերը",
-    "upcomingMovies": "Եկող ֆիլմերը"
+    "upcomingMovies": "Եկող ֆիլմերը",
+    "whatKindMoviesLookingFor": "Ինչպիսի ֆիլմեր եք փնտրում?",
+    "getRecommendationFromAI": "Ֆիլմի ժանրի կամ թեմայի գրմամբ կարող եք ստանալ առաջարկություններ",
+    "producer": "արտադրող",
+    "hideChosenMovies": "Սկզբունքային ֆիլմերը թաքցնել",
+    "selectedMoviesHideConfirm": "Հաստատու՞մ եք, որ ցանկանում եք թաքցնել ընտրված ֆիլմերը:",
+    "moviesAreHidden": "Ֆիլմերը թաքցված են",
+    "discover": "Ապացուցեք",
+    "popularMovies": "Հանրաճանաչ ֆիլմեր",
+    "popularPeople": "Հանրաճանաչ մարդիկ",
+    "restoreHiddenMovies": "Վերադարձնել թաքցված ֆիլմերը",
+    "otherMoviesInSeries": "Այլ ֆիլմեր շարքում",
+    "moviesRestored": "Ֆիլմերը վերականգնվել են",
+    "selectedMoviesRestoreConfirm": "Հաստատու՞մ եք, որ ցանկանում եք վերականգնել ընտրված ֆիլմերը:",
+    "hiddenMovies": "Թաքցված ֆիլմեր",
+    "noHiddenMovies": "Թաքցված ֆիլմեր չկան",
+    "searchPeople": "Փնտրեք մարդիկ",
+    "recommendFileCreated": "Ֆիլմի առաջարկման ֆայլը ստեղծվել է:",
+    "recommendFileCreationConfirm": "Հաստատու՞մ եք, որ ցանկանում եք ստեղծել ֆիլմի առաջարկման ֆայլը ընտրված ֆիլմերով:",
+    "selectMoviesToAdd": "Ընտրեք ֆիլմեր, որպեսզի ավելացնեք դիտելու ցանկում",
+    "moviesAddedToWatchList": "Ֆիլմերը ավելացվել են ձեր դիտելու ցանկում:"
+
 }

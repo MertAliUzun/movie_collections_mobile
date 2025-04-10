@@ -194,5 +194,26 @@
     "recommendMovieMode": "Film Recommandatiounsmodus",
     "findMovieMode": "Film Fënnermodus",
     "latestMovies": "Leschte Filmer",
-    "upcomingMovies": "Kommend Filmer"
+    "upcomingMovies": "Kommend Filmer",
+    "whatKindMoviesLookingFor": "Wat fir Aarte vu Filmer sicht Dir?",
+    "getRecommendationFromAI": "Andeems Dir de Genre oder d'Thema vum Film tippt, kënnt Dir Empfehlungen kréien",
+    "producer": "Produzent",
+    "hideChosenMovies": "Wielt Filmer verstoppen",
+    "selectedMoviesHideConfirm": "Bestätegt Dir d'Verstoppen vun de gewielten Filmer?",
+    "moviesAreHidden": "Filmer si verstoppt",
+    "discover": "Entdecken",
+    "popularMovies": "Populär Filmer",
+    "popularPeople": "Populär Leit",
+    "restoreHiddenMovies": "Verstoppt Filmer restauréieren",
+    "otherMoviesInSeries": "Anerer Filmer an der Serie",
+    "moviesRestored": "Filmer si restauréiert",
+    "selectedMoviesRestoreConfirm": "Bestätegt Dir d'Restauration vun de gewielten Filmer?",
+    "hiddenMovies": "Verstoppt Filmer",
+    "noHiddenMovies": "Keen verstoppten Filmer",
+    "searchPeople": "Leit sichen",
+    "recommendFileCreated": "Filmempfehlungsdatei gouf erstallt.",
+    "recommendFileCreationConfirm": "Bestätegt Dir d'Erstellung vun enger Filmempfehlungsdatei mat den gewielten Filmer?",
+    "selectMoviesToAdd": "Wielt Filmer fir zu Ärer Watchlist hinzuzufügen",
+    "moviesAddedToWatchList": "Filmer sinn zu Ärer Watchlist derbäi geholl."
+
 }

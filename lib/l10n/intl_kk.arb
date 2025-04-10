@@ -194,5 +194,26 @@
     "recommendMovieMode": "Фильм ұсыну режимі",
     "findMovieMode": "Фильм іздеу режимі",
     "latestMovies": "Соңғы фильмдер",
-    "upcomingMovies": "Кел upcoming фильмдер"
+    "upcomingMovies": "Кел upcoming фильмдер",
+    "whatKindMoviesLookingFor": "Қандай фильмдер іздеп жатырсыз?",
+    "getRecommendationFromAI": "Фильмнің жанрын немесе тақырыбын жазу арқылы ұсыныстар ала аласыз",
+    "producer": "Өндіруші",
+    "hideChosenMovies": "Таңдалған фильмдерді жасыру",
+    "selectedMoviesHideConfirm": "Таңдалған фильмдерді жасыруды растайсыз ба?",
+    "moviesAreHidden": "Фильмдер жасырулы",
+    "discover": "Ашу",
+    "popularMovies": "Популярлы фильмдер",
+    "popularPeople": "Популярлы адамдар",
+    "restoreHiddenMovies": "Жасырылған фильмдерді қалпына келтіру",
+    "otherMoviesInSeries": "Сериядағы басқа фильмдер",
+    "moviesRestored": "Фильмдер қалпына келтірілді",
+    "selectedMoviesRestoreConfirm": "Таңдалған фильмдерді қалпына келтіруді растайсыз ба?",
+    "hiddenMovies": "Жасырылған фильмдер",
+    "noHiddenMovies": "Жасырылған фильмдер жоқ",
+    "searchPeople": "Адамдарды іздеу",
+    "recommendFileCreated": "Фильмдер ұсыныс файлы жасалды.",
+    "recommendFileCreationConfirm": "Таңдалған фильмдермен ұсыныс файлын жасауды растайсыз ба?",
+    "selectMoviesToAdd": "Қарау тізіміңізге қосу үшін фильмдерді таңдаңыз",
+    "moviesAddedToWatchList": "Фильмдер қарау тізіміңізге қосылды."
+
 }

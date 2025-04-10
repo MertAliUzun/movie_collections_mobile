@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("ผู้กำกับ"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("ผู้กำกับเป็นค่าว่าง"),
+        "discover": MessageLookupByLibrary.simpleMessage("ค้นพบ"),
         "documentary": MessageLookupByLibrary.simpleMessage("สารคดี"),
         "drama": MessageLookupByLibrary.simpleMessage("ดราม่า"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("แฟรนไชส์"),
         "genre": MessageLookupByLibrary.simpleMessage("ประเภท"),
         "genres": MessageLookupByLibrary.simpleMessage("ประเภท"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "โดยการพิมพ์ประเภทหรือหัวข้อของภาพยนตร์ คุณสามารถรับคำแนะนำได้"),
         "groupBy": MessageLookupByLibrary.simpleMessage("จัดกลุ่มโดย"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("ภาพยนตร์ที่ซ่อน"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("ซ่อนภาพยนตร์ที่เลือก"),
         "history": MessageLookupByLibrary.simpleMessage("ประวัติศาสตร์"),
         "horror": MessageLookupByLibrary.simpleMessage("สยองขวัญ"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("คะแนนฮิป"),
@@ -159,12 +165,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("อัพเดทภาพยนตร์สำเร็จ!"),
         "movies": MessageLookupByLibrary.simpleMessage("ภาพยนตร์"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "ภาพยนตร์ถูกเพิ่มในรายการที่คุณต้องการดู"),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("ภาพยนตร์ถูกซ่อนแล้ว"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" ภาพยนตร์ถูกลบออก."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "ภาพยนตร์ถูกย้ายไปยังคอลเลคชัน!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "ภาพยนตร์ถูกย้ายไปยังรายการที่ต้องการดู!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("ภาพยนตร์ได้รับการกู้คืนแล้ว"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" ภาพยนตร์ถูกเลือก"),
         "music": MessageLookupByLibrary.simpleMessage("ดนตรี"),
@@ -181,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกแฟรนไชส์ใดๆ"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("ไม่ได้เลือกประเภทใดๆ"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("ไม่มีภาพยนตร์ที่ซ่อนอยู่"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("ไม่พบ ID Token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "ไม่พบภาพยนตร์สำหรับประเภทนี้!"),
@@ -198,19 +212,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("พฤศจิกายน"),
         "october": MessageLookupByLibrary.simpleMessage("ตุลาคม"),
         "ok": MessageLookupByLibrary.simpleMessage("ตกลง"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("ภาพยนตร์อื่นๆ ในซีรีส์"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("กรุณากรอก"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("กรุณากรอกชื่อภาพยนตร์"),
         "plot": MessageLookupByLibrary.simpleMessage("เนื้อเรื่อง"),
         "popularFor": MessageLookupByLibrary.simpleMessage("เป็นที่นิยมสำหรับ"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("ภาพยนตร์ยอดนิยม"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("บุคคลที่เป็นที่นิยม"),
         "poster": MessageLookupByLibrary.simpleMessage("โปสเตอร์"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("การสนับสนุนลูกค้าพรีเมียม"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "กดเพื่อเลือกโปสเตอร์ภาพยนตร์"),
+        "producer": MessageLookupByLibrary.simpleMessage("ผู้ผลิต"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("บริษัทผลิต"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("ภาพยนตร์สุ่ม"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "ไฟล์คำแนะนำภาพยนตร์ถูกสร้างขึ้นแล้ว"),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "คุณยืนยันที่จะสร้างไฟล์คำแนะนำภาพยนตร์ที่เลือกหรือไม่?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("โหมดแนะนำภาพยนตร์"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("วันวางจำหน่าย"),
@@ -221,6 +246,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit":
             MessageLookupByLibrary.simpleMessage("ลบข้อจำกัดการเพิ่มหนัง"),
         "rent": MessageLookupByLibrary.simpleMessage("(เช่า)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("กู้คืนภาพยนตร์ที่ซ่อน"),
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("กรุณากลับไปยังหน้าก่อนหน้า"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("รายได้: "),
@@ -231,11 +258,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("วิทยาศาสตร์สมมุติ"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("ค้นหาภาพยนตร์"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("ค้นหาคน"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "เลือกภาพยนตร์เพื่อเพิ่มในรายการที่คุณต้องการดู"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("เลือกการจัดอันดับ PG"),
         "selected": MessageLookupByLibrary.simpleMessage("เลือกแล้ว"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "ภาพยนตร์ที่เลือกจะถูกลบ คุณยืนยันไหม?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "คุณยืนยันที่จะซ่อนภาพยนตร์ที่เลือกหรือไม่?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "คุณยืนยันที่จะกู้คืนภาพยนตร์ที่เลือกหรือไม่?"),
         "september": MessageLookupByLibrary.simpleMessage("กันยายน"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "การเข้าสู่ระบบด้วย Google ถูกยกเลิก."),
@@ -282,6 +316,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("รายสัปดาห์"),
         "welcome": MessageLookupByLibrary.simpleMessage("ยินดีต้อนรับ, "),
         "western": MessageLookupByLibrary.simpleMessage("ตะวันตก"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("คุณกำลังมองหาหนังประเภทไหน?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("ดูที่ไหน?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("จะถูกลบออก?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("รายการที่ต้องการดู"),

@@ -194,5 +194,26 @@
     "recommendMovieMode": "Режим на препорака на филмови",
     "findMovieMode": "Режим на наоѓање филмови",
     "latestMovies": "Најнови филмови",
-    "upcomingMovies": "Предстојни филмови"
+    "upcomingMovies": "Предстојни филмови",
+    "whatKindMoviesLookingFor": "Каков вид на филмови барате?",
+    "getRecommendationFromAI": "Внесете го жанрот или темата на филмот и добијте препораки",
+    "producer": "Продуцент",
+    "hideChosenMovies": "Скриј ги избраните филмови",
+    "selectedMoviesHideConfirm": "Дали потврдувате дека ги криете избраните филмови?",
+    "moviesAreHidden": "Филмовите се скриени",
+    "discover": "Откриј",
+    "popularMovies": "Популарни филмови",
+    "popularPeople": "Популарни луѓе",
+    "restoreHiddenMovies": "Врати ги скриените филмови",
+    "otherMoviesInSeries": "Други филмови во серијата",
+    "moviesRestored": "Филмовите се вратени",
+    "selectedMoviesRestoreConfirm": "Дали потврдувате дека ги враќате избраните филмови?",
+    "hiddenMovies": "Скриени филмови",
+    "noHiddenMovies": "Нема скриени филмови",
+    "searchPeople": "Барај луѓе",
+    "recommendFileCreated": "Фајлот за препораки на филмови е креиран.",
+    "recommendFileCreationConfirm": "Дали потврдувате дека ќе креирате фајл за препораки на филмови со избраните филмови?",
+    "selectMoviesToAdd": "Изберете филмови што ќе ги додадете на вашата листа за гледање",
+    "moviesAddedToWatchList": "Филмовите се додадени на вашата листа за гледање."
+
 }

@@ -194,5 +194,26 @@
     "recommendMovieMode": "Mode Rekomendasi Film",
     "findMovieMode": "Mode Pencarian Film",
     "latestMovies": "Film Terbaru",
-    "upcomingMovies": "Film Sing Bakal Tampil"
+    "upcomingMovies": "Film Sing Bakal Tampil",
+    "whatKindMoviesLookingFor": "Apa jinis film sing sampeyan goleki?",
+    "getRecommendationFromAI": "Ketik genre utawa topik film kanggo nampa rekomendasi",
+    "producer": "Produser",
+    "hideChosenMovies": "Sembunyikan film sing dipilih",
+    "selectedMoviesHideConfirm": "Apa sampeyan konfirmasi kanggo nyumputake film sing dipilih?",
+    "moviesAreHidden": "Film wis disembunyikan",
+    "discover": "Temokake",
+    "popularMovies": "Film Populer",
+    "popularPeople": "Wong Populer",
+    "restoreHiddenMovies": "Pulihake film sing disembunyikan",
+    "otherMoviesInSeries": "Film liya ing seri",
+    "moviesRestored": "Film wis dipulihake",
+    "selectedMoviesRestoreConfirm": "Apa sampeyan konfirmasi kanggo mulihake film sing dipilih?",
+    "hiddenMovies": "Film sing disembunyikan",
+    "noHiddenMovies": "Ora ana film sing disembunyikan",
+    "searchPeople": "Goleki wong",
+    "recommendFileCreated": "File rekomendasi film wis digawe.",
+    "recommendFileCreationConfirm": "Apa sampeyan konfirmasi kanggo nggawe file rekomendasi film kanthi film sing dipilih?",
+    "selectMoviesToAdd": "Pilih film kanggo ditambahake ing dhaptar tontonan sampeyan",
+    "moviesAddedToWatchList": "Film wis ditambahake ing dhaptar tontonan sampeyan."
+    
 }

@@ -194,5 +194,26 @@
     "recommendMovieMode": "Modd Argymell Ffilm",
     "findMovieMode": "Modd Chwiliad Ffilm",
     "latestMovies": "Ffilmiau Diweddaraf",
-    "upcomingMovies": "Ffilmiau sy'n Dod i Fyny"
+    "upcomingMovies": "Ffilmiau sy'n Dod i Fyny",
+    "whatKindMoviesLookingFor": "Pa fath o ffilmiau ydych chi'n chwilio amdanyn?",
+    "getRecommendationFromAI": "Trwy deipio genres neu bwnc y ffilm, gallwch gael argymhellion",
+    "producer": "Cynhyrchydd",
+    "hideChosenMovies": "Cuddio ffilmiau dewisol",
+    "selectedMoviesHideConfirm": "Ydych chi'n cadarnhau cuddio'r ffilmiau dewisol?",
+    "moviesAreHidden": "Mae'r ffilmiau wedi'u cuddio",
+    "discover": "Darganfod",
+    "popularMovies": "Ffilmiau Poblogaidd",
+    "popularPeople": "Pobl Poblogaidd",
+    "restoreHiddenMovies": "Ail-droi ffilmiau wedi'u cuddio",
+    "otherMoviesInSeries": "Ffilmiau eraill yn y gyfres",
+    "moviesRestored": "Mae'r ffilmiau wedi'u hadfer",
+    "selectedMoviesRestoreConfirm": "Ydych chi'n cadarnhau adfer y ffilmiau dewisol?",
+    "hiddenMovies": "Ffilmiau Wedi'u Cuddio",
+    "noHiddenMovies": "Dim ffilmiau wedi'u cuddio",
+    "searchPeople": "Chwilio am bobl",
+    "recommendFileCreated": "Ffeil argymell ffilm wedi'i chreu.",
+    "recommendFileCreationConfirm": "Ydych chi'n cadarnhau creu ffeil argymell gyda'r ffilmiau dewisol?",
+    "selectMoviesToAdd": "Dewiswch ffilmiau i'w hychwanegu at eich rhestr gwylio",
+    "moviesAddedToWatchList": "Mae'r ffilmiau wedi'u hychwanegu at eich rhestr gwylio."
+
 }

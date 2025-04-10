@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("ડિજિટલ"),
         "director": MessageLookupByLibrary.simpleMessage("દિગ્દર્શક"),
         "directorNull": MessageLookupByLibrary.simpleMessage("દિગ્દર્શક નલ"),
+        "discover": MessageLookupByLibrary.simpleMessage("ખોજો"),
         "documentary": MessageLookupByLibrary.simpleMessage("ડોક્યુમેન્ટરી"),
         "drama": MessageLookupByLibrary.simpleMessage("ડ્રામા"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -123,7 +124,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("ફ્રેન્ચાઇઝિસ"),
         "genre": MessageLookupByLibrary.simpleMessage("શૈલી"),
         "genres": MessageLookupByLibrary.simpleMessage("શૈલીઓ"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "ફિલ્મનો જેણર અથવા વિષય લખીને, તમે ભલામણો મેળવી શકો છો"),
         "groupBy": MessageLookupByLibrary.simpleMessage("દ્વારા જૂથ"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("છુપાયેલી ફિલ્મો"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("પસંદ કરેલી ફિલ્મો છુપાવો"),
         "history": MessageLookupByLibrary.simpleMessage("હિસ્ટ્રી"),
         "horror": MessageLookupByLibrary.simpleMessage("હોરર"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("હાઇપ સ્કોર"),
@@ -154,12 +160,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "મૂવી સફળતાપૂર્વક અપડેટ કરવામાં આવી છે!"),
         "movies": MessageLookupByLibrary.simpleMessage("મૂવીઝ"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "ફિલ્મો તમારી વોચલિસ્ટમાં ઉમેરાઈ ગઈ છે."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("ફિલ્મો છુપાઈ ગઈ છે"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" મૂવીઝ કાઢી નાખવામાં આવી."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "મૂવીઝ કલેક્શનમાં ખસેડવામાં આવી છે!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "મૂવીઝ વોચ લિસ્ટમાં ખસેડવામાં આવી છે!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "ફિલ્મો પુનઃપ્રાપ્ત કરી લીધી છે"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" મૂવીઝ પસંદ કરવામાં આવી"),
         "music": MessageLookupByLibrary.simpleMessage("મ્યુઝિક"),
@@ -176,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "કોઈ ફ્રેન્ચાઇઝ પસંદ નથી કરેલ"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "કોઈ શૈલી પસંદ કરવામાં આવી નથી"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("કોઈ છુપાયેલી ફિલ્મો નથી"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("કોઈ ID ટોકન મળ્યું નથી."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -195,20 +209,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("નવેમ્બર"),
         "october": MessageLookupByLibrary.simpleMessage("ઑક્ટોબર"),
         "ok": MessageLookupByLibrary.simpleMessage("ઠીક છે"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("સિરીઝની અન્ય ફિલ્મો"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("કૃપા કરીને દાખલ કરો"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "કૃપા કરીને મૂવી શીર્ષક દાખલ કરો"),
         "plot": MessageLookupByLibrary.simpleMessage("પ્લોટ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("માટે લોકપ્રિય"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("પ્રખ્યાત ફિલ્મો"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("પ્રખ્યાત લોકો"),
         "poster": MessageLookupByLibrary.simpleMessage("પોસ્ટર"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("પ્રેમિયમ ગ્રાહક આધાર"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("મૂવી પોસ્ટર પસંદ કરવા દબાવો"),
+        "producer": MessageLookupByLibrary.simpleMessage("ઉત્પાદક"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("પ્રોડક્શન કંપનીઓ"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("રેન્ડમ મૂવી"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "ફિલ્મ ભલામણ ફાઈલ બનાવવામાં આવી છે."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "શું તમે પસંદ કરેલી ફિલ્મો સાથે ફિલ્મ ભલામણ ફાઈલ બનાવવાનો પુષ્ટિ કરો છો?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("ફિલ્મ સૂચન મોડ"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("રિલીઝ તારીખ"),
@@ -219,6 +243,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "ફિલ્મ ઉમેરવાની મર્યાદા દૂર કરો"),
         "rent": MessageLookupByLibrary.simpleMessage("(ભાડે)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "છુપાયેલી ફિલ્મો પુનઃપ્રાપ્ત કરો"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "કૃપા કરીને પાછલી સ્ક્રીન પર પાછા જાઓ"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("રેવન્યુ: "),
@@ -228,11 +254,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("રનટાઇમ (મિનિટ)"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("સાયન્સ ફિક્શન"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("મૂવીઝ શોધો"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("લોકો શોધો"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "તમારી વોચલિસ્ટમાં ઉમેરવા માટે ફિલ્મો પસંદ કરો"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG રેટિંગ પસંદ કરો"),
         "selected": MessageLookupByLibrary.simpleMessage("પસંદ કરેલ"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "પસંદ કરેલી મૂવીઝ કાઢી નાખવામાં આવશે. શું તમે પુષ્ટિ કરો છો?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "શું તમે પસંદ કરેલી ફિલ્મો છુપાવવાનો પુષ્ટિ કરો છો?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "શું તમે પસંદ કરેલી ફિલ્મો પુનઃપ્રાપ્ત કરવાનો પુષ્ટિ કરો છો?"),
         "september": MessageLookupByLibrary.simpleMessage("સપ્ટેમ્બર"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google સાઇન-ઇન રદ કરવામાં આવ્યું હતું."),
@@ -278,6 +311,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("સાપ્તાહિક"),
         "welcome": MessageLookupByLibrary.simpleMessage("સ્વાગત છે, "),
         "western": MessageLookupByLibrary.simpleMessage("વેસ્ટર્ન"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "તમે કઈ પ્રકારની ફિલ્મો જોઈ રહ્યા છો?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("ક્યાં જોવું?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("કાઢી નાખવામાં આવશે?"),

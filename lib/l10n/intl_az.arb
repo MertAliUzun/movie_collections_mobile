@@ -167,5 +167,26 @@
     "recommendMovieMode": "Film Tövsiyə Rejimi",
     "findMovieMode": "Film Axtarış Rejimi",
     "latestMovies": "Ən Son Filmlər",
-    "upcomingMovies": "Tezliklə Gələn Filmlər"
+    "upcomingMovies": "Tezliklə Gələn Filmlər",
+    "whatKindMoviesLookingFor": "Nə tip filmlər axtarırsınız?",
+    "getRecommendationFromAI": "Filmin janrını və ya mövzusunu yazaraq tövsiyələr ala bilərsiniz",
+    "producer": "Prodüser",
+    "hideChosenMovies": "Seçilmiş Filmləri Gizlət",
+    "selectedMoviesHideConfirm": "Seçilmiş filmləri gizlətməyə əminsiniz?",
+    "moviesAreHidden": "Filmlər gizlədildi",
+    "discover": "Kəşf et",
+    "popularMovies": "Məşhur Filmlər",
+    "popularPeople": "Məşhur İnsanlar",
+    "restoreHiddenMovies": "Gizlədilmiş Filmləri Bərpa Et",
+    "otherMoviesInSeries": "Seriyada Olan Digər Filmlər",
+    "moviesRestored": "Filmlər bərpa olundu",
+    "selectedMoviesRestoreConfirm": "Seçilmiş filmləri bərpa etməyə əminsiniz?",
+    "hiddenMovies": "Gizlədilmiş Filmlər",
+    "noHiddenMovies": "Gizlədilmiş film yoxdur",
+    "searchPeople": "İnsanları Axtar",
+    "recommendFileCreated": "Film tövsiyə faylı yaradıldı.",
+    "recommendFileCreationConfirm": "Seçilmiş filmlərlə tövsiyə faylı yaratmağa əminsiniz?",
+    "selectMoviesToAdd": "İzləmə Siyahınıza əlavə etmək üçün filmləri seçin",
+    "moviesAddedToWatchList": "Filmlər İzləmə Siyahınıza əlavə olundu."
+
 }

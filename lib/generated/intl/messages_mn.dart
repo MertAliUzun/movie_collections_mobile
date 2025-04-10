@@ -95,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Зохион бүтээгч"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Зохион бүтээгч байхгүй"),
+        "discover": MessageLookupByLibrary.simpleMessage("Нээх"),
         "documentary": MessageLookupByLibrary.simpleMessage("Баримтат"),
         "drama": MessageLookupByLibrary.simpleMessage("Драма"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -128,7 +129,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Франшизууд"),
         "genre": MessageLookupByLibrary.simpleMessage("Төрөл"),
         "genres": MessageLookupByLibrary.simpleMessage("Төрлүүд"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Киноны жанр эсвэл сэдвийг бичихэд та санал авах боломжтой"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Бүлэглэх"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Нуугдсан кинонууд"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Сонгосон киног нуу"),
         "history": MessageLookupByLibrary.simpleMessage("Түүх"),
         "horror": MessageLookupByLibrary.simpleMessage("Аймшиг"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Хайп оноо"),
@@ -161,12 +168,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Кино амжилттай шинэчлэгдсэн!"),
         "movies": MessageLookupByLibrary.simpleMessage("Кино"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Кинонууд таны үзэх жагсаалтад нэмэгдсэн байна."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Кинонууд нуугдсан байна"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" кино устгагдсан."),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Кино нь цуглуулгад шилжсэн!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Кино нь харах жагсаалт руу шилжсэн!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Кинонууд сэргээгдсэн байна"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" кино сонгогдсон"),
         "music": MessageLookupByLibrary.simpleMessage("Саунд"),
@@ -183,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Франшиз сонгогдоогүй"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Төрөл сонгогдоогүй байна"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Нуугдсан кинонууд байхгүй"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID токен олдсонгүй."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -201,19 +216,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Арваннэгдүгээр сар"),
         "october": MessageLookupByLibrary.simpleMessage("Аравдугаар сар"),
         "ok": MessageLookupByLibrary.simpleMessage("Зөвшөөрөх"),
+        "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
+            "Цувралд орсон бусад кинонууд"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Оруулна уу"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Киноны гарчиг оруулна уу"),
         "plot": MessageLookupByLibrary.simpleMessage("Өгүүлэмж"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Алдартай"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Тамирчдын кино"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Популяр хүмүүс"),
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Premium үйлчлүүлэгчийн дэмжлэг"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Киноны постер сонгохын тулд дарна уу"),
+        "producer": MessageLookupByLibrary.simpleMessage("Үйлдвэрлэгч"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Үйлдвэрлэгч компаниуд"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Санамсаргүй кино"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Киноны санал файлыг үүсгэсэн."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Сонгосон кинонуудтай киноны санал файлыг үүсгэхийг баталгаажуулж байна уу?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Кино санал болгох горим"),
         "releaseDate":
@@ -226,6 +250,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Кино нэмэх хязгаарлалт устгах"),
         "rent": MessageLookupByLibrary.simpleMessage("(Түрээслэх)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Нуугдсан киног сэргээх"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Дараагийн дэлгэц рүү буцаж очно уу"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Орлого: "),
@@ -236,11 +262,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Шинжлэх ухааны уран зөгнөл"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Кино хайх"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Хүмүүстэй хайлт хийх"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Таны үзэх жагсаалтанд нэмэх кинонуудыг сонгоно уу"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG үнэлгээ сонгох"),
         "selected": MessageLookupByLibrary.simpleMessage("Сонгогдсон"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "сонгогдсон киног устгана. Та баталгаажуулж байна уу?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Сонгосон киног нуухыг баталгаажуулж байна уу?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Сонгосон киног сэргээхийг баталгаажуулж байна уу?"),
         "september": MessageLookupByLibrary.simpleMessage("Есдүгээр сар"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google Sign-In цуцлагдсан."),
@@ -287,6 +321,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Долоо хоног бүр"),
         "welcome": MessageLookupByLibrary.simpleMessage("Тавтай морилно уу, "),
         "western": MessageLookupByLibrary.simpleMessage("Баруун"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Та ямар төрлийн кино хайж байна вэ?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Хаана үзэх вэ?"),
         "willBeDeleted": MessageLookupByLibrary.simpleMessage("устгагдах уу?"),
         "wishlist": MessageLookupByLibrary.simpleMessage("Харах жагсаалт"),

@@ -97,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Rejissyor"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Rejissyor bo\'sh"),
+        "discover": MessageLookupByLibrary.simpleMessage("Kashf etish"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumental"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -131,7 +132,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franshizalar"),
         "genre": MessageLookupByLibrary.simpleMessage("Janr"),
         "genres": MessageLookupByLibrary.simpleMessage("Janrlar"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Film janri yoki mavzusini yozib, tavsiyalar olish mumkin."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Gruplash"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Yashirilgan filmlar"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "Tanlangan filmlarni yashirish"),
         "history": MessageLookupByLibrary.simpleMessage("Tarix"),
         "horror": MessageLookupByLibrary.simpleMessage("Qo\'rquv"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Hype balli"),
@@ -167,12 +174,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Film muvaffaqiyatli yangilandi!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmlar"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmlar tomosha qilish ro\'yxatiga qo\'shildi."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmlar yashirildi"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film(lar) o\'chirildi."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmlar Kolleksiyaga o\'tkazildi!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmlar Ko\'rish ro\'yxatiga o\'tkazildi!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmlar tiklandi"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" film(lar) tanlandi"),
         "music": MessageLookupByLibrary.simpleMessage("Musiqa"),
@@ -189,6 +202,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hech qanday franshiza tanlanmadi"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Hech qanday janr tanlanmadi"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Yashirilgan filmlar yo\'q"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID token topilmadi."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -208,20 +223,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Noyabr"),
         "october": MessageLookupByLibrary.simpleMessage("Oktyabr"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Seriyadagi boshqa filmlar"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Iltimos kiriting"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Iltimos film sarlavhasini kiriting"),
         "plot": MessageLookupByLibrary.simpleMessage("Syujet"),
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Buning uchun mashhur"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Mashhur filmlar"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Mashhur odamlar"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Premium mijozlarni qo\'llab-quvvatlash"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Film posterini tanlash uchun bosing"),
+        "producer": MessageLookupByLibrary.simpleMessage("Prodyuser"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Prodyuser kompaniyalari"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Tasodifiy film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Film tavsiyalari fayli yaratildi."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Siz tanlangan filmlar bilan film tavsiyalari faylini yaratishni tasdiqlaysizmi?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Film tavsiya qilish rejimi"),
         "releaseDate":
@@ -234,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Film qo\'shish chegarasini olib tashlang"),
         "rent": MessageLookupByLibrary.simpleMessage("(Ijaraga olish)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Yashirilgan filmlarni tiklash"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Iltimos, oldingi ekranga qaytaring"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Daromad: "),
@@ -244,11 +272,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Ilmiy-fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Filmlar izlash"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Odamlarni qidiring"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Tomosha qilish ro\'yxatiga qo\'shish uchun filmlar tanlang"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG reytingini tanlang"),
         "selected": MessageLookupByLibrary.simpleMessage("Tanlangan"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Tanlangan filmlar o\'chiriladi. Tasdiqlaysizmi?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Tanlangan filmlarni yashirishni tasdiqlaysizmi?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Tanlangan filmlarni tiklashni tasdiqlaysizmi?"),
         "september": MessageLookupByLibrary.simpleMessage("Sentabr"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google hisobiga kirish bekor qilindi."),
@@ -298,6 +334,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Haftalik"),
         "welcome": MessageLookupByLibrary.simpleMessage("Xush kelibsiz, "),
         "western": MessageLookupByLibrary.simpleMessage("Vesture"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Qaysi turdagi filmlarni izlayapsiz?"),
         "whereToWatch":
             MessageLookupByLibrary.simpleMessage("Qayerdan ko\'rish mumkin?"),
         "willBeDeleted":

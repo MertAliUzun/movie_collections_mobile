@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "director": MessageLookupByLibrary.simpleMessage("Režiser"),
         "directorNull":
             MessageLookupByLibrary.simpleMessage("Direktor nije naveden"),
+        "discover": MessageLookupByLibrary.simpleMessage("Otkrij"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentarni"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -123,7 +124,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franšize"),
         "genre": MessageLookupByLibrary.simpleMessage("Žanr"),
         "genres": MessageLookupByLibrary.simpleMessage("Žanrovi"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Upiši žanr ili temu filma kako bi dobio preporuke"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grupiši po"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Skriveni filmovi"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Sakrij odabrane filmove"),
         "history": MessageLookupByLibrary.simpleMessage("Istorija"),
         "horror": MessageLookupByLibrary.simpleMessage("Horor"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Ocjena hype-a"),
@@ -157,12 +164,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated":
             MessageLookupByLibrary.simpleMessage("Film je uspješno ažuriran!"),
         "movies": MessageLookupByLibrary.simpleMessage("Filmovima"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Filmove su dodani u tvoju listu za gledanje."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Filmove su sakriveni"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmova obrisano."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmovi su premješteni u kolekciju!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Filmovi su premješteni u listu želja!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Filmove su vraćeni"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" filmova odabrano"),
         "music": MessageLookupByLibrary.simpleMessage("Muzika"),
@@ -179,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nijedna franšiza nije odabrana"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Nema odabranih žanrova"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Nema skrivenih filmova"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("Nema ID tokena."),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("Nema filmova za ovaj žanr!"),
@@ -197,19 +212,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Novembar"),
         "october": MessageLookupByLibrary.simpleMessage("Oktobar"),
         "ok": MessageLookupByLibrary.simpleMessage("U redu"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Ostali filmovi u seriji"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Molimo unesite"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Molimo unesite naslov filma"),
         "plot": MessageLookupByLibrary.simpleMessage("Radnja"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Popularno za"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Popularni filmovi"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Popularni ljudi"),
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium korisnička podrška"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pritisnite za izbor postera filma"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produkcijske kompanije"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Nasumičan film"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Datoteka za preporuku filmova je kreirana."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Da li potvrđuješ kreiranje datoteke sa preporukama za odabrane filmove?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Režim preporuke filma"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Datum izdavanja"),
@@ -221,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Uklonite ograničenje za dodavanje filmova"),
         "rent": MessageLookupByLibrary.simpleMessage("(Iznajmi)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Vrati skrivene filmove"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Molimo vratite se na prethodni ekran"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Prihod: "),
@@ -232,11 +260,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Naučna fantastika"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Pretraži filmove"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("Pretraži ljude"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Odaberi filmove za dodavanje u svoju listu za gledanje"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Izaberite PG ocjenu"),
         "selected": MessageLookupByLibrary.simpleMessage("Odabrano"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Odabrani filmovi će biti obrisani. Da li ste sigurni?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Da li potvrđuješ da sakriješ odabrane filmove?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Da li potvrđuješ da vratiš odabrane filmove?"),
         "september": MessageLookupByLibrary.simpleMessage("Septembar"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google prijava je otkazana."),
@@ -284,6 +319,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Sedmično"),
         "welcome": MessageLookupByLibrary.simpleMessage("Dobrodošli, "),
         "western": MessageLookupByLibrary.simpleMessage("Vester"),
+        "whatKindMoviesLookingFor":
+            MessageLookupByLibrary.simpleMessage("Kakve filmove tražiš?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Gdje gledati?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("će biti obrisano?"),

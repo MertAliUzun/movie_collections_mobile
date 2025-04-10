@@ -194,5 +194,26 @@
     "recommendMovieMode": "चलचित्र सिफारिस मोड",
     "findMovieMode": "चलचित्र खोजी मोड",
     "latestMovies": "हालैका चलचित्रहरू",
-    "upcomingMovies": "आगामी चलचित्रहरू"
+    "upcomingMovies": "आगामी चलचित्रहरू",
+    "whatKindMoviesLookingFor": "तपाईं कस्तो प्रकारको चलचित्र खोज्दै हुनुहुन्छ?",
+    "getRecommendationFromAI": "चलचित्रको प्रकार वा बिषय टाइप गर्दा तपाईं सिफारिस प्राप्त गर्न सक्नुहुन्छ",
+    "producer": "निर्माता",
+    "hideChosenMovies": "चयन गरिएका चलचित्रहरू लुकाउनुहोस्",
+    "selectedMoviesHideConfirm": "के तपाईं चयन गरिएका चलचित्रहरू लुकाउने कुरा पुष्टि गर्नुहुन्छ?",
+    "moviesAreHidden": "चलचित्रहरू लुकेको छ",
+    "discover": "पत्ता लगाउनुहोस्",
+    "popularMovies": "लोकप्रिय चलचित्रहरू",
+    "popularPeople": "लोकप्रिय व्यक्तिहरू",
+    "restoreHiddenMovies": "लुकेका चलचित्रहरू पुन: स्थापना गर्नुहोस्",
+    "otherMoviesInSeries": "श्रृंखलामा अन्य चलचित्रहरू",
+    "moviesRestored": "चलचित्रहरू पुन: स्थापना गरियो",
+    "selectedMoviesRestoreConfirm": "के तपाईं चयन गरिएका चलचित्रहरू पुन: स्थापना गर्ने कुरा पुष्टि गर्नुहुन्छ?",
+    "hiddenMovies": "लुकेका चलचित्रहरू",
+    "noHiddenMovies": "कोही लुकेको चलचित्रहरू छैन",
+    "searchPeople": "व्यक्तिहरू खोज्नुहोस्",
+    "recommendFileCreated": "चलचित्र सिफारिस फाइल बनाइएको छ।",
+    "recommendFileCreationConfirm": "के तपाईं चयन गरिएका चलचित्रहरूबाट चलचित्र सिफारिस फाइल बनाउन पुष्टि गर्नुहुन्छ?",
+    "selectMoviesToAdd": "तपाईंको हेर्नको लागि सूचीमा थप्नको लागि चलचित्रहरू चयन गर्नुहोस्",
+    "moviesAddedToWatchList": "चलचित्रहरू तपाईंको हेर्नको लागि सूचीमा थपिएको छ।"
+
 }

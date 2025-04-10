@@ -167,5 +167,26 @@
     "recommendMovieMode": "Film gomendatzeko modua",
     "findMovieMode": "Film bilatzeko modua",
     "latestMovies": "Azken filmak",
-    "upcomingMovies": "Datozen filmak"
+    "upcomingMovies": "Datozen filmak",
+    "whatKindMoviesLookingFor": "Zein film mota bilatzen ari zara?",
+    "getRecommendationFromAI": "Filmakin lotutako genero edo gai bat idatzita, gomendioak jaso ditzakezu",
+    "producer": "Ekoizlea",
+    "hideChosenMovies": "Hautatutako filmak ezkutatu",
+    "selectedMoviesHideConfirm": "Ezkutatu nahi dituzula baiezta al dezakezu hautatutako filmak?",
+    "moviesAreHidden": "Filmak ezkutatu dira",
+    "discover": "Aurkitu",
+    "popularMovies": "Filme ospetsuak",
+    "popularPeople": "Pertsona ospetsuak",
+    "restoreHiddenMovies": "Ezkutatutako filmak berreskuratu",
+    "otherMoviesInSeries": "Seriako beste filmak",
+    "moviesRestored": "Filmak berreskuratu dira",
+    "selectedMoviesRestoreConfirm": "Hautatutako filmak berreskuratu nahi dituzula baiezta al dezakezu?",
+    "hiddenMovies": "Ezkutatutako filmak",
+    "noHiddenMovies": "Ez dago ezkutatutako filmik",
+    "searchPeople": "Pertsonak bilatu",
+    "recommendFileCreated": "Filme gomendioen fitxategia sortu da.",
+    "recommendFileCreationConfirm": "Hautatutako filmekin filme gomendioen fitxategia sortzea baiezta al dezakezu?",
+    "selectMoviesToAdd": "Hautatu filmak zure ikusi zerrendara gehitzeko",
+    "moviesAddedToWatchList": "Filmak zure ikusi zerrendara gehitu dira."
+    
 }

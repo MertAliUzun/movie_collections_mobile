@@ -1215,7 +1215,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(0,0,0,10),
                       child: Image.asset(
-                       'assets/images/splash.png',
+                       'assets/images/white_logo.png',
                        fit: BoxFit.cover,
                        height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.2),
                        width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.3),

@@ -96,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Numérique"),
         "director": MessageLookupByLibrary.simpleMessage("Réalisateur"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Réalisateur nul"),
+        "discover": MessageLookupByLibrary.simpleMessage("Découvrir"),
         "documentary": MessageLookupByLibrary.simpleMessage("Documentaire"),
         "drama": MessageLookupByLibrary.simpleMessage("Drame"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -129,7 +130,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Franchises"),
         "genre": MessageLookupByLibrary.simpleMessage("Genre"),
         "genres": MessageLookupByLibrary.simpleMessage("Genres"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "En tapant le genre ou le sujet du film, vous pouvez obtenir des recommandations"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grouper par"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("Films cachés"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "Cacher les films sélectionnés"),
         "history": MessageLookupByLibrary.simpleMessage("Histoire"),
         "horror": MessageLookupByLibrary.simpleMessage("Horreur"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Score de hype"),
@@ -163,12 +169,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Le film a été mis à jour avec succès !"),
         "movies": MessageLookupByLibrary.simpleMessage("Films"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Les films ont été ajoutés à votre liste de films à regarder."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Les films ont été cachés"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" films supprimés."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Les films ont été déplacés vers la collection !"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Les films ont été déplacés vers la liste de souhaits !"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Les films ont été restaurés"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" films sélectionnés"),
         "music": MessageLookupByLibrary.simpleMessage("Musique"),
@@ -185,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Aucune franchise sélectionnée"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Aucun genre sélectionné"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Aucun film caché"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Aucun jeton ID trouvé."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -204,19 +218,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Novembre"),
         "october": MessageLookupByLibrary.simpleMessage("Octobre"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Autres films de la série"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Veuillez entrer"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Veuillez entrer le titre du film"),
         "plot": MessageLookupByLibrary.simpleMessage("Intrigue"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Populaire pour"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Films populaires"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Personnes populaires"),
         "poster": MessageLookupByLibrary.simpleMessage("Affiche"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Support client Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Appuyez pour choisir l\'affiche du film"),
+        "producer": MessageLookupByLibrary.simpleMessage("Producteur"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Sociétés de production"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film aléatoire"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Le fichier de recommandations de films a été créé."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Confirmez-vous la création d\'un fichier de films recommandés avec les films sélectionnés ?"),
         "recommendMovieMode": MessageLookupByLibrary.simpleMessage(
             "Mode de recommandation de films"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Date de sortie"),
@@ -228,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Supprimer la limite d\'ajout de films"),
         "rent": MessageLookupByLibrary.simpleMessage("(Location)"),
+        "restoreHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Restaurer les films cachés"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Veuillez revenir à l\'écran précédent"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Revenu : "),
@@ -239,11 +266,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Science-fiction"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Rechercher des films"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Rechercher des personnes"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Sélectionnez les films à ajouter à votre liste de films à regarder"),
         "selectPgRating": MessageLookupByLibrary.simpleMessage(
             "Sélectionner la classification PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Sélectionné"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Les films sélectionnés seront supprimés. Confirmez-vous ?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Confirmez-vous que vous souhaitez cacher les films sélectionnés ?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Confirmez-vous que vous souhaitez restaurer les films sélectionnés ?"),
         "september": MessageLookupByLibrary.simpleMessage("Septembre"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "L\'inscription Google a été annulée."),
@@ -294,6 +329,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Hebdomadaire"),
         "welcome": MessageLookupByLibrary.simpleMessage("Bienvenue, "),
         "western": MessageLookupByLibrary.simpleMessage("Western"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Quel type de films cherchez-vous ?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Où regarder ?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("sera supprimé ?"),

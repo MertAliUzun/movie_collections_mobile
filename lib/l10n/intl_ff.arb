@@ -194,5 +194,26 @@
     "recommendMovieMode": "Ndeenndiyol mode film",
     "findMovieMode": "Teewndiyol mode film",
     "latestMovies": "Filim ɓe gollirde",
-    "upcomingMovies": "Filim ɓe waɗi"
+    "upcomingMovies": "Filim ɓe waɗi",
+    "whatKindMoviesLookingFor": "Hol ko fiilde kaɗiɗi e jeɗi?",
+    "getRecommendationFromAI": "Soɓo genre walla toɓɓere fiilde, ina wonaa faamude",
+    "producer": "Soddi",
+    "hideChosenMovies": "Huutora fiilde ɓe ɗaɓɓitɓe",
+    "selectedMoviesHideConfirm": "Aɗa ɗum yimɓe huutora fiilde ɓe ɗaɓɓitɓe?",
+    "moviesAreHidden": "Fiilde ɓe ɗaɓɓitɗe",
+    "discover": "Njaaɓir",
+    "popularMovies": "Fiilde ɓe laawol",
+    "popularPeople": "Ñaawo ɓe laawol",
+    "restoreHiddenMovies": "Suɓo fiilde ɓe ɗaɓɓitɗe",
+    "otherMoviesInSeries": "Fiilde ɓe goɗɗi e seri",
+    "moviesRestored": "Fiilde ɓe suɓɓiti",
+    "selectedMoviesRestoreConfirm": "Aɗa ɗum yimɓe suɓɓito fiilde ɓe ɗaɓɓitɗe?",
+    "hiddenMovies": "Fiilde ɓe ɗaɓɓitɗe",
+    "noHiddenMovies": "Aɗa fiilde ɓe ɗaɓɓitɗe",
+    "searchPeople": "Njaɓɓo ñaawo",
+    "recommendFileCreated": "Fayil ɗaɗi fiilde faamude.",
+    "recommendFileCreationConfirm": "Aɗa ɗum yimɓe fayil ɗaɗi fiilde faamude e fiilde ɓe ɗaɓɓitɓe?",
+    "selectMoviesToAdd": "Huutora fiilde ɓe mbaawɗo keɓɓe e laawol maa",
+    "moviesAddedToWatchList": "Fiilde ɓe mbaawɗo keɓɓe e laawol maa."
+
 }

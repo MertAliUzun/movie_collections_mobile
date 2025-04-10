@@ -92,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Дигитал"),
         "director": MessageLookupByLibrary.simpleMessage("Режисёр"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Режисёр хали"),
+        "discover": MessageLookupByLibrary.simpleMessage("Кашф кунед"),
         "documentary": MessageLookupByLibrary.simpleMessage("Документалӣ"),
         "drama": MessageLookupByLibrary.simpleMessage("Драма"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -124,7 +125,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Франшизаҳо"),
         "genre": MessageLookupByLibrary.simpleMessage("Жанр"),
         "genres": MessageLookupByLibrary.simpleMessage("Жанрҳо"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Шумо метавонед бо ворид кардани жанр ё мавзӯи филм, тавсияҳо ба даст оред."),
         "groupBy": MessageLookupByLibrary.simpleMessage("Гурӯҳбандӣ кунед бо"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Филмҳои пинҳоншуда"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "Филмҳои интихобшударо пинҳон кунед"),
         "history": MessageLookupByLibrary.simpleMessage("Таърих"),
         "horror": MessageLookupByLibrary.simpleMessage("Ҳалокат"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Нуқтаи ҳаяҷон"),
@@ -156,12 +163,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Филм бо муваффақият навсозӣ шуд!"),
         "movies": MessageLookupByLibrary.simpleMessage("Филмҳо"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Филмҳо ба рӯйхати тамошои шумо илова шуданд."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Филмҳо пинҳон шуданд"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" филмҳо нест карда шуданд."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Филмҳо ба М集合 интиқол дода шуданд!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Филмҳо ба Рӯйхати тамошо интиқол дода шуданд!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("Филмҳо барқарор шуданд"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" филмҳо интихоб шуданд"),
         "music": MessageLookupByLibrary.simpleMessage("Музика"),
@@ -178,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ҳеҷ франшизае интихоб нашудааст"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "Ҳеҷ жанр интихоб нагардида аст"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Ҳеҷ филми пинҳоншуда вуҷуд надорад"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Токени ID ёфта нашуд."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -197,20 +212,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Ноябр"),
         "october": MessageLookupByLibrary.simpleMessage("Октябр"),
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Филмҳои дигар дар силсила"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Лутфан ворид кунед"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Лутфан наслави филмро ворид кунед"),
         "plot": MessageLookupByLibrary.simpleMessage("Сюжет"),
         "popularFor": MessageLookupByLibrary.simpleMessage("Машҳур барои"),
+        "popularMovies": MessageLookupByLibrary.simpleMessage("Филмҳои маъруф"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("Одамони маъруф"),
         "poster": MessageLookupByLibrary.simpleMessage("Плакат"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Поддержка премиум барои муштариён"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Барои интихоби плакат филм клик кунед"),
+        "producer": MessageLookupByLibrary.simpleMessage("Таъминкунанда"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ширкатҳои истеҳсолӣ"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Филми тасодуфӣ"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Файли тавсияҳои филмҳо эҷод шуд."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "Оё шумо тасдиқ мекунед, ки файли тавсияҳои филмҳоро бо филмҳои интихобшуда эҷод кунед?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Режими тавсия кардани филм"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Санаи баромад"),
@@ -222,6 +246,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Маҳдудияти илова кардани филмҳоро бардоред"),
         "rent": MessageLookupByLibrary.simpleMessage("(Иҷора)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Филмҳои пинҳоншударо барқарор кунед"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Лутфан ба экрани қаблӣ баргардед"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Даромад: "),
@@ -232,11 +258,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Фантастикаи илмӣ"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ҷустуҷӯи филмҳо"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Одамонро ҷустуҷӯ кунед"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Филмҳоро барои илова кардан ба рӯйхати тамошо интихоб кунед"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Оценкаи PG-ро интихоб кунед"),
         "selected": MessageLookupByLibrary.simpleMessage("Интихобшуда"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Филмҳои интихобшуда нест карда хоҳанд шуд. Шумо тасдиқ мекунед?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "Оё шумо тасдиқ мекунед, ки филмҳои интихобшударо пинҳон кунед?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "Оё шумо тасдиқ мекунед, ки филмҳои интихобшударо барқарор кунед?"),
         "september": MessageLookupByLibrary.simpleMessage("Сентябр"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Вуруд бо Google бекор карда шуд."),
@@ -283,6 +317,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Ҳафтарона"),
         "welcome": MessageLookupByLibrary.simpleMessage("Хуш омадед, "),
         "western": MessageLookupByLibrary.simpleMessage("Ғарб"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Шумо кадом навъи фильмҳоро меҷӯед?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage(
             "Куҷо тамошо кардан мумкин аст?"),
         "willBeDeleted":

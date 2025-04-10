@@ -194,5 +194,26 @@
     "recommendMovieMode": "Mode recomanació de pel·lícules",
     "findMovieMode": "Mode de cerca de pel·lícules",
     "latestMovies": "Últimes pel·lícules",
-    "upcomingMovies": "Properes pel·lícules"
+    "upcomingMovies": "Properes pel·lícules",
+    "whatKindMoviesLookingFor": "Quins tipus de pel·lícules estàs buscant?",
+    "getRecommendationFromAI": "Podràs obtenir recomanacions escrivint el gènere o el tema de la pel·lícula",
+    "producer": "Productor",
+    "hideChosenMovies": "Amagar les pel·lícules seleccionades",
+    "selectedMoviesHideConfirm": "Confirmeu que voleu amagar les pel·lícules seleccionades?",
+    "moviesAreHidden": "Les pel·lícules han estat amagades",
+    "discover": "Descobrir",
+    "popularMovies": "Pel·lícules populars",
+    "popularPeople": "Persones populars",
+    "restoreHiddenMovies": "Restaurar les pel·lícules amagades",
+    "otherMoviesInSeries": "Altres pel·lícules de la sèrie",
+    "moviesRestored": "Les pel·lícules han estat restaurades",
+    "selectedMoviesRestoreConfirm": "Confirmeu que voleu restaurar les pel·lícules seleccionades?",
+    "hiddenMovies": "Pel·lícules amagades",
+    "noHiddenMovies": "No hi ha pel·lícules amagades",
+    "searchPeople": "Cercar persones",
+    "recommendFileCreated": "S'ha creat el fitxer de recomanacions de pel·lícules.",
+    "recommendFileCreationConfirm": "Confirmeu que voleu crear un fitxer de recomanacions amb les pel·lícules seleccionades?",
+    "selectMoviesToAdd": "Seleccioneu les pel·lícules per afegir-les a la vostra llista de visionat",
+    "moviesAddedToWatchList": "Les pel·lícules han estat afegides a la vostra llista de visionat."
+
 }

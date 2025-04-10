@@ -194,5 +194,26 @@
     "recommendMovieMode": "Modh Moladh Scannáin",
     "findMovieMode": "Modh Taisteal Scannáin",
     "latestMovies": "Scannáin is Déanaí",
-    "upcomingMovies": "Scannáin atá le teacht"
+    "upcomingMovies": "Scannáin atá le teacht",
+    "whatKindMoviesLookingFor": "Cén cineál scannán atá á lorg agat?",
+    "getRecommendationFromAI": "Trí ghéine nó ábhar an scannáin a scríobh, is féidir leat moltaí a fháil",
+    "producer": "Tugadóir",
+    "hideChosenMovies": "Folaigh scannáin roghnaithe",
+    "selectedMoviesHideConfirm": "An deimhin leat go bhfolaíonn tú na scannáin roghnaithe?",
+    "moviesAreHidden": "Tá na scannáin faoi cheilt",
+    "discover": "Aimsigh",
+    "popularMovies": "Scannáin Coitianta",
+    "popularPeople": "Daoine Coitianta",
+    "restoreHiddenMovies": "Achoimre scannáin faoi cheilt",
+    "otherMoviesInSeries": "Scannáin eile sa tsraith",
+    "moviesRestored": "Tá na scannáin athshocraithe",
+    "selectedMoviesRestoreConfirm": "An deimhin leat go bhfuil na scannáin roghnaithe á n-athshocrú?",
+    "hiddenMovies": "Scannáin faoi cheilt",
+    "noHiddenMovies": "Níl aon scannáin faoi cheilt",
+    "searchPeople": "Cuardaigh Daoine",
+    "recommendFileCreated": "Cruthaíodh comhad moltaí scannán.",
+    "recommendFileCreationConfirm": "An deimhin leat go gcruthófar comhad moltaí scannán leis na scannáin roghnaithe?",
+    "selectMoviesToAdd": "Roghnaigh scannáin le cur leis an liosta faire",
+    "moviesAddedToWatchList": "Tá na scannáin curtha leis an liosta faire."
+
 }

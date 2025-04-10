@@ -194,5 +194,27 @@
     "recommendMovieMode": "Anbefal filmtilstand",
     "findMovieMode": "Find filmtilstand",
     "latestMovies": "Nyeste film",
-    "upcomingMovies": "Kommende film"
+    "upcomingMovies": "Kommende film",
+    "whatKindMoviesLookingFor": "Hvilken slags film leder du efter?",
+    "getRecommendationFromAI": "Ved at skrive filmens genre eller emne kan du få anbefalinger",
+    "producer": "Producent",
+    "hideChosenMovies": "Skjul valgte film",
+    "selectedMoviesHideConfirm": "Bekræfter du, at du vil skjule de valgte film?",
+    "moviesAreHidden": "Filmene er blevet skjult",
+    "discover": "Opdag",
+    "popularMovies": "Populære film",
+    "popularPeople": "Populære personer",
+    "restoreHiddenMovies": "Gendan skjulte film",
+    "otherMoviesInSeries": "Andre film i serien",
+    "moviesRestored": "Filmene er blevet gendannet",
+    "selectedMoviesRestoreConfirm": "Bekræfter du, at du vil gendanne de valgte film?",
+    "hiddenMovies": "Skjulte film",
+    "noHiddenMovies": "Ingen skjulte film",
+    "searchPeople": "Søg efter personer",
+    "recommendFileCreated": "Filmanbefalingsfil er oprettet.",
+    "recommendFileCreationConfirm": "Bekræfter du, at du vil oprette en fil med anbefalede film?",
+    "selectMoviesToAdd": "Vælg film, du vil tilføje til din watchlist",
+    "moviesAddedToWatchList": "Filmene er blevet tilføjet til din watchlist."
+
+
 }

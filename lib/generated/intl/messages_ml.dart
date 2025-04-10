@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("ഡിജിറ്റൽ"),
         "director": MessageLookupByLibrary.simpleMessage("നിരദേശകൻ"),
         "directorNull": MessageLookupByLibrary.simpleMessage("നിരദേശകൻ ഇല്ല"),
+        "discover": MessageLookupByLibrary.simpleMessage("കണ്ടുപിടിക്കുക"),
         "documentary": MessageLookupByLibrary.simpleMessage("പ്രമാണചിത്രം"),
         "drama": MessageLookupByLibrary.simpleMessage("ഡ്രാമ"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -125,7 +126,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("ഫ്രാഞ്ചൈസികൾ"),
         "genre": MessageLookupByLibrary.simpleMessage("ശാഖ"),
         "genres": MessageLookupByLibrary.simpleMessage("ശാഖകൾ"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "സിനിമയുടെ ജാന്റർ അല്ലെങ്കിൽ വിഷയം ടൈപ്പ് ചെയ്താൽ നിങ്ങൾക്ക് ശുപാർശകൾ ലഭിക്കും"),
         "groupBy": MessageLookupByLibrary.simpleMessage("ഗ്രൂപ്പ് ചെയ്താൽ"),
+        "hiddenMovies": MessageLookupByLibrary.simpleMessage("മറച്ച സിനിമകൾ"),
+        "hideChosenMovies": MessageLookupByLibrary.simpleMessage(
+            "തിരഞ്ഞെടുത്ത സിനിമകൾ മറക്കുക"),
         "history": MessageLookupByLibrary.simpleMessage("ചരിത്രം"),
         "horror": MessageLookupByLibrary.simpleMessage("ഭയങ്കര"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("ഹൈപ്പ് സ്കോർ"),
@@ -161,12 +167,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രം വിജയകരമായി അപ്ഡേറ്റ് ചെയ്തു!"),
         "movies": MessageLookupByLibrary.simpleMessage("ചലച്ചിത്രങ്ങൾ"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "സിനിമകൾ നിങ്ങളുടെ വാച്ച് ലിസ്റ്റിൽ ചേർക്കപ്പെട്ടു."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("സിനിമകൾ മറച്ചു"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(
             " ചലച്ചിത്രങ്ങൾ നീക്കം ചെയ്യപ്പെട്ടു."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രങ്ങൾ സമാഹാരത്തിലേക്ക് മാറ്റി!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രങ്ങൾ ഇഷ്ടചിത്രങ്ങളിൽ മാറ്റി!"),
+        "moviesRestored":
+            MessageLookupByLibrary.simpleMessage("സിനിമകൾ പുനഃസ്ഥാപിച്ചു"),
         "moviesSelected": MessageLookupByLibrary.simpleMessage(
             " ചലച്ചിത്രങ്ങൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ"),
         "music": MessageLookupByLibrary.simpleMessage("സംഗീതം"),
@@ -183,6 +195,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "ഏതാനും ഫ്രാഞ്ചൈസികൾ തിരഞ്ഞെടുക്കപ്പെടുന്നു"),
         "noGenresSelected": MessageLookupByLibrary.simpleMessage(
             "ശാഖകൾ തിരഞ്ഞെടുക്കപ്പെട്ടവ ഇല്ല"),
+        "noHiddenMovies":
+            MessageLookupByLibrary.simpleMessage("മറച്ച സിനിമകൾ ഇല്ല"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ഐഡി ടോക്കൺ കണ്ടെത്തിയില്ല."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -202,19 +216,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("നവംബർ"),
         "october": MessageLookupByLibrary.simpleMessage("ഒക്റ്റോബർ"),
         "ok": MessageLookupByLibrary.simpleMessage("ശരി"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("സീരീസിലെ മറ്റു സിനിമകൾ"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("ദയവായി നൽകുക"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര ശീർഷകം നൽകുക"),
         "plot": MessageLookupByLibrary.simpleMessage("കഥ"),
         "popularFor": MessageLookupByLibrary.simpleMessage("പ്രശസ്തമായത്"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("പോപ്പുലർ സിനിമകൾ"),
+        "popularPeople": MessageLookupByLibrary.simpleMessage("പോപ്പുലർ ആളുകൾ"),
         "poster": MessageLookupByLibrary.simpleMessage("പോസ്റ്റർ"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "പ്രീമിയം കസ്റ്റമർ സപ്പോർട്ട്"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "പോസ്റ്റർ തിരഞ്ഞെടുക്കാൻ അമർത്തുക"),
+        "producer": MessageLookupByLibrary.simpleMessage("ഉൽപ്പാദകൻ"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("പ്രൊഡക്ഷൻ കമ്പനികൾ"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("രണ്ട് ചലച്ചിത്രം"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "സിനിമയുടെ ശുപാർശ ഫയൽ സൃഷ്ടിച്ചു."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "തിരഞ്ഞെടുത്ത സിനിമകളുമായി സിനിമ ശുപാർശ ഫയൽ സൃഷ്ടിക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര ശുപാർശ മോഡ്"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("വിളംബര തീയതി"),
@@ -226,6 +250,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "ചിത്രം ചേർക്കാനുള്ള പരിധി നീക്കംചെയ്യുക"),
         "rent": MessageLookupByLibrary.simpleMessage("(കവരുക)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "മറച്ച സിനിമകൾ പുനഃസ്ഥാപിക്കുക"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "ദയവായി മുൻ സ്ക്രീനിലേക്ക് തിരിച്ചുപോക്കുക"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("ആവക്കൂട്ട്: "),
@@ -237,11 +263,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ശാസ്ത്ര ഫിക്ഷൻ"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്രങ്ങൾ അന്വേഷിക്കുക"),
+        "searchPeople": MessageLookupByLibrary.simpleMessage("ആളുകൾ തിരയുക"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "നിങ്ങളുടെ വാച്ച് ലിസ്റ്റിലേക്ക് ചേർക്കാൻ സിനിമകൾ തിരഞ്ഞെടുക്കുക"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("PG റേറ്റിംഗ് തിരഞ്ഞെടുക്കുക"),
         "selected": MessageLookupByLibrary.simpleMessage("തിരഞ്ഞെടുത്തത്"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "തിരഞ്ഞെടുത്ത ചലച്ചിത്രങ്ങൾ നീക്കം ചെയ്യും. നിങ്ങൾക്ക് ഉറപ്പായിരിക്കേ?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "തിരഞ്ഞെടുത്ത സിനിമകൾ മറക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "തിരഞ്ഞെടുത്ത സിനിമകൾ പുനഃസ്ഥാപിക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?"),
         "september": MessageLookupByLibrary.simpleMessage("സെപ്റ്റംബർ"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("ഗൂഗിൾ സൈൻ ഇൻ റദ്ദാക്കി."),
@@ -292,6 +325,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("ആഴ്ച്ചേന"),
         "welcome": MessageLookupByLibrary.simpleMessage("സ്വാഗതം, "),
         "western": MessageLookupByLibrary.simpleMessage("പടിഞ്ഞാറൻ"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "നിങ്ങൾ എങ്ങനെ തരത്തിലുള്ള സിനിമകൾ അന്വേഷിക്കുന്നുവോ?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("എവിടെ കാണാം?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("നീക്കം ചെയ്യപ്പെടുമോ?"),

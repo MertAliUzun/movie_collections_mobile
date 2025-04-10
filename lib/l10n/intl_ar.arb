@@ -167,5 +167,26 @@
     "recommendMovieMode": "وضع توصية الأفلام",
     "findMovieMode": "وضع البحث عن الأفلام",
     "latestMovies": "أحدث الأفلام",
-    "upcomingMovies": "الأفلام القادمة"
+    "upcomingMovies": "الأفلام القادمة",
+    "whatKindMoviesLookingFor": "ما نوع الأفلام التي تبحث عنها؟",
+    "getRecommendationFromAI": "بكتابة نوع أو موضوع الفيلم، يمكنك الحصول على توصيات",
+    "producer": "المنتج",
+    "hideChosenMovies": "إخفاء الأفلام المحددة",
+    "selectedMoviesHideConfirm": "هل تؤكد إخفاء الأفلام المحددة؟",
+    "moviesAreHidden": "تم إخفاء الأفلام",
+    "discover": "استكشاف",
+    "popularMovies": "الأفلام الشائعة",
+    "popularPeople": "الأشخاص الشائعون",
+    "restoreHiddenMovies": "استعادة الأفلام المخفية",
+    "otherMoviesInSeries": "أفلام أخرى في السلسلة",
+    "moviesRestored": "تمت استعادة الأفلام",
+    "selectedMoviesRestoreConfirm": "هل تؤكد استعادة الأفلام المحددة؟",
+    "hiddenMovies": "الأفلام المخفية",
+    "noHiddenMovies": "لا توجد أفلام مخفية",
+    "searchPeople": "ابحث عن أشخاص",
+    "recommendFileCreated": "تم إنشاء ملف توصيات الأفلام.",
+    "recommendFileCreationConfirm": "هل تؤكد إنشاء ملف توصيات بالأفلام المحددة؟",
+    "selectMoviesToAdd": "اختر الأفلام لإضافتها إلى قائمة المشاهدة الخاصة بك",
+    "moviesAddedToWatchList": "تمت إضافة الأفلام إلى قائمة المشاهدة الخاصة بك."
+
 }

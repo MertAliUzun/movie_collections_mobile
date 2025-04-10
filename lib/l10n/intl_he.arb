@@ -194,5 +194,26 @@
     "recommendMovieMode": "מצב המלצת סרטים",
     "findMovieMode": "מצב חיפוש סרטים",
     "latestMovies": "הסרטים האחרונים",
-    "upcomingMovies": "הסרטים הקרובים"
+    "upcomingMovies": "הסרטים הקרובים",
+    "whatKindMoviesLookingFor": "איזה סוג סרטים אתה מחפש?",
+    "getRecommendationFromAI": "על ידי הקלדת הז'אנר או הנושא של הסרט, תוכל לקבל המלצות",
+    "producer": "מפיק",
+    "hideChosenMovies": "הסתר סרטים שנבחרו",
+    "selectedMoviesHideConfirm": "האם אתה מאשר הסתרת את הסרטים שנבחרו?",
+    "moviesAreHidden": "הסרטים הוסתרו",
+    "discover": "גלה",
+    "popularMovies": "סרטים פופולריים",
+    "popularPeople": "אנשים פופולריים",
+    "restoreHiddenMovies": "שחזר סרטים שהוסתרו",
+    "otherMoviesInSeries": "סרטים אחרים בסדרה",
+    "moviesRestored": "הסרטים שוחזרו",
+    "selectedMoviesRestoreConfirm": "האם אתה מאשר שחזור של הסרטים שנבחרו?",
+    "hiddenMovies": "סרטים מוסתרים",
+    "noHiddenMovies": "אין סרטים מוסתרים",
+    "searchPeople": "חפש אנשים",
+    "recommendFileCreated": "קובץ המלצות סרטים נוצר.",
+    "recommendFileCreationConfirm": "האם אתה מאשר יצירת קובץ המלצות סרטים עם הסרטים שנבחרו?",
+    "selectMoviesToAdd": "בחר סרטים להוסיף לרשימת הצפייה שלך",
+    "moviesAddedToWatchList": "הסרטים נוספו לרשימת הצפייה שלך."
+    
 }

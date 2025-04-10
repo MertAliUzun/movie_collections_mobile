@@ -194,5 +194,26 @@
     "recommendMovieMode": "Filmo rekomendacijų režimas",
     "findMovieMode": "Filmo paieškos režimas",
     "latestMovies": "Naujausi filmai",
-    "upcomingMovies": "Artėjantys filmai"
+    "upcomingMovies": "Artėjantys filmai",
+    "whatKindMoviesLookingFor": "Kokių filmų ieškote?",
+    "getRecommendationFromAI": "Įveskite filmo žanrą ar temą ir gaukite rekomendacijas",
+    "producer": "Prodiuseris",
+    "hideChosenMovies": "Slėpti pasirinktas filmes",
+    "selectedMoviesHideConfirm": "Ar patvirtinate pasirinktas filmes paslėpti?",
+    "moviesAreHidden": "Filmai paslėpti",
+    "discover": "Atrasti",
+    "popularMovies": "Populiarūs filmai",
+    "popularPeople": "Populiarūs žmonės",
+    "restoreHiddenMovies": "Atkurti paslėptus filmus",
+    "otherMoviesInSeries": "Kiti filmai serijoje",
+    "moviesRestored": "Filmai atkurti",
+    "selectedMoviesRestoreConfirm": "Ar patvirtinate pasirinktas filmes atkurti?",
+    "hiddenMovies": "Paslėpti filmai",
+    "noHiddenMovies": "Nėra paslėptų filmų",
+    "searchPeople": "Ieškoti žmonių",
+    "recommendFileCreated": "Filmo rekomendacijų failas sukurtas.",
+    "recommendFileCreationConfirm": "Ar patvirtinate rekomendacijų failo kūrimą su pasirinktais filmais?",
+    "selectMoviesToAdd": "Pasirinkite filmus, kuriuos norite pridėti prie savo peržiūros sąrašo",
+    "moviesAddedToWatchList": "Filmai pridėti prie jūsų peržiūros sąrašo."
+
 }

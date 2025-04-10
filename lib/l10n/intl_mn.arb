@@ -194,5 +194,26 @@
     "recommendMovieMode": "Кино санал болгох горим",
     "findMovieMode": "Кино хайх горим",
     "latestMovies": "Шинэ кинонууд",
-    "upcomingMovies": "Ирэх кинонууд"
+    "upcomingMovies": "Ирэх кинонууд",
+    "whatKindMoviesLookingFor": "Та ямар төрлийн кино хайж байна вэ?",
+    "getRecommendationFromAI": "Киноны жанр эсвэл сэдвийг бичихэд та санал авах боломжтой",
+    "producer": "Үйлдвэрлэгч",
+    "hideChosenMovies": "Сонгосон киног нуу",
+    "selectedMoviesHideConfirm": "Сонгосон киног нуухыг баталгаажуулж байна уу?",
+    "moviesAreHidden": "Кинонууд нуугдсан байна",
+    "discover": "Нээх",
+    "popularMovies": "Тамирчдын кино",
+    "popularPeople": "Популяр хүмүүс",
+    "restoreHiddenMovies": "Нуугдсан киног сэргээх",
+    "otherMoviesInSeries": "Цувралд орсон бусад кинонууд",
+    "moviesRestored": "Кинонууд сэргээгдсэн байна",
+    "selectedMoviesRestoreConfirm": "Сонгосон киног сэргээхийг баталгаажуулж байна уу?",
+    "hiddenMovies": "Нуугдсан кинонууд",
+    "noHiddenMovies": "Нуугдсан кинонууд байхгүй",
+    "searchPeople": "Хүмүүстэй хайлт хийх",
+    "recommendFileCreated": "Киноны санал файлыг үүсгэсэн.",
+    "recommendFileCreationConfirm": "Сонгосон кинонуудтай киноны санал файлыг үүсгэхийг баталгаажуулж байна уу?",
+    "selectMoviesToAdd": "Таны үзэх жагсаалтанд нэмэх кинонуудыг сонгоно уу",
+    "moviesAddedToWatchList": "Кинонууд таны үзэх жагсаалтад нэмэгдсэн байна."
+
 }

@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "digital": MessageLookupByLibrary.simpleMessage("Díreach"),
         "director": MessageLookupByLibrary.simpleMessage("Stiúrthóir"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Stiúrthóir Null"),
+        "discover": MessageLookupByLibrary.simpleMessage("Aimsigh"),
         "documentary": MessageLookupByLibrary.simpleMessage("Doiciméadach"),
         "drama": MessageLookupByLibrary.simpleMessage("Dráma"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
@@ -126,7 +127,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "franchises": MessageLookupByLibrary.simpleMessage("Fraincisí"),
         "genre": MessageLookupByLibrary.simpleMessage("Géine"),
         "genres": MessageLookupByLibrary.simpleMessage("Géine"),
+        "getRecommendationFromAI": MessageLookupByLibrary.simpleMessage(
+            "Trí ghéine nó ábhar an scannáin a scríobh, is féidir leat moltaí a fháil"),
         "groupBy": MessageLookupByLibrary.simpleMessage("Grúpa Trí"),
+        "hiddenMovies":
+            MessageLookupByLibrary.simpleMessage("Scannáin faoi cheilt"),
+        "hideChosenMovies":
+            MessageLookupByLibrary.simpleMessage("Folaigh scannáin roghnaithe"),
         "history": MessageLookupByLibrary.simpleMessage("Stair"),
         "horror": MessageLookupByLibrary.simpleMessage("Uafás"),
         "hypeScore": MessageLookupByLibrary.simpleMessage("Córas hipe"),
@@ -161,12 +168,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "movieUpdated": MessageLookupByLibrary.simpleMessage(
             "Scannán atá nuashonraithe go rathúil!"),
         "movies": MessageLookupByLibrary.simpleMessage("Scannáin"),
+        "moviesAddedToWatchList": MessageLookupByLibrary.simpleMessage(
+            "Tá na scannáin curtha leis an liosta faire."),
+        "moviesAreHidden":
+            MessageLookupByLibrary.simpleMessage("Tá na scannáin faoi cheilt"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" scannáin scriosta."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Scannáin atá aistrithe go Cnuasach!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
             "Scannáin atá aistrithe go Liosta Faire!"),
+        "moviesRestored": MessageLookupByLibrary.simpleMessage(
+            "Tá na scannáin athshocraithe"),
         "moviesSelected":
             MessageLookupByLibrary.simpleMessage(" scannáin roghnaithe"),
         "music": MessageLookupByLibrary.simpleMessage("Ceol"),
@@ -183,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ní roghnaíodh aon fhraincis"),
         "noGenresSelected":
             MessageLookupByLibrary.simpleMessage("Ní roghnaíodh géine"),
+        "noHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Níl aon scannáin faoi cheilt"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("Níor fuarthas Tuarascán ID."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
@@ -202,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "november": MessageLookupByLibrary.simpleMessage("Samhain"),
         "october": MessageLookupByLibrary.simpleMessage("Deireadh Fómhair"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "otherMoviesInSeries":
+            MessageLookupByLibrary.simpleMessage("Scannáin eile sa tsraith"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Le do thoil cuir isteach"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -209,14 +226,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "plot": MessageLookupByLibrary.simpleMessage("Cuir síos"),
         "popularFor":
             MessageLookupByLibrary.simpleMessage("Áirítear ar a bhfuil tóir"),
+        "popularMovies":
+            MessageLookupByLibrary.simpleMessage("Scannáin Coitianta"),
+        "popularPeople":
+            MessageLookupByLibrary.simpleMessage("Daoine Coitianta"),
         "poster": MessageLookupByLibrary.simpleMessage("Poistéir"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Tacaíocht do chustaiméirí Premium"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Brúigh chun poistéar an scannáin a roghnú"),
+        "producer": MessageLookupByLibrary.simpleMessage("Tugadóir"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Comhlachtaí Tionóil"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Scannán Raon"),
+        "recommendFileCreated": MessageLookupByLibrary.simpleMessage(
+            "Cruthaíodh comhad moltaí scannán."),
+        "recommendFileCreationConfirm": MessageLookupByLibrary.simpleMessage(
+            "An deimhin leat go gcruthófar comhad moltaí scannán leis na scannáin roghnaithe?"),
         "recommendMovieMode":
             MessageLookupByLibrary.simpleMessage("Modh Moladh Scannáin"),
         "releaseDate": MessageLookupByLibrary.simpleMessage("Dáta Scaoilte"),
@@ -227,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeMovieLimit": MessageLookupByLibrary.simpleMessage(
             "Bain an teorainn scannán a chur leis"),
         "rent": MessageLookupByLibrary.simpleMessage("(Cuir i gcrích)"),
+        "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
+            "Achoimre scannáin faoi cheilt"),
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Le do thoil filleadh ar an scáileán roimhe seo"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Ioncam: "),
@@ -238,11 +266,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Eolaíocht-Ficsean"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("Cuardaigh Scannáin"),
+        "searchPeople":
+            MessageLookupByLibrary.simpleMessage("Cuardaigh Daoine"),
+        "selectMoviesToAdd": MessageLookupByLibrary.simpleMessage(
+            "Roghnaigh scannáin le cur leis an liosta faire"),
         "selectPgRating":
             MessageLookupByLibrary.simpleMessage("Roghnaigh Céim PG"),
         "selected": MessageLookupByLibrary.simpleMessage("Roghnaíodh"),
         "selectedMoviesDeleteConfirm": MessageLookupByLibrary.simpleMessage(
             "Scriosfar na scannáin roghnaithe. An ndéanfaidh tú dearbhú?"),
+        "selectedMoviesHideConfirm": MessageLookupByLibrary.simpleMessage(
+            "An deimhin leat go bhfolaíonn tú na scannáin roghnaithe?"),
+        "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
+            "An deimhin leat go bhfuil na scannáin roghnaithe á n-athshocrú?"),
         "september": MessageLookupByLibrary.simpleMessage("Meán Fómhair"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Tíocfaidh deireadh le síniú isteach Google."),
@@ -290,6 +326,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weekly": MessageLookupByLibrary.simpleMessage("Seachtainiúil"),
         "welcome": MessageLookupByLibrary.simpleMessage("Fáilte, "),
         "western": MessageLookupByLibrary.simpleMessage("Iarthar"),
+        "whatKindMoviesLookingFor": MessageLookupByLibrary.simpleMessage(
+            "Cén cineál scannán atá á lorg agat?"),
         "whereToWatch": MessageLookupByLibrary.simpleMessage("Cá le breathnú?"),
         "willBeDeleted":
             MessageLookupByLibrary.simpleMessage("beidh sé scriosta?"),
