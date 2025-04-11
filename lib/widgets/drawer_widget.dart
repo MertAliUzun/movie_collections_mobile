@@ -49,6 +49,7 @@ class DrawerWidget extends StatefulWidget {
   final String? userId; 
   final String? userEmail; 
   final String? userName;
+  final String systemLanguage;
 
   const DrawerWidget({
     Key? key,
@@ -67,6 +68,7 @@ class DrawerWidget extends StatefulWidget {
     this.userEmail,
     this.userId,
     this.userName,
+    required this.systemLanguage,
   })  : _viewType = viewType,
         _groupByText = groupByText,
         _changeViewType = changeViewType,
@@ -435,6 +437,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         MaterialPageRoute(
           builder: (context) => MyHomePage(
             isInit: false,
+            systemLanguage: widget.systemLanguage,
           ),
         ),
       );
@@ -667,6 +670,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         MaterialPageRoute(
           builder: (context) => MyHomePage(
             isInit: false,
+            systemLanguage: widget.systemLanguage,
           ),
         ),
       );
@@ -1420,7 +1424,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                               builder: (context) => DiscoverMainScreen(
                                 isFromWishlist: _isFromWishlist,
                                 userEmail: userEmail,
-                                systemLanguage: 'en', //Change with widget.systemLanguage
+                                systemLanguage: widget.systemLanguage, //Change with widget.systemLanguage
                               ),
                             ),
                           );
@@ -1457,7 +1461,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => HiddenMoviesScreen(
-                                systemLanguage: 'en', //TO Change system language
+                                systemLanguage: widget.systemLanguage,
                                 isFromWishlist: _isFromWishlist ?? true,
                                 userEmail: userEmail ?? 'test@test.com',
                               ),
@@ -1634,7 +1638,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie, userEmail: userEmail,),
+                            builder: (context) => EditMovieScreen(isFromWishlist: _isFromWishlist, movie: movie, userEmail: userEmail, systemLanguage: widget.systemLanguage,),
                           ),
                         );
                       }

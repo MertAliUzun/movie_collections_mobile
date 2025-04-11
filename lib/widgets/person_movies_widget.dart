@@ -12,8 +12,9 @@ class PersonMoviesWidget extends StatelessWidget {
   final String personType;
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
-  const PersonMoviesWidget({Key? key, required this.movies, required this.personType, this.isFromWishlist, this.userEmail}) : super(key: key);
+  const PersonMoviesWidget({Key? key, required this.movies, required this.personType, this.isFromWishlist, this.userEmail, required this.systemLanguage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +84,7 @@ class PersonMoviesWidget extends StatelessWidget {
                     builder: (context) => AddMovieScreen(
                       isFromWishlist: isFromWishlist ?? false,
                       movie: chosenMovie,
+                      systemLanguage: systemLanguage,
                     ),
                   ),
                 );

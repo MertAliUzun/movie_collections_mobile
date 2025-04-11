@@ -6,12 +6,14 @@ class ProviderCard extends StatelessWidget {
   final List<Map<String, dynamic>> providers;
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
   const ProviderCard({
     Key? key,
     required this.providers,
     this.isFromWishlist,
     this.userEmail,
+    required this.systemLanguage
   }) : super(key: key);
   
 
@@ -46,6 +48,7 @@ class ProviderCard extends StatelessWidget {
                 providerId: providerId,
                 isFromWishlist: isFromWishlist ?? true,
                 userEmail: userEmail ?? 'test@test.com',
+                systemLanguage: systemLanguage,
               ),
             );
           }).toList(),
@@ -62,6 +65,7 @@ class ProviderCardItem extends StatelessWidget {
   final int providerId;
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
   const ProviderCardItem({
     Key? key,
@@ -71,6 +75,7 @@ class ProviderCardItem extends StatelessWidget {
     required this.providerId,
     this.isFromWishlist,
     this.userEmail,
+    required this.systemLanguage
   }) : super(key: key);
 
   @override
@@ -86,6 +91,7 @@ class ProviderCardItem extends StatelessWidget {
               providerName: name,
               isFromWishlist: true, //always go to wishlist
               userEmail: userEmail ?? 'test@test.com',
+              systemLanguage: systemLanguage,
             ),
           ),
         );

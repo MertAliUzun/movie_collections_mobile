@@ -23,9 +23,9 @@ class WishlistScreen extends StatefulWidget {
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName;
-  final String? systemLanguage;
+  final String systemLanguage;
 
-  WishlistScreen({this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage}) : super(key: globalKey);
+  WishlistScreen({this.userId, this.userEmail, this.userPicture, this.userName, required this.systemLanguage}) : super(key: globalKey);
 
   @override
   State<WishlistScreen> createState() => _WishlistScreenState();
@@ -74,7 +74,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
     Navigator.of(context, rootNavigator: true).push(
       MaterialPageRoute(
         builder: (context) => AiMovieRecommendationsScreen(
-          widget.userEmail ?? 'test@test.com'
+          userEmail: widget.userEmail ?? 'test@test.com',
+          systemLanguage: widget.systemLanguage,
+
         ),
       ),
     );
@@ -664,6 +666,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
         userEmail: widget.userEmail,
         userName: widget.userName,
         userId: widget.userId,
+        systemLanguage: widget.systemLanguage,
         ),
       body: Column(
         children: [

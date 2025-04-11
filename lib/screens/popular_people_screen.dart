@@ -8,13 +8,13 @@ import 'dart:async';
 class PopularPeopleScreen extends StatefulWidget {
   final bool? isFromWishlist;
   final String? userEmail;
-  final String? systemLanguage;
+  final String systemLanguage;
 
   const PopularPeopleScreen({
     Key? key, 
     this.isFromWishlist,
     this.userEmail,
-    this.systemLanguage,
+    required this.systemLanguage,
   }) : super(key: key);
 
   @override

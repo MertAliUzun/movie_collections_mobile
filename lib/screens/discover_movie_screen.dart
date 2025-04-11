@@ -12,12 +12,14 @@ class DiscoverMovieScreen extends StatefulWidget {
   final String discoverType; // 'Latest' veya 'Upcoming'
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
   const DiscoverMovieScreen({
     Key? key,
     required this.discoverType,
     this.isFromWishlist,
     this.userEmail,
+    required this.systemLanguage,
   }) : super(key: key);
 
   @override
@@ -206,6 +208,7 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: true,
                                         movie: chosenMovie,
+                                        systemLanguage: widget.systemLanguage,
                                       ),
                                     ),
                                   );

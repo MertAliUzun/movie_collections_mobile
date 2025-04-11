@@ -13,6 +13,7 @@ class ProviderScreen extends StatefulWidget {
   final String providerName;
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
   const ProviderScreen({
     Key? key, 
@@ -20,6 +21,7 @@ class ProviderScreen extends StatefulWidget {
     required this.providerName,
     this.isFromWishlist, 
     this.userEmail,
+    required this.systemLanguage,
   }) : super(key: key);
 
   @override
@@ -154,6 +156,7 @@ class _ProviderScreenState extends State<ProviderScreen> {
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: true, //always add to wishlist
                                         movie: chosenMovie,
+                                        systemLanguage: widget.systemLanguage,
                                       ),
                                     ),
                                   );

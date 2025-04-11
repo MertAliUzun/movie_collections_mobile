@@ -30,9 +30,9 @@ class AddMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
   final String? userEmail;
-  final String? systemLanguage;
+  final String systemLanguage;
 
-  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie, this.userEmail, this.systemLanguage});
+  const AddMovieScreen({super.key, required this.isFromWishlist, this.movie, this.userEmail, required this.systemLanguage});
 
   @override
   State<AddMovieScreen> createState() => _AddMovieScreenState();
@@ -1259,6 +1259,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                           const Divider(height: 0, color: Colors.white60,),
                           SizedBox(height: screenHeight *0.02,),
                           ProviderCard(
+                            systemLanguage: widget.systemLanguage,
                             providers: (() {
                               final Map<String, Map<String, dynamic>> uniqueProviders = {};
                               
@@ -1353,7 +1354,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               final movieId = await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                  builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
                                 ),
                               );
                               if (movieId != null) {
@@ -1644,7 +1645,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                               final movieId = await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                  builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
                                 ),
                               );
                               if (movieId != null) {

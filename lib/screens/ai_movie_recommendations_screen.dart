@@ -12,8 +12,9 @@ import 'add_movie_screen.dart';
 
 class AiMovieRecommendationsScreen extends StatefulWidget {
   final String? userEmail;
+  final String systemLanguage;
 
-  const AiMovieRecommendationsScreen(this.userEmail);
+  const AiMovieRecommendationsScreen({super.key, this.userEmail, required this.systemLanguage});
 
   @override
   _AiMovieRecommendationsScreenState createState() => _AiMovieRecommendationsScreenState();
@@ -215,6 +216,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                                         builder: (context) => AddMovieScreen(
                                           isFromWishlist: true,
                                           movie: chosenMovie,
+                                          systemLanguage: widget.systemLanguage,
                                         ),
                                       ),
                                     );

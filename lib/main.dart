@@ -198,11 +198,11 @@ class MyHomePage extends StatefulWidget {
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName; // Kullanıcı Adı
-  final String? systemLanguage;
+  final String systemLanguage;
   final bool? isFromWishlist;
   bool isInit = true;
 
-  MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage, required this.isInit, this.isFromWishlist});
+  MyHomePage({super.key, this.userId, this.userEmail, this.userPicture, this.userName, required this.systemLanguage, required this.isInit, this.isFromWishlist});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

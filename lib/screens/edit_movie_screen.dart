@@ -28,9 +28,9 @@ class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
   final Movie? movie;
   final String? userEmail;
-  final String? systemLanguage;
+  final String systemLanguage;
 
-  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie, required this.userEmail, this.systemLanguage});
+  const EditMovieScreen({super.key, required this.isFromWishlist, this.movie, required this.userEmail, required this.systemLanguage});
 
   @override
   State<EditMovieScreen> createState() => _EditMovieScreenState();
@@ -1240,6 +1240,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           const Divider(height: 0, color: Colors.white60,),
                           SizedBox(height: screenHeight *0.02,),
                           ProviderCard(
+                            systemLanguage: widget.systemLanguage,
                             providers: (() {
                               final Map<String, Map<String, dynamic>> uniqueProviders = {};
                               
@@ -1338,7 +1339,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                    builder: (context) => GenreMoviesScreen(genre: _selectedGenres[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -1621,7 +1622,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 final movieId = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail,),
+                                    builder: (context) => CompanyScreen(companyName: companyName, isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
                                   ),
                                 );
                                 if (movieId != null) {
@@ -2046,6 +2047,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                             builder: (context) => AddMovieScreen(
                                               isFromWishlist: true,
                                               movie: chosenMovie,
+                                              systemLanguage: widget.systemLanguage,
                                             ),
                                           ),
                                         );
@@ -2227,6 +2229,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: widget.isFromWishlist,
                                         movie: chosenMovie,
+                                        systemLanguage: widget.systemLanguage,
                                       ),
                                     ),
                                   );

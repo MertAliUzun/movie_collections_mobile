@@ -10,13 +10,13 @@ import 'edit_movie_screen.dart';
 
 class HiddenMoviesScreen extends StatefulWidget {
   final String? userEmail;
-  final String? systemLanguage;
+  final String systemLanguage;
   final bool? isFromWishlist;
   
   const HiddenMoviesScreen({
     super.key, 
     this.userEmail, 
-    this.systemLanguage,
+    required this.systemLanguage,
     this.isFromWishlist
   });
 

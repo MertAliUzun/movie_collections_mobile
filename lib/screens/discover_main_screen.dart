@@ -12,13 +12,13 @@ import 'add_movie_screen.dart';
 class DiscoverMainScreen extends StatefulWidget {
   final bool? isFromWishlist;
   final String? userEmail;
-  final String? systemLanguage;
+  final String systemLanguage;
 
   const DiscoverMainScreen({
     Key? key,
     this.isFromWishlist,
     this.userEmail,
-    this.systemLanguage,
+    required this.systemLanguage,
   }) : super(key: key);
 
   @override
@@ -163,6 +163,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                             discoverType: 'Popular',
                             isFromWishlist: true,
                             userEmail: widget.userEmail ?? 'test@test.com',
+                            systemLanguage: widget.systemLanguage,
                           ),
                         ),
                       );
@@ -257,6 +258,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: true,
                                         movie: chosenMovie,
+                                        systemLanguage: widget.systemLanguage,
                                       ),
                                     ),
                                   );
@@ -352,6 +354,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                             discoverType: 'Latest',
                             isFromWishlist: true,
                             userEmail: widget.userEmail ?? 'test@test.com',
+                            systemLanguage: widget.systemLanguage,
                           ),
                         ),
                       );
@@ -446,6 +449,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: true,
                                         movie: chosenMovie,
+                                        systemLanguage: widget.systemLanguage,
                                       ),
                                     ),
                                   );
@@ -541,6 +545,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                             discoverType: 'Upcoming',
                             isFromWishlist: true,
                             userEmail: widget.userEmail ?? 'test@test.com',
+                            systemLanguage: widget.systemLanguage,
                           ),
                         ),
                       );
@@ -635,6 +640,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                       builder: (context) => AddMovieScreen(
                                         isFromWishlist: true,
                                         movie: chosenMovie,
+                                        systemLanguage: widget.systemLanguage,
                                       ),
                                     ),
                                   );

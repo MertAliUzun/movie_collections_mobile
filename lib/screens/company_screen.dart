@@ -13,8 +13,9 @@ class CompanyScreen extends StatefulWidget {
   final String companyName;
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
-  const CompanyScreen({Key? key, required this.companyName, this.isFromWishlist, this.userEmail }) : super(key: key);
+  const CompanyScreen({Key? key, required this.companyName, this.isFromWishlist, this.userEmail, required this.systemLanguage }) : super(key: key);
 
   @override
   _CompanyScreenState createState() => _CompanyScreenState();
@@ -163,6 +164,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         builder: (context) => AddMovieScreen(
                           isFromWishlist: widget.isFromWishlist ?? false,
                           movie: chosenMovie,
+                          systemLanguage: widget.systemLanguage,
                         ),
                       ),
                     );

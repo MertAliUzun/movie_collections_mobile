@@ -23,9 +23,9 @@ class CollectionScreen extends StatefulWidget {
   final String? userEmail; // Kullanıcı E-postası
   final String? userPicture; // Kullanıcı Resmi
   final String? userName;
-  final String? systemLanguage;
+  final String systemLanguage;
 
-   CollectionScreen({this.userId, this.userEmail, this.userPicture, this.userName, this.systemLanguage}) : super(key: globalKey);
+   CollectionScreen({this.userId, this.userEmail, this.userPicture, this.userName, required this.systemLanguage}) : super(key: globalKey);
                     
 
   @override
@@ -76,7 +76,8 @@ class _CollectionScreenState extends State<CollectionScreen> {
     Navigator.of(context, rootNavigator: true).push(
       MaterialPageRoute(
         builder: (context) => AiMovieRecommendationsScreen(
-          widget.userEmail ?? 'test@test.com'
+          userEmail: widget.userEmail ?? 'test@test.com',
+          systemLanguage: widget.systemLanguage,
         ),
       ),
     );
@@ -678,6 +679,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
         userEmail: widget.userEmail,
         userId: widget.userId,
         userName: widget.userName,
+        systemLanguage: widget.systemLanguage,
       ),
       body: Column(
         children: [

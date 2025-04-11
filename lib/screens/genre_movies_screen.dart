@@ -12,8 +12,9 @@ class GenreMoviesScreen extends StatefulWidget {
   final String genre;
   final bool? isFromWishlist;
   final String? userEmail;
+  final String systemLanguage;
 
-  const GenreMoviesScreen({Key? key, required this.genre, this.isFromWishlist, this.userEmail}) : super(key: key);
+  const GenreMoviesScreen({Key? key, required this.genre, this.isFromWishlist, this.userEmail, required this.systemLanguage}) : super(key: key);
 
   @override
   _GenreMoviesScreenState createState() => _GenreMoviesScreenState();
@@ -187,6 +188,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
                           personType: 'Genre', 
                           isFromWishlist: widget.isFromWishlist, 
                           userEmail: widget.userEmail,
+                          systemLanguage: widget.systemLanguage,
                         ),
                       ),
                       if(_adService.bannerAd != null)
