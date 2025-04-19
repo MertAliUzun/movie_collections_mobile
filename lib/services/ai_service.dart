@@ -159,7 +159,7 @@ Future<List<String>> getOpenAIRecommendations(String userInput, String promptTyp
 
   var prompt = '''
     Kullanıcı şunu arıyor: "$userInput".
-    En fazla 9 film öner. Sadece film isimlerini virgülle ayırarak yaz.
+    En fazla 10 film öner. Sadece film isimlerini virgülle ayırarak yaz.
     Örnek: Inception, Interstellar
   ''';
   if(promptType == 'find') {
@@ -177,7 +177,7 @@ Future<List<String>> getOpenAIRecommendations(String userInput, String promptTyp
       'Authorization': 'Bearer $openaiApiKey',
     },
     body: jsonEncode({
-      'model': 'gpt-4.0-mini',
+      'model': 'gpt-4.1-nano',
       'messages': [
         {'role': 'user', 'content': prompt}
       ],
@@ -188,7 +188,7 @@ Future<List<String>> getOpenAIRecommendations(String userInput, String promptTyp
   if (response.statusCode == 200) {
     final data = jsonDecode(response.body);
     final movieList = data['choices'][0]['message']['content'].split(', ');
-    return movieList.take(9).toList(); // Max 50 film
+    return movieList.take(10).toList(); // Max 50 film
   } else {
     throw Exception('AI isteği başarısız: ${response.statusCode}');
   }
