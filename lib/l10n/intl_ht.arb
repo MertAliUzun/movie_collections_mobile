@@ -214,6 +214,7 @@
     "recommendFileCreated": "Dosye rekòmandasyon fim te kreye.",
     "recommendFileCreationConfirm": "Èske ou konfime kreye yon dosye rekòmandasyon fim ak fim yo chwazi?",
     "selectMoviesToAdd": "Chwazi fim pou ajoute nan lis gade ou",
-    "moviesAddedToWatchList": "Fim yo ajoute nan lis gade ou."
+    "moviesAddedToWatchList": "Fim yo ajoute nan lis gade ou.",
+    "premiumWillBeForPlayStoreUser": "Premium ap achte pou kont ou ki konekte sou Play Store. Li pap achte pou itilizatè a ki konekte nan aplikasyon sa a. Sepandan, ou ka itilize premium pou tout itilizatè nan aplikasyon sa a lè li achte."
 
 }

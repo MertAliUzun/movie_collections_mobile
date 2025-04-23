@@ -214,6 +214,7 @@
     "recommendFileCreated": "File rekomendasi film telah dibuat.",
     "recommendFileCreationConfirm": "Apakah Anda yakin ingin membuat file rekomendasi film dengan film yang dipilih?",
     "selectMoviesToAdd": "Pilih film untuk ditambahkan ke Daftar Tonton Anda",
-    "moviesAddedToWatchList": "Film telah ditambahkan ke Daftar Tonton Anda."
+    "moviesAddedToWatchList": "Film telah ditambahkan ke Daftar Tonton Anda.",
+    "premiumWillBeForPlayStoreUser": "Premium akan dibeli untuk akun yang Anda masukkan di Play Store. Itu tidak akan dibeli untuk pengguna yang masuk di aplikasi ini. Namun, Anda dapat menggunakan premium untuk semua pengguna di aplikasi ini setelah dibeli."
     
 }

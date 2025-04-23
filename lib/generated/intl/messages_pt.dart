@@ -233,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Pôster"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Suporte ao cliente Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "O premium será comprado para a conta com a qual você está logado no Play Store. Não será comprado para o usuário logado neste aplicativo. No entanto, você pode usar o premium para todos os usuários neste aplicativo quando ele for comprado."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pressione para escolher o pôster do filme"),
         "producer": MessageLookupByLibrary.simpleMessage("Produtor"),

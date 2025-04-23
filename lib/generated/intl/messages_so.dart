@@ -234,6 +234,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Boodhka"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Taageerada Macaamiisha Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium waxaa la iibsan doonaa akoonka aad ku gashay Play Store. Looma iibsan doono isticmaalaha ku jira app-kan. Si kastaba ha ahaatee, waxaad isticmaali kartaa premium dhammaan isticmaalayaasha app-kan marka la iibsado."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Riix si aad u doorato boodhka filimka"),
         "producer": MessageLookupByLibrary.simpleMessage("Soosaaraha"),

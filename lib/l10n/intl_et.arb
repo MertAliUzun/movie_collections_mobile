@@ -214,6 +214,7 @@
     "recommendFileCreated": "Filmi soovituste fail on loodud.",
     "recommendFileCreationConfirm": "Kas kinnitate filmi soovituste faili loomist valitud filmidega?",
     "selectMoviesToAdd": "Valige filmid, mida lisada oma vaatamisloendisse",
-    "moviesAddedToWatchList": "Filmid on lisatud teie vaatamisloendisse."
+    "moviesAddedToWatchList": "Filmid on lisatud teie vaatamisloendisse.",
+    "premiumWillBeForPlayStoreUser": "Premium ostetakse konto jaoks, millega olete sisse loginud Play Store'is. Seda ei osteta teie selles rakenduses sisse loginud kasutajale. Siiski saate kasutada Premiumi kõigi kasutajate jaoks selles rakenduses, kui see on ostetud."
 
 }

@@ -230,6 +230,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Juliste"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium-asiakastuki"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium ostetaan tilille, jolla olet kirjautunut Play Storeen. Sitä ei osteta tälle sovellukselle kirjautuneelle käyttäjälle. Voit kuitenkin käyttää premiumia kaikille käyttäjille tässä sovelluksessa, kun se on ostettu."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Paina valitaksesi elokuvan julisteen"),
         "producer": MessageLookupByLibrary.simpleMessage("Tuottaja"),

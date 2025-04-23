@@ -214,6 +214,7 @@
     "recommendFileCreated": "Faidhle molaidhean filmichean air a chruthachadh.",
     "recommendFileCreationConfirm": "A bheil thu ag ath-thagradh gu bheil faidhle molaidhean filmichean a' cruthachadh le na filmichean taghte?",
     "selectMoviesToAdd": "Tagh filmichean gus an cur ri do liosta-fhaicinn",
-    "moviesAddedToWatchList": "Tha na filmichean air an cur ris an liosta-fhaicinn agad."
-    
+    "moviesAddedToWatchList": "Tha na filmichean air an cur ris an liosta-fhaicinn agad.",
+    "premiumWillBeForPlayStoreUser": "Thèid am premium a cheannach airson an cunntas ris an do leig thu a-steach ann am Play Store. Cha tèid e a cheannach airson an neach-cleachdaidh ris an do leig thu a-steach anns an aplacaid seo. Ach, bidh comas agad an premium a chleachdadh airson gach neach-cleachdaidh anns an aplacaid seo nuair a thèid e a cheannach."
+
 }

@@ -233,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("ပလက်ကတ်"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium ဖောက်သည်ထောက်ပံ့မှု"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium ကို Play Store တွင် သင်ဝင်ထားသော အကောင့်အတွက် ဝယ်ယူမည်။ ၎င်းသည် ယခုအက်ပ်တွင် ဝင်ထားသော အသုံးပြုသူအတွက် မဝယ်ယူပါ။ သို့သော် Premium ကို ဝယ်ယူပြီးပါက ယခုအက်ပ်တွင် အသုံးပြုသူများအားလုံးအတွက် အသုံးပြုနိုင်ပါသည်။"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("ဇာတ်ကားပုံတင်ရန်နှိပ်ပါ"),
         "producer": MessageLookupByLibrary.simpleMessage("ထုတ်လုပ်သူ"),

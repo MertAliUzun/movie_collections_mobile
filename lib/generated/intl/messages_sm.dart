@@ -240,6 +240,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Polokalame"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Tautua Fa\'atau Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "O le Premium o le a fa\'atauina mo le akunoi o lo\'o e ulufale i le Play Store. E le fa\'atauina mo le tagata fa\'aaoga o lo\'o ulufale i lenei polokalame. Peita\'i, e mafai ona e fa\'aaogaina le premium mo tagata uma i lenei polokalame pe a uma ona fa\'atau."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Fa\'amaonia ata fa\'atekinolosi"),
         "producer": MessageLookupByLibrary.simpleMessage("Fa\'ata\'ita\'i"),

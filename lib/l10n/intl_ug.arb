@@ -214,5 +214,7 @@
     "recommendFileCreated": "Kinolar təvsiyə fayli yaratıldı.",
     "recommendFileCreationConfirm": "Siz təlep qilghan kinolar bilen təvsiyə faylini yaratishni jəzmleştürüsiz kə?",
     "selectMoviesToAdd": "Qızıqidigan kinolarnı tizimlikkə qoshush üchün tallang",
-    "moviesAddedToWatchList": "Kinolar sizning körüş tizimlikingizgə qoshuldi."
+    "moviesAddedToWatchList": "Kinolar sizning körüş tizimlikingizgə qoshuldi.",
+    "premiumWillBeForPlayStoreUser": "Premium sizning Play Store hisabiñizgha kiriş qilghan qullančiğa setiladi. Bu äp'te kiriş qilghan qullančiğa setilip bolmaydu. Ämma siz premium setiwenlighandın keyin bu äpte barliq qullančilar üchün ishlitkili bolidu."
+
 }

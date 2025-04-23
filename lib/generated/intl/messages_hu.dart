@@ -229,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Plakát"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium ügyfélszolgálat"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "A prémium a Play Store-ban bejelentkezett fiókhoz lesz megvásárolva. Nem lesz megvásárolva az alkalmazásban bejelentkezett felhasználónak. Azonban a prémiumot minden felhasználó számára használhatja az alkalmazásban, amikor megvásárolják."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Nyomja meg a filmplakát kiválasztásához"),
         "producer": MessageLookupByLibrary.simpleMessage("Producer"),

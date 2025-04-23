@@ -214,6 +214,7 @@
     "recommendFileCreated": "Anbefalingsfil for filmer er opprettet.",
     "recommendFileCreationConfirm": "Bekrefter du at du vil opprette en anbefalingsfil for filmer med de valgte filmene?",
     "selectMoviesToAdd": "Velg filmer for å legge til i din se-liste",
-    "moviesAddedToWatchList": "Filmene er lagt til i din se-liste."
+    "moviesAddedToWatchList": "Filmene er lagt til i din se-liste.",
+    "premiumWillBeForPlayStoreUser": "Premium vil bli kjøpt for kontoen du er logget på i Play Store. Det vil ikke bli kjøpt for brukeren som er logget på i denne appen. Du kan imidlertid bruke premium for alle brukere i denne appen når det er kjøpt."
 
 }

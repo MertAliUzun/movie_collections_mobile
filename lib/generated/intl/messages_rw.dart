@@ -233,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Ishusho"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Inkunga y\'abakiriya ya Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium izagurwa ku konti yanditswe muri Play Store. Ntizagurwa ku mukoresha wanditse muri iyi porogaramu. Ariko, uzashobora gukoresha premium ku bakoresha bose muri iyi porogaramu igihe izagurwa."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Kanda kugirango uhitemo ishusho ya filime"),
         "producer": MessageLookupByLibrary.simpleMessage("Umukora"),

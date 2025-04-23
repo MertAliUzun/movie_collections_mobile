@@ -187,6 +187,7 @@
     "recommendFileCreated": "Filme gomendioen fitxategia sortu da.",
     "recommendFileCreationConfirm": "Hautatutako filmekin filme gomendioen fitxategia sortzea baiezta al dezakezu?",
     "selectMoviesToAdd": "Hautatu filmak zure ikusi zerrendara gehitzeko",
-    "moviesAddedToWatchList": "Filmak zure ikusi zerrendara gehitu dira."
-    
+    "moviesAddedToWatchList": "Filmak zure ikusi zerrendara gehitu dira.",
+    "premiumWillBeForPlayStoreUser": "Premiuma Play Store-n saioa hasi duzun kontuarentzat erosi egingo da. Ez da aplikazio honetan saioa hasi duzun erabiltzailearentzat erosi izango. Hala ere, Premiuma erabil dezakezu aplikazio honetan dauden erabiltzaile guztientzat, erosi denean."
+
 }

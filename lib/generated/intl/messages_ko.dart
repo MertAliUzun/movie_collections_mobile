@@ -203,6 +203,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularPeople": MessageLookupByLibrary.simpleMessage("인기 인물"),
         "poster": MessageLookupByLibrary.simpleMessage("포스터"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage("프리미엄 고객 지원"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "프리미엄은 Play Store에 로그인된 계정에 대해 구매됩니다. 이 앱에 로그인한 사용자에게는 구매되지 않습니다. 그러나 프리미엄이 구매되면 이 앱의 모든 사용자에게 사용할 수 있습니다."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("영화 포스터를 선택하려면 누르세요"),
         "producer": MessageLookupByLibrary.simpleMessage("프로듀서"),

@@ -214,6 +214,7 @@
     "recommendFileCreated": "Soubor s doporučeními filmů byl vytvořen.",
     "recommendFileCreationConfirm": "Ověřujete, že chcete vytvořit soubor s doporučenými filmy?",
     "selectMoviesToAdd": "Vyberte filmy, které chcete přidat do svého seznamu sledovaných",
-    "moviesAddedToWatchList": "Filmy byly přidány do vašeho seznamu sledovaných."
+    "moviesAddedToWatchList": "Filmy byly přidány do vašeho seznamu sledovaných.",
+    "premiumWillBeForPlayStoreUser": "Premium bude zakoupeno pro účet, na kterém jste přihlášeni v obchodě Play. Nebude zakoupeno pro uživatele přihlášeného v této aplikaci. Můžete však používat premium pro všechny uživatele v této aplikaci, jakmile bude zakoupeno."
 
 }

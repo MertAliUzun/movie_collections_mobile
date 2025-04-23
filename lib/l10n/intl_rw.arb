@@ -214,5 +214,7 @@
     "recommendFileCreated": "Dosiye y'Inama y'Amafilime yashizweho.",
     "recommendFileCreationConfirm": "Wemeza gushyiraho dosiye y'amafilime watoye?",
     "selectMoviesToAdd": "Tora amafilime yo kongeraho kuri Lisiti yawe yo Kwitegereza",
-    "moviesAddedToWatchList": "Amafilime yongewe kuri Lisiti yawe yo Kwitegereza."
+    "moviesAddedToWatchList": "Amafilime yongewe kuri Lisiti yawe yo Kwitegereza.",
+    "premiumWillBeForPlayStoreUser": "Premium izagurwa ku konti yanditswe muri Play Store. Ntizagurwa ku mukoresha wanditse muri iyi porogaramu. Ariko, uzashobora gukoresha premium ku bakoresha bose muri iyi porogaramu igihe izagurwa."
+
 }

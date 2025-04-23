@@ -214,6 +214,7 @@
     "recommendFileCreated": "Fayilu ya vudimu ya filimi ke keba.",
     "recommendFileCreationConfirm": "Umekisa ki okeba fayilu ya vudimu ya filimi na filimi zikwidi?",
     "selectMoviesToAdd": "Landa filimi zikwidi na lisita ya ku mona",
-    "moviesAddedToWatchList": "Filimi zikwidi zikebisiwe na lisita ya ku mona."
-    
+    "moviesAddedToWatchList": "Filimi zikwidi zikebisiwe na lisita ya ku mona.",
+    "premiumWillBeForPlayStoreUser": "Premium ekozua mpo na konto oyo ologi na Play Store. Ekozua te mpo na moto oyo azali na app oyo. Kasi, okoki kozwa premium mpo na ba utilisateurs nyonso na app oyo soki esali."
+
 }

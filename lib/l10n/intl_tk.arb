@@ -214,5 +214,7 @@
     "recommendFileCreated": "Film maslahatlary faýly döredildi.",
     "recommendFileCreationConfirm": "Saýlanan filmler bilen film maslahatlary faýlyny döretmegi tassyklamaýarsyňyzmy?",
     "selectMoviesToAdd": "Göçürme sanawyňyza goşmak üçin filmleri saýlaň",
-    "moviesAddedToWatchList": "Filmler göçürme sanawyňyza goşuldy."
+    "moviesAddedToWatchList": "Filmler göçürme sanawyňyza goşuldy.",
+    "premiumWillBeForPlayStoreUser": "Premium, Play Store-da giriş eden hasap üçin satyn alnar. Bu programma giriş eden ulanyjy üçin satyn alnar däl. Şeýle-de bolsa, satyn alnan ýagdaýynda, bu programmada ähli ulanyjylar üçin premiumy ulanyp bilersiňiz."
+
 }

@@ -214,6 +214,7 @@
     "recommendFileCreated": "Fail cadangan filem telah dicipta.",
     "recommendFileCreationConfirm": "Adakah anda mengesahkan untuk mencipta fail cadangan filem dengan filem yang dipilih?",
     "selectMoviesToAdd": "Pilih filem untuk ditambah ke Senarai Tontonan anda",
-    "moviesAddedToWatchList": "Filem telah ditambah ke Senarai Tontonan anda."
-    
+    "moviesAddedToWatchList": "Filem telah ditambah ke Senarai Tontonan anda.",
+    "premiumWillBeForPlayStoreUser": "Premium akan dibeli untuk akaun yang anda log masuk di Play Store. Ia tidak akan dibeli untuk pengguna yang log masuk di aplikasi ini. Walau bagaimanapun, anda boleh menggunakan premium untuk semua pengguna dalam aplikasi ini apabila ia dibeli."
+
 }

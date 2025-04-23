@@ -214,6 +214,7 @@
     "recommendFileCreated": "Empfehlungsdatei für Filme wurde erstellt.",
     "recommendFileCreationConfirm": "Bestätigen Sie, dass Sie eine Empfehlungsdatei mit den ausgewählten Filmen erstellen möchten?",
     "selectMoviesToAdd": "Wählen Sie Filme aus, die Sie zu Ihrer Watchlist hinzufügen möchten",
-    "moviesAddedToWatchList": "Filme wurden zu Ihrer Watchlist hinzugefügt."
+    "moviesAddedToWatchList": "Filme wurden zu Ihrer Watchlist hinzugefügt.",
+    "premiumWillBeForPlayStoreUser": "Premium wird für das Konto gekauft, mit dem du im Play Store angemeldet bist. Es wird nicht für den Benutzer gekauft, der in dieser App angemeldet ist. Du kannst jedoch Premium für alle Benutzer in dieser App verwenden, wenn es gekauft wurde."
 
 }

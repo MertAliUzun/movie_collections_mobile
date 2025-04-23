@@ -233,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Poistéir"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Tacaíocht do chustaiméirí Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Ceannófar an leagan préimhe don chuntas ar a bhfuil tú logáilte isteach i Play Store. Ní cheannaítear é don úsáideoir atá logáilte isteach san aip seo. Mar sin féin, beidh tú in ann an leagan préimhe a úsáid do gach úsáideoir san aip seo nuair a cheannaítear é."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Brúigh chun poistéar an scannáin a roghnú"),
         "producer": MessageLookupByLibrary.simpleMessage("Tugadóir"),

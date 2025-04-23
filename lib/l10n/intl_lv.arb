@@ -214,6 +214,7 @@
     "recommendFileCreated": "Filmu ieteikumu fails ir izveidots.",
     "recommendFileCreationConfirm": "Vai apstiprināt filmu ieteikumu faila izveidi ar izvēlētajām filmām?",
     "selectMoviesToAdd": "Izvēlieties filmas, ko pievienot savai skatīšanās sarakstam",
-    "moviesAddedToWatchList": "Filmas ir pievienotas jūsu skatīšanās sarakstam."
+    "moviesAddedToWatchList": "Filmas ir pievienotas jūsu skatīšanās sarakstam.",
+    "premiumWillBeForPlayStoreUser": "Premium tiks iegādāts par kontu, ar kuru esat pierakstījies Play Store. Tas netiks iegādāts par lietotāju, kurš ir pierakstījies šajā lietotnē. Tomēr, kad tas tiks iegādāts, jūs varēsiet izmantot Premium visiem lietotājiem šajā lietotnē."
 
 }

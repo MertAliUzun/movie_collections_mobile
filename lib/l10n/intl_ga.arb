@@ -214,6 +214,7 @@
     "recommendFileCreated": "Cruthaíodh comhad moltaí scannán.",
     "recommendFileCreationConfirm": "An deimhin leat go gcruthófar comhad moltaí scannán leis na scannáin roghnaithe?",
     "selectMoviesToAdd": "Roghnaigh scannáin le cur leis an liosta faire",
-    "moviesAddedToWatchList": "Tá na scannáin curtha leis an liosta faire."
+    "moviesAddedToWatchList": "Tá na scannáin curtha leis an liosta faire.",
+    "premiumWillBeForPlayStoreUser": "Ceannófar an leagan préimhe don chuntas ar a bhfuil tú logáilte isteach i Play Store. Ní cheannaítear é don úsáideoir atá logáilte isteach san aip seo. Mar sin féin, beidh tú in ann an leagan préimhe a úsáid do gach úsáideoir san aip seo nuair a cheannaítear é."
 
 }

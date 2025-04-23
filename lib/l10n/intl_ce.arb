@@ -214,6 +214,7 @@
     "recommendFileCreated": "Фильм рецоммендациеш файл гӏараш",
     "recommendFileCreationConfirm": "Тиже хьо фильм рецоммендациеш файл гӏараш долу?",
     "selectMoviesToAdd": "Кино-сийт яьссах куизабер",
-    "moviesAddedToWatchList": "Кино-сийт кхетар сийт туьгаш"
+    "moviesAddedToWatchList": "Кино-сийт кхетар сийт туьгаш",
+    "premiumWillBeForPlayStoreUser": "Premium, Play Store-da logina khelkhi akunot yilla hulgon. Dakkh yilla app-da logina khelkhi useri hulgon. Haa, premium hulgonchi, app-da shunikhs useri shuntari yilla."
 
 }

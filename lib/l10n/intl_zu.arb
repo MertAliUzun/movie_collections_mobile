@@ -214,5 +214,7 @@
     "recommendFileCreated": "Ithrekhi yokuphakela ama-movie yadalwa.",
     "recommendFileCreationConfirm": "Uqinisekisa ukudala ifayela le-iphakheji lamafilimu akhethiwe?",
     "selectMoviesToAdd": "Khetha ama-movie ukuze uwengeze kuhlu lwezobuka",
-    "moviesAddedToWatchList": "Ama-movie afakwe kuhlu lwakho lokubuka."
+    "moviesAddedToWatchList": "Ama-movie afakwe kuhlu lwakho lokubuka.",
+    "premiumWillBeForPlayStoreUser": "I-Premium izothengelwa i-akhawunti ebhaliswe ku-Play Store yakho. Ayizothengelwa umsebenzisi obhalisiwe kulo hlelo lokusebenza. Kodwa-ke, ungasebenzisa i-premium kubo bonke abasebenzisi kulo hlelo lokusebenza uma ithengisiwe."
+
 }

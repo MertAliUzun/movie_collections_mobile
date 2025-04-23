@@ -191,6 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("ملصق"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("دعم العملاء المميز"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "سيتم شراء النسخة المميزة للحساب الذي تم تسجيل الدخول به على متجر Play. لن يتم شراؤها للمستخدم الذي تم تسجيل الدخول به في هذا التطبيق. ومع ذلك، يمكنك استخدام النسخة المميزة لجميع المستخدمين في هذا التطبيق عند شرائها."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("اضغط لاختيار ملصق الفيلم"),
         "producer": MessageLookupByLibrary.simpleMessage("المنتج"),

@@ -214,5 +214,7 @@
     "recommendFileCreated": "Súbor s odporúčaním filmov bol vytvorený.",
     "recommendFileCreationConfirm": "Potvrdzujete vytvorenie súboru s odporúčanými filmami?",
     "selectMoviesToAdd": "Vyberte filmy na pridanie do zoznamu na sledovanie",
-    "moviesAddedToWatchList": "Filmy boli pridané do vášho zoznamu na sledovanie."
+    "moviesAddedToWatchList": "Filmy boli pridané do vášho zoznamu na sledovanie.",
+    "premiumWillBeForPlayStoreUser": "Premium bude zakúpený pre účet, na ktorý ste prihlásení v Play Store. Nebude zakúpený pre používateľa prihláseného v tejto aplikácii. Môžete však používať premium pre všetkých používateľov v tejto aplikácii, keď bude zakúpený."
+
 }

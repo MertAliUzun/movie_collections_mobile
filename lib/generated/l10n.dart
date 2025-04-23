@@ -2209,6 +2209,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Premium will be bought for the account that is logged in on your play store. It won't be bought for your user logged in this app. However you can use premium for all users in this app when it is bought.`
+  String get premiumWillBeForPlayStoreUser {
+    return Intl.message(
+      'Premium will be bought for the account that is logged in on your play store. It won\'t be bought for your user logged in this app. However you can use premium for all users in this app when it is bought.',
+      name: 'premiumWillBeForPlayStoreUser',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

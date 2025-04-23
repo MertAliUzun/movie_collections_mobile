@@ -225,6 +225,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Suport Premium pentru clienți"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium va fi cumpărat pentru contul cu care ești conectat în Play Store. Nu va fi cumpărat pentru utilizatorul conectat în această aplicație. Cu toate acestea, poți folosi premium pentru toți utilizatorii din această aplicație atunci când este cumpărat."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Apasă pentru a alege posterul filmului"),
         "producer": MessageLookupByLibrary.simpleMessage("Producător"),

@@ -214,6 +214,7 @@
     "recommendFileCreated": "Fișier de recomandare filme creat.",
     "recommendFileCreationConfirm": "Confirmați că doriți să creați un fișier de recomandare filme cu filmele alese?",
     "selectMoviesToAdd": "Selectați filmele pentru a le adăuga la lista de vizionare",
-    "moviesAddedToWatchList": "Filmele au fost adăugate la lista de vizionare."
-    
+    "moviesAddedToWatchList": "Filmele au fost adăugate la lista de vizionare.",
+    "premiumWillBeForPlayStoreUser": "Premium va fi cumpărat pentru contul cu care ești conectat în Play Store. Nu va fi cumpărat pentru utilizatorul conectat în această aplicație. Cu toate acestea, poți folosi premium pentru toți utilizatorii din această aplicație atunci când este cumpărat."
+
 }

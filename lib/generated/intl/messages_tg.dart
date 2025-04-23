@@ -225,6 +225,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Плакат"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Поддержка премиум барои муштариён"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Премиум барои ҳисоби, ки дар Play Store шумо ворид шудааст, харида мешавад. Он барои корбаре, ки дар ин барнома ворид шудааст, харида намешавад. Аммо шумо метавонед премиумро барои ҳамаи корбарон дар ин барнома истифода баред, вақте ки он харида шавад."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Барои интихоби плакат филм клик кунед"),
         "producer": MessageLookupByLibrary.simpleMessage("Таъминкунанда"),

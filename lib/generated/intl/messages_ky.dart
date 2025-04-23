@@ -231,6 +231,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Постер"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium кардарларды колдоо"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium Play Store\'га кирген аккаунт үчүн сатып алынат. Бул тиркемеде кирген колдонуучу үчүн сатып алынбайт. Бирок, сатып алынган учурда, сиз премиумду бул тиркемедеги бардык колдонуучулар үчүн колдонсоңуз болот."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Фильмдин постерин тандоо үчүн басыңыз"),
         "producer": MessageLookupByLibrary.simpleMessage("Продюсер"),

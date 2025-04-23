@@ -214,5 +214,7 @@
     "recommendFileCreated": "Fayil filmat gorsa uumame.",
     "recommendFileCreationConfirm": "Filmat dooratamte fayil gorsaa uumuu ni hubtoomi?",
     "selectMoviesToAdd": "Filmat Liistii Ilaalcha kee keessatti ida'uuf dooradhu",
-    "moviesAddedToWatchList": "Filmat Liistii Ilaalcha kee keessatti ida'aman."
+    "moviesAddedToWatchList": "Filmat Liistii Ilaalcha kee keessatti ida'aman.",
+    "premiumWillBeForPlayStoreUser": "Premium ni Play Store ka faylisan akkawwan account loogeen bitame. App kana keessatti loogame userf bitamuu miti. Garuu premium ni fayyadamu dandeessa user hundaaf app kana keessatti bitamee yoo ta'e."
+
 }

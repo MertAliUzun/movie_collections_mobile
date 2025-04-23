@@ -214,5 +214,7 @@
     "recommendFileCreated": "Faili ya mapendekezo ya filamu imeundwa.",
     "recommendFileCreationConfirm": "Je, unathibitisha kuunda faili ya mapendekezo ya filamu ulizochagua?",
     "selectMoviesToAdd": "Chagua filamu za kuongeza kwenye Orodha yako ya Kuangalia",
-    "moviesAddedToWatchList": "Filamu zimeongezwa kwenye Orodha yako ya Kuangalia."
+    "moviesAddedToWatchList": "Filamu zimeongezwa kwenye Orodha yako ya Kuangalia.",
+    "premiumWillBeForPlayStoreUser": "Premium itanunuliwa kwa akaunti iliyosajiliwa kwenye Play Store yako. Haitanunuliwa kwa mtumiaji aliyeingia kwenye programu hii. Hata hivyo, unaweza kutumia premium kwa watumiaji wote katika programu hii wakati itakapokuwa imenunuliwa."
+
 }

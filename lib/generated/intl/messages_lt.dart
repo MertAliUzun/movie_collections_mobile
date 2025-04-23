@@ -229,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Plakatas"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium klientų palaikymas"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium bus įsigytas už paskyrą, prie kurios esate prisijungę Play Store. Jis nebus įsigytas už vartotoją, prisijungusį prie šios programėlės. Tačiau, kai jis bus įsigytas, galėsite naudoti premium visiems vartotojams šioje programėlėje."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Spauskite, kad pasirinkti filmo plakatus"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodiuseris"),

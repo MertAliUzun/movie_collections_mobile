@@ -230,6 +230,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Апостер"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium Ахархәара Ацхыраара"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Премиум ахҵәа иашәыртәоит Google Play аҿы иログинны иҟоу акаунт азы. Уи аппы иログинны иҟоу аурыс заҵәык азы иҟам. Аха, апремиум иашәыртәу ашьҭахь аппы зегьы иログинны иҟоу аурысцәа рзы иҟалар ҟалоит."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Апостер алхра шәымҩаԥыргала"),
         "producer": MessageLookupByLibrary.simpleMessage("Аԥҵаҩы"),

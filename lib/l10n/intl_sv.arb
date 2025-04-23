@@ -214,5 +214,7 @@
     "recommendFileCreated": "Rekommendationsfil för filmer har skapats.",
     "recommendFileCreationConfirm": "Bekräftar du att du vill skapa en rekommendationsfil med valda filmer?",
     "selectMoviesToAdd": "Välj filmer att lägga till i din tittarlista",
-    "moviesAddedToWatchList": "Filmer har lagts till i din tittarlista."
+    "moviesAddedToWatchList": "Filmer har lagts till i din tittarlista.",
+    "premiumWillBeForPlayStoreUser": "Premium kommer att köpas för det konto som är inloggat på din Play Store. Det kommer inte att köpas för din användare inloggad i denna app. Men du kan använda premium för alla användare i denna app när det har köpts."
+
 }

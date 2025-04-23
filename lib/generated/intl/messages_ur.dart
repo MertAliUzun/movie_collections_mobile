@@ -227,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("پوسٹر"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("پریمیئم کسٹمر سپورٹ"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "پریمیئم اس اکاؤنٹ کے لیے خریدا جائے گا جو آپ کے پلے اسٹور پر لاگ ان ہے۔ یہ اس صارف کے لیے نہیں خریدا جائے گا جو اس ایپ میں لاگ ان ہے۔ تاہم، آپ پریمیئم کو اس ایپ میں تمام صارفین کے لیے استعمال کر سکتے ہیں جب یہ خریدا جائے گا۔"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "فلم کا پوسٹر منتخب کرنے کے لیے دبائیں"),
         "producer": MessageLookupByLibrary.simpleMessage("پروڈیوسر"),

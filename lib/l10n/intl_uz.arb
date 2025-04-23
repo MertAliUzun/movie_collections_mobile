@@ -214,5 +214,7 @@
     "recommendFileCreated": "Film tavsiyalari fayli yaratildi.",
     "recommendFileCreationConfirm": "Siz tanlangan filmlar bilan film tavsiyalari faylini yaratishni tasdiqlaysizmi?",
     "selectMoviesToAdd": "Tomosha qilish ro'yxatiga qo'shish uchun filmlar tanlang",
-    "moviesAddedToWatchList": "Filmlar tomosha qilish ro'yxatiga qo'shildi."
+    "moviesAddedToWatchList": "Filmlar tomosha qilish ro'yxatiga qo'shildi.",
+    "premiumWillBeForPlayStoreUser": "Premium sizning Play Store hisobingizga kirgan foydalanuvchi uchun sotib olinadi. Bu ushbu ilovada kirgan foydalanuvchi uchun sotib olinmaydi. Biroq, siz premiumni ushbu ilovada barcha foydalanuvchilar uchun sotib olinganidan so'ng ishlatishingiz mumkin."
+
 }

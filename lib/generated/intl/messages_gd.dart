@@ -229,6 +229,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Pòstaer"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Taic teachdaiche Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Thèid am premium a cheannach airson an cunntas ris an do leig thu a-steach ann am Play Store. Cha tèid e a cheannach airson an neach-cleachdaidh ris an do leig thu a-steach anns an aplacaid seo. Ach, bidh comas agad an premium a chleachdadh airson gach neach-cleachdaidh anns an aplacaid seo nuair a thèid e a cheannach."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Cliog air taghadh pòstaer"),
         "producer": MessageLookupByLibrary.simpleMessage("Dèiligeadair"),

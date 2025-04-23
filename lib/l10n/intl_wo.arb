@@ -214,5 +214,7 @@
     "recommendFileCreated": "Ndégg-dëgg yi jàngé nañu.",
     "recommendFileCreationConfirm": "Ndax teewul ngeen ci jàngé ci ndégg-dëgg yi jàngé nañu?",
     "selectMoviesToAdd": "Film yu yoon aji jàmmé ci samay laaj",
-    "moviesAddedToWatchList": "Film yu yoon am nañu ci sa laaj"
+    "moviesAddedToWatchList": "Film yu yoon am nañu ci sa laaj",
+    "premiumWillBeForPlayStoreUser": "Premium dina jëfandé ci akant bi ngi ëkk ci Play Store bi. Du jëfandé ci jaamu jumtukaay bi ngi ëkk ci sa app bi. Waaye, di nga jëfandé premium ngir yenn saata yi ci app bi ni mu nekk."
+
 }

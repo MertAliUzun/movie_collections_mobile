@@ -187,6 +187,7 @@
     "recommendFileCreated": "Film tövsiyə faylı yaradıldı.",
     "recommendFileCreationConfirm": "Seçilmiş filmlərlə tövsiyə faylı yaratmağa əminsiniz?",
     "selectMoviesToAdd": "İzləmə Siyahınıza əlavə etmək üçün filmləri seçin",
-    "moviesAddedToWatchList": "Filmlər İzləmə Siyahınıza əlavə olundu."
+    "moviesAddedToWatchList": "Filmlər İzləmə Siyahınıza əlavə olundu.",
+    "premiumWillBeForPlayStoreUser": "Premium, Play Store-da daxil olunmuş hesab üçün alınacaq. Bu, bu tətbiqdə daxil olmuş istifadəçi üçün alınmayacaq. Lakin premium alındıqdan sonra onu bu tətbiqdəki bütün istifadəçilər üçün istifadə edə bilərsiniz."
 
 }

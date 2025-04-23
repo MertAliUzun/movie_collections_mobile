@@ -214,6 +214,7 @@
     "recommendFileCreated": "S'ha creat el fitxer de recomanacions de pel·lícules.",
     "recommendFileCreationConfirm": "Confirmeu que voleu crear un fitxer de recomanacions amb les pel·lícules seleccionades?",
     "selectMoviesToAdd": "Seleccioneu les pel·lícules per afegir-les a la vostra llista de visionat",
-    "moviesAddedToWatchList": "Les pel·lícules han estat afegides a la vostra llista de visionat."
+    "moviesAddedToWatchList": "Les pel·lícules han estat afegides a la vostra llista de visionat.",
+    "premiumWillBeForPlayStoreUser": "El premium es comprarà per al compte amb el qual estiguis connectat a la Play Store. No es comprarà per l'usuari connectat a aquesta aplicació. Tanmateix, podràs utilitzar el premium per a tots els usuaris d'aquesta aplicació quan es compri."
 
 }

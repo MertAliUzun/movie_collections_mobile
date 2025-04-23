@@ -214,5 +214,7 @@
     "recommendFileCreated": "Fa'amaoniga o ata na fa'atufugaga.",
     "recommendFileCreationConfirm": "Oe o le a faʻamaonia le fa'atufugaga o fa'amaoniga ata fa'atufugaga?",
     "selectMoviesToAdd": "Filifili ata e fa'aopopo i lau lisi o ata",
-    "moviesAddedToWatchList": "Ua fa'aopopo ata i lau lisi o ata."
+    "moviesAddedToWatchList": "Ua fa'aopopo ata i lau lisi o ata.",
+    "premiumWillBeForPlayStoreUser": "O le Premium o le a fa'atauina mo le akunoi o lo'o e ulufale i le Play Store. E le fa'atauina mo le tagata fa'aaoga o lo'o ulufale i lenei polokalame. Peita'i, e mafai ona e fa'aaogaina le premium mo tagata uma i lenei polokalame pe a uma ona fa'atau."
+
 }

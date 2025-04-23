@@ -214,6 +214,7 @@
     "recommendFileCreated": "映画の推薦ファイルが作成されました。",
     "recommendFileCreationConfirm": "選択した映画で映画推薦ファイルを作成してもよろしいですか？",
     "selectMoviesToAdd": "視聴リストに追加する映画を選択してください",
-    "moviesAddedToWatchList": "映画が視聴リストに追加されました。"
-    
+    "moviesAddedToWatchList": "映画が視聴リストに追加されました。",
+    "premiumWillBeForPlayStoreUser": "Premiumは、Play Storeにログインしているアカウントに対して購入されます。このアプリにログインしているユーザーには購入されません。ただし、Premiumが購入された場合、このアプリ内のすべてのユーザーに対して使用することができます。"
+
 }

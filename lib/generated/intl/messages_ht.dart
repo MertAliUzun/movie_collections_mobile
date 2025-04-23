@@ -218,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Postè"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Sipò kliyan Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium ap achte pou kont ou ki konekte sou Play Store. Li pap achte pou itilizatè a ki konekte nan aplikasyon sa a. Sepandan, ou ka itilize premium pou tout itilizatè nan aplikasyon sa a lè li achte."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Peze pou chwazi postè fim"),
         "producer": MessageLookupByLibrary.simpleMessage("Pwodiktè"),

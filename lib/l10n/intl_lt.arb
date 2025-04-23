@@ -214,6 +214,7 @@
     "recommendFileCreated": "Filmo rekomendacijų failas sukurtas.",
     "recommendFileCreationConfirm": "Ar patvirtinate rekomendacijų failo kūrimą su pasirinktais filmais?",
     "selectMoviesToAdd": "Pasirinkite filmus, kuriuos norite pridėti prie savo peržiūros sąrašo",
-    "moviesAddedToWatchList": "Filmai pridėti prie jūsų peržiūros sąrašo."
+    "moviesAddedToWatchList": "Filmai pridėti prie jūsų peržiūros sąrašo.",
+    "premiumWillBeForPlayStoreUser": "Premium bus įsigytas už paskyrą, prie kurios esate prisijungę Play Store. Jis nebus įsigytas už vartotoją, prisijungusį prie šios programėlės. Tačiau, kai jis bus įsigytas, galėsite naudoti premium visiems vartotojams šioje programėlėje."
 
 }

@@ -214,6 +214,7 @@
     "recommendFileCreated": "Elokuvien suositustiedosto on luotu.",
     "recommendFileCreationConfirm": "Vahvistatko, että haluat luoda suositustiedoston valituilla elokuvilla?",
     "selectMoviesToAdd": "Valitse elokuvat lisättäväksi katselulistallesi",
-    "moviesAddedToWatchList": "Elokuvat on lisätty katselulistallesi."
+    "moviesAddedToWatchList": "Elokuvat on lisätty katselulistallesi.",
+    "premiumWillBeForPlayStoreUser": "Premium ostetaan tilille, jolla olet kirjautunut Play Storeen. Sitä ei osteta tälle sovellukselle kirjautuneelle käyttäjälle. Voit kuitenkin käyttää premiumia kaikille käyttäjille tässä sovelluksessa, kun se on ostettu."
 
 }

@@ -224,6 +224,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Áp phích"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Hỗ trợ khách hàng Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium sẽ được mua cho tài khoản đăng nhập trên Play Store của bạn. Nó sẽ không được mua cho người dùng đăng nhập trong ứng dụng này. Tuy nhiên, bạn có thể sử dụng premium cho tất cả người dùng trong ứng dụng này khi nó đã được mua."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Nhấn để chọn áp phích phim"),
         "producer": MessageLookupByLibrary.simpleMessage("Nhà sản xuất"),

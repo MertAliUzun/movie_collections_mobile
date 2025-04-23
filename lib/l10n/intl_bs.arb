@@ -214,6 +214,7 @@
     "recommendFileCreated": "Datoteka za preporuku filmova je kreirana.",
     "recommendFileCreationConfirm": "Da li potvrđuješ kreiranje datoteke sa preporukama za odabrane filmove?",
     "selectMoviesToAdd": "Odaberi filmove za dodavanje u svoju listu za gledanje",
-    "moviesAddedToWatchList": "Filmove su dodani u tvoju listu za gledanje."
+    "moviesAddedToWatchList": "Filmove su dodani u tvoju listu za gledanje.",
+    "premiumWillBeForPlayStoreUser": "Premium će biti kupljen za nalog na koji ste prijavljeni na Play Store-u. Neće biti kupljen za korisnika prijavljenog u ovoj aplikaciji. Međutim, možete koristiti premium za sve korisnike u ovoj aplikaciji kada bude kupljen."
 
 }

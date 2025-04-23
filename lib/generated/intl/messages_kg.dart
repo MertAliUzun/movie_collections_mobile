@@ -230,6 +230,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Affiche"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Lisungi ya ba client Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium ekozua mpo na konto oyo ologi na Play Store. Ekozua te mpo na moto oyo azali na app oyo. Kasi, okoki kozwa premium mpo na ba utilisateurs nyonso na app oyo soki esali."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pesa kusola affiche ya filimu"),
         "producer": MessageLookupByLibrary.simpleMessage("Mokambi"),

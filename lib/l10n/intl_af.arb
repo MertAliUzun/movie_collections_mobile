@@ -214,5 +214,7 @@
     "recommendFileCreated": "Fliek-aanbevelingslêer is geskep.",
     "recommendFileCreationConfirm": "Bevestig jy dat jy 'n fliek-aanbevelingslêer met die gekose flieks wil skep?",
     "selectMoviesToAdd": "Kies flieks om by jou Kyklys te voeg",
-    "moviesAddedToWatchList": "Flieks is by jou Kyklys gevoeg."
+    "moviesAddedToWatchList": "Flieks is by jou Kyklys gevoeg.",
+    "premiumWillBeForPlayStoreUser": "Premium sal gekoop word vir die rekening wat by jou Play Store aangemeld is. Dit sal nie vir die gebruiker wat in hierdie app aangemeld is gekoop word nie. Jy kan egter premium gebruik vir alle gebruikers in hierdie app wanneer dit gekoop is."
+
 }

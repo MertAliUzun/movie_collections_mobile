@@ -214,5 +214,7 @@
     "recommendFileCreated": "Faylka talooyinka filimada ayaa la abuuray.",
     "recommendFileCreationConfirm": "Ma xaqiijinaysaa abuurista faylka talooyinka filimada ee aad dooratay?",
     "selectMoviesToAdd": "Xulo filimada lagu daro liiskaaga daawashada",
-    "moviesAddedToWatchList": "Filimada waxaa lagu daray liiskaaga daawashada."
+    "moviesAddedToWatchList": "Filimada waxaa lagu daray liiskaaga daawashada.",
+    "premiumWillBeForPlayStoreUser": "Premium waxaa la iibsan doonaa akoonka aad ku gashay Play Store. Looma iibsan doono isticmaalaha ku jira app-kan. Si kastaba ha ahaatee, waxaad isticmaali kartaa premium dhammaan isticmaalayaasha app-kan marka la iibsado."
+
 }

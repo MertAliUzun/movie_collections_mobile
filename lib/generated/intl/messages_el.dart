@@ -235,6 +235,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Αφίσα"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Υποστήριξη πελατών Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Το Premium θα αγοραστεί για τον λογαριασμό με τον οποίο είστε συνδεδεμένοι στο Play Store. Δεν θα αγοραστεί για τον χρήστη που είναι συνδεδεμένος σε αυτήν την εφαρμογή. Ωστόσο, μπορείτε να χρησιμοποιήσετε το Premium για όλους τους χρήστες αυτής της εφαρμογής όταν αγοραστεί."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Πατήστε για να επιλέξετε αφίσα ταινίας"),
         "producer": MessageLookupByLibrary.simpleMessage("Παραγωγός"),

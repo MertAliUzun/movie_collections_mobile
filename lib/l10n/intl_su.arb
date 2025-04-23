@@ -214,5 +214,7 @@
     "recommendFileCreated": "File rekomendasi pilem parantos didamel.",
     "recommendFileCreationConfirm": "Naha anjeun mastikeun pikeun nyiptakeun file rekomendasi pilem anu anjeun pilih?",
     "selectMoviesToAdd": "Pilih pilem pikeun ditambahkeun kana Daptar Nonton anjeun",
-    "moviesAddedToWatchList": "Pilem parantos ditambahkeun kana Daptar Nonton anjeun."
+    "moviesAddedToWatchList": "Pilem parantos ditambahkeun kana Daptar Nonton anjeun.",
+    "premiumWillBeForPlayStoreUser": "Premium bakal dipésér pikeun akun anu asup kana Play Store anjeun. Henteu bakal dipésér pikeun pangguna anu asup kana aplikasi ieu. Nanging, anjeun tiasa ngagunakeun premium pikeun sadaya pangguna dina aplikasi ieu nalika éta parantos dipésér."
+
 }

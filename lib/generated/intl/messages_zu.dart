@@ -232,6 +232,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Iphosta"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Ukusekela Kwezokuthengisa Okuzenzakalelayo"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "I-Premium izothengelwa i-akhawunti ebhaliswe ku-Play Store yakho. Ayizothengelwa umsebenzisi obhalisiwe kulo hlelo lokusebenza. Kodwa-ke, ungasebenzisa i-premium kubo bonke abasebenzisi kulo hlelo lokusebenza uma ithengisiwe."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Cindezela ukukhetha iphosta yefilimu"),
         "producer": MessageLookupByLibrary.simpleMessage("Umkhiqizi"),

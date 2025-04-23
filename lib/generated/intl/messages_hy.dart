@@ -201,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Աֆիշ"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Պրեմիում հաճախորդների աջակցություն"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Պրեմիումը կգնվի այն հաշվի համար, որով մուտք եք գործում Play Store-ում։ Այն չի գնվի այս հավելվածում մուտք գործած օգտվողի համար։ Այնուամենայնիվ, դուք կարող եք օգտագործել պրեմիումը այս հավելվածում բոլոր օգտվողների համար, երբ այն գնել է։"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Սեղմեք՝ ֆիլմի պաստառ ընտրելու համար"),
         "producer": MessageLookupByLibrary.simpleMessage("արտադրող"),

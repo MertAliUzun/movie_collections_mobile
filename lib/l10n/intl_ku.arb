@@ -214,6 +214,7 @@
     "recommendFileCreated": "Pelê pêşniyarê fîlmê hate afirandin.",
     "recommendFileCreationConfirm": "Hûn piştrast in ku pelê pêşniyarê fîlmê bi fîlmên hilbijartî afirînin?",
     "selectMoviesToAdd": "Fîlmên ji bo zêdekirinê li listeya seyrê xwe hilbijêrin",
-    "moviesAddedToWatchList": "Fîlmên di listeya seyrê we de hate zêdekirin."
+    "moviesAddedToWatchList": "Fîlmên di listeya seyrê we de hate zêdekirin.",
+    "premiumWillBeForPlayStoreUser": "Premium, Play Store'a giriş yaptığınız hesap için satın alınacaktır. Bu uygulamada giriş yaptığınız kullanıcı için satın alınmayacaktır. Ancak, premium satın alındığında, bu uygulamadaki tüm kullanıcılar için kullanılabilir."
 
 }

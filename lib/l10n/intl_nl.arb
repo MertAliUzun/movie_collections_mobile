@@ -214,6 +214,7 @@
     "recommendFileCreated": "Aanbevelingsbestand voor films is gemaakt.",
     "recommendFileCreationConfirm": "Bevestigt u het maken van een aanbevelingsbestand voor films met de gekozen films?",
     "selectMoviesToAdd": "Selecteer films om toe te voegen aan uw kijklijst",
-    "moviesAddedToWatchList": "Films zijn toegevoegd aan uw kijklijst."
+    "moviesAddedToWatchList": "Films zijn toegevoegd aan uw kijklijst.",
+    "premiumWillBeForPlayStoreUser": "Premium wordt gekocht voor het account waarmee je bent ingelogd in de Play Store. Het wordt niet gekocht voor de gebruiker die is ingelogd in deze app. Je kunt echter premium gebruiken voor alle gebruikers in deze app zodra het is gekocht."
 
 }

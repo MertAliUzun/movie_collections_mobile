@@ -214,5 +214,7 @@
     "recommendFileCreated": "电影推荐文件已创建。",
     "recommendFileCreationConfirm": "您确认要创建包含选定电影的推荐文件吗？",
     "selectMoviesToAdd": "选择要添加到观看列表中的电影",
-    "moviesAddedToWatchList": "电影已添加到您的观看列表。"
+    "moviesAddedToWatchList": "电影已添加到您的观看列表。",
+    "premiumWillBeForPlayStoreUser": "Premium 将为登录您 Play Store 的帐户购买。它不会为登录此应用的用户购买。然而，您可以在购买后为此应用中的所有用户使用 Premium。"
+
 }

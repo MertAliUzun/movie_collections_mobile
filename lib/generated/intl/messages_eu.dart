@@ -199,6 +199,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Kartela"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Premium bezeroarentzako laguntza"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premiuma Play Store-n saioa hasi duzun kontuarentzat erosi egingo da. Ez da aplikazio honetan saioa hasi duzun erabiltzailearentzat erosi izango. Hala ere, Premiuma erabil dezakezu aplikazio honetan dauden erabiltzaile guztientzat, erosi denean."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Sakatu kartela aukeratzeko"),
         "producer": MessageLookupByLibrary.simpleMessage("Ekoizlea"),

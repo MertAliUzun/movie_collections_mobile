@@ -187,5 +187,7 @@
     "recommendFileCreated": "Skeda e rekomandimit të filmit është krijuar.",
     "recommendFileCreationConfirm": "A e konfirmoni krijimin e skedës së filmit me rekomandimet e zgjedhura?",
     "selectMoviesToAdd": "Zgjidh filmat për t'i shtuar në Listën e Të Dajuarve",
-    "moviesAddedToWatchList": "Filmat janë shtuar në Listën tuaj të Shikimit."
+    "moviesAddedToWatchList": "Filmat janë shtuar në Listën tuaj të Shikimit.",
+    "premiumWillBeForPlayStoreUser": "Premium waxaa la iibsan doonaa akoonka aad ku gashay Play Store. Looma iibsan doono isticmaalaha ku jira app-kan. Si kastaba ha ahaatee, waxaad isticmaali kartaa premium dhammaan isticmaalayaasha app-kan marka la iibsado."
+
 }

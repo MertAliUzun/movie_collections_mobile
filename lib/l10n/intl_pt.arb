@@ -214,6 +214,7 @@
     "recommendFileCreated": "Arquivo de recomendação de filmes criado.",
     "recommendFileCreationConfirm": "Você confirma a criação de um arquivo de recomendação de filmes com os filmes escolhidos?",
     "selectMoviesToAdd": "Selecione filmes para adicionar à sua lista de filmes para assistir",
-    "moviesAddedToWatchList": "Os filmes foram adicionados à sua lista de filmes para assistir."
+    "moviesAddedToWatchList": "Os filmes foram adicionados à sua lista de filmes para assistir.",
+    "premiumWillBeForPlayStoreUser": "O premium será comprado para a conta com a qual você está logado no Play Store. Não será comprado para o usuário logado neste aplicativo. No entanto, você pode usar o premium para todos os usuários neste aplicativo quando ele for comprado."
 
 }

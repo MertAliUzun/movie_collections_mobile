@@ -214,6 +214,7 @@
     "recommendFileCreated": "File rekomendasi film wis digawe.",
     "recommendFileCreationConfirm": "Apa sampeyan konfirmasi kanggo nggawe file rekomendasi film kanthi film sing dipilih?",
     "selectMoviesToAdd": "Pilih film kanggo ditambahake ing dhaptar tontonan sampeyan",
-    "moviesAddedToWatchList": "Film wis ditambahake ing dhaptar tontonan sampeyan."
-    
+    "moviesAddedToWatchList": "Film wis ditambahake ing dhaptar tontonan sampeyan.",
+    "premiumWillBeForPlayStoreUser": "Premium bakal dituku kanggo akun sing wis mlebu ing Play Store. Ora bakal dituku kanggo pangguna sing mlebu ing aplikasi iki. Nanging, sampeyan bisa nggunakake premium kanggo kabeh pangguna ing aplikasi iki nalika wis dituku."
+
 }

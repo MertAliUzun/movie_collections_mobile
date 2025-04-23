@@ -234,6 +234,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Cartell"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Suport Premium per als clients"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "El premium es comprarà per al compte amb el qual estiguis connectat a la Play Store. No es comprarà per l\'usuari connectat a aquesta aplicació. Tanmateix, podràs utilitzar el premium per a tots els usuaris d\'aquesta aplicació quan es compri."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Prem per triar el cartell de la pel·lícula"),
         "producer": MessageLookupByLibrary.simpleMessage("Productor"),

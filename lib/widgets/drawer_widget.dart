@@ -793,6 +793,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Expanded(
+                  child: Text(
+                    S.of(context).premiumWillBeForPlayStoreUser,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: screenWidth * 0.04
+                    ),
+                  ),
+                ),
                 SizedBox(height: screenHeight * 0.015),
                 _buildPremiumFeature(Icons.block, S.of(context).removeAds),
                 SizedBox(height: screenHeight * 0.015),

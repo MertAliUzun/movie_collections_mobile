@@ -180,6 +180,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "popularPeople": MessageLookupByLibrary.simpleMessage("热门人物"),
         "poster": MessageLookupByLibrary.simpleMessage("海报"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage("高级客户支持"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium 将为登录您 Play Store 的帐户购买。它不会为登录此应用的用户购买。然而，您可以在购买后为此应用中的所有用户使用 Premium。"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage("点击选择电影海报"),
         "producer": MessageLookupByLibrary.simpleMessage("制片人"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("制作公司"),

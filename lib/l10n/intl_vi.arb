@@ -214,5 +214,7 @@
     "recommendFileCreated": "Tệp đề xuất phim đã được tạo.",
     "recommendFileCreationConfirm": "Bạn có xác nhận việc tạo tệp đề xuất phim với các bộ phim đã chọn không?",
     "selectMoviesToAdd": "Chọn các bộ phim để thêm vào danh sách xem của bạn",
-    "moviesAddedToWatchList": "Các bộ phim đã được thêm vào danh sách xem của bạn."
+    "moviesAddedToWatchList": "Các bộ phim đã được thêm vào danh sách xem của bạn.",
+    "premiumWillBeForPlayStoreUser": "Premium sẽ được mua cho tài khoản đăng nhập trên Play Store của bạn. Nó sẽ không được mua cho người dùng đăng nhập trong ứng dụng này. Tuy nhiên, bạn có thể sử dụng premium cho tất cả người dùng trong ứng dụng này khi nó đã được mua."
+
 }

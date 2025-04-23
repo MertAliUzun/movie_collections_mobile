@@ -223,6 +223,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Postera"),
         "premiumSupport": MessageLookupByLibrary.simpleMessage(
             "Premium Taageera Macaamiisha"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium ni Play Store ka faylisan akkawwan account loogeen bitame. App kana keessatti loogame userf bitamuu miti. Garuu premium ni fayyadamu dandeessa user hundaaf app kana keessatti bitamee yoo ta\'e."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Postera doora fi loqa"),
         "producer": MessageLookupByLibrary.simpleMessage("Sooressa"),

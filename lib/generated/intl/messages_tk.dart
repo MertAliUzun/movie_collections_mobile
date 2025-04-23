@@ -227,6 +227,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Poster"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium müşderi goldawy"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium, Play Store-da giriş eden hasap üçin satyn alnar. Bu programma giriş eden ulanyjy üçin satyn alnar däl. Şeýle-de bolsa, satyn alnan ýagdaýynda, bu programmada ähli ulanyjylar üçin premiumy ulanyp bilersiňiz."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Poster saýlamak üçin basyň"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodyuser"),

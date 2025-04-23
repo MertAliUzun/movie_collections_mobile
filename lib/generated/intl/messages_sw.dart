@@ -235,6 +235,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Bango"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Msaada wa Wateja wa Premium"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium itanunuliwa kwa akaunti iliyosajiliwa kwenye Play Store yako. Haitanunuliwa kwa mtumiaji aliyeingia kwenye programu hii. Hata hivyo, unaweza kutumia premium kwa watumiaji wote katika programu hii wakati itakapokuwa imenunuliwa."),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Bonyeza kuchagua bango la filamu"),
         "producer": MessageLookupByLibrary.simpleMessage("Mtayarishaji"),

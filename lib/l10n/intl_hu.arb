@@ -214,6 +214,7 @@
     "recommendFileCreated": "A film ajánló fájl létrehozva.",
     "recommendFileCreationConfirm": "Biztosan létre szeretnél hozni egy ajánló fájlt a kiválasztott filmekkel?",
     "selectMoviesToAdd": "Válassz filmeket a Nézési listádhoz való hozzáadáshoz",
-    "moviesAddedToWatchList": "A filmek hozzá lettek adva a Nézési listádhoz."
+    "moviesAddedToWatchList": "A filmek hozzá lettek adva a Nézési listádhoz.",
+    "premiumWillBeForPlayStoreUser": "A prémium a Play Store-ban bejelentkezett fiókhoz lesz megvásárolva. Nem lesz megvásárolva az alkalmazásban bejelentkezett felhasználónak. Azonban a prémiumot minden felhasználó számára használhatja az alkalmazásban, amikor megvásárolják."
 
 }

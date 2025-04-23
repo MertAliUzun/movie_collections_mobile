@@ -192,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "poster": MessageLookupByLibrary.simpleMessage("Filimu Ko"),
         "premiumSupport":
             MessageLookupByLibrary.simpleMessage("Premium Tuma Furu Ka Sɛbɛ"),
+        "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
+            "Premium bɛ sɔrɔ ka yɛrɛ don ni Play Store la compte ye. A tɛ bɛɛ sɔrɔ ka app ye donni compte ye. N torɔ te, i bɛ se ka premium yɛrɛ fɛ app kɔnɔ user fɛ bɛɛ la, i sɔrɔ kɛra."),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Filimu Ko Jɔw"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodyusɔr"),
