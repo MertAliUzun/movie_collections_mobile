@@ -1369,9 +1369,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 ],
               ),
             ),
+            
             ListTile(
               title: Column(
                 children: [
+                  /*
                   Container(
                     width: screenWidth * 0.5,
                     child: Padding(
@@ -1421,6 +1423,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       ),
                     ),
                   ),
+                  */
                   Container(
                     width: screenWidth * 0.5,
                     child: Padding(
@@ -1450,7 +1453,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Expanded(child: Text(S.of(context).popularMovies, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),overflow: TextOverflow.ellipsis, softWrap: false)),
+                              Expanded(child: Text(S.of(context).discover, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),overflow: TextOverflow.ellipsis, softWrap: false)),
                               SizedBox(width: screenWidth * 0.03,),
                               Icon(size: screenWidth * 0.055,
                               Icons.trending_up, color: Colors.white,),
