@@ -792,7 +792,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
          behavior: SnackBarBehavior.floating,
          content: AwesomeSnackbarContent(
            title: S.of(context).failure,
-           message: '${S.of(context).errorFetchingSimilar} $e',
+           message: S.of(context).errorFetchingSimilar,
            contentType: ContentType.failure, 
            inMaterialBanner: true,
          ), 

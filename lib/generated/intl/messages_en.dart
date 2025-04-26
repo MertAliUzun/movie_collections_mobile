@@ -168,9 +168,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" movies deleted."),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
-            "Movies has been moved to Collection!"),
+            "Movies have been moved to Collection!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
-            "Movies has been moved to Watch List!"),
+            "Movies have been moved to Watch List!"),
         "moviesRestored":
             MessageLookupByLibrary.simpleMessage("Movies restored"),
         "moviesSelected":

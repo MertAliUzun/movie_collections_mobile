@@ -276,7 +276,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
             title: S.of(context).error,
-            message: e.toString(),
+            message: S.of(context).failure,
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),
@@ -448,8 +448,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).failure, 
-          message: e.toString(), 
+          title: S.of(context).error, 
+          message: S.of(context).failure, 
           contentType: ContentType.failure, 
           inMaterialBanner: true,
         ), 
@@ -572,7 +572,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
           title: S.of(context).failure,
-          message: '${S.of(context).errorWritingFile} $e',
+          message: S.of(context).errorWritingFile,
           contentType: ContentType.failure,
           inMaterialBanner: true,
         ),
@@ -682,7 +682,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
             title: S.of(context).failure,
-            message: '${S.of(context).errorReadingFile} $e',
+            message: S.of(context).errorReadingFile,
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),
@@ -958,7 +958,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             behavior: SnackBarBehavior.floating,
             content: AwesomeSnackbarContent(
               title: S.of(context).error,
-              message: e.toString(),
+              message: S.of(context).failure,
               contentType: ContentType.failure,
               inMaterialBanner: true,
             ),

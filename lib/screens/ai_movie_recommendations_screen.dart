@@ -78,7 +78,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
             title: S.of(context).error,
-            message: e.toString(),
+            message: S.of(context).failure,
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),

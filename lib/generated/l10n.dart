@@ -880,20 +880,20 @@ class S {
     );
   }
 
-  /// `Movies has been moved to Collection!`
+  /// `Movies have been moved to Collection!`
   String get moviesMovedToCollection {
     return Intl.message(
-      'Movies has been moved to Collection!',
+      'Movies have been moved to Collection!',
       name: 'moviesMovedToCollection',
       desc: '',
       args: [],
     );
   }
 
-  /// `Movies has been moved to Watch List!`
+  /// `Movies have been moved to Watch List!`
   String get moviesMovedToWatchlist {
     return Intl.message(
-      'Movies has been moved to Watch List!',
+      'Movies have been moved to Watch List!',
       name: 'moviesMovedToWatchlist',
       desc: '',
       args: [],
