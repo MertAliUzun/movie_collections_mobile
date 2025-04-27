@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:intl/intl.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../services/ad_service.dart';
@@ -170,6 +171,13 @@ class _DirectorScreenState extends State<DirectorScreen> {
     );
   }
 
+  String _formatDate(String dateString) {
+  // Parse the date string into a DateTime object
+  DateTime date = DateTime.parse(dateString);
+  // Format the DateTime object to the desired format
+  return DateFormat('MMMM d, yyyy').format(date);
+}
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -213,8 +221,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                             ),
                           ),
                           Text(
-                            widget.personType == 'Director' ? S.of(context).director :
-                            widget.personType == 'Actor' ? S.of(context).actor :
+                            widget.personType == 'Directing' ? S.of(context).director :
+                            widget.personType == 'Acting' ? S.of(context).actor :
                             widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
                             style: TextStyle(
                               fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
@@ -239,68 +247,83 @@ class _DirectorScreenState extends State<DirectorScreen> {
                               children: [
                                 Padding(
                                   padding: ScreenUtil.getAdaptivePadding(context, vertical: 20),
-                                  child: Card(
-                                    color: const Color.fromARGB(255, 24, 30, 40),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        _personDetails[0]['profile_path'] != null
-                                            ? Container(
-                                              decoration: const BoxDecoration(
-                                              borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(12.0), // Sol üst köşe
-                                                topRight: Radius.circular(12.0), // Sağ üst köşe
-                                              ),
-                                              boxShadow: [
-                                               BoxShadow(
-                                                  color: Colors.black26,
-                                                  offset: Offset(0, 0),
-                                                  blurRadius: 10,
-                                                ),
-                                              ],
-                                            ),
-                                              child: ClipRRect(
-                                                borderRadius: BorderRadius.circular(10),
-                                                child: Image.network(
-                                                  'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
-                                                  height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.35),
-                                                  width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.45),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
+                                  child: Container(
+                            width: isTablet ? 250 : 200,
+                            margin: const EdgeInsets.symmetric(horizontal: 2),
+                            child: Card(
+                              color: const Color.fromARGB(255, 44, 50, 60),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              elevation: 8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Expanded(
+                                    flex: 6,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(16.0),
+                                        topRight: Radius.circular(16.0),
+                                      ),
+                                      child: _personDetails[0]['profile_path'] != null
+                                          ? Image.network(
+                                              'https://image.tmdb.org/t/p/w500${_personDetails[0]['profile_path']}',
+                                              fit: BoxFit.cover,
+                                              errorBuilder: (context, error, stackTrace) =>
+                                                  const Icon(Icons.person, color: Colors.white54, size: 50),
                                             )
-                                          : Icon(
-                                              Icons.person,
-                                              color: Colors.white54,
-                                              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                          : Container(
+                                              color: const Color.fromARGB(255, 54, 60, 70),
+                                              child: const Icon(Icons.person, color: Colors.white54, size: 50),
                                             ),
-                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.025)),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              _personDetails[0]['name'],
-                                              style: TextStyle(
-                                                fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                    ),
+                                  ),
+                                  
+                                  Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(8.0),
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromARGB(255, 20, 26, 33),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            _personDetails[0]['name'],
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                                              fontWeight: FontWeight.bold,
                                             ),
-                                            Text(
-                                          widget.personType == 'Director' ? S.of(context).director :
-                                          widget.personType == 'Actor' ? S.of(context).actor :
-                                          widget.personType == 'Writer' ? S.of(context).writer : widget.personType,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          Text(
+                                          widget.personType == 'Directing' ? S.of(context).director :
+                                          widget.personType == 'Acting' ? S.of(context).actor :
+                                          widget.personType == 'Writing' ? S.of(context).writer : widget.personType,
                                           style: TextStyle(
                                             fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
                                             color: Colors.white54,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                          ],
-                                        ),
-                                        
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
+                                ],
+                              ),
+                            ),
+                          ),
                                 ),
                                 if (_personPersonalDetails != null)
                                   Flexible(
@@ -329,14 +352,30 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['birthday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 24, 30, 40),
-                                            child: Padding(
-                                              padding: ScreenUtil.getAdaptivePadding(context),
-                                              child: Text(
-                                                '${S.of(context).birthDateColon} ${_personPersonalDetails!['birthday']}',
-                                                style: TextStyle(
-                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                  color: Colors.white,
+                                            color: const Color.fromARGB(255, 20, 26, 33),
+                                            child: Container(
+                                              width: screenWidth * 0.5,
+                                              child: Padding(
+                                                padding: ScreenUtil.getAdaptivePadding(context),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      S.of(context).birthDateColon,
+                                                      style: TextStyle(
+                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                        color: Colors.white,
+                                                        fontWeight: FontWeight.bold
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      _formatDate(_personPersonalDetails!['birthday']),
+                                                      style: TextStyle(
+                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -344,14 +383,30 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['deathday'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 24, 30, 40),
-                                            child: Padding(
-                                              padding: ScreenUtil.getAdaptivePadding(context),
-                                              child: Text(
-                                                '${S.of(context).deathDateColon} ${_personPersonalDetails!['deathday']}',
-                                                style: TextStyle(
-                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                  color: Colors.white,
+                                            color: const Color.fromARGB(255, 20, 26, 33),
+                                            child: Container(
+                                              width: screenWidth * 0.5,
+                                              child: Padding(
+                                                padding: ScreenUtil.getAdaptivePadding(context),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      S.of(context).deathDateColon,
+                                                      style: TextStyle(
+                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                        color: Colors.white,
+                                                        fontWeight: FontWeight.bold
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      _formatDate(_personPersonalDetails!['deathday']),
+                                                      style: TextStyle(
+                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -359,17 +414,33 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                         if (_personPersonalDetails!['place_of_birth'] != null)
                                           Card(
                                             shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 24, 30, 40),
-                                            child: Padding(
-                                              padding: ScreenUtil.getAdaptivePadding(context),
-                                              child: Text(
-                                                '${S.of(context).birthPlaceColon} ${_personPersonalDetails!['place_of_birth']}',
-                                                style: TextStyle(
-                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                  color: Colors.white,
-                                                  ),
-                                                  overflow: TextOverflow.ellipsis,
-                                                  maxLines: 2,      
+                                            color: const Color.fromARGB(255, 20, 26, 33),
+                                            child: Container(
+                                              width: screenWidth * 0.5,
+                                              child: Padding(
+                                                padding: ScreenUtil.getAdaptivePadding(context),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      S.of(context).birthPlaceColon,
+                                                      style: TextStyle(
+                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                        color: Colors.white,
+                                                        fontWeight: FontWeight.bold
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      _personPersonalDetails!['place_of_birth'],
+                                                      style: TextStyle(
+                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                        color: Colors.white,
+                                                      ),
+                                                    overflow: TextOverflow.ellipsis,
+                                                    maxLines: 2, 
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -378,7 +449,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                             onTap: () => _showFullBiography(context),
                                             child: Card(
                                               shadowColor: Colors.white,
-                                              color: const Color.fromARGB(255, 24, 30, 40),
+                                              color: const Color.fromARGB(255, 20, 26, 33),
                                               child: Padding(
                                                 padding: ScreenUtil.getAdaptivePadding(context),
                                                 child: SingleChildScrollView(
