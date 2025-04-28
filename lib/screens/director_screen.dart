@@ -246,7 +246,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: ScreenUtil.getAdaptivePadding(context, vertical: 20),
+                                  padding: ScreenUtil.getAdaptivePadding(context, vertical: 20, horizontal: screenWidth * 0.02),
                                   child: Container(
                             width: isTablet ? 250 : 200,
                             margin: const EdgeInsets.symmetric(horizontal: 2),
@@ -327,157 +327,66 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                 ),
                                 if (_personPersonalDetails != null)
                                   Flexible(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        /*
-                                        if (_personPersonalDetails!['also_known_as'].length > 0)
-                                          Card(
-                                            shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 24, 30, 40),
-                                            child: Padding(
-                                              padding: ScreenUtil.getAdaptivePadding(context),
-                                              child: Text(
-                                                '${S.of(context).aliasColon} ${_personPersonalDetails!['also_known_as'][0]}',
-                                                style: TextStyle(
-                                                  fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                  color: Colors.white,
-                                                ),
-                                                overflow: TextOverflow.ellipsis,
-                                                maxLines: 1,
-                                              ),
-                                            ),
-                                          ),*/
-                                        if (_personPersonalDetails!['birthday'] != null)
-                                          Card(
-                                            shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 20, 26, 33),
-                                            child: Container(
-                                              width: screenWidth * 0.5,
+                                    child: Container(
+                                      //shadowColor: Colors.white,
+                                      
+                                      margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                      padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromARGB(255, 20, 26, 33),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                          topLeft: Radius.circular(16),
+                                          topRight: Radius.circular(16),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          /*
+                                          if (_personPersonalDetails!['also_known_as'].length > 0)
+                                            Card(
+                                              shadowColor: Colors.white,
+                                              color: const Color.fromARGB(255, 24, 30, 40),
                                               child: Padding(
                                                 padding: ScreenUtil.getAdaptivePadding(context),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      S.of(context).birthDateColon,
-                                                      style: TextStyle(
-                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      _formatDate(_personPersonalDetails!['birthday']),
-                                                      style: TextStyle(
-                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                        color: Colors.white,
-                                                      ),
-                                                    ),
-                                                  ],
+                                                child: Text(
+                                                  '${S.of(context).aliasColon} ${_personPersonalDetails!['also_known_as'][0]}',
+                                                  style: TextStyle(
+                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                    color: Colors.white,
+                                                  ),
+                                                  overflow: TextOverflow.ellipsis,
+                                                  maxLines: 1,
                                                 ),
                                               ),
-                                            ),
-                                          ),
-                                        if (_personPersonalDetails!['deathday'] != null)
-                                          Card(
-                                            shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 20, 26, 33),
-                                            child: Container(
-                                              width: screenWidth * 0.5,
-                                              child: Padding(
-                                                padding: ScreenUtil.getAdaptivePadding(context),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      S.of(context).deathDateColon,
-                                                      style: TextStyle(
-                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      _formatDate(_personPersonalDetails!['deathday']),
-                                                      style: TextStyle(
-                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                        color: Colors.white,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_personPersonalDetails!['place_of_birth'] != null)
-                                          Card(
-                                            shadowColor: Colors.white,
-                                            color: const Color.fromARGB(255, 20, 26, 33),
-                                            child: Container(
-                                              width: screenWidth * 0.5,
-                                              child: Padding(
-                                                padding: ScreenUtil.getAdaptivePadding(context),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      S.of(context).birthPlaceColon,
-                                                      style: TextStyle(
-                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.bold
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      _personPersonalDetails!['place_of_birth'],
-                                                      style: TextStyle(
-                                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
-                                                        color: Colors.white,
-                                                      ),
-                                                    overflow: TextOverflow.ellipsis,
-                                                    maxLines: 2, 
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_personPersonalDetails?['biography']?.isNotEmpty ?? false)
-                                          GestureDetector(
-                                            onTap: () => _showFullBiography(context),
-                                            child: Card(
+                                            ),*/
+                                          if (_personPersonalDetails!['birthday'] != null)
+                                            Card(
                                               shadowColor: Colors.white,
                                               color: const Color.fromARGB(255, 20, 26, 33),
-                                              child: Padding(
-                                                padding: ScreenUtil.getAdaptivePadding(context),
-                                                child: SingleChildScrollView(
+                                              child: Container(
+                                                width: screenWidth * 0.5,
+                                                child: Padding(
+                                                  padding: ScreenUtil.getAdaptiveLTRBPadding(context, bottom: 8),
                                                   child: Column(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Text(
-                                                        '${S.of(context).biographyColon}',
+                                                        S.of(context).birthDateColon,
                                                         style: TextStyle(
                                                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
                                                           color: Colors.white,
-                                                          fontWeight: FontWeight.bold,
+                                                          fontWeight: FontWeight.bold
                                                         ),
                                                       ),
                                                       Text(
-                                                        _personPersonalDetails!['biography'],
+                                                        _formatDate(_personPersonalDetails!['birthday']),
                                                         style: TextStyle(
                                                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
                                                           color: Colors.white,
-                                                        ),
-                                                        overflow: TextOverflow.ellipsis,
-                                                        maxLines: isTablet ? 8 : 5,
-                                                      ),
-                                                      Center(
-                                                        child: Icon(
-                                                          Icons.keyboard_arrow_down,
-                                                          color: Colors.white54,
-                                                          size: ScreenUtil.getAdaptiveIconSize(context, 24),
                                                         ),
                                                       ),
                                                     ],
@@ -485,32 +394,138 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.004)),
-                                        Center(
-                                          child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01),
-                                            ),
-                                            child: ElevatedButton(
-                                              onPressed: _launchIMDb,
-                                              style: ElevatedButton.styleFrom(
-                                                padding: EdgeInsets.zero,
-                                                backgroundColor: Colors.transparent,
+                                          if (_personPersonalDetails!['deathday'] != null)
+                                            Card(
+                                              shadowColor: Colors.white,
+                                              color: const Color.fromARGB(255, 20, 26, 33),
+                                              child: Container(
+                                                width: screenWidth * 0.5,
+                                                child: Padding(
+                                                  padding: ScreenUtil.getAdaptiveLTRBPadding(context, bottom: 8),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text(
+                                                        S.of(context).deathDateColon,
+                                                        style: TextStyle(
+                                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                          color: Colors.white,
+                                                          fontWeight: FontWeight.bold
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        _formatDate(_personPersonalDetails!['deathday']),
+                                                        style: TextStyle(
+                                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                          color: Colors.white,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
                                               ),
-                                              child: ClipRRect(
-                                                borderRadius: BorderRadius.circular(16),
-                                                child: Image.asset(
-                                                  'assets/images/imdb.png',
-                                                  width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.3),
-                                                  height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
-                                                  fit: BoxFit.cover,
+                                            ),
+                                          if (_personPersonalDetails!['place_of_birth'] != null)
+                                            Card(
+                                              shadowColor: Colors.white,
+                                              color: const Color.fromARGB(255, 20, 26, 33),
+                                              child: Container(
+                                                width: screenWidth * 0.5,
+                                                child: Padding(
+                                                  padding: ScreenUtil.getAdaptiveLTRBPadding(context, bottom: 8),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text(
+                                                        S.of(context).birthPlaceColon,
+                                                        style: TextStyle(
+                                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                          color: Colors.white,
+                                                          fontWeight: FontWeight.bold
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        _personPersonalDetails!['place_of_birth'],
+                                                        style: TextStyle(
+                                                          fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                          color: Colors.white,
+                                                        ),
+                                                      overflow: TextOverflow.ellipsis,
+                                                      maxLines: 2, 
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_personPersonalDetails?['biography']?.isNotEmpty ?? false)
+                                            GestureDetector(
+                                              onTap: () => _showFullBiography(context),
+                                              child: Card(
+                                                shadowColor: Colors.white,
+                                                color: const Color.fromARGB(255, 20, 26, 33),
+                                                child: Padding(
+                                                  padding: ScreenUtil.getAdaptiveLTRBPadding(context, bottom: 2),
+                                                  child: SingleChildScrollView(
+                                                    child: Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      children: [
+                                                        Text(
+                                                          '${S.of(context).biographyColon}',
+                                                          style: TextStyle(
+                                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                            color: Colors.white,
+                                                            fontWeight: FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          _personPersonalDetails!['biography'],
+                                                          style: TextStyle(
+                                                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                            color: Colors.white,
+                                                          ),
+                                                          overflow: TextOverflow.ellipsis,
+                                                          maxLines: isTablet ? 8 : 3,
+                                                        ),
+                                                        Center(
+                                                          child: Icon(
+                                                            Icons.keyboard_arrow_down,
+                                                            color: Colors.white54,
+                                                            size: ScreenUtil.getAdaptiveIconSize(context, 24),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.004)),
+                                          Center(
+                                            child: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01),
+                                              ),
+                                              child: ElevatedButton(
+                                                onPressed: _launchIMDb,
+                                                style: ElevatedButton.styleFrom(
+                                                  padding: EdgeInsets.zero,
+                                                  backgroundColor: Colors.transparent,
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius: BorderRadius.circular(16),
+                                                  child: Image.asset(
+                                                    'assets/images/imdb.png',
+                                                    width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.3),
+                                                    height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
+                                                    fit: BoxFit.cover,
+                                                  ),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                               ],

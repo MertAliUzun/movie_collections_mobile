@@ -22,9 +22,9 @@ class PersonMoviesWidget extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     bool isTablet = ScreenUtil.isTablet(context);
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3, // Adjust the number of columns as needed
-        childAspectRatio: 0.42, // Adjust the aspect ratio as needed
+        childAspectRatio: personType == 'Acting' ? 0.42 : 0.47, // Adjust the aspect ratio as needed
       ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
