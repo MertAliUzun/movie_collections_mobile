@@ -24,7 +24,8 @@ class PersonMoviesWidget extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3, // Adjust the number of columns as needed
-        childAspectRatio: personType == 'Acting' ? 0.42 : 0.47, // Adjust the aspect ratio as needed
+        childAspectRatio: personType == 'Acting' ? 0.42 :
+                          personType == 'Genre' ? 0.43 :  0.47, // Adjust the aspect ratio as needed
       ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

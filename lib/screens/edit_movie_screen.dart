@@ -948,7 +948,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
           )
         ),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(size: ScreenUtil.getAdaptiveIconSize(context, 24),color: Colors.white),
         actions: [
           IconButton(
             icon: Icon(

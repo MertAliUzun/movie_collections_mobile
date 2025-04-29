@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/screens/discover_movie_screen.dart';
 import 'package:movie_collections_mobile/screens/edit_movie_screen.dart';
@@ -121,6 +122,13 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
     }
   }
 
+  String _formatDate(String dateString) {
+  // Parse the date string into a DateTime object
+  DateTime date = DateTime.parse(dateString);
+  // Format the DateTime object to the desired format
+  return DateFormat('MMMM d').format(date);
+}
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -180,7 +188,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade700,
+                            color: Colors.grey.shade800,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -371,7 +379,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade700,
+                            color: Colors.grey.shade800,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -389,13 +397,16 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
             _isLoadingLatest
                 ? const Center(child: CircularProgressIndicator())
                 : Container(
-                    height: isTablet ? 280 : 275,
+                    height: isTablet ? 280 : 200,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       itemCount: _latestMovies.length,
                       itemBuilder: (context, index) {
                         final movie = _latestMovies[index];
+                        String releaseDate = movie['release_date'] != null 
+                            ? _formatDate(movie['release_date'])
+                            : '';
                         return GestureDetector(
                           onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
@@ -457,66 +468,104 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                               }           
                           },
                           child: Container(
-                            width: isTablet ? 180 : 140,
-                            margin: const EdgeInsets.symmetric(horizontal: 2),
+                            width: screenWidth * 0.85,
+                            margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                             child: Card(
-                              color: const Color.fromARGB(255, 44, 50, 60),
+                              color: const Color.fromARGB(1, 22, 25, 30),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               elevation: 8,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Expanded(
-                                    flex: 6,
-                                    child: ClipRRect(
+                                  // Sol tarafta poster
+                                  ClipRRect(
                                     borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(16.0),
-                                      topRight: Radius.circular(16.0),
+                                      topLeft: Radius.circular(10.0),
+                                      bottomLeft: Radius.circular(10.0),
                                     ),
                                     child: Image.network(
                                       'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
                                       fit: BoxFit.cover,
-                                      height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
-                                      width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                      height: isTablet ? 280 : 200,
+                                      width: screenWidth * 0.25,
                                       errorBuilder: (context, error, stackTrace) =>
                                         Image.asset(
                                           'assets/images/placeholder_poster.png',
                                           fit: BoxFit.cover,
-                                          height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.22),
-                                          width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.35),
+                                          height: isTablet ? 280 : 200,
+                                          width: screenWidth * 0.28,
                                         ),
                                     ),
                                   ),
-                                  ),
                                   
+                                  // Sağ tarafta içerik
                                   Expanded(
-                                    flex: 2,
-                                    child: Container(
-                                      padding: const EdgeInsets.all(8.0),
-                                      decoration: BoxDecoration(
-                                        color: const Color.fromARGB(255, 44, 50, 60),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(10),
-                                          bottomRight: Radius.circular(10),
-                                        ),
-                                      ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(12.0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            movie['original_title'],
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.center,
+                                          // Başlık ve Tarih
+                                          Row(
+                                            children: [
+                                              // Film Başlığı
+                                              Expanded(
+                                                flex: 2,
+                                                child: Text(
+                                                  movie['original_title'],
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ),
+                                              // Çıkış Tarihi
+                                              Expanded(
+                                                flex: 1,
+                                                child: Text(
+                                                  releaseDate,
+                                                  style: TextStyle(
+                                                    color: Colors.white70,
+                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
+                                                  ),
+                                                  textAlign: TextAlign.right,
+                                                ),
+                                              ),
+                                            ],
                                           ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(0, 4, 0, 16),
+                                            child: const Divider(height: 0, color: Colors.white60,),
+                                          ),
+                                          
+                                          
+                                          
+                                          // Film Özeti
+                                          Expanded(
+                                            child: Text(
+                                              movie['overview'] ?? '',
+                                              style: TextStyle(
+                                                color: Colors.white70,
+                                                fontSize: ScreenUtil.getAdaptiveTextSize(context, 13),
+                                              ),
+                                              maxLines: 4,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(8, 12, 8, 2),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                                Icon(Icons.arrow_circle_right_outlined, color: Colors.white,),
+                                              ],
+                                            ),
+                                          )
                                         ],
                                       ),
                                     ),
@@ -551,6 +600,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                       );
                     },
                     child: Row(
+                      
                       children: [
                         Text(
                           S.of(context).upcomingMovies,
@@ -562,7 +612,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade700,
+                            color: Colors.grey.shade800,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(

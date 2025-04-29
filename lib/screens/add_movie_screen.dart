@@ -959,6 +959,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         ),
         iconTheme: IconThemeData(
           size: ScreenUtil.getAdaptiveIconSize(context, 24),
+          color: Colors.white
         ),
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
       ),

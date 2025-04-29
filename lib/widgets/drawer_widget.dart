@@ -1456,7 +1456,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                               Expanded(child: Text(S.of(context).discover, style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.039),overflow: TextOverflow.ellipsis, softWrap: false)),
                               SizedBox(width: screenWidth * 0.03,),
                               Icon(size: screenWidth * 0.055,
-                              Icons.trending_up, color: Colors.white,),
+                              Icons.explore, color: Colors.white,),
                             ],
                           ), 
                         ),
