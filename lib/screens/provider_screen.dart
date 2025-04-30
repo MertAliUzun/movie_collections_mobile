@@ -106,6 +106,7 @@ class _ProviderScreenState extends State<ProviderScreen> {
                           return GestureDetector(
                             onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
+                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);
                               if (movieDetails != null) {
                                 final chosenMovie = Movie(
                                   id: movieDetails['id'].toString(),
@@ -115,7 +116,7 @@ class _ProviderScreenState extends State<ProviderScreen> {
                                   releaseDate: movieDetails['release_date'] != null 
                                       ? DateTime.parse(movieDetails['release_date']) 
                                       : DateTime.now(),
-                                  plot: movieDetails['overview'],
+                                  plot: movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '',
                                   runtime: movieDetails['runtime'],
                                   imdbRating: movieDetails['vote_average']?.toDouble(),
                                   writers: movieDetails['credits']['crew']

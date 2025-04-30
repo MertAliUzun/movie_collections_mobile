@@ -253,13 +253,14 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     try {
       //final movieDetails = await _omdbService.getMovieDetails(imdbId);
       final movieDetails = await _tmdbService.getMovieDetails(movieId);
+      final movieDetailsLanguage = await _tmdbService.getMovieDetailsWithLanguage(movieId, languageCode: widget.systemLanguage);
       if (movieDetails != null) {
         setState(() {
           newId = movieDetails['id'] ?? -1;
           _movieNameController.text = movieDetails['title'] ?? '';
           _directorNameController.text = movieDetails['credits']['crew']
               .firstWhere((member) => member['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
-          _plotController.text = movieDetails['overview'] ?? '';
+          _plotController.text = movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '';
           _runtimeController.text = movieDetails['runtime']?.toString() ?? '';
           _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
             movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 

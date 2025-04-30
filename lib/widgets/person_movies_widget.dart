@@ -35,7 +35,8 @@ class PersonMoviesWidget extends StatelessWidget {
         return GestureDetector(
           onTap: () async {
             // Navigate back with movie details
-            final movieDetails = await TmdbService().getMovieDetails(movie['id']);                   
+            final movieDetails = await TmdbService().getMovieDetails(movie['id']);
+            final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: systemLanguage);                   
             if (movieDetails != null) {
               // Movie nesnesini oluştur
               final chosenMovie = Movie(
@@ -46,7 +47,7 @@ class PersonMoviesWidget extends StatelessWidget {
                 releaseDate: movieDetails['release_date'] != null 
                     ? DateTime.parse(movieDetails['release_date']) 
                     : DateTime.now(),
-                plot: movieDetails['overview'],
+                plot: movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '',
                 runtime: movieDetails['runtime'],
                 imdbRating: movieDetails['vote_average']?.toDouble(),
                 writers: movieDetails['credits']['crew']

@@ -114,7 +114,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                           return GestureDetector(
                             onTap: () async {
                               // Navigate back with movie details
-                              final movieDetails = await TmdbService().getMovieDetails(movie['id']);                   
+                              final movieDetails = await TmdbService().getMovieDetails(movie['id']);
+                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);                   
                               if (movieDetails != null) {
                   // Movie nesnesini oluştur
                   final chosenMovie = Movie(
@@ -125,7 +126,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     releaseDate: movieDetails['release_date'] != null 
                         ? DateTime.parse(movieDetails['release_date']) 
                         : DateTime.now(),
-                    plot: movieDetails['overview'],
+                    plot: movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '',
                     runtime: movieDetails['runtime'],
                     imdbRating: movieDetails['vote_average']?.toDouble(),
                     writers: movieDetails['credits']['crew']

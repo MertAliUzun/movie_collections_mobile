@@ -166,6 +166,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                             onTap: () async {
                               if (recommendedMovie['id'] != null) {
                                 final movieDetails = await TmdbService().getMovieDetails(recommendedMovie['id']);
+                                final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(recommendedMovie['id'], languageCode: widget.systemLanguage);
                                 
                                 if (movieDetails != null) {
                                   // Movie nesnesini oluştur
@@ -177,7 +178,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                                     releaseDate: movieDetails['release_date'] != null 
                                         ? DateTime.parse(movieDetails['release_date']) 
                                         : DateTime.now(),
-                                    plot: movieDetails['overview'],
+                                    plot: movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '',
                                     runtime: movieDetails['runtime'],
                                     imdbRating: movieDetails['vote_average']?.toDouble(),
                                     writers: movieDetails['credits']['crew']

@@ -110,6 +110,18 @@ class TmdbService {
     return null;
   }
 
+  Future<Map<String, dynamic>?> getMovieDetailsWithLanguage(int movieId, {String languageCode = 'en'}) async {
+    final response = await http.get(
+      Uri.parse('$_baseUrl/movie/$movieId?api_key=$_apiKey&language=$languageCode&append_to_response=credits'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      return data;
+    }
+    return null;
+  }
+
   Future<List< dynamic>>  getPopularMovies() async {
     final List< dynamic> movies = [];
     final response = await http.get(
@@ -125,10 +137,10 @@ class TmdbService {
     return movies;
   }
 
-  Future<List< dynamic>>  getLatestMovies() async {
+  Future<List< dynamic>>  getLatestMovies({String language = 'en'}) async {
     final List< dynamic> movies = [];
     final response = await http.get(
-      Uri.parse('$_baseUrl/movie/now_playing?api_key=$_apiKey'),
+      Uri.parse('$_baseUrl/movie/now_playing?api_key=$_apiKey&language=$language'),
     );
 
     if (response.statusCode == 200) {
