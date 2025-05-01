@@ -48,11 +48,27 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
 
   Future<void> _loadUPopulargMovies() async {
     try {
-      final people = await _tmdbService.getPopularMovies();
+      final movies = await _tmdbService.getPopularMovies();
+      final moviesWithLanguage = await _tmdbService.getPopularMovies(language: widget.systemLanguage);
+      
       if (mounted) {
         setState(() {
-          // Sadece ilk 10 kişiyi al
-          _popularMovies = people.take(10).toList();
+          _popularMovies = movies.take(10).map((movie) {
+            // Aynı ID'ye sahip film için dil seçeneği ile alınan overview varsa, onu kullan
+            final movieWithLanguage = moviesWithLanguage.firstWhere(
+              (m) => m['id'] == movie['id'], 
+              orElse: () => {}
+            );
+            
+            if (movieWithLanguage.isNotEmpty && 
+                movieWithLanguage['overview'] != null && 
+                movieWithLanguage['overview'].isNotEmpty) {
+              movie['overview'] = movieWithLanguage['overview'];
+            }
+            
+            return movie;
+          }).toList();
+          
           _isLoadingPopularMovies = false;
         });
       }
@@ -86,11 +102,27 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
 
   Future<void> _loadUpcomingMovies() async {
     try {
-      final people = await _tmdbService.getUpcomingMovies();
+      final movies = await _tmdbService.getUpcomingMovies();
+      final moviesWithLanguage = await _tmdbService.getUpcomingMovies(language: widget.systemLanguage);
+      
       if (mounted) {
         setState(() {
-          // Sadece ilk 10 kişiyi al
-          _upcomingMovies = people.take(10).toList();
+          _upcomingMovies = movies.take(10).map((movie) {
+            // Aynı ID'ye sahip film için dil seçeneği ile alınan overview varsa, onu kullan
+            final movieWithLanguage = moviesWithLanguage.firstWhere(
+              (m) => m['id'] == movie['id'], 
+              orElse: () => {}
+            );
+            
+            if (movieWithLanguage.isNotEmpty && 
+                movieWithLanguage['overview'] != null && 
+                movieWithLanguage['overview'].isNotEmpty) {
+              movie['overview'] = movieWithLanguage['overview'];
+            }
+            
+            return movie;
+          }).toList();
+          
           _isLoadingUpcoming = false;
         });
       }
@@ -105,11 +137,27 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
 
   Future<void> _loadLatestMovies() async {
     try {
-      final people = await _tmdbService.getLatestMovies();
+      final movies = await _tmdbService.getLatestMovies();
+      final moviesWithLanguage = await _tmdbService.getLatestMovies(language: widget.systemLanguage);
+      
       if (mounted) {
         setState(() {
-          // Sadece ilk 10 kişiyi al
-          _latestMovies = people.take(10).toList();
+          _latestMovies = movies.take(10).map((movie) {
+            // Aynı ID'ye sahip film için dil seçeneği ile alınan overview varsa, onu kullan
+            final movieWithLanguage = moviesWithLanguage.firstWhere(
+              (m) => m['id'] == movie['id'], 
+              orElse: () => {}
+            );
+            
+            if (movieWithLanguage.isNotEmpty && 
+                movieWithLanguage['overview'] != null && 
+                movieWithLanguage['overview'].isNotEmpty) {
+              movie['overview'] = movieWithLanguage['overview'];
+            }
+            
+            return movie;
+          }).toList();
+          
           _isLoadingLatest = false;
         });
       }
@@ -216,7 +264,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         return GestureDetector(
                           onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
-                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);
+                              final movieDetailsLanguage = await TmdbService().getMovieDetails(movie['id'], languageCode: widget.systemLanguage);
                               if (movieDetails != null) {
                                 final chosenMovie = Movie(
                                   id: movieDetails['id'].toString(),
@@ -411,7 +459,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         return GestureDetector(
                           onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
-                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);
+                              final movieDetailsLanguage = await TmdbService().getMovieDetails(movie['id'], languageCode: widget.systemLanguage);
                               if (movieDetails != null) {
                                 final chosenMovie = Movie(
                                   id: movieDetails['id'].toString(),
@@ -642,7 +690,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                         return GestureDetector(
                           onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
-                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);
+                              final movieDetailsLanguage = await TmdbService().getMovieDetails(movie['id'], languageCode: widget.systemLanguage);
                               if (movieDetails != null) {
                                 final chosenMovie = Movie(
                                   id: movieDetails['id'].toString(),

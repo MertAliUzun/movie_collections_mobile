@@ -98,19 +98,7 @@ class TmdbService {
     return null;
   }
 
-  Future<Map<String, dynamic>?> getMovieDetails(int movieId) async {
-    final response = await http.get(
-      Uri.parse('$_baseUrl/movie/$movieId?api_key=$_apiKey&append_to_response=credits'),
-    );
-
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      return data;
-    }
-    return null;
-  }
-
-  Future<Map<String, dynamic>?> getMovieDetailsWithLanguage(int movieId, {String languageCode = 'en'}) async {
+  Future<Map<String, dynamic>?> getMovieDetails(int movieId, {String languageCode = 'en'}) async {
     final response = await http.get(
       Uri.parse('$_baseUrl/movie/$movieId?api_key=$_apiKey&language=$languageCode&append_to_response=credits'),
     );
@@ -122,10 +110,10 @@ class TmdbService {
     return null;
   }
 
-  Future<List< dynamic>>  getPopularMovies() async {
+  Future<List< dynamic>>  getPopularMovies({String language = 'en'}) async {
     final List< dynamic> movies = [];
     final response = await http.get(
-      Uri.parse('$_baseUrl/movie/popular?api_key=$_apiKey'),
+      Uri.parse('$_baseUrl/movie/popular?api_key=$_apiKey&language=$language'),
     );
 
     if (response.statusCode == 200) {
@@ -158,7 +146,7 @@ class TmdbService {
     return movies;
   }
 
-  Future<List< dynamic>>  getUpcomingMovies() async {
+  Future<List< dynamic>>  getUpcomingMovies({String language = 'en'}) async {
     final List< dynamic> movies = [];
     // Bugünün tarihini alıyoruz
     DateTime now = DateTime.now();
@@ -170,7 +158,7 @@ class TmdbService {
 
     
     final response = await http.get(
-      Uri.parse('$_baseUrl/discover/movie?api_key=$_apiKey&primary_release_date.gte=$startDate&primary_release_date.lte=$endDate'),
+      Uri.parse('$_baseUrl/discover/movie?api_key=$_apiKey&primary_release_date.gte=$startDate&primary_release_date.lte=$endDate&language=$language'),
     );
 
     if (response.statusCode == 200) {

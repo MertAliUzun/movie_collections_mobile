@@ -158,7 +158,7 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
                           return GestureDetector(
                             onTap: () async {
                               final movieDetails = await _tmdbService.getMovieDetails(movie['id']);
-                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);
+                              final movieDetailsLanguage = await TmdbService().getMovieDetails(movie['id'], languageCode: widget.systemLanguage);
                               if (movieDetails != null) {
                                 final chosenMovie = Movie(
                                   id: movieDetails['id'].toString(),

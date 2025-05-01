@@ -115,7 +115,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             onTap: () async {
                               // Navigate back with movie details
                               final movieDetails = await TmdbService().getMovieDetails(movie['id']);
-                              final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(movie['id'], languageCode: widget.systemLanguage);                   
+                              final movieDetailsLanguage = await TmdbService().getMovieDetails(movie['id'], languageCode: widget.systemLanguage);                   
                               if (movieDetails != null) {
                   // Movie nesnesini oluştur
                   final chosenMovie = Movie(

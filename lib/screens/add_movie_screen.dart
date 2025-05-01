@@ -253,7 +253,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     try {
       //final movieDetails = await _omdbService.getMovieDetails(imdbId);
       final movieDetails = await _tmdbService.getMovieDetails(movieId);
-      final movieDetailsLanguage = await _tmdbService.getMovieDetailsWithLanguage(movieId, languageCode: widget.systemLanguage);
+      final movieDetailsLanguage = await _tmdbService.getMovieDetails(movieId, languageCode: widget.systemLanguage);
       if (movieDetails != null) {
         setState(() {
           newId = movieDetails['id'] ?? -1;

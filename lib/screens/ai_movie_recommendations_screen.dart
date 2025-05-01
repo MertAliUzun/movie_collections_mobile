@@ -166,7 +166,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                             onTap: () async {
                               if (recommendedMovie['id'] != null) {
                                 final movieDetails = await TmdbService().getMovieDetails(recommendedMovie['id']);
-                                final movieDetailsLanguage = await TmdbService().getMovieDetailsWithLanguage(recommendedMovie['id'], languageCode: widget.systemLanguage);
+                                final movieDetailsLanguage = await TmdbService().getMovieDetails(recommendedMovie['id'], languageCode: widget.systemLanguage);
                                 
                                 if (movieDetails != null) {
                                   // Movie nesnesini oluştur

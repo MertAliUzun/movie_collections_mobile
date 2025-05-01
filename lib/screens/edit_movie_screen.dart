@@ -809,13 +809,14 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     try {
       final tmdbService = TmdbService();
       final movieDetails = await tmdbService.getMovieDetails(movieId);
+      final movieDetailsLanguage = await TmdbService().getMovieDetails(movieId, languageCode: widget.systemLanguage);
       
       if (movieDetails != null) {
         setState(() {
           _movieNameController.text = movieDetails['title'] ?? '';
           _directorNameController.text = movieDetails['credits']['crew']
               .firstWhere((crew) => crew['job'] == 'Director', orElse: () => {'name': ''})['name'] ?? '';
-          _plotController.text = movieDetails['overview'] ?? '';
+          _plotController.text = movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '';
           _runtimeController.text = movieDetails['runtime']?.toString() ?? '';
           _imdbRatingController.text = movieDetails['vote_average'].toString().length >= 3 ? 
               movieDetails['vote_average']?.toString().substring(0,3) ?? '' : 
@@ -1997,6 +1998,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                               return GestureDetector(
                                 onTap: () async {
                                     final movieDetails = await TmdbService().getMovieDetails(movie['id']);
+                                    final movieDetailsLanguage = await TmdbService().getMovieDetails(movie['id'], languageCode: widget.systemLanguage);
                                     if (movieDetails != null) {
                                       final chosenMovie = Movie(
                                         id: movieDetails['id'].toString(),
@@ -2006,7 +2008,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                         releaseDate: movieDetails['release_date'] != null 
                                             ? DateTime.parse(movieDetails['release_date']) 
                                             : DateTime.now(),
-                                        plot: movieDetails['overview'],
+                                        plot: movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '',
                                         runtime: movieDetails['runtime'],
                                         imdbRating: movieDetails['vote_average']?.toDouble(),
                                         writers: movieDetails['credits']['crew']
@@ -2179,7 +2181,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                           onTap: () async {
                             if (similarMovie['id'] != null) {
                               final movieDetails = await TmdbService().getMovieDetails(similarMovie['id']);
-                              
+                              final movieDetailsLanguage = await TmdbService().getMovieDetails(similarMovie['id'], languageCode: widget.systemLanguage);
                               if (movieDetails != null) {
                                 // Movie nesnesini oluştur
                                 final chosenMovie = Movie(
@@ -2190,7 +2192,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                   releaseDate: movieDetails['release_date'] != null 
                                       ? DateTime.parse(movieDetails['release_date']) 
                                       : DateTime.now(),
-                                  plot: movieDetails['overview'],
+                                  plot: movieDetailsLanguage!['overview'] ?? movieDetails['overview'] ?? '',
                                   runtime: movieDetails['runtime'],
                                   imdbRating: movieDetails['vote_average']?.toDouble(),
                                   writers: movieDetails['credits']['crew']
