@@ -248,7 +248,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                 Padding(
                                   padding: ScreenUtil.getAdaptivePadding(context, vertical: 20, horizontal: screenWidth * 0.02),
                                   child: Container(
-                            width: isTablet ? 250 : 200,
+                            width: isTablet ? 250 : screenWidth * 0.47,
                             margin: const EdgeInsets.symmetric(horizontal: 2),
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60),
@@ -381,6 +381,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                           color: Colors.white,
                                                           fontWeight: FontWeight.bold
                                                         ),
+                                                        maxLines: 1,
+                                                        overflow: TextOverflow.ellipsis,
                                                       ),
                                                       Text(
                                                         _formatDate(_personPersonalDetails!['birthday']),
@@ -412,6 +414,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                           color: Colors.white,
                                                           fontWeight: FontWeight.bold
                                                         ),
+                                                        maxLines: 1,
+                                                        overflow: TextOverflow.ellipsis,
                                                       ),
                                                       Text(
                                                         _formatDate(_personPersonalDetails!['deathday']),
@@ -443,6 +447,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                           color: Colors.white,
                                                           fontWeight: FontWeight.bold
                                                         ),
+                                                        maxLines: 1,
+                                                        overflow: TextOverflow.ellipsis,
                                                       ),
                                                       Text(
                                                         _personPersonalDetails!['place_of_birth'],
@@ -477,6 +483,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                             color: Colors.white,
                                                             fontWeight: FontWeight.bold,
                                                           ),
+                                                        maxLines: 1,
+                                                        overflow: TextOverflow.ellipsis,
                                                         ),
                                                         Text(
                                                           _personPersonalDetails!['biography'],

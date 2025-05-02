@@ -539,7 +539,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                       'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
                                       fit: BoxFit.cover,
                                       height: isTablet ? 280 : 200,
-                                      width: screenWidth * 0.25,
+                                      width: screenWidth * 0.28,
                                       errorBuilder: (context, error, stackTrace) =>
                                         Image.asset(
                                           'assets/images/placeholder_poster.png',
