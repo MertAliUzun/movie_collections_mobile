@@ -110,20 +110,20 @@ class S {
     );
   }
 
-  /// `No ID Token found.`
+  /// `ID Token not found.`
   String get noIdToken {
     return Intl.message(
-      'No ID Token found.',
+      'ID Token not found.',
       name: 'noIdToken',
       desc: '',
       args: [],
     );
   }
 
-  /// `No Access Token found.`
+  /// `Access Token not found.`
   String get noAccessToken {
     return Intl.message(
-      'No Access Token found.',
+      'Access Token not found.',
       name: 'noAccessToken',
       desc: '',
       args: [],
@@ -560,10 +560,10 @@ class S {
     );
   }
 
-  /// ` movies deleted.`
+  /// ` movies deleted`
   String get moviesDeleted {
     return Intl.message(
-      ' movies deleted.',
+      ' movies deleted',
       name: 'moviesDeleted',
       desc: '',
       args: [],
@@ -1300,10 +1300,10 @@ class S {
     );
   }
 
-  /// `Error fetching similar movies: `
+  /// `Error fetching similar movies `
   String get errorFetchingSimilar {
     return Intl.message(
-      'Error fetching similar movies: ',
+      'Error fetching similar movies ',
       name: 'errorFetchingSimilar',
       desc: '',
       args: [],
@@ -1530,10 +1530,10 @@ class S {
     );
   }
 
-  /// `No movies found for this genre!`
+  /// `No movies were found for this genre!`
   String get noMoviesForGenre {
     return Intl.message(
-      'No movies found for this genre!',
+      'No movies were found for this genre!',
       name: 'noMoviesForGenre',
       desc: '',
       args: [],

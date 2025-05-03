@@ -108,7 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorFetchingMovies":
             MessageLookupByLibrary.simpleMessage("Error Fetching Movies!"),
         "errorFetchingSimilar": MessageLookupByLibrary.simpleMessage(
-            "Error fetching similar movies: "),
+            "Error fetching similar movies "),
         "errorReadingFile":
             MessageLookupByLibrary.simpleMessage("Error reading file: "),
         "errorWritingFile":
@@ -166,7 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesAreHidden":
             MessageLookupByLibrary.simpleMessage("Movies have been hidden"),
         "moviesDeleted":
-            MessageLookupByLibrary.simpleMessage(" movies deleted."),
+            MessageLookupByLibrary.simpleMessage(" movies deleted"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Movies have been moved to Collection!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -180,7 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mystery": MessageLookupByLibrary.simpleMessage("Mystery"),
         "no": MessageLookupByLibrary.simpleMessage("No"),
         "noAccessToken":
-            MessageLookupByLibrary.simpleMessage("No Access Token found."),
+            MessageLookupByLibrary.simpleMessage("Access Token not found."),
         "noActorsSelected":
             MessageLookupByLibrary.simpleMessage("No Actors Selected"),
         "noCompaniesSelected":
@@ -191,9 +191,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No Genres Selected"),
         "noHiddenMovies":
             MessageLookupByLibrary.simpleMessage("No Hidden Movies"),
-        "noIdToken": MessageLookupByLibrary.simpleMessage("No ID Token found."),
+        "noIdToken":
+            MessageLookupByLibrary.simpleMessage("ID Token not found."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
-            "No movies found for this genre!"),
+            "No movies were found for this genre!"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("No movies were found"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
