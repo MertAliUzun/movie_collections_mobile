@@ -4,7 +4,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:image_picker/image_picker.dart';
+
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'dart:io';
 import 'dart:async';
@@ -151,6 +151,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     }
   }
 
+  /*
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
@@ -204,6 +205,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       });
     }
   }
+  */
 
   void _onSearchChanged(String query) {
     if (_debounce?.isActive ?? false) _debounce!.cancel();

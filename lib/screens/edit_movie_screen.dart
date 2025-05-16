@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/widgets/provider_card_widget.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:image_picker/image_picker.dart';
+
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'dart:io';
 import 'dart:async';
@@ -148,6 +148,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
+  /*
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
@@ -201,6 +202,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       });
     }
   }
+  */
 
   Future<void> _saveMovie() async {
     if (_formKey.currentState!.validate()) {

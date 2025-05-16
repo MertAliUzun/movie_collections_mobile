@@ -48,6 +48,8 @@ dependencies:
   csv: ^6.0.0
   permission_handler: ^10.2.0
   file_picker: ^5.2.1
+  share_plus: ^7.2.1
+  document_file_save_plus: ^2.0.0
   flutter_localizations:
     sdk: flutter
   intl_utils: ^2.8.8

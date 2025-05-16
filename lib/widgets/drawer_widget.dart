@@ -10,6 +10,7 @@ import 'package:movie_collections_mobile/screens/hidden_movies_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:hive/hive.dart';
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
@@ -462,117 +463,121 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   Future<void> exportMoviesToCSV() async {
-    // İzinleri kontrol et
-    if (!await requestPermission()) return; // İzin verilmezse işlemi durdur
-
-    List<List<dynamic>> csvData = [
-      [
-        'ID', 
-        'Movie Name', 
-        'Director Name', 
-        'Release Date', 
-        'Plot', 
-        'Runtime', 
-        'IMDB Rating', 
-        'Writers', 
-        'Actors', 
-        'Watched', 
-        'Image Link', 
-        'User Email', 
-        'Watch Date', 
-        'User Score', 
-        'Hype Score', 
-        'Genres', 
-        'Production Company', 
-        'Custom Sort Title', 
-        'Country', 
-        'Popularity', 
-        'Budget', 
-        'Revenue', 
-        'To Sync',
-        'Watch Count',
-        'My Notes',
-        'Collection Type',
-        'Creation Date',
-        'PG Rating',
-        'Franchises',
-        'Tags',
-        'Hidden'
-      ],
-    ];
-
-    for (var movie in widget._allMovies) {
-      csvData.add([
-        movie.id.toString(),                                    // String
-        movie.movieName.toString(),                            // String
-        movie.directorName.toString(),                         // String
-        movie.releaseDate.toIso8601String(),                  // DateTime -> String
-        movie.plot?.toString() ?? '',                         // String?
-        movie.runtime?.toString() ?? '',                      // int? -> String
-        movie.imdbRating?.toString() ?? '',                   // double? -> String
-        movie.writers?.join(', ') ?? '',                      // List<String>? -> String
-        movie.actors?.join(', ') ?? '',                       // List<String>? -> String
-        movie.watched.toString(),                             // bool -> String
-        movie.imageLink.toString(),                           // String
-        movie.userEmail.toString(),                           // String
-        movie.watchDate?.toIso8601String() ?? '',            // DateTime? -> String
-        movie.userScore?.toString() ?? '',                    // double? -> String
-        movie.hypeScore?.toString() ?? '',                    // double? -> String
-        movie.genres?.join(', ') ?? '',                       // List<String>? -> String
-        movie.productionCompany?.join(', ') ?? '',           // List<String>? -> String
-        movie.customSortTitle?.toString() ?? '',             // String?
-        movie.country?.toString() ?? '',                     // String?
-        movie.popularity?.toString() ?? '',                  // double? -> String
-        movie.budget?.toString() ?? '',                      // double? -> String
-        movie.revenue?.toString() ?? '',                     // double? -> String
-        movie.toSync.toString(),                             // bool -> String
-        movie.watchCount?.toString() ?? '',  
-        movie.myNotes?.toString() ?? '',  
-        movie.collectionType?.toString() ?? '',  
-        movie.creationDate?.toIso8601String() ?? '', 
-        movie.pgRating?.toString() ?? '', 
-        movie.franchises?.join(', ') ?? '', 
-        movie.tags?.join(', ') ?? '', 
-        movie.hidden.toString(), 
-      ]);
-    }
-
-    // CSV verisini bir String'e dönüştürün
-    String csvString = const ListToCsvConverter().convert(csvData);
-
     try {
-      final directory = await getExternalStorageDirectory();
-      final path = '${directory!.path}/movies.csv';
-      final file = File(path);
-      await file.writeAsString(csvString);
+      // CSV verilerini hazırla
+      List<List<dynamic>> csvData = [
+        [
+          'ID', 
+          'Movie Name', 
+          'Director Name', 
+          'Release Date', 
+          'Plot', 
+          'Runtime', 
+          'IMDB Rating', 
+          'Writers', 
+          'Actors', 
+          'Watched', 
+          'Image Link', 
+          'User Email', 
+          'Watch Date', 
+          'User Score', 
+          'Hype Score', 
+          'Genres', 
+          'Production Company', 
+          'Custom Sort Title', 
+          'Country', 
+          'Popularity', 
+          'Budget', 
+          'Revenue', 
+          'To Sync',
+          'Watch Count',
+          'My Notes',
+          'Collection Type',
+          'Creation Date',
+          'PG Rating',
+          'Franchises',
+          'Tags',
+          'Hidden'
+        ],
+      ];
+
+      for (var movie in widget._allMovies) {
+        csvData.add([
+          movie.id.toString(),
+          movie.movieName.toString(),
+          movie.directorName.toString(),
+          movie.releaseDate.toIso8601String(),
+          movie.plot?.toString() ?? '',
+          movie.runtime?.toString() ?? '',
+          movie.imdbRating?.toString() ?? '',
+          movie.writers?.join(', ') ?? '',
+          movie.actors?.join(', ') ?? '',
+          movie.watched.toString(),
+          movie.imageLink.toString(),
+          movie.userEmail.toString(),
+          movie.watchDate?.toIso8601String() ?? '',
+          movie.userScore?.toString() ?? '',
+          movie.hypeScore?.toString() ?? '',
+          movie.genres?.join(', ') ?? '',
+          movie.productionCompany?.join(', ') ?? '',
+          movie.customSortTitle?.toString() ?? '',
+          movie.country?.toString() ?? '',
+          movie.popularity?.toString() ?? '',
+          movie.budget?.toString() ?? '',
+          movie.revenue?.toString() ?? '',
+          movie.toSync.toString(),
+          movie.watchCount?.toString() ?? '',
+          movie.myNotes?.toString() ?? '',
+          movie.collectionType?.toString() ?? '',
+          movie.creationDate?.toIso8601String() ?? '',
+          movie.pgRating?.toString() ?? '',
+          movie.franchises?.join(', ') ?? '',
+          movie.tags?.join(', ') ?? '',
+          movie.hidden.toString(),
+        ]);
+      }
+
+      String csvString = const ListToCsvConverter().convert(csvData);
       
-      _adService.showRewardedAd();
-      
-      // Kullanıcıya başarı mesajı göster
-      final snackBar = SnackBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        behavior: SnackBarBehavior.floating,
-        content: AwesomeSnackbarContent(
-          title: S.of(context).succesful,
-          message: '${S.of(context).csvFileCreated} $path',
-          contentType: ContentType.success,
-          inMaterialBanner: true,
-        ),
-        dismissDirection: DismissDirection.horizontal,
+      // Geçici dosya oluştur
+      final tempDir = await getTemporaryDirectory();
+      final tempFile = File('${tempDir.path}/movies.csv');
+      await tempFile.writeAsString(csvString);
+
+      // Share Plus ile dosyayı paylaş
+      final result = await Share.shareXFiles(
+        [XFile(tempFile.path)],
+        subject: 'Movies CSV Export',
+        text: 'Here is your exported movies collection',
       );
-      ScaffoldMessenger.of(context)
-        ..hideCurrentMaterialBanner()
-        ..showSnackBar(snackBar);
+
+      if (result.status == ShareResultStatus.success) {
+        _adService.showRewardedAd();
+        
+        final snackBar = SnackBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          behavior: SnackBarBehavior.floating,
+          content: AwesomeSnackbarContent(
+            title: S.of(context).succesful,
+            message: S.of(context).csvFileCreated,
+            contentType: ContentType.success,
+            inMaterialBanner: true,
+          ),
+          dismissDirection: DismissDirection.horizontal,
+        );
+        ScaffoldMessenger.of(context)
+          ..hideCurrentMaterialBanner()
+          ..showSnackBar(snackBar);
+      }
     } catch (e) {
-      // Hata durumunda kullanıcıya mesaj göster
       final snackBar = SnackBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
           title: S.of(context).failure,
-          message: S.of(context).errorWritingFile,
+          message: '${S.of(context).errorWritingFile} $e',
           contentType: ContentType.failure,
           inMaterialBanner: true,
         ),
@@ -585,18 +590,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   }
 
   Future<void> importMoviesFromCSV() async {
-    if (!await requestPermission()) return;
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['csv'],
+      );
 
-    FilePickerResult? result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['csv'],
-    );
-
-    if (result != null) {
-      String filePath = result.files.single.path!;
-
-      try {
-        final input = File(filePath).openRead();
+      if (result != null) {
+        final file = File(result.files.single.path!);
+        final input = file.openRead();
         final fields = await input
             .transform(utf8.decoder)
             .transform(const CsvToListConverter())
@@ -607,45 +609,44 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         for (var row in fields.skip(1)) {
           try {
             final movie = Movie(
-              id: row[0].toString(),                                    // String
-              movieName: row[1].toString(),                            // String
-              directorName: row[2].toString(),                         // String
-              releaseDate: DateTime.parse(row[3].toString()),          // String -> DateTime
-              plot: row[4].toString().isEmpty ? null : row[4].toString(), // String?
-              runtime: row[5].toString().isEmpty ? null : int.parse(row[5].toString()),    // String -> int?
-              imdbRating: row[6].toString().isEmpty ? null : double.parse(row[6].toString()), // String -> double?
-              writers: row[7].toString().isEmpty ? null : row[7].toString().split(', '),   // String -> List<String>?
-              actors: row[8].toString().isEmpty ? null : row[8].toString().split(', '),    // String -> List<String>?
-              watched: row[9].toString().toLowerCase() == 'true',      // String -> bool
-              imageLink: row[10].toString(),                           // String
-              userEmail: row[11].toString(),                           // String
-              watchDate: row[12].toString().isEmpty ? null : DateTime.parse(row[12].toString()), // String -> DateTime?
-              userScore: row[13].toString().isEmpty ? null : double.parse(row[13].toString()),   // String -> double?
-              hypeScore: row[14].toString().isEmpty ? null : double.parse(row[14].toString()),   // String -> double?
-              genres: row[15].toString().isEmpty ? null : row[15].toString().split(', '),        // String -> List<String>?
-              productionCompany: row[16].toString().isEmpty ? null : row[16].toString().split(', '), // String -> List<String>?
-              customSortTitle: row[17].toString().isEmpty ? null : row[17].toString(),           // String?
-              country: row[18].toString().isEmpty ? null : row[18].toString(),                   // String?
-              popularity: row[19].toString().isEmpty ? null : double.parse(row[19].toString()),  // String -> double?
-              budget: row[20].toString().isEmpty ? null : double.parse(row[20].toString()),      // String -> double?
-              revenue: row[21].toString().isEmpty ? null : double.parse(row[21].toString()),     // String -> double?
-              toSync: row[22].toString().toLowerCase() == 'false',       // String -> bool
+              id: row[0].toString(),
+              movieName: row[1].toString(),
+              directorName: row[2].toString(),
+              releaseDate: DateTime.parse(row[3].toString()),
+              plot: row[4].toString().isEmpty ? null : row[4].toString(),
+              runtime: row[5].toString().isEmpty ? null : int.parse(row[5].toString()),
+              imdbRating: row[6].toString().isEmpty ? null : double.parse(row[6].toString()),
+              writers: row[7].toString().isEmpty ? null : row[7].toString().split(', '),
+              actors: row[8].toString().isEmpty ? null : row[8].toString().split(', '),
+              watched: row[9].toString().toLowerCase() == 'true',
+              imageLink: row[10].toString(),
+              userEmail: row[11].toString(),
+              watchDate: row[12].toString().isEmpty ? null : DateTime.parse(row[12].toString()),
+              userScore: row[13].toString().isEmpty ? null : double.parse(row[13].toString()),
+              hypeScore: row[14].toString().isEmpty ? null : double.parse(row[14].toString()),
+              genres: row[15].toString().isEmpty ? null : row[15].toString().split(', '),
+              productionCompany: row[16].toString().isEmpty ? null : row[16].toString().split(', '),
+              customSortTitle: row[17].toString().isEmpty ? null : row[17].toString(),
+              country: row[18].toString().isEmpty ? null : row[18].toString(),
+              popularity: row[19].toString().isEmpty ? null : double.parse(row[19].toString()),
+              budget: row[20].toString().isEmpty ? null : double.parse(row[20].toString()),
+              revenue: row[21].toString().isEmpty ? null : double.parse(row[21].toString()),
+              toSync: row[22].toString().toLowerCase() == 'false',
               watchCount: row[23].toString().isEmpty ? null : int.parse(row[23].toString()),
-              myNotes: row[24].toString().isEmpty ? null : row[24].toString(), 
-              collectionType: row[25].toString().isEmpty ? null : row[25].toString(), 
+              myNotes: row[24].toString().isEmpty ? null : row[24].toString(),
+              collectionType: row[25].toString().isEmpty ? null : row[25].toString(),
               creationDate: row[26].toString().isEmpty ? null : DateTime.parse(row[26].toString()),
               pgRating: row[27].toString().isEmpty ? null : row[27].toString(),
-              franchises: row[28].toString().isEmpty ? null : row[28].toString().split(', '),  
-              tags: row[29].toString().isEmpty ? null : row[29].toString().split(', '),  
-              hidden: row[30].toString().toLowerCase() == 'true', 
+              franchises: row[28].toString().isEmpty ? null : row[28].toString().split(', '),
+              tags: row[29].toString().isEmpty ? null : row[29].toString().split(', '),
+              hidden: row[30].toString().toLowerCase() == 'true',
             );
 
             moviesBox.put(movie.id, movie);
-
             _adService.showRewardedAd();
           } catch (e) {
             print('${S.of(context).errorConvertingLine} $e');
-            continue; // Hatalı satırı atla ve devam et
+            continue;
           }
         }
 
@@ -665,24 +666,23 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ..hideCurrentMaterialBanner()
           ..showSnackBar(snackBar);
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => MyHomePage(
-            isInit: false,
-            systemLanguage: widget.systemLanguage,
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(
+              isInit: false,
+              systemLanguage: widget.systemLanguage,
+            ),
           ),
-        ),
-      );
-
-      } catch (e) {
+        );
+      } else {
         final snackBar = SnackBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
           behavior: SnackBarBehavior.floating,
           content: AwesomeSnackbarContent(
-            title: S.of(context).failure,
-            message: S.of(context).errorReadingFile,
+            title: S.of(context).cancelled,
+            message: S.of(context).cancelChooseFile,
             contentType: ContentType.failure,
             inMaterialBanner: true,
           ),
@@ -692,15 +692,14 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ..hideCurrentMaterialBanner()
           ..showSnackBar(snackBar);
       }
-    } else {
-      // Kullanıcı dosya seçmeyi iptal ettiyse
+    } catch (e) {
       final snackBar = SnackBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
         behavior: SnackBarBehavior.floating,
         content: AwesomeSnackbarContent(
-          title: S.of(context).cancelled,
-          message: S.of(context).cancelChooseFile,
+          title: S.of(context).failure,
+          message: S.of(context).errorReadingFile,
           contentType: ContentType.failure,
           inMaterialBanner: true,
         ),
@@ -712,6 +711,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     }
   }
 
+  /*
   Future<bool> requestPermission() async {
     var status = await Permission.manageExternalStorage.status;
     bool isOld = false;
@@ -750,6 +750,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
 
     return true; // İzin verildiyse true döndür
   }
+  */
 
   Future<void> _showErrorDialog(BuildContext context) async {
     return showDialog<void>(
