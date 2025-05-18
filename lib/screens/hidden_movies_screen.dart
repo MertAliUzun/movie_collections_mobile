@@ -223,10 +223,14 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
                 ),
                 onPressed: () {
                   setState(() {
-                    _selectedMovies.clear();
+                    if(_selectedMovies.length >= _filteredMovies.length) {
+                      _selectedMovies.clear();
+                    } else {
+                      _selectedMovies.clear();
                     for (var movie in _filteredMovies) {
                       _selectedMovies.add(movie.id!.toString());
-                    }
+                     }
+                    }          
                   });
                 },
               ),

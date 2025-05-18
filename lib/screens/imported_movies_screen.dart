@@ -147,9 +147,13 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
             ),
             onPressed: () {
               setState(() {
-                _selectedMovies.clear();
+                if(widget.importedMovies.length == _selectedMovies.length) {
+                  _selectedMovies.clear();
+                } else {
+                  _selectedMovies.clear();
                 for (var movie in widget.importedMovies) {
                   _selectedMovies.add(movie.id!.toString());
+                 }
                 }
               });
             },
@@ -180,7 +184,7 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
               );
             },
           ),
-      floatingActionButton: _isSelectionMode
+      floatingActionButton: _selectedMovies.isNotEmpty
         ? FloatingActionButton(
             backgroundColor: Colors.green,
             onPressed: _importSelectedMovies,

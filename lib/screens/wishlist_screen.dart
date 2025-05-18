@@ -414,13 +414,15 @@ class _WishlistScreenState extends State<WishlistScreen> {
             ),
             onPressed: () {
               setState(() {
-                _selectedMovies.clear();
-                for (var movie in _filteredMovies) {
-                  if (!movie.watched) {
-                    _selectedMovies.add(movie.id!.toString());
-                  }
-                }
-              });
+                    if(_selectedMovies.length >= _filteredMovies.length) {
+                      _selectedMovies.clear();
+                    } else {
+                      _selectedMovies.clear();
+                    for (var movie in _filteredMovies) {
+                      _selectedMovies.add(movie.id!.toString());
+                     }
+                    }          
+                  });
             },
           ),
           IconButton(
