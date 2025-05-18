@@ -2219,6 +2219,36 @@ class S {
       args: [],
     );
   }
+
+  /// `movies imported`
+  String get moviesImported {
+    return Intl.message(
+      'movies imported',
+      name: 'moviesImported',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warning`
+  String get warning {
+    return Intl.message(
+      'Warning',
+      name: 'warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No movies were imported`
+  String get noMoviesImported {
+    return Intl.message(
+      'No movies were imported',
+      name: 'noMoviesImported',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

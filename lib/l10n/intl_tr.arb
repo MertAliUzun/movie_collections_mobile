@@ -215,5 +215,8 @@
     "recommendFileCreationConfirm": "Seçili filmlerle bir film önerme dosyası oluşturmayı onaylıyor musunuz?",
     "selectMoviesToAdd": "İzleme Listenize eklemek için film seçin",
     "moviesAddedToWatchList": "Film izleme listenize eklenmiştir.",
-    "premiumWillBeForPlayStoreUser": "Premium play store' a giriş yapılan kullanıcı için satın alınacaktır. Bu uygulamaya giriş yapan kullanıcı için değil. Ancak premium aldığınızda bu cihazdaki tüm kullanıcılar ile kullanabilirsiniz."
+    "premiumWillBeForPlayStoreUser": "Premium play store' a giriş yapılan kullanıcı için satın alınacaktır. Bu uygulamaya giriş yapan kullanıcı için değil. Ancak premium aldığınızda bu cihazdaki tüm kullanıcılar ile kullanabilirsiniz.",
+    "moviesImported": "film eklendi",
+    "warning": "Uyarı",
+    "noMoviesImported": "Hiç film eklenmedi"
 }

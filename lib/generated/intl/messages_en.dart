@@ -167,6 +167,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Movies have been hidden"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" movies deleted"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("movies imported"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Movies have been moved to Collection!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -199,6 +201,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No movies were found"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "No movies were found for this company"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("No movies were imported"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Storage permissions were not given."),
         "noTagsSelected":
@@ -307,6 +311,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("View As"),
         "war": MessageLookupByLibrary.simpleMessage("War"),
+        "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Watch Count"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Watch Date"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Watch Date: "),

@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/screens/hidden_movies_screen.dart';
+import 'package:movie_collections_mobile/screens/imported_movies_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:file_picker/file_picker.dart';
@@ -604,7 +605,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             .transform(const CsvToListConverter())
             .toList();
 
-        final moviesBox = Hive.box<Movie>('movies');
+        List<Movie> importedMovies = [];
 
         for (var row in fields.skip(1)) {
           try {
@@ -642,39 +643,40 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               hidden: row[30].toString().toLowerCase() == 'true',
             );
 
-            moviesBox.put(movie.id, movie);
-            _adService.showRewardedAd();
+            importedMovies.add(movie);
           } catch (e) {
             print('${S.of(context).errorConvertingLine} $e');
             continue;
           }
         }
 
-        final snackBar = SnackBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          behavior: SnackBarBehavior.floating,
-          content: AwesomeSnackbarContent(
-            title: S.of(context).succesful,
-            message: S.of(context).csvFileImported,
-            contentType: ContentType.success,
-            inMaterialBanner: true,
-          ),
-          dismissDirection: DismissDirection.horizontal,
-        );
-        ScaffoldMessenger.of(context)
-          ..hideCurrentMaterialBanner()
-          ..showSnackBar(snackBar);
-
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(
-              isInit: false,
-              systemLanguage: widget.systemLanguage,
+        if (importedMovies.isNotEmpty) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ImportedMoviesScreen(
+                importedMovies: importedMovies,
+                systemLanguage: widget.systemLanguage,
+              ),
             ),
-          ),
-        );
+          );
+        } else {
+          final snackBar = SnackBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            behavior: SnackBarBehavior.floating,
+            content: AwesomeSnackbarContent(
+              title: S.of(context).error,
+              message: 'S.of(context).noMoviesToImport',
+              contentType: ContentType.failure,
+              inMaterialBanner: true,
+            ),
+            dismissDirection: DismissDirection.horizontal,
+          );
+          ScaffoldMessenger.of(context)
+            ..hideCurrentMaterialBanner()
+            ..showSnackBar(snackBar);
+        }
       } else {
         final snackBar = SnackBar(
           elevation: 0,
