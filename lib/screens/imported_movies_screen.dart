@@ -22,7 +22,25 @@ class ImportedMoviesScreen extends StatefulWidget {
 
 class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
   Set<String> _selectedMovies = {};
-  bool get _isSelectionMode => _selectedMovies.isNotEmpty;
+  bool _isSelectionMode = true;
+  List<Movie> _sortedMovies = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _sortMovies();
+  }
+
+  void _sortMovies() {
+    _sortedMovies = List.from(widget.importedMovies);
+    _sortedMovies.sort((a, b) {
+      String aMovie = a.movieName;
+      String bMovie = b.movieName;
+      if(a.customSortTitle != null) { aMovie = a.customSortTitle!; }
+      if(b.customSortTitle != null) { bMovie = b.customSortTitle!; }
+      return aMovie.compareTo(bMovie);
+    });
+  }
 
   void _handleMovieSelection(Movie movie) {
     setState(() {
@@ -149,15 +167,15 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
             ),
           )
         : ListView.builder(
-            itemCount: widget.importedMovies.length,
+            itemCount: _sortedMovies.length,
             itemBuilder: (context, index) {
               return MovieCard(
-                movie: widget.importedMovies[index],
-                isFromWishlist: !widget.importedMovies[index].watched,
+                movie: _sortedMovies[index],
+                isFromWishlist: !_sortedMovies[index].watched,
                 viewType: 'List',
-                isSelected: _selectedMovies.contains(widget.importedMovies[index].id.toString()),
+                isSelected: _selectedMovies.contains(_sortedMovies[index].id.toString()),
                 selectionMode: true,
-                onTap: () => _handleMovieTap(widget.importedMovies[index]),
+                onTap: () => _handleMovieTap(_sortedMovies[index]),
                 onLongPress: () {}, //return null
               );
             },
