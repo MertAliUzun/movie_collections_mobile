@@ -60,6 +60,58 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
 
   void _importSelectedMovies() {
     final moviesBox = Hive.box<Movie>('movies');
+    
+    // Seçili filmler arasında hasImportedSame true olan var mı kontrol et
+    bool hasSameMovies = _selectedMovies.any((movieId) {
+      final movie = widget.importedMovies.firstWhere((m) => m.id.toString() == movieId);
+      return moviesBox.containsKey(movie.id);
+    });
+
+    if (hasSameMovies) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor: const Color.fromARGB(255, 44, 50, 60),
+            title: Text(
+              S.of(context).warning,
+              style: const TextStyle(color: Colors.white),
+            ),
+            content: Text(
+              'Some of the selected movies are already in your collection. If you continue imported movies will update their counterpart in your collection. Do you want to continue?',//'S.of
+              //Seçili filmler arasında zaten koleksiyonunuzda bulunan filmler var. Devam etmek istiyor musunuz?
+              style: const TextStyle(color: Colors.white70),
+            ),
+            actions: [
+              TextButton(
+                child: Text(
+                  S.of(context).cancel,
+                  style: const TextStyle(color: Colors.white70),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: Text(
+                  'Continue',//'S.of
+                  style: const TextStyle(color: Colors.blue),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  _performImport(moviesBox);
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      _performImport(moviesBox);
+    }
+  }
+
+  void _performImport(Box<Movie> moviesBox) {
     int importedCount = 0;
 
     for (String movieId in _selectedMovies) {
@@ -94,6 +146,7 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final moviesBox = Hive.box<Movie>('movies');
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
@@ -181,6 +234,7 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
                 selectionMode: true,
                 onTap: () => _handleMovieTap(_sortedMovies[index]),
                 onLongPress: () {}, //return null
+                hasImportedSame: moviesBox.containsKey(_sortedMovies[index].id),
               );
             },
           ),

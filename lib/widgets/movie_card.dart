@@ -11,6 +11,7 @@ class MovieCard extends StatelessWidget {
   final String viewType;
   final bool isSelected;
   final bool selectionMode;
+  final bool hasImportedSame;
 
   const MovieCard({
     super.key,
@@ -21,6 +22,7 @@ class MovieCard extends StatelessWidget {
     required this.viewType,
     this.isSelected = false,
     this.selectionMode = false,
+    this.hasImportedSame = false,
   });
 
   @override
@@ -34,7 +36,7 @@ class MovieCard extends StatelessWidget {
       onLongPress: onLongPress,
       child: Container(
         decoration: BoxDecoration(
-          border: isSelected ? Border.all(color: Colors.blue, width: isTablet ? 1.0 : 0.7) : null,
+          border: isSelected ? Border.all(color: hasImportedSame ? Colors.amber : Colors.blue, width: isTablet ? 1.0 : 0.7) : null,
         ),
         child: viewType.contains("List") ? Container(
           height: viewType == "List" 
@@ -127,11 +129,11 @@ class MovieCard extends StatelessWidget {
                               padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                               child: Container(
                                 decoration: BoxDecoration(
-                                  color: isSelected ? Colors.blue : null,
+                                  color: isSelected ? hasImportedSame ? Colors.amber : Colors.blue : null,
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(
-                                  isSelected ? Icons.check : Icons.radio_button_unchecked,
+                                  isSelected ? hasImportedSame ? Icons.warning_amber : Icons.check : Icons.radio_button_unchecked,
                                   color: Colors.white,
                                   size: ScreenUtil.getAdaptiveIconSize(context, 20),
                                 ),
@@ -158,11 +160,11 @@ class MovieCard extends StatelessWidget {
                                 padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: isSelected ? Colors.blue : null,
+                                    color: isSelected ? hasImportedSame ? Colors.amber : Colors.blue : null,
                                     shape: BoxShape.circle,
                                   ),
                                   child: Icon(
-                                    isSelected ? Icons.check : Icons.radio_button_unchecked,
+                                    isSelected ? hasImportedSame ? Icons.warning_amber : Icons.check : Icons.radio_button_unchecked,
                                     color: Colors.white,
                                     size: ScreenUtil.getAdaptiveIconSize(context, 20),
                                   ),
