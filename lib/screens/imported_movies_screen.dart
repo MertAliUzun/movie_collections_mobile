@@ -1,6 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import '../main.dart';
 import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import '../sup/screen_util.dart';
@@ -141,7 +142,16 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
       ..hideCurrentMaterialBanner()
       ..showSnackBar(snackBar);
 
-    Navigator.pop(context, importedCount);
+    Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(
+              systemLanguage: widget.systemLanguage,
+              isInit: false,
+            ),
+          ),
+        );
+    //Navigator.pop(context, importedCount);
   }
 
   @override
