@@ -174,8 +174,18 @@ class _DirectorScreenState extends State<DirectorScreen> {
   String _formatDate(String dateString) {
   // Parse the date string into a DateTime object
   DateTime date = DateTime.parse(dateString);
-  // Format the DateTime object to the desired format
-  return DateFormat('MMMM d, yyyy').format(date);
+  try {
+    if(widget.systemLanguage == 'en') {
+      return DateFormat('MMMM d, yyyy', 'en').format(date);
+  } else if (widget.systemLanguage == 'ja') {
+     return DateFormat('yyyy MMMM d', 'ja').format(date);
+  } else {
+     return DateFormat('d MMMM yyyy', widget.systemLanguage).format(date);
+  }
+  } catch (e) {
+    // Format the DateTime object to the desired format
+  return DateFormat('MMMM d, yyyy', 'en').format(date);
+  }
 }
 
   @override
