@@ -133,7 +133,7 @@ class PersonMoviesWidget extends StatelessWidget {
                           maxLines: 2,
                         ),
                       ),
-                      if(personType == 'Acting')
+                      if(personType == 'Acting' && movie['character'] != null && movie['character'].toString().isNotEmpty)
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4.0,),
                         child: Text('(${movie['character']})', style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, isTablet ? screenWidth * 0.033 : screenWidth * 0.025)), textAlign: TextAlign.center, overflow: TextOverflow.ellipsis, maxLines: 1,),
