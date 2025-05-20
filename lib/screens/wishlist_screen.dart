@@ -365,6 +365,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       _fetchMovies(); // Filmleri güncelle
     });  
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -425,6 +426,17 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   });
             },
           ),
+          IconButton(
+            onPressed: () async {
+              List<Movie> selectedMovies = _filteredMovies.where((movie) => _selectedMovies.contains(movie.id.toString())).toList();
+              await exportRecommendationsToCSV(context, selectedMovies);
+            }, 
+            icon: Icon(
+              Icons.share,
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+              ),
+            ),
           IconButton(
             icon: Icon(
               Icons.visibility, 
@@ -503,7 +515,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           ),
           IconButton(
             icon: Icon(
-              Icons.input, 
+              Icons.swap_horizontal_circle_outlined, 
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),

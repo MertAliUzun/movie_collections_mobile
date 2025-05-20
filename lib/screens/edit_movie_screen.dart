@@ -1017,7 +1017,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.input, color: Colors.white),
+            icon: const Icon(Icons.swap_horizontal_circle_outlined, color: Colors.white),
             onPressed: _toggleWatchedStatus,
           ),
           /*

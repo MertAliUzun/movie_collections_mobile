@@ -378,7 +378,6 @@ class _CollectionScreenState extends State<CollectionScreen> {
     });  
   }
 
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -439,6 +438,17 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   });
             },
           ),
+          IconButton(
+            onPressed: () async {
+              List<Movie> selectedMovies = _filteredMovies.where((movie) => _selectedMovies.contains(movie.id.toString())).toList();
+              await exportRecommendationsToCSV(context, selectedMovies);
+            }, 
+            icon: Icon(
+              Icons.share,
+              color: Colors.white,
+              size: ScreenUtil.getAdaptiveIconSize(context, 24),
+              ),
+            ),
           IconButton(
             icon: Icon(
               Icons.visibility, 
@@ -517,7 +527,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
           ),
           IconButton(
             icon: Icon(
-              Icons.input, 
+              Icons.swap_horizontal_circle_outlined, 
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
             ),

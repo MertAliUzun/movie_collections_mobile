@@ -1,4 +1,3 @@
-
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,10 @@ import 'package:movie_collections_mobile/generated/l10n.dart';
 import '../models/movie_model.dart';
 import '../services/ad_service.dart';
 import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:csv/csv.dart';
+import 'dart:io';
 
 final AdService _adService = AdService();
 
@@ -178,9 +181,135 @@ String getGenreLocalizedString(String genre, BuildContext context) {
   }
 }
 
-
 Future<bool> checkConnectivity() async {
   var connectivityResult = await (Connectivity().checkConnectivity());
   if (connectivityResult[0] == ConnectivityResult.none) { return false;}
   return true;
+}
+
+Future<void> exportRecommendationsToCSV(BuildContext context, List<Movie> selectedMovies) async {
+  try {
+    // CSV verilerini hazırla
+    List<List<dynamic>> csvData = [
+      [
+        'ID', 
+        'Movie Name', 
+        'Director Name', 
+        'Release Date', 
+        'Plot', 
+        'Runtime', 
+        'IMDB Rating', 
+        'Writers', 
+        'Actors', 
+        'Watched', 
+        'Image Link', 
+        'User Email', 
+        'Watch Date', 
+        'User Score', 
+        'Hype Score', 
+        'Genres', 
+        'Production Company', 
+        'Custom Sort Title', 
+        'Country', 
+        'Popularity', 
+        'Budget', 
+        'Revenue', 
+        'To Sync',
+        'Watch Count',
+        'My Notes',
+        'Collection Type',
+        'Creation Date',
+        'PG Rating',
+        'Franchises',
+        'Tags',
+        'Hidden'
+      ],
+    ];
+
+    for (var movie in selectedMovies) {
+      csvData.add([
+        movie.id.toString(),
+        movie.movieName.toString(),
+        movie.directorName.toString(),
+        movie.releaseDate.toIso8601String(),
+        movie.plot?.toString() ?? '',
+        movie.runtime?.toString() ?? '',
+        movie.imdbRating?.toString() ?? '',
+        movie.writers?.join(', ') ?? '',
+        movie.actors?.join(', ') ?? '',
+        false, //movie.watched.toString(),
+        movie.imageLink.toString(),
+        'test@test.com', //movie.userEmail.toString(),
+        '', //movie.watchDate?.toIso8601String() ?? '',
+        '', //movie.userScore?.toString() ?? '',
+        '', //movie.hypeScore?.toString() ?? '',
+        movie.genres?.join(', ') ?? '',
+        movie.productionCompany?.join(', ') ?? '',
+        '', //movie.customSortTitle?.toString() ?? '',
+        movie.country?.toString() ?? '',
+        movie.popularity?.toString() ?? '',
+        movie.budget?.toString() ?? '',
+        movie.revenue?.toString() ?? '',
+        false, //movie.toSync.toString(),
+        '', //movie.watchCount?.toString() ?? '',
+        '', //movie.myNotes?.toString() ?? '',
+        '', //movie.collectionType?.toString() ?? '',
+        movie.creationDate?.toIso8601String() ?? '',
+        movie.pgRating?.toString() ?? '',
+        '', //movie.franchises?.join(', ') ?? '',
+        '', //movie.tags?.join(', ') ?? '',
+        false, //movie.hidden.toString(),
+      ]);
+    }
+
+    String csvString = const ListToCsvConverter().convert(csvData);
+    
+    // Geçici dosya oluştur
+    final tempDir = await getTemporaryDirectory();
+    final tempFile = File('${tempDir.path}/recommendations.csv');
+    await tempFile.writeAsString(csvString);
+
+    // Share Plus ile dosyayı paylaş
+    final result = await Share.shareXFiles(
+      [XFile(tempFile.path)],
+      subject: 'Recommendation CSV Export',
+      text: 'Here is your recommended movies file',
+    );
+
+    if (result.status == ShareResultStatus.success) {
+      _adService.showRewardedAd();
+      
+      final snackBar = SnackBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        behavior: SnackBarBehavior.floating,
+        content: AwesomeSnackbarContent(
+          title: S.of(context).succesful,
+          message: S.of(context).csvFileCreated,
+          contentType: ContentType.success,
+          inMaterialBanner: true,
+        ),
+        dismissDirection: DismissDirection.horizontal,
+      );
+      ScaffoldMessenger.of(context)
+        ..hideCurrentMaterialBanner()
+        ..showSnackBar(snackBar);
+    }
+  } catch (e) {
+    final snackBar = SnackBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      behavior: SnackBarBehavior.floating,
+      content: AwesomeSnackbarContent(
+        title: S.of(context).failure,
+        message: '${S.of(context).errorWritingFile} $e',
+        contentType: ContentType.failure,
+        inMaterialBanner: true,
+      ),
+      dismissDirection: DismissDirection.horizontal,
+    );
+    ScaffoldMessenger.of(context)
+      ..hideCurrentMaterialBanner()
+      ..showSnackBar(snackBar);
+  }
 }
