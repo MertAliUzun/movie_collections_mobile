@@ -87,15 +87,33 @@ class TmdbService {
     }
 
     Future<Map<String, dynamic>?> getPersonalDetails(int personId, String languageCode) async {
+      languageCode = 'tr';
+      //get for requested language
     final response = await http.get(
       Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey&language=$languageCode'),
     );
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      return data;
+    if (response.statusCode != 200) return null;
+    final data = json.decode(response.body);
+    // if requested language is en return
+    if (languageCode == 'en') return data;
+
+    final keysToCheck = ['biography', 'birthday', 'deathday', 'place_of_birth', 'imdb_id'];
+    //get for english language
+    final enResponse = await http.get(
+    Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey&language=en'),
+    );
+    if (enResponse.statusCode == 200) {
+      final enData = json.decode(enResponse.body);
+      for (var key in keysToCheck) {
+      //If empty in requested language assign from english
+      if ((data[key] == null || (data[key] is String && data[key].toString().trim().isEmpty)) &&
+          enData[key] != null) {
+        data[key] = enData[key];
+      }
     }
-    return null;
+    }
+    return data;
   }
 
   Future<Map<String, dynamic>?> getMovieDetails(int movieId, {String languageCode = 'en'}) async {

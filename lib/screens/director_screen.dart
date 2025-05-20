@@ -144,7 +144,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
                 Flexible(
                   child: SingleChildScrollView(
                     child: Text(
-                      _personPersonalDetails!['biography'] ?? '',
+                      _personPersonalDetails!['biography'] ?? 'Null',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
@@ -325,7 +325,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
                             ),
                           ),
                                 ),
-                                if (_personPersonalDetails != null)
                                   Flexible(
                                     child: Container(
                                       //shadowColor: Colors.white,
@@ -363,7 +362,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                 ),
                                               ),
                                             ),*/
-                                          if (_personPersonalDetails!['birthday'] != null)
                                             Card(
                                               shadowColor: Colors.white,
                                               color: const Color.fromARGB(255, 20, 26, 33),
@@ -385,7 +383,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                         overflow: TextOverflow.ellipsis,
                                                       ),
                                                       Text(
-                                                        _formatDate(_personPersonalDetails!['birthday']),
+                                                          _personPersonalDetails!['birthday'] != null && _formatDate(_personPersonalDetails!['birthday']).isNotEmpty ?
+                                                          _formatDate(_personPersonalDetails!['birthday']) :
+                                                          'Null',
                                                         style: TextStyle(
                                                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
                                                           color: Colors.white,
@@ -429,7 +429,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                 ),
                                               ),
                                             ),
-                                          if (_personPersonalDetails!['place_of_birth'] != null)
                                             Card(
                                               shadowColor: Colors.white,
                                               color: const Color.fromARGB(255, 20, 26, 33),
@@ -451,7 +450,9 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                         overflow: TextOverflow.ellipsis,
                                                       ),
                                                       Text(
-                                                        _personPersonalDetails!['place_of_birth'],
+                                                          _personPersonalDetails!['place_of_birth'] != null && _personPersonalDetails?['place_of_birth']?.isNotEmpty ?
+                                                          _personPersonalDetails!['place_of_birth'] :
+                                                          'Null',
                                                         style: TextStyle(
                                                           fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
                                                           color: Colors.white,
@@ -464,7 +465,6 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                 ),
                                               ),
                                             ),
-                                          if (_personPersonalDetails?['biography']?.isNotEmpty ?? false)
                                             GestureDetector(
                                               onTap: () => _showFullBiography(context),
                                               child: Card(
@@ -485,16 +485,18 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                           ),
                                                         maxLines: 1,
                                                         overflow: TextOverflow.ellipsis,
-                                                        ),
+                                                        ), 
                                                         Text(
-                                                          _personPersonalDetails!['biography'],
+                                                          _personPersonalDetails!['biography'] != null && _personPersonalDetails?['biography']?.isNotEmpty ?
+                                                          _personPersonalDetails!['biography'] :
+                                                          'Null',
                                                           style: TextStyle(
                                                             fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
                                                             color: Colors.white,
                                                           ),
                                                           overflow: TextOverflow.ellipsis,
                                                           maxLines: isTablet ? 8 : 3,
-                                                        ),
+                                                        ), 
                                                         Center(
                                                           child: Icon(
                                                             Icons.keyboard_arrow_down,
