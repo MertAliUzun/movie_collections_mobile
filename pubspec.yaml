@@ -50,6 +50,7 @@ dependencies:
   file_picker: ^5.2.1
   share_plus: ^7.2.1
   document_file_save_plus: ^2.0.0
+  archive: ^4.0.7
   flutter_localizations:
     sdk: flutter
   intl_utils: ^2.8.8

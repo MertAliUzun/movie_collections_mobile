@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:convert';
 import 'dart:io';
+import 'package:archive/archive.dart';
 import 'package:csv/csv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
@@ -539,17 +540,28 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       }
 
       String csvString = const ListToCsvConverter().convert(csvData);
+       final csvBytes = utf8.encode(csvString);
+
+      final archive = Archive()
+        ..addFile(ArchiveFile('movies.csv', csvBytes.length, csvBytes));
+      final zipData = ZipEncoder().encode(archive);
       
       // Geçici dosya oluştur
       final tempDir = await getTemporaryDirectory();
-      final tempFile = File('${tempDir.path}/movies.csv');
-      await tempFile.writeAsString(csvString);
+      final tempFile = File('${tempDir.path}/movies.zip');
+      await tempFile.writeAsBytes(zipData);
 
       // Share Plus ile dosyayı paylaş
       final result = await Share.shareXFiles(
-        [XFile(tempFile.path)],
-        subject: 'Movies CSV Export',
-        text: 'Here is your exported movies collection',
+      [
+        XFile(
+          tempFile.path,
+          mimeType: 'application/zip',
+          name: 'movies.zip',
+        )
+      ],
+        subject: 'Recommendation CSV Export',
+        text: 'Here is your recommended movies file',
       );
 
       if (result.status == ShareResultStatus.success) {

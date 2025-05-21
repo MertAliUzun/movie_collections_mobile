@@ -1,6 +1,10 @@
+import 'dart:convert';
+
+import 'package:archive/archive.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:mime/mime.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import '../models/movie_model.dart';
 import '../services/ad_service.dart';
@@ -263,15 +267,27 @@ Future<void> exportRecommendationsToCSV(BuildContext context, List<Movie> select
     }
 
     String csvString = const ListToCsvConverter().convert(csvData);
+    final csvBytes = utf8.encode(csvString);
+
+    final archive = Archive()
+      ..addFile(ArchiveFile('recommendations.csv', csvBytes.length, csvBytes));
+    final zipData = ZipEncoder().encode(archive);
     
     // Geçici dosya oluştur
     final tempDir = await getTemporaryDirectory();
-    final tempFile = File('${tempDir.path}/recommendations.csv');
-    await tempFile.writeAsString(csvString);
+    final tempFile = File('${tempDir.path}/recommendations.zip');
+    await tempFile.writeAsBytes(zipData);
 
+    
     // Share Plus ile dosyayı paylaş
     final result = await Share.shareXFiles(
-      [XFile(tempFile.path)],
+    [
+      XFile(
+        tempFile.path,
+        mimeType: 'application/zip',
+        name: 'recommendations.zip',
+      )
+    ],
       subject: 'Recommendation CSV Export',
       text: 'Here is your recommended movies file',
     );
