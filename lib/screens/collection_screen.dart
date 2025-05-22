@@ -163,15 +163,28 @@ class _CollectionScreenState extends State<CollectionScreen> {
     }
   }
 
+  String _ignoreThe(String title) {
+    final lower = title.toLowerCase().trim();
+    if (lower.startsWith('the ')) {
+      return title.substring(4).trim();
+    } else if (lower.startsWith('a ')) {
+      return title.substring(2).trim();
+    } else if (lower.startsWith('an ')) {
+      return title.substring(3).trim();
+    }
+    return title;
+  }
+
   void _sortMovies() {
     _filteredMovies.sort((a, b) {
       int comparison;
       if (_sortBy == 'movieName') {
         //if there is customSortTitle, sort according to that if not sort for movieName
-        String aMovie = a.movieName;
-        String bMovie = b.movieName;
-        if(a.customSortTitle !=null) { aMovie = a.customSortTitle!; }
-        if(b.customSortTitle !=null) { bMovie = b.customSortTitle!; }
+        String aMovie = a.customSortTitle ?? a.movieName;
+        String bMovie = b.customSortTitle ?? b.movieName;
+
+        aMovie = _ignoreThe(aMovie);
+        bMovie = _ignoreThe(bMovie);
         comparison = aMovie.compareTo(bMovie);
       } else if (_sortBy == 'releaseDate') {
         comparison = a.releaseDate.compareTo(b.releaseDate);
