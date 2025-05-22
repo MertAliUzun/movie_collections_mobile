@@ -189,7 +189,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         centerTitle: true,
         title: Text(
-          '${S.of(context).discover} ${S.of(context).movies}',
+          S.of(context).discover,
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
@@ -255,7 +255,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
             _isLoadingPopularMovies
                 ? const Center(child: CircularProgressIndicator())
                 : Container(
-                    height: isTablet ? 280 : 275,
+                    height: isTablet ? screenHeight * 0.4 : screenHeight * 0.26,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -324,7 +324,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                               }
                           },
                           child: Container(
-                            width: isTablet ? screenHeight * 0.3 : screenHeight * 0.21,
+                            width: isTablet ? screenHeight * 0.3 : screenHeight * 0.18,
                             margin: const EdgeInsets.symmetric(horizontal: 2),
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60),
@@ -449,7 +449,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
             _isLoadingLatest
                 ? const Center(child: CircularProgressIndicator())
                 : Container(
-                    height: isTablet ? 280 : 200,
+                    height: isTablet ? screenHeight * 0.4 : screenHeight * 0.25,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -542,13 +542,13 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                       'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
                                       fit: BoxFit.cover,
                                       height: isTablet ? 280 : 200,
-                                      width: screenWidth * 0.3,
+                                      width: screenWidth * 0.33,
                                       errorBuilder: (context, error, stackTrace) =>
                                         Image.asset(
                                           'assets/images/placeholder_poster.png',
                                           fit: BoxFit.cover,
                                           height: isTablet ? 280 : 200,
-                                          width: screenWidth * 0.28,
+                                          width: screenWidth * 0.33,
                                         ),
                                     ),
                                   ),
@@ -584,7 +584,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                                   releaseDate,
                                                   style: TextStyle(
                                                     color: Colors.white70,
-                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
+                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 10),
                                                   ),
                                                   textAlign: TextAlign.right,
                                                 ),
@@ -684,7 +684,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
             _isLoadingUpcoming
                 ? const Center(child: CircularProgressIndicator())
                 : Container(
-                    height: isTablet ? 280 : 275,
+                    height: isTablet ? screenHeight * 0.4 : screenHeight * 0.26,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -753,7 +753,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                               }
                           },
                           child: Container(
-                            width: isTablet ? screenHeight * 0.3 : screenHeight * 0.21,
+                            width: isTablet ? screenHeight * 0.3 : screenHeight * 0.18,
                             margin: const EdgeInsets.symmetric(horizontal: 2),
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60),

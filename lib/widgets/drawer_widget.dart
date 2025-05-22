@@ -707,6 +707,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ..showSnackBar(snackBar);
       }
     } catch (e) {
+      if(mounted) {
       final snackBar = SnackBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -722,6 +723,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       ScaffoldMessenger.of(context)
         ..hideCurrentMaterialBanner()
         ..showSnackBar(snackBar);
+      }
     }
   }
 
@@ -1629,7 +1631,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       padding: EdgeInsets.fromLTRB(0, screenHeight * 0.01, 0, 0),
                       child: TextButton(
                         onPressed: () {
-                          importMoviesFromCSV(); // CSV içe aktarma fonksiyonunu çağır
+                            importMoviesFromCSV();
                         },
                         style: TextButton.styleFrom(
                           side: const BorderSide(
