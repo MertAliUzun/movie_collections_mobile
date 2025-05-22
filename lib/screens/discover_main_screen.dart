@@ -189,7 +189,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         centerTitle: true,
         title: Text(
-          S.of(context).discover,
+          '${S.of(context).discover} ${S.of(context).movies}',
           style: TextStyle(
             color: Colors.white,
             fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
@@ -230,13 +230,14 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                           S.of(context).popularMovies,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade800,
+                            color: Color.fromARGB(25, 150, 150, 150),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -323,7 +324,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                               }
                           },
                           child: Container(
-                            width: isTablet ? 180 : 140,
+                            width: isTablet ? screenHeight * 0.3 : screenHeight * 0.21,
                             margin: const EdgeInsets.symmetric(horizontal: 2),
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60),
@@ -357,6 +358,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                   ),
                                   ),
                                   
+                                  /*
                                   Expanded(
                                     flex: 2,
                                     child: Container(
@@ -386,7 +388,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                         ],
                                       ),
                                     ),
-                                  ),
+                                  ),*/
                                 ],
                               ),
                             ),
@@ -422,13 +424,14 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                           S.of(context).latestMovies,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade800,
+                            color: Color.fromARGB(25, 150, 150, 150),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -539,7 +542,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                       'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
                                       fit: BoxFit.cover,
                                       height: isTablet ? 280 : 200,
-                                      width: screenWidth * 0.28,
+                                      width: screenWidth * 0.3,
                                       errorBuilder: (context, error, stackTrace) =>
                                         Image.asset(
                                           'assets/images/placeholder_poster.png',
@@ -581,7 +584,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                                   releaseDate,
                                                   style: TextStyle(
                                                     color: Colors.white70,
-                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 14),
+                                                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 11),
                                                   ),
                                                   textAlign: TextAlign.right,
                                                 ),
@@ -656,13 +659,14 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                           S.of(context).upcomingMovies,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade800,
+                            color: Color.fromARGB(25, 150, 150, 150),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -749,7 +753,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                               }
                           },
                           child: Container(
-                            width: isTablet ? 180 : 140,
+                            width: isTablet ? screenHeight * 0.3 : screenHeight * 0.21,
                             margin: const EdgeInsets.symmetric(horizontal: 2),
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60),
@@ -782,7 +786,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                     ),
                                   ),
                                   ),
-                                  
+                                  /*
                                   Expanded(
                                     flex: 2,
                                     child: Container(
@@ -812,7 +816,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                         ],
                                       ),
                                     ),
-                                  ),
+                                  ),*/
                                 ],
                               ),
                             ),
@@ -848,13 +852,14 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                           S.of(context).popularPeople,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 24),
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                         SizedBox(width: screenWidth * 0.03),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade800,
+                            color: Color.fromARGB(25, 150, 150, 150),
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
@@ -911,6 +916,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                                   Expanded(
                                     flex: 6,
                                     child: ClipRRect(
+                                      
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(16.0),
                                         topRight: Radius.circular(16.0),
