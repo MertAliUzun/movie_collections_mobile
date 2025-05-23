@@ -335,10 +335,10 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     if(widget.isFromWishlist) {
       movieLimit = box.values.where((movie) => !movie.watched).length;
     } else {
-      movieLimit = box.values.where((movie) => !movie.watched).length;
+      movieLimit = box.values.where((movie) => movie.watched).length;
     }
     
-    if (movieLimit > 250) {
+    if (movieLimit > 500) {
       await showDialog(
         context: context,
         builder: (BuildContext context) {
