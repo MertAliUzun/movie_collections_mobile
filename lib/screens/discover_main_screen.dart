@@ -188,7 +188,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
   // Parse the date string into a DateTime object
   DateTime date = DateTime.parse(dateString);
   // Format the DateTime object to the desired format
-  return DateFormat('MMMM d').format(date);
+  return DateFormat('MMM d').format(date);
 }
 
   @override
