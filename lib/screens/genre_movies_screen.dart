@@ -32,10 +32,15 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
   void initState() {
     super.initState();
     _fetchGenreMovies();
-    _adService.loadRewardedAd(
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    _adService.loadInterstitialAd(
       onAdLoaded: (ad) {
         setState(() {
-          _adService.showRewardedAd();
+          _adService.showInterstitialAd();
         });
       }
     );
@@ -178,32 +183,36 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _movies.isNotEmpty
-              ? SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: ScreenUtil.getAdaptivePadding(context),
-                        child: PersonMoviesWidget(
-                          movies: _movies, 
-                          personType: 'Genre', 
-                          isFromWishlist: widget.isFromWishlist, 
-                          userEmail: widget.userEmail,
-                          systemLanguage: widget.systemLanguage,
+              ? Stack(
+                children: [SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: ScreenUtil.getAdaptivePadding(context),
+                          child: PersonMoviesWidget(
+                            movies: _movies, 
+                            personType: 'Genre', 
+                            isFromWishlist: widget.isFromWishlist, 
+                            userEmail: widget.userEmail,
+                            systemLanguage: widget.systemLanguage,
+                          ),
                         ),
-                      ),
-                      if(_adService.bannerAd != null)
-            FutureBuilder<Widget>(
-              future: _adService.showBannerAd(isTablet),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return snapshot.data!;
-                }
-                return const SizedBox.shrink();
-              },
-            ),
-                    ],
+                        
+                      ],
+                    ),
                   ),
-                )
+                  if(_adService.bannerAd != null)
+                            FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+                            ),
+                ]
+              )
               : Column(
                 children: [
                   Expanded(

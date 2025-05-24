@@ -31,10 +31,10 @@ class _CompanyScreenState extends State<CompanyScreen> {
   void initState() {
     super.initState();
     _fetchMoviesByCompany();
-    _adService.loadRewardedAd(
+    _adService.loadInterstitialAd(
       onAdLoaded: (ad) {
         setState(() {
-          _adService.showRewardedAd();
+          _adService.showInterstitialAd();
         });
       }
     );

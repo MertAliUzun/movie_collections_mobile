@@ -36,6 +36,18 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
   void initState() {
     super.initState();
     _fetchMovies();
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    _adService.loadInterstitialAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showInterstitialAd();
+        });
+      }
+    );
   }
 
   Future<void> _fetchMovies() async {
@@ -298,6 +310,16 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
                         },
                       ),
                     ),
+                    if(_adService.bannerAd != null)
+              FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+              ),
                   ],
                 )
               : Center(

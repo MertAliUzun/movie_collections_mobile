@@ -457,7 +457,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       await box.put(movie.id, movie);
       //print('xxxx'+ widget.userEmail!);
 
-      _adService.showRewardedAd();
+      _adService.showInterstitialAd();
 
       // Show snackbar with mounted check
       if (mounted) {
@@ -924,10 +924,17 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       Future.microtask(() => _fetchProviders());
       
     }
-    _adService.loadRewardedAd(
+
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    
+    _adService.loadInterstitialAd(
       onAdLoaded: (ad) {
         setState(() {
-          _adService.showRewardedAd();
+          _adService.showInterstitialAd();
         });
       }
     );
@@ -1313,6 +1320,17 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         ],
                       ),
                     ),
+                    /* //Implement this ad later
+                    if(_adService.bannerAd != null)
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),*/
                 Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -1791,6 +1809,19 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                         },
                       )
                     : Text(S.of(context).noTagsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14)), maxLines: 1, overflow: TextOverflow.ellipsis,),
+                  /* //Implement this ad later
+                  if(_adService.bannerAd != null)
+                SizedBox(height: screenHeight * 0.05),
+                if(_adService.bannerAd != null)
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),*/
                   ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.01), horizontal: ScreenUtil.getAdaptiveCardWidth(context, screenHeight * 0.02)), // Padding for better spacing
                     tileColor: Colors.transparent, // Optional: make the background transparent

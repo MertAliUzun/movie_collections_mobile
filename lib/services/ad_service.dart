@@ -18,6 +18,31 @@ class AdService {
   // Reklamlar arası minimum süre (dakika)
   static const int _minimumMinutesBetweenAds = 7;
 
+  // Reklam sayacını ayarla
+  void setAdCounter(int value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('ad_counter', value);
+  }
+
+  // Reklam sayacını al
+  Future<int> getAdCounter()async {
+    final prefs = await SharedPreferences.getInstance(); 
+    return prefs.getInt('ad_counter') ?? 0;
+  }
+
+  // Reklam sayacını artır
+  void incrementAdCounter() async {
+    final prefs = await SharedPreferences.getInstance();
+    int adCounter = (prefs.getInt('ad_counter') ?? 0) + 1;
+    await prefs.setInt('ad_counter', adCounter);
+  }
+
+  // Reklam sayacını sıfırla
+  void resetAdCounter() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('ad_counter', 0);
+  }
+
   void loadBannerAd({Function(BannerAd)? onAdLoaded}) {
     BannerAd(
       adUnitId: AdHelper.bannerAdUnitId,
@@ -69,13 +94,10 @@ class AdService {
   }
 
   // Reklam gösterilip gösterilemeyeceğini kontrol et
-  bool canShowAd() {
-    return false;
-    /*if (_lastAdTime == null) return true;
-    
-    final difference = DateTime.now().difference(_lastAdTime!);
-    return difference.inMinutes >= _minimumMinutesBetweenAds;
-    */
+  Future<bool> canShowAd() async {
+    final prefs = await SharedPreferences.getInstance(); 
+    int adCounter = prefs.getInt('ad_counter') ?? 0;
+    return adCounter >= 20;
   }
 
   // Reklam gösterim zamanını güncelle
@@ -85,8 +107,12 @@ class AdService {
 
   // Interstitial reklam gösterme fonksiyonu
   Future<bool> showInterstitialAd() async {
-    if (!canShowAd()) {
-      //print('Reklam göstermek için çok erken. Kalan süre: ${_getRemainingTime()} dakika');
+    if (await _isPremium()) {
+      return true; // Premium kullanıcılara reklam gösterme
+    }
+
+    if (!(await canShowAd())) {
+      incrementAdCounter();
       return false;
     }
 
@@ -97,6 +123,7 @@ class AdService {
 
     try {
       await interstitialAd!.show();
+      resetAdCounter();
       loadInterstitialAd();
       return true;
     } catch (e) {
@@ -112,10 +139,16 @@ class AdService {
 
   // Rewarded reklam gösterme fonksiyonu
   Future<bool> showRewardedAd() async {
+    return false;
     if (await _isPremium()) {
       return true; // Premium kullanıcılara reklam gösterme
     }
-    if(!canShowAd()) { return true;}
+
+    if (!(await canShowAd())) {
+      incrementAdCounter();
+      return false;
+    }
+
     if (rewardedAd == null) {
       //print('Rewarded reklam yüklü değil');
       return false;
@@ -125,6 +158,7 @@ class AdService {
       await rewardedAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
           _updateLastAdTime();
+          resetAdCounter();
           //print('Reklam izlendi! ${_minimumMinutesBetweenAds} dakika boyunca reklam gösterilmeyecek.');
         }
       );
@@ -147,34 +181,48 @@ class AdService {
   }
 
   Future<Widget> showBannerAd(bool isTablet) async {
-    if (await _isPremium()) {
-      return const SizedBox.shrink(); // Premium kullanıcılara reklam gösterme
-    }
-
-    if (bannerAd == null) {
-      //print('Banner reklam yüklü değil');
-      return const SizedBox.shrink();
-    }
-
-    try {
-      loadBannerAd();
-      return Align(
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          width: isTablet ? 
-            bannerAd!.size.width.toDouble() * 1.5 :
-            bannerAd!.size.width.toDouble(),
-          height: isTablet ? 
-            bannerAd!.size.height.toDouble() * 1.5 :
-            bannerAd!.size.height.toDouble(),
-          child: AdWidget(ad: bannerAd!),
-        ),
-      );
-    } catch (e) {
-      //print('Banner reklam gösterilirken hata: $e');
-      return const SizedBox.shrink();
-    }
+  if (await _isPremium()) {
+    return const SizedBox.shrink(); // Premium kullanıcılara reklam gösterme
   }
+
+  final Completer<BannerAd> completer = Completer();
+
+  final BannerAd newBannerAd = BannerAd(
+    adUnitId: AdHelper.bannerAdUnitId,
+    size: AdSize.banner,
+    request: const AdRequest(),
+    listener: BannerAdListener(
+      onAdLoaded: (ad) {
+        completer.complete(ad as BannerAd);
+      },
+      onAdFailedToLoad: (ad, error) {
+        ad.dispose();
+        completer.completeError(error);
+      },
+    ),
+  );
+
+  newBannerAd.load();
+
+  try {
+    final BannerAd loadedAd = await completer.future;
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+        width: isTablet
+            ? loadedAd.size.width.toDouble() * 1.5
+            : loadedAd.size.width.toDouble(),
+        height: isTablet
+            ? loadedAd.size.height.toDouble() * 1.5
+            : loadedAd.size.height.toDouble(),
+        child: AdWidget(ad: loadedAd),
+      ),
+    );
+  } catch (e) {
+    return const SizedBox.shrink();
+  }
+}
+
 
   void disposeAds() {
     bannerAd?.dispose();

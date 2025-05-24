@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:movie_collections_mobile/screens/discover_movie_screen.dart';
 import 'package:movie_collections_mobile/screens/edit_movie_screen.dart';
+import 'package:movie_collections_mobile/services/ad_service.dart';
 import '../models/movie_model.dart';
 import '../services/tmdb_service.dart';
 import '../sup/screen_util.dart';
@@ -36,6 +37,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
   bool _isLoadingLatest = true;
   List<dynamic> _popularMovies = [];
   bool _isLoadingPopularMovies = true;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
@@ -44,6 +46,18 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
     _loadUpcomingMovies();
     _loadLatestMovies();
     _loadUPopulargMovies();
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    _adService.loadInterstitialAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showInterstitialAd();
+        });
+      }
+    );
   }
 
   Future<void> _loadUPopulargMovies() async {
@@ -975,6 +989,16 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
                   ),
 
             const SizedBox(height: 32),
+            if(_adService.bannerAd != null)
+              FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+              ),
             
             // Buraya gelecekte eklenecek diğer keşif bölümleri için yer bırakıyoruz
             // ...

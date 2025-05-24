@@ -1,6 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:movie_collections_mobile/services/ad_service.dart';
 import '../main.dart';
 import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
@@ -25,11 +26,24 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
   Set<String> _selectedMovies = {};
   bool _isSelectionMode = true;
   List<Movie> _sortedMovies = [];
+  final AdService _adService = AdService();
 
   @override
   void initState() {
     super.initState();
     _sortMovies();
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    _adService.loadInterstitialAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showInterstitialAd();
+        });
+      }
+    );
   }
 
   void _sortMovies() {
@@ -125,6 +139,8 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
       }
     }
 
+    _adService.showInterstitialAd();
+
     final snackBar = SnackBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -156,6 +172,9 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
     final moviesBox = Hive.box<Movie>('movies');
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
@@ -224,30 +243,57 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
         ],
       ),
       body: widget.importedMovies.isEmpty 
-        ? Center(
-            child: Text(
-              S.of(context).noMoviesFound,
-              style: TextStyle(
-                color: Colors.white60,
-                fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+        ? Column(
+          children: [
+            Center(
+                child: Text(
+                  S.of(context).noMoviesFound,
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
+                ),
               ),
+              if(_adService.bannerAd != null)
+                            FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+                            ),
+          ],
+        )
+        : Stack(
+          children: [ ListView.builder(
+              itemCount: _sortedMovies.length,
+              itemBuilder: (context, index) {
+                return MovieCard(
+                  movie: _sortedMovies[index],
+                  isFromWishlist: !_sortedMovies[index].watched,
+                  viewType: 'List',
+                  isSelected: _selectedMovies.contains(_sortedMovies[index].id.toString()),
+                  selectionMode: true,
+                  onTap: () => _handleMovieTap(_sortedMovies[index]),
+                  onLongPress: () {}, //return null
+                  hasImportedSame: moviesBox.containsKey(_sortedMovies[index].id),
+                );
+              },
             ),
-          )
-        : ListView.builder(
-            itemCount: _sortedMovies.length,
-            itemBuilder: (context, index) {
-              return MovieCard(
-                movie: _sortedMovies[index],
-                isFromWishlist: !_sortedMovies[index].watched,
-                viewType: 'List',
-                isSelected: _selectedMovies.contains(_sortedMovies[index].id.toString()),
-                selectionMode: true,
-                onTap: () => _handleMovieTap(_sortedMovies[index]),
-                onLongPress: () {}, //return null
-                hasImportedSame: moviesBox.containsKey(_sortedMovies[index].id),
-              );
-            },
-          ),
+            if(_adService.bannerAd != null)
+                            FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+                            ),
+          ]
+        ),
       floatingActionButton: _selectedMovies.isNotEmpty
         ? FloatingActionButton(
             backgroundColor: Colors.green,

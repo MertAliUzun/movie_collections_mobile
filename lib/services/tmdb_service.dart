@@ -87,7 +87,6 @@ class TmdbService {
     }
 
     Future<Map<String, dynamic>?> getPersonalDetails(int personId, String languageCode) async {
-      languageCode = 'tr';
       //get for requested language
     final response = await http.get(
       Uri.parse('$_baseUrl/person/$personId?api_key=$_apiKey&language=$languageCode'),

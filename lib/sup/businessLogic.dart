@@ -127,7 +127,7 @@ Future<void> toggleWatchedStatus(BuildContext context, Movie movie, bool isFromW
   // Hive'da güncelle
   box.put(movieId, movie);
 
-  _adService.showRewardedAd();
+  _adService.showInterstitialAd();
 
   // Kullanıcıya bildirim göster
   
@@ -151,7 +151,7 @@ Future<void> hideMovies(BuildContext context, Movie movie, bool canPop) async {
   // Hive'da güncelle
   box.put(movieId, movie);
 
-  _adService.showRewardedAd();
+  _adService.showInterstitialAd();
 
   // Kullanıcıya bildirim göster
   
@@ -293,7 +293,7 @@ Future<void> exportRecommendationsToCSV(BuildContext context, List<Movie> select
     );
 
     if (result.status == ShareResultStatus.success) {
-      _adService.showRewardedAd();
+      _adService.showInterstitialAd();
       
       final snackBar = SnackBar(
         elevation: 0,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:movie_collections_mobile/services/ad_service.dart';
 import '../models/movie_model.dart';
 import '../services/ai_service.dart';
 import '../services/tmdb_service.dart';
@@ -25,6 +26,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
   List<Map<String, dynamic>> _recommendedMovies = [];
   bool _isLoading = false;
   String selectedPrompt = 'recommendation';
+  final AdService _adService = AdService();
 
   String _getGenreLocalizedString(String genre) {
     return getGenreLocalizedString(genre, context);
@@ -70,6 +72,8 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
         _isLoading = false;
       });
 
+      _adService.showInterstitialAd();
+
       if (mounted) {
         print(e.toString());
         final snackBar = SnackBar(
@@ -89,6 +93,17 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
           ..showSnackBar(snackBar);
       }
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    _adService.loadInterstitialAd();
   }
 
   @override
@@ -307,29 +322,44 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
                       ),
                     ),
           ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextField(
-              controller: _textController,
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: S.of(context).whatKindMoviesLookingFor,
-                hintStyle: TextStyle(color: Colors.white70),
-                suffixIcon: IconButton(
-                  icon: Icon(Icons.search, color: Colors.white),
-                  onPressed: () => _getAiRecommendations(_textController.text),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white70),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.circular(8),
+          
+          Column(
+            children: [
+              if(_adService.bannerAd != null)
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _textController,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: S.of(context).whatKindMoviesLookingFor,
+                    hintStyle: TextStyle(color: Colors.white70),
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.search, color: Colors.white),
+                      onPressed: () => _getAiRecommendations(_textController.text),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white70),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  onSubmitted: _getAiRecommendations,
                 ),
               ),
-              onSubmitted: _getAiRecommendations,
-            ),
+            ],
           ),
         ],
       ),
@@ -367,7 +397,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
       ),
       floatingActionButtonLocation:  CustomFloatingActionButtonLocation(
   alignment: Alignment.bottomCenter,
-  offsetY: -screenHeight * 0.1,
+  offsetY: -screenHeight * 0.13,
 ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_collections_mobile/generated/l10n.dart';
+import 'package:movie_collections_mobile/services/ad_service.dart';
 import '../widgets/movie_card.dart';
 import '../models/movie_model.dart';
 import '../sup/businessLogic.dart';
@@ -31,11 +32,24 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
   final TextEditingController _searchController = TextEditingController();
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
+  final AdService _adService = AdService();
 
   @override
   void initState() {
     super.initState();
     _fetchHiddenMovies();
+    _adService.loadBannerAd(
+      onAdLoaded: (ad) {
+        setState(() {}); // UI'ı güncelle
+      },
+    );
+    _adService.loadInterstitialAd(
+      onAdLoaded: (ad) {
+        setState(() {
+          _adService.showInterstitialAd();
+        });
+      }
+    );
   }
 
   Future<void> _fetchHiddenMovies() async {
@@ -189,6 +203,9 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    bool isTablet = ScreenUtil.isTablet(context);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: _isSelectionMode 
@@ -413,29 +430,56 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
             ],
           ),
       body: _hiddenMovies.isEmpty 
-        ? Center(
-            child: Text(
-              S.of(context).noHiddenMovies,
-              style: TextStyle(
-                color: Colors.white60,
-                fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+        ? Column(
+          children: [
+            Center(
+                child: Text(
+                  S.of(context).noHiddenMovies,
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: ScreenUtil.getAdaptiveTextSize(context, 16),
+                  ),
+                ),
               ),
+              if(_adService.bannerAd != null)
+                            FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+                            ),
+          ],
+        )
+        : Stack(
+          children: [ListView.builder(
+              itemCount: _filteredMovies.length,
+              itemBuilder: (context, index) {
+                return MovieCard(
+                  movie: _filteredMovies[index],
+                  isFromWishlist: !_filteredMovies[index].watched,
+                  viewType: 'List',
+                  isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
+                  selectionMode: _isSelectionMode,
+                  onTap: () => _handleMovieTap(_filteredMovies[index]),
+                  onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
+                );
+              },
             ),
-          )
-        : ListView.builder(
-            itemCount: _filteredMovies.length,
-            itemBuilder: (context, index) {
-              return MovieCard(
-                movie: _filteredMovies[index],
-                isFromWishlist: !_filteredMovies[index].watched,
-                viewType: 'List',
-                isSelected: _selectedMovies.contains(_filteredMovies[index].id.toString()),
-                selectionMode: _isSelectionMode,
-                onTap: () => _handleMovieTap(_filteredMovies[index]),
-                onLongPress: () => _handleMovieSelection(_filteredMovies[index]),
-              );
-            },
-          ),
+            if(_adService.bannerAd != null)
+                            FutureBuilder<Widget>(
+                future: _adService.showBannerAd(isTablet),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return snapshot.data!;
+                  }
+                  return const SizedBox.shrink();
+                },
+                            ),
+          ]
+        ),
     );
   }
 } 

@@ -63,13 +63,15 @@ class _CollectionScreenState extends State<CollectionScreen> {
     _loadGroupByText();
     _loadGroupByBooleans();
     _fetchMovies();
+    _adService.loadInterstitialAd();
+    /*
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
         setState(() {
           _adService.showRewardedAd();
         });
       }
-    );
+    );*/
   }
 
   void navigateToAiPage() {
@@ -367,7 +369,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
       }
      }
     }
-    _adService.showRewardedAd();
+    _adService.showInterstitialAd();
 
     final snackBar = SnackBar(
         elevation: 0,

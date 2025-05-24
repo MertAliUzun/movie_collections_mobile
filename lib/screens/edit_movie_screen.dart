@@ -257,7 +257,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       // Hive'da güncelle
       box.put(movie.id, movie);
 
-      _adService.showRewardedAd();
+      _adService.showInterstitialAd();
 
       // Kullanıcıya bildirim göster
       final snackBar = SnackBar(
@@ -290,8 +290,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     // Hive'dan sil
     box.delete(movieId);
 
-    // Tam sayfa reklam göster
-    _adService.showRewardedAd();
+    _adService.showInterstitialAd();
 
     // Kullanıcıya bildirim göster
     final snackBar = SnackBar(
@@ -333,8 +332,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
             ScaffoldMessenger.of(context)
               ..hideCurrentMaterialBanner()
               ..showSnackBar(snackBar);
-
-      //_adService.showRewardedAd();
   }
 
   String _getGenreLocalizedString(String genre) {
@@ -668,11 +665,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         setState(() {}); // UI'ı güncelle
       },
     );
-    _adService.loadInterstitialAd();
-    _adService.loadRewardedAd(
+    _adService.loadInterstitialAd(
       onAdLoaded: (ad) {
         setState(() {
-          _adService.showRewardedAd();
+          _adService.showInterstitialAd();
         });
       }
     );
@@ -1296,6 +1292,17 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         ],
                       ),
                     ),
+                    /* //Implement this ad later
+                    if(_adService.bannerAd != null)
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),*/
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -1767,6 +1774,19 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         },
                       )
                     : Text(S.of(context).noTagsSelected, style: TextStyle(color: Colors.white54, fontSize: ScreenUtil.getAdaptiveTextSize(context, 14)), maxLines: 1, overflow: TextOverflow.ellipsis,),
+                /* //Implement this ad later
+                if(_adService.bannerAd != null)
+                SizedBox(height: screenHeight * 0.05),
+                if(_adService.bannerAd != null)
+            FutureBuilder<Widget>(
+              future: _adService.showBannerAd(isTablet),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return snapshot.data!;
+                }
+                return const SizedBox.shrink();
+              },
+            ),*/
                 ListTile(
                   contentPadding: EdgeInsets.symmetric(vertical: ScreenUtil.getAdaptivePadding(context).vertical, horizontal: ScreenUtil.getAdaptivePadding(context).horizontal), // Padding for better spacing
                   tileColor: Colors.transparent, // Optional: make the background transparent

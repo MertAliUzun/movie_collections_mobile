@@ -34,6 +34,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   
+  // Reklam sayacını ayarla
+  final adService = AdService();
+  const adCounter = 16;
+  adService.setAdCounter(adCounter);
   
   /* // Check internet connection and sync local movies if connected
   var connectivityResult = await (Connectivity().checkConnectivity());

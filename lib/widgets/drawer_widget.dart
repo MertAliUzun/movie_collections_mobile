@@ -126,13 +126,14 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     userEmail = widget.userEmail;
     userName = widget.userName;
 
+    /*
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
         setState(() {
           _adService.showRewardedAd();
         });
       }
-    );
+    );*/
 
     _loadPremiumStatus();
     _initInAppPurchase();
@@ -565,7 +566,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       );
 
       if (result.status == ShareResultStatus.success) {
-        _adService.showRewardedAd();
+       //_adService.showRewardedAd();
         
         final snackBar = SnackBar(
           elevation: 0,

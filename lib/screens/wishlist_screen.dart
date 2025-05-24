@@ -61,6 +61,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
     _loadGroupByText(); // Group by metnini yükle
     _loadGroupByBooleans(); // Group by boolean değerlerini yükle
     _fetchMovies();
+    _adService.loadInterstitialAd();
     _adService.loadRewardedAd(
       onAdLoaded: (ad) {
         setState(() {
@@ -356,7 +357,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       }
      }
     }
-    _adService.showRewardedAd();
+    _adService.showInterstitialAd();
     
     final snackBar = SnackBar(
         elevation: 0,
