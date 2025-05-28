@@ -537,8 +537,8 @@ class _DirectorScreenState extends State<DirectorScreen> {
                                                     borderRadius: BorderRadius.circular(16),
                                                     child: Image.asset(
                                                       'assets/images/imdb.png',
-                                                      width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.3),
-                                                      height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
+                                                      width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.25),
+                                                      height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.04),
                                                       fit: BoxFit.cover,
                                                     ),
                                                   ),

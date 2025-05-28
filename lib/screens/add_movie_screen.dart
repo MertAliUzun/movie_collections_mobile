@@ -958,6 +958,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         title: Text(

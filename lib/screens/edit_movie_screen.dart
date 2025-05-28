@@ -937,6 +937,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -2010,7 +2011,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         child: Text(S.of(context).otherMoviesInSeries, style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenHeight * 0.028), fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                       ),
                         Container(
-                          height: isTablet ? 350 : 300,
+                          height: isTablet ? screenHeight * 0.45 : screenHeight * 0.3,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -2079,12 +2080,12 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                     }
                                 },
                                 child: Container(
-                                  width: isTablet ? 180 : 140,
+                                  width: isTablet ? screenWidth * 0.6 : screenWidth * 0.4,
                                   margin: const EdgeInsets.symmetric(horizontal: 2),
                                   child: Card(
                                     color: const Color.fromARGB(255, 44, 50, 60),
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.circular(2),
                                     ),
                                     elevation: 8,
                                     child: Column(
@@ -2094,8 +2095,10 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                           flex: 4,
                                           child: ClipRRect(
                                           borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            topRight: Radius.circular(16.0),
+                                            topLeft: Radius.circular(12.0),
+                                            topRight: Radius.circular(12.0),
+                                            bottomRight: Radius.circular(12.0),
+                                            bottomLeft: Radius.circular(12.0),
                                           ),
                                           child: Image.network(
                                             'https://image.tmdb.org/t/p/w500${movie['poster_path']}',
@@ -2112,7 +2115,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                           ),
                                         ),
                                         ),
-                                        
+                                        /*
                                         Expanded(
                                           flex: 2,
                                           child: Container(
@@ -2166,7 +2169,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                               ],
                                             ),
                                           ),
-                                        ),
+                                        ),*/
                                       ],
                                     ),
                                   ),
@@ -2290,7 +2293,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                     : const Icon(Icons.movie, size: 100, color: Colors.white54),
                                 SizedBox(height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight *0.01)),
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 10),
+                                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 5),
                                   child: Text(
                                     similarMovie['title'] ?? S.of(context).noTitle,
                                     style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.027), fontWeight: FontWeight.bold),

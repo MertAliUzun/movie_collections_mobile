@@ -398,6 +398,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
+      resizeToAvoidBottomInset: false,
       appBar: _isSelectionMode ? AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         leading: IconButton(
