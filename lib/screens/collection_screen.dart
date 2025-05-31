@@ -42,6 +42,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   bool _isAscending = true; // Default sorting order
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   String _viewType = 'List'; // Default view type
   String _groupByText = 'None';
   bool _groupByDirector = false; // Track if grouping by director
@@ -668,7 +669,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
               width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.8),
               height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
               child: TextField(
-                focusNode: FocusNode(),
+                focusNode: _focusNode,
                 controller: _searchController,
                 textAlignVertical: TextAlignVertical.bottom,
                 style: TextStyle(
@@ -695,6 +696,9 @@ class _CollectionScreenState extends State<CollectionScreen> {
                 _isSearching = !_isSearching; // Toggle search mode
                 _searchController.clear(); // Clear search field
                 _filteredMovies = _movies; // Reset filtered list
+              });
+              Future.delayed(Duration.zero, () {
+                _focusNode.requestFocus();
               });
             },
           ),
@@ -874,6 +878,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
   @override
   void dispose() {
     _adService.disposeAds();
+    _focusNode.dispose();
     super.dispose();
   }
 } 

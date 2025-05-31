@@ -30,6 +30,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
   List<Movie> _filteredMovies = [];
   bool _isSearching = false;
   final TextEditingController _searchController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
   final AdService _adService = AdService();
@@ -402,6 +403,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
                   ),
                 )
               : TextField(
+                  focusNode: _focusNode,
                   controller: _searchController,
                   style: TextStyle(
                     color: Colors.white,
@@ -424,6 +426,9 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
                   onPressed: () {
                     setState(() {
                       _isSearching = true;
+                    });
+                    Future.delayed(Duration.zero, () {
+                      _focusNode.requestFocus();
                     });
                   },
                 ),
@@ -481,5 +486,11 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
           ]
         ),
     );
+  }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    _focusNode.dispose();
+    super.dispose();
   }
 } 

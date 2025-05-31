@@ -41,6 +41,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _isAscending = true; // Default sorting order
   bool _isSearching = false; // Track if searching
   final TextEditingController _searchController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   String _viewType = 'List'; // Default view type
   String _groupByText = 'None';
   bool _groupByDirector = false; // Track if grouping by director
@@ -656,7 +657,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               width: ScreenUtil.getAdaptiveCardWidth(context, screenWidth * 0.8),
               height: ScreenUtil.getAdaptiveCardHeight(context, screenHeight * 0.05),
               child: TextField(
-                focusNode: FocusNode(),
+                focusNode: _focusNode,
                 controller: _searchController,
                 textAlignVertical: TextAlignVertical.bottom,
                 style: TextStyle(
@@ -683,6 +684,9 @@ class _WishlistScreenState extends State<WishlistScreen> {
                 _isSearching = !_isSearching;
                 _searchController.clear();
                 _filteredMovies = _movies;
+              });
+              Future.delayed(Duration.zero, () {
+                _focusNode.requestFocus();
               });
             },
           ),
@@ -861,6 +865,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   @override
   void dispose() {
     _adService.disposeAds();
+    _focusNode.dispose();
     super.dispose();
   }
 } 
