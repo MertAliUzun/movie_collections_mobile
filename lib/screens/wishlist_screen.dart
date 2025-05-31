@@ -48,6 +48,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   bool _groupByReleaseYear= false;
   bool _groupByFranchise = false;
   bool _groupByTag = false;
+  bool _groupByCollectionType = false;
   bool _groupBy = false;
   Set<String> _selectedMovies = {};
   bool get _isSelectionMode => _selectedMovies.isNotEmpty;
@@ -125,6 +126,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       _groupByReleaseYear = prefs.getBool('groupByReleaseYearWishlist') ?? false;
       _groupByFranchise = prefs.getBool('_groupByFranchiseWishlist') ?? false;
       _groupByTag = prefs.getBool('groupByTagWishlist') ?? false;
+      _groupByCollectionType = prefs.getBool('groupByCollectionTypeWishlist') ?? false;
       _groupBy = prefs.getBool('groupByWishlist') ?? false;
     });
   }
@@ -136,6 +138,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
     await prefs.setBool('groupByReleaseYearWishlist', _groupByReleaseYear);
     await prefs.setBool('groupByFranchiseWishlist', _groupByFranchise);
     await prefs.setBool('groupByTagWishlist', _groupByTag);
+    await prefs.setBool('groupByCollectionTypeWishlist', _groupByCollectionType);
     await prefs.setBool('groupByWishlist', _groupBy);
   }
 
@@ -290,6 +293,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       _groupByReleaseYear = false;
       _groupByFranchise = false;
       _groupByTag = false;
+      _groupByCollectionType = false;
       _groupBy = false;
 
       // Seçime göre gruplamayı etkinleştir
@@ -312,6 +316,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
           break;
         case 'Tag':
           _groupByTag = true;
+          _groupBy = true;
+          break;
+        case 'Collection Type':
+          _groupByCollectionType = true;
           _groupBy = true;
           break;
         default:
@@ -394,6 +402,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             : _groupByReleaseYear ? groupByYear(_filteredMovies, 'Release Date') 
             : _groupByFranchise ? groupByFranchise(_filteredMovies)
             : _groupByTag ? groupByTag(_filteredMovies)
+            : _groupByCollectionType ? groupByCollectionType(_filteredMovies)
             : {};
 
     return Scaffold(

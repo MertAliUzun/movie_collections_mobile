@@ -99,4 +99,27 @@ Map<String, List<Movie>> groupByYear(List<Movie> movies, String yearType) {
   return groupedMovies;
 }
 
+Map<String, List<Movie>> groupByCollectionType(List<Movie> movies) {
+  Map<String, List<Movie>> groupedMovies = {};
+
+  for (var movie in movies) {
+    // Eğer collectionType boş veya null ise
+    if (movie.collectionType == null || movie.collectionType!.isEmpty) {
+      // "None" grubuna ekle
+      if (!groupedMovies.containsKey('None')) {
+        groupedMovies['None'] = [];
+      }
+      groupedMovies['None']!.add(movie);
+    } else {
+      // Normal collectionType gruplandırması
+      if (!groupedMovies.containsKey(movie.collectionType)) {
+        groupedMovies[movie.collectionType!] = [];
+      }
+      groupedMovies[movie.collectionType!]!.add(movie);
+    }
+  }
+
+  return groupedMovies;
+}
+
 
