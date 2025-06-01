@@ -1007,4 +1007,9 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
       ),
     );
   }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
+  }
 } 

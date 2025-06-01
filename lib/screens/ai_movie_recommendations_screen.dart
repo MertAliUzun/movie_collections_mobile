@@ -404,6 +404,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
 
   @override
   void dispose() {
+    _adService.disposeAds();
     _textController.dispose();
     super.dispose();
   }

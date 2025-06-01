@@ -307,4 +307,9 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
         : null,
     );
   }
+  @override
+  void dispose() {
+    _adService.disposeAds();
+    super.dispose();
+  }
 } 

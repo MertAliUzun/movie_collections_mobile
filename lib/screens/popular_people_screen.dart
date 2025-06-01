@@ -312,6 +312,7 @@ class _PopularPeopleScreenState extends State<PopularPeopleScreen> {
     _debounce?.cancel();
     _searchController.dispose();
     _searchFocusNode.dispose();
+    _adService.disposeAds();
     super.dispose();
   }
 } 
