@@ -74,7 +74,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   List<Map<String, dynamic>> _seriesMovies = [];
   String? _pgRating;
   final ScrollController _scrollController = ScrollController();
-  String _selectedCollectionType = ''; // Varsayılan değer
+  String _selectedCollectionType = ''; // Varsayılan 
+  bool? _afterCreditsExists;
   Map<String, List<dynamic>> _providers = {
     'flatrate': [],
     'rent': [],
@@ -653,6 +654,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _pgRating = widget.movie!.pgRating ?? '';
       _fetchSimilarMovies();
       _fetchCollectionMovies();
+      _fetchAfterCredits();
       //_fetchPgRating();
       
       //_fetchProviders();
@@ -716,6 +718,29 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
         //print('xxxxxx'+_pgRating!);
         }
     }
+  }
+
+  Future<void> _fetchAfterCredits() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+   if (connectivityResult[0] == ConnectivityResult.none) {
+     // Skip fetching similar movies if there's no internet
+     return;
+   }
+   try {
+     final tmdbService = TmdbService();
+     final movie = await tmdbService.searchMovies(widget.movie!.movieName);
+
+     if(movie.isNotEmpty) {
+
+        final afterCredits = await tmdbService.getAfterCredits(movie[0]['id']);
+      setState(() {
+        _afterCreditsExists = afterCredits;
+      });
+     }
+
+   } catch (e) {
+     
+   }
   }
   
   Future<void> _fetchCollectionMovies() async {
@@ -1173,7 +1198,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                                 border: InputBorder.none,
                               ),
                                 keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 20)),
+                            style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, 19.5), fontWeight: FontWeight.bold),
                                 validator: (value) {
                               if (value != null && value.isNotEmpty) {
                                 final number = double.tryParse(value);
@@ -1214,6 +1239,28 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     ),
                   ),    
                       ],
+                  ),
+                  SizedBox(height: screenWidth * 0.05),
+                  if(_afterCreditsExists != null)
+                  Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('After Credits Scene', //S.of
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                            fontWeight: FontWeight.bold,
+                           ),
+                          ),
+                          SizedBox(width: screenWidth * 0.05,),
+                          Icon(_afterCreditsExists! ? Icons.check : Icons.clear, color: _afterCreditsExists! ? Colors.green : Colors.red, size: screenHeight * 0.05)
+                        ],
+                      ),
+                    )
                   ),
                         
                   SizedBox(height: screenWidth * 0.1),

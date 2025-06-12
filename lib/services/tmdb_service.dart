@@ -127,6 +127,45 @@ class TmdbService {
     return null;
   }
 
+  Future<bool> getAfterCredits(int movieId) async {
+    const targetIds = {179430, 179431};
+    final response = await http.get(
+      Uri.parse('$_baseUrl/movie/$movieId/keywords?api_key=$_apiKey'),
+    );
+    if(response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final keywords = data['keywords'];
+      print(keywords);
+      return keywords.any((keyword) => targetIds.contains(keyword['id']));
+    } else {
+      return false;
+    }
+  }
+
+  Future<List<dynamic>> getMovieKeywords(int movieId) async {
+    final List<int> targetKeywordIds = [
+      818, 2324, 4238, 10873, 188178, 9715, 9717, 180547, 179431, 179430
+    ];
+    final List<dynamic> keywords = [];
+    final response = await http.get(
+      Uri.parse('$_baseUrl/movie/$movieId/keywords?api_key=$_apiKey'),
+    );
+     if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final keywords = data['keywords'] as List<dynamic>;
+
+      for (var keyword in keywords) {
+        if (targetKeywordIds.contains(keyword['id'])) {
+          keywords.add(keyword);
+        }
+      }
+    } else {
+      throw Exception('Failed to load keywords');
+    }
+
+    return keywords;
+  }
+
   Future<List< dynamic>>  getPopularMovies({String language = 'en'}) async {
     final List< dynamic> movies = [];
     final response = await http.get(

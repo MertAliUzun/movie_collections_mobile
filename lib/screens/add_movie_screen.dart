@@ -78,6 +78,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   String _selectedCollectionType = ''; // Varsayılan değer
   bool canShowProviders = false;
   FocusNode _searchFocusNode = FocusNode();
+  bool? _afterCreditsExists;
   Map<String, List<dynamic>> _providers = {
     'flatrate': [],
     'rent': [],
@@ -294,7 +295,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         _searchResults = [];
         _searchFocusNode.unfocus();
         //canShowProviders = false;
-
+        _fetchAfterCredits(movieId);
         final pgRating = await _tmdbService.getPgRating(movieId);
 
       if (mounted) {
@@ -682,6 +683,24 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     return formatter.format(value);
   }
 
+  Future<void> _fetchAfterCredits(int movieId) async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+   if (connectivityResult[0] == ConnectivityResult.none) {
+     // Skip fetching similar movies if there's no internet
+     return;
+   }
+   try {
+    print('XXXXXX');
+      final afterCredits = await TmdbService().getAfterCredits(movieId);
+      setState(() {
+        _afterCreditsExists = afterCredits;
+      });
+    
+   } catch (e) {
+     
+   }
+  }
+
   Future<void> _fetchProviders() async{
     if(int.parse(widget.movie!.id) < 0) {return;}
     var connectivityResult = await (Connectivity().checkConnectivity());
@@ -919,7 +938,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _pgRating = widget.movie!.pgRating ?? '';
       _selectedFranchises = widget.movie!.franchises ?? [];
       _selectedTags = widget.movie!.tags ?? [];
-
+      _fetchAfterCredits(int.parse(widget.movie!.id));
       _fetchPgRating();
       Future.microtask(() => _fetchProviders());
       
@@ -1247,6 +1266,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   ),    
                   ],
                 ),
+                SizedBox(height: screenWidth * 0.05),
+                  if(_afterCreditsExists != null)
+                  Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('After Credits Scene', //S.of
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
+                            fontWeight: FontWeight.bold,
+                           ),
+                          ),
+                          SizedBox(width: screenWidth * 0.05,),
+                          Icon(_afterCreditsExists! ? Icons.check : Icons.clear, color: _afterCreditsExists! ? Colors.green : Colors.red, size: screenHeight * 0.05)
+                        ],
+                      ),
+                    )
+                  ),
                 SizedBox(height: screenWidth * 0.1),
                 if ((_providers['flatrate']!.isNotEmpty || 
                       _providers['rent']!.isNotEmpty || 
