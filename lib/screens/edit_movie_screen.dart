@@ -76,6 +76,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
   final ScrollController _scrollController = ScrollController();
   String _selectedCollectionType = ''; // Varsayılan 
   bool? _afterCreditsExists;
+  String? _basedOn;
   Map<String, List<dynamic>> _providers = {
     'flatrate': [],
     'rent': [],
@@ -654,7 +655,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       _pgRating = widget.movie!.pgRating ?? '';
       _fetchSimilarMovies();
       _fetchCollectionMovies();
-      _fetchAfterCredits();
+      _fetchMovieKeywords();
       //_fetchPgRating();
       
       //_fetchProviders();
@@ -720,7 +721,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     }
   }
 
-  Future<void> _fetchAfterCredits() async {
+  Future<void> _fetchMovieKeywords() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
    if (connectivityResult[0] == ConnectivityResult.none) {
      // Skip fetching similar movies if there's no internet
@@ -731,10 +732,33 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
      final movie = await tmdbService.searchMovies(widget.movie!.movieName);
 
      if(movie.isNotEmpty) {
+        final keywords = await tmdbService.getMovieKeywords(movie[0]['id']);
+        final List<int> keywordIds = keywords.map<int>((k) => k['id'] as int).toList();
 
-        final afterCredits = await tmdbService.getAfterCredits(movie[0]['id']);
+        bool afterCredits = keywordIds.contains(179430) || keywordIds.contains(179431);
+        String basedOn = 'Original';   
+        if (keywordIds.contains(9717)) {
+          basedOn = 'Comic';
+        } else if (keywordIds.contains(818)) {
+          basedOn = 'Book';
+        } else if (keywordIds.contains(13141)) {
+          basedOn = 'Manga';
+        } else if (keywordIds.contains(348023)) {
+          basedOn = 'Documentary';
+        } else if (keywordIds.contains(222243)) {
+          basedOn = 'Anime';
+        } else if (keywordIds.contains(10244)) {
+          basedOn = 'Cartoon';
+        } else if (keywordIds.contains(10542)) {
+          basedOn = 'Toy';
+        } else if (keywordIds.contains(290667)) {
+          basedOn = 'Manhua';
+        } else if (keywordIds.contains(323477)) {
+          basedOn = 'Manhwa';
+        }
       setState(() {
         _afterCreditsExists = afterCredits;
+        _basedOn = basedOn;
       });
      }
 
@@ -1213,8 +1237,84 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                         ),
                           ],
                         ),
-                        SizedBox(height: screenWidth * 0.05),
-                    if((_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0) && (_revenueController.text.isNotEmpty && toDouble(_revenueController.text)! > 0))
+                  SizedBox(height: screenWidth * 0.02),
+                  if(_afterCreditsExists != null && _basedOn != null)
+                  Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
+                      child: IntrinsicHeight(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Sol taraf
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      _basedOn == 'Book' ? 'Based on Book' :
+                                      _basedOn == 'Comic' ? 'Based on Comic' : 
+                                      _basedOn == 'Manga' ? 'Based on Manga' : 
+                                      _basedOn == 'Documentary' ? 'Based on Documentary' : 
+                                      _basedOn == 'Anime' ? 'Based on Anime' : 
+                                      _basedOn == 'Cartoon' ? 'Based on Cartoon' : 
+                                      _basedOn == 'Toy' ? 'Based on Toy' : 
+                                      _basedOn == 'Manhua' ? 'Based on Manhua' : 
+                                      _basedOn == 'Manhwa' ? 'Based on Manhwa' : 'Original Screenplay', //S.of
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // Ortadaki dikey çizgi
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 12.0),
+                              child: VerticalDivider(
+                                thickness: 1,
+                                width: 1,
+                                color: Colors.white,
+                              ),
+                            ),
+                            // Sağ taraf
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      'After Credits Scene', //S.of
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  SizedBox(width: screenWidth * 0.015),
+                                  Icon(
+                                    _afterCreditsExists! ? Icons.check : Icons.clear,
+                                    color: _afterCreditsExists! ? Colors.green : Colors.red,
+                                    size: screenHeight * 0.02,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: screenWidth * 0.025),
+                  if((_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0) && (_revenueController.text.isNotEmpty && toDouble(_revenueController.text)! > 0))
                   Card(
                     color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                     child: Column(
@@ -1239,28 +1339,6 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                     ),
                   ),    
                       ],
-                  ),
-                  SizedBox(height: screenWidth * 0.05),
-                  if(_afterCreditsExists != null)
-                  Card(
-                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('After Credits Scene', //S.of
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
-                            fontWeight: FontWeight.bold,
-                           ),
-                          ),
-                          SizedBox(width: screenWidth * 0.05,),
-                          Icon(_afterCreditsExists! ? Icons.check : Icons.clear, color: _afterCreditsExists! ? Colors.green : Colors.red, size: screenHeight * 0.05)
-                        ],
-                      ),
-                    )
                   ),
                         
                   SizedBox(height: screenWidth * 0.1),

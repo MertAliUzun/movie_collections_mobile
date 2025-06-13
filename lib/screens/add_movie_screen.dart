@@ -79,6 +79,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
   bool canShowProviders = false;
   FocusNode _searchFocusNode = FocusNode();
   bool? _afterCreditsExists;
+  String? _basedOn;
   Map<String, List<dynamic>> _providers = {
     'flatrate': [],
     'rent': [],
@@ -295,7 +296,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         _searchResults = [];
         _searchFocusNode.unfocus();
         //canShowProviders = false;
-        _fetchAfterCredits(movieId);
+        _fetchMovieKeywords(movieId);
         final pgRating = await _tmdbService.getPgRating(movieId);
 
       if (mounted) {
@@ -683,19 +684,43 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
     return formatter.format(value);
   }
 
-  Future<void> _fetchAfterCredits(int movieId) async {
+  Future<void> _fetchMovieKeywords(int movieId) async {
     var connectivityResult = await (Connectivity().checkConnectivity());
    if (connectivityResult[0] == ConnectivityResult.none) {
      // Skip fetching similar movies if there's no internet
      return;
    }
    try {
-    print('XXXXXX');
-      final afterCredits = await TmdbService().getAfterCredits(movieId);
+     final tmdbService = TmdbService();
+        final keywords = await tmdbService.getMovieKeywords(movieId);
+        final List<int> keywordIds = keywords.map<int>((k) => k['id'] as int).toList();
+
+        bool afterCredits = keywordIds.contains(179430) || keywordIds.contains(179431);
+        String basedOn = 'Original';   
+        if (keywordIds.contains(9717)) {
+          basedOn = 'Comic';
+        } else if (keywordIds.contains(818)) {
+          basedOn = 'Book';
+        } else if (keywordIds.contains(13141)) {
+          basedOn = 'Manga';
+        } else if (keywordIds.contains(348023)) {
+          basedOn = 'Documentary';
+        } else if (keywordIds.contains(222243)) {
+          basedOn = 'Anime';
+        } else if (keywordIds.contains(10244)) {
+          basedOn = 'Cartoon';
+        } else if (keywordIds.contains(10542)) {
+          basedOn = 'Toy';
+        } else if (keywordIds.contains(290667)) {
+          basedOn = 'Manhua';
+        } else if (keywordIds.contains(323477)) {
+          basedOn = 'Manhwa';
+        }
       setState(() {
         _afterCreditsExists = afterCredits;
+        _basedOn = basedOn;
       });
-    
+
    } catch (e) {
      
    }
@@ -938,7 +963,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       _pgRating = widget.movie!.pgRating ?? '';
       _selectedFranchises = widget.movie!.franchises ?? [];
       _selectedTags = widget.movie!.tags ?? [];
-      _fetchAfterCredits(int.parse(widget.movie!.id));
+      _fetchMovieKeywords(int.parse(widget.movie!.id));
       _fetchPgRating();
       Future.microtask(() => _fetchProviders());
       
@@ -1238,9 +1263,85 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                     ),
                       ],
                     ),
-                    SizedBox(height: screenWidth * 0.05),
+                SizedBox(height: screenWidth * 0.02),
+                  if(_afterCreditsExists != null && _basedOn != null)
+                  Card(
+                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
+                      child: IntrinsicHeight(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Sol taraf
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      _basedOn == 'Book' ? 'Based on Book' :
+                                      _basedOn == 'Comic' ? 'Based on Comic' : 
+                                      _basedOn == 'Manga' ? 'Based on Manga' : 
+                                      _basedOn == 'Documentary' ? 'Based on Documentary' : 
+                                      _basedOn == 'Anime' ? 'Based on Anime' : 
+                                      _basedOn == 'Cartoon' ? 'Based on Cartoon' : 
+                                      _basedOn == 'Toy' ? 'Based on Toy' : 
+                                      _basedOn == 'Manhua' ? 'Based on Manhua' : 
+                                      _basedOn == 'Manhwa' ? 'Based on Manhwa' : 'Original Screenplay', //S.of
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // Ortadaki dikey çizgi
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 12.0),
+                              child: VerticalDivider(
+                                thickness: 1,
+                                width: 1,
+                                color: Colors.white,
+                              ),
+                            ),
+                            // Sağ taraf
+                            Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      'After Credits Scene', //S.of
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  SizedBox(width: screenWidth * 0.015),
+                                  Icon(
+                                    _afterCreditsExists! ? Icons.check : Icons.clear,
+                                    color: _afterCreditsExists! ? Colors.green : Colors.red,
+                                    size: screenHeight * 0.02,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: screenWidth * 0.025),
                 if(_budgetController.text.isNotEmpty && toDouble(_budgetController.text)! > 0 && _revenueController.text.isNotEmpty && toDouble(_revenueController.text)! > 0)
-                                  Card(
+                Card(
                 color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                 child: Column(
                   children: [
@@ -1266,28 +1367,6 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                   ),    
                   ],
                 ),
-                SizedBox(height: screenWidth * 0.05),
-                  if(_afterCreditsExists != null)
-                  Card(
-                    color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('After Credits Scene', //S.of
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: ScreenUtil.getAdaptiveTextSize(context, 20),
-                            fontWeight: FontWeight.bold,
-                           ),
-                          ),
-                          SizedBox(width: screenWidth * 0.05,),
-                          Icon(_afterCreditsExists! ? Icons.check : Icons.clear, color: _afterCreditsExists! ? Colors.green : Colors.red, size: screenHeight * 0.05)
-                        ],
-                      ),
-                    )
-                  ),
                 SizedBox(height: screenWidth * 0.1),
                 if ((_providers['flatrate']!.isNotEmpty || 
                       _providers['rent']!.isNotEmpty || 
