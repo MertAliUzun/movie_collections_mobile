@@ -218,5 +218,7 @@
     "premiumWillBeForPlayStoreUser": "Premium play store' a giriş yapılan kullanıcı için satın alınacaktır. Bu uygulamaya giriş yapan kullanıcı için değil. Ancak premium aldığınızda bu cihazdaki tüm kullanıcılar ile kullanabilirsiniz.",
     "moviesImported": "film eklendi",
     "warning": "Uyarı",
-    "noMoviesImported": "Hiç film eklenmedi"
+    "noMoviesImported": "Hiç film eklenmedi",
+    "moviesFor": "Filmler için",
+    "noMoviesForTag": "Bu etiket için film bulunamadı"
 }

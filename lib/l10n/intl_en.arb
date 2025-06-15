@@ -218,5 +218,7 @@
     "premiumWillBeForPlayStoreUser": "Premium will be bought for the account that is logged in on your play store. It won't be bought for your user logged in this app. However you can use premium for all users in this app when it is bought.",
     "moviesImported": "movies imported",
     "warning": "Warning",
-    "noMoviesImported": "No movies were imported"
+    "noMoviesImported": "No movies were imported",
+    "moviesFor": "Movies for",
+    "noMoviesForTag": "No movies found for this tag"
 }

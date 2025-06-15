@@ -439,4 +439,19 @@ Future<List< dynamic>>  getPopularPeople() async {
     return people;
   }
 
+  Future<List<Map<String, dynamic>>> getMoviesByTag(int tagId, String sortBy) async {
+    List<Map<String, dynamic>> tagMovies = [];
+    final response = await http.get(
+      Uri.parse('$_baseUrl/discover/movie?api_key=$_apiKey&with_keywords=$tagId&sort_by=$sortBy'),
+    );
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      if (data['results'] != null) {
+        tagMovies.addAll(List<Map<String, dynamic>>.from(data['results']));
+      }
+    }
+
+    return tagMovies.toSet().toList();
+  }
 } 
