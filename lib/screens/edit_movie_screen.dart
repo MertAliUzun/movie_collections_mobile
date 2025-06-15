@@ -23,6 +23,7 @@ import 'package:hive/hive.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../services/ad_service.dart';
 import '../sup/screen_util.dart';
+import 'tag_movies_screen.dart';
 
 class EditMovieScreen extends StatefulWidget {
   final bool isFromWishlist;
@@ -1250,7 +1251,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             // Sol taraf
                             Expanded(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Flexible(
                                     child: Text(
@@ -1286,7 +1287,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             // Sağ taraf
                             Expanded(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Flexible(
                                     child: Text(
@@ -1883,12 +1884,34 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             onLongPress: () {
                              _deleteTag(index);
                             },
+                            onTap: () async {
+                                final movieId = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TagMoviesScreen(tag: _selectedTags[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
+                                  ),
+                                );
+                                if (movieId != null) {
+                                  _fetchMovieDetails(movieId);
+                                }
+                              },
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
                                   child: Text(
+                                    /*_selectedTags[index] == 'Superhero' ? S.of(context).superhero :
+                                    _selectedTags[index] == 'Sequel' ? S.of(context).sequel :
+                                    _selectedTags[index] == 'MCU' ? S.of(context).mcu :
+                                    _selectedTags[index] == 'Magic' ? S.of(context).magic :
+                                    _selectedTags[index] == 'Supernatural' ? S.of(context).supernatural :
+                                    _selectedTags[index] == 'Time Travel' ? S.of(context).timetravel :
+                                    _selectedTags[index] == 'Romance' ? S.of(context).romance :
+                                    _selectedTags[index] == 'Anime' ? S.of(context).anime :
+                                    _selectedTags[index] == 'Prequel' ? S.of(context).prequel :
+                                    _selectedTags[index] == 'Chosen One' ? S.of(context).chosenOne :
+                                    _selectedTags[index] == 'School' ? S.of(context).school : _selectedTags[index],*/
                                     _selectedTags[index],
                                     textAlign: TextAlign.center,
                                     style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedTags.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),

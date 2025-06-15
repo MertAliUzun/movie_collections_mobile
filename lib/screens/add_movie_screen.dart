@@ -15,6 +15,7 @@ import '../services/tmdb_service.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:country_flags/country_flags.dart';
+import '../sup/tag_map.dart';
 import '../widgets/provider_card_widget.dart';
 import 'company_screen.dart';
 import 'director_screen.dart';
@@ -24,6 +25,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:hive/hive.dart';
 import '../services/ad_service.dart';
 import '../sup/screen_util.dart';
+import 'tag_movies_screen.dart';
 
 
 class AddMovieScreen extends StatefulWidget {
@@ -716,9 +718,16 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         } else if (keywordIds.contains(323477)) {
           basedOn = 'Manhwa';
         }
+
+        final List<String> matchedTags = keywordIds
+        .where((id) => tagMap.containsKey(id))
+        .map((id) => tagMap[id]!)              
+        .toList();
+        print(matchedTags);
       setState(() {
         _afterCreditsExists = afterCredits;
         _basedOn = basedOn;
+        _selectedTags = matchedTags;
       });
 
    } catch (e) {
@@ -1276,7 +1285,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             // Sol taraf
                             Expanded(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Flexible(
                                     child: Text(
@@ -1312,7 +1321,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             // Sağ taraf
                             Expanded(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Flexible(
                                     child: Text(
@@ -1913,12 +1922,34 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                             onLongPress: () {
                              _deleteTag(index);
                             },
+                            onTap: () async {
+                                final movieId = await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => TagMoviesScreen(tag: _selectedTags[index], isFromWishlist: widget.isFromWishlist, userEmail: widget.userEmail, systemLanguage: widget.systemLanguage,),
+                                  ),
+                                );
+                                if (movieId != null) {
+                                  _selectMovie(movieId);
+                                }
+                              },
                             child: Card(
                               color: const Color.fromARGB(255, 44, 50, 60).withOpacity(0.5),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
                                   child: Text(
+                                    /*_selectedTags[index] == 'Superhero' ? S.of(context).superhero :
+                                    _selectedTags[index] == 'Sequel' ? S.of(context).sequel :
+                                    _selectedTags[index] == 'MCU' ? S.of(context).mcu :
+                                    _selectedTags[index] == 'Magic' ? S.of(context).magic :
+                                    _selectedTags[index] == 'Supernatural' ? S.of(context).supernatural :
+                                    _selectedTags[index] == 'Time Travel' ? S.of(context).timeTravel :
+                                    _selectedTags[index] == 'Romance' ? S.of(context).romance :
+                                    _selectedTags[index] == 'Anime' ? S.of(context).anime :
+                                    _selectedTags[index] == 'Prequel' ? S.of(context).prequel :
+                                    _selectedTags[index] == 'Chosen One' ? S.of(context).chosenOne :
+                                    _selectedTags[index] == 'School' ? S.of(context).school : _selectedTags[index],*/
                                     _selectedTags[index],
                                     textAlign: TextAlign.center,
                                     style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedTags.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
