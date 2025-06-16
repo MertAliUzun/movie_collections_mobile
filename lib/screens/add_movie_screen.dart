@@ -701,7 +701,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
         String basedOn = 'Original';   
         if (keywordIds.contains(9717)) {
           basedOn = 'Comic';
-        } else if (keywordIds.contains(818)) {
+        } else if (keywordIds.contains(818) || keywordIds.contains(15101)) {
           basedOn = 'Book';
         } else if (keywordIds.contains(13141)) {
           basedOn = 'Manga';
@@ -717,6 +717,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
           basedOn = 'Manhua';
         } else if (keywordIds.contains(323477)) {
           basedOn = 'Manhwa';
+        } else if (keywordIds.contains(14641)) {
+          basedOn = 'Autobiography';
         }
 
         final List<String> matchedTags = keywordIds
@@ -1296,7 +1298,8 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                       _basedOn == 'Anime' ? 'Based on Anime' : 
                                       _basedOn == 'Cartoon' ? 'Based on Cartoon' : 
                                       _basedOn == 'Toy' ? 'Based on Toy' : 
-                                      _basedOn == 'Manhua' ? 'Based on Manhua' : 
+                                      _basedOn == 'Manhua' ? 'Based on Manhua' :
+                                      _basedOn == 'Autobiography' ? 'Based on Autobiography' : 
                                       _basedOn == 'Manhwa' ? 'Based on Manhwa' : 'Original Screenplay', //S.of
                                       style: TextStyle(
                                         color: Colors.white,
@@ -1949,6 +1952,28 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                     _selectedTags[index] == 'Anime' ? S.of(context).anime :
                                     _selectedTags[index] == 'Prequel' ? S.of(context).prequel :
                                     _selectedTags[index] == 'Chosen One' ? S.of(context).chosenOne :
+                                     _selectedTags[index] == 'Fantasy World' ? S.of(context).fantasyWorld :
+                                    _selectedTags[index] == 'Isekai' ? S.of(context).isekai :
+                                    _selectedTags[index] == 'Pirate' ? S.of(context).pirate :
+                                    _selectedTags[index] == 'Martial Arts' ? S.of(context).martialArts :
+                                    _selectedTags[index] == 'Kung Fu' ? S.of(context).kungFu :
+                                    _selectedTags[index] == 'Yakuza' ? S.of(context).yakuza :
+                                    _selectedTags[index] == 'Anti War' ? S.of(context).antiWar :
+                                    _selectedTags[index] == 'Sports Documentary' ? S.of(context).sportsDocumentary :
+                                    _selectedTags[index] == 'Dystopia' ? S.of(context).dystopia :
+                                    _selectedTags[index] == 'Steampunk' ? S.of(context).steampunk :
+                                    _selectedTags[index] == 'Robot' ? S.of(context).robot :
+                                    _selectedTags[index] == 'Silent Film' ? S.of(context).silentFilm :
+                                    _selectedTags[index] == 'Cyberpunk' ? S.of(context).cyberpunk :
+                                    _selectedTags[index] == 'Military' ? S.of(context).military :
+                                    _selectedTags[index] == 'Sci-fi' ? S.of(context).sciFi :
+                                    _selectedTags[index] == 'Space' ? S.of(context).space :
+                                    _selectedTags[index] == 'Prison' ? S.of(context).prison :
+                                    _selectedTags[index] == 'AI' ? S.of(context).ai :
+                                    _selectedTags[index] == 'Philosophy' ? S.of(context).philosophy :
+                                    _selectedTags[index] == 'Mafia' ? S.of(context).mafia :
+                                    _selectedTags[index] == 'Detective' ? S.of(context).detective :
+                                    _selectedTags[index] == 'Dark Comedy' ? S.of(context).darkComedy :
                                     _selectedTags[index] == 'School' ? S.of(context).school : _selectedTags[index],*/
                                     _selectedTags[index],
                                     textAlign: TextAlign.center,
