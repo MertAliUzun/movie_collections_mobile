@@ -38,10 +38,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Fa Tag Ka Ho"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Fa Kyerɛwfoɔ ho"),
         "adventure": MessageLookupByLibrary.simpleMessage("Nwanwa"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛba akyi no"),
+        "ai": MessageLookupByLibrary.simpleMessage("AI"),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Akanema bi a wopaw no wɔ wo boaboa no mu dada. Sɛ wobɛtɔ aba mu a, akanema no bɛsesa akanema a ɛwɔ wo boaboa no mu. Wopɛ sɛ wobɛtɔ aba mu?"),
         "animation": MessageLookupByLibrary.simpleMessage("Anideɛ"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage(
+            "Nneɛma a ɛkyerɛ sɛ yɛmpɛ ɔko"),
         "april": MessageLookupByLibrary.simpleMessage("Ebɔw-Ɔforisuo"),
         "ascending": MessageLookupByLibrary.simpleMessage("Faw ɔdan mu"),
         "august": MessageLookupByLibrary.simpleMessage("Difuu-Ɔsandaa"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Anime a ɛfata"),
+        "basedAutobiography": MessageLookupByLibrary.simpleMessage(
+            "Nneɛma a ɛkyerɛ ɔbra a ɛfata"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Nwoma a ɛfata"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛyɛ nwanwa a ɛfata"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛyɛ nwanwa a ɛfata"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Nneɛma a ɛkyerɛ asɛm a ɛfata"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Manga a ɛfata"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Manhua a ɛfata"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Manhwa a ɛfata"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛyɛ foforɔ"),
+        "basedToy": MessageLookupByLibrary.simpleMessage(
+            "Nneɛma a mma yɛde yɛ adwuma a ɛfata"),
         "budgetColon":
             MessageLookupByLibrary.simpleMessage("Sika a Wɔde yɛɛ no: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Tɔ)"),
@@ -53,9 +78,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancelled": MessageLookupByLibrary.simpleMessage("Wɔatwe!"),
         "card": MessageLookupByLibrary.simpleMessage("Kaat"),
         "checkInternet": MessageLookupByLibrary.simpleMessage(
-            "Mepaakyɛw, hwɛ w’Intanɛt no mu!"),
+            "Mepaakyɛw, hwɛ w\'Intanɛt no mu!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Hwɛ Movies a Wɔdi Mu Kakraa/Wɔdi Mu Pii"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Obi a wɔpaw no"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("Cloud BackUp Ma Wo Movies"),
         "collection": MessageLookupByLibrary.simpleMessage("Boaboa"),
@@ -70,11 +96,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CSV fael no aba mu nkɔso."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Nsɛm A Ɛyɛ Nhyehyeɛ"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage(
+            "Nneɛma a ɛyɛ nwanwa a ɛnyɛ yie"),
         "december": MessageLookupByLibrary.simpleMessage("Mumu-Ɔpɛnimba"),
         "delete": MessageLookupByLibrary.simpleMessage("Yi"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Yi Akanema A Wɔpaw"),
         "descending": MessageLookupByLibrary.simpleMessage("Siane"),
+        "detective": MessageLookupByLibrary.simpleMessage("Obi a ɔhwehwɛ asɛm"),
         "digital": MessageLookupByLibrary.simpleMessage("Dijital"),
         "director": MessageLookupByLibrary.simpleMessage("Sɔre sofoɔ"),
         "directorNull":
@@ -82,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "discover": MessageLookupByLibrary.simpleMessage("Hunu"),
         "documentary": MessageLookupByLibrary.simpleMessage("Nkyerɛkyerɛ Nsɛm"),
         "drama": MessageLookupByLibrary.simpleMessage("Nsɛm A Ɛyɛ Yɛyɛ"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Wiase a ɛnyɛ yie"),
         "editDirector": MessageLookupByLibrary.simpleMessage("Sesa Sɔre Sofoɔ"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("Kyerɛ Sɔre Sofoɔ Din"),
@@ -102,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Mmoa!"),
         "family": MessageLookupByLibrary.simpleMessage("Abusua"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Nsɛm A Ɛnyɛ Nokorɛ"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Wiase a ɛnyɛ yie"),
         "february": MessageLookupByLibrary.simpleMessage("Kwakwar-Ɔgyefuo"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Hwehwɛ Ahorow Mɔd"),
@@ -122,14 +155,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("IMDB Nsɛnhyɛn"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Nsɛnhyɛn"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Fa CSV Bra"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Sanda-Ɔpɛpɔn"),
         "july": MessageLookupByLibrary.simpleMessage("Ayɛwoho-Kitawonsa"),
         "june": MessageLookupByLibrary.simpleMessage("Obirade-Ayɛwohomumu"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Ahorow Foforɔ"),
         "list": MessageLookupByLibrary.simpleMessage("Liste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liste (Nketewa)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Nneɛma a ɛyɛ nwanwa"),
         "march": MessageLookupByLibrary.simpleMessage("Ebɔw-Ɔbenem"),
+        "martialArts":
+            MessageLookupByLibrary.simpleMessage("Sɛnea yɛyɛ adwuma"),
         "may": MessageLookupByLibrary.simpleMessage("Esusow Aketseaba-Ɔbenem"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Asraafoɔ"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Akanema de kɔ Boaboa mu nkɔso!"),
         "movieCollection":
@@ -150,6 +191,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bɔɔl kɔmɔde no asum"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" akanema ayera."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Akanema ma"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("akanema aba mu"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Akanema de kɔ Boaboa mu!"),
         "moviesMovedToWatchlist":
@@ -176,6 +220,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bɔɔl Kɔmɔde Biara Nni Hɔ a Wosum"),
         "noIdToken":
             MessageLookupByLibrary.simpleMessage("ID Token biara nni hɔ."),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Akanema biara nni hɔ a ɛfata saa tag yi"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "Akanema biara nni hɔ a aba mu"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "Akanema biara nni hɔ a wobɛtɔ aba mu"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Wɔn mma me kwan mma meda fael no wɔ beae no."),
         "noTagsSelected":
@@ -188,6 +238,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Yoo"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "Bɔɔl Kɔmɔde foforɔ wɔ serie no mu"),
+        "philosophy": MessageLookupByLibrary.simpleMessage(
+            "Nneɛma a ɛkyerɛ sɛnea yɛyɛ adwuma"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Obi a ɔyɛ adwuma bone"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Mepaakyɛw, kyerɛ"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Mepaakyɛw, kyerɛ Akanema Abodin"),
@@ -201,8 +254,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium Boafoɔ Som"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium no bɛtɔ ama akawnt a ɛwɔ Play Store so a wode abɔ mu no. Ɛnnyɛ ɔdeɛ a wode abɔ mu wɔ app yi mu no na wɔbɛtɔ ama no. Nanso, wubetumi de premium no adi dwuma ma akɔnt no nyinaa a wɔwɔ app yi mu sɛ wɔatɔ no."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Nneɛma a ɛtɔ so kan"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Pata so kɔ Akanema Pɔsta"),
+        "prison": MessageLookupByLibrary.simpleMessage("Efiase"),
         "producer": MessageLookupByLibrary.simpleMessage("Ɔpɛsɛmenkommere"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Dwumadi Kwanfoɔ"),
@@ -228,10 +283,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "restoreHiddenMovies": MessageLookupByLibrary.simpleMessage(
             "San fa Bɔɔl Kɔmɔde a Wosum No Ba"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Sika a Wɔnyae: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Nneɛma a ɛyɛ adwuma"),
         "romance": MessageLookupByLibrary.simpleMessage("Ɔdɔ"),
         "runtime": MessageLookupByLibrary.simpleMessage("Berɛ a ɛkɔ so"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Berɛ a ɛkɔ so (Anɔpa/Mpɔ)"),
+        "school": MessageLookupByLibrary.simpleMessage("Sukuu"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Nneɛma a ɛyɛ nwanwa"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Nsɛm A Wɔyɛde"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Hwehwɛ Akanema"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("Hwehwɛ Nkɔmɔfoɔ"),
@@ -246,6 +304,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Wopene so sɛ wopɛ sɛ wosan fa bɔɔl kɔmɔde a wopaw no ba?"),
         "september": MessageLookupByLibrary.simpleMessage("Fankwa-Ɛbɔ"),
+        "sequel":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛtɔ so mmienu"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google kɔkyekyɛ no wɔ akyire."),
         "signOut": MessageLookupByLibrary.simpleMessage("Pue"),
@@ -255,31 +315,44 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Wopue no yɛ nkɔso!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("Wopue fi wo akawonti no mu."),
+        "silentFilm":
+            MessageLookupByLibrary.simpleMessage("Akanema a ɛnyɛ asɛm"),
         "sort": MessageLookupByLibrary.simpleMessage("Nhyehyeɛ "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Nhyehyeɛ So"),
+        "space": MessageLookupByLibrary.simpleMessage("Soro"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛkyerɛ agumadi"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "streaming": MessageLookupByLibrary.simpleMessage("Strimi"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Nsɛm Tumi)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Nkɔso!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(" ayɛ yie"),
+        "superhero":
+            MessageLookupByLibrary.simpleMessage("Obarima a ɔwɔ tumi kɛseɛ"),
+        "supernatural":
+            MessageLookupByLibrary.simpleMessage("Nneɛma a ɛnyɛ yie"),
         "tag": MessageLookupByLibrary.simpleMessage("Tag"),
         "tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "thriller": MessageLookupByLibrary.simpleMessage("Nsɛm A Ɛyɛ Nwanwa"),
+        "timetravel":
+            MessageLookupByLibrary.simpleMessage("Sɛnea yɛtɔ akɔ bere foforɔ"),
         "title": MessageLookupByLibrary.simpleMessage("Abodin"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Akanema"),
         "unableFindMovie":
-            MessageLookupByLibrary.simpleMessage("M’antie akanema no ho!"),
-        "unableGetMovieDetails":
-            MessageLookupByLibrary.simpleMessage("M’antie akanema nsɛm no ho!"),
+            MessageLookupByLibrary.simpleMessage("M\'antie akanema no ho!"),
+        "unableGetMovieDetails": MessageLookupByLibrary.simpleMessage(
+            "M\'antie akanema nsɛm no ho!"),
         "unableToDetectMovies":
             MessageLookupByLibrary.simpleMessage("M\'antie akanema no ho!"),
         "unableUploadImages":
-            MessageLookupByLibrary.simpleMessage("M’antie mfonini no!"),
+            MessageLookupByLibrary.simpleMessage("M\'antie mfonini no!"),
         "upcomingMovies":
             MessageLookupByLibrary.simpleMessage("Ahorow a ɛreba"),
         "userScore":
             MessageLookupByLibrary.simpleMessage("Sɛnea ɛyɛ a wobenya"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Hwɛ Sɛ"),
         "war": MessageLookupByLibrary.simpleMessage("Ko"),
+        "warning": MessageLookupByLibrary.simpleMessage("Kɔkɔbɔ"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Berɛ a mehwɛɛ no"),
         "watchDateColon":
             MessageLookupByLibrary.simpleMessage("Berɛ a Mehui no: "),
@@ -294,6 +367,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Pɛpɛɛpɛ Akanema"),
         "writer": MessageLookupByLibrary.simpleMessage("Kyerɛwfoɔ"),
         "writers": MessageLookupByLibrary.simpleMessage("Kyerɛwfoɔ"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Yiw")
       };
 }

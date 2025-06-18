@@ -38,11 +38,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Pridėti žymą"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Pridėti rašytoją"),
         "adventure": MessageLookupByLibrary.simpleMessage("Nuotykiai"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Scena po titrų"),
+        "ai": MessageLookupByLibrary.simpleMessage("Dirbtinis intelektas"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Slapyvardis: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Kai kurie iš pasirinktų filmų jau yra jūsų kolekcijoje. Jei tęsite, importuoti filmai atnaujins savo atitikmenis jūsų kolekcijoje. Ar norite tęsti?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animacija"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Antikarinis"),
         "april": MessageLookupByLibrary.simpleMessage("Balandis"),
         "ascending": MessageLookupByLibrary.simpleMessage("Augantys"),
         "august": MessageLookupByLibrary.simpleMessage("Rugpjūtis"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Remiantis anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Remiantis autobiografija"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Remiantis knyga"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Remiantis animaciniu filmu"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("Remiantis komiksu"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Remiantis dokumentiniu filmu"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Remiantis manga"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Remiantis manhua"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Remiantis manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Originalus scenarijus"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Remiantis žaislu"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografija: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Gimimo data: "),
         "birthPlaceColon":
@@ -61,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Prašome patikrinti savo interneto ryšį!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Patikrinkite nepastebėtas ir pervertintas filmes"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Išrinktasis"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Debesų atsarginė kopija jūsų filmams"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekcija"),
@@ -76,7 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV failas sėkmingai importuotas."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Pritaikyta rūšiavimo pagal pavadinimą"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Kasdien"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Tamsi komedija"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Duomenų apie šį aktorių nerasta!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Ištrinti pasirinktus filmus"),
         "descending": MessageLookupByLibrary.simpleMessage("Mažėjantys"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektyvas"),
         "digital": MessageLookupByLibrary.simpleMessage("Skaitmeninis"),
         "director": MessageLookupByLibrary.simpleMessage("Režisierius"),
         "directorNull":
@@ -99,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dokumentinė filma"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopija"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Redaguoti režisierių"),
         "enterDirectorName":
@@ -122,6 +149,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Klaida!"),
         "family": MessageLookupByLibrary.simpleMessage("Šeima"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazija"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Fantastinis pasaulis"),
         "february": MessageLookupByLibrary.simpleMessage("Vasaris"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Filmo paieškos režimas"),
@@ -143,14 +172,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importuoti iš CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Netinkamas IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Sausis"),
         "july": MessageLookupByLibrary.simpleMessage("Liepa"),
         "june": MessageLookupByLibrary.simpleMessage("Birželis"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Naujausi filmai"),
         "list": MessageLookupByLibrary.simpleMessage("Sąrašas"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Sąrašas (mažas)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafija"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magija"),
         "march": MessageLookupByLibrary.simpleMessage("Kovas"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Kovos menai"),
         "may": MessageLookupByLibrary.simpleMessage("Gegužė"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Karinis"),
         "monthly": MessageLookupByLibrary.simpleMessage("Kas mėnesį"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filma sėkmingai pridėta!"),
@@ -173,6 +209,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmai paslėpti"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmai ištrinti."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmai skirti"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmai importuoti"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmos perkeltos į kolekciją!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -201,9 +240,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID žetonas nerastas."),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("Filmai šiam žanrui nerasti!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Nerasta filmų su šiuo žymeniu"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("Filmai nerasti"),
         "noMoviesFoundForCompany":
             MessageLookupByLibrary.simpleMessage("Šiai įmonei nerasta filmų"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmai nebuvo importuoti"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Nėra filmų importavimui"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nebuvo suteiktos saugojimo teisės."),
         "noTagsSelected":
@@ -217,6 +262,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Gerai"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Kiti filmai serijoje"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofija"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Piratas"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Prašome įvesti"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Prašome įvesti filmo pavadinimą"),
@@ -231,8 +278,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium klientų palaikymas"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium bus įsigytas už paskyrą, prie kurios esate prisijungę Play Store. Jis nebus įsigytas už vartotoją, prisijungusį prie šios programėlės. Tačiau, kai jis bus įsigytas, galėsite naudoti premium visiems vartotojams šioje programėlėje."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Pratęsimas"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Spauskite, kad pasirinkti filmo plakatus"),
+        "prison": MessageLookupByLibrary.simpleMessage("Kalėjimas"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodiuseris"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Gamybos įmonės"),
@@ -258,10 +307,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Prašome grįžti į ankstesnį ekraną"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Pajamos: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robotas"),
         "romance": MessageLookupByLibrary.simpleMessage("Romantika"),
         "runtime": MessageLookupByLibrary.simpleMessage("Trukmė"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Trukmė (minutėmis)"),
+        "school": MessageLookupByLibrary.simpleMessage("Mokykla"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Mokslinė fantastika"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Mokslinė fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ieškoti filmų"),
@@ -278,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Ar patvirtinate pasirinktas filmes atkurti?"),
         "september": MessageLookupByLibrary.simpleMessage("Rugsėjis"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Tęsinys"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google prisijungimas buvo atšauktas."),
         "signOut": MessageLookupByLibrary.simpleMessage("Atsijungti"),
@@ -287,19 +340,27 @@ class MessageLookup extends MessageLookupByLibrary {
             "Atsijungimas buvo sėkmingas!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Jūs atsijungėte nuo savo paskyros."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Netyli filmas"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Panašios filmos"),
         "sort": MessageLookupByLibrary.simpleMessage("Rūšiuoti"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Rūšiuoti pagal"),
+        "space": MessageLookupByLibrary.simpleMessage("Kosmosas"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sporto dokumentika"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Transliacija"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Prenumerata)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Sėkmingai!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" sėkmingai ištrinta"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superherojus"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Nepaaiškinamas"),
         "tag": MessageLookupByLibrary.simpleMessage("Žyma"),
         "tags": MessageLookupByLibrary.simpleMessage("Žymos"),
         "thriller": MessageLookupByLibrary.simpleMessage("Trileris"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Kelionės laiku"),
         "title": MessageLookupByLibrary.simpleMessage("Pavadinimas"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filma"),
         "unableFindMovie":
@@ -317,6 +378,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Žiūrėti kaip"),
         "war": MessageLookupByLibrary.simpleMessage("Karo"),
+        "warning": MessageLookupByLibrary.simpleMessage("Įspėjimas"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Žiūrėjimo skaičius"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Žiūrėjimo data"),
@@ -333,6 +395,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Norų sąrašas"),
         "writer": MessageLookupByLibrary.simpleMessage("Rašytojas"),
         "writers": MessageLookupByLibrary.simpleMessage("Rašytojai"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Jakudza"),
         "yes": MessageLookupByLibrary.simpleMessage("Taip")
       };
 }

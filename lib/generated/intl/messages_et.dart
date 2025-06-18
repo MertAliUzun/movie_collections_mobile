@@ -36,11 +36,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Lisa märge"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Lisa kirjutaja"),
         "adventure": MessageLookupByLibrary.simpleMessage("Seiklus"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Stseen krediitide järel"),
+        "ai": MessageLookupByLibrary.simpleMessage("Tehisintellekt"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Mõned valitud filmid on juba teie kollektsioonis. Kui jätkate, imporditud filmid uuendavad oma vasted teie kollektsioonis. Kas soovite jätkata?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animatsioon"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Sõjavastane"),
         "april": MessageLookupByLibrary.simpleMessage("Aprill"),
         "ascending": MessageLookupByLibrary.simpleMessage("Kasvav"),
         "august": MessageLookupByLibrary.simpleMessage("August"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Põhineb animel"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Põhineb autobiograafial"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Põhineb raamatul"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Põhineb multifilmil"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("Põhineb koomiksil"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Põhineb dokumentaalil"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Põhineb mangal"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Põhineb manhual"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Põhineb manhwal"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Originaalne stsenaarium"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Põhineb mänguasjal"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Elulugu: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Sünnikuupäev: "),
@@ -59,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Palun kontrollige oma internetiühendust!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Kontrolli alahinnatud ja ülehinnatud filme"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Valitud"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Pilvevarundus sinu filmidele"),
         "collection": MessageLookupByLibrary.simpleMessage("Kogumik"),
@@ -73,7 +96,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV-fail on edukalt imporditud."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Kohandatud sorteerimise pealkiri"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Küberpung"),
         "daily": MessageLookupByLibrary.simpleMessage("Päevane"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Tume komöödia"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Andmeid selle näitleja kohta ei leitud!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -87,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Kustuta valitud filmid"),
         "descending": MessageLookupByLibrary.simpleMessage("Kahanev"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektiiv"),
         "digital": MessageLookupByLibrary.simpleMessage("Digitaalne"),
         "director": MessageLookupByLibrary.simpleMessage("Režissöör"),
         "directorNull":
@@ -95,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentaal"),
         "drama": MessageLookupByLibrary.simpleMessage("Draama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Düstoonia"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Muuda režissööri"),
         "enterDirectorName":
@@ -118,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Ebaõnnestumine!"),
         "family": MessageLookupByLibrary.simpleMessage("Perekond"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaasia"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Fantaasiamaailm"),
         "february": MessageLookupByLibrary.simpleMessage("Veebruar"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Filmi otsimise režiim"),
@@ -138,14 +166,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB hinnang"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Impordi CSV-st"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("Vale IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Jaanuar"),
         "july": MessageLookupByLibrary.simpleMessage("Juuli"),
         "june": MessageLookupByLibrary.simpleMessage("Juuni"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Viimased filmid"),
         "list": MessageLookupByLibrary.simpleMessage("Nimekiri"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Nimekiri (Väike)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Maagia"),
         "march": MessageLookupByLibrary.simpleMessage("Märts"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Võitluskunst"),
         "may": MessageLookupByLibrary.simpleMessage("Mai"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Sõjaline"),
         "monthly": MessageLookupByLibrary.simpleMessage("Kuu"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film on edukalt lisatud!"),
@@ -168,6 +203,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmid on peidetud"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film(i) kustutatud."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmid jaoks"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("filmid imporditud"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Filmid on kantud kogusse!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -196,10 +234,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID-märki ei leitud."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Filme ei leitud selle žanri jaoks!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Selle märksõna jaoks filme ei leitud"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Filme ei leitud"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Filme ei leitud selle ettevõtte jaoks"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Filme ei imporditud"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Imporditavaid filme pole"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Salvestusõigusi ei antud."),
         "noTagsSelected":
@@ -213,6 +257,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Teised sarja filmid"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosoofia"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Piraat"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Palun sisesta"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Palun sisesta filmi pealkiri"),
@@ -227,8 +273,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium klienditugi"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium ostetakse konto jaoks, millega olete sisse loginud Play Store\'is. Seda ei osteta teie selles rakenduses sisse loginud kasutajale. Siiski saate kasutada Premiumi kõigi kasutajate jaoks selles rakenduses, kui see on ostetud."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Eellugu"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Vajuta, et valida filmi plakat"),
+        "prison": MessageLookupByLibrary.simpleMessage("Vangla"),
         "producer": MessageLookupByLibrary.simpleMessage("Tootja"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Tootmisettevõtted"),
@@ -254,10 +302,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Palun naase eelmist ekraani"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Tulu: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romantika"),
         "runtime": MessageLookupByLibrary.simpleMessage("Kestus"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Kestus (minutid)"),
+        "school": MessageLookupByLibrary.simpleMessage("Kool"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Ulme"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Teadusulme"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Otsi filme"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("Otsi inimesi"),
@@ -273,6 +324,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Kas kinnitate, et soovite valitud filme taastada?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Jätkufilm"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google sisselogimine tühistati."),
         "signOut": MessageLookupByLibrary.simpleMessage("Logi välja"),
@@ -282,19 +334,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Väljasilogimine oli edukas!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Oled oma kontolt välja logitud."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Vaikne film"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Sarnased filmid"),
         "sort": MessageLookupByLibrary.simpleMessage("Sorteeri"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sorteeri järgi"),
+        "space": MessageLookupByLibrary.simpleMessage("Kosmos"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Spordidokumentaal"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Voogedastus"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Tellimus)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Edukalt!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" edukalt kustutatud"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Kangelane"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Üliluonneline"),
         "tag": MessageLookupByLibrary.simpleMessage("Märge"),
         "tags": MessageLookupByLibrary.simpleMessage("Märgid"),
         "thriller": MessageLookupByLibrary.simpleMessage("Põnevik"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Ajareis"),
         "title": MessageLookupByLibrary.simpleMessage("Pealkiri"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV film"),
         "unableFindMovie":
@@ -312,6 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Vaata kui"),
         "war": MessageLookupByLibrary.simpleMessage("Sõda"),
+        "warning": MessageLookupByLibrary.simpleMessage("Hoiatus"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Vaadatud arv"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Vaadatud kuupäev"),
         "watchDateColon":
@@ -327,6 +388,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Soovide nimekiri"),
         "writer": MessageLookupByLibrary.simpleMessage("Kirjutaja"),
         "writers": MessageLookupByLibrary.simpleMessage("Kirjutajad"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Jakuzza"),
         "yes": MessageLookupByLibrary.simpleMessage("Jah")
       };
 }

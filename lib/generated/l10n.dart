@@ -2249,6 +2249,486 @@ class S {
       args: [],
     );
   }
+
+  /// `No movies to import`
+  String get noMoviesToImport {
+    return Intl.message(
+      'No movies to import',
+      name: 'noMoviesToImport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Movies for`
+  String get moviesFor {
+    return Intl.message(
+      'Movies for',
+      name: 'moviesFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No movies found for this tag`
+  String get noMoviesForTag {
+    return Intl.message(
+      'No movies found for this tag',
+      name: 'noMoviesForTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Some of the selected movies are already in your collection. If you continue imported movies will update their counterpart in your collection. Do you want to continue?`
+  String get alreadyInCollectionContinue {
+    return Intl.message(
+      'Some of the selected movies are already in your collection. If you continue imported movies will update their counterpart in your collection. Do you want to continue?',
+      name: 'alreadyInCollectionContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `After Credits Scene`
+  String get afterCreditsScene {
+    return Intl.message(
+      'After Credits Scene',
+      name: 'afterCreditsScene',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Book`
+  String get basedBook {
+    return Intl.message(
+      'Based on Book',
+      name: 'basedBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Comic`
+  String get basedComic {
+    return Intl.message(
+      'Based on Comic',
+      name: 'basedComic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Manga`
+  String get basedManga {
+    return Intl.message(
+      'Based on Manga',
+      name: 'basedManga',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Documentary`
+  String get basedDocumentary {
+    return Intl.message(
+      'Based on Documentary',
+      name: 'basedDocumentary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Anime`
+  String get basedAnime {
+    return Intl.message(
+      'Based on Anime',
+      name: 'basedAnime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Cartoon`
+  String get basedCartoon {
+    return Intl.message(
+      'Based on Cartoon',
+      name: 'basedCartoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Toy`
+  String get basedToy {
+    return Intl.message(
+      'Based on Toy',
+      name: 'basedToy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Manhua`
+  String get basedManhua {
+    return Intl.message(
+      'Based on Manhua',
+      name: 'basedManhua',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Autobiography`
+  String get basedAutobiography {
+    return Intl.message(
+      'Based on Autobiography',
+      name: 'basedAutobiography',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on Manhwa`
+  String get basedManhwa {
+    return Intl.message(
+      'Based on Manhwa',
+      name: 'basedManhwa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original Screenplay`
+  String get basedOriginal {
+    return Intl.message(
+      'Original Screenplay',
+      name: 'basedOriginal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Superhero`
+  String get superhero {
+    return Intl.message(
+      'Superhero',
+      name: 'superhero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sequel`
+  String get sequel {
+    return Intl.message(
+      'Sequel',
+      name: 'sequel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MCU`
+  String get mcu {
+    return Intl.message(
+      'MCU',
+      name: 'mcu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Magic`
+  String get magic {
+    return Intl.message(
+      'Magic',
+      name: 'magic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Supernatural`
+  String get supernatural {
+    return Intl.message(
+      'Supernatural',
+      name: 'supernatural',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time Travel`
+  String get timetravel {
+    return Intl.message(
+      'Time Travel',
+      name: 'timetravel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Anime`
+  String get anime {
+    return Intl.message(
+      'Anime',
+      name: 'anime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prequel`
+  String get prequel {
+    return Intl.message(
+      'Prequel',
+      name: 'prequel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chosen One`
+  String get chosenOne {
+    return Intl.message(
+      'Chosen One',
+      name: 'chosenOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fantasy World`
+  String get fantasyWorld {
+    return Intl.message(
+      'Fantasy World',
+      name: 'fantasyWorld',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Isekai`
+  String get isekai {
+    return Intl.message(
+      'Isekai',
+      name: 'isekai',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pirate`
+  String get pirate {
+    return Intl.message(
+      'Pirate',
+      name: 'pirate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Martial Arts`
+  String get martialArts {
+    return Intl.message(
+      'Martial Arts',
+      name: 'martialArts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kung Fu`
+  String get kungFu {
+    return Intl.message(
+      'Kung Fu',
+      name: 'kungFu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yakuza`
+  String get yakuza {
+    return Intl.message(
+      'Yakuza',
+      name: 'yakuza',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Anti War`
+  String get antiWar {
+    return Intl.message(
+      'Anti War',
+      name: 'antiWar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sports Documentary`
+  String get sportsDocumentary {
+    return Intl.message(
+      'Sports Documentary',
+      name: 'sportsDocumentary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dystopia`
+  String get dystopia {
+    return Intl.message(
+      'Dystopia',
+      name: 'dystopia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Steampunk`
+  String get steampunk {
+    return Intl.message(
+      'Steampunk',
+      name: 'steampunk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Robot`
+  String get robot {
+    return Intl.message(
+      'Robot',
+      name: 'robot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Silent Film`
+  String get silentFilm {
+    return Intl.message(
+      'Silent Film',
+      name: 'silentFilm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cyberpunk`
+  String get cyberpunk {
+    return Intl.message(
+      'Cyberpunk',
+      name: 'cyberpunk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Military`
+  String get military {
+    return Intl.message(
+      'Military',
+      name: 'military',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sci-fi`
+  String get sciFi {
+    return Intl.message(
+      'Sci-fi',
+      name: 'sciFi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Space`
+  String get space {
+    return Intl.message(
+      'Space',
+      name: 'space',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prison`
+  String get prison {
+    return Intl.message(
+      'Prison',
+      name: 'prison',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI`
+  String get ai {
+    return Intl.message(
+      'AI',
+      name: 'ai',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Philosophy`
+  String get philosophy {
+    return Intl.message(
+      'Philosophy',
+      name: 'philosophy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mafia`
+  String get mafia {
+    return Intl.message(
+      'Mafia',
+      name: 'mafia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Detective`
+  String get detective {
+    return Intl.message(
+      'Detective',
+      name: 'detective',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Comedy`
+  String get darkComedy {
+    return Intl.message(
+      'Dark Comedy',
+      name: 'darkComedy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `School`
+  String get school {
+    return Intl.message(
+      'School',
+      name: 'school',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

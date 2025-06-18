@@ -40,11 +40,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Nivîskar zêde bikin"),
         "adventure": MessageLookupByLibrary.simpleMessage("Serhildan"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Sîneya piştî kredîtan"),
+        "ai": MessageLookupByLibrary.simpleMessage("Zehniya çandî"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Têgihiştin: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Hin ji fîlimên hilbijartî jixwe di koleksiyona te de ne. Heke tu bidomînin, fîlimên hatine împort kirin ê fîlimên koleksiyona te nû bikin. Ma tu dixwazî bidomînî?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animasyon"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Berxwedana dijî şer"),
         "april": MessageLookupByLibrary.simpleMessage("Nîsan"),
         "ascending": MessageLookupByLibrary.simpleMessage("Hilmend"),
         "august": MessageLookupByLibrary.simpleMessage("Tebax"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Li ser anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Li ser otobiyografî"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Li ser pirtûk"),
+        "basedCartoon": MessageLookupByLibrary.simpleMessage("Li ser kartûn"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("Li ser komîk"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Li ser belgefilm"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Li ser manga"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Li ser manhua"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Li ser manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Senaryo orjînal"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Li ser lîstok"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografî: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Rojekê Jiyanê: "),
@@ -64,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pêşniyar dikin ku têkiliyên internetê we kontrol bikin!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Fîlmên kêm pêşniyar û zêdetir pêşniyar hate kontrol kirin"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Yekê hilbijartî"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Piştgirîya berhemên we li ser xelatê cloud"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksiyon"),
@@ -80,7 +102,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pelê CSV bi serfirazî hat veqetandin."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Sernavê Rêzîkirina Taybet"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Rojane"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Komedya tarî"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Daneyên vê lîstikvanê nehatîn dîtin!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -94,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Fîlman hilbijartî jêbirin"),
         "descending": MessageLookupByLibrary.simpleMessage("Düşme"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektîf"),
         "digital": MessageLookupByLibrary.simpleMessage("Dijîtal"),
         "director": MessageLookupByLibrary.simpleMessage("Rêvebir"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Rêvebir Null"),
@@ -101,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Belgefilm"),
         "drama": MessageLookupByLibrary.simpleMessage("Dram"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dystopia"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Rêvebirê guhêrandin"),
         "enterDirectorName":
@@ -124,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Şewitandin!"),
         "family": MessageLookupByLibrary.simpleMessage("Malbat"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaziya"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Cîhanê xeyalî"),
         "february": MessageLookupByLibrary.simpleMessage("Şubat"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Rejîma Lêgerîna Fîlm"),
@@ -144,14 +171,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Nirxê IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Import bi CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("IMDB ID çewtî!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Çile"),
         "july": MessageLookupByLibrary.simpleMessage("Tîrmeh"),
         "june": MessageLookupByLibrary.simpleMessage("Hezîran"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Fîlman Nû"),
         "list": MessageLookupByLibrary.simpleMessage("Lîste"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lîste (Bêhîz)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafîa"),
+        "magic": MessageLookupByLibrary.simpleMessage("Sehêr"),
         "march": MessageLookupByLibrary.simpleMessage("Adar"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Hunera şerî"),
         "may": MessageLookupByLibrary.simpleMessage("Gulan"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Leşkerî"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mehane"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Fîlm bi serfirazî hat zêdekirin!"),
@@ -175,6 +209,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fîlmên veşartin"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" fîlman hate jêbirin."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Fîlim ji bo"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Fîlim hatin împort kirin"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Fîlman hatin veguhastin bo koleksiyon!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -203,10 +240,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Token-a ID nehat dîtin."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Hîç fîlm nehatîye dîtin ji bo vê cureyê!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Fîlim nehat dîtin ji bo vê tagê"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Hîç fîlm nehatîye dîtin"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Hîç fîlm nehatîye dîtin ji bo vê kampanyayê"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Fîlim nehatiye împort kirin"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Fîlim tune ku împort bike"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Destûrên daneyê nehatin dayîn."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage(
@@ -220,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Baş"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Fîlmên din li sîpîyê"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Felsefe"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Dibistan"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Ji kerema xwe binivîse"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -233,8 +278,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Piştgirîya premium ya müşteri"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium, Play Store\'a giriş yaptığınız hesap için satın alınacaktır. Bu uygulamada giriş yaptığınız kullanıcı için satın alınmayacaktır. Ancak, premium satın alındığında, bu uygulamadaki tüm kullanıcılar için kullanılabilir."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Dîmenê berê"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Bişînin bo hilbijartina afîşê fîlmê"),
+        "prison": MessageLookupByLibrary.simpleMessage("Zindan"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodyûser"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Kampaniyên Parastinê"),
@@ -259,10 +306,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Ji kerema xwe vegerî ser ekranê berê"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Hîrç: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Evîn"),
         "runtime": MessageLookupByLibrary.simpleMessage("Dema Çalakî"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Dema Çalakî (Daqîqe)"),
+        "school": MessageLookupByLibrary.simpleMessage("Dibistan"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Sci-fi"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Pêşbînîya Zanistî"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Lêgerîn Fîlman"),
@@ -279,6 +329,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Hûn piştrast in ku fîlmên hilbijartî vegerînin?"),
         "september": MessageLookupByLibrary.simpleMessage("Îlon"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Dîmenê paşîn"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Têketina Google hate betalkirin."),
         "signOut": MessageLookupByLibrary.simpleMessage("Derkeve"),
@@ -288,18 +339,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Derxistin bi serfirazî!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("Ji hesabê te derket."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Fîlma bêdeng"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Fîlman Wekhev"),
         "sort": MessageLookupByLibrary.simpleMessage("Rêz bikin "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Rêz bikin bi"),
+        "space": MessageLookupByLibrary.simpleMessage("Felek"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Belgefilmên lîstikê"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Tevgera"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Abone)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Serkeftin!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" bi serfirazî hate jêbirin"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Qehremanê super"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Nefretî"),
         "tag": MessageLookupByLibrary.simpleMessage("Tîpa"),
         "tags": MessageLookupByLibrary.simpleMessage("Tîpan"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Guhertina demê"),
         "title": MessageLookupByLibrary.simpleMessage("Sernav"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Fîlmê TV"),
         "unableFindMovie":
@@ -317,6 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Temaşe wekî"),
         "war": MessageLookupByLibrary.simpleMessage("Şer"),
+        "warning": MessageLookupByLibrary.simpleMessage("Hişyarî"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Hejmara Temaşe"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Rojekê Temaşe"),
         "watchDateColon":
@@ -333,6 +393,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Lîsteya Temaşe"),
         "writer": MessageLookupByLibrary.simpleMessage("Nivîskar"),
         "writers": MessageLookupByLibrary.simpleMessage("Nivîskar"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Erê")
       };
 }

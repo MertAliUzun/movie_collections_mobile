@@ -38,11 +38,38 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Ñaayde Cifol"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ñaamude mujjirɗo"),
         "adventure": MessageLookupByLibrary.simpleMessage("Luundoo"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Naatude geɗe mum ɓe ɗoo"),
+        "ai": MessageLookupByLibrary.simpleMessage("A.I. (Ɓeydu ndeeɗu)"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Aliaas: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Ko fii fiilmiiɓe ɓe njahi woni e maa koleksiyoŋ maa. So wonaa ɗuum, fiilmiiɓe waɗi anndude ɗi ɗaɓɓita koleksiyoŋ maa. Aɗa yiɗi hollu?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animaasii"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Si tawii ɓernde"),
         "april": MessageLookupByLibrary.simpleMessage("Afrilu"),
         "ascending": MessageLookupByLibrary.simpleMessage("Rewɓe"),
         "august": MessageLookupByLibrary.simpleMessage("Ogustu"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e autobiography"),
+        "basedBook":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e deftere"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e cartoon"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e koomiks"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e dokumentaaru"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e manga"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Daaɓitaade e manhwa"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Gido original"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Daaɓitaade e toy"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Ñaamudo deftere: "),
@@ -62,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Njaatigi internet maa ko anndi!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Dokkiti fiilm-ɗi ɗe fowndini e ɗe futtini"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Ko woni ɓe yuuma"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Hakkunde koondirde fiilm ngal ɗum e cloud"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleejo"),
@@ -76,7 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fayil CSV ko yimɓe."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Ñaamudo yimɓe rewɓe"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Ñaamudo"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Comedy kañum"),
         "dataNotRetrivedActor":
             MessageLookupByLibrary.simpleMessage("Haaɓo e hokkunde aktorɗi!"),
         "dataNotRetrivedDirector":
@@ -90,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Yoƴƴi filmji heddii"),
         "descending": MessageLookupByLibrary.simpleMessage("Hawru"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektiv"),
         "digital": MessageLookupByLibrary.simpleMessage("Numriik"),
         "director": MessageLookupByLibrary.simpleMessage("Aadaade"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Aadaade NULL"),
@@ -97,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Njaarnde"),
         "drama": MessageLookupByLibrary.simpleMessage("Duraama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Duniya kammbuɗo"),
         "editDirector": MessageLookupByLibrary.simpleMessage("Ñaamude aadaade"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("Sanngo aadaade"),
@@ -119,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Haaɓo!"),
         "family": MessageLookupByLibrary.simpleMessage("Jom fayde"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasii"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Duniya baɗɗo"),
         "february": MessageLookupByLibrary.simpleMessage("Februwari"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Teewndiyol mode film"),
@@ -140,15 +173,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Muutirde IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Jooɗi ɗum CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDB haaɓo!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Januwari"),
         "july": MessageLookupByLibrary.simpleMessage("Julaay"),
         "june": MessageLookupByLibrary.simpleMessage("Juuni"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Filim ɓe gollirde"),
         "list": MessageLookupByLibrary.simpleMessage("Liista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liista (Kawe)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafiya"),
+        "magic": MessageLookupByLibrary.simpleMessage("Siimooje"),
         "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Cuɓi cuɓi"),
         "may": MessageLookupByLibrary.simpleMessage("Mee"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Leɗɗi ɓernde"),
         "monthly": MessageLookupByLibrary.simpleMessage("Muutii"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("Filmji ko yimɓe!"),
         "movieCollection": MessageLookupByLibrary.simpleMessage("Koleejo film"),
@@ -168,6 +208,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesAreHidden":
             MessageLookupByLibrary.simpleMessage("Fiilde ɓe ɗaɓɓitɗe"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" filmji yoƴƴi."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Fiilmiiɓe ɗiɗi"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("fiilmiiɓe waɗi anndude"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Filmji yoƴƴi e koleejo!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -196,9 +239,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("A token ID ɗum yoƴƴi."),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("Alaa filmji faaɗa!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Fiilmiiɓe maa waɗi waɗtude e ngal ngel"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("Alaa filmji"),
         "noMoviesFoundForCompany":
             MessageLookupByLibrary.simpleMessage("Alaa filmji njiyngol"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Fiilmiiɓe waɗi anndude maa"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Fiilmiiɓe maa waɗi anndude"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Ko feere njiytii fayde kadi."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage("Cifolji walaa"),
@@ -211,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Awa"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Fiilde ɓe goɗɗi e seri"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofii"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Laaɓtuɗo"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Sanngo"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Sanngo title film"),
@@ -225,8 +276,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tawtorde Premium ɓe diiɗi"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium ngoni faama e hoore ndee naatnde Play Store. Ko jooni, kadi e ko feere ɗum ngoni e hoore ngol fayde app am. Amman, a waɗi premium woni e hoore kadi e fayde e hoore fow e app am so o waɗii."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Njiddaade"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Pele e seƴƴi pooste"),
+        "prison": MessageLookupByLibrary.simpleMessage("Juul"),
         "producer": MessageLookupByLibrary.simpleMessage("Soddi"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Njiyngol"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Film ɗoo juɓɓii"),
@@ -250,10 +303,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Doddii heɓii no feere"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Najaare: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Jiiɓorde"),
         "runtime": MessageLookupByLibrary.simpleMessage("Lewru"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Lewru (minuutii)"),
+        "school": MessageLookupByLibrary.simpleMessage("Dariŋko"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Siffu-sappo"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Saayinsii"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Ñaamudo filmji"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("Njaɓɓo ñaawo"),
@@ -269,6 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Aɗa ɗum yimɓe suɓɓito fiilde ɓe ɗaɓɓitɗe?"),
         "september": MessageLookupByLibrary.simpleMessage("Settemburu"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Liggirɗe"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Njaatigi Google oo yahugo."),
         "signOut": MessageLookupByLibrary.simpleMessage("Dañgol"),
@@ -277,18 +334,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "signOutSucceful":
             MessageLookupByLibrary.simpleMessage("Dañgol ko yimɓe!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage("Dañgol tan."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Fiilmi jaŋtorde"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Filmji neɗɗo"),
         "sort": MessageLookupByLibrary.simpleMessage("Ñaamude"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Ñaamude e"),
+        "space": MessageLookupByLibrary.simpleMessage("Jaɓɗi"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dokumentaaru e sport"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streemii"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Ɓayra)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Ko yimɓe!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" yoƴƴi ko yimɓe"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Jom wonndi"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Naatude e makko"),
         "tag": MessageLookupByLibrary.simpleMessage("Cifol"),
         "tags": MessageLookupByLibrary.simpleMessage("Cifolji"),
         "thriller": MessageLookupByLibrary.simpleMessage("Wokti"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Ɓeydital kalaande"),
         "title": MessageLookupByLibrary.simpleMessage("Ñaamudo"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV film"),
         "unableFindMovie":
@@ -305,6 +370,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Heɓɓo ɗum e"),
         "war": MessageLookupByLibrary.simpleMessage("Hore"),
+        "warning": MessageLookupByLibrary.simpleMessage("Huutorde"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Ñaamudo hokkunde"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Ñaamudo hokka"),
         "watchDateColon":
@@ -320,6 +386,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Liistii Huumde"),
         "writer": MessageLookupByLibrary.simpleMessage("Mujjirɗo"),
         "writers": MessageLookupByLibrary.simpleMessage("Mujjirɗo"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Eey")
       };
 }

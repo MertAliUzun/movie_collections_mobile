@@ -38,11 +38,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("တိုင်ထည့်ရန်"),
         "addWriter": MessageLookupByLibrary.simpleMessage("ရေးဆွဲသူထည့်ပါ"),
         "adventure": MessageLookupByLibrary.simpleMessage("ခရီးသွား"),
+        "afterCreditsScene": MessageLookupByLibrary.simpleMessage(
+            "ခရက်ဒစ်ပြီးနောက် အစိတ်အပိုင်း"),
+        "ai": MessageLookupByLibrary.simpleMessage("အတုအခေါ် ဉာဏ်ရည်"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("အမည်အနောက်: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "ရွေးချယ်ထားသော ရုပ်ရှင်အချို့သည် သင့်စုစည်းမှုတွင် ရှိပြီးဖြစ်သည်။ ဆက်လက်လုပ်ဆောင်ပါက တင်သွင်းထားသော ရုပ်ရှင်များသည် သင့်စုစည်းမှုရှိ ရုပ်ရှင်များကို အပ်ဒိတ်လုပ်ပါမည်။ ဆက်လက်လုပ်ဆောင်ချင်ပါသလား?"),
         "animation": MessageLookupByLibrary.simpleMessage("သရုပ်ဆောင်ပုံ"),
+        "anime": MessageLookupByLibrary.simpleMessage("အန်းမေရုပ်သံ"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("စစ်ပွဲဆန့်ကျင်ရေး"),
         "april": MessageLookupByLibrary.simpleMessage("ဧပြီ"),
         "ascending": MessageLookupByLibrary.simpleMessage("အပေါ်သို့"),
         "august": MessageLookupByLibrary.simpleMessage("အောက်တိုး"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("အန်းမေရုပ်သံအခြေခံ"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("ကိုယ်ရေးရာဇဝင်အခြေခံ"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("စာအုပ်အခြေခံ"),
+        "basedCartoon": MessageLookupByLibrary.simpleMessage("ကာတွန်းအခြေခံ"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("ကာတွန်းစာအုပ်အခြေခံ"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("စာတမ်းဇာတ်ကားအခြေခံ"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("မန်ဂါအခြေခံ"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("မန်းဟူအခြေခံ"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("မန္ဟွာအခြေခံ"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("မူရင်းဇာတ်ညွှန်း"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("ကစားစရာအခြေခံ"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ဘဝဇာတ်လမ်း: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("မွေးနေ့: "),
         "birthPlaceColon":
@@ -62,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "သင့်၏အင်တာနက်ချိတ်ဆက်မှုကိုစစ်ဆေးပါ!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "နည်းထားထားသည့်နှင့် အများပြားထားသောရုပ်ရှင်များကိုစစ်ဆေးပါ"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("ရွေးချယ်ခံရသူ"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "သင့်ရုပ်ရှင်များအတွက်မိုးကူးထောက်ပံ့မှု"),
         "collection": MessageLookupByLibrary.simpleMessage("စုစည်းမှု"),
@@ -78,7 +102,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV ဖိုင်ကိုအောင်မြင်စွာသွင်းခဲ့ပါသည်။"),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("စိတ်ကြိုက်စီဆင်သတ်မှတ်ချက်"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("ဆိုက်ဘာပန့်"),
         "daily": MessageLookupByLibrary.simpleMessage("နေ့စဉ်"),
+        "darkComedy":
+            MessageLookupByLibrary.simpleMessage("မှောင်မိုက်သော ဟာသ"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "ဤသရုပ်ဆောင်အတွက်ဒေတာမတွေ့ပါ!"),
         "dataNotRetrivedDirector":
@@ -91,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "ရွေးချယ်ထားသော ဇာတ်ကားများကိုဖျက်ပါ"),
         "descending": MessageLookupByLibrary.simpleMessage("အောက်သို့"),
+        "detective": MessageLookupByLibrary.simpleMessage("စုံထောက်"),
         "digital": MessageLookupByLibrary.simpleMessage("ဒစ်ဂျစ်တယ်"),
         "director": MessageLookupByLibrary.simpleMessage("ဒါရိုက်တာ"),
         "directorNull":
@@ -99,6 +127,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("စာတမ်း"),
         "drama": MessageLookupByLibrary.simpleMessage("ဒရာမာ"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia":
+            MessageLookupByLibrary.simpleMessage("အနာဂတ်အန္တရာယ်အကြောင်း"),
         "editDirector": MessageLookupByLibrary.simpleMessage("ဒီတာကိုျပဳစုပါ"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("ပို့သွားမေးတွေ"),
@@ -121,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("အတွင်းပါသည်!"),
         "family": MessageLookupByLibrary.simpleMessage("မိသားစု"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ပုံပြင်"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("ကမ္ဘာ့ပုံပြင်"),
         "february": MessageLookupByLibrary.simpleMessage("ဖေဖော်ဝါရီ"),
         "findMovieMode": MessageLookupByLibrary.simpleMessage(
             "ရုပ်ရှင် ရှာဖွေရန် ပြင်ဆင်ချက်"),
@@ -146,15 +177,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV မှ သွင်းပါ"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("မမှန်ကန်သော IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("အိုက်စီကိုင်"),
         "january": MessageLookupByLibrary.simpleMessage("ဇန်နဝါရီ"),
         "july": MessageLookupByLibrary.simpleMessage("ဇူလိုင်"),
         "june": MessageLookupByLibrary.simpleMessage("ြွန်"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("ကွန်ဖူး"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("သတင်းပေးရုပ်ရှင်များ"),
         "list": MessageLookupByLibrary.simpleMessage("စာရင်း"),
         "listSmall": MessageLookupByLibrary.simpleMessage("စာရင်း (သေးငယ်)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("မာဖီးယား"),
+        "magic": MessageLookupByLibrary.simpleMessage("မေယာဉ်"),
         "march": MessageLookupByLibrary.simpleMessage("မတ်"),
+        "martialArts":
+            MessageLookupByLibrary.simpleMessage("စစ်ခေါင်းဆောင်မှုအနုပညာ"),
         "may": MessageLookupByLibrary.simpleMessage("မေ"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("စစ်ရေး"),
         "monthly": MessageLookupByLibrary.simpleMessage("လစဉ်"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "ဇာတ်ကားကိုအောင်မြင်စွာထည့်ခဲ့ပါသည်!"),
@@ -177,6 +216,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ရုပ်ရှင်များ ဖျောက်ထားပါပြီ"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(
             " ဇာတ်ကားများဖျက်ပစ်ခဲ့ပါသည်။"),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("အတွက် ရုပ်ရှင်များ"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("ရုပ်ရှင်များတင်သွင်းပြီး"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "ဇာတ်ကားများကိုစုစည်းမှုသို့ပြောင်းလဲခဲ့ပါသည်!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -204,9 +246,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "noIdToken": MessageLookupByLibrary.simpleMessage("ID Token မရှိပါ။"),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "ဤအမျိုးအစားအတွက်ဇာတ်ကားမတွေ့ပါ!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "ဤတံဆိပ်အတွက် ရုပ်ရှင်များမတွေ့ရှိပါ"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("ဇာတ်ကားမတွေ့ပါ"),
         "noMoviesFoundForCompany":
             MessageLookupByLibrary.simpleMessage("ဤကုမ္ပဏီအတွက်ဇာတ်ကားမတွေ့ပါ"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "ရုပ်ရှင်များတင်သွင်းထားခြင်းမရှိပါ"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "တင်သွင်းရန် ရုပ်ရှင်များမရှိပါ"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "သိုလှောင်မှုအခွင့်အရေးမပေးပါ။"),
         "noTagsSelected":
@@ -220,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("အိုကေ"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "စီးရီးတွင် အခြားသော ရုပ်ရှင်များ"),
+        "philosophy": MessageLookupByLibrary.simpleMessage(" фီလော့ဆိုဖီ"),
+        "pirate": MessageLookupByLibrary.simpleMessage("လုယက်သူ"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("ကျေးဇူးပြု၍ထည့်ပါ"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -235,8 +285,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium ဖောက်သည်ထောက်ပံ့မှု"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium ကို Play Store တွင် သင်ဝင်ထားသော အကောင့်အတွက် ဝယ်ယူမည်။ ၎င်းသည် ယခုအက်ပ်တွင် ဝင်ထားသော အသုံးပြုသူအတွက် မဝယ်ယူပါ။ သို့သော် Premium ကို ဝယ်ယူပြီးပါက ယခုအက်ပ်တွင် အသုံးပြုသူများအားလုံးအတွက် အသုံးပြုနိုင်ပါသည်။"),
+        "prequel": MessageLookupByLibrary.simpleMessage("အရင်ဇာတ်ကား"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("ဇာတ်ကားပုံတင်ရန်နှိပ်ပါ"),
+        "prison": MessageLookupByLibrary.simpleMessage("ထောင်ချုပ်"),
         "producer": MessageLookupByLibrary.simpleMessage("ထုတ်လုပ်သူ"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("ထုတ်လုပ်မှုကုမ္ပဏီများ"),
@@ -262,10 +314,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "ကျေးဇူးပြု၍ပြီးခဲ့သောหน้าจတင်ပါ"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("ဝင်ငွေ: "),
+        "robot": MessageLookupByLibrary.simpleMessage("ရိုဘော့"),
         "romance": MessageLookupByLibrary.simpleMessage("ရောမန်စ်"),
         "runtime": MessageLookupByLibrary.simpleMessage("အချိန်ကာလ"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("အချိန်ကာလ (မိနစ်)"),
+        "school": MessageLookupByLibrary.simpleMessage("ကျောင်း"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("သိပ္ပံပုံပြင်"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("သိပ္ပံနဲ့ကွန်ပျူတာကဗျာ"),
         "searchMovies":
@@ -284,6 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "ရွေးချယ်ထားသော ရုပ်ရှင်များကို ပြန်လည်အသုံးပြုရန် သင်အတည်ပြုပါသလား?"),
         "september": MessageLookupByLibrary.simpleMessage("စက်တင်ဘာ"),
+        "sequel": MessageLookupByLibrary.simpleMessage("ဆက်တိုက်ဇာတ်ကား"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Sign-In ကိုဖျက်သိမ်းလိုက်ပါသည်။"),
         "signOut": MessageLookupByLibrary.simpleMessage("ထွက်ရန်"),
@@ -293,10 +349,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ထွက်ခြင်းအောင်မြင်ပါသည်!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("သင့်အကောင့်မှထွက်ပါသည်။"),
+        "silentFilm":
+            MessageLookupByLibrary.simpleMessage("အေးဆေးတဲ့ ရုပ်ရှင်"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("ဆင်တူဇာတ်ကားများ"),
         "sort": MessageLookupByLibrary.simpleMessage("စဉ်စီ "),
         "sortBy": MessageLookupByLibrary.simpleMessage("စဉ်စီ"),
+        "space": MessageLookupByLibrary.simpleMessage("အာကာသ"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("အားကစားစာတမ်းဇာတ်ကား"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("စတီးမပန့်"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("စီးရီး"),
         "subscription":
@@ -304,9 +366,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("အောင်မြင်ပါသည်!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("အားလုံးမှတည်း"),
+        "superhero": MessageLookupByLibrary.simpleMessage("စူပါဟီးရိုး"),
+        "supernatural":
+            MessageLookupByLibrary.simpleMessage("အလွန်အမင်း အံ့အားသင့်စရာ"),
         "tag": MessageLookupByLibrary.simpleMessage("တိုင်"),
         "tags": MessageLookupByLibrary.simpleMessage("တိုင်များ"),
         "thriller": MessageLookupByLibrary.simpleMessage("ရိုးရာ"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("အချိန်ခရီးသွား"),
         "title": MessageLookupByLibrary.simpleMessage("ခေါင်းစဥ်"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("တီဗွီ ဇာတ်ကား"),
         "unableFindMovie":
@@ -325,6 +391,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("အဖြစ်ကြည့်ပါ"),
         "war": MessageLookupByLibrary.simpleMessage("สงคราม"),
+        "warning": MessageLookupByLibrary.simpleMessage("သတိပေးချက်"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("ကြည့်ရှုမှုအရေအတွက်"),
         "watchDate": MessageLookupByLibrary.simpleMessage("ကြည့်ရှုမည့်ရက်"),
@@ -342,6 +409,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("ကြည့်ရန်စာရင်း"),
         "writer": MessageLookupByLibrary.simpleMessage("ရေးဆွဲသူ"),
         "writers": MessageLookupByLibrary.simpleMessage("ရေးဆွဲသူများ"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("ယာကူဇာ"),
         "yes": MessageLookupByLibrary.simpleMessage("ဟုတ်ကဲ့")
       };
 }

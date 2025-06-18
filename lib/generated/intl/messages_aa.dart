@@ -37,11 +37,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Tag Ekke"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Maxne qorqoma"),
         "adventure": MessageLookupByLibrary.simpleMessage("Adventure"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Jenerik Faname"),
+        "ai": MessageLookupByLibrary.simpleMessage("AI"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Akaak: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Dooram film qolubta jira. Maxne baaxo film qolubta maxne. Maxne?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Anti War"),
         "april": MessageLookupByLibrary.simpleMessage("Agda Baxisso"),
         "ascending": MessageLookupByLibrary.simpleMessage("Salba"),
         "august": MessageLookupByLibrary.simpleMessage("Siima"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Anime Faname"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Autobiography Faname"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Kitaaba Faname"),
+        "basedCartoon": MessageLookupByLibrary.simpleMessage("Cartoon Faname"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("Comic Faname"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Documentary Faname"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Manga Faname"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Manhua Faname"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Manhwa Faname"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Original Faname"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Toy Faname"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Naylife: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Haqmak Alaa: "),
         "birthPlaceColon":
@@ -60,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Internet maqna gexxu!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Filim Underrated Kedo Overrated Sug"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Chosen One"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("Filimama Ka Cloud BackUp"),
         "collection": MessageLookupByLibrary.simpleMessage("Qolubta"),
@@ -73,7 +95,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "csvFileImported":
             MessageLookupByLibrary.simpleMessage("CSV fayli safreeh takke."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage("Sort Girta"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Qolba"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Dark Comedy"),
         "dataNotRetrivedActor":
             MessageLookupByLibrary.simpleMessage("Roley faname yaku!"),
         "dataNotRetrivedDirector":
@@ -86,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Dooram film fakkita"),
         "descending": MessageLookupByLibrary.simpleMessage("Giddu"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detective"),
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Diraakteera"),
         "directorNull":
@@ -94,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Documentary"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dystopia"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Diraakteera maxna"),
         "enterDirectorName":
@@ -117,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Qaldaw!"),
         "family": MessageLookupByLibrary.simpleMessage("Family"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Fantasy World"),
         "february": MessageLookupByLibrary.simpleMessage("Kudo"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Fílmii Gexa Mode"),
@@ -138,14 +165,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB Suggul"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV fayli daxxa"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("IMDB ID yaku!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Qunxa Garablu"),
         "july": MessageLookupByLibrary.simpleMessage("Yegga Garablu"),
         "june": MessageLookupByLibrary.simpleMessage("Yegga"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Qunxa Fílmii"),
         "list": MessageLookupByLibrary.simpleMessage("Qofolla"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Qofolla (Tinnike)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magic"),
         "march": MessageLookupByLibrary.simpleMessage("Ciggilta Kudo"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Martial Arts"),
         "may": MessageLookupByLibrary.simpleMessage("Agda Garablu"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Military"),
         "monthly": MessageLookupByLibrary.simpleMessage("Waxi"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film qorqorma takke!"),
@@ -167,6 +201,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmat qarifamne"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" film fakkitam takke."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmat"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("filmat daxxifamne"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Film qolubta leqqi takke!"),
         "moviesMovedToWatchlist":
@@ -195,9 +232,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID Token yaku faname."),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("Gogga film yaku!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage("Tag film yaku"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("Film yaku"),
         "noMoviesFoundForCompany":
             MessageLookupByLibrary.simpleMessage("Firma film yaku"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmat daxxifamne yaku"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Filmat daxxifam yaku"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Storage hayyuwa yaku."),
         "noTagsSelected":
@@ -211,6 +253,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Eyyo"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "Filmat kaan sirii keessa jiran"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Philosophy"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Pirate"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Maqna galqa"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Film girta galqa"),
@@ -225,8 +269,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Premium Taageera Macaamiisha"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium ni Play Store ka faylisan akkawwan account loogeen bitame. App kana keessatti loogame userf bitamuu miti. Garuu premium ni fayyadamu dandeessa user hundaaf app kana keessatti bitamee yoo ta\'e."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Prequel"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Postera doora fi loqa"),
+        "prison": MessageLookupByLibrary.simpleMessage("Prison"),
         "producer": MessageLookupByLibrary.simpleMessage("Sooressa"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage("Firma"),
         "randomMovie": MessageLookupByLibrary.simpleMessage("Haya Film"),
@@ -250,10 +296,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Guurama maqna!"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Daggayta: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romance"),
         "runtime": MessageLookupByLibrary.simpleMessage("Gajaa Waktu"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Waktu (Dakika)"),
+        "school": MessageLookupByLibrary.simpleMessage("School"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Sci-fi"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Film yassassa"),
@@ -271,6 +320,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Filmat dooratamte deebisuuf hubtoomi?"),
         "september": MessageLookupByLibrary.simpleMessage("Siima Garablu"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Sequel"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google Sign-In yokko qariime."),
         "signOut": MessageLookupByLibrary.simpleMessage("Fakkita"),
@@ -280,18 +330,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fakkitam takke!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("Account kee fakkitam takke."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Silent Film"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Hulhu Film"),
         "sort": MessageLookupByLibrary.simpleMessage("Sort "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sort Maqna"),
+        "space": MessageLookupByLibrary.simpleMessage("Space"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sports Documentary"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Xayya)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Takke!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" fakkitam takke"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superhero"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Supernatural"),
         "tag": MessageLookupByLibrary.simpleMessage("Tag"),
         "tags": MessageLookupByLibrary.simpleMessage("Tagak"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Time Travel"),
         "title": MessageLookupByLibrary.simpleMessage("Girta"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Movie"),
         "unableFindMovie":
@@ -308,6 +366,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Maqna"),
         "war": MessageLookupByLibrary.simpleMessage("War"),
+        "warning": MessageLookupByLibrary.simpleMessage("Qalbi"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Fiirsima Lakka"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Fiirsima Alaa"),
         "watchDateColon":
@@ -323,6 +382,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Film Qunxa"),
         "writer": MessageLookupByLibrary.simpleMessage("Maxne"),
         "writers": MessageLookupByLibrary.simpleMessage("Maxne"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Eyyo")
       };
 }

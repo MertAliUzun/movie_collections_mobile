@@ -37,11 +37,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Додати тег"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Додати сценариста"),
         "adventure": MessageLookupByLibrary.simpleMessage("Пригоди"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Сцена після титрів"),
+        "ai": MessageLookupByLibrary.simpleMessage("Штучний інтелект"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Псевдонім: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Деякі з вибраних фільмів вже є у вашій колекції. Якщо ви продовжите, імпортовані фільми оновлять свої відповідники у вашій колекції. Ви хочете продовжити?"),
         "animation": MessageLookupByLibrary.simpleMessage("Анімація"),
+        "anime": MessageLookupByLibrary.simpleMessage("Аніме"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Антивоєнний"),
         "april": MessageLookupByLibrary.simpleMessage("Квітень"),
         "ascending": MessageLookupByLibrary.simpleMessage("По зростанню"),
         "august": MessageLookupByLibrary.simpleMessage("Серпень"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("На основі аніме"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("На основі автобіографії"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("На основі книги"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("На основі мультфільму"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("На основі коміксу"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "На основі документального фільму"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("На основі манги"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("На основі маньхуа"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("На основі манхви"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Оригінальний сценарій"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("На основі іграшки"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Біографія: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Дата народження: "),
@@ -61,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Перевірте ваше інтернет-з\'єднання!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Перевірте недооцінені та переоцінені фільми"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Обраний"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Резервне копіювання в хмарі для ваших фільмів"),
         "collection": MessageLookupByLibrary.simpleMessage("Колекція"),
@@ -75,7 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV файл успішно імпортовано."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Індивідуальна сортування за назвою"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Кіберпанк"),
         "daily": MessageLookupByLibrary.simpleMessage("Щодня"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Чорна комедія"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Дані для цього актора не знайдено!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -88,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Видалити вибрані фільми"),
         "descending": MessageLookupByLibrary.simpleMessage("По спаду"),
+        "detective": MessageLookupByLibrary.simpleMessage("Детектив"),
         "digital": MessageLookupByLibrary.simpleMessage("Цифровий"),
         "director": MessageLookupByLibrary.simpleMessage("Режисер"),
         "directorNull":
@@ -96,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Документальний"),
         "drama": MessageLookupByLibrary.simpleMessage("Драма"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Дистопія"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Редагувати режисера"),
         "enterDirectorName":
@@ -119,6 +147,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Неуспішно!"),
         "family": MessageLookupByLibrary.simpleMessage("Сімейний"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Фантастика"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Фантастичний світ"),
         "february": MessageLookupByLibrary.simpleMessage("Лютий"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Режим пошуку фільмів"),
@@ -141,14 +171,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Імпортувати з CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Невірний IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Ісекай"),
         "january": MessageLookupByLibrary.simpleMessage("Січень"),
         "july": MessageLookupByLibrary.simpleMessage("Липень"),
         "june": MessageLookupByLibrary.simpleMessage("Червень"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Кунг-фу"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Останні фільми"),
         "list": MessageLookupByLibrary.simpleMessage("Список"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Список (Малий)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Мафія"),
+        "magic": MessageLookupByLibrary.simpleMessage("Магія"),
         "march": MessageLookupByLibrary.simpleMessage("Березень"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Боєві мистецтва"),
         "may": MessageLookupByLibrary.simpleMessage("Травень"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Військовий"),
         "monthly": MessageLookupByLibrary.simpleMessage("Щомісяця"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Фільм успішно додано!"),
@@ -171,6 +208,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Фільми приховані"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" фільмів видалено."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Фільми для"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Фільми імпортовано"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Фільми переміщено в колекцію!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -199,10 +239,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Не знайдено ID Token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Фільми для цього жанру не знайдені!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Фільми для цієї мітки не знайдено"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Фільми не знайдені"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Фільми для цієї компанії не знайдені"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Фільми не імпортовано"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Немає фільмів для імпорту"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Не надано дозвіл на доступ до сховища."),
         "noTagsSelected":
@@ -216,6 +262,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Інші фільми в серії"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Філософія"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Пірат"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Будь ласка, введіть"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -230,8 +278,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Преміум підтримка клієнтів"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium буде придбано для акаунту, що увійшов у ваш Play Store. Він не буде придбаний для користувача, увійшовшого в цей додаток. Однак ви зможете використовувати premium для всіх користувачів у цьому додатку, коли він буде придбаний."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Приквел"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Натисніть, щоб вибрати постер фільму"),
+        "prison": MessageLookupByLibrary.simpleMessage("В’язниця"),
         "producer": MessageLookupByLibrary.simpleMessage("Продюсер"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Виробничі компанії"),
@@ -256,10 +306,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Будь ласка, поверніться на попередній екран"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Доходи: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Робот"),
         "romance": MessageLookupByLibrary.simpleMessage("Романтика"),
         "runtime": MessageLookupByLibrary.simpleMessage("Тривалість"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Тривалість (Хвилини)"),
+        "school": MessageLookupByLibrary.simpleMessage("Школа"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Наукова фантастика"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Наукова фантастика"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Шукати фільми"),
@@ -276,6 +329,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Ви підтверджуєте відновлення вибраних фільмів?"),
         "september": MessageLookupByLibrary.simpleMessage("Вересень"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Продовження"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Авторизація через Google скасована."),
         "signOut": MessageLookupByLibrary.simpleMessage("Вийти"),
@@ -285,18 +339,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Вихід успішний!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Ви вийшли зі свого облікового запису."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Німі фільми"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Подібні фільми"),
         "sort": MessageLookupByLibrary.simpleMessage("Сортувати "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Сортувати за"),
+        "space": MessageLookupByLibrary.simpleMessage("Космос"),
+        "sportsDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Спортивний документальний фільм"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Стімпанк"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Стрімінг"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Підписка)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Успішно!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" успішно видалено"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Супергерой"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Надприродне"),
         "tag": MessageLookupByLibrary.simpleMessage("Тег"),
         "tags": MessageLookupByLibrary.simpleMessage("Теги"),
         "thriller": MessageLookupByLibrary.simpleMessage("Трилер"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Подорож у часі"),
         "title": MessageLookupByLibrary.simpleMessage("Назва"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ТВ фільм"),
         "unableFindMovie":
@@ -314,6 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Переглядати як"),
         "war": MessageLookupByLibrary.simpleMessage("Війна"),
+        "warning": MessageLookupByLibrary.simpleMessage("Попередження"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Кількість переглядів"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Дата перегляду"),
@@ -331,6 +394,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Список бажаних фільмів"),
         "writer": MessageLookupByLibrary.simpleMessage("Сценарист"),
         "writers": MessageLookupByLibrary.simpleMessage("Сценаристи"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Якудза"),
         "yes": MessageLookupByLibrary.simpleMessage("Так")
       };
 }

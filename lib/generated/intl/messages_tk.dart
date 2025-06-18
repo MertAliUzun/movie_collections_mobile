@@ -36,11 +36,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Teg goşmak"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Yazgyjy goşmak"),
         "adventure": MessageLookupByLibrary.simpleMessage("Sergäniş"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Kreditlerden soň sahna"),
+        "ai": MessageLookupByLibrary.simpleMessage("Emeli aň"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Takma at: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Saýlanan käbir filmler eýýäm ýygnagyňyzda bar. Eger dowam etseňiz, import edilen filmler ýygnagyňyzda bar bolanlary täzelär. Dowam etmek isleýärsiňizmi?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animasiýa"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Urşa garşy"),
         "april": MessageLookupByLibrary.simpleMessage("Aprel"),
         "ascending": MessageLookupByLibrary.simpleMessage("Artykmaç"),
         "august": MessageLookupByLibrary.simpleMessage("Awgust"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Anime esaslanýar"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Özüň ýazgysyna esaslanýar"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Kitaba esaslanýar"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Çizgi filmine esaslanýar"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Komiksa esaslanýar"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dokumentala esaslanýar"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Manga esaslanýar"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Manhua esaslanýar"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Manhwa esaslanýar"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Asyl senariýa"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Oýnağa esaslanýar"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biyografiýa: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Doglan Taryhy: "),
@@ -61,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Internet baglanyşygyňyzy barlaň!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Aşağı baha berlen we köp baha berlen filmleri barla"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Saýlanan"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Filmleriňiz üçin bulut ätiýaçlyk nusgasy"),
         "collection": MessageLookupByLibrary.simpleMessage("Toplum"),
@@ -76,7 +101,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV faýly üstünlikli import edildi."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Özboluşly sıralamak At"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Kiberpank"),
         "daily": MessageLookupByLibrary.simpleMessage("Günüň dowamynda"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Garaňky komediýa"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Bu hudaý üçin maglumat tapylmady!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -89,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Saýlanan filmleri pozmak"),
         "descending": MessageLookupByLibrary.simpleMessage("Peselýän"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektif"),
         "digital": MessageLookupByLibrary.simpleMessage("Sanly"),
         "director": MessageLookupByLibrary.simpleMessage("Režissýor"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Režissýor ýok"),
@@ -96,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumental"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dystopiya"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Režissýory üýtgetmek"),
         "enterDirectorName":
@@ -120,6 +149,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Aýdym!"),
         "family": MessageLookupByLibrary.simpleMessage("Aile"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantaziýa"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Fantaziýa dünýäsi"),
         "february": MessageLookupByLibrary.simpleMessage("Fewral"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Film gözleg usuly"),
@@ -143,14 +174,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CSV-den import etmek"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID geçerli däl!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Ýanwar"),
         "july": MessageLookupByLibrary.simpleMessage("Iýul"),
         "june": MessageLookupByLibrary.simpleMessage("Iýun"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Soňky filmler"),
         "list": MessageLookupByLibrary.simpleMessage("Sanaw"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Sanaw (Kiçi)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafýa"),
+        "magic": MessageLookupByLibrary.simpleMessage("Siňir"),
         "march": MessageLookupByLibrary.simpleMessage("Mart"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Şer şahyrlary"),
         "may": MessageLookupByLibrary.simpleMessage("Maý"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Harby"),
         "monthly": MessageLookupByLibrary.simpleMessage("Aýda"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film üstünlikli goşuldy!"),
@@ -172,6 +210,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmler gizlendi"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmler pozuldy."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Üçin filmler"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmler import edildi"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Filmler toplama geçirildi!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -200,10 +241,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID Token tapylmady."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Bu žanr üçin film tapylmady!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Bu bellik üçin hiç bir film tapylmady"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Hiç hili film tapylmady"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Bu kompaniýa üçin film tapylmady"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "Hiç bir film import edilmedi"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Import etmek üçin film ýok"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Haryt ýazgylary üçin rugsat berilmedi."),
         "noTagsSelected":
@@ -217,6 +264,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Seriýadaky beýleki filmler"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Felsefe"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Korsar"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Pleze girizmek"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Film atyny giriziň"),
@@ -229,8 +278,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium müşderi goldawy"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium, Play Store-da giriş eden hasap üçin satyn alnar. Bu programma giriş eden ulanyjy üçin satyn alnar däl. Şeýle-de bolsa, satyn alnan ýagdaýynda, bu programmada ähli ulanyjylar üçin premiumy ulanyp bilersiňiz."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Başlangyç film"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Poster saýlamak üçin basyň"),
+        "prison": MessageLookupByLibrary.simpleMessage("Zinadan"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodyuser"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Işletmeler"),
@@ -255,9 +306,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("Öňki ekrana gaýdyp baryň"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Gelir: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romantika"),
         "runtime": MessageLookupByLibrary.simpleMessage("Wagty"),
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("Wagty (minut)"),
+        "school": MessageLookupByLibrary.simpleMessage("Mekdep"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Ylym-käpçilik"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Ylmy fantastika"),
         "searchMovies":
@@ -276,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Saýlanan filmleri dikeltmegi tassyklamaýarsyňyzmy?"),
         "september": MessageLookupByLibrary.simpleMessage("Sentýabr"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Dowam filmi"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google girmäge synanyşmak yza gaýtaryldy."),
         "signOut": MessageLookupByLibrary.simpleMessage("Çykyş etmek"),
@@ -285,18 +340,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Çykyş etmek üstünlikli!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("Hasabyňyzdan çykdyňyz."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Süýjü filmler"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Oňat Filmler"),
         "sort": MessageLookupByLibrary.simpleMessage("Düzmek"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Düzmek"),
+        "space": MessageLookupByLibrary.simpleMessage("Kömekçi"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sport dokumentaly"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Stimpank"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streeming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Abunelik)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Başarýar!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" üstünlikli pozuldy"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Gahryman"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Gadagan däl"),
         "tag": MessageLookupByLibrary.simpleMessage("Teg"),
         "tags": MessageLookupByLibrary.simpleMessage("Tegler"),
         "thriller": MessageLookupByLibrary.simpleMessage("Gorky"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Wagt syýahaty"),
         "title": MessageLookupByLibrary.simpleMessage("At"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filmi"),
         "unableFindMovie":
@@ -314,6 +377,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Görkezmek görnüşi"),
         "war": MessageLookupByLibrary.simpleMessage("Wagyr"),
+        "warning": MessageLookupByLibrary.simpleMessage("Duýduryş"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Barkamala syn etmek"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Syn etmek Taryhy"),
@@ -331,6 +395,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Görnüş Islegler"),
         "writer": MessageLookupByLibrary.simpleMessage("Yazgyjy"),
         "writers": MessageLookupByLibrary.simpleMessage("Yazgyjylar"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Hawa")
       };
 }

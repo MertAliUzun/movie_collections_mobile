@@ -1291,16 +1291,16 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 children: [
                                   Flexible(
                                     child: Text(
-                                      _basedOn == 'Book' ? 'Based on Book' :
-                                      _basedOn == 'Comic' ? 'Based on Comic' : 
-                                      _basedOn == 'Manga' ? 'Based on Manga' : 
-                                      _basedOn == 'Documentary' ? 'Based on Documentary' : 
-                                      _basedOn == 'Anime' ? 'Based on Anime' : 
-                                      _basedOn == 'Cartoon' ? 'Based on Cartoon' : 
-                                      _basedOn == 'Toy' ? 'Based on Toy' : 
-                                      _basedOn == 'Manhua' ? 'Based on Manhua' :
-                                      _basedOn == 'Autobiography' ? 'Based on Autobiography' : 
-                                      _basedOn == 'Manhwa' ? 'Based on Manhwa' : 'Original Screenplay', //S.of
+                                      _basedOn == 'Book' ? S.of(context).basedBook :
+                                      _basedOn == 'Comic' ? S.of(context).basedComic : 
+                                      _basedOn == 'Manga' ? S.of(context).basedManga : 
+                                      _basedOn == 'Documentary' ? S.of(context).basedDocumentary : 
+                                      _basedOn == 'Anime' ? S.of(context).basedAnime : 
+                                      _basedOn == 'Cartoon' ? S.of(context).basedCartoon : 
+                                      _basedOn == 'Toy' ? S.of(context).basedToy : 
+                                      _basedOn == 'Manhua' ? S.of(context).basedManhua :
+                                      _basedOn == 'Autobiography' ? S.of(context).basedAutobiography : 
+                                      _basedOn == 'Manhwa' ? S.of(context).basedManhwa : S.of(context).basedOriginal,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
@@ -1328,7 +1328,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 children: [
                                   Flexible(
                                     child: Text(
-                                      'After Credits Scene', //S.of
+                                      S.of(context).afterCreditsScene,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: ScreenUtil.getAdaptiveTextSize(context, 12),
@@ -1942,12 +1942,12 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Center(
                                   child: Text(
-                                    /*_selectedTags[index] == 'Superhero' ? S.of(context).superhero :
+                                    _selectedTags[index] == 'Superhero' ? S.of(context).superhero :
                                     _selectedTags[index] == 'Sequel' ? S.of(context).sequel :
                                     _selectedTags[index] == 'MCU' ? S.of(context).mcu :
                                     _selectedTags[index] == 'Magic' ? S.of(context).magic :
                                     _selectedTags[index] == 'Supernatural' ? S.of(context).supernatural :
-                                    _selectedTags[index] == 'Time Travel' ? S.of(context).timeTravel :
+                                    _selectedTags[index] == 'Time Travel' ? S.of(context).timetravel :
                                     _selectedTags[index] == 'Romance' ? S.of(context).romance :
                                     _selectedTags[index] == 'Anime' ? S.of(context).anime :
                                     _selectedTags[index] == 'Prequel' ? S.of(context).prequel :
@@ -1974,8 +1974,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
                                     _selectedTags[index] == 'Mafia' ? S.of(context).mafia :
                                     _selectedTags[index] == 'Detective' ? S.of(context).detective :
                                     _selectedTags[index] == 'Dark Comedy' ? S.of(context).darkComedy :
-                                    _selectedTags[index] == 'School' ? S.of(context).school : _selectedTags[index],*/
-                                    _selectedTags[index],
+                                    _selectedTags[index] == 'School' ? S.of(context).school : _selectedTags[index],
                                     textAlign: TextAlign.center,
                                     style: TextStyle(color: Colors.white, fontSize: ScreenUtil.getAdaptiveTextSize(context, _selectedTags.length < 3 ? screenWidth * 0.05 : screenWidth * 0.03,), fontWeight: FontWeight.bold),
                                   ),

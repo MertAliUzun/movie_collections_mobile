@@ -37,11 +37,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("ટૅગ ઉમેરો"),
         "addWriter": MessageLookupByLibrary.simpleMessage("લેખક ઉમેરો"),
         "adventure": MessageLookupByLibrary.simpleMessage("એડવેન્ચર"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("ક્રેડિટ્સ પછીનું દૃશ્ય"),
+        "ai": MessageLookupByLibrary.simpleMessage("કૃત્રિમ બુદ્ધિમત્તા"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ઉપનામ: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "ચુનવામાં આવેલી કેટલીક ફિલ્મો પહેલેથી જ તમારી સંગ્રહમાં છે. જો તમે ચાલુ રાખો તો આયાત કરેલી ફિલ્મો તમારી સંગ્રહમાં તેનાં સમકક્ષને અપડેટ કરશે. શું તમે ચાલુ રાખવા માંગો છો?"),
         "animation": MessageLookupByLibrary.simpleMessage("એનિમેશન"),
+        "anime": MessageLookupByLibrary.simpleMessage("એનિમે"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("યુદ્ધ વિરોધી"),
         "april": MessageLookupByLibrary.simpleMessage("એપ્રિલ"),
         "ascending": MessageLookupByLibrary.simpleMessage("ચડતા ક્રમમાં"),
         "august": MessageLookupByLibrary.simpleMessage("ઑગસ્ટ"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("એનિમે પર આધારિત"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("આત્મકથા પર આધારિત"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("પુસ્તક પર આધારિત"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("કાર્ટૂન પર આધારિત"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("કોમિક પર આધારિત"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("દસ્તાવેજી પર આધારિત"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("મંગા પર આધારિત"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("મન્હુઆ પર આધારિત"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("મનવા પર આધારિત"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("મૂળ પાત્રલેખન"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("ટોઈ પર આધારિત"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("જીવન ચરિત્ર: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("જન્મ તારીખ: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("જન્મ સ્થળ: "),
@@ -59,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "કૃપા કરીને તમારું ઇન્ટરનેટ કનેક્શન તપાસો!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "અલ્ખી અને વધારે મૂલ્યાંકિત ફિલ્મો તપાસો"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("પસંદ કરાયેલ"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "તમારા ફિલ્મો માટે ક્લાઉડ બેકઅપ"),
         "collection": MessageLookupByLibrary.simpleMessage("કલેક્શન"),
@@ -74,7 +96,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV ફાઇલ સફળતાપૂર્વક આયાત કરવામાં આવી."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("કસ્ટમ સૉર્ટ શીર્ષક"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("સાઇબરપંક"),
         "daily": MessageLookupByLibrary.simpleMessage("દૈનિક"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("ડાર્ક કોમેડી"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "આ અભિનેતા માટે ડેટા મળ્યો નથી!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -88,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("પસંદ કરેલી મૂવીઝ કાઢી નાખો"),
         "descending": MessageLookupByLibrary.simpleMessage("ઉતરતા ક્રમમાં"),
+        "detective": MessageLookupByLibrary.simpleMessage("ખોજકર્તા"),
         "digital": MessageLookupByLibrary.simpleMessage("ડિજિટલ"),
         "director": MessageLookupByLibrary.simpleMessage("દિગ્દર્શક"),
         "directorNull": MessageLookupByLibrary.simpleMessage("દિગ્દર્શક નલ"),
@@ -95,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("ડોક્યુમેન્ટરી"),
         "drama": MessageLookupByLibrary.simpleMessage("ડ્રામા"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("નિર્વાણશીલ જગત"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("દિગ્દર્શક સંપાદિત કરો"),
         "enterDirectorName":
@@ -118,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("અસફળતા!"),
         "family": MessageLookupByLibrary.simpleMessage("ફેમિલી"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ફેન્ટસી"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("ફેન્ટસી દુનિયા"),
         "february": MessageLookupByLibrary.simpleMessage("ફેબ્રુઆરી"),
         "findMovieMode": MessageLookupByLibrary.simpleMessage("ફિલ્મ શોધો મોડ"),
         "franchise": MessageLookupByLibrary.simpleMessage("ફ્રેન્ચાઇઝ"),
@@ -137,14 +164,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB સ્કોર"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV માંથી આયાત કરો"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("અમાન્ય IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("ઇસેકાઇ"),
         "january": MessageLookupByLibrary.simpleMessage("જાન્યુઆરી"),
         "july": MessageLookupByLibrary.simpleMessage("જુલાઇ"),
         "june": MessageLookupByLibrary.simpleMessage("જૂન"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("કુંગફૂ"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("તાજેતરની ફિલ્મો"),
         "list": MessageLookupByLibrary.simpleMessage("યાદી"),
         "listSmall": MessageLookupByLibrary.simpleMessage("યાદી (નાની)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("માફિયા"),
+        "magic": MessageLookupByLibrary.simpleMessage("જાદુ"),
         "march": MessageLookupByLibrary.simpleMessage("માર્ચ"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("યુદ્ધકલા"),
         "may": MessageLookupByLibrary.simpleMessage("મે"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("સૈન્ય"),
         "monthly": MessageLookupByLibrary.simpleMessage("માસિક"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "મૂવી સફળતાપૂર્વક ઉમેરવામાં આવી છે!"),
@@ -166,6 +200,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ફિલ્મો છુપાઈ ગઈ છે"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" મૂવીઝ કાઢી નાખવામાં આવી."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("ફિલ્મો માટે"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("ફિલ્મો આયાત થઈ"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "મૂવીઝ કલેક્શનમાં ખસેડવામાં આવી છે!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -194,10 +231,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("કોઈ ID ટોકન મળ્યું નથી."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "આ શૈલી માટે કોઈ મૂવીઝ મળી નથી!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "આ ટેગ માટે કોઈ ફિલ્મો મળ્યાં નથી"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("કોઈ મૂવીઝ મળી નથી"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "આ કંપની માટે કોઈ મૂવીઝ મળી નથી"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("કોઈ ફિલ્મો આયાત નથી થઈ"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("આયાત માટે કોઈ ફિલ્મો નથી"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "સ્ટોરેજ પરમિશન આપવામાં આવી નથી."),
         "noTagsSelected":
@@ -211,6 +254,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("ઠીક છે"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("સિરીઝની અન્ય ફિલ્મો"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("દર્શનશાસ્ત્ર"),
+        "pirate": MessageLookupByLibrary.simpleMessage("દરિયાઇ લૂંટારૂ"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("કૃપા કરીને દાખલ કરો"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -225,8 +270,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("પ્રેમિયમ ગ્રાહક આધાર"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "પ્રેમિયમ તે એકાઉન્ટ માટે ખરીદવામાં આવશે જેમાં તમે Play Store પર લૉગિન છો. તે આ એપ્લિકેશનમાં લૉગિન થયેલ તમારા વપરાશકર્તા માટે ખરીદવામાં નહીં આવે. તેમ છતાં, તમે જ્યારે આ એપ્લિકેશનમાં પ્રીમિયમ ખરીદશો ત્યારે તે તમામ વપરાશકર્તાઓ માટે પ્રીમિયમનો ઉપયોગ કરી શકો છો."),
+        "prequel": MessageLookupByLibrary.simpleMessage("પહેલું ભાગ"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("મૂવી પોસ્ટર પસંદ કરવા દબાવો"),
+        "prison": MessageLookupByLibrary.simpleMessage("કેદખાના"),
         "producer": MessageLookupByLibrary.simpleMessage("ઉત્પાદક"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("પ્રોડક્શન કંપનીઓ"),
@@ -250,10 +297,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "કૃપા કરીને પાછલી સ્ક્રીન પર પાછા જાઓ"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("રેવન્યુ: "),
+        "robot": MessageLookupByLibrary.simpleMessage("રોબોટ"),
         "romance": MessageLookupByLibrary.simpleMessage("રોમાન્સ"),
         "runtime": MessageLookupByLibrary.simpleMessage("રનટાઇમ"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("રનટાઇમ (મિનિટ)"),
+        "school": MessageLookupByLibrary.simpleMessage("શાળા"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("વિજ્ઞાન કલ્પના"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("સાયન્સ ફિક્શન"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("મૂવીઝ શોધો"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("લોકો શોધો"),
@@ -269,6 +319,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "શું તમે પસંદ કરેલી ફિલ્મો પુનઃપ્રાપ્ત કરવાનો પુષ્ટિ કરો છો?"),
         "september": MessageLookupByLibrary.simpleMessage("સપ્ટેમ્બર"),
+        "sequel": MessageLookupByLibrary.simpleMessage("અગળનું ભાગ"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google સાઇન-ઇન રદ કરવામાં આવ્યું હતું."),
         "signOut": MessageLookupByLibrary.simpleMessage("સાઇન આઉટ"),
@@ -278,18 +329,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("સાઇન આઉટ સફળ થયું!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "તમારા એકાઉન્ટમાંથી સાઇન આઉટ થયું."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("મૌન ફિલ્મ"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("સમાન મૂવીઝ"),
         "sort": MessageLookupByLibrary.simpleMessage("સૉર્ટ કરો "),
         "sortBy": MessageLookupByLibrary.simpleMessage("દ્વારા સૉર્ટ કરો"),
+        "space": MessageLookupByLibrary.simpleMessage("અંતરિક્ષ"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("ખેલ દસ્તાવેજી"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("સ્ટીમપંક"),
         "steelbook": MessageLookupByLibrary.simpleMessage("સ્ટીલબુક"),
         "streaming": MessageLookupByLibrary.simpleMessage("સ્ટ્રીમિંગ"),
         "subscription": MessageLookupByLibrary.simpleMessage("(સબ્સ્ક્રિપ્શન)"),
         "succesful": MessageLookupByLibrary.simpleMessage("સફળ!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(
             " સફળતાપૂર્વક કાઢી નાખવામાં આવી"),
+        "superhero": MessageLookupByLibrary.simpleMessage("સુપરહીરો"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("અતૈસ્વિક"),
         "tag": MessageLookupByLibrary.simpleMessage("ટૅગ"),
         "tags": MessageLookupByLibrary.simpleMessage("ટૅગ્સ"),
         "thriller": MessageLookupByLibrary.simpleMessage("થ્રિલર"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("સમય યાત્રા"),
         "title": MessageLookupByLibrary.simpleMessage("શીર્ષક"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ટીવી મૂવી"),
         "unableFindMovie":
@@ -306,6 +365,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("તરીકે જુઓ"),
         "war": MessageLookupByLibrary.simpleMessage("યુદ્ધ"),
+        "warning": MessageLookupByLibrary.simpleMessage("ચેતવણી"),
         "watchCount": MessageLookupByLibrary.simpleMessage("વોચ કાઉન્ટ"),
         "watchDate": MessageLookupByLibrary.simpleMessage("વોચ તારીખ"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("વોચ તારીખ: "),
@@ -321,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("વોચ લિસ્ટ"),
         "writer": MessageLookupByLibrary.simpleMessage("લેખક"),
         "writers": MessageLookupByLibrary.simpleMessage("લેખકો"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("યાકુઝા"),
         "yes": MessageLookupByLibrary.simpleMessage("હા")
       };
 }

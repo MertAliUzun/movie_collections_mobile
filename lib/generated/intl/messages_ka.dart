@@ -39,11 +39,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("წერილის ავტორის დამატება"),
         "adventure": MessageLookupByLibrary.simpleMessage("მოგზაურობა"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("კრედიტების შემდეგ სცენა"),
+        "ai": MessageLookupByLibrary.simpleMessage("ხელოვნური ინტელექტი"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ალია: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "არჩეული ფილმების ნაწილი უკვე თქვენს კოლექციაშია. თუ გაგრძელებთ, იმპორტირებული ფილმები დაახლებენ შესაბამისებს თქვენს კოლექციაში. გსურთ გაგრძელება?"),
         "animation": MessageLookupByLibrary.simpleMessage("ანიმაცია"),
+        "anime": MessageLookupByLibrary.simpleMessage("ანიმე"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("საპირისპირო ომს"),
         "april": MessageLookupByLibrary.simpleMessage("აპრილი"),
         "ascending": MessageLookupByLibrary.simpleMessage("ამაღლებული"),
         "august": MessageLookupByLibrary.simpleMessage("აგვისტო"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია ანიმეზე"),
+        "basedAutobiography": MessageLookupByLibrary.simpleMessage(
+            "დაფუძნებულია ავტობიოგრაფიაზე"),
+        "basedBook":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია წიგნზე"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია მულტფილმზე"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია კომიქსზე"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "დაფუძნებულია დოკუმენტურ ფილმზე"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია მანგაზე"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია მანჰუაზე"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია მანჰვაზე"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("ორიგინალური სცენარი"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("დაფუძნებულია სათამაშოზე"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ბიოგრაფია: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("დაბადების თარიღი: "),
@@ -63,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "ინტერნეტთან არ გაქვთ კავშირი!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "ამოწმეთ underrate და overrated ფილმები"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("არჩეული"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "ფილმებისთვის ღრუბლის სარეზერვო ასლი"),
         "collection": MessageLookupByLibrary.simpleMessage("კოლექცია"),
@@ -78,7 +108,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CSV ფაილი იმპორტირებულია."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("კონკრეტული ალფაბეტური"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("საიბერპანკი"),
         "daily": MessageLookupByLibrary.simpleMessage("ყოველდღიურად"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("მუქი კომედია"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "მსახიობის მონაცემები ვერ მოიძებნა!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -92,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("წაშალე შერჩეული ფილმები"),
         "descending": MessageLookupByLibrary.simpleMessage("დასუსტებული"),
+        "detective": MessageLookupByLibrary.simpleMessage("დეტექტივი"),
         "digital": MessageLookupByLibrary.simpleMessage("ციფრული"),
         "director": MessageLookupByLibrary.simpleMessage("რეჟისორი"),
         "directorNull":
@@ -100,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("დოკუმენტური"),
         "drama": MessageLookupByLibrary.simpleMessage("დრამა"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("დისტოპია"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("რეჟისორის რედაქტირება"),
         "enterDirectorName":
@@ -123,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("შეცდომა!"),
         "family": MessageLookupByLibrary.simpleMessage("ოჯახი"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ფანტაზია"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("ფანტასტიკური სამყარო"),
         "february": MessageLookupByLibrary.simpleMessage("თებერვალი"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("ფილმების ძებნის რეჟიმი"),
@@ -145,14 +181,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("იმპორტი CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("არასწორი IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("ისეკაი"),
         "january": MessageLookupByLibrary.simpleMessage("იანვარი"),
         "july": MessageLookupByLibrary.simpleMessage("ივლივი"),
         "june": MessageLookupByLibrary.simpleMessage("ივნისი"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("კუნგ ფუ"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("ბოლო ფილმები"),
         "list": MessageLookupByLibrary.simpleMessage("სიის"),
         "listSmall": MessageLookupByLibrary.simpleMessage("სია (მოძიება)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("მაფია"),
+        "magic": MessageLookupByLibrary.simpleMessage("ჯადოსნობა"),
         "march": MessageLookupByLibrary.simpleMessage("მარტი"),
+        "martialArts":
+            MessageLookupByLibrary.simpleMessage("მარტიალური ხელოვნება"),
         "may": MessageLookupByLibrary.simpleMessage("მაისი"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("სამხედრო"),
         "monthly": MessageLookupByLibrary.simpleMessage("ყოველთვიურად"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("ფილმი დაემატა!"),
         "movieCollection":
@@ -173,6 +217,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ფილმები დამალულია"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage("ფილმები წაიშალა."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("ფილმები თეგისთვის"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("ფილმები იმპორტირებულია"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "ფილმები გადაადგილდა კოლექციაში!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -201,10 +248,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID ტოკენი არ მოიძებნა."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "ჟანრისთვის ფილმები ვერ მოიძებნა!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "ამ თეგისთვის ფილმები არ მოიძებნა"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("ფილმები არ მოიძებნა"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "კომპანიისთვის ფილმები ვერ მოიძებნა"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("ფილმები არ იმპორტირდა"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "ფილმები იმპორტისთვის არ არის"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "თქვენ არ გაქვთ ჩამონტაჟებული წვდომა."),
         "noTagsSelected":
@@ -218,6 +271,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("კარგი"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("სხვა ფილმები სერიებში"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("ფილოსოფია"),
+        "pirate": MessageLookupByLibrary.simpleMessage("მეკობრე"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("გთხოვთ შეიყვანოთ"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("შეიყვანეთ ფილმის სათაური"),
@@ -232,8 +287,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "პრემიუმ მომხმარებლის მხარდაჭერა"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "პრემიუმი შეიძინება იმ ანგარიშისთვის, რომელიც Play Store-ში არის შესული. იგი არ შეიძინება იმ მომხმარებლისთვის, რომელიც ამ აპლიკაციაშია შესული. თუმცა, თქვენ შეძლებთ გამოიყენოთ პრემიუმი ამ აპლიკაციის ყველა მომხმარებლისთვის, როცა ის შეიძინება."),
+        "prequel": MessageLookupByLibrary.simpleMessage("პრეკველი"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "დაწკაპეთ პოსტერის არჩევისთვის"),
+        "prison": MessageLookupByLibrary.simpleMessage("სასჯელი"),
         "producer": MessageLookupByLibrary.simpleMessage("პროდიუსერი"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("წარმოების კომპანიები"),
@@ -260,10 +317,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("დააბრუნეთ წინა ეკრანზე"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("მომავალი: "),
+        "robot": MessageLookupByLibrary.simpleMessage("რობოტი"),
         "romance": MessageLookupByLibrary.simpleMessage("რომანტიკა"),
         "runtime": MessageLookupByLibrary.simpleMessage("რიგის დრო"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("მოქმედების დრო (წუთი)"),
+        "school": MessageLookupByLibrary.simpleMessage("სკოლა"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("სამეცნიერო ფანტასტიკა"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("სამეცნიერო ფანტასტიკა"),
         "searchMovies":
@@ -282,6 +342,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "დარწმუნებული ხართ, რომ გსურთ შერჩეული ფილმების აღდგენა?"),
         "september": MessageLookupByLibrary.simpleMessage("სექტემბერი"),
+        "sequel": MessageLookupByLibrary.simpleMessage("სიქველი"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("შესვლა გაუქმებულია."),
         "signOut": MessageLookupByLibrary.simpleMessage("გამოსვლა"),
@@ -291,19 +352,27 @@ class MessageLookup extends MessageLookupByLibrary {
             "გამოსვლა წარმატებით განხორციელდა!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("წარმატებით გამოხვალთ."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("დუმილი ფილმი"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("მსგავსი ფილმები"),
         "sort": MessageLookupByLibrary.simpleMessage("ალფაბეტური"),
         "sortBy": MessageLookupByLibrary.simpleMessage("შერჩევა"),
+        "space": MessageLookupByLibrary.simpleMessage("კოსმოსი"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("სპორტული დოკუმენტური"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("სტიმპანკი"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("სტრიმინგი"),
         "subscription": MessageLookupByLibrary.simpleMessage("(წევრობა)"),
         "succesful": MessageLookupByLibrary.simpleMessage("წარმატებული!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("წაშლილი წარმატებით"),
+        "superhero": MessageLookupByLibrary.simpleMessage("სუპერგმირი"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("მიმართული"),
         "tag": MessageLookupByLibrary.simpleMessage("ნიშანი"),
         "tags": MessageLookupByLibrary.simpleMessage("ნიშანები"),
         "thriller": MessageLookupByLibrary.simpleMessage("თრილერი"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("დროის მოგზაურობა"),
         "title": MessageLookupByLibrary.simpleMessage("სათაური"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ტელეფილმი"),
         "unableFindMovie":
@@ -321,6 +390,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("ნანახია როგორც"),
         "war": MessageLookupByLibrary.simpleMessage("ომი"),
+        "warning": MessageLookupByLibrary.simpleMessage("ყურადღება"),
         "watchCount": MessageLookupByLibrary.simpleMessage("ნახვის რაოდენობა"),
         "watchDate": MessageLookupByLibrary.simpleMessage("გამოსვლის თარიღი"),
         "watchDateColon":
@@ -337,6 +407,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("უსწრაფესად სურვილი"),
         "writer": MessageLookupByLibrary.simpleMessage("წერილის ავტორი"),
         "writers": MessageLookupByLibrary.simpleMessage("წერილების ავტორები"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("იაკუზა"),
         "yes": MessageLookupByLibrary.simpleMessage("დიახ")
       };
 }

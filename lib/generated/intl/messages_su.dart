@@ -38,11 +38,38 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Tambah Tag"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Tambah Penulis"),
         "adventure": MessageLookupByLibrary.simpleMessage("Petualangan"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Adegan Saatos Kredit"),
+        "ai": MessageLookupByLibrary.simpleMessage("AI"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Sababaraha film anu dipilih parantos aya dina koleksi anjeun. Upami anjeun teraskeun, film anu diimpor bakal ngapdét pasanganana dina koleksi anjeun. Naha anjeun hoyong teraskeun?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animasi"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Anti Perang"),
         "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Meningkat"),
         "august": MessageLookupByLibrary.simpleMessage("Agustus"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Otobiografi"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Dumasar kana Buku"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Kartun"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Komik"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Dokumenter"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Manga"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Manhwa"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Skenario Asli"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("Dumasar kana Kaulinan"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Tanggal Lahir: "),
@@ -62,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mangga periksa sambungan internet anjeun!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Periksa Film anu Dianggap Kurang atawa Kaleuleuwihi"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Anu Dipilih"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Cadangan Awan pikeun Film anjeun"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksi"),
@@ -77,7 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "File CSV parantos hasil diimpor."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Urutkeun Judul Kostum"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Harian"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Komedi Gelap"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Data pikeun Aktor ieu teu kapanggih!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Hapus Film Pilihan"),
         "descending": MessageLookupByLibrary.simpleMessage("Menurun"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektif"),
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Sutradara"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Sutradara Null"),
@@ -98,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumenter"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopia"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Sunting Sutradara"),
         "enterDirectorName":
@@ -121,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Kegagalan!"),
         "family": MessageLookupByLibrary.simpleMessage("Kulawarga"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasi"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Dunya Fantasi"),
         "february": MessageLookupByLibrary.simpleMessage("Februari"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Mode Pencarian Filem"),
@@ -142,15 +175,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Skor IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Impor ti CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDB Teu Sah!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Januari"),
         "july": MessageLookupByLibrary.simpleMessage("Juli"),
         "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Filem Panganyarna"),
         "list": MessageLookupByLibrary.simpleMessage("Daptar"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Daptar (Leutik)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Sihir"),
         "march": MessageLookupByLibrary.simpleMessage("Maret"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Seni Bela Diri"),
         "may": MessageLookupByLibrary.simpleMessage("Mei"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Militer"),
         "monthly": MessageLookupByLibrary.simpleMessage("Bulanan"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Film parantos sukses ditambahkeun!"),
@@ -171,6 +211,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesAreHidden": MessageLookupByLibrary.simpleMessage(
             "Pilem-pilem parantos disumputkeun"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" film dihapus."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Film pikeun"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("film parantos diimpor"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Film geus dipindahkeun ka Koleksi!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -197,10 +240,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "noIdToken": MessageLookupByLibrary.simpleMessage("Teu aya Token ID."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Teu aya film pikeun genre ieu!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Teu aya film anu kapanggih pikeun tag ieu"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Teu aya film anu kapanggih"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Teu aya film anu kapanggih pikeun perusahaan ieu"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Teu aya film anu diimpor"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Teu aya film pikeun diimpor"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Izin panyimpenan teu dipasihkeun."),
         "noTagsSelected":
@@ -214,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Pilem séjén dina séri"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filsafat"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Bajak Laut"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Mangga lebetkeun"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Mangga lebetkeun judul film"),
@@ -226,8 +277,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dukungan Pelanggan Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium bakal dipésér pikeun akun anu asup kana Play Store anjeun. Henteu bakal dipésér pikeun pangguna anu asup kana aplikasi ieu. Nanging, anjeun tiasa ngagunakeun premium pikeun sadaya pangguna dina aplikasi ieu nalika éta parantos dipésér."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Prequel"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Pencet pikeun milih poster film"),
+        "prison": MessageLookupByLibrary.simpleMessage("Penjara"),
         "producer": MessageLookupByLibrary.simpleMessage("Produser"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Perusahaan Produksi"),
@@ -251,10 +304,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Mangga balikkeun ka layar sateuacanna"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Pendapatan: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Roman"),
         "runtime": MessageLookupByLibrary.simpleMessage("Durasi"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Durasi (Menit)"),
+        "school": MessageLookupByLibrary.simpleMessage("Sakola"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Fiksi Ilmiah"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fiksi Sains"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Milarian Film"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("Milarian Jalma"),
@@ -270,6 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Naha anjeun mastikeun pikeun mulangkeun pilem anu dipilih?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Sekuel"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Login Google dibatalkeun."),
         "signOut": MessageLookupByLibrary.simpleMessage("Keluar"),
@@ -279,18 +336,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Keluar parantos suksés!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("Keluar tina akun anjeun."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Film Bisu"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Film Sarua"),
         "sort": MessageLookupByLibrary.simpleMessage("Urutkeun"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Urutkeun Ku"),
+        "space": MessageLookupByLibrary.simpleMessage("Angkasa"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dokumenter Olahraga"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Langganan)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Suksés!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" berhasil dihapus"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superhero"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Gaib"),
         "tag": MessageLookupByLibrary.simpleMessage("Tag"),
         "tags": MessageLookupByLibrary.simpleMessage("Tag"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Perjalanan Waktu"),
         "title": MessageLookupByLibrary.simpleMessage("Judul"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film TV"),
         "unableFindMovie":
@@ -308,6 +373,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Tingali Salaku"),
         "war": MessageLookupByLibrary.simpleMessage("Perang"),
+        "warning": MessageLookupByLibrary.simpleMessage("Peringatan"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Hitungan Nonton"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Tanggal Nonton"),
         "watchDateColon":
@@ -323,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Daptar Nonton"),
         "writer": MessageLookupByLibrary.simpleMessage("Penulis"),
         "writers": MessageLookupByLibrary.simpleMessage("Penulis"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Leres")
       };
 }

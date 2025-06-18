@@ -36,11 +36,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Adaugă etichetă"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Adaugă scriitor"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventură"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Scena de după credite"),
+        "ai": MessageLookupByLibrary.simpleMessage("Inteligență artificială"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Unele dintre filmele selectate sunt deja în colecția ta. Dacă continui, filmele importate vor actualiza versiunile lor din colecție. Dorești să continui?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animație"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Antirăzboi"),
         "april": MessageLookupByLibrary.simpleMessage("Aprilie"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascendent"),
         "august": MessageLookupByLibrary.simpleMessage("August"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Bazat pe anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Bazat pe autobiografie"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Bazat pe carte"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Bazat pe desen animat"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Bazat pe benzi desenate"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Bazat pe documentar"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Bazat pe manga"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Bazat pe manhua"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Bazat pe manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Scenariu original"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Bazat pe jucărie"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Data nașterii: "),
@@ -60,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Verifică conexiunea la internet!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Verifică filmele subapreciate și supraevaluate"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Alesul"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Backup în cloud pentru filmele tale"),
         "collection": MessageLookupByLibrary.simpleMessage("Colecție"),
@@ -74,7 +98,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Fișierul CSV a fost importat cu succes."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Titlu sortare personalizată"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Zilnic"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Comedie neagră"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Nu s-au obținut date pentru acest actor!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -88,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Șterge filmele alese"),
         "descending": MessageLookupByLibrary.simpleMessage("Descendent"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detectiv"),
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Regizor"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Regizor nul"),
@@ -95,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Documentar"),
         "drama": MessageLookupByLibrary.simpleMessage("Dramă"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopie"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Editează regizorul"),
         "enterDirectorName": MessageLookupByLibrary.simpleMessage(
@@ -118,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Eșec!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantezie"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Lume fantastică"),
         "february": MessageLookupByLibrary.simpleMessage("Februarie"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Mod căutare filme"),
@@ -138,14 +167,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Scor IMDb"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Importă CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDb invalid!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Ianuarie"),
         "july": MessageLookupByLibrary.simpleMessage("Iulie"),
         "june": MessageLookupByLibrary.simpleMessage("Iunie"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Filme recente"),
         "list": MessageLookupByLibrary.simpleMessage("Listă"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Listă (mică)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magie"),
         "march": MessageLookupByLibrary.simpleMessage("Martie"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Arte marțiale"),
         "may": MessageLookupByLibrary.simpleMessage("Mai"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Militar"),
         "monthly": MessageLookupByLibrary.simpleMessage("Lunar"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film adăugat cu succes!"),
@@ -168,6 +204,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmele au fost ascunse"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage("Filmele au fost șterse."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filme pentru"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmele au fost importate"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmele au fost mutate în colecție!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -196,10 +235,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nu s-a primit niciun ID Token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Nu au fost găsite filme pentru acest gen!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Nu s-au găsit filme pentru această etichetă"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Nu au fost găsite filme"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Nu au fost găsite filme pentru această companie"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Nu au fost importate filme"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Nu există filme de importat"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nu s-au acordat permisiuni pentru stocare."),
         "noTagsSelected":
@@ -213,6 +258,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Alte filme din serie"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofie"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Pirat"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Te rog să introduci"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -227,8 +274,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Suport Premium pentru clienți"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium va fi cumpărat pentru contul cu care ești conectat în Play Store. Nu va fi cumpărat pentru utilizatorul conectat în această aplicație. Cu toate acestea, poți folosi premium pentru toți utilizatorii din această aplicație atunci când este cumpărat."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Prequel"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Apasă pentru a alege posterul filmului"),
+        "prison": MessageLookupByLibrary.simpleMessage("Închisoare"),
         "producer": MessageLookupByLibrary.simpleMessage("Producător"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Companii de producție"),
@@ -253,10 +302,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Te rog să te întorci la ecranul anterior"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Venituri: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romantism"),
         "runtime": MessageLookupByLibrary.simpleMessage("Durata"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Durata (minute)"),
+        "school": MessageLookupByLibrary.simpleMessage("Școală"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Științifico-fantastic"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Științifico-fantastic"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Căutare filme"),
@@ -274,6 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Confirmați că doriți să restaurați filmele alese?"),
         "september": MessageLookupByLibrary.simpleMessage("Septembrie"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Continuare"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Autentificarea Google a fost anulată."),
         "signOut": MessageLookupByLibrary.simpleMessage("Deconectare"),
@@ -283,18 +336,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Deconectare cu succes!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("V-ați deconectat din cont."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Film mut"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Filme similare"),
         "sort": MessageLookupByLibrary.simpleMessage("Sortează"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sortează după"),
+        "space": MessageLookupByLibrary.simpleMessage("Spațiu"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Documentar sportiv"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Abonament)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Succes!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("Șters cu succes"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Supererou"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Supranatural"),
         "tag": MessageLookupByLibrary.simpleMessage("Etichetă"),
         "tags": MessageLookupByLibrary.simpleMessage("Etichete"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Călătorie în timp"),
         "title": MessageLookupByLibrary.simpleMessage("Titlu"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film TV"),
         "unableFindMovie":
@@ -312,6 +373,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Vizualizează ca"),
         "war": MessageLookupByLibrary.simpleMessage("Război"),
+        "warning": MessageLookupByLibrary.simpleMessage("Atenție"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Număr de vizionări"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Data vizionării"),
@@ -329,6 +391,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Lista de dorințe"),
         "writer": MessageLookupByLibrary.simpleMessage("Scriitor"),
         "writers": MessageLookupByLibrary.simpleMessage("Scriitori"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Da")
       };
 }

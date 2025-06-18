@@ -38,11 +38,37 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Voeg Etiket By"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Voeg Skrywer By"),
         "adventure": MessageLookupByLibrary.simpleMessage("Avontuur"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Na Krediete Toneel"),
+        "ai": MessageLookupByLibrary.simpleMessage("KI"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Sommige van die gekose flieks is reeds in jou versameling. As jy voortgaan, sal die ingevoerde flieks hul teenhangers in jou versameling opdateer. Wil jy voortgaan?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animasie"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Anti-Oorlog"),
         "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Oplopend"),
         "august": MessageLookupByLibrary.simpleMessage("Augustus"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Gebaseer op Anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Outobiografie"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Gebaseer op Boek"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Tekenprent"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Strokiesprent"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Dokumentêr"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Gebaseer op Manga"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Oorspronklike Draaiboek"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("Gebaseer op Speelgoed"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Geboortedatum: "),
@@ -62,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Kontroleer asseblief jou internetverbinding!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Kontroleer Onderskatte en Oorskatte Flieks"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Uitverkorene"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("Wolkrugsteun Vir Jou Flieks"),
         "collection": MessageLookupByLibrary.simpleMessage("Versameling"),
@@ -77,7 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV-lêer suksesvol ingevoer."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Pasgemaakte Sorteertitel"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Daagliks"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Donker Komedie"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Data vir hierdie akteur kon nie gevind word nie!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Verwyder Gekose Flieks"),
         "descending": MessageLookupByLibrary.simpleMessage("Aflopend"),
+        "detective": MessageLookupByLibrary.simpleMessage("Speurder"),
         "digital": MessageLookupByLibrary.simpleMessage("Digitale"),
         "director": MessageLookupByLibrary.simpleMessage("Regisseur"),
         "directorNull":
@@ -98,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentêr"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopie"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Redigeer Regisseur"),
         "enterDirectorName":
@@ -121,6 +152,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Mislukking!"),
         "family": MessageLookupByLibrary.simpleMessage("Familie"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasie"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Fantasiewêreld"),
         "february": MessageLookupByLibrary.simpleMessage("Februarie"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Vind Rolprentmodus"),
@@ -143,15 +175,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Voer in vanaf CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Ongeldige IMDB-ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Januarie"),
         "july": MessageLookupByLibrary.simpleMessage("Julie"),
         "june": MessageLookupByLibrary.simpleMessage("Junie"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Nuutste Rolprente"),
         "list": MessageLookupByLibrary.simpleMessage("Lys"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lys (Klein)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Towerkuns"),
         "march": MessageLookupByLibrary.simpleMessage("Maart"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Vegkuns"),
         "may": MessageLookupByLibrary.simpleMessage("Mei"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Militêr"),
         "monthly": MessageLookupByLibrary.simpleMessage("Maandeliks"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Fliek is suksesvol bygevoeg!"),
@@ -175,6 +214,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Flieks is versteek"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" flieks verwyder."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Flieks vir"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("flieks ingevoer"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Flieks is na versameling geskuif!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -203,10 +245,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Geen ID-token gevind nie."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Geen flieks vir hierdie genre gevind nie!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Geen flieks vir hierdie etiket gevind nie"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Geen flieks gevind nie"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Geen flieks vir hierdie maatskappy gevind nie"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Geen flieks ingevoer nie"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "Geen flieks om in te voer nie"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Geen toestemmings vir stoorruimte gegee nie."),
         "noTagsSelected":
@@ -220,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Ander Flieks in die Reeks"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofie"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Seerower"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Voer asseblief in"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -233,8 +283,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium Kliëntediens"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium sal gekoop word vir die rekening wat by jou Play Store aangemeld is. Dit sal nie vir die gebruiker wat in hierdie app aangemeld is gekoop word nie. Jy kan egter premium gebruik vir alle gebruikers in hierdie app wanneer dit gekoop is."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Voorverhaal"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Druk om fliekplakkaat te kies"),
+        "prison": MessageLookupByLibrary.simpleMessage("Gevangenis"),
         "producer": MessageLookupByLibrary.simpleMessage("Produsent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produksiemaatskappye"),
@@ -259,10 +311,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Gaan asseblief terug na die vorige skerm"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Inkomste: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romanse"),
         "runtime": MessageLookupByLibrary.simpleMessage("Tydsduur"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Tydsduur (Minute)"),
+        "school": MessageLookupByLibrary.simpleMessage("Skool"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Wetenskapfiksie"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Wetenskapfiksie"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Soek Flieks"),
@@ -279,6 +334,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Bevestig jy dat jy die gekose flieks wil herstel?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Vervolg"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google-aanmelding is gekanselleer."),
         "signOut": MessageLookupByLibrary.simpleMessage("Meld af"),
@@ -288,19 +344,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Afmelding was suksesvol!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Afgemeld vanaf jou rekening."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Stilfliek"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Soortgelyke Flieks"),
         "sort": MessageLookupByLibrary.simpleMessage("Sorteer "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sorteer volgens"),
+        "space": MessageLookupByLibrary.simpleMessage("Ruimte"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sportdokumentêr"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Stroom"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Intekening)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Suksesvol!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" suksesvol verwyder"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superheld"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Bonatuurlik"),
         "tag": MessageLookupByLibrary.simpleMessage("Etiket"),
         "tags": MessageLookupByLibrary.simpleMessage("Etikette"),
         "thriller": MessageLookupByLibrary.simpleMessage("Riller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Tydreis"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV-fliek"),
         "unableFindMovie":
@@ -318,6 +382,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Bekyk As"),
         "war": MessageLookupByLibrary.simpleMessage("Oorlog"),
+        "warning": MessageLookupByLibrary.simpleMessage("Waarskuwing"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Kyk Telling"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Kykdatum"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Kykdatum: "),
@@ -333,6 +398,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Kyklys"),
         "writer": MessageLookupByLibrary.simpleMessage("Skrywer"),
         "writers": MessageLookupByLibrary.simpleMessage("Skrywers"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Ja")
       };
 }

@@ -39,11 +39,38 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Pievienot rakstnieku"),
         "adventure": MessageLookupByLibrary.simpleMessage("Piedzīvojumi"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Pēc kredītiem aina"),
+        "ai": MessageLookupByLibrary.simpleMessage("Mākslīgais intelekts"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Segvārds: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Dažas no izvēlētajām filmām jau ir tavā kolekcijā. Ja turpināsi, importētās filmas atjauninās to ekvivalentus tavā kolekcijā. Vai vēlies turpināt?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animācija"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Pretkarš"),
         "april": MessageLookupByLibrary.simpleMessage("Aprīlis"),
         "ascending": MessageLookupByLibrary.simpleMessage("Augošā secībā"),
         "august": MessageLookupByLibrary.simpleMessage("Augusts"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Balstīts uz anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz autobiogrāfiju"),
+        "basedBook":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz grāmatu"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz multfilmu"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz komiksu"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Balstīts uz dokumentālo filmu"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Balstīts uz mangu"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Oriģināls scenārijs"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("Balstīts uz rotaļlietu"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biogrāfija: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Dzimšanas datums: "),
@@ -63,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lūdzu, pārbaudiet savu interneta savienojumu!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Pārbaudiet nepietiekami novērtētās un pārvērtētās filmas"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Izvēlētais"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("Mākoņkrātuve jūsu filmām"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekcija"),
@@ -78,7 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV fails veiksmīgi importēts."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Pielāgota kārtošana pēc nosaukuma"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Kiberpanks"),
         "daily": MessageLookupByLibrary.simpleMessage("Ikdienā"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Tumšā komēdija"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Dati par šo aktieri nav atrasti!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -92,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Dzēst izvēlētās filmas"),
         "descending": MessageLookupByLibrary.simpleMessage("Dilstošā secībā"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektīvs"),
         "digital": MessageLookupByLibrary.simpleMessage("Digitālais"),
         "director": MessageLookupByLibrary.simpleMessage("Režisors"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Nav režisora"),
@@ -100,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dokumentālā filma"),
         "drama": MessageLookupByLibrary.simpleMessage("Draama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopija"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Rediģēt režisoru"),
         "enterDirectorName":
@@ -123,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Kļūda!"),
         "family": MessageLookupByLibrary.simpleMessage("Ģimene"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantāzija"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Fantāzijas pasaule"),
         "february": MessageLookupByLibrary.simpleMessage("Februāris"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Filmu meklēšanas režīms"),
@@ -146,14 +180,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importēt no CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Nederīgs IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Janvāris"),
         "july": MessageLookupByLibrary.simpleMessage("Jūlijs"),
         "june": MessageLookupByLibrary.simpleMessage("Jūnijs"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Jaunākās filmas"),
         "list": MessageLookupByLibrary.simpleMessage("Saraksts"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Saraksts (mazais)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafija"),
+        "magic": MessageLookupByLibrary.simpleMessage("Burvestības"),
         "march": MessageLookupByLibrary.simpleMessage("Marts"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Cīņas mākslas"),
         "may": MessageLookupByLibrary.simpleMessage("Maijs"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Militārs"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mēnesī"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filma veiksmīgi pievienota!"),
@@ -176,6 +217,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmas ir paslēptas"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmas dzēstas."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmas priekš"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmas importētas"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmas pārvietotas uz kolekciju!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -204,10 +248,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nav atrasts ID žetons."),
         "noMoviesForGenre":
             MessageLookupByLibrary.simpleMessage("Nav filmu šim žanram!"),
+        "noMoviesForTag":
+            MessageLookupByLibrary.simpleMessage("Nav filmu ar šo tagu"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Nav atrastas filmas"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Nav atrastas filmas šim uzņēmumam"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Filmas netika importētas"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Nav filmu, ko importēt"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nav piešķirtas glabāšanas tiesības."),
         "noTagsSelected":
@@ -221,6 +271,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Labi"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Citas filmas sērijā"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filozofija"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Pirati"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Lūdzu, ievadiet"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
             "Lūdzu, ievadiet filmas nosaukumu"),
@@ -235,8 +287,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium klientu atbalsts"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium tiks iegādāts par kontu, ar kuru esat pierakstījies Play Store. Tas netiks iegādāts par lietotāju, kurš ir pierakstījies šajā lietotnē. Tomēr, kad tas tiks iegādāts, jūs varēsiet izmantot Premium visiem lietotājiem šajā lietotnē."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Priekšvēsture"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Nospiediet, lai izvēlētos filmas plakātu"),
+        "prison": MessageLookupByLibrary.simpleMessage("Cietums"),
         "producer": MessageLookupByLibrary.simpleMessage("Producenta"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Ražošanas uzņēmumi"),
@@ -262,10 +316,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Lūdzu, atgriezieties iepriekšējā ekrānā"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Ieņēmumi: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robots"),
         "romance": MessageLookupByLibrary.simpleMessage("Romance"),
         "runtime": MessageLookupByLibrary.simpleMessage("Ilgums"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Ilgums (minūtēs)"),
+        "school": MessageLookupByLibrary.simpleMessage("Skola"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Zinātniskā fantastika"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Zinātniskā fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Meklēt filmas"),
@@ -282,6 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Vai apstiprināt izvēlēto filmu atjaunošanu?"),
         "september": MessageLookupByLibrary.simpleMessage("Septembris"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Turpinājums"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Google pieteikšanās tika atcelta."),
         "signOut": MessageLookupByLibrary.simpleMessage("Izrakstīties"),
@@ -291,19 +349,27 @@ class MessageLookup extends MessageLookupByLibrary {
             "Izrakstīšanās bija veiksmīga!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Jūs esat izrakstījies no sava konta."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Klusais kino"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Līdzīgas filmas"),
         "sort": MessageLookupByLibrary.simpleMessage("Kārtot"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Kārtot pēc"),
+        "space": MessageLookupByLibrary.simpleMessage("Kosmoss"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sporta dokumentālais"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Straumēšana"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Abonēšana)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Veiksmīgi!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" veiksmīgi dzēsts"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Supervaroņi"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Pārnatuŗāls"),
         "tag": MessageLookupByLibrary.simpleMessage("Etiķete"),
         "tags": MessageLookupByLibrary.simpleMessage("Etiķetes"),
         "thriller": MessageLookupByLibrary.simpleMessage("Trilleris"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Ceļošana laikā"),
         "title": MessageLookupByLibrary.simpleMessage("Nosaukums"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV filma"),
         "unableFindMovie":
@@ -322,6 +388,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Skatīt kā"),
         "war": MessageLookupByLibrary.simpleMessage("Kara"),
+        "warning": MessageLookupByLibrary.simpleMessage("Brīdinājums"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Skatīšanās reižu skaits"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Skatīšanās datums"),
@@ -339,6 +406,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Vēlamo filmu saraksts"),
         "writer": MessageLookupByLibrary.simpleMessage("Rakstnieks"),
         "writers": MessageLookupByLibrary.simpleMessage("Rakstnieki"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Jakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Jā")
       };
 }

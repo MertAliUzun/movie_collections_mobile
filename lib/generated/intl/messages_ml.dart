@@ -38,11 +38,39 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("ടാഗ് ചേർക്കുക"),
         "addWriter": MessageLookupByLibrary.simpleMessage("രചയിതാവ് ചേർക്കുക"),
         "adventure": MessageLookupByLibrary.simpleMessage("സാഹസിക"),
+        "afterCreditsScene": MessageLookupByLibrary.simpleMessage(
+            "ക്രെഡിറ്റ് കഴിഞ്ഞുള്ള ദൃശ്യങ്ങൾ"),
+        "ai": MessageLookupByLibrary.simpleMessage("കൃത്രിമബുദ്ധി"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ഉപനാമം: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "തിരഞ്ഞെടുത്ത ചില സിനിമകൾ നിങ്ങളുടെ ശേഖരത്തിലുണ്ട്. തുടരുകയാണെങ്കിൽ, ഇറക്കുമതി ചെയ്ത സിനിമകൾ ശേഖരത്തിലെ തുല്യങ്ങളായി അപ്ഡേറ്റ് ചെയ്യും. തുടരാൻ ആഗ്രഹിക്കുന്നുണ്ടോ?"),
         "animation": MessageLookupByLibrary.simpleMessage("ആനിമേഷൻ"),
+        "anime": MessageLookupByLibrary.simpleMessage("അനിമേ"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("യുദ്ധവിരുദ്ധം"),
         "april": MessageLookupByLibrary.simpleMessage("ഏപ്രിൽ"),
         "ascending": MessageLookupByLibrary.simpleMessage("മുകളിലേക്ക്"),
         "august": MessageLookupByLibrary.simpleMessage("ഓഗസ്റ്റ്"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("അനിമെയെ അടിസ്ഥാനമാക്കി"),
+        "basedAutobiography": MessageLookupByLibrary.simpleMessage(
+            "സ്വയം ജീവചരിത്രം അടിസ്ഥാനമാക്കി"),
+        "basedBook":
+            MessageLookupByLibrary.simpleMessage("പുസ്തകത്തെ അടിസ്ഥാനമാക്കി"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("കാർട്ടൂണിനെ അടിസ്ഥാനമാക്കി"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("കോമിക്കിനെ അടിസ്ഥാനമാക്കി"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "ഡോക്യുമെന്ററിയിനെ അടിസ്ഥാനമാക്കി"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("മംഗയെ അടിസ്ഥാനമാക്കി"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("മാൻഹുവയെ അടിസ്ഥാനമാക്കി"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("മൻവയെ അടിസ്ഥാനമാക്കി"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("മൂലസഞ്ചിതം"),
+        "basedToy": MessageLookupByLibrary.simpleMessage(
+            "കളിപ്പാട്ടത്തെ അടിസ്ഥാനമാക്കി"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ജീവചരിത്രം: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("ജനന തീയതി: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("ജനന സ്ഥലം: "),
@@ -60,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "ദയവായി നിങ്ങളുടെ ഇന്റർനെറ്റ് കണക്ഷൻ പരിശോധിക്കുക!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "കുറഞ്ഞ മൂല്യനിർണ്ണയവും അമിതമായ മൂല്യനിർണ്ണയവുമുള്ള സിനിമകൾ പരിശോധിക്കുക"),
+        "chosenOne":
+            MessageLookupByLibrary.simpleMessage("തെരെഞ്ഞെടുക്കപ്പെട്ടവൻ"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "നിങ്ങളുടെ സിനിമകൾക്ക് ക്ലൗഡ് ബാക്കപ്പ്"),
         "collection": MessageLookupByLibrary.simpleMessage("സമാഹാരം"),
@@ -75,7 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV ഫയൽ വിജയകരമായി ഇറക്കുമതി ചെയ്തു."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("സ്വകാര്യക്രമം ടൈറ്റ്"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("സൈബർപങ്ക്"),
         "daily": MessageLookupByLibrary.simpleMessage("ദിവസേന"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("കറുത്ത തമാശ"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "ഈ പടവാളിയുടെ വിവരങ്ങൾ ലഭ്യമാക്കാൻ കഴിഞ്ഞില്ല!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -88,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "തിരഞ്ഞെടുത്ത ചലച്ചിത്രങ്ങൾ നീക്കം ചെയ്യുക"),
         "descending": MessageLookupByLibrary.simpleMessage("പതിനോട്"),
+        "detective": MessageLookupByLibrary.simpleMessage("ഗൂഢാലോചകൻ"),
         "digital": MessageLookupByLibrary.simpleMessage("ഡിജിറ്റൽ"),
         "director": MessageLookupByLibrary.simpleMessage("നിരദേശകൻ"),
         "directorNull": MessageLookupByLibrary.simpleMessage("നിരദേശകൻ ഇല്ല"),
@@ -95,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("പ്രമാണചിത്രം"),
         "drama": MessageLookupByLibrary.simpleMessage("ഡ്രാമ"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("ദുർഗതികാലം"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("നിരദേശകനിനെ തിരുത്തുക"),
         "enterDirectorName":
@@ -119,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("പിശക്!"),
         "family": MessageLookupByLibrary.simpleMessage("കുടുംബം"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ഭാവി"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("കല്പനാജാലം"),
         "february": MessageLookupByLibrary.simpleMessage("ഫെബ്രുവരി"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര തിരയൽ മോഡ്"),
@@ -141,15 +176,22 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV ൽ നിന്നും ഇറക്കുമതി ചെയ്യുക"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("അസാധുവായ IMDB ഐഡി!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("ഇസേക്കായ്"),
         "january": MessageLookupByLibrary.simpleMessage("ജനുവരി"),
         "july": MessageLookupByLibrary.simpleMessage("ജൂലൈ"),
         "june": MessageLookupByLibrary.simpleMessage("ജൂൺ"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("കുങ്ഫു"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("സമീപകാല ചലച്ചിത്രങ്ങൾ"),
         "list": MessageLookupByLibrary.simpleMessage("പട്ടിക"),
         "listSmall": MessageLookupByLibrary.simpleMessage("പട്ടിക (ചെറിയ)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("മാഫിയ"),
+        "magic": MessageLookupByLibrary.simpleMessage("മന്ത്രവാദം"),
         "march": MessageLookupByLibrary.simpleMessage("മാർച്ച്"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("യുദ്ധകലകൾ"),
         "may": MessageLookupByLibrary.simpleMessage("മേയ്"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("സൈനികം"),
         "monthly": MessageLookupByLibrary.simpleMessage("മാസേന"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രം വിജയകരമായി ചേർത്തു!"),
@@ -173,6 +215,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("സിനിമകൾ മറച്ചു"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(
             " ചലച്ചിത്രങ്ങൾ നീക്കം ചെയ്യപ്പെട്ടു."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("സിനിമകൾ വേണ്ടി"),
+        "moviesImported": MessageLookupByLibrary.simpleMessage(
+            "ചലച്ചിത്രങ്ങൾ ഇറക്കുമതി ചെയ്തു"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രങ്ങൾ സമാഹാരത്തിലേക്ക് മാറ്റി!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -201,10 +246,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ഐഡി ടോക്കൺ കണ്ടെത്തിയില്ല."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "ഈ ശാഖയ്ക്ക് ചലച്ചിത്രങ്ങൾ കണ്ടെത്തിയില്ല!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "ഈ ടാഗിനുള്ള സിനിമകൾ ഒന്നും കണ്ടെത്തിയില്ല"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage(
             "ചലച്ചിത്രങ്ങൾ കണ്ടെത്തിയില്ല"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "ഈ കമ്പനി için ചലച്ചിത്രങ്ങൾ കണ്ടെത്തിയില്ല"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "ഏതും ഇറക്കുമതി ചെയ്തിട്ടില്ല"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "ഇറക്കുമതി ചെയ്യാനുള്ള സിനിമകളില്ല"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "സ്റോറെജിന്റെ അനുമതി നൽകിയിട്ടില്ല."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage(
@@ -218,6 +269,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("ശരി"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("സീരീസിലെ മറ്റു സിനിമകൾ"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("തത്വചിന്ത"),
+        "pirate": MessageLookupByLibrary.simpleMessage("കടത്തുകാരൻ"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("ദയവായി നൽകുക"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("ചലച്ചിത്ര ശീർഷകം നൽകുക"),
@@ -231,8 +284,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "പ്രീമിയം കസ്റ്റമർ സപ്പോർട്ട്"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "പ്രീമിയം നിങ്ങൾ Play Store-ൽ ലോഗിൻ ചെയ്തിരിക്കുന്ന അക്കൗണ്ടിനായി വാങ്ങപ്പെടും. ഈ ആപ്പിൽ ലോഗിൻ ചെയ്തിരിക്കുന്ന ഉപയോക്താവിനായി അത് വാങ്ങപ്പെടില്ല. എങ്കിൽ, നിങ്ങൾ പ്രീമിയം വാങ്ങിയാൽ ഈ ആപ്പിലെ എല്ലാ ഉപയോക്താക്കളിലും ഉപയോഗിക്കാൻ കഴിയും."),
+        "prequel": MessageLookupByLibrary.simpleMessage("മുമ്പത്തെ കഥ"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "പോസ്റ്റർ തിരഞ്ഞെടുക്കാൻ അമർത്തുക"),
+        "prison": MessageLookupByLibrary.simpleMessage("സെൽ"),
         "producer": MessageLookupByLibrary.simpleMessage("ഉൽപ്പാദകൻ"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("പ്രൊഡക്ഷൻ കമ്പനികൾ"),
@@ -257,10 +312,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "ദയവായി മുൻ സ്ക്രീനിലേക്ക് തിരിച്ചുപോക്കുക"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("ആവക്കൂട്ട്: "),
+        "robot": MessageLookupByLibrary.simpleMessage("യന്ത്രമനുഷ്യൻ"),
         "romance": MessageLookupByLibrary.simpleMessage("പ്രണയം"),
         "runtime": MessageLookupByLibrary.simpleMessage("കാലാവധി"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("ടൈം (മിനിറ്റ്)"),
+        "school": MessageLookupByLibrary.simpleMessage("പാഠശാല"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("വിവേക ശാസ്ത്രം"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("ശാസ്ത്ര ഫിക്ഷൻ"),
         "searchMovies":
@@ -278,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "തിരഞ്ഞെടുത്ത സിനിമകൾ പുനഃസ്ഥാപിക്കാൻ നിങ്ങൾ സ്ഥിരീകരിക്കുന്നുവോ?"),
         "september": MessageLookupByLibrary.simpleMessage("സെപ്റ്റംബർ"),
+        "sequel": MessageLookupByLibrary.simpleMessage("തുടർചിത്രം"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("ഗൂഗിൾ സൈൻ ഇൻ റദ്ദാക്കി."),
         "signOut": MessageLookupByLibrary.simpleMessage("ലോഗ് ഔട്ട്"),
@@ -287,10 +346,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ലോഗ് ഔട്ട് വിജയകരമായാണ്!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "നിങ്ങളുടെ അക്കൗണ്ടിൽ നിന്ന് ലോഗ് ഔട്ട് ചെയ്തു."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("നിശ്ശബ്ദചിത്രം"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("സാദൃശ്യമായ ചലച്ചിത്രങ്ങൾ"),
         "sort": MessageLookupByLibrary.simpleMessage("ചുരുക്കുക"),
         "sortBy": MessageLookupByLibrary.simpleMessage("ചുരുക്കിയാൽ"),
+        "space": MessageLookupByLibrary.simpleMessage("അന്തരീക്ഷം"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("കായിക രേഖചിത്രം"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("സ്റ്റെംപങ്ക്"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("സ്റ്റ്രീമിംഗ്"),
         "subscription":
@@ -298,9 +362,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "succesful": MessageLookupByLibrary.simpleMessage("വിജയകരമാണ്!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" വിജയകരമായി നീക്കം ചെയ്തു"),
+        "superhero": MessageLookupByLibrary.simpleMessage("സൂപ്പർഹീറോ"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("അധികൃത്രിമ"),
         "tag": MessageLookupByLibrary.simpleMessage("ടാഗ്"),
         "tags": MessageLookupByLibrary.simpleMessage("ടാഗുകൾ"),
         "thriller": MessageLookupByLibrary.simpleMessage("ത്രില്ലർ"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("സമയയാത്ര"),
         "title": MessageLookupByLibrary.simpleMessage("ശീർഷകം"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ടിവി മൂവി"),
         "unableFindMovie": MessageLookupByLibrary.simpleMessage(
@@ -318,6 +385,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("പ്രകടിപ്പിക്കുക"),
         "war": MessageLookupByLibrary.simpleMessage("സമരം"),
+        "warning": MessageLookupByLibrary.simpleMessage("മുന്നറിയിപ്പ്"),
         "watchCount": MessageLookupByLibrary.simpleMessage("ചിത്രം കണ്ടു"),
         "watchDate":
             MessageLookupByLibrary.simpleMessage("ചിതറി കാണേണ്ട തീയതി"),
@@ -335,6 +403,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("ഇഷ്ടചിത്രങ്ങൾ"),
         "writer": MessageLookupByLibrary.simpleMessage("രചയിതാവ്"),
         "writers": MessageLookupByLibrary.simpleMessage("രചയിതാക്കൾ"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("യാകുസ"),
         "yes": MessageLookupByLibrary.simpleMessage("ഓව්")
       };
 }

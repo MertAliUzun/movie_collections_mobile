@@ -38,11 +38,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Agregar etiqueta"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Agregar escritor"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventura"),
+        "afterCreditsScene": MessageLookupByLibrary.simpleMessage(
+            "Escena después de los créditos"),
+        "ai": MessageLookupByLibrary.simpleMessage("Inteligencia artificial"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Algunas de las películas seleccionadas ya están en tu colección. Si continúas, las películas importadas actualizarán sus equivalentes en tu colección. ¿Quieres continuar?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animación"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Anti guerra"),
         "april": MessageLookupByLibrary.simpleMessage("Abril"),
         "ascending": MessageLookupByLibrary.simpleMessage("Ascendente"),
         "august": MessageLookupByLibrary.simpleMessage("Agosto"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Basado en anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Basado en autobiografía"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Basado en un libro"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Basado en dibujos animados"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Basado en un cómic"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Basado en un documental"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Basado en manga"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Basado en manhua"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Basado en manhwa"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Guion original"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("Basado en un juguete"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografía: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Fecha de nacimiento: "),
@@ -62,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "¡Por favor, revisa tu conexión a Internet!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Verifica las películas subestimadas y sobrevaloradas"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("El elegido"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Copia de seguridad en la nube para tus películas"),
         "collection": MessageLookupByLibrary.simpleMessage("Colección"),
@@ -78,7 +102,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Archivo CSV importado con éxito."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Título de orden personalizado"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Diario"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Comedia negra"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "¡No se pudieron obtener los datos de este actor!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -92,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Eliminar películas seleccionadas"),
         "descending": MessageLookupByLibrary.simpleMessage("Descendente"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detective"),
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Director"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Director nulo"),
@@ -99,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Documental"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopía"),
         "editDirector": MessageLookupByLibrary.simpleMessage("Editar director"),
         "enterDirectorName": MessageLookupByLibrary.simpleMessage(
             "Introduce el nombre del director"),
@@ -121,6 +149,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("¡Fracaso!"),
         "family": MessageLookupByLibrary.simpleMessage("Familiar"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasía"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Mundo de fantasía"),
         "february": MessageLookupByLibrary.simpleMessage("Febrero"),
         "findMovieMode": MessageLookupByLibrary.simpleMessage(
             "Modo de búsqueda de películas"),
@@ -143,15 +173,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importar desde CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("¡ID IMDB inválido!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Enero"),
         "july": MessageLookupByLibrary.simpleMessage("Julio"),
         "june": MessageLookupByLibrary.simpleMessage("Junio"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Últimas películas"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (Pequeña)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magia"),
         "march": MessageLookupByLibrary.simpleMessage("Marzo"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Artes marciales"),
         "may": MessageLookupByLibrary.simpleMessage("Mayo"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Militar"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mensual"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "¡Película agregada con éxito!"),
@@ -176,6 +213,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Las películas han sido ocultadas"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" películas eliminadas."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Películas para"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("películas importadas"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "¡Las películas se han movido a la Colección!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -204,10 +244,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "No se encontró el token de ID."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "¡No se encontraron películas para este género!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "No se encontraron películas para esta etiqueta"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("No se encontraron películas"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "No se encontraron películas para esta compañía"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("No se importaron películas"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "No hay películas para importar"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "No se otorgaron permisos de almacenamiento."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage(
@@ -221,6 +267,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Otras películas en la serie"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofía"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Pirata"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Por favor ingresa"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -236,8 +284,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Soporte al cliente Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "El Premium se comprará para la cuenta con la que estés registrado en Play Store. No se comprará para el usuario registrado en esta aplicación. Sin embargo, podrás usar el Premium para todos los usuarios de esta aplicación cuando se haya comprado."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Precuelas"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Presiona para elegir el póster de la película"),
+        "prison": MessageLookupByLibrary.simpleMessage("Prisión"),
         "producer": MessageLookupByLibrary.simpleMessage("Productor"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Compañías de producción"),
@@ -265,10 +315,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Por favor, regresa a la pantalla anterior"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Ingresos: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romántica"),
         "runtime": MessageLookupByLibrary.simpleMessage("Duración"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Duración (minutos)"),
+        "school": MessageLookupByLibrary.simpleMessage("Escuela"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Ciencia ficción"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Ciencia ficción"),
         "searchMovies":
@@ -286,6 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "¿Confirmas que quieres restaurar las películas seleccionadas?"),
         "september": MessageLookupByLibrary.simpleMessage("Septiembre"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Secuela"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "El inicio de sesión de Google fue cancelado."),
         "signOut": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
@@ -295,19 +349,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("¡Cierre de sesión exitoso!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Se ha cerrado sesión en tu cuenta."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Película muda"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Películas similares"),
         "sort": MessageLookupByLibrary.simpleMessage("Ordenar"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Ordenar por"),
+        "space": MessageLookupByLibrary.simpleMessage("Espacio"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Documental deportivo"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Suscripción)"),
         "succesful": MessageLookupByLibrary.simpleMessage("¡Exitoso!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" eliminado con éxito"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superhéroe"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Sobrenatural"),
         "tag": MessageLookupByLibrary.simpleMessage("Etiqueta"),
         "tags": MessageLookupByLibrary.simpleMessage("Etiquetas"),
         "thriller": MessageLookupByLibrary.simpleMessage("Suspenso"),
+        "timetravel":
+            MessageLookupByLibrary.simpleMessage("Viaje en el tiempo"),
         "title": MessageLookupByLibrary.simpleMessage("Título"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Película para TV"),
         "unableFindMovie": MessageLookupByLibrary.simpleMessage(
@@ -326,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Ver como"),
         "war": MessageLookupByLibrary.simpleMessage("Guerra"),
+        "warning": MessageLookupByLibrary.simpleMessage("Advertencia"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Cantidad de visualizaciones"),
         "watchDate":
@@ -345,6 +409,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Lista de Deseos"),
         "writer": MessageLookupByLibrary.simpleMessage("Escritor"),
         "writers": MessageLookupByLibrary.simpleMessage("Escritores"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Sí")
       };
 }

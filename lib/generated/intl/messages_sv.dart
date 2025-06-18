@@ -40,11 +40,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Lägg till författare"),
         "adventure": MessageLookupByLibrary.simpleMessage("Äventyr"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Eftertexter"),
+        "ai": MessageLookupByLibrary.simpleMessage("AI"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Några av de valda filmerna finns redan i din samling. Om du fortsätter kommer importerade filmer att uppdatera sina motsvarigheter i din samling. Vill du fortsätta?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animering"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Anti-krig"),
         "april": MessageLookupByLibrary.simpleMessage("April"),
         "ascending": MessageLookupByLibrary.simpleMessage("Stigande"),
         "august": MessageLookupByLibrary.simpleMessage("Augusti"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Baserad på anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Baserad på självbiografi"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Baserad på bok"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Baserad på tecknad film"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Baserad på serietidning"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Baserad på dokumentär"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Baserad på manga"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Baserad på manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Baserad på manhwa"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Originalmanus"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Baserad på leksak"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografi: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Födelsedatum: "),
@@ -63,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Vänligen kontrollera din internetanslutning!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Kolla på underskattade och överskattade filmer"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Den utvalde"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("Molnbackup för dina filmer"),
         "collection": MessageLookupByLibrary.simpleMessage("Samling"),
@@ -77,7 +102,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CSV-fil importerad."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Anpassad sortering efter titel"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Daglig"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Mörk komedi"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Data för denna skådespelare kunde inte hittas!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Ta bort valda filmer"),
         "descending": MessageLookupByLibrary.simpleMessage("Fallande"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektiv"),
         "digital": MessageLookupByLibrary.simpleMessage("Digital"),
         "director": MessageLookupByLibrary.simpleMessage("Regissör"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Regissör Null"),
@@ -97,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentär"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dystopi"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Redigera regissör"),
         "enterDirectorName":
@@ -120,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Misslyckande!"),
         "family": MessageLookupByLibrary.simpleMessage("Familj"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Fantasyvärld"),
         "february": MessageLookupByLibrary.simpleMessage("Februari"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Hitta Film Mode"),
@@ -141,14 +171,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importera från CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Ogiltigt IMDB-ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Januari"),
         "july": MessageLookupByLibrary.simpleMessage("Juli"),
         "june": MessageLookupByLibrary.simpleMessage("Juni"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Senaste Filmer"),
         "list": MessageLookupByLibrary.simpleMessage("Lista"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Lista (Liten)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Maffia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magi"),
         "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Kampsport"),
         "may": MessageLookupByLibrary.simpleMessage("Maj"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Militär"),
         "monthly": MessageLookupByLibrary.simpleMessage("Månatlig"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filmen har lagts till!"),
@@ -170,6 +207,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmerna har blivit dolda"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmer raderade."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmer för"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("filmer importerade"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmer har flyttats till Samlingen!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -197,10 +237,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ingen ID-token hittades."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Inga filmer hittades för denna genre!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Inga filmer hittades för denna tagg"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Inga filmer hittades"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Inga filmer hittades för detta företag"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Inga filmer importerades"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Inga filmer att importera"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Inga lagringstillstånd gavs."),
         "noTagsSelected":
@@ -214,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Andra filmer i serien"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofi"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Pirat"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Vänligen ange"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Vänligen ange filmtitel"),
@@ -228,8 +276,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium kundsupport"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium kommer att köpas för det konto som är inloggat på din Play Store. Det kommer inte att köpas för din användare inloggad i denna app. Men du kan använda premium för alla användare i denna app när det har köpts."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Förhistoria"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Tryck för att välja film affisch"),
+        "prison": MessageLookupByLibrary.simpleMessage("Fängelse"),
         "producer": MessageLookupByLibrary.simpleMessage("Producent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produktionsbolag"),
@@ -254,10 +304,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Vänligen gå tillbaka till föregående skärm"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Intäkter: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romantik"),
         "runtime": MessageLookupByLibrary.simpleMessage("Speltid"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Speltid (Minuter)"),
+        "school": MessageLookupByLibrary.simpleMessage("Skola"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Sci-fi"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Science Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Sök filmer"),
@@ -274,6 +327,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Bekräftar du att du vill återställa de valda filmerna?"),
         "september": MessageLookupByLibrary.simpleMessage("September"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Uppföljare"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google-inloggning avbröts."),
         "signOut": MessageLookupByLibrary.simpleMessage("Logga ut"),
@@ -283,19 +337,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Utloggning lyckades!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Du har loggat ut från ditt konto."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Stumfilm"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Liknande filmer"),
         "sort": MessageLookupByLibrary.simpleMessage("Sortera"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sortera efter"),
+        "space": MessageLookupByLibrary.simpleMessage("Rymd"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sportdokumentär"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Prenumeration)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Framgångsrik!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" framgångsrikt raderad"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superhjälte"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Övernaturligt"),
         "tag": MessageLookupByLibrary.simpleMessage("Tagg"),
         "tags": MessageLookupByLibrary.simpleMessage("Taggar"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Tidsresa"),
         "title": MessageLookupByLibrary.simpleMessage("Titel"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV-film"),
         "unableFindMovie":
@@ -313,6 +375,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Visa som"),
         "war": MessageLookupByLibrary.simpleMessage("Krig"),
+        "warning": MessageLookupByLibrary.simpleMessage("Varning"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Tittarantal"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Titta datum"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Titta datum: "),
@@ -328,6 +391,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Önskelista"),
         "writer": MessageLookupByLibrary.simpleMessage("Författare"),
         "writers": MessageLookupByLibrary.simpleMessage("Författare"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Ja")
       };
 }

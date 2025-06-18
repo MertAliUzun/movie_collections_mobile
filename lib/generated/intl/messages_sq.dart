@@ -36,10 +36,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Shto etiketë"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Shto Skenarist"),
         "adventure": MessageLookupByLibrary.simpleMessage("Aventurë"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Skena pas kredive"),
+        "ai": MessageLookupByLibrary.simpleMessage("AI"),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Disa nga filmat e zgjedhur janë tashmë në koleksionin tuaj. Nëse vazhdohet, filmat e importuar do të përditësojnë përkatësitë e tyre në koleksionin tuaj. Dëshironi të vazhdohet?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animacion"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Anti-Luftë"),
         "april": MessageLookupByLibrary.simpleMessage("Prill"),
         "ascending": MessageLookupByLibrary.simpleMessage("Rritëse"),
         "august": MessageLookupByLibrary.simpleMessage("Gusht"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Bazuar në Anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Bazuar në Autobiografi"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Bazuar në Libër"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Bazuar në Kartoon"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("Bazuar në Komik"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Bazuar në Dokumentar"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Bazuar në Manga"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Bazuar në Manhua"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Bazuar në Manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Skenar Origjinal"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Bazuar në Lodër"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("Buxheti: "),
         "buy": MessageLookupByLibrary.simpleMessage("(Bli)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("Blej"),
@@ -53,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ju lutem, kontrolloni lidhjen tuaj me internetin!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Kontrollo filmat e nënvlerësuar dhe të mbivlerësuar"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("I Zgjedhuri"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Rezervë në re për filmat tuaj"),
         "collection": MessageLookupByLibrary.simpleMessage("Koleksion"),
@@ -68,17 +91,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "Skedari CSV u importua me sukses."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Renditje e Personalizuar"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Komedi e Errët"),
         "december": MessageLookupByLibrary.simpleMessage("Dhjetor"),
         "delete": MessageLookupByLibrary.simpleMessage("Fshi"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Fshi Filmat e Zgjedhur"),
         "descending": MessageLookupByLibrary.simpleMessage("Zbritëse"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektiv"),
         "digital": MessageLookupByLibrary.simpleMessage("Digjital"),
         "director": MessageLookupByLibrary.simpleMessage("Regjisori"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Asnjë regjisor"),
         "discover": MessageLookupByLibrary.simpleMessage("Zbulo"),
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentar"),
         "drama": MessageLookupByLibrary.simpleMessage("Dramë"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Distopi"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Redakto Regjisorin"),
         "enterDirectorName":
@@ -100,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Dështim!"),
         "family": MessageLookupByLibrary.simpleMessage("Familjar"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantazi"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Bota Fantastike"),
         "february": MessageLookupByLibrary.simpleMessage("Shkurt"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Gjej Režimin e Filmit"),
@@ -121,14 +149,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("Vlerësimi IMDB"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("Vlerësimi IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Importo CSV"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Janar"),
         "july": MessageLookupByLibrary.simpleMessage("Korrik"),
         "june": MessageLookupByLibrary.simpleMessage("Qershor"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Filmat e Fundit"),
         "list": MessageLookupByLibrary.simpleMessage("Listë"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Listë (E Vogël)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magji"),
         "march": MessageLookupByLibrary.simpleMessage("Mars"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Arte Marciale"),
         "may": MessageLookupByLibrary.simpleMessage("Maj"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Ushtarak"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Filmi u shtua në koleksion!"),
         "movieCollection":
@@ -149,6 +184,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Filmave iu është dhënë mundësia të fshihen"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filma të fshirë."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmat për"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("filma u importuan"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmat u shtuan në koleksion!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -174,6 +212,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "noHiddenMovies":
             MessageLookupByLibrary.simpleMessage("Nuk ka filma të fshehur"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("Nuk ka ID Token."),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Nuk u gjetën filma për këtë etiketë"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Asnjë film nuk u importua"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "Nuk ka filma për t\'u importuar"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nuk keni leje për të ruajtur skedarë në pajisjen tuaj."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage(
@@ -186,6 +230,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Në rregull"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Filma të tjerë në Serinë"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filozofi"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Pirate"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Ju lutem shkruani"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -200,8 +246,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Përkrahje Premium për klientët"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium waxaa la iibsan doonaa akoonka aad ku gashay Play Store. Looma iibsan doono isticmaalaha ku jira app-kan. Si kastaba ha ahaatee, waxaad isticmaali kartaa premium dhammaan isticmaalayaasha app-kan marka la iibsado."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Paravazhdim"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Kliko për të zgjedhur posteren e filmit"),
+        "prison": MessageLookupByLibrary.simpleMessage("Burg"),
         "producer": MessageLookupByLibrary.simpleMessage("Prodhuesi"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Kompanitë e Produksionit"),
@@ -227,10 +275,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "restoreHiddenMovies":
             MessageLookupByLibrary.simpleMessage("Rikthe filmat e fshehur"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Të ardhurat: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romancë"),
         "runtime": MessageLookupByLibrary.simpleMessage("Kohezgjatja"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Kohezgjatja (Minuta)"),
+        "school": MessageLookupByLibrary.simpleMessage("Shkollë"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Shkencë-Fantastikë"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("Fantashkencë"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Kërko Filma"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("Kërko Njerëzit"),
@@ -246,6 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "A e konfirmoni rikthimin e filmave të zgjedhur?"),
         "september": MessageLookupByLibrary.simpleMessage("Shtator"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Vazhdim"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Identifikimi në Google u anulua."),
         "signOut": MessageLookupByLibrary.simpleMessage("Shkyçu"),
@@ -255,16 +307,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Shkyçja u krye me sukses!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Jeni shkyçur nga llogaria juaj."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Film i Heshtur"),
         "sort": MessageLookupByLibrary.simpleMessage("Rendit"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Renditur sipas"),
+        "space": MessageLookupByLibrary.simpleMessage("Hapësirë"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dokumentar Sportiv"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Abonim)"),
         "succesful": MessageLookupByLibrary.simpleMessage("E suksesshme!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("u fshi me sukses."),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superhero"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Mbinatyrshëm"),
         "tag": MessageLookupByLibrary.simpleMessage("Etiketë"),
         "tags": MessageLookupByLibrary.simpleMessage("Etiketa"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Udhëtim në Kohë"),
         "title": MessageLookupByLibrary.simpleMessage("Titulli"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film Televiziv"),
         "unableFindMovie":
@@ -281,6 +341,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pikët e Përdoruesit"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Shiko si"),
         "war": MessageLookupByLibrary.simpleMessage("Luftë"),
+        "warning": MessageLookupByLibrary.simpleMessage("Paralajmërim"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Data e Shikimit"),
         "watchDateColon":
             MessageLookupByLibrary.simpleMessage("Data e Shikimit: "),
@@ -294,6 +355,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Lista e Dëshirave"),
         "writer": MessageLookupByLibrary.simpleMessage("Skenarist"),
         "writers": MessageLookupByLibrary.simpleMessage("Skenaristë"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Po")
       };
 }

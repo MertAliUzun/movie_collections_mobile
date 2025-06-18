@@ -36,11 +36,36 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Přidat štítek"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Přidat scénáristu"),
         "adventure": MessageLookupByLibrary.simpleMessage("Dobrodružství"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Scéna po titulcích"),
+        "ai": MessageLookupByLibrary.simpleMessage("Umělá inteligence"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Pseudonym: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Některé z vybraných filmů jsou již ve vaší kolekci. Pokud budete pokračovat, importované filmy aktualizují své protějšky ve vaší kolekci. Chcete pokračovat?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animace"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Proti válce"),
         "april": MessageLookupByLibrary.simpleMessage("Duben"),
         "ascending": MessageLookupByLibrary.simpleMessage("Vzestupně"),
         "august": MessageLookupByLibrary.simpleMessage("Srpen"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Na základě anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Na základě autobiografie"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Na základě knihy"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Na základě kresleného filmu"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Na základě komiksu"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Na základě dokumentu"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Na základě mangy"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Na základě manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Na základě manhwy"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Originální scénář"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Na základě hračky"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Biografie: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Datum narození: "),
@@ -60,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Zkontrolujte své internetové připojení!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Zkontrolujte podceňované a přeceňované filmy"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Vyvolený"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("Zálohování filmů na cloudu"),
         "collection": MessageLookupByLibrary.simpleMessage("Kolekce"),
@@ -74,7 +100,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV soubor byl úspěšně importován."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Vlastní třídění názvu"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Denně"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Černá komedie"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Data pro tohoto herce nebyla nalezena!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -87,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Smazat vybrané filmy"),
         "descending": MessageLookupByLibrary.simpleMessage("Sestupně"),
+        "detective": MessageLookupByLibrary.simpleMessage("Detektiv"),
         "digital": MessageLookupByLibrary.simpleMessage("Digitální"),
         "director": MessageLookupByLibrary.simpleMessage("Režisér"),
         "directorNull":
@@ -95,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentární"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dystopie"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Upravit režiséra"),
         "enterDirectorName":
@@ -118,6 +148,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Neúspěch!"),
         "family": MessageLookupByLibrary.simpleMessage("Rodinný"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Fantastický svět"),
         "february": MessageLookupByLibrary.simpleMessage("Únor"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Režim hledání filmu"),
@@ -139,15 +171,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Importovat z CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Neplatné IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Leden"),
         "july": MessageLookupByLibrary.simpleMessage("Červenec"),
         "june": MessageLookupByLibrary.simpleMessage("Červen"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung-fu"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Nejnovější filmy"),
         "list": MessageLookupByLibrary.simpleMessage("Seznam"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Seznam (Malý)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Magie"),
         "march": MessageLookupByLibrary.simpleMessage("Březen"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Bojová umění"),
         "may": MessageLookupByLibrary.simpleMessage("Květen"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Vojenský"),
         "monthly": MessageLookupByLibrary.simpleMessage("Měsíčně"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film byl úspěšně přidán!"),
@@ -171,6 +210,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Filmy byly skryty"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmy byly smazány."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmy pro"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("filmy importovány"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmy byly přesunuty do kolekce!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -199,10 +241,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID token nebyl nalezen."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Pro tento žánr nejsou žádné filmy!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Pro tento tag nebyly nalezeny žádné filmy"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Filmy nenalezeny"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Pro tuto společnost nebyly nalezeny žádné filmy"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "Žádné filmy nebyly importovány"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Žádné filmy k importu"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Nebyly uděleny oprávnění pro úložiště."),
         "noTagsSelected":
@@ -216,6 +264,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Další filmy v sérii"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filozofie"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Piráti"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Prosím zadejte"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Prosím zadejte název filmu"),
@@ -229,8 +279,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Premium zákaznická podpora"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium bude zakoupeno pro účet, na kterém jste přihlášeni v obchodě Play. Nebude zakoupeno pro uživatele přihlášeného v této aplikaci. Můžete však používat premium pro všechny uživatele v této aplikaci, jakmile bude zakoupeno."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Prequel"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Stiskněte pro výběr plakátu filmu"),
+        "prison": MessageLookupByLibrary.simpleMessage("Vězení"),
         "producer": MessageLookupByLibrary.simpleMessage("Producent"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Produkční společnosti"),
@@ -255,10 +307,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Prosím vraťte se na předchozí obrazovku"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Příjmy: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Romantika"),
         "runtime": MessageLookupByLibrary.simpleMessage("Délka"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Délka (minuty)"),
+        "school": MessageLookupByLibrary.simpleMessage("Škola"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Sci-fi"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Vědecká fantastika"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Hledat filmy"),
@@ -275,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Ověřujete, že chcete obnovit vybrané filmy?"),
         "september": MessageLookupByLibrary.simpleMessage("Září"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Pokračování"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Přihlášení přes Google bylo zrušeno."),
         "signOut": MessageLookupByLibrary.simpleMessage("Odhlásit se"),
@@ -284,18 +340,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Odhlášení bylo úspěšné!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Byli jste odhlášeni ze svého účtu."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Nemý film"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Podobné filmy"),
         "sort": MessageLookupByLibrary.simpleMessage("Třídit"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Třídit podle"),
+        "space": MessageLookupByLibrary.simpleMessage("Vesmír"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Sportovní dokument"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Předplatné)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Úspěšné!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" úspěšně smazáno"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Superhrdina"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Nadpřirozené"),
         "tag": MessageLookupByLibrary.simpleMessage("Štítek"),
         "tags": MessageLookupByLibrary.simpleMessage("Štítky"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Cestování časem"),
         "title": MessageLookupByLibrary.simpleMessage("Název"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("TV Film"),
         "unableFindMovie":
@@ -314,6 +378,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Zobrazit jako"),
         "war": MessageLookupByLibrary.simpleMessage("Válka"),
+        "warning": MessageLookupByLibrary.simpleMessage("Varování"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Počet zhlédnutí"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Datum sledování"),
         "watchDateColon":
@@ -329,6 +394,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Seznam k sledování"),
         "writer": MessageLookupByLibrary.simpleMessage("Scénárista"),
         "writers": MessageLookupByLibrary.simpleMessage("Scénáristé"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Jakudza"),
         "yes": MessageLookupByLibrary.simpleMessage("Ano")
       };
 }

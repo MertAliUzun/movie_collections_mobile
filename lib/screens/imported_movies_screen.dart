@@ -93,7 +93,7 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
               style: const TextStyle(color: Colors.white),
             ),
             content: Text(
-              'Some of the selected movies are already in your collection. If you continue imported movies will update their counterpart in your collection. Do you want to continue?',//'S.of
+              S.of(context).alreadyInCollectionContinue,
               //Seçili filmler arasında zaten koleksiyonunuzda bulunan filmler var. Devam etmek istiyor musunuz?
               style: const TextStyle(color: Colors.white70),
             ),
@@ -109,7 +109,7 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
               ),
               TextButton(
                 child: Text(
-                  'Continue',//'S.of
+                  S.of(context).ok,
                   style: const TextStyle(color: Colors.blue),
                 ),
                 onPressed: () {
@@ -197,8 +197,8 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
                 backgroundColor: Colors.transparent,
                 behavior: SnackBarBehavior.floating,
                 content: AwesomeSnackbarContent(
-                  title: 'S.of(context).warning', 
-                  message: 'S.of(context).noMoviesImported', 
+                  title: S.of(context).warning, 
+                  message: S.of(context).noMoviesImported, 
                   contentType: ContentType.warning, 
                   inMaterialBanner: true,
                 ), 

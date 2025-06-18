@@ -36,11 +36,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("הוסף תג"),
         "addWriter": MessageLookupByLibrary.simpleMessage("הוסף תסריטאי"),
         "adventure": MessageLookupByLibrary.simpleMessage("הרפתקאות"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("סצנה לאחר הקרדיטים"),
+        "ai": MessageLookupByLibrary.simpleMessage("בינה מלאכותית"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("כינוי: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "חלק מהסרטים הנבחרים כבר נמצאים באוסף שלך. אם תמשיך, הסרטים שיובאו יעדכנו את המקבילים שלהם באוסף שלך. האם ברצונך להמשיך?"),
         "animation": MessageLookupByLibrary.simpleMessage("אנימציה"),
+        "anime": MessageLookupByLibrary.simpleMessage("אנימה"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("אנטי-מלחמה"),
         "april": MessageLookupByLibrary.simpleMessage("אפריל"),
         "ascending": MessageLookupByLibrary.simpleMessage("עולה"),
         "august": MessageLookupByLibrary.simpleMessage("אוגוסט"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("מבוסס על אנימה"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("מבוסס על אוטוביוגרפיה"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("מבוסס על ספר"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("מבוסס על קריקטורה"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("מבוסס על קומיקס"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("מבוסס על תיעודי"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("מבוסס על מנגה"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("מבוסס על מנחו"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("מבוסס על מענהוה"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("תסריט מקורי"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("מבוסס על צעצוע"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("ביוגרפיה: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("תאריך לידה: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("מקום לידה: "),
@@ -58,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "אנא בדוק את חיבור האינטרנט שלך!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "בדוק סרטים מתחת להערכה ומוערכים יותר מדי"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("הנבחר"),
         "cloudBackUp":
             MessageLookupByLibrary.simpleMessage("גיבוי ענן עבור הסרטים שלך"),
         "collection": MessageLookupByLibrary.simpleMessage("אוסף"),
@@ -72,7 +94,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("קובץ CSV יובא בהצלחה."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("כותרת מיון מותאמת"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("סייברפאנק"),
         "daily": MessageLookupByLibrary.simpleMessage("יומי"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("קומדיה שחורה"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "לא נמצאו נתונים עבור שחקן זה!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("מחק סרטים נבחרים"),
         "descending": MessageLookupByLibrary.simpleMessage("יורד"),
+        "detective": MessageLookupByLibrary.simpleMessage("בלש"),
         "digital": MessageLookupByLibrary.simpleMessage("דיגיטלי"),
         "director": MessageLookupByLibrary.simpleMessage("במאי"),
         "directorNull": MessageLookupByLibrary.simpleMessage("במאי Null"),
@@ -92,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("דוקומנטרי"),
         "drama": MessageLookupByLibrary.simpleMessage("דרמה"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("דיסטופיה"),
         "editDirector": MessageLookupByLibrary.simpleMessage("ערוך במאי"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("הזן את שם הבמאי"),
@@ -114,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("כישלון!"),
         "family": MessageLookupByLibrary.simpleMessage("משפחה"),
         "fantasy": MessageLookupByLibrary.simpleMessage("פנטזיה"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("עולם פנטזיה"),
         "february": MessageLookupByLibrary.simpleMessage("פברואר"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("מצב חיפוש סרטים"),
@@ -135,14 +162,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("ייבא מ-CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("מספר IMDB לא תקין!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("איסקאיי"),
         "january": MessageLookupByLibrary.simpleMessage("ינואר"),
         "july": MessageLookupByLibrary.simpleMessage("יולי"),
         "june": MessageLookupByLibrary.simpleMessage("יוני"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("קונג פו"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("הסרטים האחרונים"),
         "list": MessageLookupByLibrary.simpleMessage("רשימה"),
         "listSmall": MessageLookupByLibrary.simpleMessage("רשימה (קטנה)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("מאפיה"),
+        "magic": MessageLookupByLibrary.simpleMessage("קסם"),
         "march": MessageLookupByLibrary.simpleMessage("מרץ"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("אמנויות לחימה"),
         "may": MessageLookupByLibrary.simpleMessage("מאי"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("צבאי"),
         "monthly": MessageLookupByLibrary.simpleMessage("חודשי"),
         "movieAdded": MessageLookupByLibrary.simpleMessage("הסרט נוסף בהצלחה!"),
         "movieCollection": MessageLookupByLibrary.simpleMessage("אוסף סרטים"),
@@ -162,6 +196,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesAreHidden":
             MessageLookupByLibrary.simpleMessage("הסרטים הוסתרו"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" סרטים נמחקו."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("סרטים עבור"),
+        "moviesImported": MessageLookupByLibrary.simpleMessage("סרטים יובאו"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("הסרטים הועברו לאוסף!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -187,9 +223,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "noIdToken": MessageLookupByLibrary.simpleMessage("לא נמצא טוקן מזהה."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "לא נמצאו סרטים עבור ז\'אנר זה!"),
+        "noMoviesForTag":
+            MessageLookupByLibrary.simpleMessage("לא נמצאו סרטים לתג זה"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("לא נמצאו סרטים"),
         "noMoviesFoundForCompany":
             MessageLookupByLibrary.simpleMessage("לא נמצאו סרטים עבור חברה זו"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("לא יובאו סרטים"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("אין סרטים ליבוא"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("לא ניתנו הרשאות אחסון."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage("לא נבחרו תגים"),
@@ -202,6 +244,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("אישור"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("סרטים אחרים בסדרה"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("פילוסופיה"),
+        "pirate": MessageLookupByLibrary.simpleMessage("שודד ים"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("אנא הזן"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("אנא הזן את כותרת הסרט"),
@@ -216,8 +260,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("תמיכה ללקוח פרימיום"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "הפרימיום יירכש עבור החשבון שאתה מחובר אליו ב-Play Store. הוא לא יירכש עבור המשתמש שמחובר לאפליקציה הזו. עם זאת, תוכל להשתמש בפרימיום עבור כל המשתמשים באפליקציה הזו ברגע שהוא נרכש."),
+        "prequel": MessageLookupByLibrary.simpleMessage("פריקוול"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("לחץ כדי לבחור פוסטר סרט"),
+        "prison": MessageLookupByLibrary.simpleMessage("כלא"),
         "producer": MessageLookupByLibrary.simpleMessage("מפיק"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("חברות הפקה"),
@@ -241,10 +287,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen":
             MessageLookupByLibrary.simpleMessage("אנא חזור למסך הקודם"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("הכנסות: "),
+        "robot": MessageLookupByLibrary.simpleMessage("רובוט"),
         "romance": MessageLookupByLibrary.simpleMessage("רומנטיקה"),
         "runtime": MessageLookupByLibrary.simpleMessage("זמן ריצה"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("זמן ריצה (דקות)"),
+        "school": MessageLookupByLibrary.simpleMessage("בית ספר"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("מדע בדיוני"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("מדע בדיוני"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("חפש סרטים"),
         "searchPeople": MessageLookupByLibrary.simpleMessage("חפש אנשים"),
@@ -259,6 +308,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "האם אתה מאשר שחזור של הסרטים שנבחרו?"),
         "september": MessageLookupByLibrary.simpleMessage("ספטמבר"),
+        "sequel": MessageLookupByLibrary.simpleMessage("המשכון"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("הכניסה עם Google בוטלה."),
         "signOut": MessageLookupByLibrary.simpleMessage("התנתק"),
@@ -268,18 +318,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ההתנתקות בוצעה בהצלחה!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("התנתקת מהחשבון שלך."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("סרט אילם"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("סרטים דומים"),
         "sort": MessageLookupByLibrary.simpleMessage("מיין "),
         "sortBy": MessageLookupByLibrary.simpleMessage("מיין לפי"),
+        "space": MessageLookupByLibrary.simpleMessage("חלל"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("תיעודי ספורט"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("סטימפאנק"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("סטרימינג"),
         "subscription": MessageLookupByLibrary.simpleMessage("(מנוי)"),
         "succesful": MessageLookupByLibrary.simpleMessage("הצלחה!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" נמחק בהצלחה"),
+        "superhero": MessageLookupByLibrary.simpleMessage("גיבור-על"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("על-טבעי"),
         "tag": MessageLookupByLibrary.simpleMessage("תג"),
         "tags": MessageLookupByLibrary.simpleMessage("תגים"),
         "thriller": MessageLookupByLibrary.simpleMessage("מותחן"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("מסע בזמן"),
         "title": MessageLookupByLibrary.simpleMessage("כותרת"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("סרט טלוויזיה"),
         "unableFindMovie":
@@ -297,6 +355,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("הצג כ"),
         "war": MessageLookupByLibrary.simpleMessage("מלחמה"),
+        "warning": MessageLookupByLibrary.simpleMessage("אזהרה"),
         "watchCount": MessageLookupByLibrary.simpleMessage("מספר צפיות"),
         "watchDate": MessageLookupByLibrary.simpleMessage("תאריך צפייה"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("תאריך צפייה: "),
@@ -311,6 +370,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("רשימת צפייה"),
         "writer": MessageLookupByLibrary.simpleMessage("תסריטאי"),
         "writers": MessageLookupByLibrary.simpleMessage("תסריטאים"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("יאקוזה"),
         "yes": MessageLookupByLibrary.simpleMessage("כן")
       };
 }

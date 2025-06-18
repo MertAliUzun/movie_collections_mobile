@@ -36,11 +36,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Ƙara Alama"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Ƙara Marubuci"),
         "adventure": MessageLookupByLibrary.simpleMessage("Kasada"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Yanayin Bayan Kiredit"),
+        "ai": MessageLookupByLibrary.simpleMessage("Hankali na Wucin Gadi"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Laƙabi: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Wasu daga cikin fina-finan da aka zaɓa suna cikin tarin ku. Idan kun ci gaba, fina-finan da aka shigo da su za su sabunta kwafi a cikin tarin ku. Kuna so ku ci gaba?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Adawa da Yaki"),
         "april": MessageLookupByLibrary.simpleMessage("Afrilu"),
         "ascending": MessageLookupByLibrary.simpleMessage("Haɓakawa"),
         "august": MessageLookupByLibrary.simpleMessage("Agusta"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Dangane da Anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Dangane da Tarihin Rayuwa"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Dangane da Littafi"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Dangane da Fim ɗin Zane"),
+        "basedComic": MessageLookupByLibrary.simpleMessage("Dangane da Kwafi"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dangane da Kundin Bayani"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Dangane da Manga"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Dangane da Manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Dangane da Manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Asali na Script"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Dangane da Wasa"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("Tarihin Rayuwa: "),
         "birthDateColon":
@@ -61,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Da fatan za a duba haɗin intanet ɗinku!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Duba fina-finai da aka ƙimar da su ƙasa da yawa ko fiye"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Wanda Aka Zaɓa"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Ajiyar gajimare don fina-finanka"),
         "collection": MessageLookupByLibrary.simpleMessage("Tari"),
@@ -75,7 +100,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "An shigo da fayil ɗin CSV cikin nasara."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Taken Tsara na Al\'ada"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Kullum"),
+        "darkComedy":
+            MessageLookupByLibrary.simpleMessage("Barkwanci Mai Duhi"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Babu bayanai da aka samo don wannan ɗan Wasa!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -89,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Share Fina-Finai da aka Zaɓa"),
         "descending": MessageLookupByLibrary.simpleMessage("Ragewa"),
+        "detective": MessageLookupByLibrary.simpleMessage("Bincike"),
         "digital": MessageLookupByLibrary.simpleMessage("Dijital"),
         "director": MessageLookupByLibrary.simpleMessage("Daraktan"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Daraktan Null"),
@@ -96,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Dokumentari"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dystopia"),
         "editDirector": MessageLookupByLibrary.simpleMessage("Gyara Daraktan"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("Shigar da sunan daraktan"),
@@ -118,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Rashin Nasara!"),
         "family": MessageLookupByLibrary.simpleMessage("Iyalin"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Duniya Mai Duhu"),
         "february": MessageLookupByLibrary.simpleMessage("Faburairu"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Yanayin Neman Fim"),
@@ -140,14 +171,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Shigo da daga CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID na IMDB mara inganci!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Janairu"),
         "july": MessageLookupByLibrary.simpleMessage("Yuli"),
         "june": MessageLookupByLibrary.simpleMessage("Yuni"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Sabbin Fim"),
         "list": MessageLookupByLibrary.simpleMessage("Jerin"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Jerin (Ƙarami)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Sihr"),
         "march": MessageLookupByLibrary.simpleMessage("Maris"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Fasahar Yaki"),
         "may": MessageLookupByLibrary.simpleMessage("Mayu"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Soja"),
         "monthly": MessageLookupByLibrary.simpleMessage("Wata-wata"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("An ƙara Fim cikin nasara!"),
@@ -171,6 +209,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Fina-finai sun kasance a boye"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" fina-finai an share."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Fim don"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("fim ɗin da aka shigo da su"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "An motsa fina-finai zuwa Tari!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -199,10 +240,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Babu ID Token da aka samu."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Babu fina-finai da aka samu don wannan nau\'in!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Ba a sami fim don wannan alama ba"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Babu fina-finai da aka samu"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Babu fina-finai da aka samu don wannan kamfani"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "Ba a shigo da kowanne fim ba"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "Babu fim ɗin da za a shigo da su"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("Ba a ba da izinin ajiya ba."),
         "noTagsSelected":
@@ -216,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "Wasu fina-finai a cikin jerin"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Falsafa"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Satar Ruwa"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Da fatan za a shigar da"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -231,8 +280,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Taimakon Abokin Ciniki Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Za a sayi Premium don asusun da ka shiga a Play Store. Ba za a sayi shi don mai amfani da aka shiga a cikin wannan aikace-aikacen ba. Duk da haka, za ka iya amfani da Premium don duk masu amfani a cikin wannan aikace-aikacen idan an saye shi."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Gabatarwa"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Danna don zaɓar poster ɗin fim"),
+        "prison": MessageLookupByLibrary.simpleMessage("Gidan Yari"),
         "producer": MessageLookupByLibrary.simpleMessage("Mai samarwa"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Kamfanonin Samarwa"),
@@ -256,10 +307,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Da fatan za a koma zuwa allon da ya gabata"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Kudaden Shiga: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robot"),
         "romance": MessageLookupByLibrary.simpleMessage("Soyayya"),
         "runtime": MessageLookupByLibrary.simpleMessage("Lokacin Kallo"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Lokacin Kallo (Minti)"),
+        "school": MessageLookupByLibrary.simpleMessage("Makaranta"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Kimiyya na Labari"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Kimiyyar Fiction"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Nemo Fina-Finai"),
@@ -276,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Shin ka tabbatar da mayar da fina-finai da aka zaba?"),
         "september": MessageLookupByLibrary.simpleMessage("Satumba"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Ci gaba"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Shiga Google an soke."),
         "signOut": MessageLookupByLibrary.simpleMessage("Fita"),
@@ -285,19 +340,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("An fita cikin nasara!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("An fita daga asusunku."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Fim Mai Shiru"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Fina-Finai Masu Kama"),
         "sort": MessageLookupByLibrary.simpleMessage("Tsara "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Tsara Ta"),
+        "space":
+            MessageLookupByLibrary.simpleMessage("Sarrafa Sararin Samaniya"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Kundin Bayani na Wasanni"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Streaming"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Biyan Kuɗi)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Nasara!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" an share cikin nasara"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Jarumi"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Abin Al\'ajabi"),
         "tag": MessageLookupByLibrary.simpleMessage("Alama"),
         "tags": MessageLookupByLibrary.simpleMessage("Alamomi"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Tafiya a Lokaci"),
         "title": MessageLookupByLibrary.simpleMessage("Take"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Fim ɗin TV"),
         "unableFindMovie":
@@ -315,6 +379,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Duba Kamar"),
         "war": MessageLookupByLibrary.simpleMessage("Yaƙi"),
+        "warning": MessageLookupByLibrary.simpleMessage("Gargaɗi"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Ƙidaya Kallo"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Ranar Kallo"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Ranar Kallo: "),
@@ -330,6 +395,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Jerin Abubuwan Kallo"),
         "writer": MessageLookupByLibrary.simpleMessage("Marubuci"),
         "writers": MessageLookupByLibrary.simpleMessage("Marubuta"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Ee")
       };
 }

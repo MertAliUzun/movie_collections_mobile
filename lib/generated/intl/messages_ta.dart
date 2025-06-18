@@ -39,11 +39,39 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("கதை எழுத்தாளர் சேர்க்கவும்"),
         "adventure": MessageLookupByLibrary.simpleMessage("சாகசம்"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("அடைவு உரையின் பின் காட்சி"),
+        "ai": MessageLookupByLibrary.simpleMessage("செயற்கை நுண்ணறிவு"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ஊரை: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "தேர்ந்தெடுக்கப்பட்ட படங்களில் சில உங்கள் சேகரத்தில் ஏற்கனவே உள்ளன. நீங்கள் தொடர்ந்தால், இறக்குமதி செய்யப்பட்ட படங்கள் உங்கள் சேகரத்தில் உள்ளவற்றை மேம்படுத்தும். நீங்கள் தொடர விரும்புகிறீர்களா?"),
         "animation": MessageLookupByLibrary.simpleMessage("உருவாக்கம்"),
+        "anime": MessageLookupByLibrary.simpleMessage("அனிமே"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("போர்க்கெதிர்ப்பு"),
         "april": MessageLookupByLibrary.simpleMessage("ஏப்ரல்"),
         "ascending": MessageLookupByLibrary.simpleMessage("ஏறுதலாக"),
         "august": MessageLookupByLibrary.simpleMessage("ஆகஸ்ட்"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage(
+            "அனிமேவை அடிப்படையாகக் கொண்டது"),
+        "basedAutobiography": MessageLookupByLibrary.simpleMessage(
+            "சுயசரிதையை அடிப்படையாகக் கொண்டது"),
+        "basedBook": MessageLookupByLibrary.simpleMessage(
+            "புத்தகத்தை அடிப்படையாகக் கொண்டது"),
+        "basedCartoon": MessageLookupByLibrary.simpleMessage(
+            "விளையாட்டு படத்தை அடிப்படையாகக் கொண்டது"),
+        "basedComic": MessageLookupByLibrary.simpleMessage(
+            "காமிக்ஸை அடிப்படையாகக் கொண்டது"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "ஆவணப்படத்தை அடிப்படையாகக் கொண்டது"),
+        "basedManga": MessageLookupByLibrary.simpleMessage(
+            "மாங்காவை அடிப்படையாகக் கொண்டது"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage(
+            "மன்ஹுவாவை அடிப்படையாகக் கொண்டது"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage(
+            "மன்ஹ்வாவை அடிப்படையாகக் கொண்டது"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("மூல திரைக்கதை"),
+        "basedToy": MessageLookupByLibrary.simpleMessage(
+            "பொம்மையை அடிப்படையாகக் கொண்டது"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("வாழ்க்கை வரலாறு: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("பிறந்த தேதி: "),
@@ -64,6 +92,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "தயவு செய்து உங்கள் இணைய இணைப்பை சரிபார்க்கவும்!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "குறைவாக மதிக்கப்பட்ட மற்றும் அதிகமாக மதிக்கப்பட்ட திரைப்படங்களை சரிபார்க்கவும்"),
+        "chosenOne":
+            MessageLookupByLibrary.simpleMessage("தேர்ந்தெடுக்கப்பட்டவர்"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "உங்கள் திரைப்படங்களுக்கான கிளவுட் பதிப்புரிமை"),
         "collection": MessageLookupByLibrary.simpleMessage("தொகுப்பு"),
@@ -78,7 +108,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV கோப்பு வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "தயாரிப்புக்கு ஏற்ற வரிசை தலைப்பு"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("சைபர்பங்க்"),
         "daily": MessageLookupByLibrary.simpleMessage("தினசரி"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("இருண்ட நகைச்சுவை"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "இந்த நடிகருக்கான தரவுகள் கிடைக்கவில்லை!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "தேர்ந்தெடுக்கப்பட்ட படங்களை அழிக்கவும்"),
         "descending": MessageLookupByLibrary.simpleMessage("இறக்கம்"),
+        "detective": MessageLookupByLibrary.simpleMessage("துப்பறிவாளர்"),
         "digital": MessageLookupByLibrary.simpleMessage("டிஜிட்டல்"),
         "director": MessageLookupByLibrary.simpleMessage("திரையரசு"),
         "directorNull": MessageLookupByLibrary.simpleMessage("திரையரசு நுல்"),
@@ -98,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("ஆவணப்படம்"),
         "drama": MessageLookupByLibrary.simpleMessage("நாடகம்"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("அமைதியற்ற சமுதாயம்"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("திரையரசை திருத்தவும்"),
         "enterDirectorName":
@@ -122,6 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("தவறானது!"),
         "family": MessageLookupByLibrary.simpleMessage("குடும்பம்"),
         "fantasy": MessageLookupByLibrary.simpleMessage("கற்பனை"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("கற்பனையுலகம்"),
         "february": MessageLookupByLibrary.simpleMessage("பிப்ரவரி"),
         "findMovieMode": MessageLookupByLibrary.simpleMessage("பட தேடல் முறை"),
         "franchise": MessageLookupByLibrary.simpleMessage("பிராண்டு"),
@@ -143,15 +178,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage(
             "CSV இலிருந்து இறக்குமதி செய்யவும்"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("தவறான IMDB ஐடி!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("இசெகை"),
         "january": MessageLookupByLibrary.simpleMessage("ஜனவரி"),
         "july": MessageLookupByLibrary.simpleMessage("ஜூலை"),
         "june": MessageLookupByLibrary.simpleMessage("ஜூன்"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("கங்க் ஃபூ"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("சமீபத்திய படங்கள்"),
         "list": MessageLookupByLibrary.simpleMessage("பட்டியல்"),
         "listSmall": MessageLookupByLibrary.simpleMessage("பட்டியல்(சிறியது)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("குற்றவாளிகள் குழு"),
+        "magic": MessageLookupByLibrary.simpleMessage("மாயாஜாலம்"),
         "march": MessageLookupByLibrary.simpleMessage("மார்ச்"),
+        "martialArts":
+            MessageLookupByLibrary.simpleMessage("மார்ஷியல் ஆர்ட்ஸ்"),
         "may": MessageLookupByLibrary.simpleMessage("மே"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("முப்படை"),
         "monthly": MessageLookupByLibrary.simpleMessage("மாதாந்திர"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "படம் வெற்றிகரமாக சேர்க்கப்பட்டுள்ளது!"),
@@ -174,6 +217,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "திரைப்படங்கள் மறைக்கப்பட்டுள்ளன"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" படங்கள் அழிக்கப்பட்டன."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("இதற்கான படங்கள்"),
+        "moviesImported": MessageLookupByLibrary.simpleMessage(
+            "படங்கள் இறக்குமதி செய்யப்பட்டன"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "படங்கள் தொகுப்புக்கு மாற்றப்பட்டன!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -202,10 +248,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID டோக்கன் காணப்படவில்லை."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "இந்த பண்புக்கான படங்கள் இல்லை!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "இந்த குறிச்சொல்லுக்கு எந்தப் படங்களும் கிடைக்கவில்லை"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage(
             "படங்கள் எதுவும் கண்டுபிடிக்கப்படவில்லை"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "இந்த நிறுவனத்திற்கான படங்கள் எதுவும் கிடைக்கவில்லை"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "எந்தப் படங்களும் இறக்குமதி செய்யப்படவில்லை"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "இறக்குமதிக்கு எந்தப் படங்களும் இல்லை"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "சேமிப்புத்தள அனுமதிகள் வழங்கப்படவில்லை."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage(
@@ -219,6 +271,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("சரி"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "தொடர்ச்சியில் உள்ள பிற திரைப்படங்கள்"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("தத்துவம்"),
+        "pirate": MessageLookupByLibrary.simpleMessage("கள்ளர்"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("தயவு செய்து உள்ளிடவும்"),
         "pleaseEnterMovieTitle":
@@ -234,8 +288,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "பிரீமியம் வாடிக்கையாளர் ஆதரவு"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "பிரீமியம் உங்கள் பிளே ஸ்டோர் கணக்கில் உள்ள பயனருக்கானது. இது இந்த செயலியில் உள்நுழைந்த பயனருக்கானது இல்லை. இருப்பினும், நீங்கள் பிரீமியம் வாங்கப்பட்டால், இந்த செயலியில் உள்ள அனைத்து பயனர்களுக்கும் அதை பயன்படுத்த முடியும்."),
+        "prequel": MessageLookupByLibrary.simpleMessage("முன்னோட்டம்"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "போஸ்டரை தேர்வு செய்ய அழுத்தவும்"),
+        "prison": MessageLookupByLibrary.simpleMessage("சிறை"),
         "producer": MessageLookupByLibrary.simpleMessage("பதிப்பாளர்"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("தயாரிப்பு நிறுவனங்கள்"),
@@ -260,10 +316,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "முந்தைய திரையில் திரும்பவும்"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("வருவாய்: "),
+        "robot": MessageLookupByLibrary.simpleMessage("இயந்திர மனிதன்"),
         "romance": MessageLookupByLibrary.simpleMessage("காதல்"),
         "runtime": MessageLookupByLibrary.simpleMessage("காலம்"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("காலம் (நிமிடங்களில்)"),
+        "school": MessageLookupByLibrary.simpleMessage("பள்ளி"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("அறிவியல் கற்பனை"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("அறிவியல் கற்பனை"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("படங்களை தேடு"),
@@ -282,6 +341,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "நீங்கள் தேர்ந்தெடுத்த திரைப்படங்களை மீட்டமைப்பதை உறுதிப்படுத்துகிறீர்களா?"),
         "september": MessageLookupByLibrary.simpleMessage("செப்டம்பர்"),
+        "sequel": MessageLookupByLibrary.simpleMessage("தொடர்படுத்தல்"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "கூகுள் சைன் இன் ரத்து செய்யப்பட்டது."),
         "signOut": MessageLookupByLibrary.simpleMessage("வெளியேறு"),
@@ -291,18 +351,27 @@ class MessageLookup extends MessageLookupByLibrary {
             "வெளியேறுவது வெற்றிகரமாக முடிந்தது!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "உங்கள் கணக்கில் இருந்து வெளியேறினேன்."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("அமைதிப் படம்"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("சில படங்கள்"),
         "sort": MessageLookupByLibrary.simpleMessage("வரிசைப்படுத்து"),
         "sortBy": MessageLookupByLibrary.simpleMessage("வரிசைப்படுத்தவும்"),
+        "space": MessageLookupByLibrary.simpleMessage("விண்வெளி"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("விளையாட்டு ஆவணப்படம்"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("ஸ்டீம்பங்க்"),
         "steelbook": MessageLookupByLibrary.simpleMessage("ஸ்டீல் புத்தகம்"),
         "streaming": MessageLookupByLibrary.simpleMessage("ஸ்ட்ரீமிங்"),
         "subscription": MessageLookupByLibrary.simpleMessage("(வசதி)"),
         "succesful": MessageLookupByLibrary.simpleMessage("வெற்றிகரமானது!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" வெற்றிகரமாக அழிக்கப்பட்டது"),
+        "superhero": MessageLookupByLibrary.simpleMessage("சூப்பர்ஹீரோ"),
+        "supernatural":
+            MessageLookupByLibrary.simpleMessage("இயற்கைக்கு மீறியது"),
         "tag": MessageLookupByLibrary.simpleMessage("டேக்"),
         "tags": MessageLookupByLibrary.simpleMessage("டேக்குகள்"),
         "thriller": MessageLookupByLibrary.simpleMessage("த்ரில்லர்"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("காலப்பயணம்"),
         "title": MessageLookupByLibrary.simpleMessage("தலைப்பு"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("டிவி படம்"),
         "unableFindMovie": MessageLookupByLibrary.simpleMessage(
@@ -320,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("பார்க்கவும்"),
         "war": MessageLookupByLibrary.simpleMessage("போர்"),
+        "warning": MessageLookupByLibrary.simpleMessage("எச்சரிக்கை"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("பார்க்கும் எண்ணிக்கை"),
         "watchDate": MessageLookupByLibrary.simpleMessage("பார்க்கும் தேதி"),
@@ -338,6 +408,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("பார்க்கவேண்டிய பட்டியல்"),
         "writer": MessageLookupByLibrary.simpleMessage("எழுத்தாளர்"),
         "writers": MessageLookupByLibrary.simpleMessage("எழுத்தாளர்கள்"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("யாகூசா"),
         "yes": MessageLookupByLibrary.simpleMessage("ஆம்")
       };
 }

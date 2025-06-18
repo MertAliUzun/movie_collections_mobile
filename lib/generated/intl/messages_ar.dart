@@ -36,10 +36,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("إضافة وسم"),
         "addWriter": MessageLookupByLibrary.simpleMessage("إضافة كاتب"),
         "adventure": MessageLookupByLibrary.simpleMessage("مغامرة"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("مشهد ما بعد الاعتمادات"),
+        "ai": MessageLookupByLibrary.simpleMessage("ذكاء اصطناعي"),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "بعض الأفلام المحددة موجودة بالفعل في مجموعتك. إذا واصلت، سيقوم الفيلم المستورد بتحديث نظيره في مجموعتك. هل تريد المتابعة؟"),
         "animation": MessageLookupByLibrary.simpleMessage("رسوم متحركة"),
+        "anime": MessageLookupByLibrary.simpleMessage("أنمي"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("مناهض للحرب"),
         "april": MessageLookupByLibrary.simpleMessage("أبريل"),
         "ascending": MessageLookupByLibrary.simpleMessage("تصاعدي"),
         "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("مقتبس من أنمي"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("مقتبس من سيرة ذاتية"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("مقتبس من كتاب"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("مقتبس من رسوم متحركة"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("مقتبس من قصة مصورة"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("مقتبس من وثائقي"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("مقتبس من مانجا"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("مقتبس من مانهوا"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("مقتبس من مانهوا"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("سيناريو أصلي"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("مقتبس من لعبة"),
         "budgetColon": MessageLookupByLibrary.simpleMessage("الميزانية: "),
         "buy": MessageLookupByLibrary.simpleMessage("(شراء)"),
         "buyButton": MessageLookupByLibrary.simpleMessage("شراء"),
@@ -54,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى التحقق من اتصالك بالإنترنت!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "التحقق من الأفلام المُقللة من قيمتها والمُبالغ فيها"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("المختار"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "نسخة احتياطية سحابية لأفلامك"),
         "collection": MessageLookupByLibrary.simpleMessage("المجموعة"),
@@ -67,17 +90,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "csvFileImported":
             MessageLookupByLibrary.simpleMessage("تم استيراد ملف CSV بنجاح."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage("فرز مخصص"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("سايبربانك"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("كوميديا سوداء"),
         "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("حذف الأفلام المحددة"),
         "descending": MessageLookupByLibrary.simpleMessage("تنازلي"),
+        "detective": MessageLookupByLibrary.simpleMessage("محقق"),
         "digital": MessageLookupByLibrary.simpleMessage("رقمي"),
         "director": MessageLookupByLibrary.simpleMessage("المخرج"),
         "directorNull": MessageLookupByLibrary.simpleMessage("لا يوجد مخرج"),
         "discover": MessageLookupByLibrary.simpleMessage("استكشاف"),
         "documentary": MessageLookupByLibrary.simpleMessage("وثائقي"),
         "drama": MessageLookupByLibrary.simpleMessage("دراما"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("ديستوبيا"),
         "editDirector": MessageLookupByLibrary.simpleMessage("تحرير المخرج"),
         "enterDirectorName":
             MessageLookupByLibrary.simpleMessage("أدخل اسم المخرج"),
@@ -98,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("فشل!"),
         "family": MessageLookupByLibrary.simpleMessage("عائلي"),
         "fantasy": MessageLookupByLibrary.simpleMessage("خيال"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("عالم خيالي"),
         "february": MessageLookupByLibrary.simpleMessage("فبراير"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("وضع البحث عن الأفلام"),
@@ -117,14 +145,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbRating": MessageLookupByLibrary.simpleMessage("تقييم IMDB"),
         "imdbScore": MessageLookupByLibrary.simpleMessage("تقييم IMDB"),
         "importCSV": MessageLookupByLibrary.simpleMessage("استيراد CSV"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("يناير"),
         "july": MessageLookupByLibrary.simpleMessage("يوليو"),
         "june": MessageLookupByLibrary.simpleMessage("يونيو"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("كونغ فو"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("أحدث الأفلام"),
         "list": MessageLookupByLibrary.simpleMessage("قائمة"),
         "listSmall": MessageLookupByLibrary.simpleMessage("قائمة (صغيرة)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("مافيا"),
+        "magic": MessageLookupByLibrary.simpleMessage("سحر"),
         "march": MessageLookupByLibrary.simpleMessage("مارس"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("فنون قتالية"),
         "may": MessageLookupByLibrary.simpleMessage("مايو"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("عسكري"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "تمت إضافة الفيلم إلى المجموعة!"),
         "movieCollection":
@@ -144,6 +179,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesAreHidden":
             MessageLookupByLibrary.simpleMessage("تم إخفاء الأفلام"),
         "moviesDeleted": MessageLookupByLibrary.simpleMessage(" أفلام محذوفة."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("أفلام لـ"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("تم استيراد الأفلام"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "تمت إضافة الأفلام إلى المجموعة!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -168,6 +206,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "noHiddenMovies":
             MessageLookupByLibrary.simpleMessage("لا توجد أفلام مخفية"),
         "noIdToken": MessageLookupByLibrary.simpleMessage("لا يوجد رمز تعريف."),
+        "noMoviesForTag":
+            MessageLookupByLibrary.simpleMessage("لا توجد أفلام لهذه العلامة"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("لم يتم استيراد أي أفلام"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("لا توجد أفلام للاستيراد"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "ليس لديك إذن لحفظ الملفات على جهازك."),
         "noTagsSelected":
@@ -180,6 +224,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("حسنًا"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("أفلام أخرى في السلسلة"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("فلسفة"),
+        "pirate": MessageLookupByLibrary.simpleMessage("قرصان"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("يرجى إدخال"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال عنوان الفيلم"),
@@ -193,8 +239,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("دعم العملاء المميز"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "سيتم شراء النسخة المميزة للحساب الذي تم تسجيل الدخول به على متجر Play. لن يتم شراؤها للمستخدم الذي تم تسجيل الدخول به في هذا التطبيق. ومع ذلك، يمكنك استخدام النسخة المميزة لجميع المستخدمين في هذا التطبيق عند شرائها."),
+        "prequel": MessageLookupByLibrary.simpleMessage("ما قبل القصة"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("اضغط لاختيار ملصق الفيلم"),
+        "prison": MessageLookupByLibrary.simpleMessage("سجن"),
         "producer": MessageLookupByLibrary.simpleMessage("المنتج"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("شركات الإنتاج"),
@@ -217,10 +265,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "restoreHiddenMovies":
             MessageLookupByLibrary.simpleMessage("استعادة الأفلام المخفية"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("الإيرادات: "),
+        "robot": MessageLookupByLibrary.simpleMessage("روبوت"),
         "romance": MessageLookupByLibrary.simpleMessage("رومانسي"),
         "runtime": MessageLookupByLibrary.simpleMessage("مدة التشغيل"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("مدة التشغيل (بالدقائق)"),
+        "school": MessageLookupByLibrary.simpleMessage("مدرسة"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("خيال علمي"),
         "scienceFiction": MessageLookupByLibrary.simpleMessage("خيال علمي"),
         "searchMovies":
             MessageLookupByLibrary.simpleMessage("البحث عن الأفلام"),
@@ -236,6 +287,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "هل تؤكد استعادة الأفلام المحددة؟"),
         "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
+        "sequel": MessageLookupByLibrary.simpleMessage("تكملة"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "تم إلغاء تسجيل الدخول إلى Google."),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
@@ -245,16 +297,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تسجيل الخروج بنجاح!"),
         "signedOutAccount":
             MessageLookupByLibrary.simpleMessage("تم تسجيل خروجك من حسابك."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("فيلم صامت"),
         "sort": MessageLookupByLibrary.simpleMessage("فرز"),
         "sortBy": MessageLookupByLibrary.simpleMessage("فرز حسب"),
+        "space": MessageLookupByLibrary.simpleMessage("فضاء"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("وثائقي رياضي"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("ستيمبانك"),
         "streaming": MessageLookupByLibrary.simpleMessage("بث مباشر"),
         "subscription": MessageLookupByLibrary.simpleMessage("(اشتراك)"),
         "succesful": MessageLookupByLibrary.simpleMessage("ناجح!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage("تم حذفه بنجاح."),
+        "superhero": MessageLookupByLibrary.simpleMessage("سوبر هيرو"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("خارق للطبيعة"),
         "tag": MessageLookupByLibrary.simpleMessage("وسم"),
         "tags": MessageLookupByLibrary.simpleMessage("وسوم"),
         "thriller": MessageLookupByLibrary.simpleMessage("إثارة"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("السفر عبر الزمن"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("فيلم تلفزيوني"),
         "unableFindMovie":
@@ -270,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "userScore": MessageLookupByLibrary.simpleMessage("تقييم المستخدم"),
         "viewAs": MessageLookupByLibrary.simpleMessage("عرض كـ"),
         "war": MessageLookupByLibrary.simpleMessage("حرب"),
+        "warning": MessageLookupByLibrary.simpleMessage("تحذير"),
         "watchDate": MessageLookupByLibrary.simpleMessage("تاريخ المشاهدة"),
         "watchDateColon":
             MessageLookupByLibrary.simpleMessage("تاريخ المشاهدة: "),
@@ -284,6 +345,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("قائمة الرغبات"),
         "writer": MessageLookupByLibrary.simpleMessage("كاتب"),
         "writers": MessageLookupByLibrary.simpleMessage("الكتاب"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("ياكوزا"),
         "yes": MessageLookupByLibrary.simpleMessage("نعم")
       };
 }

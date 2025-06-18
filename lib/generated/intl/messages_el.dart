@@ -38,11 +38,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Προσθήκη ετικέτας"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Προσθήκη Συγγραφέα"),
         "adventure": MessageLookupByLibrary.simpleMessage("Περιπέτεια"),
+        "afterCreditsScene": MessageLookupByLibrary.simpleMessage(
+            "Σκηνή μετά τους τίτλους τέλους"),
+        "ai": MessageLookupByLibrary.simpleMessage("Τεχνητή νοημοσύνη"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Ψευδώνυμο: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Κάποιες από τις επιλεγμένες ταινίες βρίσκονται ήδη στη συλλογή σας. Αν συνεχίσετε, οι εισαγόμενες ταινίες θα ενημερώσουν τις αντίστοιχες στη συλλογή σας. Θέλετε να συνεχίσετε;"),
         "animation": MessageLookupByLibrary.simpleMessage("Κινουμένων Σχεδίων"),
+        "anime": MessageLookupByLibrary.simpleMessage("Ανιμέ"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Εναντίον του πολέμου"),
         "april": MessageLookupByLibrary.simpleMessage("Απρίλιος"),
         "ascending": MessageLookupByLibrary.simpleMessage("Αύξουσα"),
         "august": MessageLookupByLibrary.simpleMessage("Αύγουστος"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε ανιμέ"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε αυτοβιογραφία"),
+        "basedBook":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε βιβλίο"),
+        "basedCartoon": MessageLookupByLibrary.simpleMessage(
+            "Βασισμένο σε κινούμενα σχέδια"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε κόμικ"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε ντοκιμαντέρ"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε μάνγκα"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε μανχουά"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε μανχβά"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Αυθεντικό σενάριο"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("Βασισμένο σε παιχνίδι"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Βιογραφία: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Ημερομηνία Γέννησης: "),
@@ -62,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Παρακαλώ ελέγξτε τη σύνδεση στο διαδίκτυο!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Ελέγξτε τις υποτιμημένες και υπερτιμημένες ταινίες"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Ο εκλεκτός"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Αντίγραφο ασφαλείας στο cloud για τις ταινίες σας"),
         "collection": MessageLookupByLibrary.simpleMessage("Συλλογή"),
@@ -78,7 +108,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Το αρχείο CSV εισήχθη με επιτυχία."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Προσαρμοσμένη Ταξινόμηση Τίτλου"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Σάιμπερπανκ"),
         "daily": MessageLookupByLibrary.simpleMessage("Ημερησίως"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Μαύρη κωμωδία"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Δεν βρέθηκαν δεδομένα για αυτόν τον ηθοποιό!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -92,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Διαγραφή Επιλεγμένων Ταινιών"),
         "descending": MessageLookupByLibrary.simpleMessage("Φθίνουσα"),
+        "detective": MessageLookupByLibrary.simpleMessage("Ντετέκτιβ"),
         "digital": MessageLookupByLibrary.simpleMessage("Ψηφιακό"),
         "director": MessageLookupByLibrary.simpleMessage("Σκηνοθέτης"),
         "directorNull":
@@ -100,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Ντοκιμαντέρ"),
         "drama": MessageLookupByLibrary.simpleMessage("Δράμα"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Δυστοπία"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Επεξεργασία Σκηνοθέτη"),
         "enterDirectorName": MessageLookupByLibrary.simpleMessage(
@@ -123,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Αποτυχία!"),
         "family": MessageLookupByLibrary.simpleMessage("Οικογενειακή"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Φαντασία"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Φανταστικός κόσμος"),
         "february": MessageLookupByLibrary.simpleMessage("Φεβρουάριος"),
         "findMovieMode": MessageLookupByLibrary.simpleMessage(
             "Λειτουργία αναζήτησης ταινίας"),
@@ -146,15 +182,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Εισαγωγή από CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Μη έγκυρο IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Ισεκάι"),
         "january": MessageLookupByLibrary.simpleMessage("Ιανουάριος"),
         "july": MessageLookupByLibrary.simpleMessage("Ιούλιος"),
         "june": MessageLookupByLibrary.simpleMessage("Ιούνιος"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Κουνγκ Φου"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Τελευταίες ταινίες"),
         "list": MessageLookupByLibrary.simpleMessage("Λίστα"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Λίστα (Μικρή)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Μαφία"),
+        "magic": MessageLookupByLibrary.simpleMessage("Μαγεία"),
         "march": MessageLookupByLibrary.simpleMessage("Μάρτιος"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Μαρσιανές τέχνες"),
         "may": MessageLookupByLibrary.simpleMessage("Μάιος"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Στρατιωτικό"),
         "monthly": MessageLookupByLibrary.simpleMessage("Μηνιαία"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Η ταινία προστέθηκε με επιτυχία!"),
@@ -178,6 +221,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Οι ταινίες έχουν αποκρυφτεί"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" ταινίες διαγράφηκαν."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Ταινίες για"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("ταινίες εισήχθησαν"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Οι ταινίες μεταφέρθηκαν στη Συλλογή!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -206,10 +252,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Δεν βρέθηκε ID Token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Δεν βρέθηκαν ταινίες για αυτό το είδος!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Δεν βρέθηκαν ταινίες για αυτή την ετικέτα"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Δεν βρέθηκαν ταινίες"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Δεν βρέθηκαν ταινίες για αυτή την εταιρεία"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Δεν εισήχθησαν ταινίες"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "Δεν υπάρχουν ταινίες για εισαγωγή"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Δεν δόθηκαν δικαιώματα αποθήκευσης."),
         "noTagsSelected":
@@ -223,6 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Εντάξει"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Άλλες ταινίες στη σειρά"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Φιλοσοφία"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Πειρατής"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Παρακαλώ εισάγετε"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -237,8 +291,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Υποστήριξη πελατών Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Το Premium θα αγοραστεί για τον λογαριασμό με τον οποίο είστε συνδεδεμένοι στο Play Store. Δεν θα αγοραστεί για τον χρήστη που είναι συνδεδεμένος σε αυτήν την εφαρμογή. Ωστόσο, μπορείτε να χρησιμοποιήσετε το Premium για όλους τους χρήστες αυτής της εφαρμογής όταν αγοραστεί."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Προϊστορία"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Πατήστε για να επιλέξετε αφίσα ταινίας"),
+        "prison": MessageLookupByLibrary.simpleMessage("Φυλακή"),
         "producer": MessageLookupByLibrary.simpleMessage("Παραγωγός"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Παραγωγικές Εταιρείες"),
@@ -264,10 +320,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Παρακαλώ επιστρέψτε στην προηγούμενη οθόνη"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Έσοδα: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Ρομπότ"),
         "romance": MessageLookupByLibrary.simpleMessage("Ρομαντική"),
         "runtime": MessageLookupByLibrary.simpleMessage("Διάρκεια"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Διάρκεια (Λεπτά)"),
+        "school": MessageLookupByLibrary.simpleMessage("Σχολείο"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Επιστημονική φαντασία"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Επιστημονικής Φαντασίας"),
         "searchMovies":
@@ -286,6 +345,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Επιβεβαιώνετε την επαναφορά των επιλεγμένων ταινιών;"),
         "september": MessageLookupByLibrary.simpleMessage("Σεπτέμβριος"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Συνέχεια"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Η είσοδος μέσω Google ακυρώθηκε."),
         "signOut": MessageLookupByLibrary.simpleMessage("Αποσύνδεση"),
@@ -295,19 +355,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Η αποσύνδεση ήταν επιτυχής!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Αποσυνδεθήκατε από τον λογαριασμό σας."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Βωβή ταινία"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Παρόμοιες Ταινίες"),
         "sort": MessageLookupByLibrary.simpleMessage("Ταξινόμηση "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Ταξινόμηση Από"),
+        "space": MessageLookupByLibrary.simpleMessage("Διάστημα"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Αθλητικό ντοκιμαντέρ"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Στιμπάνκ"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Ροή"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Συνδρομή)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Επιτυχία!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" διαγράφηκε με επιτυχία"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Υπερήρωας"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Υπερφυσικό"),
         "tag": MessageLookupByLibrary.simpleMessage("Ετικέτα"),
         "tags": MessageLookupByLibrary.simpleMessage("Ετικέτες"),
         "thriller": MessageLookupByLibrary.simpleMessage("Θρίλερ"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Ταξίδι στο χρόνο"),
         "title": MessageLookupByLibrary.simpleMessage("Τίτλος"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Ταινία Τηλεόρασης"),
         "unableFindMovie": MessageLookupByLibrary.simpleMessage(
@@ -325,6 +393,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Προβολή Ως"),
         "war": MessageLookupByLibrary.simpleMessage("Πόλεμος"),
+        "warning": MessageLookupByLibrary.simpleMessage("Προειδοποίηση"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Αριθμός Παρακολουθήσεων"),
         "watchDate":
@@ -345,6 +414,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Λίστα Παρακολούθησης"),
         "writer": MessageLookupByLibrary.simpleMessage("Συγγραφέας"),
         "writers": MessageLookupByLibrary.simpleMessage("Συγγραφείς"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Γιακούζα"),
         "yes": MessageLookupByLibrary.simpleMessage("Ναι")
       };
 }

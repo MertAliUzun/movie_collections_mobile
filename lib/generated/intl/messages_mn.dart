@@ -36,11 +36,38 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Таг нэмэх"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Бичигч нэмэх"),
         "adventure": MessageLookupByLibrary.simpleMessage("Адал явдал"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Зурагтын эцсийн хэсэг"),
+        "ai": MessageLookupByLibrary.simpleMessage("Хиймэл оюун ухаан"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Товчилсон нэр: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Сонгогдсон зарим кинонууд аль хэдийн таны цуглуулгад байна. Хэрэв үргэлжлүүлбэл импортлогдсон кинонууд таны цуглуулгад байгаа хувилбараа шинэчилнэ. Үргэлжлүүлэх үү?"),
         "animation": MessageLookupByLibrary.simpleMessage("Анимаци"),
+        "anime": MessageLookupByLibrary.simpleMessage("Анимэ"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Дайны эсрэг"),
         "april": MessageLookupByLibrary.simpleMessage("Дөрөвдугээр сар"),
         "ascending": MessageLookupByLibrary.simpleMessage("Өсөхөөр"),
         "august": MessageLookupByLibrary.simpleMessage("Наймдугаар сар"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("Анимэ дээр суурилсан"),
+        "basedAutobiography": MessageLookupByLibrary.simpleMessage(
+            "Өөрийн намтар дээр суурилсан"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Ном дээр суурилсан"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Мультфильм дээр суурилсан"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Комикс дээр суурилсан"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Баримтат кино дээр суурилсан"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("Манга дээр суурилсан"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Маньхуа дээр суурилсан"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Манхва дээр суурилсан"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Анхны зохиол"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("Тоглоом дээр суурилсан"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("Тамирчдын амьдрал: "),
         "birthDateColon":
@@ -62,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Интернэт холболтоо шалгана уу!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Дутуу үнэлэгдсэн болон хэтэрхий үнэлэгдсэн киног шалгах"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Сонгогдсон хүн"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Таны кинод зориулсан үүлний нөөц"),
         "collection": MessageLookupByLibrary.simpleMessage("Цуглуулга"),
@@ -77,7 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV файл амжилттай оруулсан."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Тохируулах гарчиг"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Киберпанк"),
         "daily": MessageLookupByLibrary.simpleMessage("Өдөр тутам"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Харанхуй инээдэм"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Энэхүү тоглогчийн мэдээлэл олдсонгүй!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Сонгогдсон киног устгах"),
         "descending": MessageLookupByLibrary.simpleMessage("Буурах"),
+        "detective": MessageLookupByLibrary.simpleMessage("Мөрдөгч"),
         "digital": MessageLookupByLibrary.simpleMessage("Дижитал"),
         "director": MessageLookupByLibrary.simpleMessage("Зохион бүтээгч"),
         "directorNull":
@@ -99,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Баримтат"),
         "drama": MessageLookupByLibrary.simpleMessage("Драма"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Дистопи"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Зохион бүтээгчийг засах"),
         "enterDirectorName": MessageLookupByLibrary.simpleMessage(
@@ -122,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Амжилтгүй!"),
         "family": MessageLookupByLibrary.simpleMessage("Гэр бүл"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Төсөөлөл"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Уран зөгнөлтийн ертөнц"),
         "february": MessageLookupByLibrary.simpleMessage("Хоёрдугаар сар"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Кино хайх горим"),
@@ -143,14 +177,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("IMDB оноо"),
         "importCSV": MessageLookupByLibrary.simpleMessage("CSV-гаас оруулах"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("Буруу IMDB ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Исэкай"),
         "january": MessageLookupByLibrary.simpleMessage("Тавдугаар сар"),
         "july": MessageLookupByLibrary.simpleMessage("Тамдугаар сар"),
         "june": MessageLookupByLibrary.simpleMessage("Зургадугаар сар"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Кунг Фү"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Шинэ кинонууд"),
         "list": MessageLookupByLibrary.simpleMessage("Жагсаалт"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Жагсаалт (Бага)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Мафия"),
+        "magic": MessageLookupByLibrary.simpleMessage("Илбэ"),
         "march": MessageLookupByLibrary.simpleMessage("Гуравдугаар сар"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Бүжгийн урлаг"),
         "may": MessageLookupByLibrary.simpleMessage("Тавдугаар сар"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Цэргийн"),
         "monthly": MessageLookupByLibrary.simpleMessage("Сар бүр"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Кино амжилттай нэмэгдсэн!"),
@@ -174,6 +215,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Кинонууд нуугдсан байна"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" кино устгагдсан."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Кинонууд зориулсан"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Кинонууд импортлогдсон"),
         "moviesMovedToCollection":
             MessageLookupByLibrary.simpleMessage("Кино нь цуглуулгад шилжсэн!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -202,9 +246,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID токен олдсонгүй."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Энэхүү төрөлд ямар ч кино олдсонгүй!"),
+        "noMoviesForTag":
+            MessageLookupByLibrary.simpleMessage("Энэ шошгоор кино олдсонгүй"),
         "noMoviesFound": MessageLookupByLibrary.simpleMessage("Кино олдсонгүй"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Энэхүү компанийн кино олдсонгүй"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Кино импортлоогүй"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Импортлох кино байхгүй"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Орон зайн зөвшөөрөл олгогдоогүй."),
         "noTagsSelected":
@@ -218,6 +268,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Зөвшөөрөх"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "Цувралд орсон бусад кинонууд"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Философи"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Дайсан"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Оруулна уу"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Киноны гарчиг оруулна уу"),
@@ -230,8 +282,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Premium үйлчлүүлэгчийн дэмжлэг"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium нь Play Store-д нэвтэрсэн дансанд худалдан авагдана. Энэ програмд нэвтэрсэн хэрэглэгчийн хувьд худалдан авахгүй. Гэвч, та premium-г энэ програмд бүх хэрэглэгчдэд ашиглах боломжтой болно, хэрэв үүнийг худалдан авсан бол."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Өмнөх түүх"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Киноны постер сонгохын тулд дарна уу"),
+        "prison": MessageLookupByLibrary.simpleMessage("Шорон"),
         "producer": MessageLookupByLibrary.simpleMessage("Үйлдвэрлэгч"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Үйлдвэрлэгч компаниуд"),
@@ -257,10 +311,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Дараагийн дэлгэц рүү буцаж очно уу"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Орлого: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Робот"),
         "romance": MessageLookupByLibrary.simpleMessage("Романтик"),
         "runtime": MessageLookupByLibrary.simpleMessage("Тоглуулах цаг"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Тоглуулах цаг (минут)"),
+        "school": MessageLookupByLibrary.simpleMessage("Сургууль"),
+        "sciFi":
+            MessageLookupByLibrary.simpleMessage("Шинжлэх ухааны уран зөгнөл"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Шинжлэх ухааны уран зөгнөл"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Кино хайх"),
@@ -278,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Сонгосон киног сэргээхийг баталгаажуулж байна уу?"),
         "september": MessageLookupByLibrary.simpleMessage("Есдүгээр сар"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Үргэлжлэл"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Google Sign-In цуцлагдсан."),
         "signOut": MessageLookupByLibrary.simpleMessage("Гарах"),
@@ -287,19 +346,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Амжилттай гарах!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Таны акаунтаас гарах боллоо."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Чимээгүй кино"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Давтагдах киног"),
         "sort": MessageLookupByLibrary.simpleMessage("Эрэмбэлэх"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Төрлөөр эрэмблэх"),
+        "space": MessageLookupByLibrary.simpleMessage("Сансар"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Спортын баримтат кино"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Стимпанк"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Стриминг"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Гишүүнчлэл)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Амжилттай!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" амжилттай устгагдсан"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Супер баатар"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Дээд ертөнцийн"),
         "tag": MessageLookupByLibrary.simpleMessage("Таг"),
         "tags": MessageLookupByLibrary.simpleMessage("Тагууд"),
         "thriller": MessageLookupByLibrary.simpleMessage("Тамирчдын кино"),
+        "timetravel":
+            MessageLookupByLibrary.simpleMessage("Цаг хугацаагаар аялах"),
         "title": MessageLookupByLibrary.simpleMessage("Гарчиг"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ТВ Кино"),
         "unableFindMovie":
@@ -316,6 +384,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Харах байдлаар үзэх"),
         "war": MessageLookupByLibrary.simpleMessage("Дайн"),
+        "warning": MessageLookupByLibrary.simpleMessage("Анхааруулга"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Харах тоо"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Харах огноо"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Харах огноо: "),
@@ -330,6 +399,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Харах жагсаалт"),
         "writer": MessageLookupByLibrary.simpleMessage("Бичигч"),
         "writers": MessageLookupByLibrary.simpleMessage("Бичигчид"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Якуза"),
         "yes": MessageLookupByLibrary.simpleMessage("Тийм")
       };
 }

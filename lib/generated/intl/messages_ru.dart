@@ -39,11 +39,36 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Добавить сценариста"),
         "adventure": MessageLookupByLibrary.simpleMessage("Приключения"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Сцена после титров"),
+        "ai": MessageLookupByLibrary.simpleMessage("Искусственный интеллект"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Псевдоним: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Некоторые из выбранных фильмов уже находятся в вашей коллекции. Если вы продолжите, импортированные фильмы обновят соответствующие записи в вашей коллекции. Хотите продолжить?"),
         "animation": MessageLookupByLibrary.simpleMessage("Анимация"),
+        "anime": MessageLookupByLibrary.simpleMessage("Аниме"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Антивоенный"),
         "april": MessageLookupByLibrary.simpleMessage("Апрель"),
         "ascending": MessageLookupByLibrary.simpleMessage("По возрастанию"),
         "august": MessageLookupByLibrary.simpleMessage("Август"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Основано на аниме"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Основано на автобиографии"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Основано на книге"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Основано на мультфильме"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Основано на комиксе"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Основано на документальном фильме"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Основано на манге"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Основано на маньхуа"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Основано на манхве"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Оригинальный сценарий"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Основано на игрушке"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Биография: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Дата рождения: "),
@@ -64,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Пожалуйста, проверьте ваше подключение к интернету!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Проверьте недооцененные и переоцененные фильмы"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Избранный"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Резервное копирование в облаке для ваших фильмов"),
         "collection": MessageLookupByLibrary.simpleMessage("Коллекция"),
@@ -78,7 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "CSV файл успешно импортирован."),
         "customSortTitle": MessageLookupByLibrary.simpleMessage(
             "Пользовательская сортировка по названию"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Киберпанк"),
         "daily": MessageLookupByLibrary.simpleMessage("Ежедневно"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Черная комедия"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Данные для этого актера не найдены!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Удалить выбранные фильмы"),
         "descending": MessageLookupByLibrary.simpleMessage("По убыванию"),
+        "detective": MessageLookupByLibrary.simpleMessage("Детектив"),
         "digital": MessageLookupByLibrary.simpleMessage("Цифровой"),
         "director": MessageLookupByLibrary.simpleMessage("Режиссер"),
         "directorNull":
@@ -99,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Документальный"),
         "drama": MessageLookupByLibrary.simpleMessage("Драма"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Дистопия"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Редактировать режиссера"),
         "enterDirectorName":
@@ -122,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Неудача!"),
         "family": MessageLookupByLibrary.simpleMessage("Семейный"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Фэнтези"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Фантастический мир"),
         "february": MessageLookupByLibrary.simpleMessage("Февраль"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Режим поиска фильмов"),
@@ -143,15 +175,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Импорт из CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("Неверный IMDb ID!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Исекай"),
         "january": MessageLookupByLibrary.simpleMessage("Январь"),
         "july": MessageLookupByLibrary.simpleMessage("Июль"),
         "june": MessageLookupByLibrary.simpleMessage("Июнь"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Кунг-фу"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Последние фильмы"),
         "list": MessageLookupByLibrary.simpleMessage("Список"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Список (малый)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Мафия"),
+        "magic": MessageLookupByLibrary.simpleMessage("Магия"),
         "march": MessageLookupByLibrary.simpleMessage("Март"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Боевые искусства"),
         "may": MessageLookupByLibrary.simpleMessage("Май"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Военный"),
         "monthly": MessageLookupByLibrary.simpleMessage("Ежемесячно"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Фильм успешно добавлен!"),
@@ -174,6 +213,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Фильмы скрыты"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" фильмы удалены."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Фильмы для"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Фильмы импортированы"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Фильмы перемещены в коллекцию!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -202,10 +244,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ID токен не найден."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Фильмы для этого жанра не найдены!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Фильмы с этим тегом не найдены"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Фильмы не найдены"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Фильмы для этой компании не найдены"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "Фильмы не были импортированы"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Нет фильмов для импорта"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Разрешения на доступ к хранилищу не предоставлены."),
         "noTagsSelected":
@@ -219,6 +267,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ок"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Другие фильмы в серии"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Философия"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Пират"),
         "pleaseEnter":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, введите"),
         "pleaseEnterMovieTitle": MessageLookupByLibrary.simpleMessage(
@@ -234,8 +284,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Премиум поддержка клиентов"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Премиум будет куплен для аккаунта, на который вы вошли в Play Store. Он не будет куплен для пользователя, который вошел в это приложение. Однако вы сможете использовать премиум для всех пользователей в этом приложении, когда он будет куплен."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Приквел"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "Нажмите, чтобы выбрать постер фильма"),
+        "prison": MessageLookupByLibrary.simpleMessage("Тюрьма"),
         "producer": MessageLookupByLibrary.simpleMessage("Продюсер"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Производственные компании"),
@@ -260,10 +312,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, вернитесь на предыдущий экран"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Доход: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Робот"),
         "romance": MessageLookupByLibrary.simpleMessage("Романтика"),
         "runtime": MessageLookupByLibrary.simpleMessage("Продолжительность"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Продолжительность (минуты)"),
+        "school": MessageLookupByLibrary.simpleMessage("Школа"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Научная фантастика"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Научная фантастика"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Поиск фильмов"),
@@ -280,6 +335,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Вы подтверждаете восстановление выбранных фильмов?"),
         "september": MessageLookupByLibrary.simpleMessage("Сентябрь"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Сиквел"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Вход через Google был отменен."),
         "signOut": MessageLookupByLibrary.simpleMessage("Выход"),
@@ -289,18 +345,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выход успешен!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Вы вышли из вашего аккаунта."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Немой фильм"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Похожие фильмы"),
         "sort": MessageLookupByLibrary.simpleMessage("Сортировать"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Сортировать по"),
+        "space": MessageLookupByLibrary.simpleMessage("Космос"),
+        "sportsDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Спортивный документальный фильм"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Стимпанк"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Стриминг"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Подписка)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Успешно!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" успешно удален"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Супергерой"),
+        "supernatural":
+            MessageLookupByLibrary.simpleMessage("Сверхъестественное"),
         "tag": MessageLookupByLibrary.simpleMessage("Тег"),
         "tags": MessageLookupByLibrary.simpleMessage("Теги"),
         "thriller": MessageLookupByLibrary.simpleMessage("Триллер"),
+        "timetravel":
+            MessageLookupByLibrary.simpleMessage("Путешествие во времени"),
         "title": MessageLookupByLibrary.simpleMessage("Название"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Телевизионный фильм"),
         "unableFindMovie":
@@ -319,6 +385,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Просматривать как"),
         "war": MessageLookupByLibrary.simpleMessage("Война"),
+        "warning": MessageLookupByLibrary.simpleMessage("Предупреждение"),
         "watchCount":
             MessageLookupByLibrary.simpleMessage("Количество просмотров"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Дата просмотра"),
@@ -335,6 +402,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Список желаемого"),
         "writer": MessageLookupByLibrary.simpleMessage("Сценарист"),
         "writers": MessageLookupByLibrary.simpleMessage("Сценаристы"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Якудза"),
         "yes": MessageLookupByLibrary.simpleMessage("Да")
       };
 }

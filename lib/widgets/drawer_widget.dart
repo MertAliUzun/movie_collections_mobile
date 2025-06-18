@@ -680,7 +680,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             behavior: SnackBarBehavior.floating,
             content: AwesomeSnackbarContent(
               title: S.of(context).error,
-              message: 'S.of(context).noMoviesToImport',
+              message: S.of(context).noMoviesToImport,
               contentType: ContentType.failure,
               inMaterialBanner: true,
             ),

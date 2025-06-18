@@ -38,11 +38,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "addWriter":
             MessageLookupByLibrary.simpleMessage("Cuir ris sgrìobhadair"),
         "adventure": MessageLookupByLibrary.simpleMessage("Dànachd"),
+        "afterCreditsScene": MessageLookupByLibrary.simpleMessage(
+            "Sealladh às dèidh nan creideasan"),
+        "ai": MessageLookupByLibrary.simpleMessage("Inntleachd fuadain"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Alias: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Tha cuid de na filmichean a chaidh a thaghadh mar-thà nad chruinneachadh. Ma thèid thu air adhart, nì na filmichean a chaidh a thoirt a-steach ùrachadh air na filmichean anns a’ chruinneachadh agad. A bheil thu airson leantainn air adhart?"),
         "animation": MessageLookupByLibrary.simpleMessage("Animathas"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("An-against-chogaidh"),
         "april": MessageLookupByLibrary.simpleMessage("An Giblean"),
         "ascending": MessageLookupByLibrary.simpleMessage("A’ tighinn am bàrr"),
         "august": MessageLookupByLibrary.simpleMessage("Lùnastal"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air anime"),
+        "basedAutobiography": MessageLookupByLibrary.simpleMessage(
+            "Stèidhichte air fèin-eachdraidh"),
+        "basedBook":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air leabhar"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air beòthalachd"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air comaig"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "Stèidhichte air film aithriseach"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air manga"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air manhua"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("Stèidhichte air manhwa"),
+        "basedOriginal":
+            MessageLookupByLibrary.simpleMessage("Sgrìobhadh tùsail"),
+        "basedToy": MessageLookupByLibrary.simpleMessage(
+            "Stèidhichte air deaghlaichean"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Bith-eòlas: "),
         "birthDateColon":
             MessageLookupByLibrary.simpleMessage("Ceann-latha breith: "),
@@ -62,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chan eil ceangal eadar-lìn agad!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Sgrùdadh air filmichean fo-mheasail agus air-toirmeasach"),
+        "chosenOne":
+            MessageLookupByLibrary.simpleMessage("An tè air a thaghadh"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Còraichean backup san sgòth airson do fhilmichean"),
         "collection": MessageLookupByLibrary.simpleMessage("Tòrr"),
@@ -77,7 +108,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Faidhle CSV air a thoirt a-steach."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Tiotal gnàthach"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Latha"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Coimhead dubh"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Cha b’ urrainn an dàta actair a thoirt air ais!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -91,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies": MessageLookupByLibrary.simpleMessage(
             "Cuir às filmichean air an taghadh"),
         "descending": MessageLookupByLibrary.simpleMessage("A’ tighinn sìos"),
+        "detective": MessageLookupByLibrary.simpleMessage("Rannsachadh"),
         "digital": MessageLookupByLibrary.simpleMessage("Dijiteach"),
         "director": MessageLookupByLibrary.simpleMessage("Stiùiriche"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Null stiùiriche"),
@@ -98,6 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Doicheadar"),
         "drama": MessageLookupByLibrary.simpleMessage("Drama"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("Dìsteòpia"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Deasaich stiùiriche"),
         "enterDirectorName": MessageLookupByLibrary.simpleMessage(
@@ -122,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage(" mearachd!"),
         "family": MessageLookupByLibrary.simpleMessage("Teaghlach"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Fantasy"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("Saoghal bruadar"),
         "february": MessageLookupByLibrary.simpleMessage("An Gearran"),
         "findMovieMode": MessageLookupByLibrary.simpleMessage("Moda Lorg Film"),
         "franchise": MessageLookupByLibrary.simpleMessage("Franchise"),
@@ -142,15 +178,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "imdbScore": MessageLookupByLibrary.simpleMessage("Sgòr IMDb"),
         "importCSV": MessageLookupByLibrary.simpleMessage("Import CSV"),
         "invalidIMDB": MessageLookupByLibrary.simpleMessage("ID IMDb cearr!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("An t-Ògmhios"),
         "july": MessageLookupByLibrary.simpleMessage("An t-Iuchar"),
         "june": MessageLookupByLibrary.simpleMessage("An t-Ògmhios"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies":
             MessageLookupByLibrary.simpleMessage("Na Filmichean Ùra"),
         "list": MessageLookupByLibrary.simpleMessage("Liosta"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Liosta (Lorg)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Draoidheachd"),
         "march": MessageLookupByLibrary.simpleMessage("Am Màrt"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Ealain-cogaidh"),
         "may": MessageLookupByLibrary.simpleMessage("An Cèitean"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Armailteach"),
         "monthly": MessageLookupByLibrary.simpleMessage("Mìosail"),
         "movieAdded":
             MessageLookupByLibrary.simpleMessage("Film air a chur ris!"),
@@ -173,6 +216,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tha na filmichean air am fàgail falaichte"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" filmichean air an cuir às."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Filmichean airson"),
+        "moviesImported": MessageLookupByLibrary.simpleMessage(
+            "filmichean air an toirt a-steach"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Filmichean air an gluasad chun na tòrr!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -201,10 +247,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Cha deach ID token a lorg."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Chan eil filmichean ann airson an seòrsa seo!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Cha deach filmichean a lorg airson an taga seo"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Cha deach filmichean a lorg"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Cha deach filmichean a lorg airson an chom-pàirtiche"),
+        "noMoviesImported": MessageLookupByLibrary.simpleMessage(
+            "Cha deach filmichean sam bith a thoirt a-steach"),
+        "noMoviesToImport": MessageLookupByLibrary.simpleMessage(
+            "Chan eil filmichean ri thoirt a-steach"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Chan eil cead stòraidh agad."),
         "noTagsSelected": MessageLookupByLibrary.simpleMessage(
@@ -218,6 +270,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Ceart"),
         "otherMoviesInSeries": MessageLookupByLibrary.simpleMessage(
             "Filmichean eile anns an t-sreath"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Filosofia"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Maraiche"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Cuir a-steach"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Cuir a-steach tiotal film"),
@@ -231,8 +285,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Taic teachdaiche Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Thèid am premium a cheannach airson an cunntas ris an do leig thu a-steach ann am Play Store. Cha tèid e a cheannach airson an neach-cleachdaidh ris an do leig thu a-steach anns an aplacaid seo. Ach, bidh comas agad an premium a chleachdadh airson gach neach-cleachdaidh anns an aplacaid seo nuair a thèid e a cheannach."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Ro-sgeul"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Cliog air taghadh pòstaer"),
+        "prison": MessageLookupByLibrary.simpleMessage("Prìosan"),
         "producer": MessageLookupByLibrary.simpleMessage("Dèiligeadair"),
         "productionCompanies": MessageLookupByLibrary.simpleMessage(
             "Companaidhean cinneasachaidh"),
@@ -261,10 +317,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tilg air ais chun na sgrìn roimhe"),
         "revenueColon":
             MessageLookupByLibrary.simpleMessage("Teachd-a-steach: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Robòt"),
         "romance": MessageLookupByLibrary.simpleMessage("Romansa"),
         "runtime": MessageLookupByLibrary.simpleMessage("Ùine-ruith"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Ùine-ruith (mionaid)"),
+        "school": MessageLookupByLibrary.simpleMessage("Sgoil"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Saidheans ficsean"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Saidhbhinn saidheans"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Lorg Filmichean"),
@@ -281,6 +340,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "A bheil thu ag ath-thagradh gu bheil thu airson na filmichean taghte a thoirt air ais?"),
         "september": MessageLookupByLibrary.simpleMessage("An t-Sultain"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Leantainn"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "Chaidh an clàradh a chur dheth."),
         "signOut": MessageLookupByLibrary.simpleMessage("Suidh out"),
@@ -290,19 +350,27 @@ class MessageLookup extends MessageLookupByLibrary {
             "Logadh a-mach soirbheachail!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Logadh a-mach gu soirbheachail."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Film sàmhach"),
         "similarMovies":
             MessageLookupByLibrary.simpleMessage("Filmichean coltach"),
         "sort": MessageLookupByLibrary.simpleMessage("Sìos"),
         "sortBy": MessageLookupByLibrary.simpleMessage("Cuir an dòigh le"),
+        "space": MessageLookupByLibrary.simpleMessage("Fànais"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Film aithriseach spòrs"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Sruthadh"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Cuir-seachad)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Soirbheachail!"),
         "succesfullyDeleted": MessageLookupByLibrary.simpleMessage(
             "air an cuir às gu soirbheachail"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Iomairt-shoidhne"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Os-nàdarrach"),
         "tag": MessageLookupByLibrary.simpleMessage("Ceanglaiche"),
         "tags": MessageLookupByLibrary.simpleMessage("Ceanglaichean"),
         "thriller": MessageLookupByLibrary.simpleMessage("Thriller"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Siubhal ùine"),
         "title": MessageLookupByLibrary.simpleMessage("Tiotal"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Film Tbh"),
         "unableFindMovie": MessageLookupByLibrary.simpleMessage(
@@ -321,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Seall mar"),
         "war": MessageLookupByLibrary.simpleMessage("Cogaidh"),
+        "warning": MessageLookupByLibrary.simpleMessage("Rabhadh"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Meud faicinn"),
         "watchDate":
             MessageLookupByLibrary.simpleMessage("Ceann-latha faicinn"),
@@ -339,6 +408,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Liosta Miann"),
         "writer": MessageLookupByLibrary.simpleMessage("Sgrìobhadair"),
         "writers": MessageLookupByLibrary.simpleMessage("Sgrìobhadairean"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Tha")
       };
 }

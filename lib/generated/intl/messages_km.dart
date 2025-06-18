@@ -38,11 +38,38 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("បន្ថែមស្លាក"),
         "addWriter": MessageLookupByLibrary.simpleMessage("បន្ថែមអ្នកនិពន្ធ"),
         "adventure": MessageLookupByLibrary.simpleMessage("ការផ្សងព្រេង"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("ឆាកបន្ទាប់ពីឯកសារសរសេរឈ្មោះ"),
+        "ai": MessageLookupByLibrary.simpleMessage("បញ្ញាសិប្បនិម្មិត"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("ឈ្មោះជំនួស: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "ភាពយន្តខ្លះៗដែលបានជ្រើសរើសមានរួចហើយនៅក្នុងប្រមូលសាររបស់អ្នក។ ប្រសិនបើអ្នកបន្ត ភាពយន្តដែលបាននាំចូលនឹងធ្វើបច្ចុប្បន្នភាពទៅលើភាពយន្តដែលមានរួចក្នុងប្រមូលសាររបស់អ្នក។ តើអ្នកចង់បន្តទេ?"),
         "animation": MessageLookupByLibrary.simpleMessage("អានីមេ이션"),
+        "anime": MessageLookupByLibrary.simpleMessage("អានីមេ"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("ប្រឆាំងសង្គ្រាម"),
         "april": MessageLookupByLibrary.simpleMessage("មេសា"),
         "ascending": MessageLookupByLibrary.simpleMessage("កើនឡើង"),
         "august": MessageLookupByLibrary.simpleMessage("សីហា"),
+        "basedAnime":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើអានីមេ"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើរឿងជីវិត"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើសៀវភៅ"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើគំនូរជីវចល"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើកូមិច"),
+        "basedDocumentary": MessageLookupByLibrary.simpleMessage(
+            "មានមូលដ្ឋានលើឯកសារសារព័ត៌មាន"),
+        "basedManga":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើម៉ង់ហ្គា"),
+        "basedManhua":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើម៉ាញ្វា"),
+        "basedManhwa":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើម៉ាញ្វា"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("អត្ថបទដើម"),
+        "basedToy":
+            MessageLookupByLibrary.simpleMessage("មានមូលដ្ឋានលើបន្លាស់បន្ទាន់"),
         "biographyColon":
             MessageLookupByLibrary.simpleMessage("ប្រវត្តិជីវិត: "),
         "birthDateColon":
@@ -63,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "សូមពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "ពិនិត្យភាពយន្តដែលត្រូវបានប្រើប្រាស់និងថ្លៃពេក"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("ជ្រើសរើស"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "ការសម្តែងរូបភាពក្នុងពពកសម្រាប់ភាពយន្តរបស់អ្នក"),
         "collection": MessageLookupByLibrary.simpleMessage("ប្រមូលផ្តុំ"),
@@ -80,7 +108,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "ឯកសារCSV ត្រូវបានបញ្ចូលជោគជ័យ។"),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("តម្រៀបចំណងជើងផ្ទាល់ខ្លួន"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("សាយបើបង់"),
         "daily": MessageLookupByLibrary.simpleMessage("ប្រចាំថ្ងៃ"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("កំប្លែងខ្មៅ"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "ទិន្នន័យសម្រាប់តួអង្គនេះមិនអាចរកបាន!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -94,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("លុបភាពយន្តដែលបានជ្រើស"),
         "descending": MessageLookupByLibrary.simpleMessage("ធ្លាក់ចុះ"),
+        "detective": MessageLookupByLibrary.simpleMessage("ត្រួតពិនិត្យ"),
         "digital": MessageLookupByLibrary.simpleMessage("ឌីជីថល"),
         "director": MessageLookupByLibrary.simpleMessage("អ្នកគ្រប់គ្រង"),
         "directorNull":
@@ -102,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("ឯកសារ"),
         "drama": MessageLookupByLibrary.simpleMessage("តតនាម"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia": MessageLookupByLibrary.simpleMessage("ភពខ្វះខាត"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("កែសម្រួលអ្នកគ្រប់គ្រង"),
         "enterDirectorName":
@@ -125,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("ការលុបបែក!"),
         "family": MessageLookupByLibrary.simpleMessage("គ្រួសារ"),
         "fantasy": MessageLookupByLibrary.simpleMessage("ភ្លើង"),
+        "fantasyWorld": MessageLookupByLibrary.simpleMessage("ពិភពខ្លូនក្បាល"),
         "february": MessageLookupByLibrary.simpleMessage("កុម្ភៈ"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("របៀបស្វែងរកភាពយន្ត"),
@@ -147,14 +180,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("បញ្ចូលពីCSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("IMDB ID មិនត្រឹមត្រូវ!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("អ៊ីសេកៃ"),
         "january": MessageLookupByLibrary.simpleMessage("មករា"),
         "july": MessageLookupByLibrary.simpleMessage("កក្តត"),
         "june": MessageLookupByLibrary.simpleMessage("មិថុនា"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("កុងហ្វូ"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("ភាពយន្តថ្មីៗ"),
         "list": MessageLookupByLibrary.simpleMessage("បញ្ជី"),
         "listSmall": MessageLookupByLibrary.simpleMessage("បញ្ជី(តូច)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("ម៉ាហ្វីយ៉ា"),
+        "magic": MessageLookupByLibrary.simpleMessage("ពិភពមន្តសិទ្ធិ"),
         "march": MessageLookupByLibrary.simpleMessage("មីនា"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("សិល្បៈប្រយុទ្ធ"),
         "may": MessageLookupByLibrary.simpleMessage("ឧសភា"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("យោធា"),
         "monthly": MessageLookupByLibrary.simpleMessage("ប្រចាំខែ"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "ភាពយន្តត្រូវបានបញ្ចូលជោគជ័យ!"),
@@ -178,6 +218,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ភាពយន្តត្រូវបានលាក់"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" ភាពយន្តត្រូវបានលុបចោល។"),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("ភាពយន្តសម្រាប់"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("ភាពយន្តបាននាំចូល"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "ភាពយន្តត្រូវបានផ្លាស់ប្តូរទៅប្រមូលផ្តុំ!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -205,10 +248,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "noIdToken": MessageLookupByLibrary.simpleMessage("មិនមានID Token ទេ។"),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "មិនមានភាពយន្តសម្រាប់ប្រភេទនេះទេ!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "រកមិនឃើញភាពយន្តសម្រាប់ស្លាកនេះ"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("មិនមានភាពយន្តដែលបានរកឃើញ"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "មិនមានភាពយន្តដែលបានរកឃើញសម្រាប់ក្រុមហ៊ុននេះ"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("គ្មានភាពយន្តណាដែលបាននាំចូល"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("គ្មានភាពយន្តសម្រាប់នាំចូល"),
         "noStoragePermission":
             MessageLookupByLibrary.simpleMessage("មិនមានការអនុញ្ញាតផ្ទុកទេ។"),
         "noTagsSelected":
@@ -222,6 +271,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("ព្រម"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("ភាពយន្តផ្សេងទៀតក្នុងស៊េរី"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("ទស្សនវិជ្ជា"),
+        "pirate": MessageLookupByLibrary.simpleMessage("ចលករ"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("សូមបញ្ចូល"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("សូមបញ្ចូលចំណងជើងភាពយន្ត"),
@@ -234,8 +285,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "ការគាំទ្រប្រាក់កម្ចី Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium នឹងត្រូវបានទិញសម្រាប់គណនីដែលអ្នកបានចូលក្នុង Play Store។ វានឹងមិនត្រូវបានទិញសម្រាប់អ្នកប្រើដែលបានចូលក្នុងកម្មវិធីនេះទេ។ ប៉ុន្តែអ្នកអាចប្រើប្រាស់ premium សម្រាប់អ្នកប្រើទាំងអស់ក្នុងកម្មវិធីនេះពេលវាត្រូវបានទិញ។"),
+        "prequel": MessageLookupByLibrary.simpleMessage("រឿងមុន"),
         "pressChoosePoster": MessageLookupByLibrary.simpleMessage(
             "ចុចដើម្បីជ្រើសរើសប័ណ្ណភាពយន្ត"),
+        "prison": MessageLookupByLibrary.simpleMessage("គុក"),
         "producer": MessageLookupByLibrary.simpleMessage("ផលិតករ"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("ក្រុមហ៊ុនផលិត"),
@@ -261,9 +314,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "សូមត្រឡប់ទៅស្វ័យប្រវត្តិកាលពីមុន"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("ចំណូល: "),
+        "robot": MessageLookupByLibrary.simpleMessage("រ៉ូបូត"),
         "romance": MessageLookupByLibrary.simpleMessage("ស្នេហា"),
         "runtime": MessageLookupByLibrary.simpleMessage("រយៈពេល"),
         "runtimeMinutes": MessageLookupByLibrary.simpleMessage("រយៈពេល (នាទី)"),
+        "school": MessageLookupByLibrary.simpleMessage("សាលា"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("វិទ្យាសាស្រ្តកល"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("វិទ្យាសាស្ត្របច្ចេកវិទ្យា"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("ស្វែងរកភាពយន្ត"),
@@ -280,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "តើអ្នកព្រមស្ដារភាពយន្តដែលបានជ្រើសរើសទេ?"),
         "september": MessageLookupByLibrary.simpleMessage("កញ្ញា"),
+        "sequel": MessageLookupByLibrary.simpleMessage("បន្តបន្ទាប់"),
         "signInCancel": MessageLookupByLibrary.simpleMessage(
             "ការចូលគណនីGoogle ត្រូវបានបោះបង់។"),
         "signOut": MessageLookupByLibrary.simpleMessage("ចាកចេញ"),
@@ -289,18 +346,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ការចាកចេញបានជោគជ័យ!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "អ្នកបានចាកចេញពីគណនីរបស់អ្នក។"),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("ភាពយន្តស្ងាត់"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("ភាពយន្តស្រដៀង"),
         "sort": MessageLookupByLibrary.simpleMessage("តម្រៀប"),
         "sortBy": MessageLookupByLibrary.simpleMessage("តម្រៀបតាម"),
+        "space": MessageLookupByLibrary.simpleMessage("អាកាស"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("ឯកសារព័ត៌មានកីឡា"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("ស្ទីមបង់"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("ស្ត្រីមមីង"),
         "subscription": MessageLookupByLibrary.simpleMessage("(អាណត្តិ)"),
         "succesful": MessageLookupByLibrary.simpleMessage("ជោគជ័យ!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" ត្រូវបានលុបចោលជោគជ័យ"),
+        "superhero": MessageLookupByLibrary.simpleMessage("វីរបុរស"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("លើសពីធម្មតា"),
         "tag": MessageLookupByLibrary.simpleMessage("ស្លាក"),
         "tags": MessageLookupByLibrary.simpleMessage("ស្លាក"),
         "thriller": MessageLookupByLibrary.simpleMessage("ត្រាហ្វហ្គិល"),
+        "timetravel":
+            MessageLookupByLibrary.simpleMessage("ការធ្វើដំណើរពេលវេលា"),
         "title": MessageLookupByLibrary.simpleMessage("ចំណងជើង"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("ភាពយន្តទូរទស្សន៍"),
         "unableFindMovie":
@@ -318,6 +384,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("មើលជា"),
         "war": MessageLookupByLibrary.simpleMessage("សង្គ្រាម"),
+        "warning": MessageLookupByLibrary.simpleMessage("ការព្រមាន"),
         "watchCount": MessageLookupByLibrary.simpleMessage("ចំនួនមើល"),
         "watchDate": MessageLookupByLibrary.simpleMessage("កាលបរិច្ឆេទមើល"),
         "watchDateColon":
@@ -334,6 +401,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("បញ្ជីមើល"),
         "writer": MessageLookupByLibrary.simpleMessage("អ្នកនិពន្ធ"),
         "writers": MessageLookupByLibrary.simpleMessage("អ្នកនិពន្ធ"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("យ៉ាគុសា"),
         "yes": MessageLookupByLibrary.simpleMessage("បាទ/ចាស")
       };
 }

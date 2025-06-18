@@ -200,7 +200,7 @@ class _TagMoviesScreenState extends State<TagMoviesScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'S.of(context).noMoviesForTag',
+                              S.of(context).noMoviesForTag,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.045),

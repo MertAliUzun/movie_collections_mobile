@@ -37,11 +37,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTag": MessageLookupByLibrary.simpleMessage("Thêm thẻ"),
         "addWriter": MessageLookupByLibrary.simpleMessage("Thêm tác giả"),
         "adventure": MessageLookupByLibrary.simpleMessage("Phiêu lưu"),
+        "afterCreditsScene":
+            MessageLookupByLibrary.simpleMessage("Cảnh sau phần ghi công"),
+        "ai": MessageLookupByLibrary.simpleMessage("Trí tuệ nhân tạo"),
         "aliasColon": MessageLookupByLibrary.simpleMessage("Biệt danh: "),
+        "alreadyInCollectionContinue": MessageLookupByLibrary.simpleMessage(
+            "Một số phim đã chọn đã có trong bộ sưu tập của bạn. Nếu bạn tiếp tục, các phim nhập sẽ cập nhật bản sao tương ứng trong bộ sưu tập của bạn. Bạn có muốn tiếp tục không?"),
         "animation": MessageLookupByLibrary.simpleMessage("Hoạt hình"),
+        "anime": MessageLookupByLibrary.simpleMessage("Anime"),
+        "antiWar": MessageLookupByLibrary.simpleMessage("Chống chiến tranh"),
         "april": MessageLookupByLibrary.simpleMessage("Tháng Tư"),
         "ascending": MessageLookupByLibrary.simpleMessage("Tăng dần"),
         "august": MessageLookupByLibrary.simpleMessage("Tháng Tám"),
+        "basedAnime": MessageLookupByLibrary.simpleMessage("Dựa trên anime"),
+        "basedAutobiography":
+            MessageLookupByLibrary.simpleMessage("Dựa trên tự truyện"),
+        "basedBook": MessageLookupByLibrary.simpleMessage("Dựa trên sách"),
+        "basedCartoon":
+            MessageLookupByLibrary.simpleMessage("Dựa trên phim hoạt hình"),
+        "basedComic":
+            MessageLookupByLibrary.simpleMessage("Dựa trên truyện tranh"),
+        "basedDocumentary":
+            MessageLookupByLibrary.simpleMessage("Dựa trên phim tài liệu"),
+        "basedManga": MessageLookupByLibrary.simpleMessage("Dựa trên manga"),
+        "basedManhua": MessageLookupByLibrary.simpleMessage("Dựa trên manhua"),
+        "basedManhwa": MessageLookupByLibrary.simpleMessage("Dựa trên manhwa"),
+        "basedOriginal": MessageLookupByLibrary.simpleMessage("Kịch bản gốc"),
+        "basedToy": MessageLookupByLibrary.simpleMessage("Dựa trên đồ chơi"),
         "biographyColon": MessageLookupByLibrary.simpleMessage("Tiểu sử: "),
         "birthDateColon": MessageLookupByLibrary.simpleMessage("Ngày sinh: "),
         "birthPlaceColon": MessageLookupByLibrary.simpleMessage("Nơi sinh: "),
@@ -59,6 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Vui lòng kiểm tra kết nối Internet của bạn!"),
         "checkUnderratedOverrated": MessageLookupByLibrary.simpleMessage(
             "Kiểm tra các bộ phim bị đánh giá thấp và đánh giá cao"),
+        "chosenOne": MessageLookupByLibrary.simpleMessage("Người được chọn"),
         "cloudBackUp": MessageLookupByLibrary.simpleMessage(
             "Sao lưu đám mây cho các bộ phim của bạn"),
         "collection": MessageLookupByLibrary.simpleMessage("Bộ Sưu Tập"),
@@ -74,7 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tệp CSV đã được nhập thành công."),
         "customSortTitle":
             MessageLookupByLibrary.simpleMessage("Tiêu đề sắp xếp tùy chỉnh"),
+        "cyberpunk": MessageLookupByLibrary.simpleMessage("Cyberpunk"),
         "daily": MessageLookupByLibrary.simpleMessage("Hằng ngày"),
+        "darkComedy": MessageLookupByLibrary.simpleMessage("Hài đen"),
         "dataNotRetrivedActor": MessageLookupByLibrary.simpleMessage(
             "Không thể lấy dữ liệu cho diễn viên này!"),
         "dataNotRetrivedDirector": MessageLookupByLibrary.simpleMessage(
@@ -87,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteChosenMovies":
             MessageLookupByLibrary.simpleMessage("Xóa phim đã chọn"),
         "descending": MessageLookupByLibrary.simpleMessage("Giảm dần"),
+        "detective": MessageLookupByLibrary.simpleMessage("Thám tử"),
         "digital": MessageLookupByLibrary.simpleMessage("Kỹ thuật số"),
         "director": MessageLookupByLibrary.simpleMessage("Đạo diễn"),
         "directorNull": MessageLookupByLibrary.simpleMessage("Đạo diễn trống"),
@@ -94,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "documentary": MessageLookupByLibrary.simpleMessage("Tài liệu"),
         "drama": MessageLookupByLibrary.simpleMessage("Kịch"),
         "dvd": MessageLookupByLibrary.simpleMessage("DVD"),
+        "dystopia":
+            MessageLookupByLibrary.simpleMessage("Thế giới phản địa đàng"),
         "editDirector":
             MessageLookupByLibrary.simpleMessage("Chỉnh sửa đạo diễn"),
         "enterDirectorName":
@@ -117,6 +145,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "failure": MessageLookupByLibrary.simpleMessage("Thất bại!"),
         "family": MessageLookupByLibrary.simpleMessage("Gia đình"),
         "fantasy": MessageLookupByLibrary.simpleMessage("Huyền bí"),
+        "fantasyWorld":
+            MessageLookupByLibrary.simpleMessage("Thế giới giả tưởng"),
         "february": MessageLookupByLibrary.simpleMessage("Tháng Hai"),
         "findMovieMode":
             MessageLookupByLibrary.simpleMessage("Chế độ Tìm Phim"),
@@ -138,14 +168,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "importCSV": MessageLookupByLibrary.simpleMessage("Nhập từ CSV"),
         "invalidIMDB":
             MessageLookupByLibrary.simpleMessage("ID IMDB không hợp lệ!"),
+        "isekai": MessageLookupByLibrary.simpleMessage("Isekai"),
         "january": MessageLookupByLibrary.simpleMessage("Tháng Một"),
         "july": MessageLookupByLibrary.simpleMessage("Tháng Bảy"),
         "june": MessageLookupByLibrary.simpleMessage("Tháng Sáu"),
+        "kungFu": MessageLookupByLibrary.simpleMessage("Kung Fu"),
         "latestMovies": MessageLookupByLibrary.simpleMessage("Phim Mới Nhất"),
         "list": MessageLookupByLibrary.simpleMessage("Danh sách"),
         "listSmall": MessageLookupByLibrary.simpleMessage("Danh sách (Nhỏ)"),
+        "mafia": MessageLookupByLibrary.simpleMessage("Mafia"),
+        "magic": MessageLookupByLibrary.simpleMessage("Phép thuật"),
         "march": MessageLookupByLibrary.simpleMessage("Tháng Ba"),
+        "martialArts": MessageLookupByLibrary.simpleMessage("Võ thuật"),
         "may": MessageLookupByLibrary.simpleMessage("Tháng Năm"),
+        "mcu": MessageLookupByLibrary.simpleMessage("MCU"),
+        "military": MessageLookupByLibrary.simpleMessage("Quân sự"),
         "monthly": MessageLookupByLibrary.simpleMessage("Hằng tháng"),
         "movieAdded": MessageLookupByLibrary.simpleMessage(
             "Phim đã được thêm thành công!"),
@@ -168,6 +205,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Các bộ phim đã bị ẩn"),
         "moviesDeleted":
             MessageLookupByLibrary.simpleMessage(" phim đã bị xóa."),
+        "moviesFor": MessageLookupByLibrary.simpleMessage("Phim cho"),
+        "moviesImported":
+            MessageLookupByLibrary.simpleMessage("Phim đã được nhập"),
         "moviesMovedToCollection": MessageLookupByLibrary.simpleMessage(
             "Phim đã được chuyển đến bộ sưu tập!"),
         "moviesMovedToWatchlist": MessageLookupByLibrary.simpleMessage(
@@ -196,10 +236,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Không tìm thấy ID Token."),
         "noMoviesForGenre": MessageLookupByLibrary.simpleMessage(
             "Không tìm thấy phim cho thể loại này!"),
+        "noMoviesForTag": MessageLookupByLibrary.simpleMessage(
+            "Không tìm thấy phim cho thẻ này"),
         "noMoviesFound":
             MessageLookupByLibrary.simpleMessage("Không tìm thấy phim"),
         "noMoviesFoundForCompany": MessageLookupByLibrary.simpleMessage(
             "Không tìm thấy phim cho công ty này"),
+        "noMoviesImported":
+            MessageLookupByLibrary.simpleMessage("Không có phim nào được nhập"),
+        "noMoviesToImport":
+            MessageLookupByLibrary.simpleMessage("Không có phim để nhập"),
         "noStoragePermission": MessageLookupByLibrary.simpleMessage(
             "Không có quyền truy cập bộ nhớ."),
         "noTagsSelected":
@@ -213,6 +259,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "otherMoviesInSeries":
             MessageLookupByLibrary.simpleMessage("Các bộ phim khác trong loạt"),
+        "philosophy": MessageLookupByLibrary.simpleMessage("Triết học"),
+        "pirate": MessageLookupByLibrary.simpleMessage("Cướp biển"),
         "pleaseEnter": MessageLookupByLibrary.simpleMessage("Vui lòng nhập"),
         "pleaseEnterMovieTitle":
             MessageLookupByLibrary.simpleMessage("Vui lòng nhập tiêu đề phim"),
@@ -226,8 +274,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hỗ trợ khách hàng Premium"),
         "premiumWillBeForPlayStoreUser": MessageLookupByLibrary.simpleMessage(
             "Premium sẽ được mua cho tài khoản đăng nhập trên Play Store của bạn. Nó sẽ không được mua cho người dùng đăng nhập trong ứng dụng này. Tuy nhiên, bạn có thể sử dụng premium cho tất cả người dùng trong ứng dụng này khi nó đã được mua."),
+        "prequel": MessageLookupByLibrary.simpleMessage("Phần trước"),
         "pressChoosePoster":
             MessageLookupByLibrary.simpleMessage("Nhấn để chọn áp phích phim"),
+        "prison": MessageLookupByLibrary.simpleMessage("Nhà tù"),
         "producer": MessageLookupByLibrary.simpleMessage("Nhà sản xuất"),
         "productionCompanies":
             MessageLookupByLibrary.simpleMessage("Các công ty sản xuất"),
@@ -252,10 +302,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnPreviousScreen": MessageLookupByLibrary.simpleMessage(
             "Vui lòng quay lại màn hình trước"),
         "revenueColon": MessageLookupByLibrary.simpleMessage("Doanh thu: "),
+        "robot": MessageLookupByLibrary.simpleMessage("Người máy"),
         "romance": MessageLookupByLibrary.simpleMessage("Lãng mạn"),
         "runtime": MessageLookupByLibrary.simpleMessage("Thời gian chạy"),
         "runtimeMinutes":
             MessageLookupByLibrary.simpleMessage("Thời gian chạy (phút)"),
+        "school": MessageLookupByLibrary.simpleMessage("Trường học"),
+        "sciFi": MessageLookupByLibrary.simpleMessage("Khoa học viễn tưởng"),
         "scienceFiction":
             MessageLookupByLibrary.simpleMessage("Khoa học viễn tưởng"),
         "searchMovies": MessageLookupByLibrary.simpleMessage("Tìm phim"),
@@ -272,6 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedMoviesRestoreConfirm": MessageLookupByLibrary.simpleMessage(
             "Bạn có xác nhận việc khôi phục các bộ phim đã chọn không?"),
         "september": MessageLookupByLibrary.simpleMessage("Tháng Chín"),
+        "sequel": MessageLookupByLibrary.simpleMessage("Phần tiếp theo"),
         "signInCancel":
             MessageLookupByLibrary.simpleMessage("Đăng nhập Google bị hủy."),
         "signOut": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
@@ -281,18 +335,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng xuất thành công!"),
         "signedOutAccount": MessageLookupByLibrary.simpleMessage(
             "Đã đăng xuất khỏi tài khoản của bạn."),
+        "silentFilm": MessageLookupByLibrary.simpleMessage("Phim câm"),
         "similarMovies": MessageLookupByLibrary.simpleMessage("Phim tương tự"),
         "sort": MessageLookupByLibrary.simpleMessage("Sắp xếp "),
         "sortBy": MessageLookupByLibrary.simpleMessage("Sắp xếp theo"),
+        "space": MessageLookupByLibrary.simpleMessage("Không gian"),
+        "sportsDocumentary":
+            MessageLookupByLibrary.simpleMessage("Phim tài liệu thể thao"),
+        "steampunk": MessageLookupByLibrary.simpleMessage("Steampunk"),
         "steelbook": MessageLookupByLibrary.simpleMessage("Steelbook"),
         "streaming": MessageLookupByLibrary.simpleMessage("Phát trực tuyến"),
         "subscription": MessageLookupByLibrary.simpleMessage("(Đăng ký)"),
         "succesful": MessageLookupByLibrary.simpleMessage("Thành công!"),
         "succesfullyDeleted":
             MessageLookupByLibrary.simpleMessage(" đã xóa thành công"),
+        "superhero": MessageLookupByLibrary.simpleMessage("Siêu anh hùng"),
+        "supernatural": MessageLookupByLibrary.simpleMessage("Siêu nhiên"),
         "tag": MessageLookupByLibrary.simpleMessage("Thẻ"),
         "tags": MessageLookupByLibrary.simpleMessage("Thẻ"),
         "thriller": MessageLookupByLibrary.simpleMessage("Kinh dị"),
+        "timetravel": MessageLookupByLibrary.simpleMessage("Du hành thời gian"),
         "title": MessageLookupByLibrary.simpleMessage("Tiêu đề"),
         "tvMovie": MessageLookupByLibrary.simpleMessage("Phim truyền hình"),
         "unableFindMovie":
@@ -310,6 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "vhs": MessageLookupByLibrary.simpleMessage("VHS"),
         "viewAs": MessageLookupByLibrary.simpleMessage("Xem dưới dạng"),
         "war": MessageLookupByLibrary.simpleMessage("Chiến tranh"),
+        "warning": MessageLookupByLibrary.simpleMessage("Cảnh báo"),
         "watchCount": MessageLookupByLibrary.simpleMessage("Số lần xem"),
         "watchDate": MessageLookupByLibrary.simpleMessage("Ngày xem"),
         "watchDateColon": MessageLookupByLibrary.simpleMessage("Ngày xem: "),
@@ -324,6 +387,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wishlist": MessageLookupByLibrary.simpleMessage("Danh Sách Xem"),
         "writer": MessageLookupByLibrary.simpleMessage("Tác giả"),
         "writers": MessageLookupByLibrary.simpleMessage("Tác giả"),
+        "yakuza": MessageLookupByLibrary.simpleMessage("Yakuza"),
         "yes": MessageLookupByLibrary.simpleMessage("Có")
       };
 }
