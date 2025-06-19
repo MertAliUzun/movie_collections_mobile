@@ -118,7 +118,39 @@ class _TagMoviesScreenState extends State<TagMoviesScreen> {
             ),
             children: <TextSpan>[
               TextSpan(
-                text: widget.tag,
+                text: widget.tag == 'Superhero' ? S.of(context).superhero :
+                      widget.tag == 'Sequel' ? S.of(context).sequel :
+                      widget.tag == 'MCU' ? S.of(context).mcu :
+                      widget.tag == 'Magic' ? S.of(context).magic :
+                      widget.tag == 'Supernatural' ? S.of(context).supernatural :
+                      widget.tag == 'Time Travel' ? S.of(context).timetravel :
+                      widget.tag == 'Romance' ? S.of(context).romance :
+                      widget.tag == 'Anime' ? S.of(context).anime :
+                      widget.tag == 'Prequel' ? S.of(context).prequel :
+                      widget.tag == 'Chosen One' ? S.of(context).chosenOne :
+                      widget.tag == 'Fantasy World' ? S.of(context).fantasyWorld :
+                      widget.tag == 'Isekai' ? S.of(context).isekai :
+                      widget.tag == 'Pirate' ? S.of(context).pirate :
+                      widget.tag == 'Martial Arts' ? S.of(context).martialArts :
+                      widget.tag == 'Kung Fu' ? S.of(context).kungFu :
+                      widget.tag == 'Yakuza' ? S.of(context).yakuza :
+                      widget.tag == 'Anti War' ? S.of(context).antiWar :
+                      widget.tag == 'Sports Documentary' ? S.of(context).sportsDocumentary :
+                      widget.tag == 'Dystopia' ? S.of(context).dystopia :
+                      widget.tag == 'Steampunk' ? S.of(context).steampunk :
+                      widget.tag == 'Robot' ? S.of(context).robot :
+                      widget.tag == 'Silent Film' ? S.of(context).silentFilm :
+                      widget.tag == 'Cyberpunk' ? S.of(context).cyberpunk :
+                      widget.tag == 'Military' ? S.of(context).military :
+                      widget.tag == 'Sci-fi' ? S.of(context).sciFi :
+                      widget.tag == 'Space' ? S.of(context).space :
+                      widget.tag == 'Prison' ? S.of(context).prison :
+                      widget.tag == 'AI' ? S.of(context).ai :
+                      widget.tag == 'Philosophy' ? S.of(context).philosophy :
+                      widget.tag == 'Mafia' ? S.of(context).mafia :
+                      widget.tag == 'Detective' ? S.of(context).detective :
+                      widget.tag == 'Dark Comedy' ? S.of(context).darkComedy :
+                      widget.tag == 'School' ? S.of(context).school : widget.tag,
                 style: TextStyle(
                   fontStyle: FontStyle.italic,
                   fontSize: ScreenUtil.getAdaptiveTextSize(context, screenWidth * 0.04),
@@ -143,7 +175,7 @@ class _TagMoviesScreenState extends State<TagMoviesScreen> {
             onSelected: _changeSortType,
             color: const Color.fromARGB(255, 44, 50, 60),
             itemBuilder: (BuildContext context) {
-              return {'Trend', 'All Time'}.map((String choice) {
+              return {'Trend', 'All Time'}.map((String choice) { //S.of
                 return PopupMenuItem<String>(
                   value: choice,
                   child: Text(
