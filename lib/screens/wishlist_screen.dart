@@ -424,6 +424,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           },
         ),
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: Text(
           '${_selectedMovies.length} ${S.of(context).moviesSelected}', 
           style: TextStyle(
@@ -645,6 +646,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           },
         ) : null,
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: !_isSearching 
           ? Text(
               '${_movies.length} ${S.of(context).movies}', 

@@ -101,6 +101,7 @@ class _GenreMoviesScreenState extends State<GenreMoviesScreen> {
           color: Colors.white,
           size: ScreenUtil.getAdaptiveIconSize(context, 24),
         ),
+        scrolledUnderElevation: 0,
         centerTitle: true,
         title: RichText(
           text: TextSpan(

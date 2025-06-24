@@ -76,6 +76,7 @@ class _ProviderScreenState extends State<ProviderScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: Text(
           widget.providerName,
           style: TextStyle(

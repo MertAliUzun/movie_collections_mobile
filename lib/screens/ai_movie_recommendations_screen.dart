@@ -115,6 +115,7 @@ class _AiMovieRecommendationsScreenState extends State<AiMovieRecommendationsScr
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: const IconThemeData(color: Colors.white),

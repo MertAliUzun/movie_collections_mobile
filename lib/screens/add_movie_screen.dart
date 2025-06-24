@@ -342,7 +342,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       movieLimit = box.values.where((movie) => movie.watched).length;
     }
     
-    if (movieLimit > 500) {
+    if (movieLimit > 10000) {
       await showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -1015,6 +1015,7 @@ class _AddMovieScreenState extends State<AddMovieScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: true,
         title: Text(
           S.of(context).addNewMovie, 

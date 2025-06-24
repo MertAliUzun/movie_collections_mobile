@@ -110,6 +110,7 @@ class _PopularPeopleScreenState extends State<PopularPeopleScreen> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: Column(
         children: [
           Padding(

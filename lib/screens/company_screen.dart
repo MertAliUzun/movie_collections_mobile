@@ -80,6 +80,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: true,
         title: Text(
           widget.companyName, 

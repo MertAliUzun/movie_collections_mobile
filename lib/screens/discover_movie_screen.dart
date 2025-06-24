@@ -132,6 +132,7 @@ class _DiscoverMovieScreenState extends State<DiscoverMovieScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: true,
         title: Text(
           widget.discoverType == 'Latest' ? S.of(context).latestMovies : 

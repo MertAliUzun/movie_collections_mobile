@@ -110,6 +110,7 @@ class _TagMoviesScreenState extends State<TagMoviesScreen> {
           size: ScreenUtil.getAdaptiveIconSize(context, 24),
         ),
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: RichText(
           text: TextSpan(
             style: TextStyle(

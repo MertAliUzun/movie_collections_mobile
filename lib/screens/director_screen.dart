@@ -598,6 +598,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
         return Scaffold(
           backgroundColor: const Color.fromARGB(255, 34, 40, 50),
           appBar: AppBar(
+            scrolledUnderElevation: 0,
             iconTheme: IconThemeData(
               color: Colors.white,
               size: ScreenUtil.getAdaptiveIconSize(context, 24),
@@ -645,6 +646,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
       if(_isLoading) {
         return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
         appBar: AppBar(
+          scrolledUnderElevation: 0,
           backgroundColor: const Color.fromARGB(255, 44, 50, 60),
           iconTheme: IconThemeData(
             color: Colors.white,
@@ -656,6 +658,7 @@ class _DirectorScreenState extends State<DirectorScreen> {
       else {
         return Scaffold(backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         iconTheme: IconThemeData(
           color: Colors.white,

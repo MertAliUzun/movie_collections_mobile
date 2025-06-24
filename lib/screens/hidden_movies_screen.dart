@@ -225,6 +225,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
               },
             ),
             centerTitle: true,
+            scrolledUnderElevation: 0,
             title: Text(
               '${_selectedMovies.length} ${S.of(context).moviesSelected}', 
               style: TextStyle(
@@ -394,6 +395,7 @@ class _HiddenMoviesScreenState extends State<HiddenMoviesScreen> {
                   },
                 ),
             centerTitle: true,
+            scrolledUnderElevation: 0,
             title: !_isSearching 
               ? Text(
                   '${_hiddenMovies.length} ${S.of(context).hiddenMovies}', 

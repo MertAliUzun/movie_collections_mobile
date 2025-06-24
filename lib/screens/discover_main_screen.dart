@@ -202,6 +202,7 @@ class _DiscoverMainScreenState extends State<DiscoverMainScreen> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 44, 50, 60),
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: Text(
           S.of(context).discover,
           style: TextStyle(

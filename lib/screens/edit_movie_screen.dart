@@ -991,6 +991,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
       backgroundColor: const Color.fromARGB(255, 34, 40, 50),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         centerTitle: true,
         title: Text(
           S.of(context).movieDetails, 

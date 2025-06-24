@@ -213,6 +213,7 @@ class _ImportedMoviesScreenState extends State<ImportedMoviesScreen> {
           },
         ),
         centerTitle: true,
+        scrolledUnderElevation: 0,
         title: Text(
           '${widget.importedMovies.length} ${S.of(context).movies}', 
           style: TextStyle(
